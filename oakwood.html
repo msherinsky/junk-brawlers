@@ -105,6 +105,47 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     ]
   }
   </script>
+  <!-- FAQPage Schema for Oakwood -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who is the best junk removal company in Oakwood, GA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Junk Brawlers LLC, owner-operated by Tony Frias, is one of North Georgia's highest-rated junk removal services with a perfect 5.0 Google rating. Tony serves Oakwood and all of Hall County with same-day and next-day pickup 7 days a week."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast can Junk Brawlers respond for junk removal in Oakwood?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tony offers same-day and next-day junk removal throughout Hall County 7 days a week, 7am-6pm. He typically responds to quote requests within minutes. Call (404) 632-9165 for fast service."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you serve the residential neighborhoods and growing areas of Oakwood, GA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Junk Brawlers serves Oakwood and Hall County including all residential neighborhoods, estates, and commercial properties throughout the area. Appliance removal, garage cleanouts, and full haul-offs available. Call (404) 632-9165."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What junk removal services are available in Oakwood, GA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Junk Brawlers offers residential junk removal, estate cleanouts, garage and basement cleanouts, storage unit cleanouts, appliance removal, hot tub removal, pool removal, shed and deck removal, hoarder cleanouts, construction debris removal, and commercial junk removal throughout Oakwood and Hall County."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -131,9 +172,16 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 
   <section class="page-hero">
     <div class="page-hero-content">
+      <div class="hero-star-badge"><span class="badge-stars">★★★★★</span> 5.0 &middot; 48 Google Reviews</div>
       <h1>Junk Removal in Oakwood, GA</h1>
       <p>Junk Brawlers serves Oakwood and Hall County with 5-star, owner-operated junk removal. Tony Frias offers fast, honest service — residential cleanouts, estate cleanouts, appliance removal, and more in Oakwood and surrounding communities.</p>
       <div class="hero-buttons"><a href="#" class="btn-primary" data-modal="quote">GET A FREE QUOTE</a><a href="tel:4046329165" class="btn-ghost">CALL (404) 632-9165</a></div>
+      <div class="hero-trust-chips">
+        <span class="hero-chip">&#10003; Same-Day Available</span>
+        <span class="hero-chip">&#10003; Owner on Every Job</span>
+        <span class="hero-chip">&#10003; Free Quote</span>
+        <span class="hero-chip">&#10003; 7 Days a Week</span>
+      </div>
     </div>
   </section>
 
@@ -148,15 +196,35 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
           <a href="#" class="btn-primary" data-modal="quote">Get Your Free Quote →</a>
         </div>
         <div class="col-image"><div class="img-placeholder">[PLACEHOLDER: Oakwood area job photo]</div></div>
+
       </div>
     </div>
   </section>
 
-  <section class="content-section alt-bg" style="padding-top:24px;">
+  
+
+  <section class="content-section">
     <div class="content-inner">
-      <h2 class="section-heading">Nearby Service Areas</h2>
-      <div class="section-heading-accent"></div>
-      <div class="nearby-cities">
+      <div class="two-col">
+        <div>
+          <h2 class="section-heading">Serving Oakwood and Hall County</h2>
+          <div class="section-heading-accent"></div>
+          <p>Oakwood is a growing Hall County community positioned between Gainesville and Flowery Branch along Interstate 985, with a mix of residential neighborhoods, commercial development, and proximity to Lake Lanier. Junk Brawlers serves all of Oakwood and surrounding Hall County communities including Flowery Branch, Buford, and Gainesville.</p>
+          <p>Tony offers same-day and next-day junk removal throughout Hall County 7 days a week. Whether it's a garage cleanout in an Oakwood subdivision, appliance removal from a Hall County home, or a full estate haul-off, Junk Brawlers gets it done.</p>
+        </div>
+        <div>
+          <h2 class="section-heading">Why Oakwood Customers Choose Tony</h2>
+          <div class="section-heading-accent"></div>
+          <p>48 five-star Google reviews from real Hall County customers who needed a reliable crew and got one. Tony is owner-operated, which means he personally handles every aspect of the job — from answering your call to loading the last item on the truck.</p>
+          <p>No call centers, no mystery crews. Just Tony, a hardworking team, and a truck ready to go.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="nearby-band">
+    <div class="nearby-label">Also Serving</div>
+    <div class="nearby-cities">
         <a href="gainesville.html" class="nearby-city">Gainesville GA</a>
         <a href="flowery-branch.html" class="nearby-city">Flowery Branch GA</a>
         <a href="buford.html" class="nearby-city">Buford GA</a>
@@ -164,18 +232,40 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         <a href="cumming.html" class="nearby-city">Cumming GA</a>
         <a href="service-areas.html" class="nearby-city">+ All Service Areas</a>
       </div>
-    </div>
-  </section>
-
-  
+  </div>
   <section class="reviews-section">
     <div class="reviews-inner">
       <h2 class="section-heading">What Customers Say About Junk Brawlers in Oakwood</h2>
       <div class="section-heading-accent"></div>
       <div class="reviews-grid">
-        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">“Great guys. Came out as scheduled, picked up what was discussed and left the property clean. Nominal price compared to many out there.”</p><div class="review-author">— Vinod C. · Google Review</div></div>
-        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">“Very responsive, great price and communicated about arrival time.”</p><div class="review-author">— Carrie R. · Google Review</div></div>
-        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">“They showed up on time. They had very good pricing for what I needed to be removed. They are respectful every way possible. Highly recommend them.”</p><div class="review-author">— Alex · Google Review</div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Great guys. Came out as scheduled, picked up what was discussed and left the property clean. Nominal price compared to many out there."</p><div class="review-author">— Vinod C. · Google Review</div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Very responsive, great price and communicated about arrival time."</p><div class="review-author">— Carrie R. · Google Review</div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"They showed up on time. They had very good pricing for what I needed to be removed. They are respectful every way possible. Highly recommend them."</p><div class="review-author">— Alex · Google Review</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="faq-inner">
+      <h2 class="section-heading light">Oakwood Junk Removal FAQ</h2>
+      <div class="section-heading-accent centered"></div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">Who is the best junk removal company in Oakwood, GA? <span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Junk Brawlers LLC, owner-operated by Tony Frias, is one of North Georgia's highest-rated junk removal services with a perfect 5.0 Google rating. Tony serves Oakwood and all of Hall County with same-day and next-day pickup 7 days a week.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How fast can Junk Brawlers respond for junk removal in Oakwood? <span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Tony offers same-day and next-day junk removal throughout Hall County 7 days a week, 7am-6pm. He typically responds to quote requests within minutes. Call (404) 632-9165 for fast service.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you serve the residential neighborhoods and growing areas of Oakwood, GA? <span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Yes. Junk Brawlers serves Oakwood and Hall County including all residential neighborhoods, estates, and commercial properties throughout the area. Appliance removal, garage cleanouts, and full haul-offs available. Call (404) 632-9165.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What junk removal services are available in Oakwood, GA? <span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Junk Brawlers offers residential junk removal, estate cleanouts, garage and basement cleanouts, storage unit cleanouts, appliance removal, hot tub removal, pool removal, shed and deck removal, hoarder cleanouts, construction debris removal, and commercial junk removal throughout Oakwood and Hall County.</div>
+        </div>
       </div>
     </div>
   </section>
