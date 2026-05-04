@@ -36,17 +36,17 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .header-logo .logo-name{font-size:20px;font-weight:800;color:var(--color-white);text-transform:uppercase;letter-spacing:1px;font-family:var(--font-heading)}
 .header-logo .logo-sub{font-size:10px;font-weight:600;color:rgba(255,255,255,0.8);text-transform:uppercase;letter-spacing:1.5px}
 .header-nav{flex:1;display:flex;align-items:center;justify-content:center;gap:8px}
-.header-nav a,.header-nav .nav-dropdown>button{color:var(--color-white);font-size:15px;font-weight:600;padding:8px 14px;border-radius:4px;transition:background var(--transition);background:none;border:none;cursor:pointer;font-family:var(--font);display:flex;align-items:center;gap:4px;white-space:nowrap}
+.header-nav a,.header-nav .nav-dropdown>button{color:var(--color-white);font-size:15px;font-weight:600;padding:8px 14px;border-radius:4px;background:none;border:none;cursor:pointer;font-family:var(--font);display:flex;align-items:center;gap:4px;white-space:nowrap}
 .header-nav a:hover,.header-nav .nav-dropdown>button:hover{background:rgba(255,255,255,0.15)}
 .nav-dropdown{position:relative}
 .nav-dropdown>button .arrow{font-size:10px;transition:transform var(--transition)}
 .nav-dropdown.open>button .arrow{transform:rotate(180deg)}
 .dropdown-menu{display:none;position:absolute;top:calc(100% + 4px);left:0;background:var(--color-white);border:1px solid var(--color-border);border-radius:6px;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.15);z-index:200;overflow:hidden}
 .nav-dropdown.open .dropdown-menu{display:block}
-.dropdown-menu a{display:block;padding:10px 16px;color:var(--color-body);font-size:14px;font-weight:500;transition:background var(--transition)}
+.dropdown-menu a{display:block;padding:10px 16px;color:var(--color-body);font-size:14px;font-weight:500}
 .dropdown-menu a:hover{background:var(--color-light-alt);color:var(--color-purple)}
 .header-ctas{display:flex;align-items:center;gap:10px;flex-shrink:0}
-.btn-ghost-white{padding:9px 18px;border:2px solid var(--color-white);color:var(--color-white);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:4px;transition:background var(--transition),color var(--transition);white-space:nowrap}
+.btn-ghost-white{padding:9px 18px;border:2px solid var(--color-white);color:var(--color-white);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:4px;white-space:nowrap}
 .btn-ghost-white:hover{background:var(--color-white);color:var(--color-purple-dark)}
 .btn-phone{padding:9px 18px;background:var(--color-purple);color:var(--color-white);font-size:13px;font-weight:700;border-radius:4px;transition:opacity var(--transition);white-space:nowrap}
 .btn-phone:hover{opacity:0.85}
@@ -60,7 +60,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .mobile-nav .btn-ghost-white,.mobile-nav .btn-phone{text-align:center}
 .btn-primary{display:inline-block;padding:13px 28px;background:var(--color-purple);color:var(--color-white);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:4px;border:none;cursor:pointer;transition:opacity var(--transition);font-family:var(--font)}
 .btn-primary:hover{opacity:0.88}
-.btn-ghost{display:inline-block;padding:13px 28px;background:transparent;color:var(--color-white);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border:2px solid var(--color-white);border-radius:4px;cursor:pointer;transition:background var(--transition),color var(--transition);font-family:var(--font)}
+.btn-ghost{display:inline-block;padding:13px 28px;background:transparent;color:var(--color-white);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border:2px solid var(--color-white);border-radius:4px;cursor:pointer;font-family:var(--font)}
 .btn-ghost:hover{background:var(--color-white);color:var(--color-purple-dark)}
 .hero{position:relative;min-height:580px;background:var(--color-hero-bg);display:flex;align-items:center;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0.3}
@@ -93,7 +93,8 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 @media(max-width:480px){.hero-buttons{flex-direction:column}.hero-buttons .btn-primary,.hero-buttons .btn-ghost{text-align:center}}
 </style>
 <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="css/style.css"></noscript>
+<noscript><link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="css/style.css"></noscript></noscript>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Junk Brawlers LLC","telephone":"(404) 632-9165","address":{"@type":"PostalAddress","addressLocality":"Waleska","addressRegion":"GA","postalCode":"30183","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":34.3251,"longitude":-84.5575},"url":"https://junkbrawlers.com/waleska.html","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"07:00","closes":"18:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"48","bestRating":"5"},"areaServed":{"@type":"City","name":"Waleska"}}</script>
   <script type="application/ld+json">
   {
@@ -102,6 +103,47 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://junkbrawlers.com/"},
       {"@type": "ListItem", "position": 2, "name": "Waleska", "item": "https://junkbrawlers.com/waleska.html"}
+    ]
+  }
+  </script>
+  <!-- FAQPage Schema for Waleska -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who is the best junk removal company in Waleska, GA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Junk Brawlers LLC, owner-operated by Tony Frias, is one of North Georgia's highest-rated junk removal services with a perfect 5.0 Google rating. Tony serves Waleska and all of Cherokee County with same-day and next-day pickup 7 days a week."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast can Junk Brawlers respond for junk removal in Waleska?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tony offers same-day and next-day junk removal throughout Cherokee County 7 days a week, 7am-6pm. He typically responds to quote requests within minutes. Call (404) 632-9165 for fast service."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you serve rural properties and the Reinhardt University area near Waleska?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Junk Brawlers serves Waleska and Cherokee County including rural properties, estates near Reinhardt University, and surrounding communities. Same-day and next-day service available. Call (404) 632-9165."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What junk removal services are available in Waleska, GA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Junk Brawlers offers residential junk removal, estate cleanouts, garage and basement cleanouts, storage unit cleanouts, appliance removal, hot tub removal, pool removal, shed and deck removal, hoarder cleanouts, construction debris removal, and commercial junk removal throughout Waleska and Cherokee County."
+        }
+      }
     ]
   }
   </script>
@@ -131,9 +173,16 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 
   <section class="page-hero">
     <div class="page-hero-content">
+      <div class="hero-star-badge"><span class="badge-stars">★★★★★</span> 5.0 &middot; 48 Google Reviews</div>
       <h1>Junk Removal in Waleska, GA</h1>
       <p>Junk Brawlers serves the Waleska area and surrounding Cherokee County communities with 5-star, owner-operated junk removal. Fast response, honest pricing, and Tony on every job.</p>
       <div class="hero-buttons"><a href="#" class="btn-primary" data-modal="quote">GET A FREE QUOTE</a><a href="tel:4046329165" class="btn-ghost">CALL (404) 632-9165</a></div>
+      <div class="hero-trust-chips">
+        <span class="hero-chip">&#10003; Same-Day Available</span>
+        <span class="hero-chip">&#10003; Owner on Every Job</span>
+        <span class="hero-chip">&#10003; Free Quote</span>
+        <span class="hero-chip">&#10003; 7 Days a Week</span>
+      </div>
     </div>
   </section>
 
@@ -148,6 +197,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
           <a href="#" class="btn-primary" data-modal="quote">Get Your Free Quote →</a>
         </div>
         <div class="col-image"><div class="img-placeholder">[PLACEHOLDER: Waleska area job photo]</div></div>
+
       </div>
     </div>
   </section>
@@ -169,29 +219,70 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     </div>
   </section>
 
-  <section class="content-section alt-bg" style="padding-top:0;">
+  
+
+  <section class="content-section">
     <div class="content-inner">
-      <h2 class="section-heading">Nearby Service Areas</h2>
-      <div class="section-heading-accent"></div>
-      <div class="nearby-cities">
+      <div class="two-col">
+        <div>
+          <h2 class="section-heading">Serving Waleska and Cherokee County</h2>
+          <div class="section-heading-accent"></div>
+          <p>Waleska is a quiet, rural community in Cherokee County near Reinhardt University, surrounded by farmland, wooded properties, and a mix of long-time residents and newer homeowners. Junk Brawlers serves all of Waleska and surrounding Cherokee County communities including Canton, Ball Ground, Nelson, and Holly Springs.</p>
+          <p>Tony offers same-day and next-day junk removal throughout Cherokee County 7 days a week. Whether it's a rural estate cleanout, a garage haul-off near Reinhardt, or appliance removal from a Waleska home, Junk Brawlers responds fast and prices fairly.</p>
+        </div>
+        <div>
+          <h2 class="section-heading">Why Waleska Customers Choose Tony</h2>
+          <div class="section-heading-accent"></div>
+          <p>48 five-star Google reviews from Cherokee County customers who needed a reliable crew and found one. Waleska is a community where neighbors talk — and the word on Junk Brawlers is consistent: Tony shows up, prices honestly, and gets the job done right.</p>
+          <p>Owner-operated means you deal with Tony start to finish. No franchises, no call centers, no surprises on the bill.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="nearby-band">
+    <div class="nearby-label">Also Serving</div>
+    <div class="nearby-cities">
         <a href="canton.html" class="nearby-city">Canton GA</a>
         <a href="ball-ground.html" class="nearby-city">Ball Ground GA</a>
         <a href="jasper.html" class="nearby-city">Jasper GA</a>
         <a href="dawsonville.html" class="nearby-city">Dawsonville GA</a>
         <a href="service-areas.html" class="nearby-city">+ All Service Areas</a>
       </div>
-    </div>
-  </section>
-
-  
+  </div>
   <section class="reviews-section">
     <div class="reviews-inner">
       <h2 class="section-heading">What Customers Say About Junk Brawlers in Waleska</h2>
       <div class="section-heading-accent"></div>
       <div class="reviews-grid">
-        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">“The best services EVER! Done so quickly and professionally. The home was left spotless and Tony was accommodating with all our requests. We will use him for all jobs in the GA area!”</p><div class="review-author">— Ana D. · Google Review</div></div>
-        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">“Tony was so amazing! He did such a good job getting all my junk cleaned up! His prices are great and I would recommend him to any of my friends and family!!! Thank you again for helping me out!!!”</p><div class="review-author">— Kasaundra T. · Google Review</div></div>
-        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">“Tony and Simon are amazing! They're efficient, effective, and cost friendly! Highly recommend! You won't regret using Junk Brawlers! The best in North Georgia!”</p><div class="review-author">— Maris G. · Google Review</div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"The best services EVER! Done so quickly and professionally. The home was left spotless and Tony was accommodating with all our requests. We will use him for all jobs in the GA area!"</p><div class="review-author">— Ana D. · Google Review</div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Tony was so amazing! He did such a good job getting all my junk cleaned up! His prices are great and I would recommend him to any of my friends and family!!! Thank you again for helping me out!!!"</p><div class="review-author">— Kasaundra T. · Google Review</div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Tony and Simon are amazing! They're efficient, effective, and cost friendly! Highly recommend! You won't regret using Junk Brawlers! The best in North Georgia!"</p><div class="review-author">— Maris G. · Google Review</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="faq-inner">
+      <h2 class="section-heading light">Waleska Junk Removal FAQ</h2>
+      <div class="section-heading-accent centered"></div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">Who is the best junk removal company in Waleska, GA? <span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Junk Brawlers LLC, owner-operated by Tony Frias, is one of North Georgia's highest-rated junk removal services with a perfect 5.0 Google rating. Tony serves Waleska and all of Cherokee County with same-day and next-day pickup 7 days a week.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How fast can Junk Brawlers respond for junk removal in Waleska? <span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Tony offers same-day and next-day junk removal throughout Cherokee County 7 days a week, 7am-6pm. He typically responds to quote requests within minutes. Call (404) 632-9165 for fast service.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you serve rural properties and the Reinhardt University area near Waleska? <span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Yes. Junk Brawlers serves Waleska and Cherokee County including rural properties, estates near Reinhardt University, and surrounding communities. Same-day and next-day service available. Call (404) 632-9165.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What junk removal services are available in Waleska, GA? <span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Junk Brawlers offers residential junk removal, estate cleanouts, garage and basement cleanouts, storage unit cleanouts, appliance removal, hot tub removal, pool removal, shed and deck removal, hoarder cleanouts, construction debris removal, and commercial junk removal throughout Waleska and Cherokee County.</div>
+        </div>
       </div>
     </div>
   </section>

@@ -36,17 +36,17 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .header-logo .logo-name{font-size:20px;font-weight:800;color:var(--color-white);text-transform:uppercase;letter-spacing:1px;font-family:var(--font-heading)}
 .header-logo .logo-sub{font-size:10px;font-weight:600;color:rgba(255,255,255,0.8);text-transform:uppercase;letter-spacing:1.5px}
 .header-nav{flex:1;display:flex;align-items:center;justify-content:center;gap:8px}
-.header-nav a,.header-nav .nav-dropdown>button{color:var(--color-white);font-size:15px;font-weight:600;padding:8px 14px;border-radius:4px;transition:background var(--transition);background:none;border:none;cursor:pointer;font-family:var(--font);display:flex;align-items:center;gap:4px;white-space:nowrap}
+.header-nav a,.header-nav .nav-dropdown>button{color:var(--color-white);font-size:15px;font-weight:600;padding:8px 14px;border-radius:4px;background:none;border:none;cursor:pointer;font-family:var(--font);display:flex;align-items:center;gap:4px;white-space:nowrap}
 .header-nav a:hover,.header-nav .nav-dropdown>button:hover{background:rgba(255,255,255,0.15)}
 .nav-dropdown{position:relative}
 .nav-dropdown>button .arrow{font-size:10px;transition:transform var(--transition)}
 .nav-dropdown.open>button .arrow{transform:rotate(180deg)}
 .dropdown-menu{display:none;position:absolute;top:calc(100% + 4px);left:0;background:var(--color-white);border:1px solid var(--color-border);border-radius:6px;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.15);z-index:200;overflow:hidden}
 .nav-dropdown.open .dropdown-menu{display:block}
-.dropdown-menu a{display:block;padding:10px 16px;color:var(--color-body);font-size:14px;font-weight:500;transition:background var(--transition)}
+.dropdown-menu a{display:block;padding:10px 16px;color:var(--color-body);font-size:14px;font-weight:500}
 .dropdown-menu a:hover{background:var(--color-light-alt);color:var(--color-purple)}
 .header-ctas{display:flex;align-items:center;gap:10px;flex-shrink:0}
-.btn-ghost-white{padding:9px 18px;border:2px solid var(--color-white);color:var(--color-white);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:4px;transition:background var(--transition),color var(--transition);white-space:nowrap}
+.btn-ghost-white{padding:9px 18px;border:2px solid var(--color-white);color:var(--color-white);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:4px;white-space:nowrap}
 .btn-ghost-white:hover{background:var(--color-white);color:var(--color-purple-dark)}
 .btn-phone{padding:9px 18px;background:var(--color-purple);color:var(--color-white);font-size:13px;font-weight:700;border-radius:4px;transition:opacity var(--transition);white-space:nowrap}
 .btn-phone:hover{opacity:0.85}
@@ -60,7 +60,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .mobile-nav .btn-ghost-white,.mobile-nav .btn-phone{text-align:center}
 .btn-primary{display:inline-block;padding:13px 28px;background:var(--color-purple);color:var(--color-white);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:4px;border:none;cursor:pointer;transition:opacity var(--transition);font-family:var(--font)}
 .btn-primary:hover{opacity:0.88}
-.btn-ghost{display:inline-block;padding:13px 28px;background:transparent;color:var(--color-white);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border:2px solid var(--color-white);border-radius:4px;cursor:pointer;transition:background var(--transition),color var(--transition);font-family:var(--font)}
+.btn-ghost{display:inline-block;padding:13px 28px;background:transparent;color:var(--color-white);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border:2px solid var(--color-white);border-radius:4px;cursor:pointer;font-family:var(--font)}
 .btn-ghost:hover{background:var(--color-white);color:var(--color-purple-dark)}
 .hero{position:relative;min-height:580px;background:var(--color-hero-bg);display:flex;align-items:center;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0.3}
@@ -93,7 +93,8 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 @media(max-width:480px){.hero-buttons{flex-direction:column}.hero-buttons .btn-primary,.hero-buttons .btn-ghost{text-align:center}}
 </style>
 <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="css/style.css"></noscript>
+<noscript><link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="css/style.css"></noscript></noscript>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Junk Brawlers LLC","telephone":"(404) 632-9165","address":{"@type":"PostalAddress","addressLocality":"Suwanee","addressRegion":"GA","postalCode":"30024","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":34.0517,"longitude":-84.0700},"url":"https://junkbrawlers.com/suwanee.html","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"07:00","closes":"18:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"48","bestRating":"5"},"areaServed":{"@type":"City","name":"Suwanee"}}</script>
   <script type="application/ld+json">
   {
@@ -102,6 +103,47 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://junkbrawlers.com/"},
       {"@type": "ListItem", "position": 2, "name": "Suwanee", "item": "https://junkbrawlers.com/suwanee.html"}
+    ]
+  }
+  </script>
+  <!-- FAQPage Schema for Suwanee -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who is the best junk removal company in Suwanee, GA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Junk Brawlers LLC, owner-operated by Tony Frias, is one of North Georgia's highest-rated junk removal services with a perfect 5.0 Google rating. Tony serves Suwanee and all of Gwinnett County with same-day and next-day pickup 7 days a week."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast can Junk Brawlers respond for junk removal in Suwanee?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tony offers same-day and next-day junk removal throughout Gwinnett County 7 days a week, 7am-6pm. He typically responds to quote requests within minutes. Call (404) 632-9165 for fast service."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you serve Town Center, Suwanee neighborhoods, and surrounding Gwinnett communities?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Junk Brawlers serves Suwanee and Gwinnett County including the Town Center area, residential neighborhoods, and surrounding communities. Estate cleanouts, appliance removal, and full property haul-offs available. Call (404) 632-9165."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What junk removal services are available in Suwanee, GA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Junk Brawlers offers residential junk removal, estate cleanouts, garage and basement cleanouts, storage unit cleanouts, appliance removal, hot tub removal, pool removal, shed and deck removal, hoarder cleanouts, construction debris removal, and commercial junk removal throughout Suwanee and Gwinnett County."
+        }
+      }
     ]
   }
   </script>
@@ -131,9 +173,16 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 
   <section class="page-hero">
     <div class="page-hero-content">
+      <div class="hero-star-badge"><span class="badge-stars">★★★★★</span> 5.0 &middot; 48 Google Reviews</div>
       <h1>Junk Removal in Suwanee, GA</h1>
       <p>Junk Brawlers serves Suwanee and North Gwinnett with 5-star, owner-operated junk removal. Tony Frias handles residential cleanouts, estate cleanouts, hot tub removal, and appliance removal throughout Suwanee — same-day and next-day available, 7 days a week.</p>
       <div class="hero-buttons"><a href="#" class="btn-primary" data-modal="quote">GET A FREE QUOTE</a><a href="tel:4046329165" class="btn-ghost">CALL (404) 632-9165</a></div>
+      <div class="hero-trust-chips">
+        <span class="hero-chip">&#10003; Same-Day Available</span>
+        <span class="hero-chip">&#10003; Owner on Every Job</span>
+        <span class="hero-chip">&#10003; Free Quote</span>
+        <span class="hero-chip">&#10003; 7 Days a Week</span>
+      </div>
     </div>
   </section>
 
@@ -148,15 +197,35 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
           <a href="#" class="btn-primary" data-modal="quote">Get Your Free Quote →</a>
         </div>
         <div class="col-image"><div class="img-placeholder">[PLACEHOLDER: Suwanee area job photo]</div></div>
+
       </div>
     </div>
   </section>
 
-  <section class="content-section alt-bg" style="padding-top:24px;">
+  
+
+  <section class="content-section">
     <div class="content-inner">
-      <h2 class="section-heading">Nearby Service Areas</h2>
-      <div class="section-heading-accent"></div>
-      <div class="nearby-cities">
+      <div class="two-col">
+        <div>
+          <h2 class="section-heading">Serving Suwanee and Gwinnett County</h2>
+          <div class="section-heading-accent"></div>
+          <p>Suwanee is one of Gwinnett County's most established communities — anchored by Town Center, with well-kept residential neighborhoods, strong commercial activity, and a reputation as one of the best places to live in Metro Atlanta. Junk Brawlers serves all of Suwanee and surrounding Gwinnett County areas including Sugar Hill, Buford, and Flowery Branch.</p>
+          <p>Tony offers same-day and next-day junk removal throughout Gwinnett County 7 days a week. Whether it's a garage cleanout in a Suwanee neighborhood, estate removal near Town Center, or a commercial haul-off, Junk Brawlers handles it with the same reliability every time.</p>
+        </div>
+        <div>
+          <h2 class="section-heading">Why Suwanee Trusts Tony</h2>
+          <div class="section-heading-accent"></div>
+          <p>48 five-star Google reviews — and Suwanee customers are discerning. They've used the national chains, they know the difference, and they keep calling Junk Brawlers back. Tony is owner-operated, which means the same person answers, quotes, and hauls every single time.</p>
+          <p>In a community that values quality and reliability, Junk Brawlers earns its reputation one clean job at a time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="nearby-band">
+    <div class="nearby-label">Also Serving</div>
+    <div class="nearby-cities">
         <a href="cumming.html" class="nearby-city">Cumming GA</a>
         
         <a href="sugar-hill.html" class="nearby-city">Sugar Hill GA</a>
@@ -164,18 +233,40 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         
         <a href="service-areas.html" class="nearby-city">+ All Service Areas</a>
       </div>
-    </div>
-  </section>
-
-  
+  </div>
   <section class="reviews-section">
     <div class="reviews-inner">
       <h2 class="section-heading">What Customers Say About Junk Brawlers in Suwanee</h2>
       <div class="section-heading-accent"></div>
       <div class="reviews-grid">
-        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">“Very courteous, polite & professional young men. Arrived on time & loaded up my stuff in no time. Very fair price!!! Highly recommend.”</p><div class="review-author">— Pamela F. · Google Review</div></div>
-        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">“Excellent company to do business with. Fast and professional as well as reasonably priced. 10/10 would recommend. Plan on using them again in the future.”</p><div class="review-author">— Micah S. · Google Review</div></div>
-        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">“Very responsive, great price and communicated about arrival time.”</p><div class="review-author">— Carrie R. · Google Review</div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Very courteous, polite & professional young men. Arrived on time & loaded up my stuff in no time. Very fair price!!! Highly recommend."</p><div class="review-author">— Pamela F. · Google Review</div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Excellent company to do business with. Fast and professional as well as reasonably priced. 10/10 would recommend. Plan on using them again in the future."</p><div class="review-author">— Micah S. · Google Review</div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Very responsive, great price and communicated about arrival time."</p><div class="review-author">— Carrie R. · Google Review</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="faq-inner">
+      <h2 class="section-heading light">Suwanee Junk Removal FAQ</h2>
+      <div class="section-heading-accent centered"></div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">Who is the best junk removal company in Suwanee, GA? <span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Junk Brawlers LLC, owner-operated by Tony Frias, is one of North Georgia's highest-rated junk removal services with a perfect 5.0 Google rating. Tony serves Suwanee and all of Gwinnett County with same-day and next-day pickup 7 days a week.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How fast can Junk Brawlers respond for junk removal in Suwanee? <span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Tony offers same-day and next-day junk removal throughout Gwinnett County 7 days a week, 7am-6pm. He typically responds to quote requests within minutes. Call (404) 632-9165 for fast service.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you serve Town Center, Suwanee neighborhoods, and surrounding Gwinnett communities? <span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Yes. Junk Brawlers serves Suwanee and Gwinnett County including the Town Center area, residential neighborhoods, and surrounding communities. Estate cleanouts, appliance removal, and full property haul-offs available. Call (404) 632-9165.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What junk removal services are available in Suwanee, GA? <span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Junk Brawlers offers residential junk removal, estate cleanouts, garage and basement cleanouts, storage unit cleanouts, appliance removal, hot tub removal, pool removal, shed and deck removal, hoarder cleanouts, construction debris removal, and commercial junk removal throughout Suwanee and Gwinnett County.</div>
+        </div>
       </div>
     </div>
   </section>

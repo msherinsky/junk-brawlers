@@ -36,17 +36,17 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .header-logo .logo-name{font-size:20px;font-weight:800;color:var(--color-white);text-transform:uppercase;letter-spacing:1px;font-family:var(--font-heading)}
 .header-logo .logo-sub{font-size:10px;font-weight:600;color:rgba(255,255,255,0.8);text-transform:uppercase;letter-spacing:1.5px}
 .header-nav{flex:1;display:flex;align-items:center;justify-content:center;gap:8px}
-.header-nav a,.header-nav .nav-dropdown>button{color:var(--color-white);font-size:15px;font-weight:600;padding:8px 14px;border-radius:4px;transition:background var(--transition);background:none;border:none;cursor:pointer;font-family:var(--font);display:flex;align-items:center;gap:4px;white-space:nowrap}
+.header-nav a,.header-nav .nav-dropdown>button{color:var(--color-white);font-size:15px;font-weight:600;padding:8px 14px;border-radius:4px;background:none;border:none;cursor:pointer;font-family:var(--font);display:flex;align-items:center;gap:4px;white-space:nowrap}
 .header-nav a:hover,.header-nav .nav-dropdown>button:hover{background:rgba(255,255,255,0.15)}
 .nav-dropdown{position:relative}
 .nav-dropdown>button .arrow{font-size:10px;transition:transform var(--transition)}
 .nav-dropdown.open>button .arrow{transform:rotate(180deg)}
 .dropdown-menu{display:none;position:absolute;top:calc(100% + 4px);left:0;background:var(--color-white);border:1px solid var(--color-border);border-radius:6px;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.15);z-index:200;overflow:hidden}
 .nav-dropdown.open .dropdown-menu{display:block}
-.dropdown-menu a{display:block;padding:10px 16px;color:var(--color-body);font-size:14px;font-weight:500;transition:background var(--transition)}
+.dropdown-menu a{display:block;padding:10px 16px;color:var(--color-body);font-size:14px;font-weight:500}
 .dropdown-menu a:hover{background:var(--color-light-alt);color:var(--color-purple)}
 .header-ctas{display:flex;align-items:center;gap:10px;flex-shrink:0}
-.btn-ghost-white{padding:9px 18px;border:2px solid var(--color-white);color:var(--color-white);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:4px;transition:background var(--transition),color var(--transition);white-space:nowrap}
+.btn-ghost-white{padding:9px 18px;border:2px solid var(--color-white);color:var(--color-white);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:4px;white-space:nowrap}
 .btn-ghost-white:hover{background:var(--color-white);color:var(--color-purple-dark)}
 .btn-phone{padding:9px 18px;background:var(--color-purple);color:var(--color-white);font-size:13px;font-weight:700;border-radius:4px;transition:opacity var(--transition);white-space:nowrap}
 .btn-phone:hover{opacity:0.85}
@@ -60,7 +60,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .mobile-nav .btn-ghost-white,.mobile-nav .btn-phone{text-align:center}
 .btn-primary{display:inline-block;padding:13px 28px;background:var(--color-purple);color:var(--color-white);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:4px;border:none;cursor:pointer;transition:opacity var(--transition);font-family:var(--font)}
 .btn-primary:hover{opacity:0.88}
-.btn-ghost{display:inline-block;padding:13px 28px;background:transparent;color:var(--color-white);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border:2px solid var(--color-white);border-radius:4px;cursor:pointer;transition:background var(--transition),color var(--transition);font-family:var(--font)}
+.btn-ghost{display:inline-block;padding:13px 28px;background:transparent;color:var(--color-white);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border:2px solid var(--color-white);border-radius:4px;cursor:pointer;font-family:var(--font)}
 .btn-ghost:hover{background:var(--color-white);color:var(--color-purple-dark)}
 .hero{position:relative;min-height:580px;background:var(--color-hero-bg);display:flex;align-items:center;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0.3}
@@ -93,7 +93,8 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 @media(max-width:480px){.hero-buttons{flex-direction:column}.hero-buttons .btn-primary,.hero-buttons .btn-ghost{text-align:center}}
 </style>
 <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="css/style.css"></noscript>
+<noscript><link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="css/style.css"></noscript></noscript>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Junk Brawlers LLC","telephone":"(404) 632-9165","address":{"@type":"PostalAddress","addressLocality":"Holly Springs","addressRegion":"GA","postalCode":"30115","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":34.1729,"longitude":-84.4893},"url":"https://junkbrawlers.com/holly-springs.html","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"07:00","closes":"18:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"48","bestRating":"5"},"areaServed":{"@type":"City","name":"Holly Springs"}}</script>
   <script type="application/ld+json">
   {
@@ -102,6 +103,47 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     "itemListElement": [
       {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://junkbrawlers.com/"},
       {"@type": "ListItem", "position": 2, "name": "Holly Springs", "item": "https://junkbrawlers.com/holly-springs.html"}
+    ]
+  }
+  </script>
+  <!-- FAQPage Schema for Holly Springs -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Who is the best junk removal company in Holly Springs, GA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Junk Brawlers LLC, owner-operated by Tony Frias, is one of North Georgia's highest-rated junk removal services with a perfect 5.0 Google rating. Tony serves Holly Springs and all of Cherokee County with same-day and next-day pickup 7 days a week."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How fast can Junk Brawlers respond for junk removal in Holly Springs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Tony offers same-day and next-day junk removal throughout Cherokee County 7 days a week, 7am-6pm. He typically responds to quote requests within minutes. Call (404) 632-9165 for fast service."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you serve the fast-growing neighborhoods and new construction areas in Holly Springs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Junk Brawlers serves Holly Springs and Cherokee County including established neighborhoods, new developments, and surrounding communities. Construction debris removal, estate cleanouts, and single-item pickups are all available. Call (404) 632-9165."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What junk removal services are available in Holly Springs, GA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Junk Brawlers offers residential junk removal, estate cleanouts, garage and basement cleanouts, storage unit cleanouts, appliance removal, hot tub removal, pool removal, shed and deck removal, hoarder cleanouts, construction debris removal, and commercial junk removal throughout Holly Springs and Cherokee County."
+        }
+      }
     ]
   }
   </script>
@@ -131,9 +173,16 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 
   <section class="page-hero">
     <div class="page-hero-content">
+      <div class="hero-star-badge"><span class="badge-stars">★★★★★</span> 5.0 &middot; 48 Google Reviews</div>
       <h1>Junk Removal in Holly Springs, GA</h1>
       <p>Junk Brawlers serves Holly Springs and Cherokee County with 5-star, owner-operated junk removal. Tony Frias offers fast, honest service — residential cleanouts, estate cleanouts, and appliance removal throughout Holly Springs.</p>
       <div class="hero-buttons"><a href="#" class="btn-primary" data-modal="quote">GET A FREE QUOTE</a><a href="tel:4046329165" class="btn-ghost">CALL (404) 632-9165</a></div>
+      <div class="hero-trust-chips">
+        <span class="hero-chip">&#10003; Same-Day Available</span>
+        <span class="hero-chip">&#10003; Owner on Every Job</span>
+        <span class="hero-chip">&#10003; Free Quote</span>
+        <span class="hero-chip">&#10003; 7 Days a Week</span>
+      </div>
     </div>
   </section>
 
@@ -148,6 +197,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
           <a href="#" class="btn-primary" data-modal="quote">Get Your Free Quote →</a>
         </div>
         <div class="col-image"><div class="img-placeholder">[PLACEHOLDER: Holly Springs area job photo]</div></div>
+
       </div>
     </div>
   </section>
@@ -169,29 +219,70 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     </div>
   </section>
 
-  <section class="content-section alt-bg" style="padding-top:0;">
+  
+
+  <section class="content-section">
     <div class="content-inner">
-      <h2 class="section-heading">Nearby Service Areas</h2>
-      <div class="section-heading-accent"></div>
-      <div class="nearby-cities">
+      <div class="two-col">
+        <div>
+          <h2 class="section-heading">Serving Holly Springs and Cherokee County</h2>
+          <div class="section-heading-accent"></div>
+          <p>Holly Springs is one of Cherokee County's fastest-growing communities, with a mix of established residential neighborhoods and new developments expanding along Highway 92 and Sixes Road. Junk Brawlers serves all of Holly Springs and surrounding Cherokee County areas including Canton, Woodstock, and Ball Ground.</p>
+          <p>Tony offers same-day and next-day junk removal throughout Cherokee County 7 days a week. Estate cleanouts, garage haul-offs, appliance removal, and construction debris — Junk Brawlers handles it all across Holly Springs and the surrounding area.</p>
+        </div>
+        <div>
+          <h2 class="section-heading">Why Holly Springs Customers Choose Tony</h2>
+          <div class="section-heading-accent"></div>
+          <p>48 five-star Google reviews, all from customers who worked directly with Tony — not a dispatcher or a rotating crew. Holly Springs homeowners know that when they call Junk Brawlers, they get the owner on the phone, the owner on the quote, and the owner on the job.</p>
+          <p>In a fast-growing area where contractors and service companies are everywhere, the ones who last are the ones who actually show up and do the work right. That's Junk Brawlers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="nearby-band">
+    <div class="nearby-label">Also Serving</div>
+    <div class="nearby-cities">
         <a href="canton.html" class="nearby-city">Canton GA</a>
         <a href="woodstock.html" class="nearby-city">Woodstock GA</a>
         <a href="ball-ground.html" class="nearby-city">Ball Ground GA</a>
         <a href="cumming.html" class="nearby-city">Cumming GA</a>
         <a href="service-areas.html" class="nearby-city">+ All Service Areas</a>
       </div>
-    </div>
-  </section>
-
-  
+  </div>
   <section class="reviews-section">
     <div class="reviews-inner">
       <h2 class="section-heading">What Customers Say About Junk Brawlers in Holly Springs</h2>
       <div class="section-heading-accent"></div>
       <div class="reviews-grid">
-        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">“Super professional and convenient! Would absolutely recommend!”</p><div class="review-author">— Ashley S. · Google Review</div></div>
-        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">“Very responsive, great price and communicated about arrival time.”</p><div class="review-author">— Carrie R. · Google Review</div></div>
-        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">“Quick, professional and respectful team! Fair quotes to remove things fast! Happy to use them in the future!”</p><div class="review-author">— Francis C. · Google Review</div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Super professional and convenient! Would absolutely recommend!"</p><div class="review-author">— Ashley S. · Google Review</div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Very responsive, great price and communicated about arrival time."</p><div class="review-author">— Carrie R. · Google Review</div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Quick, professional and respectful team! Fair quotes to remove things fast! Happy to use them in the future!"</p><div class="review-author">— Francis C. · Google Review</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="faq-inner">
+      <h2 class="section-heading light">Holly Springs Junk Removal FAQ</h2>
+      <div class="section-heading-accent centered"></div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">Who is the best junk removal company in Holly Springs, GA? <span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Junk Brawlers LLC, owner-operated by Tony Frias, is one of North Georgia's highest-rated junk removal services with a perfect 5.0 Google rating. Tony serves Holly Springs and all of Cherokee County with same-day and next-day pickup 7 days a week.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How fast can Junk Brawlers respond for junk removal in Holly Springs? <span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Tony offers same-day and next-day junk removal throughout Cherokee County 7 days a week, 7am-6pm. He typically responds to quote requests within minutes. Call (404) 632-9165 for fast service.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you serve the fast-growing neighborhoods and new construction areas in Holly Springs? <span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Yes. Junk Brawlers serves Holly Springs and Cherokee County including established neighborhoods, new developments, and surrounding communities. Construction debris removal, estate cleanouts, and single-item pickups are all available. Call (404) 632-9165.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What junk removal services are available in Holly Springs, GA? <span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Junk Brawlers offers residential junk removal, estate cleanouts, garage and basement cleanouts, storage unit cleanouts, appliance removal, hot tub removal, pool removal, shed and deck removal, hoarder cleanouts, construction debris removal, and commercial junk removal throughout Holly Springs and Cherokee County.</div>
+        </div>
       </div>
     </div>
   </section>

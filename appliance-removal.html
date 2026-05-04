@@ -36,17 +36,17 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .header-logo .logo-name{font-size:20px;font-weight:800;color:var(--color-white);text-transform:uppercase;letter-spacing:1px;font-family:var(--font-heading)}
 .header-logo .logo-sub{font-size:10px;font-weight:600;color:rgba(255,255,255,0.8);text-transform:uppercase;letter-spacing:1.5px}
 .header-nav{flex:1;display:flex;align-items:center;justify-content:center;gap:8px}
-.header-nav a,.header-nav .nav-dropdown>button{color:var(--color-white);font-size:15px;font-weight:600;padding:8px 14px;border-radius:4px;transition:background var(--transition);background:none;border:none;cursor:pointer;font-family:var(--font);display:flex;align-items:center;gap:4px;white-space:nowrap}
+.header-nav a,.header-nav .nav-dropdown>button{color:var(--color-white);font-size:15px;font-weight:600;padding:8px 14px;border-radius:4px;background:none;border:none;cursor:pointer;font-family:var(--font);display:flex;align-items:center;gap:4px;white-space:nowrap}
 .header-nav a:hover,.header-nav .nav-dropdown>button:hover{background:rgba(255,255,255,0.15)}
 .nav-dropdown{position:relative}
 .nav-dropdown>button .arrow{font-size:10px;transition:transform var(--transition)}
 .nav-dropdown.open>button .arrow{transform:rotate(180deg)}
 .dropdown-menu{display:none;position:absolute;top:calc(100% + 4px);left:0;background:var(--color-white);border:1px solid var(--color-border);border-radius:6px;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.15);z-index:200;overflow:hidden}
 .nav-dropdown.open .dropdown-menu{display:block}
-.dropdown-menu a{display:block;padding:10px 16px;color:var(--color-body);font-size:14px;font-weight:500;transition:background var(--transition)}
+.dropdown-menu a{display:block;padding:10px 16px;color:var(--color-body);font-size:14px;font-weight:500}
 .dropdown-menu a:hover{background:var(--color-light-alt);color:var(--color-purple)}
 .header-ctas{display:flex;align-items:center;gap:10px;flex-shrink:0}
-.btn-ghost-white{padding:9px 18px;border:2px solid var(--color-white);color:var(--color-white);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:4px;transition:background var(--transition),color var(--transition);white-space:nowrap}
+.btn-ghost-white{padding:9px 18px;border:2px solid var(--color-white);color:var(--color-white);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:4px;white-space:nowrap}
 .btn-ghost-white:hover{background:var(--color-white);color:var(--color-purple-dark)}
 .btn-phone{padding:9px 18px;background:var(--color-purple);color:var(--color-white);font-size:13px;font-weight:700;border-radius:4px;transition:opacity var(--transition);white-space:nowrap}
 .btn-phone:hover{opacity:0.85}
@@ -60,7 +60,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .mobile-nav .btn-ghost-white,.mobile-nav .btn-phone{text-align:center}
 .btn-primary{display:inline-block;padding:13px 28px;background:var(--color-purple);color:var(--color-white);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:4px;border:none;cursor:pointer;transition:opacity var(--transition);font-family:var(--font)}
 .btn-primary:hover{opacity:0.88}
-.btn-ghost{display:inline-block;padding:13px 28px;background:transparent;color:var(--color-white);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border:2px solid var(--color-white);border-radius:4px;cursor:pointer;transition:background var(--transition),color var(--transition);font-family:var(--font)}
+.btn-ghost{display:inline-block;padding:13px 28px;background:transparent;color:var(--color-white);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border:2px solid var(--color-white);border-radius:4px;cursor:pointer;font-family:var(--font)}
 .btn-ghost:hover{background:var(--color-white);color:var(--color-purple-dark)}
 .hero{position:relative;min-height:580px;background:var(--color-hero-bg);display:flex;align-items:center;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0.3}
@@ -193,6 +193,51 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     </div>
   </section>
 
+  <section class="content-section steps-section">
+    <div class="content-inner">
+      <h2 class="section-heading">How It Works</h2>
+      <div class="section-heading-accent"></div>
+      <div class="steps-timeline">
+        <div class="step-item">
+          <div class="step-bubble">1</div>
+          <div class="step-icon">📞</div>
+          <h3>Call or Request Online</h3>
+          <p>Call (404) 632-9165 or fill out our quote form. Tony typically responds within minutes.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-bubble">2</div>
+          <div class="step-icon">🚛</div>
+          <h3>We Show Up</h3>
+          <p>Tony and his crew arrive at your scheduled time — no waiting around all day for a 4-hour window.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-bubble">3</div>
+          <div class="step-icon">💲</div>
+          <h3>You Get a Quote</h3>
+          <p>We look at the job and give you a clear, no-obligation price before we lift a single item.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-bubble">4</div>
+          <div class="step-icon">✅</div>
+          <h3>It's Gone</h3>
+          <p>We haul away every appliance — no disassembly needed on your end.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews-section">
+    <div class="reviews-inner">
+      <h2 class="section-heading">What Customers Say About Appliance Removal</h2>
+      <div class="section-heading-accent"></div>
+      <div class="reviews-grid">
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Tony and his equally strong brother came and even brought the right tools to get the humongous fridge out the door. They are the BEST!"</p><div class="review-author">— Laurie T. · Google Review</div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Great guys. Came out as scheduled, picked up what was discussed and left the property clean. Nominal price compared to many out there."</p><div class="review-author">— Vinod C. · Google Review</div></div>
+        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Excellent service! On time, and is such a hard worker!!!"</p><div class="review-author">— Retha T. · Google Review</div></div>
+      </div>
+    </div>
+  </section>
+
   <section class="faq-section">
     <div class="faq-inner">
       <h2 class="section-heading light">Appliance Removal FAQ</h2>
@@ -216,19 +261,6 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         </div>
       </div>
       <div style="margin-top:40px;"><a href="#" class="btn-primary" data-modal="quote">GET A FREE APPLIANCE REMOVAL QUOTE</a></div>
-    </div>
-  </section>
-
-  
-  <section class="reviews-section">
-    <div class="reviews-inner">
-      <h2 class="section-heading">What Customers Say About Appliance Removal</h2>
-      <div class="section-heading-accent"></div>
-      <div class="reviews-grid">
-        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">“Tony and his equally strong brother came and even brought the right tools to get the humongous fridge out the door. They are the BEST!”</p><div class="review-author">— Laurie T. · Google Review</div></div>
-        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">“Great guys. Came out as scheduled, picked up what was discussed and left the property clean. Nominal price compared to many out there.”</p><div class="review-author">— Vinod C. · Google Review</div></div>
-        <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">“Excellent service! On time, and is such a hard worker!!!”</p><div class="review-author">— Retha T. · Google Review</div></div>
-      </div>
     </div>
   </section>
   <div class="cta-band">

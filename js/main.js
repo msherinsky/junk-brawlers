@@ -92,9 +92,7 @@
     var header = document.querySelector('.site-header');
     if (!header) return;
     window.addEventListener('scroll', function () {
-      header.style.boxShadow = window.scrollY > 10
-        ? '0 4px 20px rgba(0,0,0,0.6)'
-        : '0 2px 8px rgba(0,0,0,0.4)';
+      header.classList.toggle('scrolled', window.scrollY > 10);
     }, { passive: true });
   }
 
@@ -113,6 +111,25 @@
     });
   }
 
+  /* ── Truck scroll animation ── */
+  function initTruckAnimation() {
+    var truck = document.querySelector('.truck-svg');
+    if (!truck) return;
+    if (!('IntersectionObserver' in window)) {
+      truck.classList.add('truck-arrived');
+      return;
+    }
+    var trigger = document.querySelector('.about-section') || truck;
+    new IntersectionObserver(function (entries, obs) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          truck.classList.add('truck-arrived');
+          obs.disconnect();
+        }
+      });
+    }, { threshold: 0.15 }).observe(trigger);
+  }
+
   /* ── Init all ── */
   document.addEventListener('DOMContentLoaded', function () {
     initModal();
@@ -121,6 +138,7 @@
     initFAQ();
     initHeaderScroll();
     initForms();
+    initTruckAnimation();
   });
 })();
 
