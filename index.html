@@ -18,6 +18,7 @@
   <meta name="twitter:title" content="Junk Brawlers | Junk Removal Dawsonville GA | 5-Star Rated">
   <meta name="twitter:description" content="North Georgia's 5-star junk removal service. Residential, commercial, estate cleanouts, appliance removal &amp; more. Call (404) 632-9165.">
   <meta name="twitter:image" content="https://junk-brawlers.vercel.app/images/logo.png">
+  <link rel="icon" href="images/logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=optional" media="print" onload="this.media='all'">
@@ -93,9 +94,41 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .breadcrumb span{margin:0 6px}
 @media(max-width:768px){.header-nav,.header-ctas{display:none}.hamburger{display:flex}.hero-content{padding:56px 24px}.trust-bar-inner{justify-content:flex-start;gap:20px}.site-header{padding:0 20px}.breadcrumb{padding:10px 20px}}
 @media(max-width:480px){.hero-buttons{flex-direction:column}.hero-buttons .btn-primary,.hero-buttons .btn-ghost{text-align:center}}
+.hero-overlay{background:radial-gradient(ellipse 80% 60% at 50% -5%,rgba(128,0,255,0.5) 0%,transparent 62%),rgba(6,0,20,0.8)}
+.hero-content h1{text-shadow:0 0 70px rgba(216,180,254,0.55),0 4px 8px rgba(0,0,0,0.6)}
+.hero-stars{text-shadow:0 0 14px rgba(255,215,0,0.7)}
+.hero-badge{border-color:rgba(128,0,255,0.5);box-shadow:0 0 28px rgba(128,0,255,0.3),inset 0 1px 0 rgba(255,255,255,0.12)}
+.hero-eyebrow{background:linear-gradient(135deg,#9B00FF,#5200A0);box-shadow:0 2px 18px rgba(128,0,255,0.55)}
+.btn-primary{box-shadow:0 4px 20px rgba(128,0,255,0.4);transition:opacity var(--transition)}
+.btn-primary:hover{box-shadow:0 6px 32px rgba(128,0,255,0.65)}
+.hero .btn-primary{position:relative;isolation:isolate}
+.hero .btn-primary::after{content:'';position:absolute;inset:-6px;border-radius:9px;border:2px solid rgba(128,0,255,0.55);opacity:0;will-change:opacity,transform;animation:btn-pulse 2.8s ease-in-out infinite;pointer-events:none}
+@keyframes btn-pulse{0%,100%{opacity:0;transform:scale(1)}50%{opacity:1;transform:scale(1.08)}}
+@media(prefers-reduced-motion:reduce){.hero .btn-primary::after{animation:none}}
+.trust-bar{border-top:3px solid var(--color-purple);border-bottom:1px solid var(--color-border)}
+.about-split-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.about-split-grid .section-heading{text-align:left}
+.about-split-grid .section-heading-accent{margin-left:0}
+.about-section{overflow:hidden;background:radial-gradient(ellipse 65% 90% at 82% 50%,rgba(85,0,170,0.4) 0%,transparent 60%),#0D0010 !important}
+.about-split-grid .section-heading{color:var(--color-white)}
+.about-split-grid .about-text p{color:rgba(255,255,255,0.8)}
+.about-truck-wrap{display:flex;align-items:center;justify-content:center}
+.truck-svg{width:100%;max-width:480px;transform:translateX(120%);opacity:0;will-change:transform,opacity}
+.truck-svg.truck-arrived{animation:truck-enter 0.9s cubic-bezier(0.34,1.56,0.64,1) forwards,truck-idle 3.2s ease-in-out 0.95s infinite}
+@keyframes truck-enter{from{transform:translateX(120%);opacity:0}to{transform:translateX(0);opacity:1}}
+@keyframes truck-idle{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.truck-wheel{transform-box:fill-box;transform-origin:center;animation:wheel-spin 1.1s linear infinite;animation-play-state:paused;will-change:transform}
+.truck-svg.truck-arrived .truck-wheel{animation-play-state:running}
+@keyframes wheel-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.truck-puff{opacity:0;will-change:opacity,transform}
+.truck-svg.truck-arrived .truck-puff{animation:puff-fade 1.5s ease-out 0.95s infinite}
+@keyframes puff-fade{0%{opacity:0;transform:translate(0,0) scale(0.6)}15%{opacity:0.6;transform:translate(5px,-5px) scale(0.8)}100%{opacity:0;transform:translate(26px,-24px) scale(1.6)}}
+@media(max-width:768px){.about-split-grid{grid-template-columns:1fr}.about-truck-wrap{order:-1;margin-bottom:8px}.truck-svg{max-width:340px}}
+@media(prefers-reduced-motion:reduce){.truck-svg.truck-arrived{animation:truck-enter 0.01s forwards}.truck-wheel,.truck-puff{animation:none}}
 </style>
 <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+<link rel="preload" href="images/logo.webp" as="image" type="image/webp" fetchpriority="high">
 
   <script type="application/ld+json">
   {
@@ -150,7 +183,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 
   <header class="site-header">
     <a href="index.html" class="header-logo">
-      <picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" alt="Junk Brawlers LLC" width="68" height="54" style="height:54px;width:auto;display:block;"></picture>
+      <picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" alt="Junk Brawlers LLC" width="68" height="54" fetchpriority="high" style="height:54px;width:auto;display:block;"></picture>
     </a>
     <nav class="header-nav" aria-label="Main navigation">
       <a href="index.html">Home</a>
@@ -192,7 +225,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
       <a href="contact.html">Contact</a>
     </nav>
     <div class="header-ctas">
-      <a href="#" class="btn-ghost-white" data-modal="quote">FREE QUOTE</a>
+      <a href="contact.html" class="btn-ghost-white" data-modal="quote">FREE QUOTE</a>
       <a href="tel:4046329165" class="btn-phone">(404) 632-9165</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -229,14 +262,14 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     <a href="faq.html">FAQ</a>
     <a href="contact.html">Contact</a>
     <div class="mobile-ctas">
-      <a href="#" class="btn-ghost-white" data-modal="quote">FREE QUOTE</a>
+      <a href="contact.html" class="btn-ghost-white" data-modal="quote">FREE QUOTE</a>
       <a href="tel:4046329165" class="btn-phone">(404) 632-9165</a>
     </div>
   </nav>
 
   <main>
   <section class="hero">
-    <div class="hero-bg" style="background-color:#1a0030;"></div>
+    <div class="hero-bg" style="background:radial-gradient(ellipse at 65% 45%,rgba(110,0,220,0.95) 0%,rgba(28,0,55,0.9) 45%,#04000E 72%);opacity:1;"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <span class="hero-eyebrow">📍 Dawsonville, Georgia — Serving 30+ North GA Cities</span>
@@ -247,7 +280,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
       <h1>We <span>Fight</span> Your<br>Junk For You</h1>
       <p>Junk Brawlers is North Georgia's most trusted junk removal service — owner-operated by Antonio "Tony" Frias. Fast response, fair prices, and eco-friendly disposal across Dawson, Cherokee, Forsyth, Hall &amp; surrounding counties.</p>
       <div class="hero-buttons">
-        <a href="#" class="btn-primary" data-modal="quote">GET A FREE QUOTE</a>
+        <a href="contact.html" class="btn-primary" data-modal="quote">GET A FREE BRAWL QUOTE</a>
         <a href="services.html" class="btn-ghost">OUR SERVICES</a>
       </div>
     </div>
@@ -263,6 +296,114 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
       <div class="trust-item"><span class="trust-icon">✅</span> Licensed &amp; Insured</div>
     </div>
   </div>
+
+  <section class="about-section">
+    <div class="about-inner">
+      <div class="about-split-grid">
+        <div class="about-text">
+          <h2 class="section-heading">About Tony Frias</h2>
+          <div class="section-heading-accent"></div>
+          <p>Junk Brawlers was started by Antonio "Tony" Frias in 2024 — a young North Georgia entrepreneur who saw a need in the Dawsonville area and decided to fill it. Tony founded Junk Brawlers LLC with one mission: show up fast, charge fairly, and leave the place cleaner than you found it.</p>
+          <p>When you call Junk Brawlers, you're talking directly to Tony — the same person who will show up at your door with a truck and a crew ready to work. No call centers, no middlemen, no excuses. That's why every one of his 48 Google reviews is five stars, and why customers name him personally in their reviews.</p>
+          <p>Tony is based in Dawsonville, GA and serves the North Georgia mountains and foothills — from Blue Ridge and Ellijay in the north to Cumming and Gainesville in the south.</p>
+          <a href="about.html" class="btn-primary" style="margin-top:8px;">Tony's Full Story →</a>
+        </div>
+        <div class="about-truck-wrap">
+          <svg class="truck-svg" viewBox="0 0 520 280" xmlns="http://www.w3.org/2000/svg" aria-label="Junk Brawlers truck" role="img">
+            <!-- Ground shadow -->
+            <ellipse cx="265" cy="257" rx="216" ry="8" fill="rgba(0,0,0,0.12)"/>
+            <!-- Chassis frame -->
+            <rect x="44" y="180" width="452" height="15" rx="3" fill="#2D0055"/>
+            <!-- Hood -->
+            <polygon points="44,195 44,154 168,148 168,195" fill="#5500AA"/>
+            <line x1="44" y1="170" x2="168" y2="165" stroke="#6600CC" stroke-width="1.5" opacity="0.45"/>
+            <!-- Front bumper -->
+            <rect x="22" y="181" width="40" height="22" rx="3" fill="#3D007A"/>
+            <line x1="26" y1="187" x2="58" y2="187" stroke="#6600CC" stroke-width="2" stroke-linecap="round"/>
+            <line x1="26" y1="193" x2="58" y2="193" stroke="#6600CC" stroke-width="2" stroke-linecap="round"/>
+            <line x1="26" y1="199" x2="58" y2="199" stroke="#6600CC" stroke-width="2" stroke-linecap="round"/>
+            <!-- Headlight -->
+            <rect x="26" y="157" width="26" height="18" rx="3" fill="#FFE566" opacity="0.95"/>
+            <rect x="28" y="159" width="22" height="14" rx="2" fill="#FFFACC"/>
+            <line x1="30" y1="161" x2="33" y2="164" stroke="white" stroke-width="1.5" opacity="0.8"/>
+            <!-- Cab body -->
+            <rect x="148" y="88" width="160" height="94" rx="7" fill="#5500AA"/>
+            <rect x="154" y="88" width="148" height="22" rx="7" fill="#6A00CC"/>
+            <rect x="148" y="158" width="160" height="24" fill="#4D009A"/>
+            <rect x="148" y="178" width="160" height="4" fill="#380072"/>
+            <!-- Windshield -->
+            <polygon points="161,96 161,152 174,168 188,168 201,125 193,96" fill="rgba(130,0,255,0.18)" stroke="#7800CC" stroke-width="1.5"/>
+            <!-- Side window -->
+            <rect x="205" y="97" width="86" height="54" rx="4" fill="rgba(120,0,255,0.15)" stroke="#7800CC" stroke-width="1.5"/>
+            <!-- B-pillar -->
+            <rect x="263" y="91" width="13" height="92" fill="#480098"/>
+            <!-- Rear quarter window -->
+            <rect x="282" y="99" width="38" height="40" rx="3" fill="rgba(110,0,240,0.13)" stroke="#7000BB" stroke-width="1.5"/>
+            <!-- Door handle -->
+            <rect x="228" y="142" width="22" height="6" rx="3" fill="#9933CC"/>
+            <!-- Branding text -->
+            <text x="237" y="173" font-family="'Barlow Condensed',Arial Narrow,sans-serif" font-size="10" font-weight="700" fill="rgba(255,255,255,0.6)" text-anchor="middle" letter-spacing="1.5">JUNK BRAWLERS</text>
+            <!-- Cab rear connector -->
+            <rect x="304" y="91" width="16" height="93" rx="2" fill="#400090"/>
+            <!-- Truck bed rail -->
+            <rect x="318" y="122" width="180" height="10" rx="2" fill="#6600CC"/>
+            <!-- Bed left wall -->
+            <rect x="318" y="130" width="10" height="52" rx="2" fill="#4400A8"/>
+            <!-- Tailgate -->
+            <rect x="486" y="122" width="12" height="64" rx="2" fill="#3A0082"/>
+            <!-- Bed interior fill -->
+            <rect x="328" y="130" width="158" height="40" fill="#1E0040"/>
+            <!-- Bed floor -->
+            <rect x="318" y="168" width="180" height="16" rx="1" fill="#150030"/>
+            <!-- Junk: sofa -->
+            <rect x="324" y="88" width="56" height="36" rx="5" fill="#6B4F3A"/>
+            <rect x="324" y="80" width="56" height="16" rx="4" fill="#7A5840"/>
+            <rect x="324" y="98" width="14" height="26" rx="3" fill="#8B6040"/>
+            <rect x="366" y="98" width="14" height="26" rx="3" fill="#8B6040"/>
+            <rect x="336" y="106" width="14" height="18" rx="2" fill="#9B6B44"/>
+            <rect x="352" y="106" width="14" height="18" rx="2" fill="#9B6B44"/>
+            <!-- Junk: stacked boxes -->
+            <rect x="388" y="98" width="44" height="32" rx="2" fill="#8B7355"/>
+            <rect x="393" y="70" width="34" height="32" rx="2" fill="#9B8060"/>
+            <line x1="388" y1="114" x2="432" y2="114" stroke="#7A6045" stroke-width="1.5"/>
+            <line x1="410" y1="98" x2="410" y2="130" stroke="#7A6045" stroke-width="1.5"/>
+            <line x1="393" y1="86" x2="427" y2="86" stroke="#8A7050" stroke-width="1.5"/>
+            <!-- Junk: old chair -->
+            <rect x="440" y="100" width="32" height="32" rx="2" fill="#5C4838"/>
+            <rect x="444" y="84" width="24" height="20" rx="3" fill="#6B5242"/>
+            <!-- Exhaust pipe -->
+            <rect x="488" y="187" width="18" height="5" rx="2" fill="#2D0055"/>
+            <!-- Exhaust puffs -->
+            <circle class="truck-puff" cx="500" cy="183" r="9" fill="rgba(180,180,200,0.55)"/>
+            <circle class="truck-puff" cx="500" cy="183" r="7" fill="rgba(160,160,185,0.45)" style="animation-delay:1.5s"/>
+            <circle class="truck-puff" cx="500" cy="183" r="5" fill="rgba(140,140,170,0.35)" style="animation-delay:2.05s"/>
+            <!-- Front wheel -->
+            <g class="truck-wheel">
+              <circle cx="148" cy="245" r="36" fill="#1a1a1a"/>
+              <circle cx="148" cy="245" r="26" fill="#2d2d2d"/>
+              <line x1="148" y1="219" x2="148" y2="271" stroke="#444" stroke-width="5" stroke-linecap="round"/>
+              <line x1="122" y1="245" x2="174" y2="245" stroke="#444" stroke-width="5" stroke-linecap="round"/>
+              <line x1="130" y1="227" x2="166" y2="263" stroke="#3a3a3a" stroke-width="5" stroke-linecap="round"/>
+              <line x1="166" y1="227" x2="130" y2="263" stroke="#3a3a3a" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="148" cy="245" r="10" fill="#555"/>
+              <circle cx="148" cy="245" r="5" fill="#666"/>
+            </g>
+            <!-- Rear wheel -->
+            <g class="truck-wheel">
+              <circle cx="388" cy="245" r="36" fill="#1a1a1a"/>
+              <circle cx="388" cy="245" r="26" fill="#2d2d2d"/>
+              <line x1="388" y1="219" x2="388" y2="271" stroke="#444" stroke-width="5" stroke-linecap="round"/>
+              <line x1="362" y1="245" x2="414" y2="245" stroke="#444" stroke-width="5" stroke-linecap="round"/>
+              <line x1="370" y1="227" x2="406" y2="263" stroke="#3a3a3a" stroke-width="5" stroke-linecap="round"/>
+              <line x1="406" y1="227" x2="370" y2="263" stroke="#3a3a3a" stroke-width="5" stroke-linecap="round"/>
+              <circle cx="388" cy="245" r="10" fill="#555"/>
+              <circle cx="388" cy="245" r="5" fill="#666"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="service-section">
     <div class="service-section-inner">
@@ -359,19 +500,6 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     </div>
   </div>
 
-  <section class="about-section">
-    <div class="about-inner">
-      <h2 class="section-heading">About Tony Frias</h2>
-      <div class="section-heading-accent"></div>
-      <div class="about-text">
-        <p>Junk Brawlers was started by Antonio "Tony" Frias in 2024 — a young North Georgia entrepreneur who saw a need in the Dawsonville area and decided to fill it. Tony founded Junk Brawlers LLC with one mission: show up fast, charge fairly, and leave the place cleaner than you found it.</p>
-        <p>When you call Junk Brawlers, you're talking directly to Tony — the same person who will show up at your door with a truck and a crew ready to work. No call centers, no middlemen, no excuses. That's why every one of his 48 Google reviews is five stars, and why customers name him personally in their reviews.</p>
-        <p>Tony is based in Dawsonville, GA and serves the North Georgia mountains and foothills — from Blue Ridge and Ellijay in the north to Cumming and Gainesville in the south.</p>
-        <a href="about.html" class="btn-primary" style="margin-top:8px;">Tony's Full Story →</a>
-      </div>
-    </div>
-  </section>
-
   <div class="why-choose-section">
     <div class="why-choose-inner">
       <h2 class="section-heading light">Why Junk Brawlers Wins</h2>
@@ -436,7 +564,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     <h2>Ready to Get That Junk Out?</h2>
     <p>Free quote · No obligation · 7 days a week · Fast response across North Georgia</p>
     <div class="hero-buttons" style="justify-content:center;">
-      <a href="#" class="btn-ghost" data-modal="quote">GET A FREE QUOTE</a>
+      <a href="contact.html" class="btn-ghost" data-modal="quote">GET A FREE BRAWL QUOTE</a>
       <a href="tel:4046329165" class="btn-ghost">CALL (404) 632-9165</a>
     </div>
   </div>
@@ -490,7 +618,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     </div>
   </div>
 
-  <script src="js/chat-widget.js"
+  <script defer src="js/chat-widget.js"
           data-client="junk-brawlers"
           data-name="Tony"
           data-avatar=""
@@ -502,6 +630,6 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
           data-color-header="#1a0030"
           data-auto-open="7000"
           data-quick-replies="Get a free quote|Schedule a pickup|What do you haul?"></script>
-  <script src="js/main.js"></script>
+  <script defer src="js/main.js"></script>
 </body>
 </html>
