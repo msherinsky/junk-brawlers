@@ -20,6 +20,7 @@
   <meta name="twitter:image" content="https://junk-brawlers.vercel.app/images/logo.png">
   <link rel="icon" href="images/logo.png">
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-condensed-800.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-400.woff2" crossorigin>
 <style>
 @font-face{font-family:'Barlow';font-style:normal;font-weight:400;font-display:optional;src:url(fonts/barlow-400.woff2)format('woff2')}@font-face{font-family:'Barlow';font-style:normal;font-weight:500;font-display:optional;src:url(fonts/barlow-500.woff2)format('woff2')}@font-face{font-family:'Barlow';font-style:normal;font-weight:600;font-display:optional;src:url(fonts/barlow-600.woff2)format('woff2')}@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:optional;src:url(fonts/barlow-700.woff2)format('woff2')}@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:optional;src:url(fonts/barlow-condensed-600.woff2)format('woff2')}@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:optional;src:url(fonts/barlow-condensed-700.woff2)format('woff2')}@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:800;font-display:optional;src:url(fonts/barlow-condensed-800.woff2)format('woff2')}
 :root{--color-purple:#8000FF;--color-purple-dark:#6600CC;--color-purple-deeper:#4D0099;--color-purple-mid:#D8B4FE;--color-purple-light:#F5F0FF;--color-header:#5500AA;--color-hero-bg:#0D0010;--color-dark:#1A1A1A;--color-footer:#0A000F;--color-light-alt:#F8F5FF;--color-white:#FFFFFF;--color-body:#1A1A2E;--color-border:#E0D5F5;--font-heading:'Barlow Condensed',sans-serif;--font:'Barlow',sans-serif;--radius-card:6px;--radius-pill:22px;--transition:0.25s ease}
@@ -343,6 +344,27 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     </button>
   </header>
 
+  <main>
+
+  <!-- ① HERO ─────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="hero-bg" style="background:radial-gradient(ellipse at 65% 45%,rgba(110,0,220,0.95) 0%,rgba(28,0,55,0.9) 45%,#04000E 72%);opacity:1;"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">North Georgia Homeowners: Same-Day Pickup Available →</span>
+      <div class="hero-badge">
+        <span class="hero-stars">★★★★★</span>
+        <span class="hero-badge-text"><strong>5.0 Stars</strong> · 48 Google Reviews</span>
+      </div>
+      <h1>Call Before Noon.<br><span>Your Junk Is Gone by Tonight.</span></h1>
+      <p>Tony Frias (not a call center — Tony himself) shows up within 30 minutes, hauls everything out, sweeps up after, and charges you the exact price he quoted. 48 five-star reviews. 30+ cities. 7 days a week.</p>
+      <div class="hero-buttons">
+        <a href="contact.html" class="btn-primary" data-modal="quote">GET A FREE BRAWL QUOTE</a>
+        <a href="tel:4046329165" class="btn-ghost">CALL (404) 632-9165</a>
+      </div>
+    </div>
+  </section>
+
   <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
     <a href="index.html">Home</a>
     <a href="about.html">About Tony</a>
@@ -376,27 +398,6 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
       <a href="tel:4046329165" class="btn-phone">(404) 632-9165</a>
     </div>
   </nav>
-
-  <main>
-
-  <!-- ① HERO ─────────────────────────────────────────── -->
-  <section class="hero">
-    <div class="hero-bg" style="background:radial-gradient(ellipse at 65% 45%,rgba(110,0,220,0.95) 0%,rgba(28,0,55,0.9) 45%,#04000E 72%);opacity:1;"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <span class="hero-eyebrow">North Georgia Homeowners: Same-Day Pickup Available →</span>
-      <div class="hero-badge">
-        <span class="hero-stars">★★★★★</span>
-        <span class="hero-badge-text"><strong>5.0 Stars</strong> · 48 Google Reviews</span>
-      </div>
-      <h1>Call Before Noon.<br><span>Your Junk Is Gone by Tonight.</span></h1>
-      <p>Tony Frias (not a call center — Tony himself) shows up within 30 minutes, hauls everything out, sweeps up after, and charges you the exact price he quoted. 48 five-star reviews. 30+ cities. 7 days a week.</p>
-      <div class="hero-buttons">
-        <a href="contact.html" class="btn-primary" data-modal="quote">GET A FREE BRAWL QUOTE</a>
-        <a href="tel:4046329165" class="btn-ghost">CALL (404) 632-9165</a>
-      </div>
-    </div>
-  </section>
 
   <!-- ② THREE QUICK OUTCOMES ───────────────────────── -->
   <div class="outcomes-bar">
