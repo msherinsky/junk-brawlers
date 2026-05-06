@@ -34,16 +34,10 @@
 
   <meta name="twitter:image" content="https://junk-brawlers.vercel.app/images/logo.png">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=optional" media="print" onload="this.media='all'">
-
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&display=optional"></noscript>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-condensed-800.woff2" crossorigin>
 
 <style>
-
+@font-face{font-family:'Barlow';font-style:normal;font-weight:400;font-display:optional;src:url(fonts/barlow-400.woff2)format('woff2')}@font-face{font-family:'Barlow';font-style:normal;font-weight:500;font-display:optional;src:url(fonts/barlow-500.woff2)format('woff2')}@font-face{font-family:'Barlow';font-style:normal;font-weight:600;font-display:optional;src:url(fonts/barlow-600.woff2)format('woff2')}@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:optional;src:url(fonts/barlow-700.woff2)format('woff2')}@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:optional;src:url(fonts/barlow-condensed-600.woff2)format('woff2')}@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:optional;src:url(fonts/barlow-condensed-700.woff2)format('woff2')}@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:800;font-display:optional;src:url(fonts/barlow-condensed-800.woff2)format('woff2')}
 :root{--color-purple:#8000FF;--color-purple-dark:#6600CC;--color-purple-deeper:#4D0099;--color-purple-mid:#D8B4FE;--color-purple-light:#F5F0FF;--color-header:#5500AA;--color-hero-bg:#0D0010;--color-dark:#1A1A1A;--color-footer:#0A000F;--color-light-alt:#F8F5FF;--color-white:#FFFFFF;--color-body:#1A1A2E;--color-border:#E0D5F5;--font-heading:'Barlow Condensed',sans-serif;--font:'Barlow',sans-serif;--radius-card:6px;--radius-pill:22px;--transition:0.25s ease}
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -373,13 +367,13 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 
       <div class="card-grid">
 
-        <div class="service-card"><span class="card-icon">🏠</span><h3>Room-by-Room Clearing</h3><p>We work through every room systematically — living areas, bedrooms, kitchens, bathrooms, and hallways.</p></div>
+        <div class="service-card"><span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true" style="vertical-align:-0.125em"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span><h3>Room-by-Room Clearing</h3><p>We work through every room systematically — living areas, bedrooms, kitchens, bathrooms, and hallways.</p></div>
 
-        <div class="service-card"><span class="card-icon">📦</span><h3>Accumulated Items</h3><p>Boxes, bags, clothing, papers, collections, furniture, and years of accumulated household items.</p></div>
+        <div class="service-card"><span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true" style="vertical-align:-0.125em"><path d="M20 7l-8-4-8 4v10l8 4 8-4V7zm-8-2.32L17.5 7.5 12 10.32 6.5 7.5 12 4.68zM5 9.17l6.5 3.25v6.41L5 15.58V9.17zm7.5 9.66v-6.41L19 9.17v6.41l-6.5 3.25z"/></svg></span><h3>Accumulated Items</h3><p>Boxes, bags, clothing, papers, collections, furniture, and years of accumulated household items.</p></div>
 
-        <div class="service-card"><span class="card-icon">🏠</span><h3>Garage &amp; Outdoor Areas</h3><p>We clear garages, sheds, porches, and outdoor areas as part of the full cleanout.</p></div>
+        <div class="service-card"><span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true" style="vertical-align:-0.125em"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></span><h3>Garage &amp; Outdoor Areas</h3><p>We clear garages, sheds, porches, and outdoor areas as part of the full cleanout.</p></div>
 
-        <div class="service-card"><span class="card-icon">🌿</span><h3>Donation Sorting</h3><p>We sort through for usable items that can go to North Georgia charities before anything reaches a landfill.</p></div>
+        <div class="service-card"><span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true" style="vertical-align:-0.125em"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20c9 0 14-8 14-8-1 2-8 3-9 3 1-1 2.31-2.32 3-4C14.53 10.13 15.45 9 17 8z"/></svg></span><h3>Donation Sorting</h3><p>We sort through for usable items that can go to North Georgia charities before anything reaches a landfill.</p></div>
 
       </div>
 
@@ -396,25 +390,25 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
       <div class="steps-timeline">
         <div class="step-item">
           <div class="step-bubble">1</div>
-          <div class="step-icon">📞</div>
+          <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true" style="vertical-align:-0.125em"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></div>
           <h3>Call or Request Online</h3>
           <p>Call (404) 632-9165 or fill out our quote form. Tony typically responds within minutes.</p>
         </div>
         <div class="step-item">
           <div class="step-bubble">2</div>
-          <div class="step-icon">🚛</div>
+          <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true" style="vertical-align:-0.125em"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2c0 1.66 1.34 3 3 3s3-1.34 3-3h6c0 1.66 1.34 3 3 3s3-1.34 3-3h2v-5l-3-4zM6 18.5c-.83 0-1.5-.67-1.5-1.5S5.17 15.5 6 15.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm13.5-9l1.96 2.5H17V9.5h2.5zm.5 9c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg></div>
           <h3>We Show Up</h3>
           <p>Tony and his crew arrive at your scheduled time — no waiting around all day for a 4-hour window.</p>
         </div>
         <div class="step-item">
           <div class="step-bubble">3</div>
-          <div class="step-icon">💲</div>
+          <div class="step-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true" style="vertical-align:-0.125em"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
           <h3>You Get a Quote</h3>
           <p>We look at the job and give you a clear, no-obligation price before we lift a single item.</p>
         </div>
         <div class="step-item">
           <div class="step-bubble">4</div>
-          <div class="step-icon">✅</div>
+          <div class="step-icon">✓</div>
           <h3>It's Gone</h3>
           <p>We work respectfully and thoroughly until the space is fully cleared.</p>
         </div>
@@ -524,7 +518,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 
       <div class="footer-col"><h3>Services</h3><ul><li><a href="junk-removal.html">Junk Removal</a></li><li><a href="hoarder-cleanouts.html">Hoarder Cleanouts</a></li><li><a href="estate-cleanouts.html">Estate Cleanouts</a></li><li><a href="garage-cleanouts.html">Garage Cleanouts</a></li></ul></div>
 
-      <div class="footer-col"><h3>Follow Tony</h3><div class="social-icons"><a href="https://www.facebook.com/profile.php?id=100008604212074" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener">f</a><a href="https://www.instagram.com/junkbrawlers" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener">📷</a></div><h3 style="margin-top:24px;">Legal</h3><ul><li><a href="terms.html">Terms</a></li><li><a href="privacy.html">Privacy</a></li></ul></div>
+      <div class="footer-col"><h3>Follow Tony</h3><div class="social-icons"><a href="https://www.facebook.com/profile.php?id=100008604212074" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener">f</a><a href="https://www.instagram.com/junkbrawlers" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true" style="vertical-align:-0.125em"><path d="M20 4h-3.17L15 2H9L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8 13c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg></a></div><h3 style="margin-top:24px;">Legal</h3><ul><li><a href="terms.html">Terms</a></li><li><a href="privacy.html">Privacy</a></li></ul></div>
 
     </div>
 
