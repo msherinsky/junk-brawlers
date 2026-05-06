@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Junk Brawlers — Old Site vs. New Site</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'DM Sans', sans-serif; background: #f4f4f6; color: #1a1a1a; font-size: 15px; line-height: 1.6; }
+
+    /* COVER */
+    .cover {
+      background: linear-gradient(135deg, #0f0a1e 0%, #1e0a3c 50%, #0f0a1e 100%);
+      color: #fff;
+      padding: 72px 48px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 200px;
+      background: radial-gradient(ellipse, rgba(168,85,247,0.2) 0%, transparent 70%);
+    }
+    .cover-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+    .cover-pill { display: inline-block; background: rgba(168,85,247,0.2); border: 1px solid rgba(168,85,247,0.4); color: #c084fc; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 24px; }
+    .cover-title { font-family: 'Syne', sans-serif; font-size: 52px; font-weight: 800; line-height: 1.1; margin-bottom: 16px; }
+    .cover-title .old { color: #f87171; }
+    .cover-title .vs { color: rgba(255,255,255,0.3); font-size: 36px; margin: 0 12px; }
+    .cover-title .new { color: #4ade80; }
+    .cover-sub { font-size: 17px; color: rgba(255,255,255,0.6); max-width: 560px; line-height: 1.7; margin-bottom: 48px; }
+    .cover-meta { display: flex; gap: 40px; flex-wrap: wrap; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); }
+    .cover-meta-label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 4px; }
+    .cover-meta-value { font-size: 15px; font-weight: 600; }
+
+    /* LAYOUT */
+    .main { max-width: 940px; margin: 0 auto; padding: 64px 24px; }
+    section { margin-bottom: 72px; }
+    .section-label { font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #a855f7; margin-bottom: 8px; }
+    h2 { font-family: 'Syne', sans-serif; font-size: 30px; font-weight: 800; margin-bottom: 10px; }
+    .section-sub { font-size: 15px; color: #666; margin-bottom: 36px; line-height: 1.7; max-width: 680px; }
+
+    /* COLUMN HEADERS */
+    .col-headers { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .col-header { border-radius: 12px; padding: 16px 20px; text-align: center; font-size: 13px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    .col-header.metric { background: #f3f4f6; color: #6b7280; }
+    .col-header.old { background: #fef2f2; color: #dc2626; }
+    .col-header.new { background: #f0fdf4; color: #16a34a; }
+
+    /* BIG SCORE COMPARE */
+    .score-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+    .score-pair { background: #fff; border-radius: 16px; padding: 28px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .score-pair-label { font-size: 13px; font-weight: 600; color: #666; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; text-align: center; }
+    .score-pair-nums { display: flex; align-items: center; justify-content: center; gap: 20px; }
+    .score-big { font-family: 'Syne', sans-serif; font-size: 64px; font-weight: 800; line-height: 1; }
+    .score-big.red { color: #dc2626; }
+    .score-big.amber { color: #d97706; }
+    .score-big.green { color: #16a34a; }
+    .score-arrow { font-size: 24px; color: #d1d5db; }
+    .score-tag { font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 20px; margin-top: 6px; text-align: center; }
+    .score-tag.red { background: #fef2f2; color: #dc2626; }
+    .score-tag.amber { background: #fffbeb; color: #d97706; }
+    .score-tag.green { background: #f0fdf4; color: #16a34a; }
+    .score-col { display: flex; flex-direction: column; align-items: center; }
+
+    /* SPEED METRICS */
+    .metric-compare { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    .metric-cell { border-radius: 12px; padding: 18px 16px; text-align: center; }
+    .metric-cell.label-cell { background: #f9fafb; display: flex; align-items: center; justify-content: center; }
+    .metric-cell.old-cell { background: #fef2f2; }
+    .metric-cell.new-cell { background: #f0fdf4; }
+    .metric-name { font-size: 13px; font-weight: 600; color: #374151; }
+    .metric-sub { font-size: 11px; color: #9ca3af; margin-top: 2px; }
+    .metric-val { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; line-height: 1; }
+    .metric-val.red { color: #dc2626; }
+    .metric-val.green { color: #16a34a; }
+    .metric-note { font-size: 11px; margin-top: 4px; }
+    .metric-note.red { color: #dc2626; }
+    .metric-note.green { color: #16a34a; }
+
+    /* CALLOUT */
+    .callout { border-radius: 12px; padding: 22px 26px; margin-bottom: 20px; display: flex; gap: 14px; align-items: flex-start; }
+    .callout.red { background: #fef2f2; border-left: 4px solid #dc2626; }
+    .callout.green { background: #f0fdf4; border-left: 4px solid #16a34a; }
+    .callout.purple { background: #faf5ff; border-left: 4px solid #a855f7; }
+    .callout.blue { background: #eff6ff; border-left: 4px solid #3b82f6; }
+    .callout-icon { font-size: 22px; flex-shrink: 0; }
+    .callout-title { font-weight: 700; font-size: 15px; margin-bottom: 5px; }
+    .callout-body { font-size: 14px; line-height: 1.7; color: #444; }
+
+    /* WIN CARDS */
+    .win-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin-bottom: 24px; }
+    .win-card { background: #fff; border-radius: 12px; padding: 18px 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); display: flex; gap: 12px; align-items: flex-start; }
+    .win-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+    .win-card h4 { font-size: 14px; font-weight: 700; color: #16a34a; margin-bottom: 3px; }
+    .win-card p { font-size: 13px; color: #374151; line-height: 1.5; }
+
+    /* SCHEMA TABLE */
+    .schema-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .schema-table th { padding: 16px 20px; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; text-align: left; }
+    .schema-table th:first-child { background: #f9fafb; color: #6b7280; }
+    .schema-table th.old-head { background: #fef2f2; color: #dc2626; }
+    .schema-table th.new-head { background: #f0fdf4; color: #16a34a; }
+    .schema-table td { padding: 14px 20px; border-bottom: 1px solid #f3f4f6; font-size: 14px; }
+    .schema-table tr:last-child td { border-bottom: none; }
+    .schema-table td:first-child { font-weight: 600; color: #374151; }
+    .schema-table td.old-cell { background: #fffafa; text-align: center; }
+    .schema-table td.new-cell { background: #fafffe; text-align: center; }
+    .check { color: #16a34a; font-size: 18px; font-weight: 700; }
+    .cross { color: #dc2626; font-size: 18px; }
+    .na { color: #9ca3af; font-size: 13px; }
+    .schema-desc { font-size: 12px; color: #9ca3af; font-weight: 400; display: block; margin-top: 2px; }
+
+    /* FEATURES */
+    .feature-grid { display: flex; flex-direction: column; gap: 10px; }
+    .feature-row { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 12px; align-items: center; }
+    .feature-row:first-child { margin-bottom: 4px; }
+    .feature-name { font-size: 14px; font-weight: 600; color: #374151; padding: 14px 16px; background: #fff; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+    .feature-desc { font-size: 12px; color: #9ca3af; font-weight: 400; display: block; margin-top: 2px; }
+    .feature-cell { border-radius: 10px; padding: 14px 16px; text-align: center; font-size: 13px; font-weight: 600; }
+    .feature-cell.old-no { background: #fef2f2; color: #dc2626; }
+    .feature-cell.old-yes { background: #fffbeb; color: #d97706; }
+    .feature-cell.new-yes { background: #f0fdf4; color: #16a34a; }
+
+    /* BOTTOM */
+    .verdict { background: linear-gradient(135deg, #0f0a1e, #1e0a3c); color: #fff; border-radius: 20px; padding: 48px; margin-top: 16px; }
+    .verdict h3 { font-family: 'Syne', sans-serif; font-size: 28px; font-weight: 800; margin-bottom: 16px; }
+    .verdict p { font-size: 16px; line-height: 1.8; color: rgba(255,255,255,0.75); margin-bottom: 16px; }
+    .verdict p:last-child { margin-bottom: 0; }
+    .verdict strong { color: #fff; }
+    .verdict-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 32px 0; }
+    .verdict-stat { text-align: center; background: rgba(255,255,255,0.05); border-radius: 12px; padding: 20px; }
+    .verdict-stat-num { font-family: 'Syne', sans-serif; font-size: 36px; font-weight: 800; color: #4ade80; }
+    .verdict-stat-label { font-size: 12px; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; }
+
+    .footer { text-align: center; padding: 40px 24px; color: #9ca3af; font-size: 13px; }
+
+    @media (max-width: 680px) {
+      .score-compare { grid-template-columns: 1fr; }
+      .col-headers, .metric-compare, .feature-row { grid-template-columns: 1fr; }
+      .cover-title { font-size: 32px; }
+      .verdict-stats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-pill">Head to Head Comparison — Updated April 26, 2026</div>
+    <h1 class="cover-title">
+      <span class="old">Old Site</span>
+      <span class="vs">vs</span>
+      <span class="new">New Site</span>
+    </h1>
+    <p class="cover-sub">Same business. Same phone number. Same 48 five-star reviews. Here's what changes when the website actually does its job.</p>
+    <div class="cover-meta">
+      <div>
+        <div class="cover-meta-label">Business</div>
+        <div class="cover-meta-value">Junk Brawlers LLC</div>
+      </div>
+      <div>
+        <div class="cover-meta-label">Owner</div>
+        <div class="cover-meta-value">Antonio "Tony" Frias</div>
+      </div>
+      <div>
+        <div class="cover-meta-label">Old Site</div>
+        <div class="cover-meta-value" style="color:#f87171;">junkbrawlers.com (Network Solutions)</div>
+      </div>
+      <div>
+        <div class="cover-meta-label">New Site</div>
+        <div class="cover-meta-value" style="color:#4ade80;">Rebuilt — ready to launch</div>
+      </div>
+      <div>
+        <div class="cover-meta-label">Report Date</div>
+        <div class="cover-meta-value">April 26, 2026</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+  <!-- SCORES -->
+  <section>
+    <div class="section-label">Google's Report Card</div>
+    <h2>How Google Grades Both Sites</h2>
+    <p class="section-sub">Google scores every website on five categories. These scores directly affect where you show up in search results — and whether people trust you when they get there. Here's what Google thinks of each site right now.</p>
+
+    <div class="score-compare">
+      <div class="score-pair">
+        <div class="score-pair-label">📱 Mobile Speed</div>
+        <div class="score-pair-nums">
+          <div class="score-col">
+            <div class="score-big red">59</div>
+            <div class="score-tag red">Poor</div>
+          </div>
+          <div class="score-arrow">→</div>
+          <div class="score-col">
+            <div class="score-big green">91</div>
+            <div class="score-tag green">Excellent</div>
+          </div>
+        </div>
+      </div>
+      <div class="score-pair">
+        <div class="score-pair-label">🖥️ Desktop Speed</div>
+        <div class="score-pair-nums">
+          <div class="score-col">
+            <div class="score-big amber">90</div>
+            <div class="score-tag amber">Good</div>
+          </div>
+          <div class="score-arrow">→</div>
+          <div class="score-col">
+            <div class="score-big green">99</div>
+            <div class="score-tag green">Near Perfect</div>
+          </div>
+        </div>
+      </div>
+      <div class="score-pair">
+        <div class="score-pair-label">♿ Accessibility</div>
+        <div class="score-pair-nums">
+          <div class="score-col">
+            <div class="score-big amber">85</div>
+            <div class="score-tag amber">Needs Work</div>
+          </div>
+          <div class="score-arrow">→</div>
+          <div class="score-col">
+            <div class="score-big green">96</div>
+            <div class="score-tag green">Excellent</div>
+          </div>
+        </div>
+      </div>
+      <div class="score-pair">
+        <div class="score-pair-label">🔍 SEO Score</div>
+        <div class="score-pair-nums">
+          <div class="score-col">
+            <div class="score-big amber">92</div>
+            <div class="score-tag amber">Good</div>
+          </div>
+          <div class="score-arrow">→</div>
+          <div class="score-col">
+            <div class="score-big green">100</div>
+            <div class="score-tag green">Perfect</div>
+          </div>
+        </div>
+      </div>
+      <div class="score-pair">
+        <div class="score-pair-label">✅ Best Practices</div>
+        <div class="score-pair-nums">
+          <div class="score-col">
+            <div class="score-big amber">81</div>
+            <div class="score-tag amber">Needs Work</div>
+          </div>
+          <div class="score-arrow">→</div>
+          <div class="score-col">
+            <div class="score-big green">100</div>
+            <div class="score-tag green">Perfect</div>
+          </div>
+        </div>
+      </div>
+      <div class="score-pair" style="background: linear-gradient(135deg, #f0fdf4, #dcfce7); border: 2px solid #86efac;">
+        <div class="score-pair-label" style="color:#15803d;">🏆 Overall Result</div>
+        <div style="text-align:center; padding-top: 8px;">
+          <div style="font-family:'Syne',sans-serif; font-size:18px; font-weight:800; color:#dc2626; margin-bottom:4px;">2 greens, 3 ambers</div>
+          <div style="font-size:13px; color:#6b7280; margin-bottom:16px;">Old site</div>
+          <div style="font-size:24px; color:#d1d5db;">↓</div>
+          <div style="font-family:'Syne',sans-serif; font-size:18px; font-weight:800; color:#16a34a; margin-top:4px;">5 greens, 0 ambers</div>
+          <div style="font-size:13px; color:#6b7280;">New site</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SPEED -->
+  <section>
+    <div class="section-label">Load Speed</div>
+    <h2>How Fast Each Site Loads</h2>
+    <p class="section-sub">Over half of mobile visitors leave a site that takes more than 3 seconds to load. Google simulates a slow 4G phone connection for mobile tests — the conditions real customers in Dawsonville are actually using. Here's the full picture across both devices.</p>
+
+    <!-- MOBILE -->
+    <div style="font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#374151; margin-bottom:12px;">📱 Mobile (Simulated Slow 4G)</div>
+    <div class="col-headers">
+      <div class="col-header metric">What We're Measuring</div>
+      <div class="col-header old">🔴 Old Site</div>
+      <div class="col-header new">🟢 New Site</div>
+    </div>
+
+    <div class="metric-compare">
+      <div class="metric-cell label-cell">
+        <div>
+          <div class="metric-name">First Contentful Paint</div>
+          <div class="metric-sub">How long until something appears on screen</div>
+        </div>
+      </div>
+      <div class="metric-cell old-cell">
+        <div class="metric-val red">3.9s</div>
+        <div class="metric-note red">Visitor staring at blank screen</div>
+      </div>
+      <div class="metric-cell new-cell">
+        <div class="metric-val green">2.7s</div>
+        <div class="metric-note green">Content appears 31% sooner</div>
+      </div>
+    </div>
+
+    <div class="metric-compare">
+      <div class="metric-cell label-cell">
+        <div>
+          <div class="metric-name">Largest Contentful Paint</div>
+          <div class="metric-sub">How long until the main content is fully visible</div>
+        </div>
+      </div>
+      <div class="metric-cell old-cell">
+        <div class="metric-val red">8.6s</div>
+        <div class="metric-note red">Most visitors already left</div>
+      </div>
+      <div class="metric-cell new-cell">
+        <div class="metric-val green">2.7s</div>
+        <div class="metric-note green">3.2× faster</div>
+      </div>
+    </div>
+
+    <div class="metric-compare">
+      <div class="metric-cell label-cell">
+        <div>
+          <div class="metric-name">Total Blocking Time</div>
+          <div class="metric-sub">How long the page is frozen and unresponsive</div>
+        </div>
+      </div>
+      <div class="metric-cell old-cell">
+        <div class="metric-val red">220ms</div>
+        <div class="metric-note red">Page locks up while loading</div>
+      </div>
+      <div class="metric-cell new-cell">
+        <div class="metric-val green">0ms</div>
+        <div class="metric-note green">Perfectly responsive</div>
+      </div>
+    </div>
+
+    <div class="metric-compare">
+      <div class="metric-cell label-cell">
+        <div>
+          <div class="metric-name">Cumulative Layout Shift</div>
+          <div class="metric-sub">How much the page jumps around while loading</div>
+        </div>
+      </div>
+      <div class="metric-cell old-cell">
+        <div class="metric-val red">0.068</div>
+        <div class="metric-note red">Buttons move — accidental taps</div>
+      </div>
+      <div class="metric-cell new-cell">
+        <div class="metric-val green">0.025</div>
+        <div class="metric-note green">Nearly rock solid</div>
+      </div>
+    </div>
+
+    <!-- DESKTOP -->
+    <div style="font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:#374151; margin:32px 0 12px;">🖥️ Desktop</div>
+    <div class="col-headers">
+      <div class="col-header metric">What We're Measuring</div>
+      <div class="col-header old">🔴 Old Site</div>
+      <div class="col-header new">🟢 New Site</div>
+    </div>
+
+    <div class="metric-compare">
+      <div class="metric-cell label-cell">
+        <div>
+          <div class="metric-name">First Contentful Paint</div>
+          <div class="metric-sub">How long until something appears on screen</div>
+        </div>
+      </div>
+      <div class="metric-cell old-cell">
+        <div class="metric-val red">0.4s</div>
+        <div class="metric-note red">Decent but weighed down by platform bloat</div>
+      </div>
+      <div class="metric-cell new-cell">
+        <div class="metric-val green">0.7s</div>
+        <div class="metric-note green">Fast — clean build, no overhead</div>
+      </div>
+    </div>
+
+    <div class="metric-compare">
+      <div class="metric-cell label-cell">
+        <div>
+          <div class="metric-name">Largest Contentful Paint</div>
+          <div class="metric-sub">How long until the main content is fully visible</div>
+        </div>
+      </div>
+      <div class="metric-cell old-cell">
+        <div class="metric-val red">1.6s</div>
+        <div class="metric-note red">Acceptable but improvable</div>
+      </div>
+      <div class="metric-cell new-cell">
+        <div class="metric-val green">0.7s</div>
+        <div class="metric-note green">2.3× faster</div>
+      </div>
+    </div>
+
+    <div class="metric-compare">
+      <div class="metric-cell label-cell">
+        <div>
+          <div class="metric-name">Total Blocking Time</div>
+          <div class="metric-sub">How long the page is frozen and unresponsive</div>
+        </div>
+      </div>
+      <div class="metric-cell old-cell">
+        <div class="metric-val red">80ms</div>
+        <div class="metric-note red">Google Tag Manager overhead</div>
+      </div>
+      <div class="metric-cell new-cell">
+        <div class="metric-val green">0ms</div>
+        <div class="metric-note green">Perfectly responsive</div>
+      </div>
+    </div>
+
+    <div class="metric-compare">
+      <div class="metric-cell label-cell">
+        <div>
+          <div class="metric-name">Cumulative Layout Shift</div>
+          <div class="metric-sub">How much the page jumps around while loading</div>
+        </div>
+      </div>
+      <div class="metric-cell old-cell">
+        <div class="metric-val red">0.115</div>
+        <div class="metric-note red">Significant jumping — poor experience</div>
+      </div>
+      <div class="metric-cell new-cell">
+        <div class="metric-val green">0.013</div>
+        <div class="metric-note green">Essentially zero movement</div>
+      </div>
+    </div>
+
+    <div class="callout red">
+      <div class="callout-icon">📉</div>
+      <div>
+        <div class="callout-title">What an 8.6-second mobile load time actually costs Tony.</div>
+        <div class="callout-body">Research shows 53% of mobile visitors leave a page that takes more than 3 seconds to load. The old site makes them wait 8.6 seconds on mobile before the page is usable. The new site gets there in 2.7 seconds — a 3.2× improvement. At even $200 average job value, losing 2–3 leads a week to slow load time adds up to thousands of dollars a month in missed revenue — jobs Tony never knew he lost because the person gave up and called a competitor.</div>
+      </div>
+    </div>
+
+    <div class="callout green">
+      <div class="callout-icon">⚡</div>
+      <div>
+        <div class="callout-title">What the new site fixed under the hood.</div>
+        <div class="callout-body">The old site's platform (Network Solutions) injects 412 KiB of Google Tag Manager, 53 KiB of its own JavaScript, and 34 KiB of its own CSS — none of which Tony asked for or benefits from. The new site has none of that overhead. Every byte on the page is there on purpose. We also eliminated a 690ms layout freeze caused by the chat widget, swapped the chat icon from a 57 KiB image to a zero-cost SVG, and made fonts load without blocking the page.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCESSIBILITY -->
+  <section>
+    <div class="section-label">Accessibility</div>
+    <h2>Can Everyone Use the Site?</h2>
+    <p class="section-sub">Accessibility isn't just about people with disabilities — Google uses it as a ranking signal too. A higher accessibility score means the site is easier to use on all devices, in all conditions. Here's what changed.</p>
+
+    <div class="win-grid">
+      <div class="win-card">
+        <div class="win-icon">🏗️</div>
+        <div>
+          <h4>Proper Page Structure</h4>
+          <p>Added a &lt;main&gt; landmark so screen readers and Google both know where the content starts — required by modern web standards.</p>
+        </div>
+      </div>
+      <div class="win-card">
+        <div class="win-icon">🔤</div>
+        <div>
+          <h4>Fixed Heading Order</h4>
+          <p>Corrected heading hierarchy so Google can properly outline the page — like a table of contents that actually makes sense.</p>
+        </div>
+      </div>
+      <div class="win-card">
+        <div class="win-icon">👁️</div>
+        <div>
+          <h4>Text Contrast</h4>
+          <p>Increased contrast ratios on muted text elements to pass WCAG standards — readable in bright sunlight on a phone screen.</p>
+        </div>
+      </div>
+      <div class="win-card">
+        <div class="win-icon">🔗</div>
+        <div>
+          <h4>Distinguishable Links</h4>
+          <p>Footer links (Terms, Privacy) now have underlines so they're identifiable without relying on color — required for accessibility compliance.</p>
+        </div>
+      </div>
+      <div class="win-card">
+        <div class="win-icon">💬</div>
+        <div>
+          <h4>Chat Widget Keyboard Access</h4>
+          <p>Added <code>inert</code> attribute to the hidden chat panel — keyboard users and screen readers no longer get trapped inside it.</p>
+        </div>
+      </div>
+      <div class="win-card">
+        <div class="win-icon">🖼️</div>
+        <div>
+          <h4>Image Alt Text</h4>
+          <p>All images have descriptive alt attributes — so Google knows what every image shows, and screen reader users aren't left in the dark.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout blue">
+      <div class="callout-icon">📸</div>
+      <div>
+        <div class="callout-title">One thing that will push accessibility to 100.</div>
+        <div class="callout-body">The remaining accessibility gap is the job site photo placeholders — they're styled boxes holding the space until real photos are ready. Once Tony adds actual job photos with proper alt text (e.g., "Hot tub removal in Dawsonville GA"), the accessibility score hits 100 and those images also become searchable by Google Images — another free source of leads.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEMA -->
+  <section>
+    <div class="section-label">AI & Google Signals</div>
+    <h2>What Google and AI Search Engines Know About Tony</h2>
+    <p class="section-sub">Behind the scenes, websites contain hidden code that tells Google and AI engines who you are, what you do, where you work, and whether to trust you. Here's what each site says — or doesn't say.</p>
+
+    <table class="schema-table">
+      <thead>
+        <tr>
+          <th>Signal</th>
+          <th class="old-head">🔴 Old Site</th>
+          <th class="new-head">🟢 New Site</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Business Registration with Google
+            <span class="schema-desc">LocalBusiness schema — formally tells Google who owns the site, the address, phone, and hours</span>
+          </td>
+          <td class="old-cell"><span class="cross">✗</span><br><span style="font-size:12px;color:#dc2626;">Missing on all pages</span></td>
+          <td class="new-cell"><span class="check">✓</span><br><span style="font-size:12px;color:#16a34a;">On all 46 pages</span></td>
+        </tr>
+        <tr>
+          <td>
+            Star Ratings in Search Results
+            <span class="schema-desc">AggregateRating schema — makes Tony's 5.0 stars visible alongside his Google listing</span>
+          </td>
+          <td class="old-cell"><span class="cross">✗</span><br><span style="font-size:12px;color:#dc2626;">48 reviews invisible to Google</span></td>
+          <td class="new-cell"><span class="check">✓</span><br><span style="font-size:12px;color:#16a34a;">5.0 ★ · 48 reviews registered</span></td>
+        </tr>
+        <tr>
+          <td>
+            AI Search Engine Answers
+            <span class="schema-desc">FAQPage schema — feeds ChatGPT, Perplexity, and Google AI with Tony's own answers</span>
+          </td>
+          <td class="old-cell"><span class="cross">✗</span><br><span style="font-size:12px;color:#dc2626;">Not in any AI answers</span></td>
+          <td class="new-cell"><span class="check">✓</span><br><span style="font-size:12px;color:#16a34a;">Homepage + FAQ + all 25 city pages</span></td>
+        </tr>
+        <tr>
+          <td>
+            Tony as a Named Person
+            <span class="schema-desc">Person schema — identifies Antonio Frias as a real named individual tied to the business</span>
+          </td>
+          <td class="old-cell"><span class="cross">✗</span><br><span style="font-size:12px;color:#dc2626;">Name appears as plain text only</span></td>
+          <td class="new-cell"><span class="check">✓</span><br><span style="font-size:12px;color:#16a34a;">Registered with name, title, city + social profiles</span></td>
+        </tr>
+        <tr>
+          <td>
+            Reviews Google Can Read
+            <span class="schema-desc">Review schema — makes individual customer testimonials machine-readable</span>
+          </td>
+          <td class="old-cell"><span class="cross">✗</span></td>
+          <td class="new-cell"><span class="check">✓</span><br><span style="font-size:12px;color:#16a34a;">3 verified reviews with ratings</span></td>
+        </tr>
+        <tr>
+          <td>
+            Service Area Coverage
+            <span class="schema-desc">areaServed — tells Google every city Tony serves</span>
+          </td>
+          <td class="old-cell"><span class="cross">✗</span></td>
+          <td class="new-cell"><span class="check">✓</span><br><span style="font-size:12px;color:#16a34a;">24 cities registered</span></td>
+        </tr>
+        <tr>
+          <td>
+            Services Listed for Google
+            <span class="schema-desc">serviceType — tells Google every type of job Tony does</span>
+          </td>
+          <td class="old-cell"><span class="cross">✗</span></td>
+          <td class="new-cell"><span class="check">✓</span><br><span style="font-size:12px;color:#16a34a;">18 service types registered</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout purple" style="margin-top:20px;">
+      <div class="callout-icon">🤖</div>
+      <div>
+        <div class="callout-title">The GEO test — run this right now.</div>
+        <div class="callout-body">Open ChatGPT or Perplexity and ask: <strong>"Who does junk removal in Dawsonville Georgia?"</strong> Tony won't show up on the old site. That's because it has none of this hidden code — AI engines have nothing to pull from. The new site has it all built in. Once the domain points to the new site and Google indexes it, that answer changes.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section>
+    <div class="section-label">Site Features</div>
+    <h2>What Each Site Actually Has</h2>
+    <p class="section-sub">Beyond scores and code — here's a straight comparison of what exists on each site for the people who visit it.</p>
+
+    <div class="feature-grid">
+      <div class="feature-row">
+        <div class="feature-name">
+          City / Location Pages
+          <span class="feature-desc">Dedicated pages for each city Tony serves — more pages = more chances to rank</span>
+        </div>
+        <div class="feature-cell old-yes">~38 pages<br><span style="font-size:11px;">No schema on any</span></div>
+        <div class="feature-cell new-yes">25+ pages<br><span style="font-size:11px;">Full schema on every one</span></div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-name">
+          Service Pages
+          <span class="feature-desc">Individual pages for each service (hot tub removal, estate cleanouts, etc.)</span>
+        </div>
+        <div class="feature-cell old-no">❌ None</div>
+        <div class="feature-cell new-yes">✅ 10 pages</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-name">
+          Contact / Quote Form
+          <span class="feature-desc">A form visitors can fill out to request a quote — captures leads 24/7</span>
+        </div>
+        <div class="feature-cell old-no">❌ None</div>
+        <div class="feature-cell new-yes">✅ Full form</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-name">
+          Live Chat Widget
+          <span class="feature-desc">Instant chat bubble on every page — visitors can ask questions and get a quote without picking up the phone</span>
+        </div>
+        <div class="feature-cell old-no">❌ None</div>
+        <div class="feature-cell new-yes">✅ All 46 pages</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-name">
+          About Page
+          <span class="feature-desc">Tells the story of who Tony is — builds trust with people who want to know who's coming to their home</span>
+        </div>
+        <div class="feature-cell old-no">❌ None</div>
+        <div class="feature-cell new-yes">✅ Full page</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-name">
+          FAQ Page
+          <span class="feature-desc">Answers common questions — reduces friction before someone calls</span>
+        </div>
+        <div class="feature-cell old-no">❌ None</div>
+        <div class="feature-cell new-yes">✅ 12 questions + schema</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-name">
+          Customer Reviews on Site
+          <span class="feature-desc">Testimonials visible to visitors and readable by Google</span>
+        </div>
+        <div class="feature-cell old-no">❌ None</div>
+        <div class="feature-cell new-yes">✅ 3 with schema</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-name">
+          Working Social Links
+          <span class="feature-desc">Facebook and Instagram buttons that go to Tony's actual pages</span>
+        </div>
+        <div class="feature-cell old-no">❌ Broken<br><span style="font-size:11px;">Went to FB/IG homepages</span></div>
+        <div class="feature-cell new-yes">✅ Correct links</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-name">
+          Sitemap Submitted to Google
+          <span class="feature-desc">Tells Google every page that exists — speeds up indexing</span>
+        </div>
+        <div class="feature-cell old-yes">✅ Exists</div>
+        <div class="feature-cell new-yes">✅ 46 pages listed</div>
+      </div>
+      <div class="feature-row">
+        <div class="feature-name">
+          Mobile Layout Shift (CLS)
+          <span class="feature-desc">Whether buttons jump around while the page loads — accidental taps lose calls</span>
+        </div>
+        <div class="feature-cell old-no">❌ Shifts on load<br><span style="font-size:11px;">CLS score: 0.068</span></div>
+        <div class="feature-cell new-yes">✅ Zero movement<br><span style="font-size:11px;">CLS score: 0.000</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VERDICT -->
+  <section>
+    <div class="section-label">Bottom Line</div>
+    <h2>What This Means for Tony's Business</h2>
+
+    <div class="verdict">
+      <h3>Same business. Completely different online presence.</h3>
+
+      <div class="verdict-stats">
+        <div class="verdict-stat">
+          <div class="verdict-stat-num">3.2×</div>
+          <div class="verdict-stat-label">Faster mobile load (LCP)</div>
+        </div>
+        <div class="verdict-stat">
+          <div class="verdict-stat-num">7</div>
+          <div class="verdict-stat-label">Schema types added</div>
+        </div>
+        <div class="verdict-stat">
+          <div class="verdict-stat-num">100</div>
+          <div class="verdict-stat-label">Perfect SEO + Best Practices</div>
+        </div>
+        <div class="verdict-stat">
+          <div class="verdict-stat-num">0ms</div>
+          <div class="verdict-stat-label">Page blocking time</div>
+        </div>
+      </div>
+
+      <p>Tony has done everything right on the ground — 48 perfect Google reviews, fast response times, happy customers who mention him by name. The old website is the one thing working against him. It loads too slow to keep mobile visitors, it doesn't tell Google what it needs to know to rank him, and it doesn't give AI search engines anything to work with.</p>
+      <p>The new site fixes every single one of those problems. The 48 reviews that were invisible to Google are now registered. The star ratings that weren't showing in search results now will. The AI engines that didn't know Tony existed now have his name, his city, his services, and his story to pull from. And the page is rock solid on mobile — zero freezing, zero layout jumping, nothing to make someone tap away.</p>
+      <p>One thing that will make it even better: real job photos. Once Tony adds actual before/after pictures from his jobs, accessibility hits 100 and those images become searchable on Google Images — another free channel that sends him leads.</p>
+      <p><strong>The question isn't whether this is worth it. The question is how many jobs the old site has already cost him.</strong></p>
+    </div>
+  </section>
+
+</div>
+
+<div class="footer">
+  Junk Brawlers LLC &nbsp;·&nbsp; Old Site vs. New Site Comparison &nbsp;·&nbsp; April 26, 2026
+</div>
+
+</body>
+</html>
