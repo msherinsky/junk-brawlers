@@ -31,26 +31,29 @@
 @font-face{font-family:'Barlow';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/barlow-400.woff2)format('woff2')}@font-face{font-family:'Barlow';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/barlow-500.woff2)format('woff2')}@font-face{font-family:'Barlow';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/barlow-600.woff2)format('woff2')}@font-face{font-family:'Barlow';font-style:normal;font-weight:700;font-display:optional;src:url(fonts/barlow-700.woff2)format('woff2')}@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:600;font-display:optional;src:url(fonts/barlow-condensed-600.woff2)format('woff2')}@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:700;font-display:optional;src:url(fonts/barlow-condensed-700.woff2)format('woff2')}@font-face{font-family:'Barlow Condensed';font-style:normal;font-weight:800;font-display:optional;src:url(fonts/barlow-condensed-800.woff2)format('woff2')}
 :root{--color-purple:#8000FF;--color-purple-dark:#6600CC;--color-purple-deeper:#4D0099;--color-purple-mid:#D8B4FE;--color-purple-light:#F5F0FF;--color-header:#5500AA;--color-hero-bg:#0D0010;--color-dark:#1A1A1A;--color-footer:#0A000F;--color-light-alt:#F8F5FF;--color-white:#FFFFFF;--color-body:#1A1A2E;--color-border:#E0D5F5;--font-heading:'Barlow Condensed',sans-serif;--font:'Barlow',sans-serif;--radius-card:6px;--radius-pill:22px;--transition:0.25s ease}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font);color:var(--color-body);background:var(--color-white);font-size:15px;line-height:1.6}a{text-decoration:none;color:inherit}img{max-width:100%;display:block}ul{list-style:none}h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
-.site-header{position:sticky;top:0;z-index:1000;background:var(--color-header);height:70px;display:flex;align-items:center;padding:0 32px;gap:24px;box-shadow:0 2px 8px rgba(0,0,0,0.4)}
+.site-header{position:sticky;top:0;z-index:1000;background:rgba(6,0,20,0.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);height:70px;display:flex;align-items:center;padding:0 32px;gap:24px;box-shadow:0 1px 0 rgba(128,0,255,0.2)}
 .header-logo{display:flex;align-items:center;gap:10px;flex-shrink:0;text-decoration:none}.header-logo .logo-icon{font-size:28px;line-height:1}.header-logo .logo-text{display:flex;flex-direction:column;line-height:1.1}.header-logo .logo-name{font-size:20px;font-weight:800;color:var(--color-white);text-transform:uppercase;letter-spacing:1px;font-family:var(--font-heading)}.header-logo .logo-sub{font-size:10px;font-weight:600;color:rgba(255,255,255,0.8);text-transform:uppercase;letter-spacing:1.5px}
 .header-nav{flex:1;display:flex;align-items:center;justify-content:center;gap:8px}.header-nav a,.header-nav .nav-dropdown>button{color:var(--color-white);font-size:15px;font-weight:600;padding:8px 14px;border-radius:4px;background:none;border:none;cursor:pointer;font-family:var(--font);display:flex;align-items:center;gap:4px;white-space:nowrap}.header-nav a:hover,.header-nav .nav-dropdown>button:hover{background:rgba(255,255,255,0.15)}
 .nav-dropdown{position:relative}.nav-dropdown>button .arrow{font-size:10px;transition:transform var(--transition)}.nav-dropdown.open>button .arrow{transform:rotate(180deg)}.dropdown-menu{display:none;position:absolute;top:calc(100% + 4px);left:0;background:var(--color-white);border:1px solid var(--color-border);border-radius:6px;min-width:220px;box-shadow:0 8px 24px rgba(0,0,0,0.15);z-index:200;overflow:hidden}.nav-dropdown.open .dropdown-menu{display:block}.dropdown-menu a{display:block;padding:10px 16px;color:var(--color-body);font-size:14px;font-weight:500}.dropdown-menu a:hover{background:var(--color-light-alt);color:var(--color-purple)}
 .header-ctas{display:flex;align-items:center;gap:10px;flex-shrink:0}.btn-ghost-white{padding:9px 18px;border:2px solid var(--color-white);color:var(--color-white);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:4px;white-space:nowrap}.btn-ghost-white:hover{background:var(--color-white);color:var(--color-purple-dark)}.btn-phone{padding:9px 18px;background:var(--color-purple);color:var(--color-white);font-size:13px;font-weight:700;border-radius:4px;transition:opacity var(--transition);white-space:nowrap}.btn-phone:hover{opacity:0.85}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;margin-left:auto;background:none;border:none}.hamburger span{display:block;width:26px;height:2px;background:var(--color-white);border-radius:2px;transition:transform var(--transition),opacity var(--transition)}
-.mobile-nav{display:none;position:fixed;top:70px;left:0;right:0;background:var(--color-header);z-index:999;padding:16px 24px 24px;box-shadow:0 8px 16px rgba(0,0,0,0.3);max-height:calc(100vh - 70px);overflow-y:auto}.mobile-nav.open{display:block}.mobile-nav a{display:block;color:var(--color-white);font-size:16px;font-weight:500;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.1)}.mobile-nav .mobile-section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.8);padding:16px 0 4px}.mobile-nav .mobile-ctas{display:flex;flex-direction:column;gap:10px;margin-top:16px}.mobile-nav .btn-ghost-white,.mobile-nav .btn-phone{text-align:center}
+.mobile-nav{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(6,0,20,0.96);z-index:999;padding:16px 24px 24px;box-shadow:0 8px 16px rgba(0,0,0,0.3);max-height:calc(100vh - 70px);overflow-y:auto}.mobile-nav.open{display:block}.mobile-nav a{display:block;color:var(--color-white);font-size:16px;font-weight:500;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.1)}.mobile-nav .mobile-section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.8);padding:16px 0 4px}.mobile-nav .mobile-ctas{display:flex;flex-direction:column;gap:10px;margin-top:16px}.mobile-nav .btn-ghost-white,.mobile-nav .btn-phone{text-align:center}
 .btn-primary{display:inline-block;padding:13px 28px;background:var(--color-purple);color:var(--color-white);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:4px;border:none;cursor:pointer;transition:opacity var(--transition);font-family:var(--font)}.btn-primary:hover{opacity:0.88}.btn-ghost{display:inline-block;padding:13px 28px;background:transparent;color:var(--color-white);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border:2px solid var(--color-white);border-radius:4px;cursor:pointer;font-family:var(--font)}.btn-ghost:hover{background:var(--color-white);color:var(--color-purple-dark)}
-.hero{position:relative;min-height:580px;background:var(--color-hero-bg);display:flex;align-items:center;overflow:hidden}.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0.3}.hero-overlay{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% -5%,rgba(128,0,255,0.5) 0%,transparent 62%),rgba(6,0,20,0.8)}
-.hero-content{position:relative;z-index:1;max-width:700px;padding:44px 32px 52px;margin:0 auto;text-align:center}.hero-eyebrow{display:inline-block;background:linear-gradient(135deg,#9B00FF,#5200A0);color:white;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:6px 14px;border-radius:3px;margin-bottom:14px;box-shadow:0 2px 18px rgba(128,0,255,0.55)}.hero-content h1{font-size:clamp(42px,5.5vw,72px);font-weight:800;color:var(--color-white);line-height:1.0;margin-bottom:14px;text-transform:uppercase;text-shadow:0 0 70px rgba(216,180,254,0.55),0 4px 8px rgba(0,0,0,0.6)}.hero-content h1 span{color:var(--color-purple-mid)}.hero-content p{font-size:17px;color:rgba(255,255,255,0.88);margin-bottom:26px;max-width:540px;line-height:1.65;margin-left:auto;margin-right:auto}
-.hero-buttons{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.1);border:1px solid rgba(128,0,255,0.5);border-radius:8px;padding:12px 20px;margin-bottom:18px;box-shadow:0 0 28px rgba(128,0,255,0.3),inset 0 1px 0 rgba(255,255,255,0.12)}.hero-stars{color:#FFD700;font-size:18px;letter-spacing:2px;text-shadow:0 0 14px rgba(255,215,0,0.7)}.hero-badge-text{color:rgba(255,255,255,0.9);font-size:14px;font-weight:600}.hero-badge-text strong{color:white}
+.hero{position:relative;min-height:100vh;background:#0D0010;display:flex;align-items:stretch;overflow:hidden}.hero-left{flex:0 0 55%;max-width:55%;display:flex;align-items:center;padding:80px 60px 80px 80px;position:relative;z-index:1}.hero-right{position:absolute;right:0;top:0;bottom:0;width:70%;background:url(images/hero-bg.jpg) 40% center/cover no-repeat}.hero-right::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,#0D0010 0%,#0D0010 5%,rgba(13,0,16,0.7) 20%,rgba(13,0,16,0.2) 45%,transparent 65%);pointer-events:none}
+.hero-content{position:relative;z-index:1;max-width:600px;padding:0;margin:0;text-align:left}.hero-eyebrow{display:inline-block;background:linear-gradient(135deg,#9B00FF,#5200A0);color:white;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:6px 14px;border-radius:3px;margin-bottom:14px;box-shadow:0 2px 18px rgba(128,0,255,0.55)}.hero-content h1{font-size:clamp(44px,5.5vw,70px);font-weight:800;color:var(--color-white);line-height:1.0;margin-bottom:14px;text-transform:uppercase;text-shadow:0 0 70px rgba(216,180,254,0.55),0 4px 8px rgba(0,0,0,0.6)}.hero-content h1 span{color:var(--color-purple-mid)}.hero-content p{font-size:17px;color:rgba(255,255,255,0.88);margin-bottom:26px;max-width:540px;line-height:1.6;text-shadow:0 1px 4px rgba(0,0,0,0.9),0 0 18px rgba(0,0,0,0.7)}
+.hero-buttons{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-start}.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(6,0,20,0.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(128,0,255,0.4);border-radius:8px;padding:12px 20px;margin-bottom:18px;box-shadow:0 0 28px rgba(128,0,255,0.25)}.hero-stars{color:#FFD700;font-size:18px;letter-spacing:2px;text-shadow:0 0 14px rgba(255,215,0,0.7)}.hero-badge-text{color:rgba(255,255,255,0.9);font-size:14px;font-weight:600}.hero-badge-text strong{color:white}
 .btn-primary{box-shadow:0 4px 20px rgba(128,0,255,0.4)}.btn-primary:hover{box-shadow:0 6px 32px rgba(128,0,255,0.65)}.hero .btn-primary{position:relative;isolation:isolate}.hero .btn-primary::after{content:'';position:absolute;inset:-6px;border-radius:9px;border:2px solid rgba(128,0,255,0.55);opacity:0;will-change:opacity,transform;animation:btn-pulse 2.8s ease-in-out infinite;pointer-events:none}@keyframes btn-pulse{0%,100%{opacity:0;transform:scale(1)}50%{opacity:1;transform:scale(1.08)}}@media(prefers-reduced-motion:reduce){.hero .btn-primary::after{animation:none}}
 .trust-bar{background:var(--color-white);border-top:3px solid var(--color-purple);border-bottom:1px solid var(--color-border);padding:20px 32px}.trust-bar-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:space-around;align-items:center;flex-wrap:wrap;gap:16px}.trust-item{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:var(--color-body);text-transform:uppercase;letter-spacing:0.5px}.trust-item .trust-icon{font-size:22px}
 .section-heading.light{color:var(--color-white)}.section-heading-accent.centered{margin:0 auto 48px}
-@media(max-width:768px){.header-nav,.header-ctas{display:none}.hamburger{display:flex}.hero-content{padding:36px 20px 44px}.trust-bar-inner{justify-content:flex-start;gap:20px}.site-header{padding:0 20px}}
+.hero-truck-mobile{display:none;width:100%;margin:16px 0 0;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,black 22%,black 72%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,black 22%,black 72%,transparent 100%)}
+@media(max-width:900px){.hero{flex-direction:column;align-items:stretch}.hero-left{flex:none;max-width:100%;width:100%;padding:48px 28px 36px}.hero-right{flex:none;max-width:100%;width:100%;height:300px}.hero-right::before{background:linear-gradient(to bottom,#0D0010 0%,rgba(13,0,16,0.2) 30%,transparent 65%)}.hero-content{text-align:center}.hero-content p{margin-left:auto;margin-right:auto;text-shadow:none}.hero-badge{display:inline-flex}.hero-proof-chip{display:none}.hero-buttons{justify-content:center}.hero-truck-mobile{display:none}}
+@media(max-width:768px){.header-nav,.header-ctas{display:none}.hamburger{display:flex}.trust-bar-inner{justify-content:flex-start;gap:20px}.site-header{padding:0 20px}}
 @media(max-width:480px){.hero-buttons{flex-direction:column}.hero-buttons .btn-primary,.hero-buttons .btn-ghost{text-align:center}}
 .outcomes-bar{background:var(--color-white);border-top:3px solid var(--color-purple);border-bottom:1px solid var(--color-border);padding:22px 32px}.outcomes-bar-inner{max-width:860px;margin:0 auto;display:flex;justify-content:space-around;align-items:stretch;gap:16px}.outcome-item{display:flex;align-items:center;gap:14px;flex:1}.outcome-check{width:36px;height:36px;background:var(--color-purple);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:18px;font-weight:700;flex-shrink:0}.outcome-item-text strong{display:block;font-size:15px;font-weight:700;color:var(--color-body)}.outcome-item-text span{font-size:12px;color:#666;font-weight:500}.outcome-divider{width:1px;background:var(--color-border);flex-shrink:0}@media(max-width:640px){.outcomes-bar-inner{flex-direction:column;gap:18px}.outcome-divider{width:100%;height:1px}}
 </style>
 <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+<link rel="preload" href="images/hero-bg.jpg" as="image" fetchpriority="high">
 <link rel="preload" href="images/logo.webp" as="image" type="image/webp" fetchpriority="high">
 
   <script type="application/ld+json">
@@ -62,7 +65,7 @@
     "description": "Owner-operated junk removal serving North Georgia. Residential, commercial, estate cleanouts, appliance removal, hot tub removal, and more. 7 days a week, 7am-6pm.",
     "image": "https://junk-brawlers.vercel.app/images/logo.png",
     "telephone": "+14046329165",
-    "email": "contact@junkbrawlers.com",
+    "email": "junkbrawlers@gmail.com",
     "founder": "Antonio Frias",
     "foundingDate": "2024",
     "legalName": "Junk Brawlers LLC",
@@ -131,6 +134,10 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does junk removal cost in Dawsonville, GA?","acceptedAnswer":{"@type":"Answer","text":"Pricing depends on the volume and type of items being removed. Junk Brawlers provides free, no-obligation quotes - we assess the job and give you a fair price before any work begins. Call (404) 632-9165 or fill out our quote form to get started."}},{"@type":"Question","name":"Do you offer same-day junk removal in North Georgia?","acceptedAnswer":{"@type":"Answer","text":"Yes! Tony is known for 30-minute response times in the Dawsonville area. We're open 7 days a week, 7am-6pm. Call (404) 632-9165 and we'll do our best to accommodate same-day or next-day service."}},{"@type":"Question","name":"What areas does Junk Brawlers serve?","acceptedAnswer":{"@type":"Answer","text":"We serve 20+ cities across North Georgia including Dawsonville, Canton, Cumming, Gainesville, Dahlonega, Jasper, Ellijay, Blue Ridge, Cleveland, Woodstock, and more. If you're unsure, just call - we'll let you know."}},{"@type":"Question","name":"What types of junk do you haul away?","acceptedAnswer":{"@type":"Answer","text":"We remove furniture, appliances, hot tubs, mattresses, e-waste, yard debris, construction debris, shed and deck structures, hoarder cleanouts, estate contents, storage unit contents, and much more. We do not haul hazardous materials, chemicals, or biohazardous waste."}},{"@type":"Question","name":"Is Junk Brawlers eco-friendly?","acceptedAnswer":{"@type":"Answer","text":"Yes. We donate usable items to local charities before sending anything to the landfill, and we recycle materials whenever possible. We believe in responsible disposal for North Georgia's communities."}},{"@type":"Question","name":"Can you remove a pool or hot tub?","acceptedAnswer":{"@type":"Answer","text":"Yes! Pool removal and hot tub removal are among our specialties. We break down and haul away above-ground pools, in-ground pool fill-ins, and hot tubs of all sizes. Call us to discuss your specific project."}}]}
   </script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Professional Junk Removal Services in North Georgia | Junk Brawlers","description":"Junk Brawlers LLC provides fast, affordable junk removal, appliance removal, estate cleanouts, and more across North Georgia. Same-day service available. 5.0 stars across 48 reviews.","url":"https://junkbrawlers.com/","datePublished":"2024-01-01","dateModified":"2025-05-21","author":{"@type":"Person","name":"Tony Frias"},"publisher":{"@type":"Organization","name":"Junk Brawlers LLC","logo":{"@type":"ImageObject","url":"https://junkbrawlers.com/images/logo.png"}},"image":"https://junkbrawlers.com/images/hero-bg.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"https://junkbrawlers.com/"}}
+  </script>
 </head>
 <body>
 
@@ -190,21 +197,22 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-bg" style="background:radial-gradient(ellipse at 65% 45%,rgba(110,0,220,0.95) 0%,rgba(28,0,55,0.9) 45%,#04000E 72%);opacity:1;"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <span class="hero-eyebrow">North Georgia Homeowners: Same-Day Pickup Available &#8594;</span>
-      <div class="hero-badge">
-        <span class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <span class="hero-badge-text"><strong>5.0 Stars</strong> &middot; 48 Google Reviews</span>
-      </div>
-      <h1>Call Before Noon.<br><span>Your Junk Is Gone by Tonight.</span></h1>
-      <p>Tony Frias (not a call center &mdash; Tony himself) shows up within 30 minutes, hauls everything out, sweeps up after, and charges you the exact price he quoted. 48 five-star reviews. 30+ cities. 7 days a week.</p>
-      <div class="hero-buttons">
-        <a href="contact.html" class="btn-primary" data-modal="quote">GET A FREE BRAWL QUOTE</a>
-        <a href="tel:4046329165" class="btn-ghost">CALL (404) 632-9165</a>
+    <div class="hero-left">
+      <div class="hero-content">
+        <span class="hero-eyebrow">North Georgia Homeowners: Same-Day Pickup Available &#8594;</span>
+        <div class="hero-badge">
+          <span class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="hero-badge-text"><strong>5.0 Stars</strong> &middot; 48 Google Reviews</span>
+        </div>
+        <h1>Call Before Noon.<br><span>Your Junk Is Gone by Tonight.</span></h1>
+        <p>Tony Frias (not a call center &mdash; Tony himself) shows up within 30 minutes, hauls everything out, sweeps up after, and charges you the exact price he quoted. 48 five-star reviews. 30+ cities. 7 days a week.</p>
+        <div class="hero-buttons">
+          <a href="contact.html" class="btn-primary" data-modal="quote">GET A FREE BRAWL QUOTE</a>
+          <a href="tel:4046329165" class="btn-ghost">CALL (404) 632-9165</a>
+        </div>
       </div>
     </div>
+    <div class="hero-right" role="img" aria-label="Junk Brawlers branded truck"></div>
   </section>
 
   <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
@@ -241,144 +249,95 @@
     </div>
   </nav>
 
-  <!-- THREE QUICK OUTCOMES -->
-  <div class="outcomes-bar">
-    <div class="outcomes-bar-inner">
-      <div class="outcome-item">
-        <div class="outcome-check">&#10003;</div>
-        <div class="outcome-item-text">
-          <strong>Your space cleared today</strong>
-          <span>Same-day &amp; next-day service available</span>
-        </div>
-      </div>
-      <div class="outcome-divider"></div>
-      <div class="outcome-item">
-        <div class="outcome-check">&#10003;</div>
-        <div class="outcome-item-text">
-          <strong>Zero heavy lifting or cleanup</strong>
-          <span>Tony's crew handles everything &mdash; you just point</span>
-        </div>
-      </div>
-      <div class="outcome-divider"></div>
-      <div class="outcome-item">
-        <div class="outcome-check">&#10003;</div>
-        <div class="outcome-item-text">
-          <strong>Know the price before we start</strong>
-          <span>Free on-site quote &mdash; no obligation, no surprises</span>
-        </div>
+
+  <!-- WHO WE SERVE -->
+  <section style="background:var(--color-hero-bg);padding:64px 32px">
+    <div style="max-width:1100px;margin:0 auto">
+      <p style="text-align:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;color:rgba(255,255,255,0.35);margin-bottom:36px">Residential or Commercial &mdash; Find Your Path</p>
+      <!-- SECONDARY CATEGORY HUBS — linked directly from homepage per GBP hierarchy -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px">
+
+        <!-- RESIDENTIAL -->
+        <a href="residential-junk-removal.html" style="display:block;background:linear-gradient(135deg,#8800ff 0%,#5500bb 100%);box-shadow:0 8px 40px rgba(0,0,0,0.45),inset 0 1px 0 rgba(255,255,255,0.14);border-radius:var(--radius-card);padding:36px 32px;text-decoration:none;color:var(--color-white);transition:transform 0.2s,box-shadow 0.2s" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 20px 60px rgba(128,0,255,0.45),inset 0 1px 0 rgba(255,255,255,0.2)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 8px 40px rgba(0,0,0,0.45),inset 0 1px 0 rgba(255,255,255,0.14)'">
+          <div style="width:52px;height:52px;background:rgba(255,255,255,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 11L13 2L24 11V24H17V16H9V24H2V11Z" stroke="white" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/></svg>
+          </div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.5);margin-bottom:10px">For Homeowners</div>
+          <h3 style="font-family:var(--font-heading);font-size:22px;font-weight:800;text-transform:uppercase;color:var(--color-white);margin-bottom:16px">Residential Junk Removal</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
+            <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.12);border-radius:20px;padding:5px 13px">Garage Cleanouts</span>
+            <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.12);border-radius:20px;padding:5px 13px">Estate Clearing</span>
+            <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.12);border-radius:20px;padding:5px 13px">Hot Tub &amp; Pool</span>
+            <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.12);border-radius:20px;padding:5px 13px">Hoarder Cleanouts</span>
+            <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.12);border-radius:20px;padding:5px 13px">Appliance Haul-Away</span>
+          </div>
+          <p style="font-size:14px;color:rgba(255,255,255,0.82);line-height:1.6;margin-bottom:22px">Tony picks up the phone. His crew shows up the same day. Your space is clear before dinner.</p>
+          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);border-radius:40px;padding:10px 20px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--color-white)">Get a Free Quote &#8594;</div>
+        </a>
+
+        <!-- COMMERCIAL -->
+        <a href="commercial-junk-removal.html" style="display:block;background:linear-gradient(135deg,#6600cc 0%,#2a0066 100%);box-shadow:0 8px 40px rgba(0,0,0,0.45),inset 0 1px 0 rgba(255,255,255,0.08);border-radius:var(--radius-card);padding:36px 32px;text-decoration:none;color:var(--color-white);transition:transform 0.2s,box-shadow 0.2s" onmouseover="this.style.transform='translateY(-3px)';this.style.boxShadow='0 20px 60px rgba(128,0,255,0.45),inset 0 1px 0 rgba(255,255,255,0.15)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 8px 40px rgba(0,0,0,0.45),inset 0 1px 0 rgba(255,255,255,0.08)'">
+          <div style="width:52px;height:52px;background:rgba(255,255,255,0.12);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:20px">
+            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="2" width="20" height="22" rx="1.5" stroke="white" stroke-width="2"/><rect x="7" y="6" width="4" height="3.5" rx="0.5" stroke="white" stroke-width="1.5"/><rect x="15" y="6" width="4" height="3.5" rx="0.5" stroke="white" stroke-width="1.5"/><rect x="7" y="12" width="4" height="3.5" rx="0.5" stroke="white" stroke-width="1.5"/><rect x="15" y="12" width="4" height="3.5" rx="0.5" stroke="white" stroke-width="1.5"/><path d="M10 24V19H16V24" stroke="white" stroke-width="2" stroke-linejoin="round"/></svg>
+          </div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.5);margin-bottom:10px">For Property Managers &amp; Contractors</div>
+          <h3 style="font-family:var(--font-heading);font-size:22px;font-weight:800;text-transform:uppercase;color:var(--color-white);margin-bottom:16px">Commercial Junk Removal</h3>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
+            <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.12);border-radius:20px;padding:5px 13px">Tenant Cleanouts</span>
+            <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.12);border-radius:20px;padding:5px 13px">Construction Debris</span>
+            <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.12);border-radius:20px;padding:5px 13px">Office Clear-Outs</span>
+            <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.12);border-radius:20px;padding:5px 13px">Storage Facilities</span>
+            <span style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.9);background:rgba(255,255,255,0.12);border-radius:20px;padding:5px 13px">Retail Clear-Outs</span>
+          </div>
+          <p style="font-size:14px;color:rgba(255,255,255,0.82);line-height:1.6;margin-bottom:22px">You've got a deadline. We've got a truck and a crew. No excuses, no delays, no mess left behind.</p>
+          <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);border-radius:40px;padding:10px 20px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--color-white)">Get a Free Quote &#8594;</div>
+        </a>
+
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- PROBLEM -->
   <section class="problem-section">
     <div class="problem-inner">
-      <h2>Still Looking at That <span>Pile of Junk?</span></h2>
-      <p class="problem-lead">You've been meaning to deal with it. But it's still there &mdash; taking up space, blocking the car, embarrassing you when company comes over.</p>
-      <ul class="problem-list">
-        <li><div class="problem-bullet"></div>The garage has been unusable for over a year &mdash; and it keeps getting worse</li>
-        <li><div class="problem-bullet"></div>It's too heavy to move yourself and you're not sure who to trust with your property</li>
-        <li><div class="problem-bullet"></div>You've gotten quotes that felt like a shakedown &mdash; or called and never heard back</li>
-        <li><div class="problem-bullet"></div>You just want it gone, but you don't know where to start</li>
-        <li><div class="problem-bullet"></div>Every weekend you walk past it and think "I'll deal with this later"</li>
-      </ul>
-      <p class="problem-close">You don't need to figure it out. You just need Tony.</p>
+      <div class="problem-text">
+        <h2>It&rsquo;s Been There <span>Long Enough.</span></h2>
+        <p class="problem-lead">Maybe it&rsquo;s the back corner of the garage. Maybe it&rsquo;s the stuff piled up after a move, a cleanout, a renovation that got put &ldquo;temporarily&rdquo; somewhere and never left. You know the spot.</p>
+        <p class="problem-body">The stuff isn&rsquo;t going anywhere on its own. Every time you walk past it, it costs you &mdash; a little bit of mental overhead, a little bit of the space you wanted back. You&rsquo;ve probably priced it out in your head a dozen times and put it off anyway.</p>
+        <p class="problem-body">Getting it gone is simpler than it sounds. Tony and the crew do this every day &mdash; show up, load it out, sweep up, done.</p>
+        <p class="problem-close">One call and it&rsquo;s Tony&rsquo;s problem, not yours.</p>
+      </div>
+      <div class="ba-slider" id="baSlider">
+        <div class="ba-after">
+          <img src="images/gbp-photo-02.jpg" alt="Clean driveway after junk removal">
+        </div>
+        <div class="ba-before">
+          <img src="images/gbp-photo-01.jpg" alt="Junk pile before removal">
+        </div>
+        <div class="ba-handle">
+          <div class="ba-handle-line"></div>
+          <div class="ba-handle-circle">&#8596;</div>
+          <div class="ba-handle-line"></div>
+        </div>
+        <span class="ba-label ba-label-before">Before</span>
+        <span class="ba-label ba-label-after">After</span>
+      </div>
     </div>
   </section>
 
-  <!-- SOLUTION / MENTOR -->
+  <!-- TONY & THE CREW -->
   <section class="mentor-section">
     <div class="mentor-inner">
       <div class="mentor-photo-wrap">
-        <div class="mentor-photo-placeholder">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="56" height="56" aria-hidden="true"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-          <span>Add a photo of Tony here for best results</span>
-        </div>
+        <img src="images/team-headshot.jpg" alt="Tony Frias, owner of Junk Brawlers" width="340" height="339" loading="lazy" style="width:100%;height:auto;display:block;">
       </div>
       <div class="mentor-text">
-        <h2 class="mentor-heading">Meet Tony &mdash; Your Neighbor With a Truck</h2>
+        <h2 class="mentor-heading">The Guy Who Answers the Phone</h2>
         <div class="mentor-accent"></div>
         <p>Every person who calls Junk Brawlers is dealing with the same thing: a pile that's been there too long, stuff that's too heavy to move, and no clear plan. We've heard it hundreds of times &mdash; and we've fixed it hundreds of times.</p>
-        <p>Antonio <strong>"Tony" Frias</strong> founded Junk Brawlers in 2024 right here in Dawsonville, GA &mdash; just off GA-400 in the heart of the North Georgia mountains. He's not a franchise. There's no call center, no middleman. When you call, Tony answers. When we show up, Tony is there. Every one of his 48 Google reviews is five stars &mdash; and customers name him by name.</p>
-        <p>Tony's mission is simple: <strong>show up fast, charge fairly, and leave your place cleaner than he found it.</strong> That's it. No excuses, no hidden fees, no drama.</p>
-        <a href="about.html" class="btn-primary" style="margin-top:8px;">Tony's Full Story &#8594;</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- BENEFITS -->
-  <section class="benefits-section">
-    <div class="benefits-inner">
-      <h2 class="benefits-heading">What Changes When You Call Tony</h2>
-      <div class="benefits-accent"></div>
-      <div class="benefits-grid">
-
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
-          </div>
-          <div class="benefit-label">Same-Day Service</div>
-          <h3>Gone Today. Not Next Week.</h3>
-          <p>Tony offers same-day and next-day pickup across North Georgia. Call before noon and there's a good chance your junk is already gone by dinner. No waiting on a scheduler. No three-week calendar.</p>
-        </div>
-
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true"><path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29l-1.43-1.43z"/></svg>
-          </div>
-          <div class="benefit-label">Full-Service Removal</div>
-          <h3>You Don't Lift a Single Thing.</h3>
-          <p>Point at what goes. Tony and his crew handle all the heavy lifting, hauling, and cleanup. They'll even sweep up after themselves. You're not moving a single cushion &mdash; that's the whole point.</p>
-        </div>
-
-        <div class="benefit-card">
-          <div class="benefit-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28" aria-hidden="true"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
-          </div>
-          <div class="benefit-label">Upfront Pricing</div>
-          <h3>No Surprises on the Bill.</h3>
-          <p>Every job starts with a free on-site quote. The price Tony tells you is the price you pay &mdash; period. No shock charges when the truck is full, no "oh we forgot to mention" fees. Just an honest number upfront.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="reviews-section">
-    <div class="reviews-inner">
-      <h2 class="reviews-heading">What North Georgia Says About Us</h2>
-      <div class="reviews-accent"></div>
-      <div class="reviews-grid">
-
-        <div class="review-card">
-          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-text">"Tony was an excellent young man &mdash; very personable and professional. He showed up within 30 minutes of my call and had everything packed up efficiently. I highly recommend Junk Brawlers!"</p>
-          <div class="review-author">&mdash; Linda M. &middot; Dawsonville, GA</div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-text">"Hard workers, fair pricing, and they were done in no time. Tony took the old hot tub that had been sitting in my backyard for years. Didn't scratch a thing. Will definitely call again."</p>
-          <div class="review-author">&mdash; Mark T. &middot; Canton, GA</div>
-        </div>
-
-        <div class="review-card">
-          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-text">"Quality of work was excellent. They cleaned out my entire garage and even swept up after themselves. Polite staff and very reasonable on price. This is the real deal &mdash; not a big franchise."</p>
-          <div class="review-author">&mdash; Jennifer R. &middot; Cumming, GA</div>
-        </div>
-
-      </div>
-      <div class="reviews-cta">
-        <div class="reviews-total">
-          <span class="big-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <div class="reviews-total-text">
-            <strong>5.0 / 5.0</strong>
-            <span>Based on 48 Google reviews</span>
-          </div>
-        </div>
-        <a href="https://share.google/HG9xlgEp9F7GkTscP" target="_blank" rel="noopener" class="btn-primary">Read All Reviews on Google &#8594;</a>
+        <p>Antonio <strong>"Tony" Frias</strong> founded Junk Brawlers in 2024 right here in Dawsonville, GA &mdash; just off GA-400 in the heart of the North Georgia mountains. No franchise, no call center, no middleman. When you call, Tony answers. When the crew shows up, they get straight to work. Every one of their 48 Google reviews is five stars &mdash; and customers name Tony and the team by name.</p>
+        <p>The mission is simple: <strong>show up fast, charge fairly, and leave your place cleaner than we found it.</strong> Every job, every time.</p>
+        <a href="about.html" class="btn-primary" style="margin-top:8px;">Meet the Team &#8594;</a>
       </div>
     </div>
   </section>
@@ -420,113 +379,41 @@
     </div>
   </section>
 
-  <!-- FLEX / DIFFERENTIATOR -->
-  <div class="why-choose-section">
-    <div class="why-choose-inner">
-      <h2 class="section-heading light">10 Reasons North Georgia Calls Tony First</h2>
-      <div class="section-heading-accent centered"></div>
-      <div class="why-choose-grid">
-        <div class="why-item">
-          <span class="check">&#10003;</span>
-          <div class="why-item-text"><strong>5.0 Stars &mdash; 48 Google Reviews</strong><span>Every single review is five stars. Tony's reputation is the business.</span></div>
-        </div>
-        <div class="why-item">
-          <span class="check">&#10003;</span>
-          <div class="why-item-text"><strong>30-Minute Response Time</strong><span>In the Dawsonville area, Tony often arrives within 30 minutes of your call.</span></div>
-        </div>
-        <div class="why-item">
-          <span class="check">&#10003;</span>
-          <div class="why-item-text"><strong>Owner-Operated</strong><span>No franchise. No middlemen. Tony answers the phone and shows up at your door.</span></div>
-        </div>
-        <div class="why-item">
-          <span class="check">&#10003;</span>
-          <div class="why-item-text"><strong>Free On-Site Quote</strong><span>No guessing, no ballpark ranges &mdash; Tony gives you a real price before touching a thing.</span></div>
-        </div>
-        <div class="why-item">
-          <span class="check">&#10003;</span>
-          <div class="why-item-text"><strong>7 Days a Week</strong><span>Open every day, 7am&ndash;6pm. Weekends included &mdash; same price, no extra charges.</span></div>
-        </div>
-        <div class="why-item">
-          <span class="check">&#10003;</span>
-          <div class="why-item-text"><strong>Same-Day Service Available</strong><span>Call before noon and we'll do everything we can to get there today.</span></div>
-        </div>
-        <div class="why-item">
-          <span class="check">&#10003;</span>
-          <div class="why-item-text"><strong>Eco-Friendly Disposal</strong><span>We donate and recycle before we landfill &mdash; because North Georgia's environment matters.</span></div>
-        </div>
-        <div class="why-item">
-          <span class="check">&#10003;</span>
-          <div class="why-item-text"><strong>Fully Insured</strong><span>You're protected on every job. Your property is in good hands.</span></div>
-        </div>
-        <div class="why-item">
-          <span class="check">&#10003;</span>
-          <div class="why-item-text"><strong>No Hidden Fees</strong><span>The price Tony quotes is the price you pay. No surprises when the truck is full.</span></div>
-        </div>
-        <div class="why-item">
-          <span class="check">&#10003;</span>
-          <div class="why-item-text"><strong>30+ Cities Served</strong><span>From Blue Ridge to Gainesville &mdash; if it's North Georgia, we cover it.</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- TESTIMONIALS -->
+  <section class="reviews-section">
+    <div class="reviews-inner">
+      <h2 class="reviews-heading">What North Georgia Says About Us</h2>
+      <div class="reviews-accent"></div>
+      <div class="reviews-grid">
 
-  <!-- FEATURES -->
-  <section class="features-section">
-    <div class="features-inner">
-      <h2 class="features-heading">Everything We Remove</h2>
-      <p class="features-sub">If it's not hazardous, we'll haul it. Residential, commercial, specialty &mdash; you name it.</p>
-      <div class="features-list">
-        <div class="feature-item"><span class="fi-check">&#10003;</span> Furniture &amp; Sofas</div>
-        <div class="feature-item"><span class="fi-check">&#10003;</span> Mattresses &amp; Box Springs</div>
-        <div class="feature-item"><span class="fi-check">&#10003;</span> Appliances (all types)</div>
-        <div class="feature-item"><span class="fi-check">&#10003;</span> Hot Tubs</div>
-        <div class="feature-item"><span class="fi-check">&#10003;</span> Above-Ground Pools</div>
-        <div class="feature-item"><span class="fi-check">&#10003;</span> Sheds &amp; Decks</div>
-        <div class="feature-item"><span class="fi-check">&#10003;</span> Construction Debris</div>
-        <div class="feature-item"><span class="fi-check">&#10003;</span> Yard Waste &amp; Brush</div>
-        <div class="feature-item"><span class="fi-check">&#10003;</span> Estate Contents</div>
-        <div class="feature-item"><span class="fi-check">&#10003;</span> Hoarder Cleanouts</div>
-        <div class="feature-item"><span class="fi-check">&#10003;</span> Garage Cleanouts</div>
-        <div class="feature-item"><span class="fi-check">&#10003;</span> Basement Cleanouts</div>
-        <div class="feature-item"><span class="fi-check">&#10003;</span> Storage Unit Cleanouts</div>
-        <div class="feature-item"><span class="fi-check">&#10003;</span> E-Waste &amp; Electronics</div>
-        <div class="feature-item"><span class="fi-check">&#10003;</span> Office &amp; Business Cleanouts</div>
-        <div class="feature-item"><span class="fi-check">&#10003;</span> Foreclosure Cleanups</div>
-        <div class="feature-item"><span class="fi-check">&#10003;</span> Light Demolition</div>
-        <div class="feature-item"><span class="fi-check">&#10003;</span> Tires &amp; Scrap Metal</div>
-      </div>
-      <div class="features-cta">
-        <a href="services.html" class="btn-primary">See All Services &#8594;</a>
-      </div>
-    </div>
-  </section>
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"Tony was an excellent young man &mdash; very personable and professional. He showed up within 30 minutes of my call and had everything packed up efficiently. I highly recommend Junk Brawlers!"</p>
+          <div class="review-author">&mdash; Linda M. &middot; Dawsonville, GA</div>
+        </div>
 
-  <!-- LOCATIONS -->
-  <section class="locations-section">
-    <div class="locations-inner">
-      <h2 class="section-heading light">Junk Removal Across North Georgia</h2>
-      <div class="section-heading-accent centered"></div>
-      <div class="location-pills">
-        <a href="dawsonville.html" class="location-pill">Dawsonville GA</a>
-        <a href="canton.html" class="location-pill">Canton GA</a>
-        <a href="cumming.html" class="location-pill">Cumming GA</a>
-        <a href="gainesville.html" class="location-pill">Gainesville GA</a>
-        <a href="dahlonega.html" class="location-pill">Dahlonega GA</a>
-        <a href="jasper.html" class="location-pill">Jasper GA</a>
-        <a href="ellijay.html" class="location-pill">Ellijay GA</a>
-        <a href="blue-ridge.html" class="location-pill">Blue Ridge GA</a>
-        <a href="cleveland.html" class="location-pill">Cleveland GA</a>
-        <a href="woodstock.html" class="location-pill">Woodstock GA</a>
-        <a href="ball-ground.html" class="location-pill">Ball Ground GA</a>
-        <a href="holly-springs.html" class="location-pill">Holly Springs GA</a>
-        <a href="sugar-hill.html" class="location-pill">Sugar Hill GA</a>
-        <a href="suwanee.html" class="location-pill">Suwanee GA</a>
-        <a href="flowery-branch.html" class="location-pill">Flowery Branch GA</a>
-        <a href="oakwood.html" class="location-pill">Oakwood GA</a>
-        <a href="buford.html" class="location-pill">Buford GA</a>
-        <a href="east-ellijay.html" class="location-pill">East Ellijay GA</a>
-        <a href="helen.html" class="location-pill">Helen GA</a>
-        <a href="service-areas.html" class="location-pill" style="background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);">+ More Cities &#8594;</a>
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"Hard workers, fair pricing, and they were done in no time. Tony took the old hot tub that had been sitting in my backyard for years. Didn't scratch a thing. Will definitely call again."</p>
+          <div class="review-author">&mdash; Mark T. &middot; Canton, GA</div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="review-text">"Quality of work was excellent. They cleaned out my entire garage and even swept up after themselves. Polite staff and very reasonable on price. This is the real deal &mdash; not a big franchise."</p>
+          <div class="review-author">&mdash; Jennifer R. &middot; Cumming, GA</div>
+        </div>
+
+      </div>
+      <div class="reviews-cta">
+        <div class="reviews-total">
+          <span class="big-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <div class="reviews-total-text">
+            <strong>5.0 / 5.0</strong>
+            <span>Based on 48 Google reviews</span>
+          </div>
+        </div>
+        <a href="https://share.google/HG9xlgEp9F7GkTscP" target="_blank" rel="noopener" class="btn-primary">Read All Reviews on Google &#8594;</a>
       </div>
     </div>
   </section>
