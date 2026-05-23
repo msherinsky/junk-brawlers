@@ -127,3 +127,27 @@
   });
 })();
 
+/* ── Image Slider ── */
+(function () {
+  var slider = document.getElementById('baSlider');
+  if (!slider) return;
+  var before = slider.querySelector('.ba-before');
+  var handle = slider.querySelector('.ba-handle');
+  var dragging = false;
+
+  function setPos(clientX) {
+    var rect = slider.getBoundingClientRect();
+    var pct = (clientX - rect.left) / rect.width;
+    pct = Math.max(0.02, Math.min(0.98, pct));
+    before.style.clipPath = 'inset(0 ' + ((1 - pct) * 100) + '% 0 0)';
+    handle.style.left = (pct * 100) + '%';
+  }
+
+  slider.addEventListener('mousedown', function (e) { dragging = true; setPos(e.clientX); });
+  window.addEventListener('mouseup', function () { dragging = false; });
+  window.addEventListener('mousemove', function (e) { if (dragging) setPos(e.clientX); });
+  slider.addEventListener('touchstart', function (e) { dragging = true; setPos(e.touches[0].clientX); }, { passive: true });
+  window.addEventListener('touchend', function () { dragging = false; });
+  window.addEventListener('touchmove', function (e) { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+})();
+
