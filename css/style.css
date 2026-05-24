@@ -21,3 +21,9 @@
 .path-card p{font-size:14px;color:rgba(255,255,255,0.82);line-height:1.6;margin-bottom:22px}
 .path-card-cta{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.15);border-radius:40px;padding:10px 20px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--color-white)}
 @media(max-width:640px){.path-grid{grid-template-columns:1fr}}
+
+
+/* Locations dropdown — 3-column city grid */
+.dropdown-menu--locations{min-width:500px}
+.dropdown-cities{display:grid;grid-template-columns:1fr 1fr 1fr}
+.dropdown-cities a{border-bottom:none}
