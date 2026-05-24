@@ -108,7 +108,7 @@
         e.preventDefault();
         var btn = form.querySelector('[type="submit"]');
         if (btn) {
-          btn.textContent = 'Sent! Tony will be in touch.';
+          btn.textContent = 'Sent! We\'ll be in touch soon.';
           btn.disabled = true;
           btn.style.background = '#2a7a2a';
         }
@@ -125,6 +125,26 @@
     initHeaderScroll();
     initForms();
   });
+})();
+
+/* ── Review Carousel ── */
+(function () {
+  var cards = [].slice.call(document.querySelectorAll('.rev-slides .rev-card'));
+  if (!cards.length) return;
+  var slots = ['pos-prev', 'pos-left', 'pos-center', 'pos-right', 'pos-next'];
+  var order = [0, 1, 2, 3, 4];
+  var timer;
+  function assign() { cards.forEach(function (c) { slots.forEach(function (s) { c.classList.remove(s); }); }); order.forEach(function (cardIdx, slotIdx) { cards[cardIdx].classList.add(slots[slotIdx]); }); }
+  function rotate() { order.push(order.shift()); assign(); }
+  function start() { timer = setInterval(rotate, 3500); }
+  function stop() { clearInterval(timer); }
+  assign();
+  var el = document.querySelector('.rev-carousel');
+  if (!el) return;
+  el.addEventListener('mouseenter', stop);
+  var visible = false;
+  el.addEventListener('mouseleave', function () { if (visible) start(); });
+  new IntersectionObserver(function (entries) { visible = entries[0].isIntersecting; if (visible) { start(); } else { stop(); } }, { threshold: 0.1 }).observe(el);
 })();
 
 /* ── Image Slider ── */
