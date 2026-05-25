@@ -51,7 +51,8 @@
 </style>
 <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="css/style.css"></noscript>
-<link rel="preload" href="images/hero-bg.jpg" as="image" fetchpriority="high">
+<link rel="preload" as="image" href="images/hero-bg-mobile.webp" type="image/webp" fetchpriority="high" media="(max-width: 900px)">
+<link rel="preload" as="image" href="images/hero-bg.webp" type="image/webp" fetchpriority="high" media="(min-width: 901px)">
 <link rel="preload" href="images/logo.webp" as="image" type="image/webp" fetchpriority="high">
 
   <script type="application/ld+json">
@@ -225,7 +226,11 @@
       </div>
     </div>
     <div class="hero-right">
-      <img src="images/hero-bg.jpg" alt="Junk Brawlers truck ready for junk pickup in Dawsonville, GA" width="1400" height="900" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:40% center;display:block;">
+      <picture>
+        <source srcset="images/hero-bg-mobile.webp" media="(max-width: 900px)" type="image/webp">
+        <source srcset="images/hero-bg.webp" type="image/webp">
+        <img src="images/hero-bg.jpg" alt="Junk Brawlers truck ready for junk pickup in Dawsonville, GA" width="1200" height="1600" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:40% center;display:block;">
+      </picture>
     </div>
   </section>
 
@@ -280,7 +285,7 @@
   <!-- WHO WE SERVE -->
   <section class="path-section">
     <div class="path-inner">
-      <p class="path-eyebrow">Residential or Commercial &mdash; Find Your Path</p>
+      <h2 class="path-eyebrow">Residential or Commercial &mdash; Find Your Path</h2>
       <div class="path-grid">
 
         <!-- RESIDENTIAL -->
@@ -336,10 +341,16 @@
       </div>
       <div class="ba-slider" id="baSlider">
         <div class="ba-after">
-          <img src="images/gbp-photo-02.jpg" alt="Clean driveway after Junk Brawlers junk removal in North Georgia" width="2000" height="1500">
+          <picture>
+            <source srcset="images/gbp-photo-02.webp" type="image/webp">
+            <img src="images/gbp-photo-02.jpg" alt="Clean driveway after Junk Brawlers junk removal in North Georgia" width="1000" height="750" loading="lazy">
+          </picture>
         </div>
         <div class="ba-before">
-          <img src="images/gbp-photo-01.jpg" alt="Cluttered backyard before junk removal in Dawsonville, GA" width="2000" height="1500">
+          <picture>
+            <source srcset="images/gbp-photo-01.webp" type="image/webp">
+            <img src="images/gbp-photo-01.jpg" alt="Cluttered backyard before junk removal in Dawsonville, GA" width="1000" height="750" loading="lazy">
+          </picture>
         </div>
         <div class="ba-handle">
           <div class="ba-handle-line"></div>
