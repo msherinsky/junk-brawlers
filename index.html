@@ -24,6 +24,7 @@
   <link rel="icon" href="images/logo.png">
   <link rel="apple-touch-icon" href="images/logo.png">
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-condensed-800.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-condensed-700.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-400.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-600.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-700.woff2" crossorigin>
@@ -40,7 +41,7 @@
 .mobile-nav{display:none;position:fixed;top:70px;left:0;right:0;background:rgba(6,0,20,0.96);z-index:999;padding:16px 24px 24px;box-shadow:0 8px 16px rgba(0,0,0,0.3);max-height:calc(100vh - 70px);overflow-y:auto}.mobile-nav.open{display:block}.mobile-nav a{display:block;color:var(--color-white);font-size:16px;font-weight:500;padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.1)}.mobile-nav .mobile-section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.8);padding:16px 0 4px}.mobile-nav .mobile-ctas{display:flex;flex-direction:column;gap:10px;margin-top:16px}.mobile-nav .btn-ghost-white,.mobile-nav .btn-phone{text-align:center}
 .btn-primary{display:inline-block;padding:13px 28px;background:var(--color-primary);color:var(--color-white);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:4px;border:none;cursor:pointer;transition:opacity var(--transition);font-family:var(--font)}.btn-primary:hover{opacity:0.88}.btn-ghost{display:inline-block;padding:13px 28px;background:transparent;color:var(--color-white);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border:2px solid var(--color-white);border-radius:4px;cursor:pointer;font-family:var(--font)}.btn-ghost:hover{background:var(--color-white);color:var(--color-primary-dark)}
 .hero{position:relative;min-height:100vh;background:#0D0010;display:flex;align-items:stretch;overflow:hidden}.hero-left{flex:0 0 55%;max-width:55%;display:flex;align-items:center;padding:80px 60px 80px 80px;position:relative;z-index:1}.hero-right{position:absolute;right:0;top:0;bottom:0;width:70%;overflow:hidden}.hero-right::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,#0D0010 0%,#0D0010 5%,rgba(13,0,16,0.7) 20%,rgba(13,0,16,0.2) 45%,transparent 65%);pointer-events:none}
-.hero-content{position:relative;z-index:1;max-width:600px;padding:0;margin:0;text-align:left}.hero-eyebrow{display:inline-block;background:linear-gradient(135deg,#9B00FF,#5200A0);color:white;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:6px 14px;border-radius:3px;margin-bottom:14px;box-shadow:0 2px 18px rgba(128,0,255,0.55)}.hero-content h1{font-size:clamp(16px,1.8vw,22px);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.65);margin-bottom:10px}.hero-tagline{font-family:var(--font-heading);font-size:clamp(44px,5.5vw,70px);font-weight:800;color:var(--color-white);line-height:1.0;margin-bottom:14px;text-transform:uppercase;text-shadow:0 0 70px rgba(216,180,254,0.55),0 4px 8px rgba(0,0,0,0.6)}.hero-tagline span{color:var(--color-primary-mid)}.hero-content p{font-size:17px;color:rgba(255,255,255,0.88);margin-bottom:26px;max-width:540px;line-height:1.6;text-shadow:0 1px 4px rgba(0,0,0,0.9),0 0 18px rgba(0,0,0,0.7)}
+.hero-content{position:relative;z-index:1;max-width:600px;padding:0;margin:0;text-align:left}.hero-eyebrow{display:inline-block;background:linear-gradient(135deg,#9B00FF,#5200A0);color:white;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;padding:6px 14px;border-radius:3px;margin-bottom:14px;box-shadow:0 2px 18px rgba(128,0,255,0.55)}.hero-content h1{font-size:clamp(16px,1.8vw,22px);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.65);margin-bottom:10px}.hero-tagline{font-family:var(--font-heading);font-size:clamp(44px,5.5vw,70px);font-weight:800;color:var(--color-white);line-height:1.0;margin-bottom:14px;text-transform:uppercase;text-shadow:0 0 16px rgba(216,180,254,0.45),0 2px 6px rgba(0,0,0,0.5)}.hero-tagline span{color:var(--color-primary-mid)}.hero-content p{font-size:17px;color:rgba(255,255,255,0.88);margin-bottom:26px;max-width:540px;line-height:1.6;text-shadow:0 1px 4px rgba(0,0,0,0.85)}
 .hero-buttons{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-start}.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(6,0,20,0.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(128,0,255,0.4);border-radius:8px;padding:12px 20px;margin-bottom:18px;box-shadow:0 0 28px rgba(128,0,255,0.25)}.hero-stars{color:#FFD700;font-size:18px;letter-spacing:2px;text-shadow:0 0 14px rgba(255,215,0,0.7)}.hero-badge-text{color:rgba(255,255,255,0.9);font-size:14px;font-weight:600}.hero-badge-text strong{color:white}
 .btn-primary{box-shadow:0 4px 20px rgba(128,0,255,0.4)}.btn-primary:hover{box-shadow:0 6px 32px rgba(128,0,255,0.65)}.hero .btn-primary{position:relative;isolation:isolate}.hero .btn-primary::after{content:'';position:absolute;inset:-6px;border-radius:9px;border:2px solid rgba(128,0,255,0.55);opacity:0;will-change:opacity,transform;animation:btn-pulse 2.8s ease-in-out infinite;pointer-events:none}@keyframes btn-pulse{0%,100%{opacity:0;transform:scale(1)}50%{opacity:1;transform:scale(1.08)}}@media(prefers-reduced-motion:reduce){.hero .btn-primary::after{animation:none}}
 .section-heading.light{color:var(--color-white)}.section-heading-accent.centered{margin:0 auto 48px}
@@ -343,13 +344,13 @@
         <div class="ba-after">
           <picture>
             <source srcset="images/gbp-photo-02.webp" type="image/webp">
-            <img src="images/gbp-photo-02.jpg" alt="Clean driveway after Junk Brawlers junk removal in North Georgia" width="1000" height="750" loading="lazy">
+            <img src="images/gbp-photo-02.jpg" alt="Clean driveway after Junk Brawlers junk removal in North Georgia" width="650" height="487" loading="lazy">
           </picture>
         </div>
         <div class="ba-before">
           <picture>
             <source srcset="images/gbp-photo-01.webp" type="image/webp">
-            <img src="images/gbp-photo-01.jpg" alt="Cluttered backyard before junk removal in Dawsonville, GA" width="1000" height="750" loading="lazy">
+            <img src="images/gbp-photo-01.jpg" alt="Cluttered backyard before junk removal in Dawsonville, GA" width="650" height="487" loading="lazy">
           </picture>
         </div>
         <div class="ba-handle">
@@ -367,7 +368,10 @@
   <section class="mentor-section">
     <div class="mentor-inner">
       <div class="mentor-photo-wrap">
-        <img src="images/team-headshot.jpg" alt="Tony Frias, owner of Junk Brawlers" width="340" height="339" loading="lazy" style="width:100%;height:auto;display:block;">
+        <picture>
+          <source srcset="images/team-headshot.webp" type="image/webp">
+          <img src="images/team-headshot.jpg" alt="Tony Frias, owner of Junk Brawlers" width="340" height="339" loading="lazy" style="width:100%;height:auto;display:block;">
+        </picture>
       </div>
       <div class="mentor-text">
         <h2 class="mentor-heading">The Guy Who Answers the Phone</h2>
