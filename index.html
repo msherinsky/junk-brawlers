@@ -422,7 +422,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     </nav>
     <div class="header-ctas">
       <a href="contact.html" class="btn-ghost-white" data-modal="quote">FREE QUOTE</a>
-      <a href="tel:4046329165" class="btn-phone">(404) 632-9165</a>
+      <a href="tel:4046329165" class="btn-phone" data-phone-href>(404) 632-9165</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -472,7 +472,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     <a href="contact.html">Contact</a>
     <div class="mobile-ctas">
       <a href="contact.html" class="btn-ghost-white" data-modal="quote">FREE QUOTE</a>
-      <a href="tel:4046329165" class="btn-phone">(404) 632-9165</a>
+      <a href="tel:4046329165" class="btn-phone" data-phone-href>(404) 632-9165</a>
     </div>
   </nav>
 
@@ -488,8 +488,8 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
           <span class="hero-badge-text"><strong>5.0 Stars</strong> &middot; 48 Google Reviews</span>
         </div>
         <h1>Junk Removal in North Georgia</h1>
-        <div class="hero-tagline">Call Before Noon.<br><span>Your Junk Is Gone by Tonight.</span></div>
-        <p>Tony Frias picks up the phone himself. Not a call center. He shows up within 30 minutes, hauls everything out, sweeps up after, and charges you the exact price he quoted. 48 five-star reviews. 23 cities. 7 days a week.</p>
+        <div class="hero-tagline"><span id="wg-hero-line1">Call Before Noon.</span><br><span id="wg-hero-em">Your Junk Is Gone by Tonight.</span></div>
+        <p id="wg-hero-sub">Tony Frias picks up the phone himself. Not a call center. He shows up within 30 minutes, hauls everything out, sweeps up after, and charges you the exact price he quoted. 48 five-star reviews. 23 cities. 7 days a week.</p>
         <div class="hero-buttons">
           <a href="tel:4046329165" class="btn-primary">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:inline;vertical-align:-2px;margin-right:6px;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
@@ -503,7 +503,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
       <picture>
         <source srcset="images/hero-bg-mobile.webp" media="(max-width: 900px)" type="image/webp">
         <source srcset="images/hero-bg.webp" type="image/webp">
-        <img src="images/hero-bg.jpg" alt="Junk Brawlers truck ready for junk pickup in Dawsonville, GA" width="1200" height="1600" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:40% center;display:block;">
+        <img id="wg-hero-img" src="images/hero-bg.jpg" alt="Junk Brawlers truck ready for junk pickup in Dawsonville, GA" width="1200" height="1600" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:40% center;display:block;">
       </picture>
     </div>
   </section>
@@ -610,7 +610,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         <a href="junk-removal.html" class="svc-card svc-card--featured" style="background-image:url(images/gbp-photo-01.webp);">
           <div class="svc-card-overlay"></div>
           <span class="svc-card-badge">Most Popular</span>
-          <div class="svc-card-body">
+          <div class="svc-card-body" data-svc="0">
             <h3>Residential Junk Removal</h3>
             <p>Furniture, mattresses, garage cleanouts, bulk trash. One call, same-day available. Tony and the crew show up and handle everything.</p>
           </div>
@@ -618,7 +618,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 
         <a href="appliance-removal.html" class="svc-card" style="background-image:url(images/gbp-photo-02.webp);">
           <div class="svc-card-overlay"></div>
-          <div class="svc-card-body">
+          <div class="svc-card-body" data-svc="1">
             <h3>Appliance Removal</h3>
             <p>Washers, dryers, fridges, stoves. Heavy, awkward, and out of your way. We haul it off so you don&rsquo;t have to.</p>
           </div>
@@ -626,14 +626,14 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 
         <a href="estate-cleanouts.html" class="svc-card svc-card--wide" style="background-image:url(images/gbp-photo-01.webp);background-position:center 60%;">
           <div class="svc-card-overlay" style="background:linear-gradient(180deg,rgba(10,0,24,0.05) 0%,rgba(10,0,24,0.65) 60%);"></div>
-          <div class="svc-card-body">
+          <div class="svc-card-body" data-svc="2">
             <h3>Hoarding &amp; Estate Cleanouts</h3>
             <p>Compassionate and judgment-free. Tony has handled dozens. He&rsquo;ll work at whatever pace feels right for you.</p>
           </div>
         </a>
 
         <a href="hot-tub-removal.html" class="svc-card" style="background:linear-gradient(135deg,#1A0030 0%,#3D0080 100%);">
-          <div class="svc-card-body" style="position:relative;padding:32px 20px;">
+          <div class="svc-card-body" data-svc="3" style="position:relative;padding:32px 20px;">
             <h3>Hot Tub Removal</h3>
             <p>We break it down and haul it away. All sizes. Free on-site quote before anything moves.</p>
           </div>
@@ -641,7 +641,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 
         <a href="construction-debris-removal.html" class="svc-card svc-card--featured" style="background-image:url(images/gbp-photo-02.webp);">
           <div class="svc-card-overlay"></div>
-          <div class="svc-card-body">
+          <div class="svc-card-body" data-svc="4">
             <h3>Construction Debris</h3>
             <p>Drywall, lumber, roofing, concrete, demo waste. Cleared fast so your project keeps moving. Commercial accounts welcome.</p>
           </div>
@@ -834,7 +834,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         <span class="cta-band-eyebrow-line"></span>
       </div>
       <h2>Call Tony Direct.</h2>
-      <a href="tel:4046329165" class="cta-band-phone">(404) 632-9165</a>
+      <a href="tel:4046329165" class="cta-band-phone" data-phone-href>(404) 632-9165</a>
       <span class="cta-band-tap">Tap to call &middot; He picks up</span>
       <div class="cta-trust-chips">
         <div class="trust-chip">
@@ -861,6 +861,14 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     </div>
   </div>
 
+  <!-- GALLERY (populated by site editor via content-loader.js) -->
+  <section id="wg-gallery-section" style="display:none;background:#0A0018;padding:64px 32px;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <h2 style="font-family:var(--font-heading);font-size:clamp(28px,3.5vw,44px);font-weight:800;text-transform:uppercase;color:#fff;text-align:center;margin-bottom:32px;">Our Work</h2>
+      <div id="wg-gallery" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;"></div>
+    </div>
+  </section>
+
   </main>
 
   <footer class="site-footer">
@@ -869,22 +877,22 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         <div class="footer-logo"><picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" alt="Junk Brawlers LLC" width="68" height="54" style="height:54px;width:auto;display:block;"></picture></div>
         <p>North Georgia&rsquo;s most trusted junk removal service. Owner-operated by Antonio &ldquo;Tony&rdquo; Frias. 5.0 stars across 48 Google reviews.</p>
         <p>Serving Dawson, Cherokee, Forsyth, Hall, Gilmer, Lumpkin, Pickens, White, Gwinnett &amp; Fannin counties.</p>
-        <a href="tel:4046329165" class="footer-phone">(404) 632-9165</a>
-        <span class="footer-hours">Mon&ndash;Sun &middot; 7:00 AM &ndash; 6:00 PM</span>
+        <a href="tel:4046329165" class="footer-phone" data-phone-href>(404) 632-9165</a>
+        <span class="footer-hours" id="wg-hours">Mon&ndash;Sun &middot; 7:00 AM &ndash; 6:00 PM</span>
       </div>
       <div class="footer-col"><h3>Quick Links</h3><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Tony</a></li><li><a href="services.html">Services</a></li><li><a href="service-areas.html">Service Areas</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact / Quote</a></li></ul></div>
       <div class="footer-col"><h3>Services</h3><ul><li><a href="junk-removal.html">Junk Removal</a></li><li><a href="appliance-removal.html">Appliance Removal</a></li><li><a href="hot-tub-removal.html">Hot Tub Removal</a></li><li><a href="pool-removal.html">Pool Removal</a></li><li><a href="estate-cleanouts.html">Estate Cleanouts</a></li><li><a href="garage-cleanouts.html">Garage Cleanouts</a></li><li><a href="hoarder-cleanouts.html">Hoarder Cleanouts</a></li><li><a href="construction-debris-removal.html">Construction Debris</a></li><li><a href="commercial-junk-removal.html">Commercial Removal</a></li><li><a href="shed-deck-removal.html">Shed &amp; Deck Removal</a></li></ul></div>
       <div class="footer-col">
         <h3>Follow Tony</h3>
         <div class="social-icons">
-          <a href="https://www.facebook.com/profile.php?id=100008604212074" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener">f</a>
-          <a href="https://www.instagram.com/junkbrawlers" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true" style="vertical-align:-0.125em"><path d="M20 4h-3.17L15 2H9L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8 13c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=100008604212074" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener" data-social="facebook">f</a>
+          <a href="https://www.instagram.com/junkbrawlers" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener" data-social="instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true" style="vertical-align:-0.125em"><path d="M20 4h-3.17L15 2H9L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8 13c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg></a>
         </div>
         <h4 style="margin-top:24px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#fff;margin-bottom:12px;">Customer Care</h4>
         <ul><li><a href="terms.html">Terms of Service</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="contact.html">Get a Free Quote</a></li></ul>
       </div>
     </div>
-    <div class="footer-bottom">&copy; 2026 Junk Brawlers LLC &middot; Dawsonville, GA &middot; All rights reserved. | <a href="terms.html">Terms</a> &middot; <a href="privacy.html">Privacy</a></div>
+    <div class="footer-bottom"><span data-copyright>&copy; 2026 Junk Brawlers LLC &middot; Dawsonville, GA &middot; All rights reserved.</span> | <a href="terms.html">Terms</a> &middot; <a href="privacy.html">Privacy</a></div>
   </footer>
 
   <div class="modal-overlay" id="quoteModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
@@ -922,6 +930,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
           data-color-header="#1a0030"
           data-auto-open="7000"
           data-quick-replies="Get a free quote|Schedule a pickup|What do you haul?"></script>
+  <script defer src="/content-loader.js"></script>
   <script defer src="js/main.js"></script>
 </body>
 </html>
