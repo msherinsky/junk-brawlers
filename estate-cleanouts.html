@@ -27,7 +27,7 @@
 :root{--color-purple:#8000FF;--color-purple-dark:#6600CC;--color-purple-deeper:#4D0099;--color-purple-mid:#D8B4FE;--color-purple-light:#F5F0FF;--color-header:#5500AA;--color-hero-bg:#0D0010;--color-dark:#1A1A1A;--color-footer:#0A000F;--color-light-alt:#F8F5FF;--color-white:#FFFFFF;--color-body:#1A1A2E;--color-border:#E0D5F5;--font-heading:'Barlow Condensed',sans-serif;--font:'Barlow',sans-serif;--radius-card:6px;--radius-pill:22px;--transition:0.25s ease}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--font);color:var(--color-body);background:var(--color-white);font-size:15px;line-height:1.6}
+body{font-family:var(--font);color:var(--color-body);background:var(--color-white);font-size:16px;line-height:1.6}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;height:auto;display:block}
 ul{list-style:none}
@@ -83,7 +83,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .trust-item{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:var(--color-body);text-transform:uppercase;letter-spacing:0.5px}
 .trust-item .trust-icon{font-size:22px}
 .page-hero{background:var(--color-hero-bg);padding:72px 32px;text-align:center;position:relative;overflow:hidden}
-.page-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(85,0,170,0.5) 0%,transparent 70%)}
+.page-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.6) 100%)}
 .page-hero-content{position:relative;z-index:1;max-width:760px;margin:0 auto}
 .page-hero h1{font-size:clamp(32px,4.5vw,56px);font-weight:800;color:var(--color-white);text-transform:uppercase;margin-bottom:16px;line-height:1.1;font-family:var(--font-heading)}
 .page-hero p{font-size:16px;color:rgba(255,255,255,0.82);margin-bottom:28px}
@@ -94,6 +94,15 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .breadcrumb span{margin:0 6px}
 @media(max-width:768px){.header-nav,.header-ctas{display:none}.hamburger{display:flex}.hero-content{padding:56px 24px}.trust-bar-inner{justify-content:flex-start;gap:20px}.site-header{padding:0 20px}.breadcrumb{padding:10px 20px}}
 @media(max-width:480px){.hero-buttons{flex-direction:column}.hero-buttons .btn-primary,.hero-buttons .btn-ghost{text-align:center}}
+.card-grid-markets .service-card:nth-child(5){grid-column:2/4}
+@media(max-width:1024px){.card-grid-markets .service-card:nth-child(5){grid-column:auto}}
+.section-intro{font-size:16px;color:#595959;line-height:1.75;margin-bottom:32px;max-width:760px}
+.pricing-section{background:var(--color-purple-light);border-top:3px solid var(--color-purple);border-bottom:3px solid var(--color-purple);padding:56px 32px}
+.pricing-inner{max-width:760px;margin:0 auto;text-align:center}
+.related-services-section{background:#f8f5ff;padding:52px 32px}
+.related-services-inner{max-width:860px;margin:0 auto;text-align:center}
+.recent-work-section{background:var(--color-white);padding:64px 32px;border-top:1px solid var(--color-border)}
+.recent-work-inner{max-width:1100px;margin:0 auto}
 </style>
 <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="css/style.css"></noscript>
@@ -181,9 +190,8 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         <div class="dropdown-menu">
           <a href="dawsonville.html">Dawsonville GA</a><a href="canton.html">Canton GA</a>
           <a href="cumming.html">Cumming GA</a>
-          <a href="gainesville.html">Gainesville GA</a><a href="dahlonega.html">Dahlonega GA</a>
-          <a href="jasper.html">Jasper GA</a><a href="ellijay.html">Ellijay GA</a>
-          <a href="blue-ridge.html">Blue Ridge GA</a><a href="cleveland.html">Cleveland GA</a>
+          <a href="gainesville.html">Gainesville GA</a><a href="dahlonega.html">Dahlonega GA</a><a href="ellijay.html">Ellijay GA</a>
+          <a href="blue-ridge.html">Blue Ridge GA</a>
           <a href="woodstock.html">Woodstock GA</a><a href="ball-ground.html">Ball Ground GA</a>
           <a href="service-areas.html">See All Cities &#8250;</a>
         </div>
@@ -215,7 +223,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
   <main>
   <div class="breadcrumb"><a href="index.html">Home</a><span>&#8250;</span><a href="services.html">Services</a><span>&#8250;</span>Estate Cleanouts</div>
 
-  <section class="page-hero">
+  <section class="page-hero" style="background-image:url(images/gbp-photo-04.jpg);background-size:cover;background-position:center">
     <div class="page-hero-content">
       <div class="hero-star-badge"><span class="badge-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> 5.0 &middot; 48 Google Reviews</div>
       <h1>Estate Cleanouts in North Georgia</h1>
@@ -233,6 +241,15 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     </div>
   </section>
 
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <div class="trust-item"><span class="trust-icon">&#9733;</span> <a href="https://share.google/HG9xlgEp9F7GkTscP" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">5.0 &middot; 48 Google Reviews</a></div>
+      <div class="trust-item"><span class="trust-icon">&#128197;</span> Respectful &amp; Discreet</div>
+      <div class="trust-item"><span class="trust-icon">&#128100;</span> Tony on Every Job</div>
+      <div class="trust-item"><span class="trust-icon">&#10003;</span> Licensed &amp; Insured</div>
+    </div>
+  </div>
+
   <section class="content-section">
     <div class="content-inner">
       <div class="two-col">
@@ -245,18 +262,18 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
           <a href="#" class="btn-primary" data-modal="quote">Get a Free Estate Cleanout Quote &#8594;</a>
         </div>
         <div class="col-image">
-          <div class="img-placeholder">[PLACEHOLDER: Estate cleanout job photo &mdash; respectful, organized]</div>
+          <img src="images/team-headshot.jpg" alt="Tony Frias, owner of Junk Brawlers, on a job in North Georgia" width="540" height="400" loading="lazy" style="width:100%;height:auto;border-radius:var(--radius-card);display:block;object-fit:cover">
         </div>
       </div>
     </div>
   </section>
 
-  <section class="content-section alt-bg">
+  <section class="content-section">
     <div class="content-inner">
       <h2 class="section-heading">North Georgia Estate Cleanout Markets</h2>
       <div class="section-heading-accent"></div>
       <p class="section-intro">Estate cleanout demand across North Georgia comes from five distinct markets. Tony is familiar with each &mdash; the property types, the logistics, and what families in each area are typically dealing with.</p>
-      <div class="card-grid">
+      <div class="card-grid card-grid-markets">
         <div class="service-card">
           <span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true" style="vertical-align:-0.125em"><path d="M14 6l-1-2H5v17h2v-7h5l1 2h7V6h-6zm4 8h-4l-1-2H7V6h5l1 2h5v6z"/></svg></span>
           <h3>Mountain Cabin Estates</h3>
@@ -286,10 +303,20 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     </div>
   </section>
 
-  <section class="content-section">
+  <section class="content-section alt-bg">
     <div class="content-inner">
       <h2 class="section-heading">What&#8217;s Included in an Estate Cleanout</h2>
       <div class="section-heading-accent"></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:40px">
+        <div style="position:relative">
+          <img src="images/review-kasaundra-01.jpg" alt="Before: Full home contents prior to estate cleanout in North Georgia" width="540" height="360" loading="lazy" style="width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--radius-card);display:block">
+          <div style="position:absolute;top:12px;left:12px;background:rgba(26,26,46,0.88);color:white;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:4px 10px;border-radius:3px">Before</div>
+        </div>
+        <div style="position:relative">
+          <img src="images/review-kasaundra-02.jpg" alt="After: Property fully cleared following estate cleanout in North Georgia" width="540" height="360" loading="lazy" style="width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--radius-card);display:block">
+          <div style="position:absolute;top:12px;left:12px;background:var(--color-purple);color:white;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:4px 10px;border-radius:3px">After</div>
+        </div>
+      </div>
       <div class="card-grid">
         <div class="service-card"><span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true" style="vertical-align:-0.125em"><path d="M21 9V7c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v2c-1.1 0-2 .9-2 2v5h1.33L3 17h1l.67-1h14.67l.66 1h1l-.33-1H22v-5c0-1.1-.9-2-2-2zm-8 0H5V7h8v2zm7 0h-5V7h5v2z"/></svg></span><h3>Furniture Removal</h3><p>All furniture &mdash; sofas, beds, dressers, tables, chairs &mdash; removed and hauled away.</p></div>
         <div class="service-card"><span class="card-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true" style="vertical-align:-0.125em"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg></span><h3>Appliance Removal</h3><p>Refrigerators, washers, dryers, stoves, dishwashers &mdash; all handled and properly disposed.</p></div>
@@ -332,6 +359,32 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     </div>
   </section>
 
+  <section class="pricing-section">
+    <div class="pricing-inner">
+      <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--color-purple);margin-bottom:8px">Pricing</p>
+      <h2 style="font-family:var(--font-heading);font-size:clamp(28px,4vw,40px);font-weight:800;text-transform:uppercase;color:var(--color-body);margin-bottom:16px">What Does an Estate Cleanout Cost?</h2>
+      <div style="width:40px;height:3px;background:var(--color-purple);border-radius:2px;margin:0 auto 28px"></div>
+      <p style="font-size:17px;font-weight:700;color:var(--color-purple);margin-bottom:16px">Most estate cleanouts in North Georgia run $400&ndash;$1,200</p>
+      <p style="font-size:15px;color:#595959;margin-bottom:32px;line-height:1.7">Price is volume-based &mdash; how much space your items fill in the truck. A condo or small apartment runs lower; a large rural home with a garage, barn, and decades of accumulation costs more. Tony gives you a firm, no-surprise number before any work starts. No hourly rates. No hidden fees.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:28px">
+        <div style="background:var(--color-white);border:1px solid var(--color-border);border-radius:var(--radius-card);padding:18px 24px;text-align:center;min-width:160px">
+          <div style="font-size:22px;font-weight:800;color:var(--color-purple);font-family:var(--font-heading);line-height:1">$150&ndash;$350</div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#595959;margin-top:6px">Partial Load / Few Rooms</div>
+        </div>
+        <div style="background:var(--color-white);border:1px solid var(--color-border);border-radius:var(--radius-card);padding:18px 24px;text-align:center;min-width:160px">
+          <div style="font-size:22px;font-weight:800;color:var(--color-purple);font-family:var(--font-heading);line-height:1">$400&ndash;$700</div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#595959;margin-top:6px">Mid-Size Home</div>
+        </div>
+        <div style="background:var(--color-white);border:1px solid var(--color-border);border-radius:var(--radius-card);padding:18px 24px;text-align:center;min-width:160px">
+          <div style="font-size:22px;font-weight:800;color:var(--color-purple);font-family:var(--font-heading);line-height:1">$700&ndash;$1,200+</div>
+          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#595959;margin-top:6px">Full Estate / Rural Property</div>
+        </div>
+      </div>
+      <p style="font-size:13px;color:#777;margin-bottom:28px">Large properties &mdash; rural homes, multiple outbuildings, waterfront estates &mdash; require an on-site quote. Tony walks the property and gives you a firm price before a single item is touched.</p>
+      <a href="#" class="btn-primary" data-modal="quote">GET A FREE ESTATE CLEANOUT QUOTE</a>
+    </div>
+  </section>
+
   <section class="reviews-section">
     <div class="reviews-inner">
       <h2 class="section-heading">What Customers Say About Estate Cleanouts</h2>
@@ -339,7 +392,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
       <div class="reviews-grid">
         <div class="review-card">
           <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="review-text">&#8220;The best services EVER! Done so quickly and professionally. The home was left spotless and Tony was accommodating with all our requests. We will use him for all jobs in the GA area!&#8221;</p>
+          <p class="review-text">&#8220;The best services EVER! Done so quickly and professionally &mdash; no hiccups at all. The home was left spotless and Tony was accommodating with all our requests. We will use him for all jobs in the GA area that he services.&#8221;</p>
           <div class="review-author">&mdash; Ana D. &middot; Google Review</div>
         </div>
         <div class="review-card">
@@ -356,34 +409,17 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     </div>
   </section>
 
-  <section class="faq-section">
-    <div class="faq-inner">
-      <h2 class="section-heading light">Estate Cleanout FAQ</h2>
-      <div class="section-heading-accent centered"></div>
-      <div class="faq-list">
-        <div class="faq-item">
-          <div class="faq-question">How much does an estate cleanout cost in North Georgia? <span class="faq-toggle">+</span></div>
-          <div class="faq-answer">Estate cleanout pricing depends on the size of the home and the volume of items. Junk Brawlers always provides a free, no-obligation quote before any work begins. Call (404) 632-9165 or fill out our form for a fast estimate &mdash; Tony usually responds within minutes.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">Do I need to be there during the estate cleanout? <span class="faq-toggle">+</span></div>
-          <div class="faq-answer">Ideally yes &mdash; it helps to have someone present to identify items to keep. However, if you can pre-designate what stays vs. what goes, we can often work without you present. Many out-of-state heirs coordinate with Tony remotely. Call us to discuss your situation.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">Do you donate items from estate cleanouts? <span class="faq-toggle">+</span></div>
-          <div class="faq-answer">Yes. Before anything goes to a landfill, we sort through it. Usable furniture, clothing, kitchenware, and household items get donated to local North Georgia charities. Recyclables get recycled. Only what can&#8217;t be reused goes to the landfill.</div>
-        </div>
-        <div class="faq-item">
-          <div class="faq-question">How quickly can you do an estate cleanout? <span class="faq-toggle">+</span></div>
-          <div class="faq-answer">Most single-family estate cleanouts are completed in one full day. Larger properties or rural homes with outbuildings may require two visits. We&#8217;ll give you a realistic timeline during the quote so you can plan around it.</div>
-        </div>
-      </div>
-      <div style="margin-top:40px;"><a href="#" class="btn-primary" data-modal="quote">GET A FREE ESTATE CLEANOUT QUOTE</a></div>
+  <div class="cta-band">
+    <h2>The Longer the Property Sits, the Harder This Gets</h2>
+    <p>Same-day available &middot; Free on-site quote &middot; Owner on every job &middot; North Georgia</p>
+    <div class="hero-buttons" style="justify-content:center;">
+      <a href="#" class="btn-ghost" data-modal="quote">GET A FREE QUOTE</a>
+      <a href="tel:4046329165" class="btn-ghost">CALL (404) 632-9165</a>
     </div>
-  </section>
+  </div>
 
-  <section style="background:#f8f5ff;padding:52px 32px">
-    <div style="max-width:860px;margin:0 auto;text-align:center">
+  <section class="related-services-section">
+    <div class="related-services-inner">
       <p style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#8000ff;margin-bottom:8px">Part of Our</p>
       <h2 style="font-family:var(--font-heading);font-size:28px;font-weight:800;text-transform:uppercase;color:#1a1a2e;margin-bottom:6px"><a href="residential-junk-removal.html" style="color:#8000ff;text-decoration:underline">Residential Junk Removal</a></h2>
       <div style="width:40px;height:3px;background:#8000ff;margin:16px auto 36px"></div>
@@ -397,17 +433,8 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     </div>
   </section>
 
-  <div class="cta-band">
-    <h2>Let Us Handle the Hard Part</h2>
-    <p>Respectful, efficient estate cleanouts across North Georgia &middot; Free quote &middot; Fast response</p>
-    <div class="hero-buttons" style="justify-content:center;">
-      <a href="#" class="btn-ghost" data-modal="quote">GET A FREE QUOTE</a>
-      <a href="tel:4046329165" class="btn-ghost">CALL (404) 632-9165</a>
-    </div>
-  </div>
-
-  <section style="background:var(--color-white);padding:64px 32px;border-top:1px solid var(--color-border)">
-    <div style="max-width:1100px;margin:0 auto">
+  <section class="recent-work-section">
+    <div class="recent-work-inner">
       <h2 style="font-family:var(--font-heading);font-size:clamp(28px,4vw,40px);font-weight:800;text-transform:uppercase;color:var(--color-body);text-align:center;margin-bottom:8px">Recent Work in North Georgia</h2>
       <div style="width:56px;height:4px;background:var(--color-purple);border-radius:2px;margin:0 auto 40px"></div>
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px">
@@ -429,10 +456,8 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         <a href="cumming.html" class="location-pill">Cumming GA</a>
         <a href="gainesville.html" class="location-pill">Gainesville GA</a>
         <a href="dahlonega.html" class="location-pill">Dahlonega GA</a>
-        <a href="jasper.html" class="location-pill">Jasper GA</a>
         <a href="ellijay.html" class="location-pill">Ellijay GA</a>
         <a href="blue-ridge.html" class="location-pill">Blue Ridge GA</a>
-        <a href="cleveland.html" class="location-pill">Cleveland GA</a>
         <a href="woodstock.html" class="location-pill">Woodstock GA</a>
         <a href="ball-ground.html" class="location-pill">Ball Ground GA</a>
         <a href="holly-springs.html" class="location-pill">Holly Springs GA</a>
@@ -441,13 +466,33 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         <a href="flowery-branch.html" class="location-pill">Flowery Branch GA</a>
         <a href="oakwood.html" class="location-pill">Oakwood GA</a>
         <a href="buford.html" class="location-pill">Buford GA</a>
-        <a href="east-ellijay.html" class="location-pill">East Ellijay GA</a>
-        <a href="helen.html" class="location-pill">Helen GA</a>
-        <a href="talking-rock.html" class="location-pill">Talking Rock GA</a>
-        <a href="waleska.html" class="location-pill">Waleska GA</a>
-        <a href="nelson.html" class="location-pill">Nelson GA</a>
-        <a href="mccaysville.html" class="location-pill">McCaysville GA</a>
       </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="faq-inner">
+      <h2 class="section-heading light">Estate Cleanout FAQ</h2>
+      <div class="section-heading-accent centered"></div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">How much does an estate cleanout cost in North Georgia? <span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Most estate cleanouts in North Georgia run $400&ndash;$1,200 depending on the size of the home and volume of items. A partial load or a few rooms can start around $150&ndash;$350. Large rural properties with outbuildings or barns may run higher. Tony always gives you a firm, no-surprise price on-site before any work begins &mdash; call (404) 632-9165 for a fast estimate.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do I need to be present during the estate cleanout in North Georgia? <span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Ideally yes &mdash; it helps to have someone present to identify items to keep. However, if you can pre-designate what stays vs. what goes, Tony can often work without you present. Many out-of-state heirs coordinate with Tony remotely. Call (404) 632-9165 to discuss your situation and we&#8217;ll work something out.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you donate items from North Georgia estate cleanouts? <span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Yes. Before anything goes to a landfill, we sort through it. Usable furniture, clothing, kitchenware, and household items get donated to local North Georgia charities. Recyclables get recycled. Only what can&#8217;t be reused goes to the landfill.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How quickly can you complete an estate cleanout in North Georgia? <span class="faq-toggle">+</span></div>
+          <div class="faq-answer">Most single-family estate cleanouts are completed in one full day. Larger properties or rural North Georgia homes with outbuildings may require two visits. Tony will give you a realistic timeline during the quote so you can plan around it. Same-day appointments are sometimes available &mdash; call (404) 632-9165.</div>
+        </div>
+      </div>
+      <div style="margin-top:40px;"><a href="#" class="btn-primary" data-modal="quote">GET A FREE ESTATE CLEANOUT QUOTE</a></div>
     </div>
   </section>
 
@@ -512,7 +557,6 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         <form class="modal-form quote-form" novalidate>
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="tel" name="phone" placeholder="Phone Number" required>
-          <input type="text" name="city" placeholder="Property City / Zip Code">
           <textarea name="message" placeholder="Tell us about the estate cleanout &mdash; approximate home size, contents, timeline..."></textarea>
           <label class="modal-consent">
             <input type="checkbox" name="sms_consent" required>
