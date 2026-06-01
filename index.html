@@ -94,17 +94,16 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .hero-tagline span{color:var(--color-primary-mid)}
 .hero-content p{font-size:17px;color:rgba(255,255,255,0.88);margin-bottom:26px;max-width:520px;line-height:1.65;text-shadow:0 1px 4px rgba(0,0,0,0.85)}
 .hero-buttons{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-start}
-.trust-ticker{background:#0D0010;border-bottom:1px solid rgba(255,255,255,0.07);overflow:hidden}
-.trust-ticker-wrap{display:flex;overflow:hidden;mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent)}
-.trust-ticker-track{display:flex;align-items:center;flex-shrink:0;min-width:100%;animation:trust-scroll 32s linear infinite;padding:18px 0}
-@keyframes trust-scroll{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
-@media(prefers-reduced-motion:reduce){.trust-ticker-track{animation:none}}
+.trust-ticker{background:linear-gradient(180deg,#160020 0%,#0D0010 100%);box-shadow:0 6px 20px rgba(0,0,0,0.45),inset 0 1px 0 rgba(255,255,255,0.08)}
+.trust-ticker-wrap{display:flex;justify-content:center;overflow:hidden}
+.trust-ticker-track{display:flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:0;padding:20px 32px}
 .t-item{display:flex;align-items:center;gap:9px;color:rgba(255,255,255,0.82);font-size:15px;font-weight:600;white-space:nowrap;padding:0 24px}
 .t-icon{width:19px;height:19px;flex-shrink:0;color:#D8B4FE;display:flex;align-items:center;justify-content:center}
 .t-icon svg{width:100%;height:100%}
 .t-sep{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.25);flex-shrink:0;margin:0 4px}
-.sf-section{background:#0D0010;padding:80px 32px}
-.sf-inner{max-width:900px;margin:0 auto}
+.sf-section{background:#0D0010;padding:80px 32px;position:relative;overflow:hidden}
+.sf-section::after{content:'';position:absolute;bottom:0;left:0;right:0;height:130px;background:linear-gradient(to bottom,rgba(13,0,16,0),#F5F0FF);pointer-events:none}
+.sf-inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
 .sf-eyebrow{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:rgba(255,255,255,0.55);margin-bottom:12px}
 .sf-heading{font-family:var(--font-heading);font-size:clamp(52px,7vw,86px);font-weight:800;text-transform:uppercase;color:#F5F5F0;line-height:1;margin-bottom:32px}
 .sf-heading span{color:var(--color-primary)}
@@ -529,22 +528,6 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         <span class="t-sep" aria-hidden="true"></span>
         <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>Free On-Site Quote</div>
         <span class="t-sep" aria-hidden="true"></span>
-      </div>
-      <div class="trust-ticker-track" aria-hidden="true">
-        <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>5.0&#9733; Google Rating</div>
-        <span class="t-sep"></span>
-        <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>Same-Day Service Available</div>
-        <span class="t-sep"></span>
-        <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></span>North Georgia&rsquo;s #1</div>
-        <span class="t-sep"></span>
-        <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>No Hidden Fees, Ever</div>
-        <span class="t-sep"></span>
-        <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>Owner on Every Job</div>
-        <span class="t-sep"></span>
-        <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span>Licensed &amp; Insured</div>
-        <span class="t-sep"></span>
-        <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>Free On-Site Quote</div>
-        <span class="t-sep"></span>
       </div>
     </div>
   </div>
