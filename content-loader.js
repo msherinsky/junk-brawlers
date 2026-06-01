@@ -11,10 +11,42 @@
       fill('wg-hero-sub',   page.subheadline);
       fill('wg-hero-cta',   page.ctaText);
 
-      // ── Hero image ────────────────────────────────────────────────────────────
-      if (c.heroPhoto) {
-        var heroImg = document.getElementById('wg-hero-img');
-        if (heroImg) heroImg.src = c.heroPhoto;
+      // ── Named photo slots ─────────────────────────────────────────────────────
+      var photoMap = {
+        heroPhoto:          'wg-hero-img',
+        ownerPhoto1:        'wg-ownerPhoto1',
+        ownerPhoto2:        'wg-ownerPhoto2',
+        ba_shed_before:     'wg-ba-shed-before',
+        ba_shed_after:      'wg-ba-shed-after',
+        ba_basement_before: 'wg-ba-basement-before',
+        ba_basement_after:  'wg-ba-basement-after',
+        ba_yard_before:     'wg-ba-yard-before',
+        ba_yard_after:      'wg-ba-yard-after',
+        ba_loft_before:     'wg-ba-loft-before',
+        ba_loft_after:      'wg-ba-loft-after',
+      };
+      Object.keys(photoMap).forEach(function (key) {
+        if (c[key]) {
+          var el = document.getElementById(photoMap[key]);
+          if (el) el.src = c[key];
+        }
+      });
+
+      // ── Before/after section visibility ──────────────────────────────────────
+      var baSection = document.getElementById('wg-ba-section');
+      if (baSection) {
+        var baPairs = ['shed', 'basement', 'yard', 'loft'];
+        var anyPair = false;
+        baPairs.forEach(function (id) {
+          var hasBefore = !!c['ba_' + id + '_before'];
+          var hasAfter  = !!c['ba_' + id + '_after'];
+          if (hasBefore || hasAfter) {
+            var pair = document.getElementById('wg-ba-pair-' + id);
+            if (pair) pair.style.display = 'block';
+            anyPair = true;
+          }
+        });
+        if (anyPair) baSection.style.display = 'block';
       }
 
       // ── Phone ─────────────────────────────────────────────────────────────────
@@ -37,6 +69,15 @@
           if (h3 && svc.title) h3.textContent = svc.title;
           if (p  && svc.desc)  p.textContent  = svc.desc;
         });
+      }
+
+      // ── Service areas ─────────────────────────────────────────────────────────
+      var areasEl = document.getElementById('wg-areas');
+      if (areasEl && c.serviceAreas && c.serviceAreas.length) {
+        areasEl.style.display = 'flex';
+        areasEl.innerHTML = c.serviceAreas.map(function (area) {
+          return '<span style="display:inline-block;padding:6px 14px;background:rgba(128,0,255,0.1);border-radius:4px;font-size:14px;font-weight:600;color:#8000FF;">' + esc(area) + '</span>';
+        }).join('');
       }
 
       // ── Testimonials ──────────────────────────────────────────────────────────

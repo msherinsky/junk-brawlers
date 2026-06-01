@@ -396,23 +396,15 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
             <a href="blue-ridge.html">Blue Ridge GA</a>
             <a href="buford.html">Buford GA</a>
             <a href="canton.html">Canton GA</a>
-            <a href="cleveland.html">Cleveland GA</a>
             <a href="cumming.html">Cumming GA</a>
             <a href="dahlonega.html">Dahlonega GA</a>
-            <a href="east-ellijay.html">East Ellijay GA</a>
             <a href="ellijay.html">Ellijay GA</a>
             <a href="flowery-branch.html">Flowery Branch GA</a>
             <a href="gainesville.html">Gainesville GA</a>
-            <a href="helen.html">Helen GA</a>
             <a href="holly-springs.html">Holly Springs GA</a>
-            <a href="jasper.html">Jasper GA</a>
-            <a href="mccaysville.html">McCaysville GA</a>
-            <a href="nelson.html">Nelson GA</a>
             <a href="oakwood.html">Oakwood GA</a>
             <a href="sugar-hill.html">Sugar Hill GA</a>
             <a href="suwanee.html">Suwanee GA</a>
-            <a href="talking-rock.html">Talking Rock GA</a>
-            <a href="waleska.html">Waleska GA</a>
             <a href="woodstock.html">Woodstock GA</a>
           </div>
         </div>
@@ -450,23 +442,15 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     <a href="blue-ridge.html">Blue Ridge GA</a>
     <a href="buford.html">Buford GA</a>
     <a href="canton.html">Canton GA</a>
-    <a href="cleveland.html">Cleveland GA</a>
     <a href="cumming.html">Cumming GA</a>
     <a href="dahlonega.html">Dahlonega GA</a>
-    <a href="east-ellijay.html">East Ellijay GA</a>
     <a href="ellijay.html">Ellijay GA</a>
     <a href="flowery-branch.html">Flowery Branch GA</a>
     <a href="gainesville.html">Gainesville GA</a>
-    <a href="helen.html">Helen GA</a>
     <a href="holly-springs.html">Holly Springs GA</a>
-    <a href="jasper.html">Jasper GA</a>
-    <a href="mccaysville.html">McCaysville GA</a>
-    <a href="nelson.html">Nelson GA</a>
     <a href="oakwood.html">Oakwood GA</a>
     <a href="sugar-hill.html">Sugar Hill GA</a>
     <a href="suwanee.html">Suwanee GA</a>
-    <a href="talking-rock.html">Talking Rock GA</a>
-    <a href="waleska.html">Waleska GA</a>
     <a href="woodstock.html">Woodstock GA</a>
     <a href="faq.html">FAQ</a>
     <a href="contact.html">Contact</a>
@@ -495,7 +479,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:inline;vertical-align:-2px;margin-right:6px;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             CALL (404) 632-9165
           </a>
-          <a href="contact.html" class="btn-ghost" data-modal="quote">GET A FREE QUOTE</a>
+          <a href="contact.html" class="btn-ghost" id="wg-hero-cta" data-modal="quote">GET A FREE QUOTE</a>
         </div>
       </div>
     </div>
@@ -551,7 +535,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
       <div style="order:2;" class="owner-photo-wrap">
         <picture>
           <source srcset="images/team-headshot.webp" type="image/webp">
-          <img src="images/team-headshot.jpg" alt="Tony Frias, owner of Junk Brawlers LLC, Dawsonville GA" width="600" height="450" loading="lazy">
+          <img id="wg-ownerPhoto1" src="images/team-headshot.jpg" alt="Tony Frias, owner of Junk Brawlers LLC, Dawsonville GA" width="600" height="450" loading="lazy">
         </picture>
         <div class="owner-badge">
           <span class="owner-badge-score">&#9733; 5.0</span>
@@ -651,6 +635,44 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     </div>
   </section>
 
+  <!-- BEFORE / AFTER (populated by site editor via content-loader.js) -->
+  <section id="wg-ba-section" style="display:none;background:#0A0018;padding:64px 32px;">
+    <div style="max-width:1100px;margin:0 auto;">
+      <h2 style="font-family:var(--font-heading);font-size:clamp(28px,3.5vw,44px);font-weight:800;text-transform:uppercase;color:#fff;text-align:center;margin-bottom:8px;">Before &amp; After</h2>
+      <div style="width:80px;height:5px;background:var(--color-primary);margin:0 auto 40px;border-radius:3px;"></div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;">
+        <div class="wg-ba-pair" id="wg-ba-pair-shed" style="display:none;">
+          <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.5);margin-bottom:10px;">Shed Cleanout</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <div><div style="font-size:10px;color:rgba(255,255,255,0.4);margin-bottom:4px;">Before</div><img id="wg-ba-shed-before" src="" alt="Before: shed cleanout" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;background:#1a0030;"></div>
+            <div><div style="font-size:10px;color:rgba(255,255,255,0.4);margin-bottom:4px;">After</div><img id="wg-ba-shed-after" src="" alt="After: shed cleanout" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;background:#1a0030;"></div>
+          </div>
+        </div>
+        <div class="wg-ba-pair" id="wg-ba-pair-basement" style="display:none;">
+          <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.5);margin-bottom:10px;">Basement</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <div><div style="font-size:10px;color:rgba(255,255,255,0.4);margin-bottom:4px;">Before</div><img id="wg-ba-basement-before" src="" alt="Before: basement" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;background:#1a0030;"></div>
+            <div><div style="font-size:10px;color:rgba(255,255,255,0.4);margin-bottom:4px;">After</div><img id="wg-ba-basement-after" src="" alt="After: basement" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;background:#1a0030;"></div>
+          </div>
+        </div>
+        <div class="wg-ba-pair" id="wg-ba-pair-yard" style="display:none;">
+          <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.5);margin-bottom:10px;">Yard / Debris</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <div><div style="font-size:10px;color:rgba(255,255,255,0.4);margin-bottom:4px;">Before</div><img id="wg-ba-yard-before" src="" alt="Before: yard debris" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;background:#1a0030;"></div>
+            <div><div style="font-size:10px;color:rgba(255,255,255,0.4);margin-bottom:4px;">After</div><img id="wg-ba-yard-after" src="" alt="After: yard cleared" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;background:#1a0030;"></div>
+          </div>
+        </div>
+        <div class="wg-ba-pair" id="wg-ba-pair-loft" style="display:none;">
+          <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.5);margin-bottom:10px;">Loft / Attic</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <div><div style="font-size:10px;color:rgba(255,255,255,0.4);margin-bottom:4px;">Before</div><img id="wg-ba-loft-before" src="" alt="Before: loft/attic" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;background:#1a0030;"></div>
+            <div><div style="font-size:10px;color:rgba(255,255,255,0.4);margin-bottom:4px;">After</div><img id="wg-ba-loft-after" src="" alt="After: loft/attic cleared" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;background:#1a0030;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- HOW IT WORKS -->
   <section class="hiw-section">
     <div class="hiw-dotgrid"></div>
@@ -702,7 +724,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         </footer>
       </div>
 
-      <div class="rw-cards-top">
+      <div class="rw-cards-top" id="wg-reviews">
 
         <div class="rw-card">
           <div class="rw-card-platform">
@@ -796,16 +818,15 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     <div class="locations-hub-inner">
       <h2 class="section-heading">Serving 23 North Georgia Cities</h2>
       <div class="section-heading-accent centered"></div>
+      <div id="wg-areas" style="display:none;flex-wrap:wrap;gap:8px;margin-bottom:16px;"></div>
       <div class="location-pills">
         <a href="dawsonville.html" class="location-pill">Dawsonville GA</a>
         <a href="canton.html" class="location-pill">Canton GA</a>
         <a href="cumming.html" class="location-pill">Cumming GA</a>
         <a href="gainesville.html" class="location-pill">Gainesville GA</a>
         <a href="dahlonega.html" class="location-pill">Dahlonega GA</a>
-        <a href="jasper.html" class="location-pill">Jasper GA</a>
         <a href="ellijay.html" class="location-pill">Ellijay GA</a>
         <a href="blue-ridge.html" class="location-pill">Blue Ridge GA</a>
-        <a href="cleveland.html" class="location-pill">Cleveland GA</a>
         <a href="woodstock.html" class="location-pill">Woodstock GA</a>
         <a href="ball-ground.html" class="location-pill">Ball Ground GA</a>
         <a href="holly-springs.html" class="location-pill">Holly Springs GA</a>
@@ -814,12 +835,6 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         <a href="flowery-branch.html" class="location-pill">Flowery Branch GA</a>
         <a href="oakwood.html" class="location-pill">Oakwood GA</a>
         <a href="buford.html" class="location-pill">Buford GA</a>
-        <a href="east-ellijay.html" class="location-pill">East Ellijay GA</a>
-        <a href="helen.html" class="location-pill">Helen GA</a>
-        <a href="talking-rock.html" class="location-pill">Talking Rock GA</a>
-        <a href="waleska.html" class="location-pill">Waleska GA</a>
-        <a href="nelson.html" class="location-pill">Nelson GA</a>
-        <a href="mccaysville.html" class="location-pill">McCaysville GA</a>
         <a href="service-areas.html" class="location-pill location-pill--cta">View All Service Areas &rarr;</a>
       </div>
     </div>
