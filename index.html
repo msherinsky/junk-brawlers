@@ -106,10 +106,12 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .sf-section{background:#0D0010;padding:80px 32px}
 .sf-inner{max-width:900px;margin:0 auto}
 .sf-eyebrow{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:rgba(255,255,255,0.55);margin-bottom:12px}
-.sf-heading{font-family:var(--font-heading);font-size:clamp(52px,7vw,86px);font-weight:800;text-transform:uppercase;color:#fff;line-height:1;margin-bottom:40px}
+.sf-heading{font-family:var(--font-heading);font-size:clamp(52px,7vw,86px);font-weight:800;text-transform:uppercase;color:#F5F5F0;line-height:1;margin-bottom:32px}
 .sf-heading span{color:var(--color-primary)}
 .sf-body{font-size:clamp(17px,1.8vw,21px);color:rgba(255,255,255,0.72);line-height:1.75;margin-bottom:22px}
 .sf-body strong{color:#fff;font-weight:500}
+.sf-footer{display:flex;align-items:center;justify-content:flex-start;gap:14px;padding:32px 0 16px;border-top:1px solid rgba(128,0,255,0.25);margin-top:12px}
+.sf-footer-text{font-family:var(--font-heading);font-size:clamp(20px,2.4vw,28px);font-weight:800;color:var(--color-primary-mid);letter-spacing:0.06em}
 .sf-list{border-top:2px solid rgba(255,255,255,0.15);list-style:none}
 .sf-item{display:grid;grid-template-columns:72px 1fr 30px;align-items:center;gap:28px;padding:28px 0;border-bottom:1px solid rgba(255,255,255,0.1)}
 .sf-num{font-family:var(--font-heading);font-weight:800;font-size:68px;color:rgba(128,0,255,0.25);line-height:1;text-align:center;user-select:none}
@@ -550,10 +552,13 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
   <!-- SOUND FAMILIAR -->
   <section class="sf-section">
     <div class="sf-inner">
-      <p class="sf-eyebrow">We hear it every week in North Georgia</p>
       <h2 class="sf-heading">Sound Familiar<span>?</span></h2>
-      <p class="sf-body">You cleared your schedule and waited. <strong>They never showed &mdash; no call, no heads-up.</strong> Or the price changed the moment the truck pulled up. Or you just called to get a quote and <strong>the guy hung up on you.</strong></p>
-      <p class="sf-body">It happens enough in North Atlanta that people are genuinely surprised when Tony actually answers. When he texts you before he arrives. When the number he quoted is the number on the invoice.</p>
+      <p class="sf-body">You blocked off the afternoon. <strong>They never showed &mdash; no call, nothing.</strong> Or the number on the invoice was nothing like what you were quoted. Or they grabbed the easy stuff, said the truck was full, <strong>and left before the job was done.</strong></p>
+      <p class="sf-body">It happens enough in North Georgia that people are genuinely surprised when Tony actually answers. When he texts you before he arrives. When the price he quoted is the price you pay.</p>
+      <div class="sf-footer">
+        <span class="sf-footer-text">We fix all three. Every time.</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
     </div>
   </section>
 
