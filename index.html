@@ -79,8 +79,8 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .btn-primary:hover{opacity:0.88;box-shadow:0 6px 32px rgba(128,0,255,0.65)}
 .btn-ghost{display:inline-block;padding:13px 28px;background:transparent;color:var(--color-white);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border:2px solid var(--color-white);border-radius:4px;cursor:pointer;font-family:var(--font);transition:background var(--transition),color var(--transition)}
 .btn-ghost:hover{background:var(--color-white);color:var(--color-primary-dark)}
-.hero{position:relative;min-height:100vh;background:#0D0010;display:flex;align-items:stretch;overflow:hidden}
-.hero-left{flex:0 0 55%;max-width:55%;display:flex;align-items:center;padding:80px 60px 80px 80px;position:relative;z-index:1}
+.hero{position:relative;min-height:calc(100vh - 70px);background:#0D0010;display:flex;align-items:stretch;overflow:hidden}
+.hero-left{flex:0 0 55%;max-width:55%;display:flex;align-items:flex-start;padding:72px 60px 60px 80px;position:relative;z-index:1}
 .hero-right{position:absolute;right:0;top:0;bottom:0;width:70%;overflow:hidden}
 .hero-right::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,#0D0010 0%,#0D0010 5%,rgba(13,0,16,0.7) 20%,rgba(13,0,16,0.2) 45%,transparent 65%);pointer-events:none}
 .hero-content{position:relative;z-index:1;max-width:600px;text-align:left}
