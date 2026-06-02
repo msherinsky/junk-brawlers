@@ -267,6 +267,8 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
   .svc-card--featured,.svc-card--wide{grid-column:span 1}
   .svc-card{min-height:220px}
   .pain-section{padding:48px 24px 60px}
+  .trust-ticker-wrap{overflow:hidden;justify-content:flex-start}
+  .trust-ticker-track{flex-wrap:nowrap;justify-content:flex-start;padding:16px 0;width:max-content;will-change:transform}
 }
 @media(max-width:600px){
   .hiw-steps{grid-template-columns:1fr}
@@ -526,63 +528,26 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         <a href="services.html" class="btn-primary">See All Services &rarr;</a>
       </div>
 
-      <div class="svc-grid">
+      <div class="svc-grid" style="grid-template-columns:repeat(2,1fr);">
 
-        <a href="junk-removal.html" class="svc-card svc-card--featured" style="background-image:url(images/gbp-photo-01.webp);">
+        <a href="residential-junk-removal.html" class="svc-card" style="background-image:url(images/gbp-photo-01.webp);min-height:340px;">
           <div class="svc-card-overlay"></div>
-<div class="svc-card-body">
+          <div class="svc-card-body">
             <h3>Residential Junk Removal</h3>
-            <p>Whatever&rsquo;s taking up space. Furniture, mattresses, garage cleanouts, bulk trash. Same-day available.</p>
+            <p>Furniture, appliances, garage cleanouts, estate cleanouts, hot tubs, and more.</p>
           </div>
         </a>
 
-        <a href="appliance-removal.html" class="svc-card" style="background-image:url(images/gbp-photo-02.webp);">
+        <a href="commercial-junk-removal.html" class="svc-card" style="background-image:url(images/gbp-photo-02.webp);min-height:340px;">
           <div class="svc-card-overlay"></div>
           <div class="svc-card-body">
-            <h3>Appliance Removal</h3>
-            <p>Fridges, washers, dryers, stoves. Tony brings the right tools. He handles Freon and stuff other guys won&rsquo;t touch.</p>
-          </div>
-        </a>
-
-        <a href="junk-removal.html" class="svc-card" style="background-image:url(images/gbp-photo-02.webp);background-position:center 70%;">
-          <div class="svc-card-overlay"></div>
-          <div class="svc-card-body">
-            <h3>Furniture Removal</h3>
-            <p>Couches, dressers, bed frames. Call Tony and it&rsquo;s gone same day.</p>
-          </div>
-        </a>
-
-        <a href="garage-cleanouts.html" class="svc-card" style="background-image:url(images/gbp-photo-01.webp);background-position:center 40%;">
-          <div class="svc-card-overlay"></div>
-          <div class="svc-card-body">
-            <h3>Garage &amp; Basement Cleanouts</h3>
-            <p>Years of accumulation cleared in one visit. Free quote on-site before anything moves.</p>
-          </div>
-        </a>
-
-        <a href="estate-cleanouts.html" class="svc-card" style="background-image:url(images/gbp-photo-01.webp);background-position:center 60%;">
-          <div class="svc-card-overlay" style="background:linear-gradient(180deg,rgba(10,0,24,0.05) 0%,rgba(10,0,24,0.65) 60%);"></div>
-          <div class="svc-card-body">
-            <h3>Estate &amp; Property Cleanouts</h3>
-            <p>No judgment. Tony&rsquo;s seen it all. He&rsquo;ll work at whatever pace you need.</p>
-          </div>
-        </a>
-
-        <a href="construction-debris-removal.html" class="svc-card svc-card--wide" style="background-image:url(images/gbp-photo-02.webp);">
-          <div class="svc-card-overlay"></div>
-          <div class="svc-card-body">
-            <h3>Construction Debris Removal</h3>
-            <p>Post-reno cleanup, same day. Drywall, lumber, roofing, concrete, demo waste. Commercial accounts welcome.</p>
+            <h3>Commercial Junk Removal</h3>
+            <p>Office cleanouts, construction debris, property management, and business cleanouts.</p>
           </div>
         </a>
 
       </div>
 
-      <!-- Laurie Tipton proof quote — verbatim, placed below the grid -->
-      <div style="max-width:720px;margin:48px auto 0;padding-left:20px;border-left:4px solid var(--color-fire);">
-        <p style="font-family:var(--font-heading);font-size:clamp(18px,2.2vw,26px);font-weight:800;text-transform:uppercase;color:#fff;line-height:1.2;margin-bottom:12px;">&ldquo;Tony and his equally strong brother came and even brought the right tools to get the humongous fridge out the door. Then they brought in the garage fridge and we are sipping Gatorade! They are the BEST!&rdquo;</p>
-        <span style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.5);">Laurie &ldquo;Lorraine&rdquo; Tipton &middot; Google Review &middot; 5&#9733;</span>
-      </div>
 
     </div>
   </section>
