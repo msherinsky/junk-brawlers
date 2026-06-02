@@ -289,7 +289,7 @@
       padding: 12px 14px; display: flex; align-items: flex-end; gap: 10px; flex-shrink: 0;
     }
     .wg-input {
-      flex: 1; font-family: 'DM Sans', sans-serif; font-size: 14px; line-height: 1.5;
+      flex: 1; font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.5;
       color: var(--wg-text); background: var(--wg-off-white);
       border: 1px solid var(--wg-border); border-radius: 10px;
       padding: 10px 14px; resize: none; outline: none;
