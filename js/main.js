@@ -147,23 +147,7 @@
   new IntersectionObserver(function (entries) { visible = entries[0].isIntersecting; if (visible) { start(); } else { stop(); } }, { threshold: 0.1 }).observe(el);
 })();
 
-/* ── Trust Ticker Autoscroll (mobile) ── */
-(function(){
-  if(!window.matchMedia||!window.matchMedia('(max-width:768px)').matches) return;
-  var track=document.querySelector('.trust-ticker-track');
-  if(!track) return;
-  var orig=track.innerHTML;
-  track.innerHTML=orig+orig;
-  var x=0,halfW=0;
-  function tick(){
-    if(!halfW) halfW=track.scrollWidth/2;
-    x+=0.5;
-    if(x>=halfW) x-=halfW;
-    track.style.transform='translateX(-'+x+'px)';
-    requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
-})();
+/* Trust ticker scroll handled by CSS animation (ticker-slide keyframe) */
 
 /* ── Image Slider ── */
 (function () {

@@ -280,8 +280,9 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
   .svc-card{min-height:220px}
   .pain-section{padding:36px 20px 0}.pain-close{padding:0 20px 28px}.pain-bridge{padding-bottom:36px}.pain-pivot-accent{margin:28px auto 32px}
   .trust-ticker-wrap{overflow:hidden;justify-content:flex-start}
-  .trust-ticker-track{flex-wrap:nowrap;justify-content:flex-start;padding:16px 0;width:max-content;will-change:transform}
+  .trust-ticker-track{flex-wrap:nowrap;justify-content:flex-start;padding:16px 0;width:max-content;will-change:transform;animation:ticker-slide 22s linear infinite}
 }
+@keyframes ticker-slide{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 @media(max-width:600px){
   .hiw-steps{grid-template-columns:1fr}
   .hiw-connector{display:none}
@@ -508,7 +509,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
   <!-- TRUST TICKER -->
   <div class="trust-ticker" role="region" aria-label="Why choose Junk Brawlers">
     <div class="trust-ticker-wrap">
-      <div class="trust-ticker-track">
+      <div class="trust-ticker-track" aria-hidden="false">
         <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>5.0&#9733; Google Rating</div>
         <span class="t-sep" aria-hidden="true"></span>
         <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>Same-Day Service Available</div>
@@ -520,6 +521,19 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span>Licensed &amp; Insured</div>
         <span class="t-sep" aria-hidden="true"></span>
         <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>Free On-Site Quote</div>
+        <span class="t-sep" aria-hidden="true"></span>
+        <!-- duplicate set for seamless CSS loop -->
+        <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>5.0&#9733; Google Rating</div>
+        <span class="t-sep" aria-hidden="true"></span>
+        <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>Same-Day Service Available</div>
+        <span class="t-sep" aria-hidden="true"></span>
+        <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>No Hidden Fees, Ever</div>
+        <span class="t-sep" aria-hidden="true"></span>
+        <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>Owner on Every Job</div>
+        <span class="t-sep" aria-hidden="true"></span>
+        <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span>Licensed &amp; Insured</div>
+        <span class="t-sep" aria-hidden="true"></span>
+        <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></span>Free On-Site Quote</div>
         <span class="t-sep" aria-hidden="true"></span>
       </div>
     </div>
