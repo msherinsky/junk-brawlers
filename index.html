@@ -282,10 +282,11 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
   .site-header{padding:0 20px}
   .footer-inner{grid-template-columns:1fr;gap:28px}
   .svc-section{padding:52px 20px 0}
-  .svc-grid{grid-template-columns:1fr;margin-bottom:-80px}
+  .svc-grid{grid-template-columns:repeat(2,1fr);margin-bottom:-80px}
   .hiw-section{padding-top:160px}
   .svc-card--featured,.svc-card--wide{grid-column:span 1}
-  .svc-card{min-height:220px}
+  .svc-card{min-height:180px}
+  .svc-grid .svc-card:last-child{grid-column:span 2;min-height:160px}
   .svc-cta-row{display:none}
   .pain-section{padding:52px 20px 0}.pain-close{padding:0 20px 28px}.pain-bridge{padding-bottom:36px}.pain-pivot-accent{margin:28px auto 32px}
   .section-bridge{padding:48px 20px 56px}
