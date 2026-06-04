@@ -206,11 +206,19 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .section-heading-accent.centered{margin-left:auto;margin-right:auto}
 .locations-hub{background:var(--color-light-alt);padding:52px 32px;border-top:1px solid var(--color-border)}
 .locations-hub-inner{max-width:1100px;margin:0 auto;text-align:center}
-.location-pills{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:28px}
-.location-pill{display:inline-block;padding:8px 18px;background:var(--color-white);border:1px solid var(--color-border);border-radius:var(--radius-pill);font-size:13px;font-weight:600;color:var(--color-body);transition:all var(--transition)}
-.location-pill:hover{background:var(--color-primary);color:var(--color-white);border-color:var(--color-primary)}
-.location-pill--cta{background:var(--color-primary);color:var(--color-white);border-color:var(--color-primary)}
+.locations-intro{color:rgba(17,17,17,0.55);font-size:15px;max-width:560px;margin:0 auto 24px;line-height:1.65}
+.locations-layout{display:grid;grid-template-columns:1fr 280px;gap:0;border-radius:8px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.1);border:1px solid var(--color-border)}
+#service-map{height:480px}
+.locations-sidebar{background:var(--color-white);padding:20px;overflow-y:auto;max-height:480px;border-left:1px solid var(--color-border);text-align:left}
+.locations-sidebar-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--color-primary);margin-bottom:14px}
+.location-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-start}
+.location-pill{display:inline-block;padding:8px 16px;background:var(--color-white);border:1px solid var(--color-border);border-radius:var(--radius-pill);font-size:13px;font-weight:600;color:var(--color-body);transition:all var(--transition);cursor:pointer}
+.location-pill:hover,.location-pill.active{background:var(--color-primary);color:var(--color-white);border-color:var(--color-primary)}
+.location-pill--cta{background:var(--color-primary);color:var(--color-white);border-color:var(--color-primary);margin-top:8px}
 .location-pill--cta:hover{background:var(--color-primary-dark);border-color:var(--color-primary-dark)}
+.leaflet-popup-content-wrapper{border-radius:4px;box-shadow:0 4px 20px rgba(0,0,0,0.3)}
+.leaflet-popup-content{margin:10px 14px;font-family:var(--font)}
+@media(max-width:860px){.locations-layout{grid-template-columns:1fr}#service-map{height:300px}.locations-sidebar{max-height:none;border-left:none;border-top:1px solid var(--color-border)}.locations-sidebar .location-pills{justify-content:center}.locations-sidebar{text-align:center}}
 .cta-final{background:#0D0010;padding:80px 32px;text-align:center;position:relative;overflow:hidden}
 .cta-final::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(128,0,255,0.06) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
 .cta-final-content{max-width:600px;margin:0 auto;position:relative}
@@ -330,6 +338,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .tq-author{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.38)}
 @media(max-width:768px){.trust-quotes-grid{grid-template-columns:1fr;gap:14px}.trust-quotes{padding:52px 20px}}
 </style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="css/style.css"></noscript>
 
@@ -851,28 +860,35 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     </div>
   </section>
 
-  <!-- LOCATIONS HUB — SEO anchor, links to city pages -->
+  <!-- LOCATIONS HUB — interactive map + city pills -->
   <section class="locations-hub">
     <div class="locations-hub-inner">
       <h2 class="section-heading">Serving North Georgia</h2>
       <div class="section-heading-accent centered"></div>
-      <div class="location-pills">
-        <a href="dawsonville.html" class="location-pill">Dawsonville GA</a>
-        <a href="canton.html" class="location-pill">Canton GA</a>
-        <a href="cumming.html" class="location-pill">Cumming GA</a>
-        <a href="gainesville.html" class="location-pill">Gainesville GA</a>
-        <a href="dahlonega.html" class="location-pill">Dahlonega GA</a>
-        <a href="ellijay.html" class="location-pill">Ellijay GA</a>
-        <a href="blue-ridge.html" class="location-pill">Blue Ridge GA</a>
-        <a href="woodstock.html" class="location-pill">Woodstock GA</a>
-        <a href="ball-ground.html" class="location-pill">Ball Ground GA</a>
-        <a href="holly-springs.html" class="location-pill">Holly Springs GA</a>
-        <a href="sugar-hill.html" class="location-pill">Sugar Hill GA</a>
-        <a href="suwanee.html" class="location-pill">Suwanee GA</a>
-        <a href="flowery-branch.html" class="location-pill">Flowery Branch GA</a>
-        <a href="oakwood.html" class="location-pill">Oakwood GA</a>
-        <a href="buford.html" class="location-pill">Buford GA</a>
-        <a href="service-areas.html" class="location-pill location-pill--cta">View All Service Areas &rarr;</a>
+      <p class="locations-intro">Dawsonville is home base. From there, Tony covers 15 cities across the mountains and foothills. Click any city to find it on the map.</p>
+      <div class="locations-layout">
+        <div id="service-map"></div>
+        <div class="locations-sidebar">
+          <p class="locations-sidebar-label">15 Cities Covered</p>
+          <div class="location-pills">
+            <a href="dawsonville.html" class="location-pill" data-lat="34.4190" data-lng="-84.1186" data-name="Dawsonville">Dawsonville GA</a>
+            <a href="canton.html" class="location-pill" data-lat="34.2365" data-lng="-84.4910" data-name="Canton">Canton GA</a>
+            <a href="cumming.html" class="location-pill" data-lat="34.2073" data-lng="-84.1402" data-name="Cumming">Cumming GA</a>
+            <a href="gainesville.html" class="location-pill" data-lat="34.2979" data-lng="-83.8241" data-name="Gainesville">Gainesville GA</a>
+            <a href="dahlonega.html" class="location-pill" data-lat="34.5326" data-lng="-83.9855" data-name="Dahlonega">Dahlonega GA</a>
+            <a href="ellijay.html" class="location-pill" data-lat="34.6945" data-lng="-84.4830" data-name="Ellijay">Ellijay GA</a>
+            <a href="blue-ridge.html" class="location-pill" data-lat="34.8634" data-lng="-84.3241" data-name="Blue Ridge">Blue Ridge GA</a>
+            <a href="woodstock.html" class="location-pill" data-lat="34.1015" data-lng="-84.5194" data-name="Woodstock">Woodstock GA</a>
+            <a href="ball-ground.html" class="location-pill" data-lat="34.3432" data-lng="-84.3766" data-name="Ball Ground">Ball Ground GA</a>
+            <a href="holly-springs.html" class="location-pill" data-lat="34.1751" data-lng="-84.4838" data-name="Holly Springs">Holly Springs GA</a>
+            <a href="sugar-hill.html" class="location-pill" data-lat="34.1129" data-lng="-84.0505" data-name="Sugar Hill">Sugar Hill GA</a>
+            <a href="suwanee.html" class="location-pill" data-lat="34.0506" data-lng="-84.0702" data-name="Suwanee">Suwanee GA</a>
+            <a href="flowery-branch.html" class="location-pill" data-lat="34.1840" data-lng="-83.9255" data-name="Flowery Branch">Flowery Branch GA</a>
+            <a href="oakwood.html" class="location-pill" data-lat="34.2268" data-lng="-83.8869" data-name="Oakwood">Oakwood GA</a>
+            <a href="buford.html" class="location-pill" data-lat="34.1215" data-lng="-84.0041" data-name="Buford">Buford GA</a>
+            <a href="service-areas.html" class="location-pill location-pill--cta">View All Service Areas &rarr;</a>
+          </div>
+        </div>
       </div>
       <p class="section-bridge section-bridge--light">That&rsquo;s everything. Here&rsquo;s the number.</p>
     </div>
@@ -973,6 +989,56 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
   </script>
   <script defer src="js/main.js"></script>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+  (function(){
+    var locs=[
+      {n:'Dawsonville',lat:34.4190,lng:-84.1186,u:'dawsonville.html',home:true},
+      {n:'Canton',lat:34.2365,lng:-84.4910,u:'canton.html'},
+      {n:'Cumming',lat:34.2073,lng:-84.1402,u:'cumming.html'},
+      {n:'Gainesville',lat:34.2979,lng:-83.8241,u:'gainesville.html'},
+      {n:'Dahlonega',lat:34.5326,lng:-83.9855,u:'dahlonega.html'},
+      {n:'Ellijay',lat:34.6945,lng:-84.4830,u:'ellijay.html'},
+      {n:'Blue Ridge',lat:34.8634,lng:-84.3241,u:'blue-ridge.html'},
+      {n:'Woodstock',lat:34.1015,lng:-84.5194,u:'woodstock.html'},
+      {n:'Ball Ground',lat:34.3432,lng:-84.3766,u:'ball-ground.html'},
+      {n:'Holly Springs',lat:34.1751,lng:-84.4838,u:'holly-springs.html'},
+      {n:'Sugar Hill',lat:34.1129,lng:-84.0505,u:'sugar-hill.html'},
+      {n:'Suwanee',lat:34.0506,lng:-84.0702,u:'suwanee.html'},
+      {n:'Flowery Branch',lat:34.1840,lng:-83.9255,u:'flowery-branch.html'},
+      {n:'Oakwood',lat:34.2268,lng:-83.8869,u:'oakwood.html'},
+      {n:'Buford',lat:34.1215,lng:-84.0041,u:'buford.html'}
+    ];
+    var map=L.map('service-map',{scrollWheelZoom:false,zoomControl:true}).setView([34.38,-84.18],9);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
+      attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      maxZoom:15
+    }).addTo(map);
+    var mks={};
+    locs.forEach(function(loc){
+      var mk=L.circleMarker([loc.lat,loc.lng],{
+        radius:loc.home?12:7,
+        fillColor:loc.home?'#FF7A00':'#7B35D4',
+        color:'#fff',
+        weight:loc.home?3:2,
+        fillOpacity:0.92
+      }).addTo(map);
+      mk.bindPopup('<strong style="font-size:14px;font-weight:700;">'+loc.n+', GA</strong><br><a href="'+loc.u+'" style="font-size:13px;color:#7B35D4;font-weight:600;">Junk removal in '+loc.n+' &rarr;</a>');
+      if(loc.home) mk.openPopup();
+      mks[loc.n]=mk;
+    });
+    document.querySelectorAll('.location-pill[data-lat]').forEach(function(pill){
+      pill.addEventListener('click',function(e){
+        e.preventDefault();
+        var name=this.dataset.name;
+        map.flyTo([parseFloat(this.dataset.lat),parseFloat(this.dataset.lng)],12,{duration:0.7});
+        if(mks[name]) setTimeout(function(){mks[name].openPopup();},500);
+        document.querySelectorAll('.location-pill').forEach(function(p){p.classList.remove('active');});
+        this.classList.add('active');
+      });
+    });
+  })();
+  </script>
 
 </body>
 </html>
