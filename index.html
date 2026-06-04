@@ -1010,7 +1010,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
       {n:'Buford',lat:34.1215,lng:-84.0041,u:'buford.html'}
     ];
     var map=L.map('service-map',{scrollWheelZoom:false,zoomControl:true}).setView([34.38,-84.18],9);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',{
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{
       attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
       maxZoom:15
     }).addTo(map);
