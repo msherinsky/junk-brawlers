@@ -5,7 +5,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "frame-ancestors https://client-dashboard-eta-five.vercel.app"
+          "value": "frame-ancestors https://client-dashboard-eta-five.vercel.app https://welgent.com https://*.vercel.app"
         }
       ]
     }
