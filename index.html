@@ -112,8 +112,10 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .hero-content p.hero-sub{font-size:16px;color:rgba(255,255,255,0.78);margin-bottom:20px;max-width:480px;line-height:1.6;text-shadow:0 1px 4px rgba(0,0,0,0.85)}
 .hero-buttons{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-start}
 .trust-ticker{background:linear-gradient(180deg,#110018 0%,#080012 100%);box-shadow:0 6px 20px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.07)}
-.trust-ticker-wrap{display:flex;justify-content:center;overflow:hidden}
-.trust-ticker-track{display:flex;align-items:center;flex-wrap:wrap;justify-content:center;row-gap:14px;column-gap:0;padding:28px 40px}
+.trust-ticker-wrap{overflow:hidden}
+.trust-ticker-track{display:flex;align-items:center;flex-wrap:nowrap;padding:28px 0;width:max-content;will-change:transform;animation:ticker-scroll 45s linear infinite}
+.trust-ticker-track:hover{animation-play-state:paused}
+@keyframes ticker-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .t-item{display:flex;align-items:center;gap:9px;color:rgba(255,255,255,0.82);font-size:15px;font-weight:600;white-space:nowrap;padding:0 30px}
 .t-icon{width:19px;height:19px;flex-shrink:0;color:var(--color-steel-light);display:flex;align-items:center;justify-content:center}
 .t-icon svg{width:100%;height:100%}
@@ -289,8 +291,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
   .pain-section{padding:52px 20px 0}.pain-close{padding:0 20px 28px}.pain-bridge{padding-bottom:36px}.pain-pivot-accent{margin:28px auto 32px}
   .section-bridge{padding:48px 20px 56px}
   .eco-close{padding:0 20px}
-  .trust-ticker-wrap{overflow:hidden;justify-content:flex-start}
-  .trust-ticker-track{flex-wrap:nowrap;justify-content:flex-start;padding:16px 0;width:max-content;will-change:transform}
+  .trust-ticker-track{padding:16px 0}
 }
 @media(max-width:600px){
   .hiw-steps{grid-template-columns:1fr}
@@ -537,6 +538,21 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>Price Quoted Is Price Paid</div>
         <span class="t-sep" aria-hidden="true"></span>
         <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span>Junk Brawlers LLC &middot; GA-Registered Business</div>
+        <span class="t-sep" aria-hidden="true"></span>
+        <!-- duplicate set for seamless marquee loop -->
+        <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>52 Reviews &middot; Zero Complaints</div>
+        <span class="t-sep" aria-hidden="true"></span>
+        <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>Tony Picks Up the Phone Himself</div>
+        <span class="t-sep" aria-hidden="true"></span>
+        <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>Shows Up Within 30 Minutes</div>
+        <span class="t-sep" aria-hidden="true"></span>
+        <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>Named by Name in 60% of Reviews</div>
+        <span class="t-sep" aria-hidden="true"></span>
+        <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>7 Days a Week &middot; 7am&ndash;6pm</div>
+        <span class="t-sep" aria-hidden="true"></span>
+        <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>Price Quoted Is Price Paid</div>
+        <span class="t-sep" aria-hidden="true"></span>
+        <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span>Junk Brawlers LLC &middot; GA-Registered Business</div>
         <span class="t-sep" aria-hidden="true"></span>
       </div>
     </div>
