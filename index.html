@@ -152,7 +152,10 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .owner-section .owner-bridge{text-align:center;font-family:var(--font-heading);font-size:clamp(32px,4.5vw,60px);font-style:italic;font-weight:700;color:rgba(0,0,0,0.65);letter-spacing:-0.01em;padding:140px 32px 64px;margin:0;text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:6px;text-decoration-thickness:2px}
 .owner-section .owner-intro-bridge{text-align:center;font-family:var(--font-heading);font-size:clamp(32px,4.5vw,60px);font-style:italic;font-weight:700;color:rgba(0,0,0,0.65);letter-spacing:-0.01em;padding:64px 32px 72px;margin:0;text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:6px;text-decoration-thickness:2px;position:relative;z-index:1}
 .owner-watermark{position:absolute;bottom:0;right:0;font-family:var(--font-heading);font-weight:800;font-size:clamp(140px,20vw,280px);line-height:1;color:rgba(17,17,17,0.05);letter-spacing:-8px;pointer-events:none;user-select:none}
-.owner-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;position:relative;z-index:1}
+.owner-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;grid-template-areas:"head photo" "body photo";gap:56px 56px;align-items:start;position:relative;z-index:1}
+.owner-head{grid-area:head}
+.owner-photo-wrap{grid-area:photo}
+.owner-body{grid-area:body}
 .owner-photo-wrap{position:relative}
 .owner-photo-wrap img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;box-shadow:0 24px 60px rgba(0,0,0,0.18)}
 .owner-badge{position:absolute;bottom:-16px;right:-16px;background:linear-gradient(135deg,#9B00FF,#5200A0);border-radius:2px;padding:12px 16px;box-shadow:0 4px 16px rgba(0,0,0,0.35)}
@@ -285,7 +288,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
   .hero-content{text-align:center}
   .hero-pullquote{text-align:left}
   .hero-buttons{justify-content:center}
-  .owner-inner{grid-template-columns:1fr;gap:40px}
+  .owner-inner{grid-template-columns:1fr;grid-template-areas:"head" "photo" "body";gap:32px}
   .owner-badge{bottom:-12px;right:4px}
 }
 @media(max-width:768px){
@@ -588,7 +591,14 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     <p class="owner-intro-bridge">Here&rsquo;s the guy behind it.</p>
     <div class="owner-inner">
 
-      <div style="order:2;" class="owner-photo-wrap">
+      <div class="owner-head">
+        <div class="owner-text-head">
+          <div class="owner-accent-bar"></div>
+          <h2>You Know Who&rsquo;s Showing Up<br>at Your Door</h2>
+        </div>
+      </div>
+
+      <div class="owner-photo-wrap">
         <picture>
           <source srcset="images/team-headshot.webp" type="image/webp">
           <img src="images/team-headshot.jpg" alt="Tony Frias, owner of Junk Brawlers LLC, Dawsonville GA" width="600" height="450" loading="lazy">
@@ -599,11 +609,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         </div>
       </div>
 
-      <div style="order:1;">
-        <div class="owner-text-head">
-          <div class="owner-accent-bar"></div>
-          <h2>You Know Who&rsquo;s Showing Up<br>at Your Door</h2>
-        </div>
+      <div class="owner-body">
         <p>When you call <strong style="color:#111;">Junk Brawlers</strong>, you&rsquo;re talking to <strong style="color:#111;">Tony</strong>. Same crew that pulls up to your door. No call centers. No subcontractors. No surprises on the bill.</p>
         <p>Tony built this thing from scratch. A truck, some signs, <strong style="color:#111;">$5,740 total</strong>. He&rsquo;s named by name in 60% of his reviews. Not because he asks people to do that. Because they remember him.</p>
 
