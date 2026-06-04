@@ -141,6 +141,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .svc-card-body{position:absolute;bottom:0;left:0;right:0;padding:20px;z-index:1}
 .svc-card-body h3{font-family:var(--font-heading);font-weight:800;text-transform:uppercase;color:#fff;font-size:22px;margin-bottom:6px;line-height:1.1;text-align:center}
 .svc-card-body p{color:rgba(255,255,255,0.7);font-size:13px;line-height:1.6;text-align:center}
+.svc-cta-row{text-align:center;padding:40px 0 80px;position:relative;z-index:1}
 .owner-section{background:#ffffff;padding:80px 32px;overflow:hidden;position:relative}.owner-section::before{content:'';position:absolute;bottom:20px;left:50%;transform:translateX(-50%);width:520px;height:520px;background:url('images/logo.webp') no-repeat center/contain;opacity:0.07;mix-blend-mode:multiply;pointer-events:none;user-select:none}
 .owner-section .owner-bridge{text-align:center;font-family:var(--font-heading);font-size:clamp(32px,4.5vw,60px);font-style:italic;font-weight:700;color:rgba(0,0,0,0.65);letter-spacing:-0.01em;padding:140px 32px 64px;margin:0;text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:6px;text-decoration-thickness:2px}
 .owner-section .owner-intro-bridge{text-align:center;font-family:var(--font-heading);font-size:clamp(32px,4.5vw,60px);font-style:italic;font-weight:700;color:rgba(0,0,0,0.65);letter-spacing:-0.01em;padding:80px 32px 220px;margin:0;text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:6px;text-decoration-thickness:2px;position:relative;z-index:1}
@@ -284,6 +285,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
   .hiw-section{padding-top:160px}
   .svc-card--featured,.svc-card--wide{grid-column:span 1}
   .svc-card{min-height:220px}
+  .svc-cta-row{display:none}
   .pain-section{padding:52px 20px 0}.pain-close{padding:0 20px 28px}.pain-bridge{padding-bottom:36px}.pain-pivot-accent{margin:28px auto 32px}
   .section-bridge{padding:48px 20px 56px}
   .eco-close{padding:0 20px}
@@ -610,19 +612,17 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
       <h2>Whatever You&rsquo;ve Got. It&rsquo;s Gone.</h2>
       <div class="svc-accent"></div>
       <div class="svc-intro">
-        <p>Tony, his brother, and Simon show up together. You get a price before anything moves &mdash; and it doesn&rsquo;t change. <strong style="color:#fff;">One call, one crew, same standard every time.</strong></p>
-        <p style="margin-top:88px;">Serving Dawsonville, Cumming, Gainesville, and across North Georgia. Call in the morning and they&rsquo;re usually there the same day.</p>
-        <a href="services.html" class="btn-primary" style="display:inline-block;margin-top:64px;">See All Services &rarr;</a>
+        <p>Tony, his brother, and Simon show up together. One price before anything moves &mdash; it doesn&rsquo;t change at the door. Serving Dawsonville, Cumming, Gainesville, and across North Georgia.</p>
       </div>
 
-      <div class="svc-grid" style="grid-template-columns:repeat(2,1fr);">
+      <div class="svc-grid">
 
         <a href="residential-junk-removal.html" class="svc-card" style="min-height:340px;">
           <img src="images/gbp-photo-03-sm.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
           <div class="svc-card-overlay"></div>
           <div class="svc-card-body">
-            <h3>Residential Junk Removal</h3>
-            <p>Furniture, appliances, garage cleanouts, estate cleanouts, hot tubs, and more.</p>
+            <h3>Residential</h3>
+            <p>Furniture, appliances, garage and estate cleanouts, mattresses, yard debris, and more.</p>
           </div>
         </a>
 
@@ -630,11 +630,24 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
           <img src="images/gbp-photo-04-sm.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
           <div class="svc-card-overlay"></div>
           <div class="svc-card-body">
-            <h3>Commercial Junk Removal</h3>
-            <p>Office cleanouts, construction debris, property management, and business cleanouts.</p>
+            <h3>Commercial &amp; Property</h3>
+            <p>Business cleanouts, office removals, property management, and construction debris.</p>
           </div>
         </a>
 
+        <a href="specialty-removals.html" class="svc-card" style="min-height:340px;">
+          <img src="images/gbp-photo-10-sm.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
+          <div class="svc-card-overlay"></div>
+          <div class="svc-card-body">
+            <h3>Specialty &amp; Heavy</h3>
+            <p>Hot tubs, pools, sheds, decks, and appliances &mdash; the jobs most haulers won&rsquo;t touch.</p>
+          </div>
+        </a>
+
+      </div>
+
+      <div class="svc-cta-row">
+        <a href="services.html" class="btn-primary">See All Services &rarr;</a>
       </div>
 
     </div>
