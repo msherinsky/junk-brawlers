@@ -50,7 +50,7 @@
 /* DARKS — the void the ninja lives in, graduated by emotional weight */
 --color-void:#040008;--color-hero-bg:#0A000F;--color-dark-section:#080014;--color-review-bg:#060010;--color-footer:#030006;
 /* LIGHTS — relief, clarity, warmth */
---color-warm-light:#F2F0ED;--color-warm-lighter:#FAF9F7;--color-hiw-bg:#EEECEA;--color-light-alt:#F2F0ED;
+--color-warm-light:#f5f5f5;--color-warm-lighter:#ffffff;--color-hiw-bg:#f5f5f5;--color-light-alt:#f5f5f5;
 /* NEUTRALS */
 --color-white:#FFFFFF;--color-dark:#1A1A1A;--color-body:#1C1C2E;--color-border:#E0DDD8;--color-header:#07001A;
 --font-heading:'Barlow Condensed',sans-serif;--font:'Barlow',sans-serif;--radius-card:6px;--radius-pill:22px;--transition:0.25s ease}
@@ -119,29 +119,31 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .t-icon svg{width:100%;height:100%}
 .t-sep{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,0.25);flex-shrink:0;margin:0 4px}
 /* PAIN POINTS — 3 tight rows, felt not browsed */
-.pain-section{background:linear-gradient(to bottom,#FAF9F7 18%,#c4956a 50%,#080014 72%);padding:52px 32px 0;border-top:4px solid var(--color-primary)}
+.pain-section{background:linear-gradient(to bottom,#09000F 0%,#150028 18%,#2d0065 42%,#3a0078 54%,#2d0065 66%,#7b35d4 80%,#EDE8F8 91%,#ffffff 100%);padding:72px 32px 0;border-top:none}
 .pain-inner{max-width:720px;margin:0 auto}
-.pain-paragraph{color:var(--color-body);font-size:clamp(17px,2vw,20px);font-weight:500;line-height:1.7;margin-bottom:20px}
+.pain-paragraph{color:rgba(255,255,255,0.87);font-size:clamp(17px,2vw,20px);font-weight:500;line-height:1.7;margin-bottom:20px}
 .pain-pivot-accent{width:48px;height:3px;background:var(--color-fire);border-radius:2px;margin:64px auto 68px}
 .pain-close{font-family:var(--font-heading);font-size:clamp(24px,2.8vw,36px);font-weight:700;color:#fff;padding:0 32px 52px;line-height:1.5;text-align:center;max-width:780px;margin:0 auto;display:block;letter-spacing:-0.01em}
 .pain-close strong{color:var(--color-fire);font-weight:800}
-.pain-bridge{text-align:center;font-size:15px;font-style:italic;color:rgba(255,255,255,0.4);letter-spacing:0.02em;padding-bottom:72px;margin:0}
-.svc-section{background:var(--color-dark-section);padding:28px 32px 48px;box-shadow:inset 0 8px 60px rgba(255,100,0,0.05)}.svc-inner{max-width:1100px;margin:0 auto}
+.pain-bridge{text-align:center;font-size:20px;font-style:italic;font-weight:500;color:rgba(255,255,255,0.9);letter-spacing:0;padding-bottom:72px;margin:0;text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:4px;text-decoration-thickness:2px}
+.svc-section{background:var(--color-dark-section);padding:80px 32px 0;position:relative;z-index:10;box-shadow:inset 0 8px 60px rgba(255,100,0,0.05)}.svc-section::after{content:'';position:absolute;bottom:0;left:0;right:0;height:260px;background:var(--color-hiw-bg);z-index:0}.svc-inner{max-width:1100px;margin:0 auto}
 .svc-section h2{font-family:var(--font-heading);font-size:clamp(28px,3.5vw,44px);font-weight:800;color:#fff;text-align:center;margin-bottom:8px}
 .svc-accent{width:56px;height:4px;background:#8000FF;border-radius:9px;margin:0 auto 40px}
-.svc-intro{max-width:660px;margin:0 auto 40px;text-align:center}
-.svc-intro p{color:rgba(255,255,255,0.65);font-size:15px;line-height:1.7;margin-bottom:16px}
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.svc-card{position:relative;overflow:hidden;border-radius:4px;min-height:280px;display:block;text-decoration:none}
+.svc-intro{max-width:660px;margin:0 auto 14px;text-align:center}
+.svc-intro p{color:rgba(255,255,255,0.65);font-size:15px;line-height:1.7;margin-bottom:16px;text-align:left}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;position:relative;z-index:1}
+.svc-card{position:relative;overflow:hidden;border-radius:4px;min-height:280px;display:block;text-decoration:none;box-shadow:0 24px 64px rgba(0,0,0,0.5)}
 .svc-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none;display:block}
 .svc-card-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,0,24,0.05) 0%,rgba(10,0,24,0.72) 70%)}
 .svc-card--featured{grid-column:span 2}
 .svc-card--wide{grid-column:span 3;min-height:200px}
 .svc-card-badge{position:absolute;top:12px;left:12px;background:rgba(123,53,212,0.35);border-radius:3px;padding:4px 10px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--color-primary-mid)}
 .svc-card-body{position:absolute;bottom:0;left:0;right:0;padding:20px;z-index:1}
-.svc-card-body h3{font-family:var(--font-heading);font-weight:800;text-transform:uppercase;color:#fff;font-size:22px;margin-bottom:6px;line-height:1.1}
-.svc-card-body p{color:rgba(255,255,255,0.7);font-size:13px;line-height:1.6}
-.owner-section{background:var(--color-warm-light);padding:80px 32px;overflow:hidden;position:relative}
+.svc-card-body h3{font-family:var(--font-heading);font-weight:800;text-transform:uppercase;color:#fff;font-size:22px;margin-bottom:6px;line-height:1.1;text-align:center}
+.svc-card-body p{color:rgba(255,255,255,0.7);font-size:13px;line-height:1.6;text-align:center}
+.owner-section{background:#ffffff;padding:80px 32px;overflow:hidden;position:relative}.owner-section::before{content:'';position:absolute;bottom:20px;left:50%;transform:translateX(-50%);width:520px;height:520px;background:url('images/logo.webp') no-repeat center/contain;opacity:0.07;mix-blend-mode:multiply;pointer-events:none;user-select:none}
+.owner-section .owner-bridge{text-align:center;font-family:var(--font-heading);font-size:clamp(32px,4.5vw,60px);font-style:italic;font-weight:700;color:rgba(0,0,0,0.65);letter-spacing:-0.01em;padding:140px 32px 64px;margin:0;text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:6px;text-decoration-thickness:2px}
+.owner-section .owner-intro-bridge{text-align:center;font-family:var(--font-heading);font-size:clamp(32px,4.5vw,60px);font-style:italic;font-weight:700;color:rgba(0,0,0,0.65);letter-spacing:-0.01em;padding:80px 32px 220px;margin:0;text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:6px;text-decoration-thickness:2px;position:relative;z-index:1}
 .owner-watermark{position:absolute;bottom:0;right:0;font-family:var(--font-heading);font-weight:800;font-size:clamp(140px,20vw,280px);line-height:1;color:rgba(17,17,17,0.05);letter-spacing:-8px;pointer-events:none;user-select:none}
 .owner-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;position:relative;z-index:1}
 .owner-photo-wrap{position:relative}
@@ -160,7 +162,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .owner-stat .stat-val{display:block;font-family:var(--font-heading);font-size:36px;font-weight:800;color:#111;line-height:1;margin-bottom:4px}
 .owner-stat .stat-val.fire{color:var(--color-fire)}
 .owner-stat .stat-lbl{display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:rgba(17,17,17,0.6)}
-.hiw-section{background:var(--color-hiw-bg);padding:64px 32px;position:relative;overflow:hidden}
+.hiw-section{background:var(--color-hiw-bg);padding:80px 32px 72px;position:relative;overflow:hidden}
 .hiw-dotgrid{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(0,0,0,0.06) 1px,transparent 1px);background-size:32px 32px;opacity:0.4;pointer-events:none}
 .hiw-inner{max-width:900px;margin:0 auto;text-align:center;position:relative}
 .hiw-section h2{font-family:var(--font-heading);font-size:clamp(28px,3.5vw,44px);font-weight:800;color:#111;margin-bottom:12px}
@@ -218,7 +220,8 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .rw-mini{display:flex;flex-direction:column;gap:6px;padding:16px 20px;border-left:3px solid var(--color-fire);background:rgba(255,255,255,0.06);border-radius:0 4px 4px 0;margin-top:28px}
 .rw-mini--light{background:rgba(17,17,17,0.04);border-left-color:var(--color-primary)}
 .rw-mini-stars{color:#FFB800;font-size:13px;letter-spacing:2px}
-.rw-mini-text{color:rgba(255,255,255,0.9);font-size:15px;font-style:italic;line-height:1.65;margin:0}
+.rw-mini-text{color:rgba(255,255,255,0.9);font-size:15px;font-style:normal;line-height:1.65;margin:0}
+.proof-connector{font-size:13px;font-style:italic;font-weight:500;color:rgba(17,17,17,0.45);margin:16px 0 0;letter-spacing:0}
 .rw-mini--light .rw-mini-text{color:rgba(17,17,17,0.75)}
 .rw-mini-author{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.45)}
 .rw-mini--light .rw-mini-author{color:rgba(17,17,17,0.45)}
@@ -276,10 +279,12 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
   .hamburger{display:flex}
   .site-header{padding:0 20px}
   .footer-inner{grid-template-columns:1fr;gap:28px}
-  .svc-grid{grid-template-columns:1fr}
+  .svc-section{padding:52px 20px 0}
+  .svc-grid{grid-template-columns:1fr;margin-bottom:-80px}
+  .hiw-section{padding-top:160px}
   .svc-card--featured,.svc-card--wide{grid-column:span 1}
   .svc-card{min-height:220px}
-  .pain-section{padding:36px 20px 0}.pain-close{padding:0 20px 28px}.pain-bridge{padding-bottom:36px}.pain-pivot-accent{margin:28px auto 32px}
+  .pain-section{padding:52px 20px 0}.pain-close{padding:0 20px 28px}.pain-bridge{padding-bottom:36px}.pain-pivot-accent{margin:28px auto 32px}
   .trust-ticker-wrap{overflow:hidden;justify-content:flex-start}
   .trust-ticker-track{flex-wrap:nowrap;justify-content:flex-start;padding:16px 0;width:max-content;will-change:transform}
 }
@@ -296,12 +301,17 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .dropdown-cities{display:grid;grid-template-columns:1fr 1fr 1fr}
 .dropdown-cities a{border-bottom:none}
 /* RESULTS GALLERY */
-.results-section{background:var(--color-dark-section);padding:72px 32px}
+.results-section{background:var(--color-dark-section);padding:80px 32px 72px;position:relative;text-align:center}
 .results-inner{max-width:900px;margin:0 auto}
 .results-kicker{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--color-fire);margin-bottom:10px}
 .results-heading{font-family:var(--font-heading);font-size:clamp(28px,4vw,46px);font-weight:800;color:var(--color-white);line-height:1.05;margin-bottom:14px}
-.results-accent{width:56px;height:4px;background:var(--color-primary);border-radius:9px;margin-bottom:32px}
-@media(max-width:600px){.results-section{padding:40px 20px}}
+.results-accent{width:56px;height:4px;background:var(--color-primary);border-radius:9px;margin:0 auto 40px}
+@media(max-width:600px){.results-section{padding:52px 20px 40px}}
+/* SECTION BRIDGE LINES */
+.section-bridge{font-family:var(--font-heading);font-size:clamp(26px,3.5vw,48px);font-style:italic;font-weight:700;text-align:center;text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:6px;text-decoration-thickness:2px;letter-spacing:-0.01em;margin:0;display:block;padding:72px 32px 80px}
+.section-bridge--light{color:rgba(0,0,0,0.65)}
+.section-bridge--dark{color:rgba(255,255,255,0.9)}
+.eco-close{font-family:var(--font-heading);font-size:clamp(20px,2.5vw,32px);font-weight:700;color:rgba(0,0,0,0.72);text-align:center;line-height:1.35;margin:44px auto 0;padding:0 32px;max-width:740px}
 /* TRUST QUOTES */
 .trust-quotes{background:var(--color-review-bg);padding:72px 32px}
 .trust-quotes-inner{max-width:1100px;margin:0 auto}
@@ -529,23 +539,78 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
   <!-- SECTION 2: PAIN POINTS -->
   <section class="pain-section" aria-label="Common junk removal frustrations Tony solves">
     <div class="pain-inner">
-      <h2 style="font-family:var(--font-heading);font-size:clamp(28px,4vw,42px);font-weight:800;color:#111;margin-bottom:16px;line-height:1.1;">Sound Familiar<span style="color:var(--color-primary)">?</span></h2>
+      <h2 style="font-family:var(--font-heading);font-size:clamp(28px,4vw,42px);font-weight:800;color:#ffffff;margin-bottom:16px;line-height:1.1;">Sound Familiar<span style="color:var(--color-fire)">?</span></h2>
       <p class="pain-paragraph">Got a confirmation. Waited half the day. Nobody came, no call, no text. Or they showed up and the price was different. Or they were ready to leave and the garage was still half full.</p>
     </div>
     <div class="pain-pivot-accent"></div>
     <p class="pain-close">Tony gives you a time and <strong>shows&nbsp;up.</strong> Same price at the door as on the phone. Tony asks before anything <strong>gets thrown&nbsp;away.</strong></p>
-    <p class="pain-bridge">And here&rsquo;s everything he handles.</p>
+    <p class="pain-bridge"><span style="color:var(--color-fire);font-style:normal;">52</span> strangers figured that out pretty quick.</p>
   </section>
 
-  <!-- SECTION 3: THE WORK — services grid -->
+  <!-- SECTION 3: MEET TONY -->
+  <section class="owner-section">
+    <p class="owner-intro-bridge">Here&rsquo;s the guy behind it.</p>
+    <div class="owner-inner">
+
+      <div style="order:2;" class="owner-photo-wrap">
+        <picture>
+          <source srcset="images/team-headshot.webp" type="image/webp">
+          <img src="images/team-headshot.jpg" alt="Tony Frias, owner of Junk Brawlers LLC, Dawsonville GA" width="600" height="450" loading="lazy">
+        </picture>
+        <div class="owner-badge">
+          <span class="owner-badge-score">&#9733; 5.0</span>
+          <span class="owner-badge-label">52 Google Reviews</span>
+        </div>
+      </div>
+
+      <div style="order:1;">
+        <div class="owner-text-head">
+          <div class="owner-accent-bar"></div>
+          <h2>You Know Who&rsquo;s Showing Up<br>at Your Door</h2>
+        </div>
+        <p>When you call <strong style="color:#111;">Junk Brawlers</strong>, you&rsquo;re talking to <strong style="color:#111;">Tony</strong>. Same crew that pulls up to your door. No call centers. No subcontractors. No surprises on the bill.</p>
+        <p>Tony built this thing from scratch. A truck, some signs, <strong style="color:#111;">$5,740 total</strong>. He&rsquo;s named by name in 60% of his reviews. Not because he asks people to do that. Because they remember him.</p>
+
+        <div class="owner-stats">
+          <div class="owner-stat">
+            <span class="stat-val fire">52</span>
+            <span class="stat-lbl">Five-Star Reviews</span>
+          </div>
+          <div class="owner-stat">
+            <span class="stat-val fire">0</span>
+            <span class="stat-lbl">Negative Reviews Ever</span>
+          </div>
+          <div class="owner-stat">
+            <span class="stat-val fire">7</span>
+            <span class="stat-lbl">Days a Week Available</span>
+          </div>
+        </div>
+
+        <p class="proof-connector">Here&rsquo;s one of them:</p>
+        <div class="rw-mini rw-mini--light" style="margin-top:8px">
+          <span class="rw-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p class="rw-mini-text">&ldquo;Tony was awesome! He communicated consistently with me, gave me a time he would be here at my house, and was on time. His rates were very good and the work was done same day and efficiently. He and his partner took great care of the house during the junk removal we had and were respectful. I highly recommend Junk Brawlers and will be calling them again!&rdquo;</p>
+          <span class="rw-mini-author">Gary Cooper &middot; Google Review &middot; 5&#9733;</span>
+        </div>
+
+        <div style="margin-top:24px;">
+          <a href="tel:4046329165" class="btn-fire">Call Tony &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+    <p class="owner-bridge">Three guys. One standard. Here&rsquo;s what they handle.</p>
+  </section>
+
+  <!-- SECTION 4: THE WORK — services grid -->
   <section class="svc-section">
     <div class="svc-inner">
-      <h2>We Take It All. Leave Nothing Behind.</h2>
+      <h2>Whatever You&rsquo;ve Got. It&rsquo;s Gone.</h2>
       <div class="svc-accent"></div>
       <div class="svc-intro">
-        <p>Tony, his brother, and Simon show up. You get a price before anything moves. It doesn&rsquo;t change. Old furniture, appliances, a hot tub out back, a full garage cleanout, an estate cleanout. Whatever you&rsquo;ve got in North Georgia, <strong style="color:#fff;">they haul it out and leave the space clean.</strong></p>
-        <p>Doesn&rsquo;t matter how much there is or how bad it&rsquo;s gotten. Serving Dawsonville, Cumming, Gainesville, and across North Georgia. Call <strong style="color:#fff;">(404) 632-9165</strong>. They pick up.</p>
-        <a href="services.html" class="btn-primary">See All Services &rarr;</a>
+        <p>Tony, his brother, and Simon show up together. You get a price before anything moves &mdash; and it doesn&rsquo;t change. <strong style="color:#fff;">One call, one crew, same standard every time.</strong></p>
+        <p style="margin-top:88px;">Serving Dawsonville, Cumming, Gainesville, and across North Georgia. Call in the morning and they&rsquo;re usually there the same day.</p>
+        <a href="services.html" class="btn-primary" style="display:inline-block;margin-top:64px;">See All Services &rarr;</a>
       </div>
 
       <div class="svc-grid" style="grid-template-columns:repeat(2,1fr);">
@@ -573,7 +638,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     </div>
   </section>
 
-  <!-- SECTION 4: PROCESS — how it works -->
+  <!-- SECTION 5: PROCESS — how it works -->
   <section class="hiw-section">
     <div class="hiw-dotgrid"></div>
     <div class="hiw-inner">
@@ -603,6 +668,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
       </div>
 
       <div class="hiw-cta">
+        <p style="text-align:center;font-size:20px;font-style:italic;font-weight:500;color:rgba(17,17,17,0.75);letter-spacing:0;margin:0 0 12px;text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:4px;text-decoration-thickness:2px;">Sound familiar yet?</p>
         <div class="rw-mini rw-mini--light" style="max-width:520px;margin:0 auto 28px;">
           <span class="rw-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
           <p class="rw-mini-text">&ldquo;Texted to let us know they were coming. Gave us a quick quote. Asked about some items if we really wanted to throw them away &mdash; we didn&rsquo;t, so we appreciated they asked.&rdquo;</p>
@@ -613,64 +679,12 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
     </div>
   </section>
 
-  <!-- SECTION 5: MEET TONY -->
-  <section class="owner-section">
-    <div class="owner-inner">
-
-      <div style="order:2;" class="owner-photo-wrap">
-        <picture>
-          <source srcset="images/team-headshot.webp" type="image/webp">
-          <img src="images/team-headshot.jpg" alt="Tony Frias, owner of Junk Brawlers LLC, Dawsonville GA" width="600" height="450" loading="lazy">
-        </picture>
-        <div class="owner-badge">
-          <span class="owner-badge-score">&#9733; 5.0</span>
-          <span class="owner-badge-label">52 Google Reviews</span>
-        </div>
-      </div>
-
-      <div style="order:1;">
-        <div class="owner-text-head">
-          <div class="owner-accent-bar"></div>
-          <h2>You Know Who&rsquo;s Showing Up<br>at Your Door</h2>
-        </div>
-        <p>When you call <strong style="color:#111;">Junk Brawlers</strong>, you&rsquo;re talking to <strong style="color:#111;">Tony</strong>. Same crew that pulls up to your door. No call centers. No subcontractors. No surprises on the bill.</p>
-        <p>Tony built this thing from scratch. A truck, some signs, <strong style="color:#111;">$5,740 total</strong>. He&rsquo;s named by name in 60% of his reviews. Not because he asks people to do that. Because they remember him.</p>
-
-        <div class="owner-stats">
-          <div class="owner-stat">
-            <span class="stat-val fire">52</span>
-            <span class="stat-lbl">Five-Star Reviews</span>
-          </div>
-          <div class="owner-stat">
-            <span class="stat-val">0</span>
-            <span class="stat-lbl">Negative Reviews Ever</span>
-          </div>
-          <div class="owner-stat">
-            <span class="stat-val">7</span>
-            <span class="stat-lbl">Days a Week Available</span>
-          </div>
-        </div>
-
-        <div class="rw-mini rw-mini--light">
-          <span class="rw-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <p class="rw-mini-text">&ldquo;Tony was awesome! He communicated consistently with me, gave me a time he would be here at my house, and was on time. His rates were very good and the work was done same day and efficiently. He and his partner took great care of the house during the junk removal we had and were respectful. I highly recommend Junk Brawlers and will be calling them again!&rdquo;</p>
-          <span class="rw-mini-author">Gary Cooper &middot; Google Review &middot; 5&#9733;</span>
-        </div>
-
-        <div style="margin-top:24px;">
-          <a href="about.html" class="btn-primary">Meet Tony &rarr;</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
   <!-- RESULTS GALLERY -->
   <section class="results-section" aria-label="Before and after junk removal by Junk Brawlers">
     <div class="results-inner">
-      <h2 class="results-heading">What We Leave Behind</h2>
+      <h2 class="results-heading">See the Difference.</h2>
       <div class="results-accent"></div>
-      <div class="ba-slider" role="img" aria-label="Drag to compare before and after junk removal">
+      <div class="ba-slider" role="img" aria-label="Drag to compare before and after junk removal" style="position:relative;z-index:10">
         <div class="ba-after">
           <img src="images/gbp-photo-02.webp" alt="After junk removal by Junk Brawlers, North Georgia" loading="lazy" width="600" height="450">
         </div>
@@ -711,6 +725,8 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         </div>
       </div>
     </div>
+    <p class="eco-close">Tony doesn&rsquo;t just haul it. He thinks about where it goes.</p>
+    <p class="section-bridge section-bridge--light">52 people noticed.</p>
   </section>
 
   <!-- TRUST QUOTES -->
@@ -739,6 +755,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         </div>
 
       </div>
+      <p class="section-bridge section-bridge--dark">Still have a question?</p>
     </div>
   </section>
 
@@ -796,6 +813,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 
       </div>
       <a href="faq.html" class="btn-primary">See All FAQs &rarr;</a>
+      <p class="section-bridge section-bridge--light">He&rsquo;s probably closer than you think.</p>
     </div>
   </section>
 
@@ -822,6 +840,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         <a href="buford.html" class="location-pill">Buford GA</a>
         <a href="service-areas.html" class="location-pill location-pill--cta">View All Service Areas &rarr;</a>
       </div>
+      <p class="section-bridge section-bridge--light">That&rsquo;s everything. Here&rsquo;s the number.</p>
     </div>
   </section>
 
