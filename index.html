@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -354,7 +354,6 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .tq-author{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.38)}
 @media(max-width:768px){.trust-quotes-grid{grid-template-columns:1fr;gap:14px}.trust-quotes{padding:52px 20px}}
 </style>
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="css/style.css"></noscript>
 
@@ -669,7 +668,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
       <div class="svc-grid">
 
         <a href="residential-junk-removal.html" class="svc-card">
-          <img src="images/gbp-photo-03-sm.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
+          <img src="images/gbp-tony-loading-truck-sm.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
           <div class="svc-card-overlay"></div>
           <div class="svc-card-body">
             <h3>Residential</h3>
@@ -689,7 +688,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         </a>
 
         <a href="commercial-junk-removal.html" class="svc-card">
-          <img src="images/gbp-photo-04-sm.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
+          <img src="images/gbp-truck-flatbed-loaded-sm.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
           <div class="svc-card-overlay"></div>
           <div class="svc-card-body">
             <h3>Commercial &amp; Property</h3>
@@ -709,7 +708,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         </a>
 
         <a href="specialty-removals.html" class="svc-card">
-          <img src="images/gbp-photo-10-sm.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
+          <img src="images/gbp-fridge-removal-sm.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
           <div class="svc-card-overlay"></div>
           <div class="svc-card-body">
             <h3>Specialty &amp; Heavy</h3>
@@ -786,10 +785,10 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
       <div class="ba-grid">
         <div class="ba-slider" role="img" aria-label="Before and after: garage exterior cleared by Junk Brawlers">
           <div class="ba-after">
-            <img src="images/gbp-photo-04.webp" alt="Garage exterior after junk removal — clean gravel, Dawsonville GA" loading="lazy" width="600" height="450">
+            <img src="images/gbp-garage-exterior-after.webp" alt="Garage exterior after junk removal — clean gravel, Dawsonville GA" loading="lazy" width="600" height="450">
           </div>
           <div class="ba-before">
-            <img src="images/gbp-photo-01.webp" alt="Garage exterior before — boxes and debris piled on gravel" loading="lazy" width="600" height="450">
+            <img src="images/gbp-garage-exterior-before.webp" alt="Garage exterior before — boxes and debris piled on gravel" loading="lazy" width="600" height="450">
           </div>
           <div class="ba-handle">
             <div class="ba-handle-btn" aria-hidden="true">
@@ -799,12 +798,12 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
           <span class="ba-label ba-label--before">Before</span>
           <span class="ba-label ba-label--after">After</span>
         </div>
-        <div class="ba-slider" role="img" aria-label="Before and after: garage interior cleaned out by Junk Brawlers">
+        <div class="ba-slider" role="img" aria-label="Before and after: hillside yard debris removed by Junk Brawlers">
           <div class="ba-after">
-            <img src="images/gbp-photo-10.webp" alt="Garage interior after cleanout — completely cleared concrete floor" loading="lazy" width="600" height="450">
+            <img src="images/gbp-hillside-after.webp" alt="Hillside cleared after yard debris removal — Dawsonville GA" loading="lazy" width="600" height="450">
           </div>
           <div class="ba-before">
-            <img src="images/gbp-photo-08.webp" alt="Garage interior before cleanout — mattress, recliner, and tools piled up" loading="lazy" width="600" height="450">
+            <img src="images/gbp-hillside-before.webp" alt="Hillside before — trash and debris piled on slope" loading="lazy" width="600" height="450">
           </div>
           <div class="ba-handle">
             <div class="ba-handle-btn" aria-hidden="true">
@@ -1059,9 +1058,10 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
   </script>
   <script defer src="js/main.js"></script>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script>
   (function(){
+    var mapEl=document.getElementById('service-map');
+    if(!mapEl) return;
     var locs=[
       {n:'Dawsonville',lat:34.4190,lng:-84.1186,u:'dawsonville.html',home:true},
       {n:'Canton',lat:34.2365,lng:-84.4910,u:'canton.html'},
@@ -1079,33 +1079,48 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
       {n:'Oakwood',lat:34.2268,lng:-83.8869,u:'oakwood.html'},
       {n:'Buford',lat:34.1215,lng:-84.0041,u:'buford.html'}
     ];
-    var map=L.map('service-map',{scrollWheelZoom:false,zoomControl:true}).setView([34.38,-84.18],9);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{
-      attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-      maxZoom:15
-    }).addTo(map);
-    var mks={};
-    locs.forEach(function(loc){
-      var mk=L.circleMarker([loc.lat,loc.lng],{
-        radius:loc.home?12:7,
-        fillColor:loc.home?'#FF7A00':'#7B35D4',
-        color:'#fff',
-        weight:loc.home?3:2,
-        fillOpacity:0.92
+    function initMap(){
+      var map=L.map('service-map',{scrollWheelZoom:false,zoomControl:true}).setView([34.38,-84.18],9);
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{
+        attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        maxZoom:15
       }).addTo(map);
-      mk.bindPopup('<strong style="font-size:14px;font-weight:700;">'+loc.n+', GA</strong><br><a href="'+loc.u+'" style="font-size:13px;color:#7B35D4;font-weight:600;">Junk removal in '+loc.n+' &rarr;</a>');
-      mks[loc.n]=mk;
-    });
-    document.querySelectorAll('.location-pill[data-lat]').forEach(function(pill){
-      pill.addEventListener('click',function(e){
-        e.preventDefault();
-        var name=this.dataset.name;
-        map.flyTo([parseFloat(this.dataset.lat),parseFloat(this.dataset.lng)],12,{duration:0.7});
-        if(mks[name]) setTimeout(function(){mks[name].openPopup();},500);
-        document.querySelectorAll('.location-pill').forEach(function(p){p.classList.remove('active');});
-        this.classList.add('active');
+      var mks={};
+      locs.forEach(function(loc){
+        var mk=L.circleMarker([loc.lat,loc.lng],{
+          radius:loc.home?12:7,
+          fillColor:loc.home?'#FF7A00':'#7B35D4',
+          color:'#fff',
+          weight:loc.home?3:2,
+          fillOpacity:0.92
+        }).addTo(map);
+        mk.bindPopup('<strong style="font-size:14px;font-weight:700;">'+loc.n+', GA</strong><br><a href="'+loc.u+'" style="font-size:13px;color:#7B35D4;font-weight:600;">Junk removal in '+loc.n+' &rarr;</a>');
+        mks[loc.n]=mk;
       });
-    });
+      document.querySelectorAll('.location-pill[data-lat]').forEach(function(pill){
+        pill.addEventListener('click',function(e){
+          e.preventDefault();
+          var name=this.dataset.name;
+          map.flyTo([parseFloat(this.dataset.lat),parseFloat(this.dataset.lng)],12,{duration:0.7});
+          if(mks[name]) setTimeout(function(){mks[name].openPopup();},500);
+          document.querySelectorAll('.location-pill').forEach(function(p){p.classList.remove('active');});
+          this.classList.add('active');
+        });
+      });
+    }
+    var obs=new IntersectionObserver(function(entries,o){
+      if(!entries[0].isIntersecting) return;
+      o.disconnect();
+      var css=document.createElement('link');
+      css.rel='stylesheet';
+      css.href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+      document.head.appendChild(css);
+      var js=document.createElement('script');
+      js.src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+      js.onload=initMap;
+      document.head.appendChild(js);
+    },{rootMargin:'300px'});
+    obs.observe(mapEl);
   })();
   </script>
 
