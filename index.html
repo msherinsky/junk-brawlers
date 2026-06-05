@@ -133,10 +133,10 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .pain-close strong{color:var(--color-fire);font-weight:800}
 .pain-bridge{text-align:center;font-size:clamp(22px,2.5vw,30px);font-style:italic;font-weight:600;color:rgba(17,17,17,0.75);letter-spacing:0;padding-bottom:72px;margin:0;text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:4px;text-decoration-thickness:2px}
 .svc-section{background:var(--color-dark-section);padding:80px 32px 0;position:relative;z-index:10;box-shadow:inset 0 8px 60px rgba(255,100,0,0.05)}.svc-section::after{content:'';position:absolute;bottom:0;left:0;right:0;height:260px;background:var(--color-hiw-bg);z-index:0}.svc-inner{max-width:1100px;margin:0 auto}
-.svc-section h2{font-family:var(--font-heading);font-size:clamp(28px,3.5vw,44px);font-weight:800;color:#fff;text-align:center;margin-bottom:8px}
+.svc-section h2{font-family:var(--font-heading);font-size:clamp(28px,3.5vw,44px);font-weight:800;color:#fff;text-align:center;margin-bottom:16px}
 .svc-accent{width:56px;height:4px;background:#8000FF;border-radius:9px;margin:0 auto 40px}
-.svc-intro{max-width:660px;margin:0 auto 14px;text-align:center}
-.svc-intro p{color:rgba(255,255,255,0.65);font-size:15px;line-height:1.7;margin-bottom:16px;text-align:left}
+.svc-intro{max-width:660px;margin:0 auto 48px;text-align:center}
+.svc-intro p{color:rgba(255,255,255,0.65);font-size:15px;line-height:1.7;margin-bottom:16px;text-align:center}
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;position:relative;z-index:1}
 .svc-card{position:relative;overflow:hidden;border-radius:4px;min-height:340px;display:block;text-decoration:none;box-shadow:0 24px 64px rgba(0,0,0,0.5)}
 .svc-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none;display:block}
@@ -147,6 +147,14 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .svc-card-body{position:absolute;bottom:0;left:0;right:0;padding:20px;z-index:1}
 .svc-card-body h3{font-family:var(--font-heading);font-weight:800;text-transform:uppercase;color:#fff;font-size:22px;margin-bottom:6px;line-height:1.1;text-align:center}
 .svc-card-body p{color:rgba(255,255,255,0.7);font-size:13px;line-height:1.6;text-align:center}
+.svc-card-hover{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,0,18,0.96) 0%,rgba(10,0,24,0.98) 100%);padding:28px 28px 24px;display:flex;flex-direction:column;justify-content:center;transform:translateY(100%);transition:transform 0.38s cubic-bezier(0.25,0.46,0.45,0.94);z-index:3}
+.svc-card:hover .svc-card-hover{transform:translateY(0)}
+.svc-card-hover h3{font-family:var(--font-heading);font-weight:800;text-transform:uppercase;color:#fff;font-size:20px;margin-bottom:16px;text-align:center;letter-spacing:0.5px}
+.svc-card-hover ul{list-style:none;padding:0;margin:0 0 18px;flex:1}
+.svc-card-hover ul li{color:rgba(255,255,255,0.85);font-size:14px;line-height:1.75;text-align:center;padding:1px 0}
+.svc-card-hover ul li::before{content:"✓  ";color:var(--color-fire);font-weight:700}
+.svc-card-hover-cta{display:block;text-align:center;color:var(--color-fire);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.12)}
+@media(max-width:768px){.svc-card-hover{display:none}}
 .svc-cta-row{text-align:center;padding:40px 0 80px;position:relative;z-index:1}
 .owner-section{background:#ffffff;padding:80px 32px;overflow:hidden;position:relative}.owner-section::before{content:'';position:absolute;bottom:20px;left:50%;transform:translateX(-50%);width:520px;height:520px;background:url('images/logo.webp') no-repeat center/contain;opacity:0.07;mix-blend-mode:multiply;pointer-events:none;user-select:none}
 .owner-section .owner-bridge{text-align:center;font-family:var(--font-heading);font-size:clamp(32px,4.5vw,60px);font-style:italic;font-weight:700;color:rgba(0,0,0,0.65);letter-spacing:-0.01em;padding:140px 32px 64px;margin:0;text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:6px;text-decoration-thickness:2px}
@@ -518,13 +526,17 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         </a>
         <h1 style="font-family:var(--font-heading);font-size:clamp(13px,1.4vw,18px);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.6);margin-bottom:8px;">Junk Removal in Dawsonville, GA</h1>
         <div class="hero-tagline">Call Before Noon.<span class="hero-em">Your Junk Is Gone by Tonight.</span></div>
-<p class="hero-sub">Tony Frias picks up the phone himself. Not a call center. He shows up within 30 minutes, hauls everything out, sweeps up after, and charges you the exact price he quoted. 52 five-star reviews. 7 days a week.</p>
+<p class="hero-sub">Tony picks up the phone himself. Not a call center. He shows up within the hour, loads everything out, and charges exactly what he quoted on the phone.</p>
+        <p style="font-size:14px;color:rgba(255,255,255,0.55);font-style:italic;margin-bottom:12px;">Myra called on a Tuesday. Here&rsquo;s what she said:</p>
+        <div class="hero-pullquote">
+          <p>&ldquo;He showed up within 30 minutes of my call and had everything packed up and hauled away quickly and efficiently.&rdquo;</p>
+          <cite>Myra S. &middot; Google Review &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</cite>
+        </div>
         <div class="hero-buttons">
           <a href="tel:4046329165" class="btn-fire">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:inline;vertical-align:-2px;margin-right:6px;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
             Call Tony Now
           </a>
-          <a href="contact.html" class="btn-ghost" data-modal="quote">GET A FREE QUOTE</a>
         </div>
       </div>
     </div>
@@ -532,7 +544,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
       <picture>
         <source srcset="images/hero-bg-mobile.webp" media="(max-width: 900px)" type="image/webp">
         <source srcset="images/hero-bg.webp" type="image/webp">
-        <img src="images/hero-bg.jpg" alt="Junk Brawlers truck ready for junk pickup in Dawsonville, GA" width="1200" height="1600" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:40% center;display:block;">
+        <img src="images/hero-bg.jpg" alt="Junk Brawlers truck ready for junk pickup in Dawsonville, GA" width="1200" height="1600" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:62% center;display:block;">
       </picture>
     </div>
   </section>
@@ -582,7 +594,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
       <p class="pain-paragraph">Or you&rsquo;ve called before. Got a confirmation. Waited half the day. Nobody came, no call, no text. Price was different at the door. Left before it was done.</p>
     </div>
     <div class="pain-pivot-accent"></div>
-    <p class="pain-close">Tony gives you a time and <strong>shows&nbsp;up.</strong> Same price at the door as on the phone. No judgment on what the pile looks like &mdash; he&rsquo;s seen it all. He asks before anything <strong>gets thrown&nbsp;away.</strong> Call in the morning, it&rsquo;s usually gone that day.</p>
+    <p class="pain-close">Tony gives you a time and <strong>shows&nbsp;up.</strong> Same price at the door as on the phone. No judgment on what the pile looks like. He&rsquo;s seen it all. He asks before anything <strong>gets thrown&nbsp;away.</strong> Call in the morning, it&rsquo;s usually gone that day.</p>
     <p class="pain-bridge"><span style="color:var(--color-fire);font-style:normal;">52</span> strangers figured that out pretty quick.</p>
   </section>
 
@@ -650,7 +662,8 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
       <h2>Whatever You&rsquo;ve Got. It&rsquo;s Gone.</h2>
       <div class="svc-accent"></div>
       <div class="svc-intro">
-        <p>Tony, his brother, and Simon show up together. One price before anything moves &mdash; it doesn&rsquo;t change at the door. Serving Dawsonville, Cumming, Gainesville, and across North Georgia.</p>
+        <p>Tony, his brother, and Simon show up together. One price before anything moves. It doesn&rsquo;t change at the door.</p>
+        <p>Serving Dawsonville, Cumming, Gainesville, Canton, and across North Georgia.</p>
       </div>
 
       <div class="svc-grid">
@@ -662,6 +675,17 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
             <h3>Residential</h3>
             <p>Furniture, appliances, garage and estate cleanouts, mattresses, yard debris, and more.</p>
           </div>
+          <div class="svc-card-hover">
+            <h3>Residential</h3>
+            <ul>
+              <li>Furniture &amp; appliances</li>
+              <li>Full garage cleanouts</li>
+              <li>Estate &amp; hoarder cleanouts</li>
+              <li>Mattresses &amp; yard debris</li>
+              <li>Same-day usually available</li>
+            </ul>
+            <span class="svc-card-hover-cta">See what we take &rarr;</span>
+          </div>
         </a>
 
         <a href="commercial-junk-removal.html" class="svc-card">
@@ -671,6 +695,17 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
             <h3>Commercial &amp; Property</h3>
             <p>Business cleanouts, office removals, property management, and construction debris.</p>
           </div>
+          <div class="svc-card-hover">
+            <h3>Commercial &amp; Property</h3>
+            <ul>
+              <li>Office &amp; business removals</li>
+              <li>Property manager cleanouts</li>
+              <li>Tenant moveouts &amp; foreclosures</li>
+              <li>Construction debris hauling</li>
+              <li>No job too big or too small</li>
+            </ul>
+            <span class="svc-card-hover-cta">Commercial services &rarr;</span>
+          </div>
         </a>
 
         <a href="specialty-removals.html" class="svc-card">
@@ -678,7 +713,18 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
           <div class="svc-card-overlay"></div>
           <div class="svc-card-body">
             <h3>Specialty &amp; Heavy</h3>
-            <p>Hot tubs, pools, sheds, decks, and appliances &mdash; the jobs most haulers won&rsquo;t touch.</p>
+            <p>Hot tubs, pools, sheds, decks, and appliances. The jobs most haulers won&rsquo;t touch.</p>
+          </div>
+          <div class="svc-card-hover">
+            <h3>Specialty &amp; Heavy</h3>
+            <ul>
+              <li>Hot tubs, spas &amp; above-ground pools</li>
+              <li>Sheds, decks &amp; outdoor structures</li>
+              <li>Large appliances &amp; fridges</li>
+              <li>EPA-certified refrigerant disposal</li>
+              <li>Jobs most haulers won&rsquo;t quote</li>
+            </ul>
+            <span class="svc-card-hover-cta">See specialty services &rarr;</span>
           </div>
         </a>
 
@@ -724,7 +770,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         <p style="text-align:center;font-size:20px;font-style:italic;font-weight:500;color:rgba(17,17,17,0.75);letter-spacing:0;margin:0 0 12px;text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:4px;text-decoration-thickness:2px;">Sound familiar yet?</p>
         <div class="rw-mini rw-mini--light" style="max-width:520px;margin:0 auto 28px;">
           <span class="rw-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <p class="rw-mini-text">&ldquo;Texted to let us know they were coming. Gave us a quick quote. Asked about some items if we really wanted to throw them away &mdash; we didn&rsquo;t, so we appreciated they asked.&rdquo;</p>
+          <p class="rw-mini-text">&ldquo;Texted to let us know they were coming. Gave us a quick quote. Asked about some items if we really wanted to throw them away. We didn&rsquo;t, and we appreciated they asked.&rdquo;</p>
           <span class="rw-mini-author">Tatyana Shvets &middot; Google Review &middot; 5&#9733;</span>
         </div>
         <a href="tel:4046329165" class="btn-fire" style="font-family:var(--font-heading);font-size:17px;letter-spacing:1.5px;padding:16px 44px;">Call Tony Now &rarr;</a>
@@ -808,14 +854,14 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
         </div>
 
       </div>
-      <p class="section-bridge section-bridge--dark">Still have a question?</p>
+      <p class="section-bridge section-bridge--dark">Still have questions?</p>
     </div>
   </section>
 
   <!-- SECTION 6: FAQ — 5 questions, cleanup crew before the final ask -->
   <section class="faq-section">
     <div class="faq-inner">
-      <h2 class="section-heading">Last Few Questions?</h2>
+      <h2 class="section-heading">We Have Answers.</h2>
       <div class="section-heading-accent centered"></div>
       <div class="faq-list">
 
@@ -951,7 +997,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
       <div class="modal-body">
         <div class="modal-logo"><picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" alt="Junk Brawlers LLC" width="60" height="48" style="height:48px;width:auto;display:block;"></picture></div>
         <h2 id="modalTitle">Get a Free Quote</h2>
-        <p class="modal-sub">We&rsquo;ll respond fast &mdash; usually within minutes.</p>
+        <p class="modal-sub">We&rsquo;ll respond fast, usually within minutes.</p>
         <form class="modal-form quote-form" novalidate>
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="tel" name="phone" placeholder="Phone Number" required>
