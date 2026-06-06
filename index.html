@@ -1105,13 +1105,13 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
       o.disconnect();
       var css=document.createElement('link');
       css.rel='stylesheet';
-      css.href='https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+      css.href='css/leaflet.css';
       document.head.appendChild(css);
       var js=document.createElement('script');
-      js.src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+      js.src='js/leaflet.js';
       js.onload=initMap;
       document.head.appendChild(js);
-    },{rootMargin:'300px'});
+    },{rootMargin:'0px'});
     obs.observe(mapEl);
   })();
   </script>
