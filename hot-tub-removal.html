@@ -18,33 +18,12 @@
   <link rel="icon" href="images/logo.png">
   <link rel="apple-touch-icon" href="images/logo.png">
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-condensed-800.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-condensed-700.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-400.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-600.woff2" crossorigin>
-  <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-700.woff2" crossorigin>
+  <link rel="preload" as="image" href="images/gbp-tony-loading-truck-sm.webp" type="image/webp" fetchpriority="high" media="(max-width: 900px)">
+  <link rel="preload" as="image" href="images/gbp-tony-loading-truck.webp" type="image/webp" fetchpriority="high" media="(min-width: 901px)">
+  <link rel="preload" href="images/logo.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="css/style.css">
-
-  <style>
-    .sp-hero{background:linear-gradient(160deg,#0A000F 0%,#120022 55%,#0A000F 100%);padding:56px 32px 72px;position:relative;overflow:hidden}
-    .sp-hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(128,0,255,0.07) 1px,transparent 1px);background-size:32px 32px;pointer-events:none}
-    .sp-hero-inner{max-width:860px;margin:0 auto;position:relative}
-    .sp-breadcrumb{font-size:12px;font-weight:600;color:rgba(255,255,255,0.42);text-transform:uppercase;letter-spacing:1px;margin-bottom:28px;display:flex;align-items:center;gap:8px}
-    .sp-breadcrumb a{color:rgba(255,255,255,0.42);transition:color .2s}
-    .sp-breadcrumb a:hover{color:rgba(255,255,255,0.7)}
-    .sp-breadcrumb span{color:rgba(255,255,255,0.2)}
-    .sp-hero h1{font-family:var(--font-heading);font-size:clamp(38px,6vw,72px);font-weight:900;color:#fff;line-height:1.02;margin-bottom:20px;text-transform:none}
-    .sp-hero-sub{font-size:clamp(15px,1.8vw,19px);color:rgba(255,255,255,0.78);line-height:1.65;margin-bottom:32px;max-width:620px}
-    .sp-hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px}
-    .sp-checklist{display:flex;flex-wrap:wrap;gap:9px;list-style:none;padding:0;margin:0}
-    .sp-checklist li{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.72);background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:4px;padding:6px 12px}
-    .sp-checklist li::before{content:'✓';color:var(--color-fire);font-weight:800}
-    @media(max-width:640px){
-      .sp-hero{padding:36px 20px 52px}
-      .sp-hero h1{font-size:clamp(34px,9vw,52px)}
-      .sp-hero-ctas{flex-direction:column}
-      .sp-hero-ctas .btn-fire,.sp-hero-ctas .btn-ghost-white{text-align:center;justify-content:center;display:flex;align-items:center}
-    }
-  </style>
 
   <script type="application/ld+json">
   {
@@ -191,42 +170,58 @@
   <main>
 
   <!-- SECTION 1: HERO — Am I in the right place? -->
-  <section class="sp-hero">
-    <div class="sp-hero-inner">
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-content">
 
-      <nav class="sp-breadcrumb" aria-label="Breadcrumb">
-        <a href="index.html">Home</a>
-        <span aria-hidden="true">/</span>
-        <a href="services.html">Services</a>
-        <span aria-hidden="true">/</span>
-        <span aria-current="page">Hot Tub Removal</span>
-      </nav>
+        <nav class="sp-breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="services.html">Services</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Hot Tub Removal</span>
+        </nav>
 
-      <a href="https://share.google/HG9xlgEp9F7GkTscP" target="_blank" rel="noopener" class="hero-badge" aria-label="5.0 stars, 52 Google reviews" style="margin-bottom:24px;">
-        <span class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <span class="hero-badge-text"><strong>5.0 Stars</strong> &middot; 52 Google Reviews</span>
-      </a>
-
-      <h1>Hot Tub Removal<br>in Dawsonville, GA</h1>
-      <p class="sp-hero-sub">Tony drains it, disconnects it, breaks it down on-site, and hauls every piece away &mdash; deck and yard protected throughout. You don&rsquo;t prep a thing.</p>
-
-      <div class="sp-hero-ctas">
-        <a href="tel:4046329165" class="btn-fire" style="font-family:var(--font-heading);font-size:17px;letter-spacing:1.5px;padding:16px 40px;">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:inline;vertical-align:-2px;margin-right:6px;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-          Call Tony &mdash; (404) 632-9165
+        <a href="https://share.google/HG9xlgEp9F7GkTscP" target="_blank" rel="noopener" class="hero-badge" aria-label="5.0 stars, 52 Google reviews">
+          <span class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <span class="hero-badge-text"><strong>5.0 Stars</strong> &middot; 52 Google Reviews</span>
         </a>
-        <a href="contact.html" class="btn-ghost-white" data-modal="quote" style="padding:16px 28px;font-size:13px;font-family:var(--font-heading);letter-spacing:1px;">Get a Free Quote</a>
+
+        <h1 style="font-family:var(--font-heading);font-size:clamp(13px,1.4vw,18px);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.6);margin-bottom:8px;">Hot Tub Removal in Dawsonville, GA</h1>
+        <div class="hero-tagline">Same Day.<span class="hero-em">Hot Tub Gone<br>by Tonight.</span></div>
+
+        <p class="hero-sub">Tony drains it, breaks it down on-site, and hauls every piece away &mdash; deck and yard protected. No prep on your end. He picks up the phone himself.</p>
+
+        <p style="font-size:13px;color:rgba(255,255,255,0.5);font-style:italic;margin-bottom:8px;">Gary called on a Wednesday. Here&rsquo;s what he said:</p>
+        <div class="hero-pullquote">
+          <p>&ldquo;He communicated consistently, gave me a time he would be here, and was on time. His rates were very good and the work was done same day and efficiently.&rdquo;</p>
+          <cite>Gary Cooper &middot; Google Review &middot; &#9733;&#9733;&#9733;&#9733;&#9733;</cite>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="tel:4046329165" class="btn-fire">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:inline;vertical-align:-2px;margin-right:6px;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            Call Tony Now
+          </a>
+        </div>
+
+        <ul class="sp-checklist" aria-label="What's included">
+          <li>All brands &amp; sizes</li>
+          <li>Deck-mounted &amp; enclosed tubs</li>
+          <li>Tony handles the draining</li>
+          <li>Electrical disconnect included</li>
+          <li>Same-day available</li>
+          <li>15+ North Georgia cities</li>
+        </ul>
+
       </div>
-
-      <ul class="sp-checklist" aria-label="What's included">
-        <li>All brands &amp; sizes</li>
-        <li>Deck-mounted &amp; enclosed tubs</li>
-        <li>Tony handles the draining</li>
-        <li>Electrical disconnect included</li>
-        <li>Same-day available</li>
-        <li>Serving 15+ North Georgia cities</li>
-      </ul>
-
+    </div>
+    <div class="hero-right">
+      <picture>
+        <source srcset="images/gbp-tony-loading-truck-sm.webp" media="(max-width: 900px)" type="image/webp">
+        <source srcset="images/gbp-tony-loading-truck.webp" type="image/webp">
+        <img src="images/gbp-tony-loading-truck.jpg" alt="Tony from Junk Brawlers loading the truck — North Georgia junk removal" width="800" height="600" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block;">
+      </picture>
     </div>
   </section>
 

@@ -329,6 +329,18 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .modal-close{position:absolute;top:14px;right:14px;background:none;border:none;font-size:24px;color:#aaa;cursor:pointer;line-height:1;z-index:1}
 .modal-close:hover{color:var(--color-dark)}
 
+/* ---- SERVICE PAGE HERO ---- */
+.sp-breadcrumb{font-size:12px;font-weight:600;color:rgba(255,255,255,0.42);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.sp-breadcrumb a{color:rgba(255,255,255,0.42);transition:color .2s}
+.sp-breadcrumb a:hover{color:rgba(255,255,255,0.7)}
+.sp-breadcrumb span{color:rgba(255,255,255,0.2)}
+.sp-hero-h1{font-size:clamp(38px,6vw,72px);font-weight:900;color:#fff;line-height:1.02;margin-bottom:20px;text-shadow:0 2px 8px rgba(0,0,0,0.6)}
+.sp-hero-sub{font-size:clamp(15px,1.8vw,19px);color:rgba(255,255,255,0.78);line-height:1.65;margin-bottom:32px;max-width:560px;text-shadow:0 1px 4px rgba(0,0,0,0.85)}
+.sp-hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px}
+.sp-checklist{display:flex;flex-wrap:wrap;gap:9px;list-style:none;padding:0;margin:20px 0 0}
+.sp-checklist li{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:rgba(255,255,255,0.72);background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:4px;padding:6px 12px}
+.sp-checklist li::before{content:'✓';color:var(--color-fire);font-weight:800}
+
 /* ---- RESPONSIVE ---- */
 @media(max-width:900px){
   .hero{flex-direction:column;align-items:stretch;position:relative;min-height:0}
@@ -367,6 +379,8 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 }
 @media(max-width:640px){
   .ba-grid{grid-template-columns:1fr}
+  .sp-hero-ctas{flex-direction:column}
+  .sp-hero-ctas .btn-fire,.sp-hero-ctas .btn-ghost-white{text-align:center;justify-content:center;display:flex;align-items:center}
 }
 @media(max-width:600px){
   .hiw-steps{grid-template-columns:1fr}
