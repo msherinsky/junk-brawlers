@@ -90,7 +90,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .mobile-nav .mobile-section-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.8);padding:16px 0 4px}
 .mobile-nav .mobile-ctas{display:flex;flex-direction:column;gap:10px;margin-top:16px}
 .mobile-nav .btn-ghost-white,.mobile-nav .btn-phone{text-align:center}
-.btn-primary{display:inline-block;padding:13px 28px;background:var(--color-primary);color:var(--color-white);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:4px;border:none;cursor:pointer;transition:opacity var(--transition),box-shadow var(--transition);font-family:var(--font);position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(123,53,212,0.4)}
+.btn-primary{display:inline-block;padding:13px 28px;background:var(--color-primary);color:var(--color-white);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:4px;border:none;cursor:pointer;transition:opacity var(--transition),transform var(--transition);font-family:var(--font);position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(123,53,212,0.4)}
 .btn-primary:hover{opacity:0.88;box-shadow:0 4px 14px rgba(0,0,0,0.3)}
 .btn-ghost{display:inline-block;padding:13px 28px;background:transparent;color:var(--color-white);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border:2px solid var(--color-white);border-radius:4px;cursor:pointer;font-family:var(--font);transition:background var(--transition),color var(--transition)}
 .btn-ghost:hover{background:var(--color-white);color:var(--color-primary-dark)}
@@ -231,7 +231,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .locations-sidebar{background:var(--color-white);padding:20px;overflow-y:auto;max-height:480px;border-left:1px solid var(--color-border);text-align:left}
 .locations-sidebar-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--color-primary);margin-bottom:14px}
 .location-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-start}
-.location-pill{display:inline-block;padding:8px 16px;background:var(--color-white);border:1px solid var(--color-border);border-radius:var(--radius-pill);font-size:13px;font-weight:600;color:var(--color-body);transition:all var(--transition);cursor:pointer}
+.location-pill{display:inline-block;padding:8px 16px;background:var(--color-white);border:1px solid var(--color-border);border-radius:var(--radius-pill);font-size:13px;font-weight:600;color:var(--color-body);cursor:pointer;transition:none}
 .location-pill:hover,.location-pill.active{background:var(--color-primary);color:var(--color-white);border-color:var(--color-primary)}
 .location-pill--cta{background:var(--color-primary);color:var(--color-white);border-color:var(--color-primary);margin-top:8px}
 .location-pill--cta:hover{background:var(--color-primary-dark);border-color:var(--color-primary-dark)}
@@ -243,8 +243,8 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .cta-final::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(128,0,255,0.06) 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
 .cta-final-content{max-width:600px;margin:0 auto;position:relative}
 .cta-final h2{font-family:var(--font-heading);font-size:clamp(28px,4vw,44px);font-weight:800;color:#fff;margin-bottom:32px;letter-spacing:1px}
-.cta-final-phone{display:block;font-family:var(--font-heading);font-weight:800;color:var(--color-fire);line-height:1;letter-spacing:-2px;margin-bottom:6px;transition:color var(--transition),text-shadow var(--transition);font-size:clamp(52px,9vw,88px);text-shadow:0 0 48px var(--color-fire-glow)}
-.cta-final-phone:hover{color:var(--color-fire-light);text-shadow:0 0 64px rgba(255,122,0,0.5)}
+.cta-final-phone{display:block;font-family:var(--font-heading);font-weight:800;color:var(--color-fire);line-height:1;letter-spacing:-2px;margin-bottom:6px;transition:opacity var(--transition),transform var(--transition);font-size:clamp(52px,9vw,88px);text-shadow:0 0 48px var(--color-fire-glow)}
+.cta-final-phone:hover{opacity:0.82;transform:scale(1.02)}
 .cta-final-tap{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.62);margin-bottom:32px;display:block}
 .cta-final-sub{font-size:14px;color:rgba(255,255,255,0.55);margin-top:20px}
 .rw-mini{display:flex;flex-direction:column;gap:6px;padding:16px 20px;border-left:3px solid var(--color-fire);background:rgba(255,255,255,0.06);border-radius:0 4px 4px 0;margin-top:28px}
