@@ -473,28 +473,77 @@
   </section>
 
   <!-- COVERAGE — Do we come to you? -->
-  <section style="background:#ffffff;padding:64px 32px 56px;border-top:1px solid rgba(0,0,0,0.07)">
-    <div style="max-width:760px;margin:0 auto;text-align:center">
-      <h2 style="font-family:var(--font-heading);font-size:clamp(24px,2.8vw,36px);font-weight:800;color:#111;margin-bottom:10px;line-height:1.1">Serving Forsyth, Cherokee &amp; Dawson County.</h2>
-      <p style="font-size:15px;color:rgba(17,17,17,0.55);line-height:1.65;margin-bottom:28px">15 cities across North Georgia &mdash; from Blue Ridge to Buford, Ellijay to Gainesville.</p>
-      <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:32px">
-        <a href="dawsonville.html" class="location-pill">Dawsonville</a>
-        <a href="canton.html" class="location-pill">Canton</a>
-        <a href="cumming.html" class="location-pill">Cumming</a>
-        <a href="gainesville.html" class="location-pill">Gainesville</a>
-        <a href="dahlonega.html" class="location-pill">Dahlonega</a>
-        <a href="ellijay.html" class="location-pill">Ellijay</a>
-        <a href="blue-ridge.html" class="location-pill">Blue Ridge</a>
-        <a href="woodstock.html" class="location-pill">Woodstock</a>
-        <a href="ball-ground.html" class="location-pill">Ball Ground</a>
-        <a href="holly-springs.html" class="location-pill">Holly Springs</a>
-        <a href="sugar-hill.html" class="location-pill">Sugar Hill</a>
-        <a href="suwanee.html" class="location-pill">Suwanee</a>
-        <a href="flowery-branch.html" class="location-pill">Flowery Branch</a>
-        <a href="oakwood.html" class="location-pill">Oakwood</a>
-        <a href="buford.html" class="location-pill">Buford</a>
+  <section class="locations-hub">
+    <div class="locations-hub-inner">
+      <h2 class="section-heading">Serving Forsyth, Cherokee &amp; Dawson County.</h2>
+      <div class="section-heading-accent centered"></div>
+      <p class="locations-intro">15 cities across North Georgia &mdash; from Blue Ridge to Buford, Ellijay to Gainesville. Click any city to find it on the map.</p>
+      <div class="locations-layout">
+        <div id="map-container">
+          <svg id="service-map-svg" viewBox="0 0 600 480" width="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Junk Brawlers service area — 15 cities in North Georgia. Click to explore interactive map.">
+            <rect width="600" height="480" fill="#f2f0eb"/>
+            <line x1="0" y1="160" x2="600" y2="160" stroke="#e4e0d9" stroke-width="1"/>
+            <line x1="0" y1="320" x2="600" y2="320" stroke="#e4e0d9" stroke-width="1"/>
+            <line x1="200" y1="0" x2="200" y2="480" stroke="#e4e0d9" stroke-width="1"/>
+            <line x1="400" y1="0" x2="400" y2="480" stroke="#e4e0d9" stroke-width="1"/>
+            <text x="12" y="18" font-family="system-ui,sans-serif" font-size="10" fill="#c0bdb8">N &#x2191;</text>
+            <circle cx="63" cy="352" r="6" fill="#7B35D4" stroke="#fff" stroke-width="2"><title>Canton GA</title></circle>
+            <circle cx="324" cy="367" r="6" fill="#7B35D4" stroke="#fff" stroke-width="2"><title>Cumming GA</title></circle>
+            <circle cx="559" cy="321" r="6" fill="#7B35D4" stroke="#fff" stroke-width="2"><title>Gainesville GA</title></circle>
+            <circle cx="439" cy="202" r="6" fill="#7B35D4" stroke="#fff" stroke-width="2"><title>Dahlonega GA</title></circle>
+            <circle cx="68" cy="119" r="6" fill="#7B35D4" stroke="#fff" stroke-width="2"><title>Ellijay GA</title></circle>
+            <circle cx="187" cy="33" r="6" fill="#7B35D4" stroke="#fff" stroke-width="2"><title>Blue Ridge GA</title></circle>
+            <circle cx="41" cy="421" r="6" fill="#7B35D4" stroke="#fff" stroke-width="2"><title>Woodstock GA</title></circle>
+            <circle cx="148" cy="298" r="6" fill="#7B35D4" stroke="#fff" stroke-width="2"><title>Ball Ground GA</title></circle>
+            <circle cx="68" cy="384" r="6" fill="#7B35D4" stroke="#fff" stroke-width="2"><title>Holly Springs GA</title></circle>
+            <circle cx="390" cy="415" r="6" fill="#7B35D4" stroke="#fff" stroke-width="2"><title>Sugar Hill GA</title></circle>
+            <circle cx="376" cy="447" r="6" fill="#7B35D4" stroke="#fff" stroke-width="2"><title>Suwanee GA</title></circle>
+            <circle cx="483" cy="379" r="6" fill="#7B35D4" stroke="#fff" stroke-width="2"><title>Flowery Branch GA</title></circle>
+            <circle cx="512" cy="357" r="6" fill="#7B35D4" stroke="#fff" stroke-width="2"><title>Oakwood GA</title></circle>
+            <circle cx="425" cy="411" r="6" fill="#7B35D4" stroke="#fff" stroke-width="2"><title>Buford GA</title></circle>
+            <circle cx="340" cy="260" r="10" fill="#FF7A00" stroke="#fff" stroke-width="3"><title>Dawsonville GA — Home Base</title></circle>
+            <text x="354" y="264" font-family="system-ui,sans-serif" font-size="11" fill="#111" font-weight="700" paint-order="stroke" stroke="#f2f0eb" stroke-width="3">Dawsonville</text>
+            <text x="77" y="356" font-family="system-ui,sans-serif" font-size="10" fill="#333" paint-order="stroke" stroke="#f2f0eb" stroke-width="3">Canton</text>
+            <text x="338" y="364" font-family="system-ui,sans-serif" font-size="10" fill="#333" paint-order="stroke" stroke="#f2f0eb" stroke-width="3">Cumming</text>
+            <text x="545" y="325" font-family="system-ui,sans-serif" font-size="10" fill="#333" text-anchor="end" paint-order="stroke" stroke="#f2f0eb" stroke-width="3">Gainesville</text>
+            <text x="453" y="206" font-family="system-ui,sans-serif" font-size="10" fill="#333" paint-order="stroke" stroke="#f2f0eb" stroke-width="3">Dahlonega</text>
+            <text x="82" y="123" font-family="system-ui,sans-serif" font-size="10" fill="#333" paint-order="stroke" stroke="#f2f0eb" stroke-width="3">Ellijay</text>
+            <text x="201" y="37" font-family="system-ui,sans-serif" font-size="10" fill="#333" paint-order="stroke" stroke="#f2f0eb" stroke-width="3">Blue Ridge</text>
+            <text x="55" y="425" font-family="system-ui,sans-serif" font-size="10" fill="#333" paint-order="stroke" stroke="#f2f0eb" stroke-width="3">Woodstock</text>
+            <text x="162" y="302" font-family="system-ui,sans-serif" font-size="10" fill="#333" paint-order="stroke" stroke="#f2f0eb" stroke-width="3">Ball Ground</text>
+            <text x="82" y="388" font-family="system-ui,sans-serif" font-size="10" fill="#333" paint-order="stroke" stroke="#f2f0eb" stroke-width="3">Holly Springs</text>
+            <text x="390" y="406" font-family="system-ui,sans-serif" font-size="10" fill="#333" text-anchor="middle" paint-order="stroke" stroke="#f2f0eb" stroke-width="3">Sugar Hill</text>
+            <text x="362" y="444" font-family="system-ui,sans-serif" font-size="10" fill="#333" text-anchor="end" paint-order="stroke" stroke="#f2f0eb" stroke-width="3">Suwanee</text>
+            <text x="469" y="376" font-family="system-ui,sans-serif" font-size="10" fill="#333" text-anchor="end" paint-order="stroke" stroke="#f2f0eb" stroke-width="3">Flowery Branch</text>
+            <text x="498" y="354" font-family="system-ui,sans-serif" font-size="10" fill="#333" text-anchor="end" paint-order="stroke" stroke="#f2f0eb" stroke-width="3">Oakwood</text>
+            <text x="439" y="415" font-family="system-ui,sans-serif" font-size="10" fill="#333" paint-order="stroke" stroke="#f2f0eb" stroke-width="3">Buford</text>
+          </svg>
+          <button id="map-activate-btn">Explore interactive map &rarr;</button>
+          <div id="service-map"></div>
+        </div>
+        <div class="locations-sidebar">
+          <p class="locations-sidebar-label">15 Cities Covered</p>
+          <div class="location-pills">
+            <a href="dawsonville.html" class="location-pill" data-lat="34.4190" data-lng="-84.1186" data-name="Dawsonville">Dawsonville GA</a>
+            <a href="canton.html" class="location-pill" data-lat="34.2365" data-lng="-84.4910" data-name="Canton">Canton GA</a>
+            <a href="cumming.html" class="location-pill" data-lat="34.2073" data-lng="-84.1402" data-name="Cumming">Cumming GA</a>
+            <a href="gainesville.html" class="location-pill" data-lat="34.2979" data-lng="-83.8241" data-name="Gainesville">Gainesville GA</a>
+            <a href="dahlonega.html" class="location-pill" data-lat="34.5326" data-lng="-83.9855" data-name="Dahlonega">Dahlonega GA</a>
+            <a href="ellijay.html" class="location-pill" data-lat="34.6945" data-lng="-84.4830" data-name="Ellijay">Ellijay GA</a>
+            <a href="blue-ridge.html" class="location-pill" data-lat="34.8634" data-lng="-84.3241" data-name="Blue Ridge">Blue Ridge GA</a>
+            <a href="woodstock.html" class="location-pill" data-lat="34.1015" data-lng="-84.5194" data-name="Woodstock">Woodstock GA</a>
+            <a href="ball-ground.html" class="location-pill" data-lat="34.3432" data-lng="-84.3766" data-name="Ball Ground">Ball Ground GA</a>
+            <a href="holly-springs.html" class="location-pill" data-lat="34.1751" data-lng="-84.4838" data-name="Holly Springs">Holly Springs GA</a>
+            <a href="sugar-hill.html" class="location-pill" data-lat="34.1129" data-lng="-84.0505" data-name="Sugar Hill">Sugar Hill GA</a>
+            <a href="suwanee.html" class="location-pill" data-lat="34.0506" data-lng="-84.0702" data-name="Suwanee">Suwanee GA</a>
+            <a href="flowery-branch.html" class="location-pill" data-lat="34.1840" data-lng="-83.9255" data-name="Flowery Branch">Flowery Branch GA</a>
+            <a href="oakwood.html" class="location-pill" data-lat="34.2268" data-lng="-83.8869" data-name="Oakwood">Oakwood GA</a>
+            <a href="buford.html" class="location-pill" data-lat="34.1215" data-lng="-84.0041" data-name="Buford">Buford GA</a>
+            <a href="service-areas.html" class="location-pill location-pill--cta">View All Service Areas &rarr;</a>
+          </div>
+          <p style="font-size:13px;color:rgba(17,17,17,0.55);font-style:italic;line-height:1.6;margin-top:16px;padding-top:16px;border-top:1px solid var(--color-border)">Not sure if we come to you? Just call &mdash; <a href="tel:4046329165" style="color:var(--color-primary);font-weight:700;font-style:normal">(404) 632-9165</a> &mdash; Tony will tell you straight.</p>
+        </div>
       </div>
-      <p style="font-size:15px;color:rgba(17,17,17,0.65);font-style:italic;line-height:1.7">Not sure if we come to you? Just call &mdash; <a href="tel:4046329165" style="color:var(--color-primary);font-weight:700;font-style:normal">(404) 632-9165</a> &mdash; Tony will tell you straight.</p>
     </div>
   </section>
 
@@ -573,6 +622,79 @@
           data-color-header="#1a0030"
           data-quick-replies="Get a free quote|How much does it cost?|Can you come today?"></script>
   <script defer src="js/main.js"></script>
+
+  <script>
+  (function(){
+    var mapEl=document.getElementById('service-map');
+    var svgEl=document.getElementById('service-map-svg');
+    var btnEl=document.getElementById('map-activate-btn');
+    if(!mapEl) return;
+    var locs=[
+      {n:'Dawsonville',lat:34.4190,lng:-84.1186,u:'dawsonville.html',home:true},
+      {n:'Canton',lat:34.2365,lng:-84.4910,u:'canton.html'},
+      {n:'Cumming',lat:34.2073,lng:-84.1402,u:'cumming.html'},
+      {n:'Gainesville',lat:34.2979,lng:-83.8241,u:'gainesville.html'},
+      {n:'Dahlonega',lat:34.5326,lng:-83.9855,u:'dahlonega.html'},
+      {n:'Ellijay',lat:34.6945,lng:-84.4830,u:'ellijay.html'},
+      {n:'Blue Ridge',lat:34.8634,lng:-84.3241,u:'blue-ridge.html'},
+      {n:'Woodstock',lat:34.1015,lng:-84.5194,u:'woodstock.html'},
+      {n:'Ball Ground',lat:34.3432,lng:-84.3766,u:'ball-ground.html'},
+      {n:'Holly Springs',lat:34.1751,lng:-84.4838,u:'holly-springs.html'},
+      {n:'Sugar Hill',lat:34.1129,lng:-84.0505,u:'sugar-hill.html'},
+      {n:'Suwanee',lat:34.0506,lng:-84.0702,u:'suwanee.html'},
+      {n:'Flowery Branch',lat:34.1840,lng:-83.9255,u:'flowery-branch.html'},
+      {n:'Oakwood',lat:34.2268,lng:-83.8869,u:'oakwood.html'},
+      {n:'Buford',lat:34.1215,lng:-84.0041,u:'buford.html'}
+    ];
+    function initMap(){
+      var map=L.map('service-map',{scrollWheelZoom:false,zoomControl:true}).setView([34.38,-84.18],9);
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{
+        attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        maxZoom:15
+      }).addTo(map);
+      var mks={};
+      locs.forEach(function(loc){
+        var mk=L.circleMarker([loc.lat,loc.lng],{
+          radius:loc.home?12:7,
+          fillColor:loc.home?'#FF7A00':'#7B35D4',
+          color:'#fff',
+          weight:loc.home?3:2,
+          fillOpacity:0.92
+        }).addTo(map);
+        mk.bindPopup('<strong style="font-size:14px;font-weight:700;">'+loc.n+', GA</strong><br><a href="'+loc.u+'" style="font-size:13px;color:#7B35D4;font-weight:600;">Hot tub removal in '+loc.n+' &rarr;</a>');
+        mks[loc.n]=mk;
+      });
+      document.querySelectorAll('.location-pill[data-lat]').forEach(function(pill){
+        pill.addEventListener('click',function(e){
+          e.preventDefault();
+          var name=this.dataset.name;
+          map.flyTo([parseFloat(this.dataset.lat),parseFloat(this.dataset.lng)],12,{duration:0.7});
+          if(mks[name]) setTimeout(function(){mks[name].openPopup();},500);
+          document.querySelectorAll('.location-pill').forEach(function(p){p.classList.remove('active');});
+          this.classList.add('active');
+        });
+      });
+    }
+    var activated=false;
+    function activateMap(){
+      if(activated) return;
+      activated=true;
+      if(svgEl) svgEl.style.display='none';
+      if(btnEl) btnEl.style.display='none';
+      mapEl.style.display='block';
+      var css=document.createElement('link');
+      css.rel='stylesheet';
+      css.href='css/leaflet.css';
+      document.head.appendChild(css);
+      var js=document.createElement('script');
+      js.src='js/leaflet.js';
+      js.onload=initMap;
+      document.head.appendChild(js);
+    }
+    if(svgEl) svgEl.addEventListener('click',activateMap);
+    if(btnEl) btnEl.addEventListener('click',activateMap);
+  })();
+  </script>
 
 </body>
 </html>
