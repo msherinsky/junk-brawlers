@@ -133,7 +133,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .pain-bridge{text-align:center;font-size:clamp(22px,2.5vw,30px);font-style:italic;font-weight:600;color:rgba(17,17,17,0.75);letter-spacing:0;padding-bottom:72px;margin:0;text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:4px;text-decoration-thickness:2px}
 .pain-contrasts{margin-top:28px;display:flex;flex-direction:column;gap:20px}
 .pain-pair{border-left:2px solid rgba(255,255,255,0.15);padding-left:16px}
-.pain-fear{font-size:15px;color:rgba(255,255,255,0.5);margin:0 0 4px;font-style:italic}
+.pain-fear{font-size:15px;color:rgba(255,255,255,0.7);margin:0 0 4px;font-style:italic}
 .pain-answer{font-size:16px;font-weight:700;color:var(--color-fire);margin:0}
 
 /* ---- DIAGONAL SEAM ZONE ---- */
@@ -393,10 +393,10 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .modal-close:hover{color:var(--color-dark)}
 
 /* ---- SERVICE PAGE HERO ---- */
-.sp-breadcrumb{font-size:12px;font-weight:600;color:rgba(255,255,255,0.42);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;display:flex;align-items:center;gap:8px}
-.sp-breadcrumb a{color:rgba(255,255,255,0.42);transition:color .2s}
-.sp-breadcrumb a:hover{color:rgba(255,255,255,0.7)}
-.sp-breadcrumb span{color:rgba(255,255,255,0.2)}
+.sp-breadcrumb{font-size:12px;font-weight:600;color:rgba(255,255,255,0.65);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.sp-breadcrumb a{color:rgba(255,255,255,0.65);transition:color .2s}
+.sp-breadcrumb a:hover{color:rgba(255,255,255,0.85)}
+.sp-breadcrumb span{color:rgba(255,255,255,0.4)}
 .sp-hero-h1{font-size:clamp(38px,6vw,72px);font-weight:900;color:#fff;line-height:1.02;margin-bottom:20px;text-shadow:0 2px 8px rgba(0,0,0,0.6)}
 .sp-hero-sub{font-size:clamp(15px,1.8vw,19px);color:rgba(255,255,255,0.78);line-height:1.65;margin-bottom:32px;max-width:560px;text-shadow:0 1px 4px rgba(0,0,0,0.85)}
 .sp-hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px}
