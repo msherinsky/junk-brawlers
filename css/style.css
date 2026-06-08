@@ -292,7 +292,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 
 /* ---- FAQ chapter intro band ---- */
 .faq-chapter-intro{background:var(--color-review-bg);padding:52px 32px 0;text-align:center}
-.faq-chapter-label{font-family:var(--font-heading);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:6px;color:var(--color-fire);display:inline-block}
+.faq-chapter-label{font-family:var(--font-heading);font-size:clamp(24px,3vw,40px);font-weight:700;font-style:italic;letter-spacing:-0.01em;color:rgba(255,255,255,0.9);text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:6px;text-decoration-thickness:2px;display:inline-block}
 /* ---- FAQ ---- */
 .faq-section{background:var(--color-light-alt);padding:140px 32px 80px;position:relative}
 .faq-section::before{content:'';position:absolute;top:0;left:0;width:100%;height:120px;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 120' preserveAspectRatio='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0 L0 120 Q720 0 1440 120 L1440 0Z' fill='%23060010'/%3E%3C/svg%3E") center/100% 120px no-repeat;pointer-events:none}
