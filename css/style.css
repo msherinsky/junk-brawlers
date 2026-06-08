@@ -195,7 +195,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 
 /* ---- HOW IT WORKS ---- */
 .hiw-section{background:#ffffff;padding:80px 32px 72px;position:relative;overflow:hidden}
-.hiw-dotgrid{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(0,0,0,0.06) 1px,transparent 1px);background-size:32px 32px;opacity:0.4;pointer-events:none}
+.hiw-dotgrid{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(0,0,0,0.06) 1px,transparent 1px);background-size:32px 32px;opacity:0.6;mask-image:linear-gradient(to bottom,transparent 0%,black 28%);-webkit-mask-image:linear-gradient(to bottom,transparent 0%,black 28%);pointer-events:none}
 .hiw-inner{max-width:900px;margin:0 auto;text-align:center;position:relative}
 .hiw-section h2{font-family:var(--font-heading);font-size:clamp(28px,3.5vw,44px);font-weight:800;color:#111;margin-bottom:12px}
 .hiw-accent{width:56px;height:4px;background:#8000FF;border-radius:9px;margin:0 auto 48px}
