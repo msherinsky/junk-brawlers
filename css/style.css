@@ -194,7 +194,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .svc-cta-row{text-align:center;padding:40px 0 80px;position:relative;z-index:1}
 
 /* ---- HOW IT WORKS ---- */
-.hiw-section{background:var(--color-hiw-bg);padding:80px 32px 72px;position:relative;overflow:hidden}
+.hiw-section{background:#ffffff;padding:80px 32px 72px;position:relative;overflow:hidden}
 .hiw-dotgrid{position:absolute;inset:0;background-image:radial-gradient(circle,rgba(0,0,0,0.06) 1px,transparent 1px);background-size:32px 32px;opacity:0.4;pointer-events:none}
 .hiw-inner{max-width:900px;margin:0 auto;text-align:center;position:relative}
 .hiw-section h2{font-family:var(--font-heading);font-size:clamp(28px,3.5vw,44px);font-weight:800;color:#111;margin-bottom:12px}
