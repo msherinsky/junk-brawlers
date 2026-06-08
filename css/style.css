@@ -279,7 +279,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .owner-section--light h2{color:#111}
 .owner-section--light p{color:rgba(17,17,17,0.7)}
 .owner-section--light .owner-bridge{color:rgba(17,17,17,0.75)}
-.owner-section--light .owner-intro-bridge{color:rgba(17,17,17,0.6)}
+.owner-section--light .owner-intro-bridge{color:rgba(17,17,17,0.75);background:none;box-shadow:none;font-family:inherit;font-size:clamp(22px,2.5vw,30px);font-style:italic;font-weight:600;letter-spacing:0;padding:0 32px 72px;text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:4px;text-decoration-thickness:2px}
 .owner-section--light .owner-stats{border-top-color:rgba(17,17,17,0.12);border-bottom-color:rgba(17,17,17,0.12)}
 .owner-section--light .owner-stat+.owner-stat{border-left-color:rgba(17,17,17,0.12)}
 .owner-section--light .stat-lbl{color:rgba(17,17,17,0.5)}
