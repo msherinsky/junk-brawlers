@@ -25,9 +25,14 @@
   <link rel="preload" href="images/logo.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="css/style.css">
   <style>
+    /* Hero: size to content, no dark void below CTA buttons */
+    .hero { min-height: 0; position: relative; z-index: 10; }
+    .hero-left { padding-bottom: 20px; }
+    /* Ticker must paint above pain section during scroll */
+    .trust-ticker { position: relative; z-index: 10; }
     /* Suppress diagonal pull-up from base CSS — pain section handles its own fade */
     .svc-section::after { display: none; }
-    .svc-section { clip-path: none; margin-top: 0; padding-bottom: 72px; box-shadow: none; }
+    .svc-section { clip-path: none; margin-top: 0; padding-bottom: 72px; box-shadow: none; z-index: auto; }
     /* Bento grid variants */
     .svc-card--wide { grid-column: span 2; }
     .svc-card--tall { grid-row: span 2; }
@@ -321,10 +326,9 @@
   </section>
 
   <!-- SECTION 3: SERVICES OFFERED HERE -->
-  <section class="svc-section" aria-label="Services available in Dawsonville GA" style="background:var(--color-warm-light)">
+  <section class="svc-section" aria-label="Services available in Dawsonville GA" style="background:#ffffff">
     <div class="svc-inner">
-      <h2 style="color:#111">Whatever You&rsquo;ve Got. It&rsquo;s Gone.</h2>
-      <div class="svc-accent"></div>
+      <p class="section-bridge section-bridge--light" style="padding-top:48px;padding-bottom:40px;">Whatever You&rsquo;ve Got. It&rsquo;s Gone.</p>
       <div class="svc-intro">
         <p style="color:rgba(17,17,17,0.65)">Every service is available in Dawsonville. Tony covers the full job &mdash; single-item pickups to full estate cleanouts. Hover any card to see what&rsquo;s included, then click to learn more.</p>
       </div>
@@ -574,18 +578,7 @@
     </div>
   </section>
 
-  <p style="font-family:var(--font-heading);font-size:clamp(24px,3vw,40px);font-weight:800;font-style:italic;color:rgba(255,255,255,0.75);text-align:center;padding:80px 32px 40px;margin:0;background:#07001A;text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:5px;text-decoration-thickness:2px;">One call. Here&rsquo;s the whole thing.</p>
-
-  <div class="seam-zone" style="background:#07001A;margin-top:0">
-    <div class="seam-bg-light" style="background:#07001A;clip-path:polygon(0 0,100% 0,100% 5%,0 95%)"></div>
-    <div class="seam-bg-dark" style="background:var(--color-hiw-bg);clip-path:polygon(0 95%,100% 5%,100% 100%,0 100%)"></div>
-    <div class="chapter-badge-border">
-      <p class="owner-intro-bridge">
-        <span class="bridge-sup">The Process</span>
-        <span class="bridge-main">Three Steps.</span>
-      </p>
-    </div>
-  </div>
+  <p class="section-bridge section-bridge--dark" style="background:#07001A;padding-top:80px;padding-bottom:40px;">One call. Here&rsquo;s the whole thing.</p>
 
   <!-- SECTION 5: HOW IT WORKS -->
   <section class="hiw-section">
@@ -633,7 +626,7 @@
     </div>
   </div>
 
-  <p style="font-family:var(--font-heading);font-size:clamp(24px,3vw,40px);font-weight:800;font-style:italic;color:rgba(255,255,255,0.7);text-align:center;padding:48px 32px 56px;margin:0;background:var(--color-review-bg);text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:5px;text-decoration-thickness:2px;">52 people already went through that.<br>Here&rsquo;s what they said.</p>
+  <p class="section-bridge section-bridge--dark" style="background:var(--color-review-bg);padding-top:48px;padding-bottom:56px;">52 people already went through that.<br>Here&rsquo;s what they said.</p>
 
   <!-- SECTION 6: SOCIAL PROOF -->
   <section class="trust-quotes" aria-label="Customer reviews — junk removal Dawsonville GA">
@@ -661,24 +654,13 @@
         </div>
 
       </div>
-      <p style="text-align:center;font-family:var(--font-heading);font-size:clamp(22px,2.5vw,30px);font-style:italic;font-weight:600;color:rgba(255,255,255,0.75);letter-spacing:0;padding:56px 32px 0;margin:0;text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:4px;text-decoration-thickness:2px;">One call and it&rsquo;s handled.</p>
+      <p class="section-bridge section-bridge--dark" style="padding-top:56px;padding-bottom:0;">One call and it&rsquo;s handled.</p>
       <div style="text-align:center;padding:40px 0 16px;">
         <a href="tel:4046329165" class="btn-fire" style="font-family:var(--font-heading);font-size:17px;letter-spacing:1.5px;padding:16px 44px;">Book Your Pickup &rarr;</a>
         <p style="margin:16px 0 0;font-size:14px;color:rgba(255,255,255,0.5);">7am&ndash;6pm &middot; 7 days &middot; No commitment to call</p>
       </div>
     </div>
   </section>
-
-  <div class="seam-zone" style="background:var(--color-review-bg);margin-top:0">
-    <div class="seam-bg-light" style="background:var(--color-review-bg);clip-path:polygon(0 0,100% 0,100% 5%,0 95%)"></div>
-    <div class="seam-bg-dark" style="background:var(--color-light-alt);clip-path:polygon(0 95%,100% 5%,100% 100%,0 100%)"></div>
-    <div class="chapter-badge-border">
-      <p class="owner-intro-bridge">
-        <span class="bridge-sup">Serving</span>
-        <span class="bridge-main">15 Cities.</span>
-      </p>
-    </div>
-  </div>
 
   <!-- SECTION 6: COVERAGE AREA — interactive map -->
   <section class="locations-hub">
