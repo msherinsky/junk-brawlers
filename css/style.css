@@ -95,6 +95,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .section-bridge--light{color:rgba(0,0,0,0.65)}
 .section-bridge--dark{color:rgba(255,255,255,0.9)}
 .section-bridge--xl{font-size:clamp(30px,4.5vw,60px)}
+.section-bridge--final{padding-top:120px;padding-bottom:20px}
 .h2-bridge{font-family:var(--font-heading);font-size:clamp(26px,3.5vw,48px);font-style:italic;font-weight:700;text-align:center;text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:6px;text-decoration-thickness:2px;letter-spacing:-0.01em;line-height:1.15;margin:0 0 40px;display:block}
 .h2-bridge--light{color:rgba(0,0,0,0.65)}
 .h2-bridge--dark{color:rgba(255,255,255,0.9)}
@@ -408,6 +409,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
   .pain-pivot-accent{margin:28px auto 32px}
   .pain-close br{display:none}
   .section-bridge{padding:48px 20px 56px}
+  .section-bridge--final{padding-top:48px;padding-bottom:56px}
   .trust-ticker-track{padding:16px 0}
   .trust-quotes-grid{grid-template-columns:1fr;gap:14px}
   .trust-quotes{padding:52px 20px}
