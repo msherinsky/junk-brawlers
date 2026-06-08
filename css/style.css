@@ -209,7 +209,8 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .hiw-step p{color:rgba(17,17,17,0.6);font-size:15px;line-height:1.7}
 .hiw-cta{margin-top:48px}
 /* ---- PRICING SECTION ---- */
-.pricing-section{background:var(--color-hiw-bg);padding:72px 32px 80px}
+.pricing-section{background:var(--color-hiw-bg);padding:48px 32px 80px}
+.pricing-section::before{content:'';display:block;width:48px;height:4px;background:#8000FF;border-radius:9px;margin:0 auto 48px}
 .pricing-inner{max-width:960px;margin:0 auto;text-align:center}
 .pricing-intro{color:rgba(17,17,17,0.62);font-size:clamp(16px,1.8vw,19px);max-width:580px;margin:0 auto 48px;line-height:1.65}
 .pricing-trucks{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-bottom:36px}
