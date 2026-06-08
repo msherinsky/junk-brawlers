@@ -388,6 +388,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
   .hero-pullquote{text-align:left}
   .hero-buttons{justify-content:center}
   .owner-inner{grid-template-columns:1fr;grid-template-areas:"head" "photo" "body";gap:32px}
+  .owner-section--light{margin-top:0;padding-top:52px}
   .owner-badge{bottom:-12px;right:4px}
 }
 @media(max-width:768px){
