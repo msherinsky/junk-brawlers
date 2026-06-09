@@ -26,9 +26,8 @@
   <script src="js/site-data.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* Hero: size to content, no dark void below CTA buttons */
-    .hero { min-height: 0; position: relative; z-index: 10; }
-    .hero-left { padding-bottom: 20px; }
+    /* Hero stacking context */
+    .hero { position: relative; z-index: 10; }
     /* Ticker must paint above pain section during scroll */
     .trust-ticker { position: relative; z-index: 10; }
     /* Suppress diagonal pull-up from base CSS — pain section handles its own fade */
