@@ -452,3 +452,24 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
   body{padding-bottom:72px}
   #wg-trigger{bottom:84px !important}
 }
+
+/* ---- SECTION TRANSITIONS (city page flow) ---- */
+/* Dark enters from RIGHT. Light enters from LEFT. Never consciously seen — only felt. */
+
+/* T1: Owner → HIW — light opens from the left */
+.owner-section + .hiw-section{clip-path:polygon(0 0,100% 5vw,100% 100%,0 100%);margin-top:-5vw;padding-top:calc(80px + 5vw);z-index:11;position:relative}
+
+/* T2: HIW → Reviews — darkness descends from the right */
+.hiw-section + .trust-quotes{clip-path:polygon(0 6vw,100% 0,100% 100%,0 100%);margin-top:-6vw;padding-top:calc(96px + 6vw);z-index:12;position:relative}
+.hiw-section:has(+ .trust-quotes){padding-bottom:calc(72px + 6vw)}
+
+/* T3: Reviews → Locations — light re-emerges gently from the left */
+.trust-quotes + .locations-hub{clip-path:polygon(0 0,100% 4vw,100% 100%,0 100%);margin-top:-4vw;padding-top:calc(52px + 4vw);z-index:13;position:relative}
+
+/* T4: Locations → FAQ — darkness drops decisively from the right */
+.locations-hub + .faq-section{clip-path:polygon(0 6vw,100% 0,100% 100%,0 100%);margin-top:-6vw;padding-top:calc(80px + 6vw);z-index:14;position:relative}
+.locations-hub:has(+ .faq-section){padding-bottom:calc(52px + 6vw)}
+
+/* T5: FAQ → Final CTA — heat line, not a diagonal */
+.faq-section + .cta-final{position:relative}
+.faq-section + .cta-final::before{content:'';display:block;position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent 0%,var(--color-fire) 30%,var(--color-fire) 70%,transparent 100%);opacity:0.6}
