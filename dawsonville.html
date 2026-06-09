@@ -33,6 +33,8 @@
     /* Suppress diagonal pull-up from base CSS — pain section handles its own fade */
     .svc-section::after { display: none; }
     .svc-section { clip-path: none; margin-top: 0; padding-bottom: 72px; box-shadow: none; z-index: auto; }
+    /* h2-bridge on white svc-section — override the global .svc-section h2 { color:#fff } */
+    .svc-section h2.h2-bridge--light { color: rgba(0,0,0,0.65); }
     /* Bento grid variants */
     .svc-card--wide { grid-column: span 2; }
     .svc-card--tall { grid-row: span 2; }
@@ -328,9 +330,9 @@
   <!-- SECTION 3: SERVICES OFFERED HERE -->
   <section class="svc-section" aria-label="Services available in Dawsonville GA" style="background:#ffffff">
     <div class="svc-inner">
-      <h2 class="h2-bridge h2-bridge--light" style="padding-top:48px;">Whatever You&rsquo;ve Got. It&rsquo;s Gone.</h2>
+      <h2 class="h2-bridge h2-bridge--light" style="padding-top:48px;">Everything He Takes. All of It Available Here.</h2>
       <div class="svc-intro">
-        <p style="color:rgba(17,17,17,0.65)">Every service is available in Dawsonville. Tony covers the full job &mdash; single-item pickups to full estate cleanouts. Hover any card to see what&rsquo;s included, then click to learn more.</p>
+        <p style="color:rgba(17,17,17,0.65)">Full scope &mdash; single-item pickups to full estate cleanouts. Dawsonville is home base, so there&rsquo;s no travel charge and same-day is the standard. Hover any card to see what&rsquo;s included.</p>
       </div>
 
       <div class="svc-grid" style="grid-template-columns:repeat(4,1fr);grid-auto-flow:dense;">
@@ -567,7 +569,7 @@
     </div>
   </section>
 
-  <p class="section-bridge section-bridge--dark" style="background:#07001A;padding-top:80px;padding-bottom:40px;">One call. Here&rsquo;s the whole thing.</p>
+  <p class="section-bridge section-bridge--dark" style="background:#07001A;">One call. Here&rsquo;s the whole thing.</p>
 
   <!-- SECTION 5: HOW IT WORKS -->
   <section class="hiw-section">
@@ -609,7 +611,7 @@
   <!-- SECTION 6: SOCIAL PROOF -->
   <section class="trust-quotes" aria-label="Customer reviews — junk removal Dawsonville GA">
     <div class="trust-quotes-inner">
-      <h2 class="trust-quotes-heading h2-bridge h2-bridge--dark">52 for 52.</h2>
+      <h2 class="trust-quotes-heading h2-bridge h2-bridge--dark">52 Homeowners. Same Story.</h2>
       <div class="trust-quotes-grid">
 
         <div class="tq-card">
