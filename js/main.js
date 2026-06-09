@@ -116,8 +116,23 @@
     });
   }
 
+  /* ── Site data (review count, rating) ── */
+  function initSiteData() {
+    if (typeof JBSiteData === 'undefined') return;
+    document.querySelectorAll('[data-jb-count]').forEach(function (el) {
+      el.textContent = JBSiteData.reviewCount;
+    });
+    document.querySelectorAll('[data-jb-rating]').forEach(function (el) {
+      el.textContent = JBSiteData.rating;
+    });
+    document.querySelectorAll('[data-jb-badge]').forEach(function (el) {
+      el.setAttribute('aria-label', JBSiteData.rating + ' stars, ' + JBSiteData.reviewCount + ' Google reviews');
+    });
+  }
+
   /* ── Init all ── */
   document.addEventListener('DOMContentLoaded', function () {
+    initSiteData();
     initModal();
     initHamburger();
     initDropdowns();
