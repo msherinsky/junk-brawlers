@@ -33,14 +33,20 @@
     /* Suppress diagonal pull-up from base CSS — pain section handles its own fade */
     .svc-section::after { display: none; }
     .svc-section { clip-path: none; margin-top: 0; padding-top: 56px; padding-bottom: 72px; box-shadow: none; z-index: auto; }
-    /* h2-bridge on white svc-section — override the global .svc-section h2 { color:#fff } */
+    /* h2-bridge on white svc-section */
     .svc-section h2.h2-bridge--light { color: rgba(0,0,0,0.65); }
     /* Bento grid variants */
     .svc-card--wide { grid-column: span 2; }
     .svc-card--tall { grid-row: span 2; }
+    /* Desktop: 4-col dense bento */
+    @media (min-width: 769px) {
+      .svc-grid { grid-template-columns: repeat(4, 1fr); grid-auto-flow: dense; }
+    }
+    /* Mobile: 2-col bento — wide cards full-width, tall card spans 2 rows, even layout */
     @media (max-width: 768px) {
-      .svc-card--wide, .svc-card--tall { grid-column: unset !important; grid-row: unset !important; }
-      .svc-grid .svc-card:last-child { grid-column: unset !important; }
+      .svc-grid { grid-auto-flow: row dense; }
+      .svc-card--wide { min-height: 150px; }
+      .svc-section .svc-grid { margin-bottom: 0; }
     }
   </style>
 
@@ -232,12 +238,12 @@
         <h1 style="font-family:var(--font-heading);font-size:clamp(13px,1.4vw,18px);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.6);margin-bottom:16px;">Junk Removal in Dawsonville, GA</h1>
         <div class="hero-tagline">Dawsonville&rsquo;s<span class="hero-em">Own Junk<br>Fighter.</span></div>
 
-        <p class="hero-sub">Tony&rsquo;s based on North Lumpkin Campground Road &mdash; not dispatched from Atlanta. He works the Hwy 400 corridor, downtown square, Lake Sidney, and the Amicalola Falls area. When you call, he probably knows your street.</p>
+        <p class="hero-sub">Tony&rsquo;s based on North Lumpkin Campground Road, not dispatched from Atlanta. He works the Hwy 400 corridor, downtown square, Lake Sidney, and the Amicalola Falls area. When you call, he probably knows your street.</p>
 
         <div class="hero-buttons">
           <a href="tel:4046329165" class="btn-fire">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:inline;vertical-align:-2px;margin-right:6px;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            Call Tony &mdash; It&rsquo;s Free
+            Call Tony - It&rsquo;s Free
           </a>
           <a href="contact.html" class="btn-ghost-white" data-modal="quote">Get a Free Quote</a>
         </div>
@@ -261,7 +267,7 @@
       <div class="trust-ticker-track">
         <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span data-jb-count>52</span> Google Reviews &middot; Zero Complaints</div>
         <span class="t-sep" aria-hidden="true"></span>
-        <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>Based on N Lumpkin Campground Rd &mdash; ZIP 30534</div>
+        <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>Based on N Lumpkin Campground Rd, ZIP 30534</div>
         <span class="t-sep" aria-hidden="true"></span>
         <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>Showed up in 30 minutes &middot; myra smallwood</div>
         <span class="t-sep" aria-hidden="true"></span>
@@ -269,16 +275,16 @@
         <span class="t-sep" aria-hidden="true"></span>
         <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>Quote doesn&rsquo;t change between the call and the door</div>
         <span class="t-sep" aria-hidden="true"></span>
-        <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>Hwy 400 &middot; Lake Sidney &middot; Amicalola Falls &mdash; knows these roads</div>
+        <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>Hwy 400 &middot; Lake Sidney &middot; Amicalola Falls. Knows these roads.</div>
         <span class="t-sep" aria-hidden="true"></span>
-        <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>Picks up himself &mdash; no call center, no dispatch</div>
+        <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>Picks up himself. No call center, no dispatch.</div>
         <span class="t-sep" aria-hidden="true"></span>
         <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>7am&ndash;6pm &middot; 7 days &middot; no weekend rate</div>
         <span class="t-sep" aria-hidden="true"></span>
         <!-- duplicate for seamless loop -->
         <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>52 Google Reviews &middot; Zero Complaints</div>
         <span class="t-sep" aria-hidden="true"></span>
-        <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>Based on N Lumpkin Campground Rd &mdash; ZIP 30534</div>
+        <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span>Based on N Lumpkin Campground Rd, ZIP 30534</div>
         <span class="t-sep" aria-hidden="true"></span>
         <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>Showed up in 30 minutes &middot; myra smallwood</div>
         <span class="t-sep" aria-hidden="true"></span>
@@ -286,9 +292,9 @@
         <span class="t-sep" aria-hidden="true"></span>
         <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>Quote doesn&rsquo;t change between the call and the door</div>
         <span class="t-sep" aria-hidden="true"></span>
-        <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>Hwy 400 &middot; Lake Sidney &middot; Amicalola Falls &mdash; knows these roads</div>
+        <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>Hwy 400 &middot; Lake Sidney &middot; Amicalola Falls. Knows these roads.</div>
         <span class="t-sep" aria-hidden="true"></span>
-        <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>Picks up himself &mdash; no call center, no dispatch</div>
+        <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>Picks up himself. No call center, no dispatch.</div>
         <span class="t-sep" aria-hidden="true"></span>
         <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>7am&ndash;6pm &middot; 7 days &middot; no weekend rate</div>
         <span class="t-sep" aria-hidden="true"></span>
@@ -300,16 +306,16 @@
   <section class="pain-section" aria-label="Junk removal context for Dawsonville GA">
     <div class="pain-inner">
       <h2 class="h2-bridge h2-bridge--dark" style="margin-bottom:16px;">You&rsquo;ve Been Living Around It.</h2>
-      <p class="pain-paragraph">The stuff&rsquo;s been there longer than you&rsquo;ve been dealing with it. The garage. The outbuilding. What the last owner left. The backyard that can&rsquo;t look right until it&rsquo;s cleared. You know it has to go &mdash; you just haven&rsquo;t found the right person to call.</p>
+      <p class="pain-paragraph">The stuff&rsquo;s been there longer than you&rsquo;ve been dealing with it. The garage. The outbuilding. What the last owner left. The backyard that can&rsquo;t look right until it&rsquo;s cleared. You know it has to go. You just haven&rsquo;t found the right person to call.</p>
       <div class="pain-problems">
         <p class="pain-fear">You&rsquo;re not sure anyone actually comes out to Dawsonville.</p>
         <p class="pain-fear">You&rsquo;ve scheduled before. They didn&rsquo;t show. No call, no text.</p>
         <p class="pain-fear">You don&rsquo;t know if the quote will hold at the door.</p>
         <p class="pain-fear">You don&rsquo;t know who&rsquo;s actually showing up to your property.</p>
       </div>
-      <span class="pain-pivot">That&rsquo;s not how Tony works.</span>
+      <span class="pain-pivot">That&rsquo;s not how Junk Brawlers works.</span>
       <div class="pain-solutions">
-        <p class="pain-answer">Dawsonville is his home zip. Already here &mdash; no dispatch, no mileage charge.</p>
+        <p class="pain-answer">Dawsonville is his home zip. Already here. No dispatch, no mileage charge.</p>
         <p class="pain-answer">Zero no-shows. <span data-jb-count>52</span> reviews. Not once.</p>
         <p class="pain-answer">The number on the phone is the number you pay. That&rsquo;s in the reviews.</p>
         <p class="pain-answer">Tony picks up himself. Same voice on the phone, same face at the door.</p>
@@ -325,12 +331,12 @@
   <!-- SECTION 3: SERVICES OFFERED HERE -->
   <section class="svc-section" aria-label="Services available in Dawsonville GA" style="background:#ffffff">
     <div class="svc-inner">
-      <h2 class="h2-bridge h2-bridge--light" style="padding-top:48px;">Everything He Takes. All of It Available Here.</h2>
+      <h2 class="h2-bridge h2-bridge--light" style="padding-top:48px;">He Takes the Stuff Other Guys Won&rsquo;t.</h2>
       <div class="svc-intro">
-        <p style="color:rgba(17,17,17,0.65)">Full scope &mdash; single-item pickups to full estate cleanouts. Dawsonville is home base, so there&rsquo;s no travel charge and same-day is the standard. Hover any card to see what&rsquo;s included.</p>
+        <p style="color:rgba(17,17,17,0.65)">Full scope, from single-item pickups to full estate cleanouts. Dawsonville is home base, so there&rsquo;s no travel charge and same-day is the standard. Hover any card to see what&rsquo;s included.</p>
       </div>
 
-      <div class="svc-grid" style="grid-template-columns:repeat(4,1fr);grid-auto-flow:dense;">
+      <div class="svc-grid">
 
         <a href="junk-removal.html" class="svc-card svc-card--wide">
           <img src="images/gbp-tony-loading-truck-sm.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
@@ -380,7 +386,7 @@
           <div class="svc-card-hover">
             <h3>Hot Tub Removal</h3>
             <ul>
-              <li>Tony drains it &mdash; no prep needed</li>
+              <li>Tony drains it. No prep needed.</li>
               <li>Broken down on-site</li>
               <li>Deck &amp; yard protected</li>
               <li>Electrical disconnect included</li>
@@ -504,7 +510,7 @@
         </a>
 
       </div>
-      <p style="text-align:center;font-size:15px;color:rgba(17,17,17,0.55);margin-top:32px;padding-bottom:8px;">Not sure if we take it? Call &mdash; Tony will tell you straight. <a href="tel:4046329165" style="color:var(--color-fire);font-weight:700;">(404) 632-9165</a></p>
+      <p style="text-align:center;font-size:15px;color:rgba(17,17,17,0.55);margin-top:32px;padding-bottom:8px;">Not sure if we take it? Call and Tony will tell you straight. <a href="tel:4046329165" style="color:var(--color-fire);font-weight:700;">(404) 632-9165</a></p>
       <p class="section-bridge section-bridge--light">He hauls everything on that list. Here&rsquo;s the man who does it.</p>
     </div>
   </section>
@@ -562,7 +568,6 @@
         </div>
       </div>
 
-    <p class="section-bridge section-bridge--dark">One call. Here&rsquo;s the whole thing.</p>
     </div>
   </section>
 
@@ -570,7 +575,7 @@
   <section class="hiw-section">
     <div class="hiw-dotgrid"></div>
     <div class="hiw-inner">
-      <h2 class="h2-bridge h2-bridge--light">So You Call. Here&rsquo;s What Happens.</h2>
+      <h2 class="h2-bridge h2-bridge--light">Most People Are Surprised How Fast It Goes.</h2>
 
       <div class="hiw-steps">
         <div class="hiw-connector" aria-hidden="true"></div>
@@ -578,13 +583,13 @@
         <div class="hiw-step">
           <div class="hiw-num"><span>1</span></div>
           <h3>Call. Get a Price. Nothing to Sign.</h3>
-          <p>Free quote on the call &mdash; no commitment, no paperwork. 7 days a week, 7am&ndash;6pm. <a href="tel:4046329165" style="color:#FF7A00;font-weight:700;">(404) 632-9165</a></p>
+          <p>Free quote on the call. No commitment, no paperwork. 7 days a week, 7am&ndash;6pm. <a href="tel:4046329165" style="color:#FF7A00;font-weight:700;">(404) 632-9165</a></p>
         </div>
 
         <div class="hiw-step">
           <div class="hiw-num"><span>2</span></div>
           <h3>Tony Texts Before He Comes. Usually Same Day.</h3>
-          <p>Dawsonville is home base &mdash; he&rsquo;s already close. Call in the morning and he can usually be at your door the same afternoon. No waiting around for a stranger from Atlanta.</p>
+          <p>Dawsonville is home base, so he&rsquo;s already close. Call in the morning and he can usually be at your door the same afternoon. No waiting around for a stranger from Atlanta.</p>
         </div>
 
         <div class="hiw-step">
@@ -604,12 +609,12 @@
   <!-- SECTION 6: SOCIAL PROOF -->
   <section class="trust-quotes" aria-label="Customer reviews — junk removal Dawsonville GA">
     <div class="trust-quotes-inner">
-      <h2 class="trust-quotes-heading h2-bridge h2-bridge--dark">Neighbor After Neighbor. Same Story.</h2>
+      <h2 class="trust-quotes-heading h2-bridge h2-bridge--dark">Everyone Who Called Said the Same Thing.</h2>
       <div class="trust-quotes-grid">
 
         <div class="tq-card">
           <div class="tq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <p class="tq-text">&ldquo;Outstanding Service! Tony from Junk Brawlers LLC was an excellent young man &mdash; very personable and professional. He showed up within 30 minutes of my call and had everything packed up and hauled away quickly and efficiently. It&rsquo;s rare to find someone so courteous and hardworking. I highly recommend Junk Brawlers LLC and will definitely use them again!&rdquo;</p>
+          <p class="tq-text">&ldquo;Outstanding Service! Tony from Junk Brawlers LLC was an excellent young man, very personable and professional. He showed up within 30 minutes of my call and had everything packed up and hauled away quickly and efficiently. It&rsquo;s rare to find someone so courteous and hardworking. I highly recommend Junk Brawlers LLC and will definitely use them again!&rdquo;</p>
           <span class="tq-author">myra smallwood &middot; Google Review &middot; 6 months ago</span>
         </div>
 
@@ -626,7 +631,7 @@
         </div>
 
       </div>
-      <p class="section-bridge section-bridge--dark" style="padding-top:56px;padding-bottom:0;">One call and it&rsquo;s handled.</p>
+      <p class="section-bridge section-bridge--dark" style="padding-top:56px;padding-bottom:0;">He&rsquo;s based in Dawsonville. But he goes further than most people realize.</p>
       <div style="text-align:center;padding:40px 0 16px;">
         <a href="tel:4046329165" class="btn-fire" style="font-family:var(--font-heading);font-size:17px;letter-spacing:1.5px;padding:16px 44px;">Book Your Pickup &rarr;</a>
         <p style="margin:16px 0 0;font-size:14px;color:rgba(255,255,255,0.5);">7am&ndash;6pm &middot; 7 days &middot; No commitment to call</p>
@@ -637,8 +642,8 @@
   <!-- SECTION 6: COVERAGE AREA — interactive map -->
   <section class="locations-hub">
     <div class="locations-hub-inner">
-      <h2 class="section-heading" style="text-align:center;margin-bottom:12px">15 Cities. Tony Does Every One.</h2>
-      <p class="locations-intro">Dawsonville is home base. From here, Tony covers cities across the mountains and foothills &mdash; same-day available across the full area. Click any city to explore.</p>
+      <h2 class="section-heading" style="text-align:center;margin-bottom:12px">He Probably Covers Your Town.</h2>
+      <p class="locations-intro">Dawsonville is home base. From here, Tony covers cities across the mountains and foothills. Same-day available across the full area. Click any city to explore.</p>
       <div class="locations-layout">
         <div id="map-container">
           <svg id="service-map-svg" viewBox="0 0 600 480" width="100%" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Junk Brawlers service area — North Georgia cities. Click to explore interactive map.">
@@ -722,7 +727,7 @@
             <span class="faq-text">How fast can you get to Dawsonville?</span>
             <span class="faq-toggle" aria-hidden="true">+</span>
           </div>
-          <div class="faq-answer">Dawsonville is Tony&rsquo;s home base &mdash; he&rsquo;s on North Lumpkin Campground Road, not dispatched from somewhere else. Depending on the schedule, he can often be at your door the same morning you call. Call before noon and same-day is usually available. <a href="tel:4046329165" style="color:var(--color-primary);font-weight:700;">(404) 632-9165</a></div>
+          <div class="faq-answer">Dawsonville is Tony&rsquo;s home base. He&rsquo;s on North Lumpkin Campground Road, not dispatched from somewhere else. Depending on the schedule, he can often be at your door the same morning you call. Call before noon and same-day is usually available. <a href="tel:4046329165" style="color:var(--color-primary);font-weight:700;">(404) 632-9165</a></div>
         </div>
 
         <div class="faq-item">
@@ -731,7 +736,7 @@
             <span class="faq-text">Is there a travel charge for Dawsonville jobs?</span>
             <span class="faq-toggle" aria-hidden="true">+</span>
           </div>
-          <div class="faq-answer">No. Dawsonville is home &mdash; there&rsquo;s no distance surcharge, no fuel premium. You&rsquo;re not paying extra for a franchise to drive from Atlanta. The quote you get is based on the job, not the mileage.</div>
+          <div class="faq-answer">No. Dawsonville is home. There&rsquo;s no distance surcharge, no fuel premium. You&rsquo;re not paying extra for a franchise to drive from Atlanta. The quote you get is based on the job, not the mileage.</div>
         </div>
 
         <div class="faq-item">
@@ -740,7 +745,7 @@
             <span class="faq-text">What areas near Dawsonville do you also serve?</span>
             <span class="faq-toggle" aria-hidden="true">+</span>
           </div>
-          <div class="faq-answer">Tony covers all of Dawson County (ZIP 30534) and the surrounding cities &mdash; Canton, Cumming, Gainesville, Dahlonega, Ball Ground, Jasper, Ellijay, Blue Ridge, Helen, Clermont, Cherry Log, and more. If you&rsquo;re not sure, just call and he&rsquo;ll tell you straight.</div>
+          <div class="faq-answer">Tony covers all of Dawson County (ZIP 30534) and the surrounding cities: Canton, Cumming, Gainesville, Dahlonega, Ball Ground, Jasper, Ellijay, Blue Ridge, Helen, Clermont, Cherry Log, and more. If you&rsquo;re not sure, just call and he&rsquo;ll tell you straight.</div>
         </div>
 
         <div class="faq-item">
@@ -749,7 +754,7 @@
             <span class="faq-text">Do you work weekends in Dawsonville?</span>
             <span class="faq-toggle" aria-hidden="true">+</span>
           </div>
-          <div class="faq-answer">Yes &mdash; 7 days a week, 7am to 6pm. Saturday and Sunday are regular work days. No weekend premium. Call any day of the week.</div>
+          <div class="faq-answer">Yes, 7 days a week, 7am to 6pm. Saturday and Sunday are regular work days. No weekend premium. Call any day of the week.</div>
         </div>
 
         <div class="faq-item">
@@ -758,13 +763,12 @@
             <span class="faq-text">Do you serve Lake Sidney, Amicalola Falls, and Burnt Stand?</span>
             <span class="faq-toggle" aria-hidden="true">+</span>
           </div>
-          <div class="faq-answer">Yes. Tony serves the full Dawsonville area &mdash; Lake Sidney, the Amicalola Falls corridor, Burnt Stand, the Crestline Drive gated communities, and everywhere on the Hwy 400 and GA-9 corridors. If you&rsquo;re in ZIP 30534, he comes to you.</div>
+          <div class="faq-answer">Yes. Tony serves the full Dawsonville area: Lake Sidney, the Amicalola Falls corridor, Burnt Stand, the Crestline Drive gated communities, and everywhere on the Hwy 400 and GA-9 corridors. If you&rsquo;re in ZIP 30534, he comes to you.</div>
         </div>
 
       </div>
       <div style="text-align:center;padding:48px 0 16px;">
-        <a href="tel:4046329165" class="btn-fire" style="font-family:var(--font-heading);font-size:17px;letter-spacing:1.5px;padding:16px 44px;">You&rsquo;ve Done the Research. Call Tony. &rarr;</a>
-        <p style="margin:16px 0 0;font-size:14px;color:rgba(255,255,255,0.5);">Still have a question? Tony picks up himself &mdash; <a href="tel:4046329165" style="color:var(--color-fire);font-weight:700;">(404) 632-9165</a></p>
+        <p style="margin:16px 0 0;font-size:14px;color:rgba(255,255,255,0.5);">Still have a question? Tony picks up himself: <a href="tel:4046329165" style="color:var(--color-fire);font-weight:700;">(404) 632-9165</a></p>
       </div>
     </div>
   </section>
