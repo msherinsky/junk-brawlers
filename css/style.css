@@ -214,7 +214,8 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .pricing-tier:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(0,0,0,0.11)}
 .pricing-tier.tier-highlight{border-top:3px solid var(--color-fire)}
 .truck-svg-wrap{width:100%;max-width:170px;margin:0 auto 16px}
-.tier-name{font-family:var(--font-heading);font-size:clamp(17px,1.6vw,20px);font-weight:800;color:#111;margin:0 0 4px}
+.tier-name{font-family:var(--font-heading);font-size:clamp(17px,1.6vw,20px);font-weight:800;color:#111;margin:0 0 2px}
+.tier-price{font-family:var(--font-heading);font-size:clamp(24px,2.4vw,30px);font-weight:800;color:var(--color-fire);margin:4px 0 4px;letter-spacing:-0.5px}
 .tier-desc{font-size:13px;color:rgba(17,17,17,0.5);margin:0;line-height:1.5}
 .tier-badge{display:inline-block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--color-fire);background:rgba(255,122,0,0.08);border:1px solid rgba(255,122,0,0.25);border-radius:20px;padding:3px 10px;margin-top:8px}
 .pricing-note{background:rgba(123,53,212,0.05);border:1px solid rgba(123,53,212,0.15);border-radius:6px;padding:18px 24px;max-width:580px;margin:0 auto 36px;font-size:15px;color:rgba(17,17,17,0.72);line-height:1.65;text-align:left}
