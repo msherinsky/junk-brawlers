@@ -188,6 +188,16 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .svc-card-hover ul li::before{content:"✓  ";color:var(--color-fire);font-weight:700}
 .svc-card-hover-cta{display:block;text-align:center;color:var(--color-fire);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.12)}
 .svc-cta-row{text-align:center;padding:40px 0 80px;position:relative;z-index:1}
+.bento-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:280px 280px 280px;gap:12px;grid-template-areas:"a a b" "c d b" "e e f";text-align:left}
+.bento-grid>.svc-card{min-height:0}
+.bento-grid>.svc-card:nth-child(1){grid-area:a}
+.bento-grid>.svc-card:nth-child(2){grid-area:b}
+.bento-grid>.svc-card:nth-child(3){grid-area:c}
+.bento-grid>.svc-card:nth-child(4){grid-area:d}
+.bento-grid>.svc-card:nth-child(5){grid-area:e}
+.bento-grid>.svc-card:nth-child(6){grid-area:f}
+@media(max-width:900px){.bento-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:200px 200px 200px 200px;grid-template-areas:"a a" "b c" "d e" "f f"}}
+@media(max-width:640px){.bento-grid{grid-template-columns:1fr;grid-template-rows:repeat(6,220px);grid-template-areas:"a" "b" "c" "d" "e" "f"}}
 
 /* ---- HOW IT WORKS ---- */
 .hiw-section{background:#ffffff;padding:80px 32px 72px;position:relative;overflow:hidden}
