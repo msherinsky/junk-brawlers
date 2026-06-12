@@ -744,6 +744,21 @@
     </div>
   </div>
 
+  <script>
+  (function(){
+    var section=document.querySelector('.pricing-section');
+    if(!section) return;
+    if('IntersectionObserver' in window){
+      var obs=new IntersectionObserver(function(entries){
+        if(entries[0].isIntersecting){section.classList.add('in-view');obs.disconnect();}
+      },{threshold:0.15});
+      obs.observe(section);
+    } else {
+      section.classList.add('in-view');
+    }
+  })();
+  </script>
+
   <!-- STICKY MOBILE CALL BAR -->
   <div class="sticky-call-bar" role="complementary" aria-label="Call or get a quote">
     <a href="tel:4046329165" class="sticky-call-bar__phone">
