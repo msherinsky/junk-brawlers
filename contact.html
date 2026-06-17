@@ -59,7 +59,7 @@
     "mainEntity": {
       "@type": "LocalBusiness",
       "@id": "https://junkbrawlers.com/#localbusiness",
-      "name": "Junk Brawlers",
+      "name": "Junk Brawlers LLC",
       "legalName": "Junk Brawlers LLC",
       "description": "Owner-operated junk removal serving North Georgia. Residential, commercial, estate cleanouts, appliance removal, hot tub removal, and more. 7 days a week, 7am-6pm.",
       "image": "https://junkbrawlers.com/images/logo.png",
@@ -102,6 +102,13 @@
   </script>
 
   <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://junkbrawlers.com/"},
+    {"@type":"ListItem","position":2,"name":"Contact","item":"https://junkbrawlers.com/contact.html"}
+  ]}
+  </script>
+
+  <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
     {"@type":"Question","name":"How fast does Tony respond?","acceptedAnswer":{"@type":"Answer","text":"Usually within minutes. Tony picks up the phone himself — no call center, no voicemail maze. If you send a message through the form, he responds by text or call the same day."}},
     {"@type":"Question","name":"Can I text instead of call?","acceptedAnswer":{"@type":"Answer","text":"Yes. Text (404) 632-9165 directly. Tony responds to texts. Many customers prefer it and hear back within minutes."}},
@@ -123,14 +130,14 @@
         <button aria-expanded="false" aria-haspopup="true">Services <span class="arrow">&#9662;</span></button>
         <div class="dropdown-menu">
           <a href="services.html">All Services</a>
-          <a href="junk-removal.html">Junk Removal</a>
+          <a href="residential-junk-removal.html">Junk Removal</a>
           <a href="appliance-removal.html">Appliance Removal</a>
           <a href="hot-tub-removal.html">Hot Tub Removal</a>
           <a href="pool-removal.html">Pool Removal</a>
           <a href="estate-cleanouts.html">Estate Cleanouts</a>
           <a href="garage-cleanouts.html">Garage Cleanouts</a>
           <a href="construction-debris-removal.html">Construction Debris</a>
-          <a href="commercial-junk-removal.html">Commercial Removal</a>
+          <a href="commercial-residential-junk-removal.html">Commercial Removal</a>
           <a href="hoarder-cleanouts.html">Hoarder Cleanouts</a>
           <a href="shed-deck-removal.html">Shed &amp; Deck Removal</a>
         </div>
@@ -140,18 +147,16 @@
         <div class="dropdown-menu dropdown-menu--locations">
           <div class="dropdown-cities">
             <a href="dawsonville.html">Dawsonville GA</a>
-            <a href="ball-ground.html">Ball Ground GA</a>
             <a href="blue-ridge.html">Blue Ridge GA</a>
-            <a href="buford.html">Buford GA</a>
             <a href="canton.html">Canton GA</a>
+            <a href="cherry-log.html">Cherry Log GA</a>
             <a href="cumming.html">Cumming GA</a>
             <a href="dahlonega.html">Dahlonega GA</a>
             <a href="ellijay.html">Ellijay GA</a>
             <a href="flowery-branch.html">Flowery Branch GA</a>
             <a href="gainesville.html">Gainesville GA</a>
-            <a href="holly-springs.html">Holly Springs GA</a>
-            <a href="oakwood.html">Oakwood GA</a>
-            <a href="sugar-hill.html">Sugar Hill GA</a>
+            <a href="helen.html">Helen GA</a>
+            <a href="morganton.html">Morganton GA</a>
             <a href="suwanee.html">Suwanee GA</a>
             <a href="woodstock.html">Woodstock GA</a>
           </div>
@@ -174,30 +179,28 @@
     <a href="about.html">About Tony</a>
     <div class="mobile-section-label">Services</div>
     <a href="services.html">All Services</a>
-    <a href="junk-removal.html">Junk Removal</a>
+    <a href="residential-junk-removal.html">Junk Removal</a>
     <a href="appliance-removal.html">Appliance Removal</a>
     <a href="hot-tub-removal.html">Hot Tub Removal</a>
     <a href="pool-removal.html">Pool Removal</a>
     <a href="estate-cleanouts.html">Estate Cleanouts</a>
     <a href="garage-cleanouts.html">Garage Cleanouts</a>
     <a href="construction-debris-removal.html">Construction Debris</a>
-    <a href="commercial-junk-removal.html">Commercial Removal</a>
+    <a href="commercial-residential-junk-removal.html">Commercial Removal</a>
     <a href="hoarder-cleanouts.html">Hoarder Cleanouts</a>
     <a href="shed-deck-removal.html">Shed &amp; Deck Removal</a>
     <div class="mobile-section-label">Service Areas</div>
     <a href="dawsonville.html">Dawsonville GA</a>
-    <a href="ball-ground.html">Ball Ground GA</a>
     <a href="blue-ridge.html">Blue Ridge GA</a>
-    <a href="buford.html">Buford GA</a>
     <a href="canton.html">Canton GA</a>
+    <a href="cherry-log.html">Cherry Log GA</a>
     <a href="cumming.html">Cumming GA</a>
     <a href="dahlonega.html">Dahlonega GA</a>
     <a href="ellijay.html">Ellijay GA</a>
     <a href="flowery-branch.html">Flowery Branch GA</a>
     <a href="gainesville.html">Gainesville GA</a>
-    <a href="holly-springs.html">Holly Springs GA</a>
-    <a href="oakwood.html">Oakwood GA</a>
-    <a href="sugar-hill.html">Sugar Hill GA</a>
+    <a href="helen.html">Helen GA</a>
+    <a href="morganton.html">Morganton GA</a>
     <a href="suwanee.html">Suwanee GA</a>
     <a href="woodstock.html">Woodstock GA</a>
     <a href="faq.html">FAQ</a>
@@ -359,7 +362,7 @@
         <span class="footer-hours">Mon&ndash;Sun &middot; 7:00 AM &ndash; 6:00 PM</span>
       </div>
       <div class="footer-col"><h3>Quick Links</h3><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Tony</a></li><li><a href="services.html">Services</a></li><li><a href="service-areas.html">Service Areas</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact / Quote</a></li></ul></div>
-      <div class="footer-col"><h3>Services</h3><ul><li><a href="junk-removal.html">Junk Removal</a></li><li><a href="appliance-removal.html">Appliance Removal</a></li><li><a href="hot-tub-removal.html">Hot Tub Removal</a></li><li><a href="pool-removal.html">Pool Removal</a></li><li><a href="estate-cleanouts.html">Estate Cleanouts</a></li><li><a href="garage-cleanouts.html">Garage Cleanouts</a></li><li><a href="hoarder-cleanouts.html">Hoarder Cleanouts</a></li><li><a href="construction-debris-removal.html">Construction Debris</a></li><li><a href="commercial-junk-removal.html">Commercial Removal</a></li><li><a href="shed-deck-removal.html">Shed &amp; Deck Removal</a></li></ul></div>
+      <div class="footer-col"><h3>Services</h3><ul><li><a href="residential-junk-removal.html">Junk Removal</a></li><li><a href="appliance-removal.html">Appliance Removal</a></li><li><a href="hot-tub-removal.html">Hot Tub Removal</a></li><li><a href="pool-removal.html">Pool Removal</a></li><li><a href="estate-cleanouts.html">Estate Cleanouts</a></li><li><a href="garage-cleanouts.html">Garage Cleanouts</a></li><li><a href="hoarder-cleanouts.html">Hoarder Cleanouts</a></li><li><a href="construction-debris-removal.html">Construction Debris</a></li><li><a href="commercial-residential-junk-removal.html">Commercial Removal</a></li><li><a href="shed-deck-removal.html">Shed &amp; Deck Removal</a></li></ul></div>
       <div class="footer-col">
         <h3>Follow Tony</h3>
         <div class="social-icons">
@@ -404,18 +407,6 @@
     </a>
     <a href="contact.html" class="sticky-call-bar__quote" data-modal="quote">Free Quote</a>
   </div>
-
-  <script defer src="js/chat-widget.js"
-          data-client="junk-brawlers"
-          data-name="Tony"
-          data-avatar=""
-          data-phone="(404) 632-9165"
-          data-greeting="Hey! Got a question or want a free quote? I can help get you taken care of fast."
-          data-subtitle="Get a free quote in minutes"
-          data-color-primary="#8000FF"
-          data-color-dark="#6600CC"
-          data-color-header="#1a0030"
-          data-quick-replies="Get a free quote|How fast can you come?|What do you haul?"></script>
   <script defer src="js/main.js"></script>
 
 </body>
