@@ -261,6 +261,10 @@
             <label for="phone">Phone *</label>
             <input type="tel" id="phone" name="phone" placeholder="+1 (000) 000-0000" autocomplete="tel">
           </div>
+          <div class="jb-form-group">
+            <label for="zipCode">Zip Code</label>
+            <input type="text" id="zipCode" name="zipCode" placeholder="30534" maxlength="5" inputmode="numeric" autocomplete="postal-code">
+          </div>
           <button type="submit" class="jb-form-submit">Send My Request &rarr;</button>
           <p class="jb-form-status" id="form-status" aria-live="polite"></p>
           </form>
@@ -413,6 +417,7 @@
         lastName: form.lastName.value.trim(),
         email: form.email.value.trim(),
         phone: form.phone.value.trim(),
+        zipCode: form.zipCode.value.trim(),
       };
       if (!data.firstName || (!data.email && !data.phone)) {
         status.textContent = 'Please enter your first name and either your email or phone.';

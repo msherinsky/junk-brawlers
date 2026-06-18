@@ -501,3 +501,6 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
   .jb-modal-card{border-radius:16px 16px 0 0;padding:32px 20px 28px;max-height:92vh}
   .jb-form-row{flex-direction:column;gap:0}
 }
+.zip-check-hint{display:block;font-size:12px;font-weight:600;margin-top:5px;min-height:16px}
+.zip-check-hint--ok{color:var(--color-fire)}
+.zip-check-hint--warn{color:#FFA040}

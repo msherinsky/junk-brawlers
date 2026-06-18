@@ -89,6 +89,32 @@
     });
   }
 
+  /* ── Service Area Zip Check ── */
+  var JB_SERVICE_ZIPS = ['30004','30005','30009','30022','30024','30028','30039','30040','30041','30043','30044','30045','30046','30071','30075','30076','30078','30092','30093','30096','30097','30107','30114','30115','30142','30143','30151','30175','30183','30188','30189','30327','30328','30342','30350','30501','30504','30506','30507','30513','30518','30519','30522','30527','30528','30533','30534','30539','30540','30542','30545','30555','30560','30566'];
+
+  function initZipCheck(zipInput) {
+    if (!zipInput) return;
+    var hint = document.createElement('span');
+    hint.className = 'zip-check-hint';
+    zipInput.parentNode.appendChild(hint);
+    zipInput.addEventListener('input', function () {
+      var val = this.value.replace(/\D/g, '').slice(0, 5);
+      this.value = val;
+      if (val.length === 5) {
+        if (JB_SERVICE_ZIPS.indexOf(val) !== -1) {
+          hint.textContent = '✓ We serve your area.';
+          hint.className = 'zip-check-hint zip-check-hint--ok';
+        } else {
+          hint.textContent = 'We may not serve this zip — Tony will confirm on the call.';
+          hint.className = 'zip-check-hint zip-check-hint--warn';
+        }
+      } else {
+        hint.textContent = '';
+        hint.className = 'zip-check-hint';
+      }
+    });
+  }
+
   /* ── Quote Modal ── */
   function initQuoteModal() {
     var isContactPage = window.location.pathname.toLowerCase().indexOf('contact') !== -1;
@@ -136,11 +162,16 @@
             '<label for="jb-phone">Phone *</label>' +
             '<input type="tel" id="jb-phone" name="phone" placeholder="+1 (000) 000-0000" autocomplete="tel">' +
           '</div>' +
+          '<div class="jb-form-group">' +
+            '<label for="jb-zipCode">Zip Code</label>' +
+            '<input type="text" id="jb-zipCode" name="zipCode" placeholder="30534" maxlength="5" inputmode="numeric" autocomplete="postal-code">' +
+          '</div>' +
           '<button type="submit" class="jb-form-submit">Send My Request &rarr;</button>' +
           '<p class="jb-form-status" aria-live="polite"></p>' +
         '</form>' +
       '</div>';
     document.body.appendChild(overlay);
+    initZipCheck(overlay.querySelector('[name="zipCode"]'));
 
     var closeBtn = overlay.querySelector('.jb-modal-close');
     var form = overlay.querySelector('.jb-modal-form');
@@ -185,6 +216,7 @@
         lastName: form.querySelector('[name="lastName"]').value.trim(),
         email: form.querySelector('[name="email"]').value.trim(),
         phone: form.querySelector('[name="phone"]').value.trim(),
+        zipCode: form.querySelector('[name="zipCode"]').value.trim(),
       };
       if (!data.firstName || (!data.email && !data.phone)) {
         statusEl.textContent = 'Please enter your name and either email or phone.';
@@ -226,6 +258,7 @@
     initFAQ();
     initHeaderScroll();
     initQuoteModal();
+    initZipCheck(document.getElementById('zipCode'));
   });
 })();
 
