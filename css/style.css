@@ -481,7 +481,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .jb-form-group input{padding:12px 14px;background:rgba(255,255,255,0.06);border:1.5px solid rgba(255,255,255,0.12);border-radius:4px;font-family:var(--font);font-size:15px;color:#fff;transition:border-color .2s,box-shadow .2s}
 .jb-form-group input::placeholder{color:rgba(255,255,255,0.25)}
 .jb-form-group input:focus{outline:none;border-color:var(--color-fire);box-shadow:0 0 0 3px rgba(255,122,0,0.18)}
-.jb-form-submit{display:block;width:100%;margin-top:8px;padding:15px 28px;background:var(--color-fire);color:#fff;font-family:var(--font-heading);font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;border:none;border-radius:4px;cursor:pointer;transition:opacity .2s;box-shadow:0 4px 20px rgba(255,122,0,0.35);text-align:center}
+.jb-form-submit{display:block;width:100%;margin-top:24px;padding:15px 28px;background:var(--color-fire);color:#fff;font-family:var(--font-heading);font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;border:none;border-radius:4px;cursor:pointer;transition:opacity .2s;box-shadow:0 4px 20px rgba(255,122,0,0.35);text-align:center}
 .jb-form-submit:hover{opacity:.9}
 .jb-form-submit:disabled{opacity:.55;cursor:not-allowed}
 .jb-form-status{margin-top:12px;font-size:14px;font-weight:600;display:none}
