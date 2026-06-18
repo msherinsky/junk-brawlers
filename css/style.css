@@ -485,8 +485,9 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .jb-form-submit:hover{opacity:.9}
 .jb-form-submit:disabled{opacity:.55;cursor:not-allowed}
 .jb-form-status{margin-top:12px;font-size:14px;font-weight:600;display:none}
-.jb-form-status.success{color:var(--color-fire);display:block}
+.jb-form-status.success{color:#22c55e;display:block}
 .jb-form-status.error{color:#ff6b6b;display:block}
+.jb-form-group input.jb-input-error{border-color:#ff6b6b !important;box-shadow:0 0 0 3px rgba(255,107,107,0.18) !important}
 .jb-modal-overlay{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.75);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .25s ease}
 .jb-modal-overlay.open{opacity:1;pointer-events:all}
 .jb-modal-card{background:#080014;border-radius:8px;padding:44px 40px 40px;max-width:460px;width:100%;position:relative;transform:translateY(20px);transition:transform .25s ease;border-top:3px solid var(--color-fire);max-height:90vh;overflow-y:auto}

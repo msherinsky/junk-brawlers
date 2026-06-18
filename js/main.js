@@ -89,6 +89,33 @@
     });
   }
 
+  /* ── Phone Input Formatter ── */
+  function initPhoneInput(el) {
+    if (!el) return;
+    el.setAttribute('maxlength', '14');
+    el.addEventListener('input', function () {
+      var digits = this.value.replace(/\D/g, '').slice(0, 10);
+      if (!digits) { this.value = ''; return; }
+      if (digits.length <= 3) {
+        this.value = '(' + digits;
+      } else if (digits.length <= 6) {
+        this.value = '(' + digits.slice(0,3) + ') ' + digits.slice(3);
+      } else {
+        this.value = '(' + digits.slice(0,3) + ') ' + digits.slice(3,6) + '-' + digits.slice(6);
+      }
+      this.classList.remove('jb-input-error');
+    });
+    el.addEventListener('blur', function () {
+      var digits = this.value.replace(/\D/g, '');
+      if (this.value && digits.length < 10) {
+        this.classList.add('jb-input-error');
+      }
+    });
+    el.addEventListener('focus', function () {
+      this.classList.remove('jb-input-error');
+    });
+  }
+
   /* ── Service Area Zip Check ── */
   var JB_SERVICE_ZIPS = ['30004','30005','30009','30022','30024','30028','30039','30040','30041','30043','30044','30045','30046','30071','30075','30076','30078','30092','30093','30096','30097','30107','30114','30115','30142','30143','30151','30175','30183','30188','30189','30327','30328','30342','30350','30501','30504','30506','30507','30513','30518','30519','30522','30527','30528','30533','30534','30539','30540','30542','30545','30555','30560','30566'];
 
@@ -171,6 +198,7 @@
         '</form>' +
       '</div>';
     document.body.appendChild(overlay);
+    initPhoneInput(overlay.querySelector('[name="phone"]'));
     initZipCheck(overlay.querySelector('[name="zipCode"]'));
 
     var closeBtn = overlay.querySelector('.jb-modal-close');
@@ -211,15 +239,24 @@
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      var firstNameEl = form.querySelector('[name="firstName"]');
+      var phoneEl     = form.querySelector('[name="phone"]');
+      var emailEl     = form.querySelector('[name="email"]');
       var data = {
-        firstName: form.querySelector('[name="firstName"]').value.trim(),
-        lastName: form.querySelector('[name="lastName"]').value.trim(),
-        email: form.querySelector('[name="email"]').value.trim(),
-        phone: form.querySelector('[name="phone"]').value.trim(),
-        zipCode: form.querySelector('[name="zipCode"]').value.trim(),
+        firstName: firstNameEl.value.trim(),
+        lastName:  form.querySelector('[name="lastName"]').value.trim(),
+        email:     emailEl.value.trim(),
+        phone:     phoneEl.value.trim(),
+        zipCode:   form.querySelector('[name="zipCode"]').value.trim(),
       };
-      if (!data.firstName || (!data.email && !data.phone)) {
-        statusEl.textContent = 'Please enter your name and either email or phone.';
+      var phoneDigits = data.phone.replace(/\D/g, '');
+      var valid = true;
+      firstNameEl.classList.remove('jb-input-error');
+      phoneEl.classList.remove('jb-input-error');
+      if (!data.firstName) { firstNameEl.classList.add('jb-input-error'); valid = false; }
+      if (!data.email && phoneDigits.length < 10) { phoneEl.classList.add('jb-input-error'); valid = false; }
+      if (!valid) {
+        statusEl.textContent = 'Please fill in the highlighted fields.';
         statusEl.className = 'jb-form-status error';
         return;
       }

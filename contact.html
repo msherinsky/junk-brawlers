@@ -478,20 +478,34 @@
   <script defer src="js/main.js"></script>
 
   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof initPhoneInput === 'function') {
+        initPhoneInput(document.getElementById('phone'));
+      }
+    });
+
     document.getElementById('contact-form-el').addEventListener('submit', async function(e) {
       e.preventDefault();
       const form = e.target;
       const btn = form.querySelector('button[type="submit"]');
       const status = document.getElementById('form-status');
+      const firstNameEl = form.firstName;
+      const phoneEl = form.phone;
       const data = {
-        firstName: form.firstName.value.trim(),
-        lastName: form.lastName.value.trim(),
-        email: form.email.value.trim(),
-        phone: form.phone.value.trim(),
-        zipCode: form.zipCode.value.trim(),
+        firstName: firstNameEl.value.trim(),
+        lastName:  form.lastName.value.trim(),
+        email:     form.email.value.trim(),
+        phone:     phoneEl.value.trim(),
+        zipCode:   form.zipCode.value.trim(),
       };
-      if (!data.firstName || (!data.email && !data.phone)) {
-        status.textContent = 'Please enter your first name and either your email or phone.';
+      const phoneDigits = data.phone.replace(/\D/g, '');
+      let valid = true;
+      firstNameEl.classList.remove('jb-input-error');
+      phoneEl.classList.remove('jb-input-error');
+      if (!data.firstName) { firstNameEl.classList.add('jb-input-error'); valid = false; }
+      if (!data.email && phoneDigits.length < 10) { phoneEl.classList.add('jb-input-error'); valid = false; }
+      if (!valid) {
+        status.textContent = 'Please fill in the highlighted fields.';
         status.className = 'jb-form-status error';
         return;
       }
@@ -506,14 +520,14 @@
           body: JSON.stringify(data),
         });
         if (res.ok) {
-          status.textContent = 'Got it — Tony will reach out shortly.';
+          status.textContent = '✓ Got it — Tony will reach out shortly.';
           status.className = 'jb-form-status success';
           form.reset();
         } else {
           throw new Error();
         }
       } catch {
-        status.textContent = 'Something went wrong. Please call or text Tony at (404) 632-9165.';
+        status.textContent = 'Something went wrong. Please call or text Tony at (404) 632-9165.';
         status.className = 'jb-form-status error';
       } finally {
         btn.disabled = false;

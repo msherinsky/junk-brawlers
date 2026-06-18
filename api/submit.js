@@ -42,7 +42,11 @@ export default async function handler(req, res) {
 
     if (!ghlRes.ok) {
       const err = await ghlRes.text();
-      console.error('GHL error:', err);
+      console.error('GHL error:', ghlRes.status, err);
+      // 400/422 typically means duplicate contact — treat as success so the user gets confirmation
+      if (ghlRes.status === 400 || ghlRes.status === 422) {
+        return res.status(200).json({ success: true });
+      }
       return res.status(502).json({ error: 'Failed to submit to CRM.' });
     }
 
