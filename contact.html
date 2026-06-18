@@ -24,30 +24,57 @@
   <script src="js/site-data.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .contact-intro { background: #07001A; padding: 48px 24px 52px; position: relative; overflow: hidden; }
-    .contact-intro::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to right, rgba(7,0,26,0.94) 0%, rgba(7,0,26,0.82) 50%, rgba(7,0,26,0.6) 100%); z-index: 1; pointer-events: none; }
+    /* ── Hero ── */
+    .contact-intro { background: #07001A; padding: 108px 24px 88px; position: relative; overflow: hidden; }
+    .contact-intro::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background:
+        radial-gradient(ellipse at 18% 25%, rgba(123,53,212,0.20) 0%, transparent 52%),
+        radial-gradient(ellipse at 85% 105%, rgba(255,122,0,0.10) 0%, transparent 42%),
+        linear-gradient(to right, rgba(7,0,26,0.97) 0%, rgba(7,0,26,0.88) 55%, rgba(7,0,26,0.52) 100%); }
     .contact-intro-bg { position: absolute; inset: 0; width: 100%; height: 100%; }
     .contact-intro-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-    .contact-intro-inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 2; }
-    .contact-intro h1 { font-family: var(--font-heading); font-size: clamp(28px, 4vw, 48px); font-weight: 800; color: #fff; line-height: 1.1; margin: 12px 0 10px; letter-spacing: 0.5px; }
-    .contact-intro p { font-size: 16px; color: rgba(255,255,255,0.6); margin: 0; line-height: 1.6; }
-    .contact-section { background: #080014; padding: 72px 0 88px; }
-    .contact-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; gap: 56px; align-items: flex-start; flex-wrap: wrap; }
+    .contact-intro-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 2; }
+    .contact-intro h1 { font-family: var(--font-heading); font-size: clamp(40px, 6vw, 80px); font-weight: 800; font-style: italic; color: #fff; line-height: 1.05; margin: 12px 0 14px; letter-spacing: 0.3px; }
+    .contact-intro > .contact-intro-inner > p { font-size: 17px; color: rgba(255,255,255,0.62); margin: 0 0 36px; line-height: 1.65; max-width: 520px; }
+    /* ── 3-step strip ── */
+    .contact-steps { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 0; }
+    .contact-step { display: flex; align-items: center; gap: 10px; }
+    .contact-step-num { font-family: var(--font-heading); font-size: 22px; font-weight: 800; color: var(--color-fire); line-height: 1; flex-shrink: 0; }
+    .contact-step-text { font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.62); line-height: 1.3; }
+    .contact-step-arrow { font-size: 18px; color: var(--color-fire); opacity: 0.45; flex-shrink: 0; }
+    /* ── Form section ── */
+    .contact-section { background: #080014; padding: 72px 0 88px; position: relative; }
+    .contact-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--color-fire) 25%, var(--color-fire) 75%, transparent); opacity: 0.55; }
+    .contact-section::after { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(123,53,212,0.04) 1px, transparent 1px); background-size: 26px 26px; pointer-events: none; z-index: 0; }
+    .contact-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; gap: 56px; align-items: flex-start; flex-wrap: wrap; position: relative; z-index: 1; }
     .contact-form-col { flex: 1 1 380px; }
     .contact-info-col { flex: 0 1 300px; padding-top: 4px; }
-    .contact-info-block { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .contact-info-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,0.4); margin-bottom: 6px; display: block; }
-    .contact-phone-link { font-family: var(--font-heading); font-size: 32px; font-weight: 800; color: #fff; text-decoration: none; letter-spacing: 0.5px; display: block; line-height: 1.1; }
-    .contact-phone-link:hover { color: var(--color-fire); }
-    .contact-info-row { display: flex; gap: 32px; }
+    /* ── Form card ── */
     .contact-form-logo { height: 48px; width: auto; margin-bottom: 20px; display: block; }
     .contact-form-card { background: #0D0019; border: 1px solid rgba(255,255,255,0.08); border-top: 3px solid var(--color-fire); border-radius: 8px; padding: 44px 40px 40px; box-shadow: 0 12px 48px rgba(0,0,0,0.55), 0 2px 8px rgba(0,0,0,0.3); max-width: 480px; }
+    .contact-call-alt { margin-top: 14px; font-size: 13px; color: rgba(255,255,255,0.38); text-align: center; margin-bottom: 0; }
+    .contact-call-alt a { color: var(--color-fire); text-decoration: none; font-weight: 600; }
+    .contact-call-alt a:hover { text-decoration: underline; }
+    /* ── Right panel ── */
+    .contact-phone-panel { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .contact-info-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,0.4); margin-bottom: 8px; display: block; }
+    .contact-phone-hero { font-family: var(--font-heading); font-size: clamp(36px, 5vw, 52px); font-weight: 800; color: var(--color-fire); text-decoration: none; letter-spacing: -0.5px; display: block; line-height: 1; text-shadow: 0 0 32px rgba(255,122,0,0.4); }
+    .contact-phone-hero:hover { opacity: 0.85; }
+    .contact-phone-sub { font-size: 14px; color: rgba(255,255,255,0.5); margin: 8px 0 0; line-height: 1.5; }
+    .contact-trust-pills { display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .contact-trust-pill { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 7px 14px; font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.7); width: fit-content; }
+    .contact-trust-pill-icon { color: var(--color-fire); font-style: normal; }
+    .contact-reviews { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .contact-hours-line { font-size: 14px; color: rgba(255,255,255,0.6); margin: 6px 0 0; }
     .faq-section .section-bridge { padding-top: 0; padding-bottom: 16px; }
     @media (max-width: 700px) {
-      .contact-intro { padding: 36px 20px 40px; }
+      .contact-intro { padding: 72px 20px 60px; }
+      .contact-intro h1 { font-size: clamp(36px, 9vw, 56px); }
+      .contact-steps { gap: 12px; }
+      .contact-step-arrow { display: none; }
       .contact-inner { flex-direction: column; gap: 40px; }
       .contact-info-col { flex: 1 1 100%; }
-      .contact-phone-link { font-size: 26px; }
+      .contact-phone-hero { font-size: clamp(36px, 10vw, 48px); }
     }
   </style>
 
@@ -227,8 +254,24 @@
         <span class="hero-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
         <span class="hero-badge-text"><strong data-jb-rating>5.0</strong> Stars &middot; <span data-jb-count>57</span> Google Reviews</span>
       </a>
-      <h1>Get a Free Quote.</h1>
-      <p>Tony picks up himself &mdash; no call centers, no voicemail. Call, text, or send a message below.</p>
+      <h1>Ready to Get Rid of It?</h1>
+      <p>Tony reads every message personally and calls back the same day &mdash; often within minutes. No forms that disappear into the void.</p>
+      <div class="contact-steps">
+        <div class="contact-step">
+          <span class="contact-step-num">1</span>
+          <span class="contact-step-text">Fill out the form below</span>
+        </div>
+        <span class="contact-step-arrow">&rarr;</span>
+        <div class="contact-step">
+          <span class="contact-step-num">2</span>
+          <span class="contact-step-text">Tony calls within minutes</span>
+        </div>
+        <span class="contact-step-arrow">&rarr;</span>
+        <div class="contact-step">
+          <span class="contact-step-num">3</span>
+          <span class="contact-step-text">Job scheduled, junk gone</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -267,41 +310,46 @@
           </div>
           <button type="submit" class="jb-form-submit">Send My Request &rarr;</button>
           <p class="jb-form-status" id="form-status" aria-live="polite"></p>
+          <p class="contact-call-alt">Prefer to call? <a href="tel:4046329165">(404) 632&#8209;9165</a></p>
           </form>
         </div>
       </div>
 
-      <!-- RIGHT: Contact info -->
+      <!-- RIGHT: Trust panel -->
       <div class="contact-info-col">
-        <div class="contact-info-block">
-          <span class="contact-info-label">Call or Text</span>
-          <a href="tel:4046329165" class="contact-phone-link" data-phone-href>(404) 632-9165</a>
+
+        <!-- Phone — hero-sized -->
+        <div class="contact-phone-panel">
+          <span class="contact-info-label">Call or Text &mdash; 7 Days a Week</span>
+          <a href="tel:4046329165" class="contact-phone-hero" data-phone-href>(404) 632-9165</a>
+          <p class="contact-phone-sub">Tony picks up himself. No call center, no voicemail.</p>
         </div>
-        <div class="contact-info-block contact-info-row">
-          <div>
-            <span class="contact-info-label">Hours</span>
-            <p style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.6;margin:0;">Mon&ndash;Sun<br>7:00 AM &ndash; 6:00 PM</p>
-          </div>
-          <div>
-            <span class="contact-info-label">Location</span>
-            <address style="font-style:normal;font-size:15px;color:rgba(255,255,255,0.7);line-height:1.6;margin:0;">500 N Lumpkin<br>Campground Rd<br>Dawsonville, GA 30534</address>
-          </div>
+
+        <!-- Trust pills -->
+        <div class="contact-trust-pills">
+          <span class="contact-trust-pill"><i class="contact-trust-pill-icon">&#9733;</i> 5.0 Google Rating &middot; 57 Reviews</span>
+          <span class="contact-trust-pill"><i class="contact-trust-pill-icon">&#9889;</i> Same-Day Service Available</span>
+          <span class="contact-trust-pill"><i class="contact-trust-pill-icon">&#10003;</i> Insured &amp; Professional</span>
         </div>
-        <div class="contact-info-block">
-          <span class="contact-info-label">&#9733;&#9733;&#9733;&#9733;&#9733;&nbsp; What Customers Say</span>
-          <div class="rw-mini" style="margin-top:8px;">
+
+        <!-- Reviews -->
+        <div class="contact-reviews">
+          <div class="rw-mini">
             <p class="rw-mini-text">&ldquo;He showed up within 30 minutes of my call and had everything packed up and hauled away quickly and efficiently.&rdquo;</p>
             <span class="rw-mini-author">Myra S. &middot; Google Review &middot; 5&#9733;</span>
           </div>
-        </div>
-        <div>
-          <span class="contact-info-label">Social</span>
-          <div style="display:flex;gap:12px;margin-top:8px;">
-            <a href="https://www.facebook.com/JunkBrawlers/" target="_blank" rel="noopener" style="font-size:13px;color:rgba(255,255,255,0.6);font-weight:600;text-decoration:none;">Facebook</a>
-            <span style="color:rgba(255,255,255,0.2);">&middot;</span>
-            <a href="https://www.instagram.com/junkbrawlers" target="_blank" rel="noopener" style="font-size:13px;color:rgba(255,255,255,0.6);font-weight:600;text-decoration:none;">Instagram</a>
+          <div class="rw-mini">
+            <p class="rw-mini-text">&ldquo;Tony is prompt, courteous, professional, efficient, and a pleasure to work with. Fair and very reasonable pricing. He clearly values his customers!&rdquo;</p>
+            <span class="rw-mini-author">Autumn G. &middot; Google Review &middot; 5&#9733;</span>
           </div>
         </div>
+
+        <!-- Hours -->
+        <div>
+          <span class="contact-info-label">Hours</span>
+          <p class="contact-hours-line">Mon&ndash;Sun &middot; 7:00 AM &ndash; 6:00 PM</p>
+        </div>
+
       </div>
 
     </div>
