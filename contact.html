@@ -31,33 +31,22 @@
     .contact-intro-inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 2; }
     .contact-intro h1 { font-family: var(--font-heading); font-size: clamp(28px, 4vw, 48px); font-weight: 800; color: #fff; line-height: 1.1; margin: 12px 0 10px; letter-spacing: 0.5px; }
     .contact-intro p { font-size: 16px; color: rgba(255,255,255,0.6); margin: 0; line-height: 1.6; }
-    .contact-section { background: #fff; padding: 64px 0 80px; }
+    .contact-section { background: #080014; padding: 72px 0 88px; }
     .contact-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; gap: 56px; align-items: flex-start; flex-wrap: wrap; }
     .contact-form-col { flex: 1 1 380px; }
     .contact-info-col { flex: 0 1 300px; padding-top: 4px; }
-    .contact-info-block { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid #eee; }
-    .contact-info-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(0,0,0,0.4); margin-bottom: 6px; display: block; }
-    .contact-phone-link { font-family: var(--font-heading); font-size: 32px; font-weight: 800; color: #111; text-decoration: none; letter-spacing: 0.5px; display: block; line-height: 1.1; }
-    .contact-phone-link:hover { color: var(--color-primary); }
+    .contact-info-block { margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .contact-info-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(255,255,255,0.4); margin-bottom: 6px; display: block; }
+    .contact-phone-link { font-family: var(--font-heading); font-size: 32px; font-weight: 800; color: #fff; text-decoration: none; letter-spacing: 0.5px; display: block; line-height: 1.1; }
+    .contact-phone-link:hover { color: var(--color-fire); }
     .contact-info-row { display: flex; gap: 32px; }
+    .contact-form-logo { height: 48px; width: auto; margin-bottom: 20px; display: block; }
     .faq-section .section-bridge { padding-top: 0; padding-bottom: 16px; }
-    .contact-form { width: 100%; }
-    .form-row { display: flex; gap: 16px; }
-    .form-group { display: flex; flex-direction: column; flex: 1; margin-bottom: 16px; }
-    .form-group label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: rgba(0,0,0,0.45); margin-bottom: 6px; }
-    .form-group input { padding: 12px 14px; border: 1.5px solid #ddd; border-radius: 4px; font-family: var(--font); font-size: 15px; color: #111; background: #fff; transition: border-color 0.2s; }
-    .form-group input:focus { outline: none; border-color: var(--color-primary); }
-    .form-group input::placeholder { color: rgba(0,0,0,0.3); }
-    .form-submit-btn { width: 100%; margin-top: 8px; font-size: 15px; padding: 14px 28px; }
-    .form-status { margin-top: 14px; font-size: 15px; font-weight: 600; display: none; }
-    .form-status.success { color: #1a7a3a; display: block; }
-    .form-status.error { color: #c0392b; display: block; }
     @media (max-width: 700px) {
       .contact-intro { padding: 36px 20px 40px; }
       .contact-inner { flex-direction: column; gap: 40px; }
       .contact-info-col { flex: 1 1 100%; }
       .contact-phone-link { font-size: 26px; }
-      .form-row { flex-direction: column; gap: 0; }
     }
   </style>
 
@@ -178,7 +167,7 @@
       <a href="contact.html" aria-current="page">Contact</a>
     </nav>
     <div class="header-ctas">
-      <a href="contact.html" class="btn-ghost-white">FREE QUOTE</a>
+      <a href="#contact-form" class="btn-ghost-white">FREE QUOTE</a>
       <a href="tel:4046329165" class="btn-phone" data-phone-href>(404) 632-9165</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
@@ -218,7 +207,7 @@
     <a href="faq.html">FAQ</a>
     <a href="contact.html" aria-current="page">Contact</a>
     <div class="mobile-ctas">
-      <a href="contact.html" class="btn-ghost-white">FREE QUOTE</a>
+      <a href="#contact-form" class="btn-ghost-white">FREE QUOTE</a>
       <a href="tel:4046329165" class="btn-phone" data-phone-href>(404) 632-9165</a>
     </div>
   </nav>
@@ -248,29 +237,30 @@
 
       <!-- LEFT: Form -->
       <div class="contact-form-col">
-        <h2 class="h2-bridge h2-bridge--light" style="margin-bottom:8px;">Send Tony a Message.</h2>
-        <p style="color:rgba(0,0,0,0.55);font-size:15px;margin-bottom:28px;">Usually responds within minutes. No commitment required.</p>
-        <form id="contact-form-el" class="contact-form" novalidate>
-          <div class="form-row">
-            <div class="form-group">
+        <img src="images/logo.webp" alt="Junk Brawlers" class="contact-form-logo">
+        <h2 class="h2-bridge h2-bridge--dark" style="margin-bottom:8px;text-align:left;">Send Tony a Message.</h2>
+        <p style="color:rgba(255,255,255,0.5);font-size:15px;margin-bottom:28px;">North Georgia's 5-star rated hauler. Usually responds within minutes.</p>
+        <form id="contact-form-el" novalidate>
+          <div class="jb-form-row">
+            <div class="jb-form-group">
               <label for="firstName">First Name *</label>
-              <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+              <input type="text" id="firstName" name="firstName" placeholder="Your first name" autocomplete="given-name">
             </div>
-            <div class="form-group">
+            <div class="jb-form-group">
               <label for="lastName">Last Name</label>
-              <input type="text" id="lastName" name="lastName" placeholder="Enter your last name">
+              <input type="text" id="lastName" name="lastName" placeholder="Your last name" autocomplete="family-name">
             </div>
           </div>
-          <div class="form-group">
+          <div class="jb-form-group">
             <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com">
+            <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email">
           </div>
-          <div class="form-group">
+          <div class="jb-form-group">
             <label for="phone">Phone *</label>
-            <input type="tel" id="phone" name="phone" placeholder="+1 (000) 000-0000">
+            <input type="tel" id="phone" name="phone" placeholder="+1 (000) 000-0000" autocomplete="tel">
           </div>
-          <button type="submit" class="btn-primary form-submit-btn">Send Message</button>
-          <p class="form-status" id="form-status" aria-live="polite"></p>
+          <button type="submit" class="jb-form-submit">Send My Request &rarr;</button>
+          <p class="jb-form-status" id="form-status" aria-live="polite"></p>
         </form>
       </div>
 
@@ -283,16 +273,16 @@
         <div class="contact-info-block contact-info-row">
           <div>
             <span class="contact-info-label">Hours</span>
-            <p style="font-size:15px;color:#333;line-height:1.6;margin:0;">Mon&ndash;Sun<br>7:00 AM &ndash; 6:00 PM</p>
+            <p style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.6;margin:0;">Mon&ndash;Sun<br>7:00 AM &ndash; 6:00 PM</p>
           </div>
           <div>
             <span class="contact-info-label">Location</span>
-            <address style="font-style:normal;font-size:15px;color:#333;line-height:1.6;margin:0;">500 N Lumpkin<br>Campground Rd<br>Dawsonville, GA 30534</address>
+            <address style="font-style:normal;font-size:15px;color:rgba(255,255,255,0.7);line-height:1.6;margin:0;">500 N Lumpkin<br>Campground Rd<br>Dawsonville, GA 30534</address>
           </div>
         </div>
         <div class="contact-info-block">
           <span class="contact-info-label">&#9733;&#9733;&#9733;&#9733;&#9733;&nbsp; What Customers Say</span>
-          <div class="rw-mini rw-mini--light" style="margin-top:8px;">
+          <div class="rw-mini" style="margin-top:8px;">
             <p class="rw-mini-text">&ldquo;He showed up within 30 minutes of my call and had everything packed up and hauled away quickly and efficiently.&rdquo;</p>
             <span class="rw-mini-author">Myra S. &middot; Google Review &middot; 5&#9733;</span>
           </div>
@@ -300,9 +290,9 @@
         <div>
           <span class="contact-info-label">Social</span>
           <div style="display:flex;gap:12px;margin-top:8px;">
-            <a href="https://www.facebook.com/JunkBrawlers/" target="_blank" rel="noopener" style="font-size:13px;color:var(--color-primary);font-weight:600;text-decoration:none;">Facebook</a>
-            <span style="color:#ccc;">&middot;</span>
-            <a href="https://www.instagram.com/junkbrawlers" target="_blank" rel="noopener" style="font-size:13px;color:var(--color-primary);font-weight:600;text-decoration:none;">Instagram</a>
+            <a href="https://www.facebook.com/JunkBrawlers/" target="_blank" rel="noopener" style="font-size:13px;color:rgba(255,255,255,0.6);font-weight:600;text-decoration:none;">Facebook</a>
+            <span style="color:rgba(255,255,255,0.2);">&middot;</span>
+            <a href="https://www.instagram.com/junkbrawlers" target="_blank" rel="noopener" style="font-size:13px;color:rgba(255,255,255,0.6);font-weight:600;text-decoration:none;">Instagram</a>
           </div>
         </div>
       </div>
@@ -423,12 +413,12 @@
       };
       if (!data.firstName || (!data.email && !data.phone)) {
         status.textContent = 'Please enter your first name and either your email or phone.';
-        status.className = 'form-status error';
+        status.className = 'jb-form-status error';
         return;
       }
       btn.disabled = true;
       btn.textContent = 'Sending…';
-      status.className = 'form-status';
+      status.className = 'jb-form-status';
       status.textContent = '';
       try {
         const res = await fetch('/api/submit', {
@@ -438,17 +428,17 @@
         });
         if (res.ok) {
           status.textContent = 'Got it — Tony will reach out shortly.';
-          status.className = 'form-status success';
+          status.className = 'jb-form-status success';
           form.reset();
         } else {
           throw new Error();
         }
       } catch {
         status.textContent = 'Something went wrong. Please call or text Tony at (404) 632-9165.';
-        status.className = 'form-status error';
+        status.className = 'jb-form-status error';
       } finally {
         btn.disabled = false;
-        btn.textContent = 'Send Message';
+        btn.textContent = 'Send My Request →';
       }
     });
   </script>
