@@ -41,6 +41,7 @@
     .contact-phone-link:hover { color: var(--color-fire); }
     .contact-info-row { display: flex; gap: 32px; }
     .contact-form-logo { height: 48px; width: auto; margin-bottom: 20px; display: block; }
+    .contact-form-card { background: #0D0019; border: 1px solid rgba(255,255,255,0.08); border-top: 3px solid var(--color-fire); border-radius: 8px; padding: 36px 32px 32px; box-shadow: 0 12px 48px rgba(0,0,0,0.55), 0 2px 8px rgba(0,0,0,0.3); }
     .faq-section .section-bridge { padding-top: 0; padding-bottom: 16px; }
     @media (max-width: 700px) {
       .contact-intro { padding: 36px 20px 40px; }
@@ -237,10 +238,11 @@
 
       <!-- LEFT: Form -->
       <div class="contact-form-col">
-        <img src="images/logo.webp" alt="Junk Brawlers" class="contact-form-logo">
-        <h2 class="h2-bridge h2-bridge--dark" style="margin-bottom:8px;text-align:left;">Send Tony a Message.</h2>
-        <p style="color:rgba(255,255,255,0.5);font-size:15px;margin-bottom:28px;">North Georgia's 5-star rated hauler. Usually responds within minutes.</p>
-        <form id="contact-form-el" novalidate>
+        <div class="contact-form-card">
+          <img src="images/logo.webp" alt="Junk Brawlers" class="contact-form-logo">
+          <h2 class="h2-bridge h2-bridge--dark" style="margin-bottom:8px;text-align:left;">Send Tony a Message.</h2>
+          <p style="color:rgba(255,255,255,0.5);font-size:15px;margin-bottom:28px;">North Georgia's 5-star rated hauler. Usually responds within minutes.</p>
+          <form id="contact-form-el" novalidate>
           <div class="jb-form-row">
             <div class="jb-form-group">
               <label for="firstName">First Name *</label>
@@ -261,7 +263,8 @@
           </div>
           <button type="submit" class="jb-form-submit">Send My Request &rarr;</button>
           <p class="jb-form-status" id="form-status" aria-live="polite"></p>
-        </form>
+          </form>
+        </div>
       </div>
 
       <!-- RIGHT: Contact info -->
