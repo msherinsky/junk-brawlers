@@ -45,13 +45,17 @@
     /* ── Form section — light ── */
     .contact-section { background: #f7f5ff; padding: 72px 0 88px; position: relative; }
     .contact-section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--color-fire) 25%, var(--color-fire) 75%, transparent); opacity: 0.7; }
-    .contact-section::after { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(123,53,212,0.07) 1px, transparent 1px); background-size: 26px 26px; pointer-events: none; z-index: 0; }
+    .contact-section::after { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(123,53,212,0.12) 1px, transparent 1px); background-size: 26px 26px; pointer-events: none; z-index: 0; }
     .contact-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: flex; gap: 56px; align-items: flex-start; flex-wrap: wrap; position: relative; z-index: 1; }
     .contact-form-col { flex: 1 1 380px; }
     .contact-info-col { flex: 0 1 300px; padding-top: 4px; }
+    /* ── Section header ── */
+    .contact-section-header { max-width: 640px; margin: 0 auto 52px; padding: 0 24px; text-align: center; position: relative; z-index: 1; }
+    .contact-section-h2 { font-family: var(--font-heading); font-size: clamp(32px, 4vw, 52px); font-weight: 800; font-style: italic; color: #0D0019; line-height: 1.1; margin: 8px 0 0; text-decoration: underline; text-decoration-color: var(--color-fire); text-underline-offset: 6px; text-decoration-thickness: 2px; }
     /* ── Form card — dark card on light bg ── */
     .contact-form-logo { height: 48px; width: auto; margin-bottom: 20px; display: block; }
-    .contact-form-card { background: #0D0019; border: 1px solid rgba(255,255,255,0.08); border-top: 3px solid var(--color-fire); border-radius: 8px; padding: 44px 40px 40px; box-shadow: 0 20px 60px rgba(7,0,26,0.22), 0 4px 16px rgba(7,0,26,0.12); max-width: 480px; }
+    .contact-form-card { position: relative; overflow: hidden; background: #0D0019; border: 1px solid rgba(255,255,255,0.08); border-top: 3px solid var(--color-fire); border-radius: 8px; padding: 44px 40px 40px; box-shadow: 0 20px 60px rgba(7,0,26,0.22), 0 4px 16px rgba(7,0,26,0.12); max-width: 480px; }
+    .contact-form-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: linear-gradient(180deg, var(--color-primary) 0%, transparent 80%); z-index: 1; }
     .contact-call-alt { margin-top: 14px; font-size: 13px; color: rgba(255,255,255,0.38); text-align: center; margin-bottom: 0; }
     .contact-call-alt a { color: var(--color-fire); text-decoration: none; font-weight: 600; }
     .contact-call-alt a:hover { text-decoration: underline; }
@@ -61,9 +65,12 @@
     .contact-phone-hero { font-family: var(--font-heading); font-size: clamp(36px, 5vw, 52px); font-weight: 800; color: var(--color-fire); text-decoration: none; letter-spacing: -0.5px; display: block; line-height: 1; text-shadow: none; }
     .contact-phone-hero:hover { opacity: 0.85; }
     .contact-phone-sub { font-size: 14px; color: rgba(0,0,0,0.5); margin: 8px 0 0; line-height: 1.5; }
-    .contact-trust-pills { display: flex; flex-direction: column; gap: 8px; margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid rgba(0,0,0,0.08); }
-    .contact-trust-pill { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid rgba(0,0,0,0.1); border-radius: 20px; padding: 7px 14px; font-size: 12px; font-weight: 700; color: rgba(0,0,0,0.65); width: fit-content; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
-    .contact-trust-pill-icon { color: var(--color-fire); font-style: normal; }
+    .contact-stat-block { display: flex; border-top: 1px solid rgba(0,0,0,0.08); border-bottom: 1px solid rgba(0,0,0,0.08); padding: 16px 0; margin-bottom: 28px; }
+    .contact-stat { flex: 1; padding: 0 14px; text-align: center; }
+    .contact-stat:not(:last-child) { border-right: 1px solid rgba(0,0,0,0.08); }
+    .contact-stat:first-child { padding-left: 0; text-align: left; }
+    .contact-stat-val { font-family: var(--font-heading); font-size: clamp(28px, 3.5vw, 40px); font-weight: 800; color: var(--color-fire); line-height: 1; display: block; margin-bottom: 4px; }
+    .contact-stat-lbl { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: rgba(0,0,0,0.45); display: block; }
     .contact-reviews { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; padding-bottom: 24px; border-bottom: 1px solid rgba(0,0,0,0.08); }
     .contact-info-col .rw-mini { background: #fff; box-shadow: 0 1px 6px rgba(0,0,0,0.07); }
     .contact-info-col .rw-mini-text { color: rgba(0,0,0,0.75); }
@@ -280,6 +287,10 @@
 
   <!-- CONTACT FORM + INFO -->
   <section class="contact-section" id="contact-form" aria-label="Contact form and business information">
+    <div class="contact-section-header">
+      <p class="heading-eyebrow">Same-Day Service Available</p>
+      <h2 class="contact-section-h2">One Message. Tony Handles the Rest.</h2>
+    </div>
     <div class="contact-inner">
 
       <!-- LEFT: Form -->
@@ -328,11 +339,20 @@
           <p class="contact-phone-sub">Tony picks up himself. No call center, no voicemail.</p>
         </div>
 
-        <!-- Trust pills -->
-        <div class="contact-trust-pills">
-          <span class="contact-trust-pill"><i class="contact-trust-pill-icon">&#9733;</i> 5.0 Google Rating &middot; 57 Reviews</span>
-          <span class="contact-trust-pill"><i class="contact-trust-pill-icon">&#9889;</i> Same-Day Service Available</span>
-          <span class="contact-trust-pill"><i class="contact-trust-pill-icon">&#10003;</i> Insured &amp; Professional</span>
+        <!-- Stats -->
+        <div class="contact-stat-block">
+          <div class="contact-stat">
+            <span class="contact-stat-val">5.0</span>
+            <span class="contact-stat-lbl">&#9733; Google Rating</span>
+          </div>
+          <div class="contact-stat">
+            <span class="contact-stat-val" data-jb-count>57</span>
+            <span class="contact-stat-lbl">Reviews</span>
+          </div>
+          <div class="contact-stat">
+            <span class="contact-stat-val">7</span>
+            <span class="contact-stat-lbl">Days a Week</span>
+          </div>
         </div>
 
         <!-- Reviews -->
