@@ -5,32 +5,6 @@
 (function () {
   'use strict';
 
-  /* ── Modal ── */
-  function initModal() {
-    var overlay = document.getElementById('quoteModal');
-    if (!overlay) return;
-    var closeBtn = overlay.querySelector('.modal-close');
-
-    function closeModal() {
-      overlay.classList.remove('open');
-    }
-
-    if (closeBtn) closeBtn.addEventListener('click', closeModal);
-    overlay.addEventListener('click', function (e) {
-      if (e.target === overlay) closeModal();
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeModal();
-    });
-
-    document.querySelectorAll('[data-modal="quote"]').forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        overlay.classList.add('open');
-      });
-    });
-  }
-
   /* ── Hamburger / Mobile Nav ── */
   function initHamburger() {
     var hamburger = document.getElementById('hamburger');
@@ -101,21 +75,6 @@
     }, { passive: true });
   }
 
-  /* ── Form submission (basic) ── */
-  function initForms() {
-    document.querySelectorAll('.quote-form, .contact-form-el').forEach(function (form) {
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var btn = form.querySelector('[type="submit"]');
-        if (btn) {
-          btn.textContent = 'Sent! We\'ll be in touch soon.';
-          btn.disabled = true;
-          btn.style.background = '#2a7a2a';
-        }
-      });
-    });
-  }
-
   /* ── Site data (review count, rating) ── */
   function initSiteData() {
     if (typeof JBSiteData === 'undefined') return;
@@ -133,12 +92,10 @@
   /* ── Init all ── */
   document.addEventListener('DOMContentLoaded', function () {
     initSiteData();
-    initModal();
     initHamburger();
     initDropdowns();
     initFAQ();
     initHeaderScroll();
-    initForms();
   });
 })();
 

@@ -355,26 +355,6 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .footer-bottom a{color:rgba(255,255,255,0.75);text-decoration:underline}
 .footer-bottom a:hover{color:var(--color-primary-mid)}
 
-/* ---- MODAL ---- */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:2000;align-items:center;justify-content:center;padding:20px}
-.modal-overlay.open{display:flex}
-.modal-card{background:var(--color-white);border-radius:10px;width:100%;max-width:480px;max-height:90vh;overflow-y:auto;overflow-x:hidden;position:relative;box-shadow:0 24px 64px rgba(0,0,0,0.45)}
-.modal-top-bar{height:8px;background:var(--color-primary)}
-.modal-body{padding:36px 32px}
-.modal-logo{display:flex;align-items:center;justify-content:center;margin-bottom:20px}
-.modal-card h2{text-align:center;font-size:24px;font-weight:800;text-transform:uppercase;color:var(--color-body);margin-bottom:8px;font-family:var(--font-heading)}
-.modal-card .modal-sub{text-align:center;font-size:13px;color:#666;margin-bottom:24px}
-.modal-form{display:flex;flex-direction:column;gap:14px}
-.modal-form input:not([type="checkbox"]),.modal-form textarea{width:100%;padding:12px 14px;border:1.5px solid var(--color-border);border-radius:4px;font-family:var(--font);font-size:14px;color:var(--color-body);background:#fafafa}
-.modal-form input:not([type="checkbox"]):focus,.modal-form textarea:focus{outline:none;border-color:var(--color-primary)}
-.modal-form textarea{resize:vertical;min-height:90px}
-.modal-consent{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:#666;line-height:1.5}
-.modal-consent input[type="checkbox"]{margin-top:2px;flex-shrink:0;accent-color:var(--color-primary)}
-.modal-consent span{min-width:0;flex:1;word-wrap:break-word}
-.modal-consent a{color:var(--color-primary)}
-.modal-form .btn-primary{width:100%;padding:14px;text-align:center;font-size:15px;letter-spacing:1px}
-.modal-close{position:absolute;top:14px;right:14px;background:none;border:none;font-size:24px;color:#aaa;cursor:pointer;line-height:1;z-index:1}
-.modal-close:hover{color:var(--color-dark)}
 
 /* ---- SERVICE PAGE HERO ---- */
 .sp-breadcrumb{font-size:12px;font-weight:600;color:rgba(255,255,255,0.65);text-transform:uppercase;letter-spacing:1px;margin-bottom:28px;display:flex;align-items:center;gap:8px}
