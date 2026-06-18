@@ -24,11 +24,24 @@
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-condensed-800.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-400.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-600.woff2" crossorigin>
-  <link rel="preload" as="image" href="images/hero-bg-mobile.webp" type="image/webp" fetchpriority="high" media="(max-width: 900px)">
-  <link rel="preload" as="image" href="images/hero-bg.webp" type="image/webp" fetchpriority="high" media="(min-width: 901px)">
+  <link rel="preload" as="image" href="images/team-headshot.webp" type="image/webp" fetchpriority="high">
   <link rel="preload" href="images/logo.webp" as="image" type="image/webp" fetchpriority="high">
   <script src="js/site-data.js"></script>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .hero{background:radial-gradient(ellipse at 65% 50%,rgba(123,53,212,0.22) 0%,transparent 60%),radial-gradient(ellipse at 15% 85%,rgba(80,0,180,0.12) 0%,transparent 45%),#0A000F}
+    .owner-section .owner-inner{gap:16px 56px}
+    .owner-section .owner-text-head{margin-bottom:0}
+    @media(min-width:901px){
+      .hero{min-height:0}
+      .hero-left{padding-top:40px;padding-bottom:36px}
+      .hero-badge{margin-bottom:16px}
+      .hero-tagline{margin-bottom:16px}
+      .hero-content p.hero-sub{margin-bottom:20px}
+      .hero-right{position:relative;flex:1;display:flex;align-items:center;justify-content:center;padding:32px 52px 32px 16px;background:transparent;z-index:1}
+      .hero-right::before{display:none}
+    }
+  </style>
 
   <script type="application/ld+json">
   {
@@ -55,6 +68,10 @@
     {"@type":"ListItem","position":1,"name":"Home","item":"https://junkbrawlers.com/"},
     {"@type":"ListItem","position":2,"name":"About Tony","item":"https://junkbrawlers.com/about.html"}
   ]}
+  </script>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://junkbrawlers.com/#localbusiness","name":"Junk Brawlers LLC","url":"https://junkbrawlers.com","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"57","bestRating":"5","worstRating":"1"}}
   </script>
 </head>
 <body>
@@ -155,6 +172,7 @@
 
   <!-- SECTION 1: HERO -->
   <section class="hero">
+    <div aria-hidden="true" style="position:absolute;inset:0;background-image:radial-gradient(circle,rgba(128,0,255,0.04) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;z-index:0;"></div>
     <div class="hero-left">
       <div class="hero-content">
 
@@ -169,10 +187,10 @@
           <span class="hero-badge-text"><strong data-jb-rating>5.0</strong> Stars &middot; <span data-jb-count>57</span> Google Reviews</span>
         </a>
 
-        <h1 style="font-family:var(--font-heading);font-size:clamp(13px,1.4vw,18px);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.6);margin-bottom:16px;">About Tony Frias &mdash; Owner, Junk Brawlers LLC</h1>
+        <h1 style="font-family:var(--font-heading);font-size:clamp(13px,1.4vw,18px);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.6);margin-bottom:16px;">North Georgia&rsquo;s Family-Owned Junk Fighter</h1>
         <div class="hero-tagline">The Guy Who Answers the Phone<span class="hero-em">Is the Guy<br>Who Shows Up.</span></div>
 
-        <p class="hero-sub">Tony Frias launched Junk Brawlers in June 2024 with one truck and $5,740 out of pocket. He answers every call himself, drives to every job, and hasn&rsquo;t collected a single complaint. <span data-jb-count>57</span> reviews. All five stars.</p>
+        <p class="hero-sub">Most junk removal companies send whoever&rsquo;s available. You don&rsquo;t know who&rsquo;s driving until the truck pulls up. Tony Frias is different &mdash; he launched Junk Brawlers in 2024 with one truck and $5,740, and he&rsquo;s the one on every job. <span data-jb-count>57</span> reviews. All five stars.</p>
 
         <div class="hero-buttons">
           <a href="tel:4046329165" class="btn-fire">
@@ -184,11 +202,41 @@
       </div>
     </div>
     <div class="hero-right">
-      <picture>
-        <source srcset="images/hero-bg-mobile.webp" media="(max-width: 900px)" type="image/webp">
-        <source srcset="images/hero-bg.webp" type="image/webp">
-        <img src="images/hero-bg.jpg" alt="Tony Frias, owner of Junk Brawlers LLC — North Georgia junk removal" width="800" height="1067" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:62% center;display:block;">
-      </picture>
+      <div style="width:290px;background:#0D0010;border:1px solid rgba(123,53,212,0.4);border-radius:8px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.7),0 0 0 1px rgba(123,53,212,0.1),0 0 48px rgba(123,53,212,0.12);">
+
+        <div style="padding:14px 18px 12px;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,0.06);">
+          <picture>
+            <source srcset="images/logo.webp" type="image/webp">
+            <img src="images/logo.png" alt="" aria-hidden="true" width="36" height="29" loading="lazy" style="height:29px;width:auto;display:block;flex-shrink:0;">
+          </picture>
+          <div>
+            <span style="font-family:var(--font-heading);font-size:13px;font-weight:800;color:#fff;display:block;letter-spacing:0.5px;line-height:1.1;">JUNK BRAWLERS LLC</span>
+            <span style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1.5px;">Dawsonville, GA</span>
+          </div>
+        </div>
+
+        <div style="overflow:hidden;position:relative;">
+          <picture>
+            <source srcset="images/team-headshot.webp" type="image/webp">
+            <img src="images/team-headshot.jpg" alt="Tony Frias, owner of Junk Brawlers LLC — North Georgia junk removal" width="600" height="750" fetchpriority="high" style="width:100%;height:290px;object-fit:cover;object-position:center top;display:block;">
+          </picture>
+          <div aria-hidden="true" style="position:absolute;bottom:0;left:0;right:0;height:40px;background:linear-gradient(to bottom,transparent,#0D0010);"></div>
+        </div>
+
+        <div aria-hidden="true" style="height:3px;background:linear-gradient(to right,transparent 0%,var(--color-fire) 30%,var(--color-fire) 70%,transparent 100%);"></div>
+
+        <div style="padding:12px 16px 14px;display:flex;align-items:center;justify-content:space-between;gap:10px;">
+          <div style="min-width:0;">
+            <span style="font-family:var(--font-heading);font-size:17px;font-weight:800;color:#fff;display:block;letter-spacing:0.3px;line-height:1.15;white-space:nowrap;">Antonio &ldquo;Tony&rdquo; Frias</span>
+            <span style="font-size:9px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:1.8px;display:block;margin-top:3px;">Owner &amp; Founder</span>
+          </div>
+          <div style="flex-shrink:0;background:linear-gradient(135deg,#9B00FF,#5200A0);border-radius:4px;padding:7px 11px;box-shadow:0 4px 12px rgba(0,0,0,0.5);text-align:center;">
+            <span style="display:block;font-family:var(--font-heading);font-weight:800;color:#FFD700;font-size:15px;line-height:1;">&#9733; 5.0</span>
+            <span style="display:block;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.75);margin-top:2px;" data-jb-count>57</span>
+          </div>
+        </div>
+
+      </div>
     </div>
   </section>
 
@@ -231,11 +279,11 @@
 
   <!-- BRIDGE: gradient fade from dark to white -->
   <div style="background:linear-gradient(to bottom,#09000F 0%,#150028 18%,#2d0065 42%,#3a0078 54%,#2d0065 66%,#7b35d4 76%,#ffffff 92%);min-height:320px;display:flex;flex-direction:column;justify-content:flex-end;padding:40px 32px 0;">
-    <p class="section-bridge section-bridge--light section-bridge--xl" style="padding-top:0;padding-bottom:80px;">Here&rsquo;s the man behind every one of those calls.</p>
+    <p class="section-bridge section-bridge--dark section-bridge--xl" style="padding-top:0;padding-bottom:80px;text-shadow:0 2px 12px rgba(0,0,0,0.55);">Here&rsquo;s the man behind every one of those calls.</p>
   </div>
 
   <!-- SECTION 2: THE STORY -->
-  <section class="owner-section owner-section--light" style="margin-top:0;padding-top:0;">
+  <section class="owner-section owner-section--light" style="margin-top:0;padding-top:64px;">
     <div class="owner-inner">
 
       <div class="owner-head">
@@ -247,8 +295,8 @@
 
       <div class="owner-photo-wrap">
         <picture>
-          <source srcset="images/gbp-tony-loading-truck.webp" type="image/webp">
-          <img src="images/gbp-tony-loading-truck.jpg" alt="Tony Frias loading the Junk Brawlers truck on a job in North Georgia" width="800" height="600" loading="lazy">
+          <source srcset="images/gbp-crew-loading-carpet.webp" type="image/webp">
+          <img src="images/gbp-crew-loading-carpet.jpg" alt="Tony Frias and his crew loading a job in North Georgia" width="800" height="600" loading="lazy">
         </picture>
         <div class="owner-badge">
           <span class="owner-badge-score">&#9733; 5.0</span>
@@ -260,6 +308,7 @@
         <p>Tony Frias didn&rsquo;t buy into a franchise. He didn&rsquo;t lease a fleet. He found a used truck for <strong style="color:#111;">$4,800</strong>, had it wrapped for $780, patched the bed himself, and launched <strong style="color:#111;">Junk Brawlers LLC</strong> in June 2024. Total investment: <strong style="color:#111;">$5,740</strong>.</p>
         <p>Since then: <span data-jb-count>57</span> five-star reviews. Zero complaints. Tony gets named by name in more than half of them &mdash; not because he asks people to, but because they actually remember him.</p>
         <p>He&rsquo;s North Georgia born. He markets by showing up in community Facebook groups as himself, not as a brand. He salvages what he can on Marketplace before anything hits the dump. He just works.</p>
+        <p>He doesn&rsquo;t always come alone. His brother Simon runs jobs with him &mdash; which is how they handled the humongous fridge that needed special tools and two sets of hands.</p>
 
         <div class="owner-stats">
           <div class="owner-stat">
@@ -276,6 +325,12 @@
           </div>
         </div>
 
+        <div class="rw-mini rw-mini--light" style="margin-top:24px;">
+          <span class="rw-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          <p class="rw-mini-text">&ldquo;Tony&hellip; an amazing entrepreneurial young man! Professional, courteous, respectful, and hard-working. Will definitely use him again, and recommend him to everyone.&rdquo;</p>
+          <span class="rw-mini-author">Sari C. &middot; Google Review &middot; 5&#9733;</span>
+        </div>
+
         <div style="margin-top:24px;">
           <a href="tel:4046329165" class="btn-fire">Call Tony &rarr;</a>
         </div>
@@ -289,7 +344,7 @@
   <section class="hiw-section">
     <div class="hiw-dotgrid"></div>
     <div class="hiw-inner">
-      <h2 class="h2-bridge h2-bridge--light">Not a Dispatcher. Not a Crew You&rsquo;ve Never Met.</h2>
+      <h2 class="h2-bridge h2-bridge--light">Three Things Tony Guarantees on Every Job.</h2>
 
       <div class="hiw-steps">
         <div class="hiw-connector" aria-hidden="true"></div>
@@ -308,24 +363,23 @@
 
         <div class="hiw-step">
           <div class="hiw-num"><span>3</span></div>
+          <div style="display:inline-block;background:var(--color-fire);color:#fff;font-family:var(--font-heading);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border-radius:3px;margin-bottom:10px;">Price Guarantee</div>
           <h3>The Price on the Call Is the Price You Pay.</h3>
-          <p>Quoted by volume &mdash; how much space your load takes in the truck. Tony gives you that number before he touches anything. It doesn&rsquo;t change at the door. Not once.</p>
+          <p>Quoted by volume before Tony touches anything. That number doesn&rsquo;t change at the door &mdash; not once across <span data-jb-count>57</span> jobs. If the price ever changed on arrival, the job would be free. It hasn&rsquo;t.</p>
         </div>
 
       </div>
 
     </div>
-    <p class="section-bridge section-bridge--dark">Here&rsquo;s what customers say about him.</p>
+    <p class="section-bridge section-bridge--light">Hear it from the people he&rsquo;s worked with.</p>
   </section>
 
   <!-- SECTION 4: REVIEWS -->
   <section class="owner-section owner-section--light" style="padding-top:0;">
     <div style="max-width:960px;margin:0 auto;padding:64px 24px;">
 
-      <div style="margin-bottom:40px;">
-        <div class="owner-accent-bar"></div>
+      <div style="margin-bottom:24px;">
         <h2 class="h2-bridge h2-bridge--light">They&rsquo;re Not Just Reviews. They&rsquo;re About Tony.</h2>
-        <p style="color:#555;font-size:16px;max-width:600px;margin-top:8px;line-height:1.6;">He gets named by name in more than half his reviews. Here are a few of them.</p>
       </div>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
