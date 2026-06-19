@@ -505,3 +505,20 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .zip-check-hint{display:block;font-size:12px;font-weight:600;margin-top:5px;min-height:16px}
 .zip-check-hint--ok{color:var(--color-fire)}
 .zip-check-hint--warn{color:#FFA040}
+
+/* ---- LOCATION PAGE TEMPLATE ---- */
+body.page-location .hero{position:relative;z-index:10}
+body.page-location .trust-ticker{position:relative;z-index:10}
+body.page-location .svc-section::after{display:none}
+body.page-location .svc-section{clip-path:none;margin-top:0;padding-top:56px;padding-bottom:72px;box-shadow:none;z-index:auto}
+body.page-location .svc-section h2.h2-bridge--light{color:rgba(0,0,0,0.65)}
+body.page-location .svc-card--wide{grid-column:span 2}
+body.page-location .svc-card--tall{grid-row:span 2}
+body.page-location .faq-section .section-bridge{padding-top:0;padding-bottom:16px}
+@media(min-width:769px){body.page-location .svc-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:769px){body.page-location .svc-grid.svc-grid--4col{grid-template-columns:repeat(4,1fr);grid-auto-flow:dense}}
+@media(max-width:768px){
+  body.page-location .svc-grid{grid-auto-flow:row dense}
+  body.page-location .svc-card--wide{min-height:150px}
+  body.page-location .svc-section .svc-grid{margin-bottom:0}
+}

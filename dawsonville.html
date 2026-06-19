@@ -25,31 +25,6 @@
   <link rel="preload" href="images/logo.webp" as="image" type="image/webp" fetchpriority="high">
   <script src="js/site-data.js"></script>
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* Hero stacking context */
-    .hero { position: relative; z-index: 10; }
-    /* Ticker must paint above pain section during scroll */
-    .trust-ticker { position: relative; z-index: 10; }
-    /* Suppress diagonal pull-up from base CSS — pain section handles its own fade */
-    .svc-section::after { display: none; }
-    .svc-section { clip-path: none; margin-top: 0; padding-top: 56px; padding-bottom: 72px; box-shadow: none; z-index: auto; }
-    /* h2-bridge on white svc-section */
-    .svc-section h2.h2-bridge--light { color: rgba(0,0,0,0.65); }
-    /* Bento grid variants */
-    .svc-card--wide { grid-column: span 2; }
-    .svc-card--tall { grid-row: span 2; }
-    /* Desktop: 3-col bento (5-card trimmed layout) */
-    @media (min-width: 769px) {
-      .svc-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-    /* Mobile: 2-col bento — wide cards full-width, tall card spans 2 rows, even layout */
-    @media (max-width: 768px) {
-      .svc-grid { grid-auto-flow: row dense; }
-      .svc-card--wide { min-height: 150px; }
-      .svc-section .svc-grid { margin-bottom: 0; }
-    }
-    .faq-section .section-bridge { padding-top: 0; padding-bottom: 16px; }
-  </style>
 
   <script type="application/ld+json">
   {
@@ -111,7 +86,7 @@
   ]}
   </script>
 </head>
-<body>
+<body class="page-location">
 
   <header class="site-header">
     <a href="index.html" class="header-logo">
