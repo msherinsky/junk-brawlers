@@ -25,24 +25,6 @@
   <link rel="preload" href="images/logo.webp" as="image" type="image/webp" fetchpriority="high">
   <script src="js/site-data.js"></script>
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    .hero { position: relative; z-index: 10; }
-    .trust-ticker { position: relative; z-index: 10; }
-    .svc-section::after { display: none; }
-    .svc-section { clip-path: none; margin-top: 0; padding-top: 56px; padding-bottom: 72px; box-shadow: none; z-index: auto; }
-    .svc-section h2.h2-bridge--light { color: rgba(0,0,0,0.65); }
-    .svc-card--wide { grid-column: span 2; }
-    .svc-card--tall { grid-row: span 2; }
-    @media (min-width: 769px) {
-      .svc-grid { grid-template-columns: repeat(4, 1fr); grid-auto-flow: dense; }
-    }
-    @media (max-width: 768px) {
-      .svc-grid { grid-auto-flow: row dense; }
-      .svc-card--wide { min-height: 150px; }
-      .svc-section .svc-grid { margin-bottom: 0; }
-    }
-    .faq-section .section-bridge { padding-top: 0; padding-bottom: 16px; }
-  </style>
 
   <script type="application/ld+json">
   {
@@ -104,7 +86,7 @@
   ]}
   </script>
 </head>
-<body>
+<body class="page-location">
 
   <header class="site-header">
     <a href="index.html" class="header-logo">
@@ -467,31 +449,12 @@
 
       <div class="svc-grid">
 
-        <a href="junk-removal.html" class="svc-card svc-card--wide">
-          <img src="images/gbp-tony-loading-truck-sm.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
-          <div class="svc-card-overlay"></div>
-          <div class="svc-card-body">
-            <h3>Junk Removal</h3>
-            <p>Flowery Branch accumulated it. Tony hauls it. All of it, one trip.</p>
-          </div>
-          <div class="svc-card-hover">
-            <h3>Junk Removal</h3>
-            <ul>
-              <li>Furniture &amp; household items</li>
-              <li>Electronics &amp; mattresses</li>
-              <li>Yard debris &amp; scrap</li>
-              <li>Same-day usually available</li>
-            </ul>
-            <span class="svc-card-hover-cta">See what we take &rarr;</span>
-          </div>
-        </a>
-
-        <a href="hot-tub-removal.html" class="svc-card svc-card--tall">
+        <a href="hot-tub-removal.html" class="svc-card svc-card--wide">
           <img src="images/gbp-truck-flatbed-loaded-sm.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
           <div class="svc-card-overlay"></div>
           <div class="svc-card-body">
             <h3>Hot Tub Removal</h3>
-            <p>Lake Lanier waterfront homes and Sterling on the Lake. Drained, broken down on-site, hauled away.</p>
+            <p>Lake Lanier waterfront homes along Flowery Branch&rsquo;s southeast shore. Drained, broken down panel by panel on-site, hauled away.</p>
           </div>
           <div class="svc-card-hover">
             <h3>Hot Tub Removal</h3>
@@ -505,41 +468,22 @@
           </div>
         </a>
 
-        <a href="appliance-removal.html" class="svc-card">
-          <img src="images/gbp-fridge-removal-sm.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
+        <a href="junk-removal.html" class="svc-card">
+          <img src="images/gbp-tony-loading-truck-sm.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
           <div class="svc-card-overlay"></div>
           <div class="svc-card-body">
-            <h3>Appliance Removal</h3>
-            <p>Sterling on the Lake, Reunion Country Club. Old fridge out, new one in.</p>
+            <h3>Junk Removal</h3>
+            <p>Sterling on the Lake, Reunion Country Club, The Preserve at Mulberry. All of it, one trip.</p>
           </div>
           <div class="svc-card-hover">
-            <h3>Appliance Removal</h3>
+            <h3>Junk Removal</h3>
             <ul>
-              <li>Refrigerators &amp; freezers</li>
-              <li>Washers, dryers &amp; dishwashers</li>
-              <li>Stoves &amp; microwaves</li>
-              <li>Refrigerant handled properly</li>
+              <li>Furniture &amp; household items</li>
+              <li>Electronics &amp; mattresses</li>
+              <li>Yard debris &amp; scrap</li>
+              <li>Same-day usually available</li>
             </ul>
-            <span class="svc-card-hover-cta">How it works &rarr;</span>
-          </div>
-        </a>
-
-        <a href="garage-cleanouts.html" class="svc-card">
-          <img src="images/gbp-garage-interior-before.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
-          <div class="svc-card-overlay"></div>
-          <div class="svc-card-body">
-            <h3>Garage Cleanouts</h3>
-            <p>Flowery Branch&rsquo;s growing neighborhoods. Cleared in a day.</p>
-          </div>
-          <div class="svc-card-hover">
-            <h3>Garage Cleanouts</h3>
-            <ul>
-              <li>Full garage cleared in one trip</li>
-              <li>Tools, equipment &amp; boxes</li>
-              <li>Old furniture &amp; appliances</li>
-              <li>Pre-sale &amp; renovation ready</li>
-            </ul>
-            <span class="svc-card-hover-cta">Garage cleanout info &rarr;</span>
+            <span class="svc-card-hover-cta">See what we take &rarr;</span>
           </div>
         </a>
 
@@ -548,7 +492,7 @@
           <div class="svc-card-overlay"></div>
           <div class="svc-card-body">
             <h3>Estate Cleanouts</h3>
-            <p>Lake Lanier estates and Hall County homes. Start to finish.</p>
+            <p>Lake Lanier waterfront estates and Hall County homes. Start to finish, respectful and discreet.</p>
           </div>
           <div class="svc-card-hover">
             <h3>Estate Cleanouts</h3>
@@ -559,6 +503,25 @@
               <li>Respectful &amp; discreet</li>
             </ul>
             <span class="svc-card-hover-cta">Estate cleanout info &rarr;</span>
+          </div>
+        </a>
+
+        <a href="appliance-removal.html" class="svc-card">
+          <img src="images/gbp-fridge-removal-sm.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
+          <div class="svc-card-overlay"></div>
+          <div class="svc-card-body">
+            <h3>Appliance Removal</h3>
+            <p>Sterling on the Lake and Reunion Country Club upgrading. Old fridge out before the next move-in.</p>
+          </div>
+          <div class="svc-card-hover">
+            <h3>Appliance Removal</h3>
+            <ul>
+              <li>Refrigerators &amp; freezers</li>
+              <li>Washers, dryers &amp; dishwashers</li>
+              <li>Stoves &amp; microwaves</li>
+              <li>Refrigerant handled properly</li>
+            </ul>
+            <span class="svc-card-hover-cta">How it works &rarr;</span>
           </div>
         </a>
 
@@ -578,63 +541,6 @@
               <li>Contractor-friendly scheduling</li>
             </ul>
             <span class="svc-card-hover-cta">Debris removal info &rarr;</span>
-          </div>
-        </a>
-
-        <a href="shed-deck-removal.html" class="svc-card">
-          <img src="images/gbp-garage-exterior-before.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
-          <div class="svc-card-overlay"></div>
-          <div class="svc-card-body">
-            <h3>Shed &amp; Deck Removal</h3>
-            <p>Old outbuildings on Flowery Branch properties. Broken down and gone.</p>
-          </div>
-          <div class="svc-card-hover">
-            <h3>Shed &amp; Deck Removal</h3>
-            <ul>
-              <li>Wood &amp; metal sheds</li>
-              <li>Decks &amp; pergolas</li>
-              <li>Fencing &amp; outbuildings</li>
-              <li>Full debris haul included</li>
-            </ul>
-            <span class="svc-card-hover-cta">Structure removal info &rarr;</span>
-          </div>
-        </a>
-
-        <a href="commercial-junk-removal.html" class="svc-card">
-          <img src="images/gbp-truck-services-signage.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
-          <div class="svc-card-overlay"></div>
-          <div class="svc-card-body">
-            <h3>Commercial Removal</h3>
-            <p>Spout Springs Road businesses and Hall County corridor retail. Tony clears between tenants.</p>
-          </div>
-          <div class="svc-card-hover">
-            <h3>Commercial Removal</h3>
-            <ul>
-              <li>Office &amp; retail clearouts</li>
-              <li>Between-tenant cleanups</li>
-              <li>Equipment &amp; fixture removal</li>
-              <li>Flexible scheduling</li>
-            </ul>
-            <span class="svc-card-hover-cta">Commercial info &rarr;</span>
-          </div>
-        </a>
-
-        <a href="hoarder-cleanouts.html" class="svc-card svc-card--wide">
-          <img src="images/gbp-crew-loading-carpet.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
-          <div class="svc-card-overlay"></div>
-          <div class="svc-card-body">
-            <h3>Hoarder Cleanouts</h3>
-            <p>No judgment. Flowery Branch and Hall County homes handled with respect and privacy.</p>
-          </div>
-          <div class="svc-card-hover">
-            <h3>Hoarder Cleanouts</h3>
-            <ul>
-              <li>Discreet &amp; non-judgmental</li>
-              <li>Full property clearance</li>
-              <li>Donates &amp; recycles first</li>
-              <li>Family-sensitive approach</li>
-            </ul>
-            <span class="svc-card-hover-cta">Hoarder cleanout info &rarr;</span>
           </div>
         </a>
 

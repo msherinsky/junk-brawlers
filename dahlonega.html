@@ -25,24 +25,6 @@
   <link rel="preload" href="images/logo.webp" as="image" type="image/webp" fetchpriority="high">
   <script src="js/site-data.js"></script>
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    .hero { position: relative; z-index: 10; }
-    .trust-ticker { position: relative; z-index: 10; }
-    .svc-section::after { display: none; }
-    .svc-section { clip-path: none; margin-top: 0; padding-top: 56px; padding-bottom: 72px; box-shadow: none; z-index: auto; }
-    .svc-section h2.h2-bridge--light { color: rgba(0,0,0,0.65); }
-    .svc-card--wide { grid-column: span 2; }
-    .svc-card--tall { grid-row: span 2; }
-    @media (min-width: 769px) {
-      .svc-grid { grid-template-columns: repeat(4, 1fr); grid-auto-flow: dense; }
-    }
-    @media (max-width: 768px) {
-      .svc-grid { grid-auto-flow: row dense; }
-      .svc-card--wide { min-height: 150px; }
-      .svc-section .svc-grid { margin-bottom: 0; }
-    }
-    .faq-section .section-bridge { padding-top: 0; padding-bottom: 16px; }
-  </style>
 
   <script type="application/ld+json">
   {
@@ -105,7 +87,7 @@
   ]}
   </script>
 </head>
-<body>
+<body class="page-location">
 
   <header class="site-header">
     <a href="index.html" class="header-logo">
@@ -461,26 +443,7 @@
 
       <div class="svc-grid">
 
-        <a href="junk-removal.html" class="svc-card svc-card--wide">
-          <img src="images/gbp-tony-loading-truck-sm.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
-          <div class="svc-card-overlay"></div>
-          <div class="svc-card-body">
-            <h3>Junk Removal</h3>
-            <p>Dahlonega accumulated it. Tony hauls it. All of it, one trip.</p>
-          </div>
-          <div class="svc-card-hover">
-            <h3>Junk Removal</h3>
-            <ul>
-              <li>Furniture &amp; household items</li>
-              <li>Electronics &amp; mattresses</li>
-              <li>Yard debris &amp; scrap</li>
-              <li>Same-day usually available</li>
-            </ul>
-            <span class="svc-card-hover-cta">See what we take &rarr;</span>
-          </div>
-        </a>
-
-        <a href="estate-cleanouts.html" class="svc-card svc-card--tall">
+        <a href="estate-cleanouts.html" class="svc-card svc-card--wide">
           <img src="images/gbp-garage-furniture-staged.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
           <div class="svc-card-overlay"></div>
           <div class="svc-card-body">
@@ -518,50 +481,12 @@
           </div>
         </a>
 
-        <a href="shed-deck-removal.html" class="svc-card">
-          <img src="images/gbp-garage-exterior-before.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
-          <div class="svc-card-overlay"></div>
-          <div class="svc-card-body">
-            <h3>Shed &amp; Deck Removal</h3>
-            <p>Dahlonega cabin properties and Lumpkin County estates. Aging structures torn down before the listing goes live.</p>
-          </div>
-          <div class="svc-card-hover">
-            <h3>Shed &amp; Deck Removal</h3>
-            <ul>
-              <li>Wood, metal &amp; plastic sheds</li>
-              <li>Decks &amp; pergolas</li>
-              <li>Fencing &amp; outbuildings</li>
-              <li>Full teardown &amp; haul included</li>
-            </ul>
-            <span class="svc-card-hover-cta">Structure removal info &rarr;</span>
-          </div>
-        </a>
-
-        <a href="appliance-removal.html" class="svc-card">
-          <img src="images/gbp-fridge-removal-sm.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
-          <div class="svc-card-overlay"></div>
-          <div class="svc-card-body">
-            <h3>Appliance Removal</h3>
-            <p>Dahlonega homes and Lumpkin County rentals. Old fridge out, new one in.</p>
-          </div>
-          <div class="svc-card-hover">
-            <h3>Appliance Removal</h3>
-            <ul>
-              <li>Refrigerators &amp; freezers</li>
-              <li>Washers, dryers &amp; dishwashers</li>
-              <li>Stoves &amp; microwaves</li>
-              <li>Refrigerant handled properly</li>
-            </ul>
-            <span class="svc-card-hover-cta">How it works &rarr;</span>
-          </div>
-        </a>
-
         <a href="garage-cleanouts.html" class="svc-card">
           <img src="images/gbp-garage-interior-before.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
           <div class="svc-card-overlay"></div>
           <div class="svc-card-body">
             <h3>Garage Cleanouts</h3>
-            <p>Dahlonega estate and cabin storage. Cleared in a day, ready for what comes next.</p>
+            <p>Achasta, Sky Country, and Cavender Creek seasonal prep. Cabin and vacation property storage cleared before rental season.</p>
           </div>
           <div class="svc-card-hover">
             <h3>Garage Cleanouts</h3>
@@ -575,60 +500,41 @@
           </div>
         </a>
 
-        <a href="construction-debris-removal.html" class="svc-card">
-          <img src="images/job-debris-field.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
+        <a href="junk-removal.html" class="svc-card">
+          <img src="images/gbp-tony-loading-truck-sm.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
           <div class="svc-card-overlay"></div>
           <div class="svc-card-body">
-            <h3>Construction Debris</h3>
-            <p>Dahlonega renovation projects and Lumpkin County upgrades. Haul after the crew leaves.</p>
+            <h3>Junk Removal</h3>
+            <p>Older downtown Dahlonega homes and University of North Georgia rental turnover. All of it, one trip.</p>
           </div>
           <div class="svc-card-hover">
-            <h3>Construction Debris</h3>
+            <h3>Junk Removal</h3>
             <ul>
-              <li>Drywall, lumber &amp; flooring</li>
-              <li>Demo waste &amp; roofing material</li>
-              <li>New construction cleanups</li>
-              <li>Contractor-friendly scheduling</li>
+              <li>Furniture &amp; household items</li>
+              <li>Electronics &amp; mattresses</li>
+              <li>Yard debris &amp; scrap</li>
+              <li>Same-day usually available</li>
             </ul>
-            <span class="svc-card-hover-cta">Debris removal info &rarr;</span>
+            <span class="svc-card-hover-cta">See what we take &rarr;</span>
           </div>
         </a>
 
-        <a href="commercial-junk-removal.html" class="svc-card">
-          <img src="images/gbp-truck-services-signage.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
+        <a href="appliance-removal.html" class="svc-card">
+          <img src="images/gbp-fridge-removal-sm.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
           <div class="svc-card-overlay"></div>
           <div class="svc-card-body">
-            <h3>Commercial Removal</h3>
-            <p>Downtown Dahlonega businesses and Lumpkin County corridor. Tony clears between tenants.</p>
+            <h3>Appliance Removal</h3>
+            <p>Montaluce and Achasta homes upgrading. Dahlonega rental properties turning over. Old fridge out before the next tenant arrives.</p>
           </div>
           <div class="svc-card-hover">
-            <h3>Commercial Removal</h3>
+            <h3>Appliance Removal</h3>
             <ul>
-              <li>Office &amp; retail clearouts</li>
-              <li>Between-tenant cleanups</li>
-              <li>Equipment &amp; fixture removal</li>
-              <li>Flexible scheduling</li>
+              <li>Refrigerators &amp; freezers</li>
+              <li>Washers, dryers &amp; dishwashers</li>
+              <li>Stoves &amp; microwaves</li>
+              <li>Refrigerant handled properly</li>
             </ul>
-            <span class="svc-card-hover-cta">Commercial info &rarr;</span>
-          </div>
-        </a>
-
-        <a href="hoarder-cleanouts.html" class="svc-card svc-card--wide">
-          <img src="images/gbp-crew-loading-carpet.webp" class="svc-card-img" alt="" width="1000" height="670" loading="lazy" aria-hidden="true">
-          <div class="svc-card-overlay"></div>
-          <div class="svc-card-body">
-            <h3>Hoarder Cleanouts</h3>
-            <p>No judgment. Dahlonega and Lumpkin County homes handled with respect and complete privacy.</p>
-          </div>
-          <div class="svc-card-hover">
-            <h3>Hoarder Cleanouts</h3>
-            <ul>
-              <li>Discreet &amp; non-judgmental</li>
-              <li>Full property clearance</li>
-              <li>Donates &amp; recycles first</li>
-              <li>Family-sensitive approach</li>
-            </ul>
-            <span class="svc-card-hover-cta">Hoarder cleanout info &rarr;</span>
+            <span class="svc-card-hover-cta">How it works &rarr;</span>
           </div>
         </a>
 
