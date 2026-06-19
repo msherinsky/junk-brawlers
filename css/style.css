@@ -132,7 +132,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 /* ---- PAIN SECTION ---- */
 .pain-section{background:linear-gradient(to bottom,#09000F 0%,#150028 18%,#2d0065 42%,#3a0078 54%,#2d0065 66%,#7b35d4 76%,#ffffff 92%);padding:40px 32px 56px;border-top:none;border-bottom:none}
 .pain-inner{max-width:720px;margin:0 auto}
-.pain-paragraph{list-style:none;padding:0;color:rgba(255,255,255,0.87);font-size:clamp(17px,2vw,20px);font-weight:500;line-height:1.7;margin-bottom:20px}
+.pain-paragraph{list-style:none;padding:0;color:rgba(255,255,255,0.87);font-size:clamp(17px,2vw,20px);font-weight:500;line-height:1.7;margin-bottom:8px}
 .pain-paragraph li{padding-left:1.4em;position:relative;margin-bottom:4px}
 .pain-paragraph li::before{content:"•";position:absolute;left:0;color:var(--color-fire)}
 .pain-pivot-accent{width:48px;height:3px;background:var(--color-fire);border-radius:2px;margin:64px auto 68px}
@@ -431,10 +431,9 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 
 
 /* ---- PAIN SECTION — restructured layout (problems, pivot, solutions) ---- */
-.pain-problems{list-style:none;padding:0;margin:0 0 12px}
 .pain-solutions{list-style:none;padding:0;display:flex;flex-direction:column;gap:10px;margin-top:0}
 .pain-solutions .pain-answer{margin:0}
-.pain-pivot{font-family:var(--font-heading);font-size:clamp(18px,2vw,26px);font-weight:800;color:var(--color-fire);text-align:left;display:block;padding:40px 0 28px;border-top:1px solid rgba(255,255,255,0.12);margin-top:12px;letter-spacing:-0.01em}
+.pain-pivot{font-family:var(--font-heading);font-size:clamp(18px,2vw,26px);font-weight:800;color:var(--color-fire);text-align:left;display:block;padding:12px 0 20px;margin-top:0;letter-spacing:-0.01em}
 
 /* ---- STICKY MOBILE CALL BAR ---- */
 .sticky-call-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:950;background:#07001A;border-top:1px solid rgba(255,122,0,0.25);padding:10px 14px;padding-bottom:calc(10px + env(safe-area-inset-bottom));gap:10px;box-shadow:0 -4px 24px rgba(0,0,0,0.45)}
