@@ -521,4 +521,5 @@ body.page-location .faq-section .section-bridge{padding-top:0;padding-bottom:16p
   body.page-location .svc-grid{grid-auto-flow:row dense}
   body.page-location .svc-card--wide{min-height:150px}
   body.page-location .svc-section .svc-grid{margin-bottom:0}
+  body.page-location .svc-grid .svc-card:last-child{grid-column:span 1;min-height:auto}
 }
