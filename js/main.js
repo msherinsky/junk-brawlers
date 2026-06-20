@@ -218,6 +218,9 @@
     function closeModal() {
       overlay.classList.remove('open');
       document.body.style.overflow = '';
+      form.reset();
+      statusEl.textContent = '';
+      statusEl.className = 'jb-form-status';
     }
 
     document.addEventListener('click', function (e) {

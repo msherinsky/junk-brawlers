@@ -1,0 +1,196 @@
+{
+  "phone": "(404) 632-9165",
+  "ctaColor": "#009444",
+  "copyright": "Junk Brawlers",
+  "reviewCount": 57,
+  "rating": "5.0",
+  "hours": {
+    "Mon": { "o": "07:00", "c": "18:00", "x": false },
+    "Tue": { "o": "07:00", "c": "18:00", "x": false },
+    "Wed": { "o": "07:00", "c": "18:00", "x": false },
+    "Thu": { "o": "07:00", "c": "18:00", "x": false },
+    "Fri": { "o": "07:00", "c": "18:00", "x": false },
+    "Sat": { "o": "07:00", "c": "18:00", "x": false },
+    "Sun": { "o": "07:00", "c": "18:00", "x": false }
+  },
+  "heroPhoto": "",
+  "ownerPhoto1": "",
+  "ownerPhoto2": "",
+  "ba_shed_before": "",
+  "ba_shed_after": "",
+  "ba_basement_before": "",
+  "ba_basement_after": "",
+  "ba_yard_before": "",
+  "ba_yard_after": "",
+  "ba_loft_before": "",
+  "ba_loft_after": "",
+  "services": [],
+  "testimonials": [],
+  "serviceAreas": [
+    "Blue Ridge", "Canton", "Cherry Log", "Cumming", "Dahlonega",
+    "Dawsonville", "Ellijay", "Flowery Branch", "Gainesville", "Helen",
+    "Morganton", "Suwanee", "Woodstock"
+  ],
+  "gallery": [],
+  "facebook": "",
+  "googleBiz": "https://share.google/HG9xlgEp9F7GkTscP",
+  "instagram": "",
+  "pages": {
+    "home": {
+      "headline": "Call Before Noon.",
+      "headlineEm": "Your Junk Is Gone\nby Tonight.",
+      "subheadline": "Tony picks up the phone himself. Not a call center. He shows up within the hour, loads everything out, and charges exactly what he quoted on the phone.",
+      "ctaText": "Get a Free Quote"
+    },
+    "about": {
+      "headline": "The Guy Who Answers the Phone",
+      "headlineEm": "Is the Guy\nWho Shows Up.",
+      "subheadline": "Most junk removal companies send whoever's available. You don't know who's driving until the truck pulls up. Tony Frias is different — he launched Junk Brawlers in 2024 with one truck and $5,740, and he's the one on every job. 57 reviews. All five stars.",
+      "ctaText": "Get a Free Quote"
+    },
+    "services": {
+      "headline": "The Truck.",
+      "headlineEm": "Tony Hauls\nAll of It.",
+      "subheadline": "10 services. 15 cities. 7 days a week. Furniture, appliances, hot tubs, estate cleanouts, garage cleanouts, construction debris — one call and it's gone.",
+      "ctaText": "Get a Free Quote"
+    },
+    "junk-removal": {
+      "headline": "Whatever It Is,",
+      "headlineEm": "We'll Take It.\nGone Today.",
+      "subheadline": "Tony picks up the phone himself. Name the items, get a price on the call, and he shows up the same day. No franchise crew. No hidden fees. No surprises at the door.",
+      "ctaText": "Get a Free Quote"
+    },
+    "appliance-removal": {
+      "headline": "The Old One.",
+      "headlineEm": "Disconnected.\nGone.",
+      "subheadline": "Tony unhooks it, loads it, and hauls it away. Fridges, washers, dryers, ovens — whatever you need out. You don't disconnect a thing.",
+      "ctaText": "Get a Free Quote"
+    },
+    "hot-tub-removal": {
+      "headline": "Same Day.",
+      "headlineEm": "Hot Tub Gone\nby Tonight.",
+      "subheadline": "Tony drains it, breaks it down on-site, and hauls every piece away. Deck and yard protected. No prep on your end. He picks up the phone himself.",
+      "ctaText": "Get a Free Quote"
+    },
+    "pool-removal": {
+      "headline": "Pool Out.",
+      "headlineEm": "Yard Back.\nTony Handles It All.",
+      "subheadline": "Tony drains it, breaks it down, and hauls every piece — no need to drain before he arrives. Frame, liner, pump, and all.",
+      "ctaText": "Get a Free Quote"
+    },
+    "estate-cleanouts": {
+      "headline": "The Whole House.",
+      "headlineEm": "Everything Out.\nDone With Care.",
+      "subheadline": "Tony clears the full home — furniture, appliances, personal items, everything. He walks through with you first, donates before the landfill, and treats every job with respect.",
+      "ctaText": "Get a Free Quote"
+    },
+    "garage-cleanouts": {
+      "headline": "The Garage.",
+      "headlineEm": "Floor to Ceiling.\nOne Visit.",
+      "subheadline": "You don't sort a thing. Tony walks in, loads everything out, and leaves it clear. Furniture, tools, appliances, boxes — whatever's piled up, it goes.",
+      "ctaText": "Get a Free Quote"
+    },
+    "construction-debris-removal": {
+      "headline": "No Dumpster.",
+      "headlineEm": "No Permit.\nOne Call.",
+      "subheadline": "Tony loads drywall, lumber, tile, shingles, carpet, and flooring in one visit — no rental, no scheduling a pickup day, no debris pile sitting in your driveway.",
+      "ctaText": "Get a Free Quote"
+    },
+    "commercial-junk-removal": {
+      "headline": "Flexible Schedule.",
+      "headlineEm": "Tony Shows Up.\nBusiness Stays Open.",
+      "subheadline": "Early morning, after-hours, weekends — Tony works around your business hours. One known person on your property, every time.",
+      "ctaText": "Get a Free Quote"
+    },
+    "hoarder-cleanouts": {
+      "headline": "No Judgment.",
+      "headlineEm": "Room by Room.\nFresh Start.",
+      "subheadline": "Tony works at whatever pace is right — no pressure, no commentary, no one rushing you. Just the work, done with care.",
+      "ctaText": "Get a Free Quote"
+    },
+    "shed-deck-removal": {
+      "headline": "Torn Down.",
+      "headlineEm": "Hauled Away.\nYard Clear.",
+      "subheadline": "Tony demolishes it and loads it out in one visit — wood, metal, or plastic sheds, decks of any size. You don't touch a board.",
+      "ctaText": "Get a Free Quote"
+    },
+    "blue-ridge": {
+      "headline": "Fannin County's",
+      "headlineEm": "Own Junk\nFighter.",
+      "subheadline": "Blue Ridge Lake, Old Toccoa Farm, Aska Road cabins — this market never stops upgrading. Hot tubs, cabin furniture, worn-out outdoor structures. Tony covers all of Fannin County, ZIP 30513. Call in the morning, same-day is almost always available.",
+      "ctaText": "Get a Free Quote"
+    },
+    "canton": {
+      "headline": "Cherokee County's",
+      "headlineEm": "Own Junk\nFighter.",
+      "subheadline": "Bridgemill, Harmony on the Lakes, Great Sky — Canton's biggest communities are 20 years old now and hitting the renovation cycle. Tony covers all of Cherokee County, ZIPs 30114 and 30115. Call in the morning, he's usually there the same day.",
+      "ctaText": "Get a Free Quote"
+    },
+    "cherry-log": {
+      "headline": "Hwy 515's",
+      "headlineEm": "Mountain Corridor\nCabin Crew.",
+      "subheadline": "Cherry Log cabin owners on Hwy 515 who need a hot tub swapped out before the next rental season. Rural mountain properties along Little Rock Creek and the Hidden Lake community. Tony covers all of ZIP 30522 and every Gilmer County access road in between.",
+      "ctaText": "Get a Free Quote"
+    },
+    "cumming": {
+      "headline": "Forsyth County's",
+      "headlineEm": "Own Junk\nFighter.",
+      "subheadline": "Tony covers all three Cumming zip codes — 30040, 30041, 30028. Vickery, Traditions, Three Chimneys Farm, and everywhere in between. Same-day service across Forsyth County.",
+      "ctaText": "Get a Free Quote"
+    },
+    "dahlonega": {
+      "headline": "Lumpkin County's",
+      "headlineEm": "Gold Country\nCrew.",
+      "subheadline": "Achasta and Montaluce estate owners prepping a property for market. Historic downtown Dahlonega homes clearing decades of overflow. Vacation cabin rentals in the surrounding hills that need a hot tub swapped before the next season — Tony covers all of ZIP 30533.",
+      "ctaText": "Get a Free Quote"
+    },
+    "dawsonville": {
+      "headline": "Dawsonville's",
+      "headlineEm": "Own Junk\nFighter.",
+      "subheadline": "Tony's based on North Lumpkin Campground Road, not dispatched from Atlanta. He works the Hwy 400 corridor, downtown square, Lake Sidney, and the Amicalola Falls area. When you call, he probably knows your street.",
+      "ctaText": "Get a Free Quote"
+    },
+    "ellijay": {
+      "headline": "Gilmer County's",
+      "headlineEm": "Mountain Cabin\nCrew.",
+      "subheadline": "Coosawattee River Resort cabin owners upgrading before the next rental season. Downtown Ellijay homes ready to clear out. Hwy 52 apple orchard corridor properties that have accumulated years of overflow — Tony covers all of ZIP 30540.",
+      "ctaText": "Get a Free Quote"
+    },
+    "flowery-branch": {
+      "headline": "Hall County's",
+      "headlineEm": "Lakefront Cleanout\nCrew.",
+      "subheadline": "Sterling on the Lake families upgrading and moving on. Lake Lanier waterfront homes ready to ditch the old hot tub. Spout Springs Road corridor growing faster than crews can keep up — Tony covers all of ZIP 30542.",
+      "ctaText": "Get a Free Quote"
+    },
+    "gainesville": {
+      "headline": "Hall County's",
+      "headlineEm": "Own Junk\nFighter.",
+      "subheadline": "Cresswind residents downsizing, Mundy Mill families upgrading, Lake Lanier waterfront homeowners — decades of accumulation don't move on their own. Tony covers all of Hall County, ZIPs 30501, 30504, 30506, 30507.",
+      "ctaText": "Get a Free Quote"
+    },
+    "helen": {
+      "headline": "White County's",
+      "headlineEm": "Alpine Village\nCrew.",
+      "subheadline": "Chattahoochee River cabin owners swapping out a hot tub before the next rental season. Innsbruck Golf Resort properties being cleared before a sale. Vacation rental turnovers between guests on the mountain cabin corridor — Tony covers all of ZIP 30545.",
+      "ctaText": "Get a Free Quote"
+    },
+    "morganton": {
+      "headline": "Fannin County's",
+      "headlineEm": "Lake House\nCrew.",
+      "subheadline": "Lake Blue Ridge lakefront estate owners at Star Creek, Heritage Point, Morganton Point, and Waterloon Trail. Waterfront homes being cleared for a sale or season refresh. Longtime residents downsizing from a property they've held for decades — Tony covers all of ZIP 30560.",
+      "ctaText": "Get a Free Quote"
+    },
+    "suwanee": {
+      "headline": "Gwinnett's",
+      "headlineEm": "Cleanout\nCrew.",
+      "subheadline": "Rivermoore Park executives upgrading, Olde Atlanta Club residents downsizing, Town Center on Main homeowners with nowhere to put it — Tony covers all of ZIP 30024.",
+      "ctaText": "Get a Free Quote"
+    },
+    "woodstock": {
+      "headline": "Cherokee County's",
+      "headlineEm": "Junk Removal\nCrew.",
+      "subheadline": "Towne Lake families cycling through appliances. Eagle Watch golf community homes ready to move on. Bradshaw Farm garages that haven't seen a car in years — Tony covers all of ZIPs 30188 and 30189.",
+      "ctaText": "Get a Free Quote"
+    }
+  }
+}
