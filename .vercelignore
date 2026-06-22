@@ -1,1 +1,7 @@
+# Internal sales/audit docs — never ship to the public site
 _reports/
+briefs/
+DESIGN.md
+
+# Unused media — 23MB of footage not referenced by any page
+videos/
