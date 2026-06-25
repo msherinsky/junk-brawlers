@@ -1,3 +1,16 @@
+const AI_LABELS = ['ChatGPT', 'Perplexity', 'Gemini', 'Claude', 'Copilot', 'You.com', 'Poe', 'Phind', 'Grok', 'Meta AI'];
+
+// Turn the captured lead source into GHL tags: always a `source:x` tag, plus
+// an `ai-referral` flag when it came from an AI assistant.
+function buildTags(leadSource) {
+  const tags = ['website-form'];
+  if (leadSource) {
+    tags.push(`source:${String(leadSource).toLowerCase()}`);
+    if (AI_LABELS.includes(leadSource)) tags.push('ai-referral');
+  }
+  return tags;
+}
+
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -6,7 +19,7 @@ export default async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const { firstName, lastName, email, phone, zipCode, message } = req.body || {};
+  const { firstName, lastName, email, phone, zipCode, message, leadSource } = req.body || {};
 
   if (!firstName || !email && !phone) {
     return res.status(400).json({ error: 'First name and either email or phone are required.' });
@@ -35,8 +48,8 @@ export default async function handler(req, res) {
         phone: phone || '',
         postalCode: zipCode || '',
         customFields: message ? [{ key: 'message', field_value: message }] : [],
-        tags: ['website-form'],
-        source: 'Junk Brawlers Website',
+        tags: buildTags(leadSource),
+        source: leadSource ? `Junk Brawlers Website (${leadSource})` : 'Junk Brawlers Website',
       }),
     });
 

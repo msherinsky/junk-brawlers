@@ -5,6 +5,92 @@
 (function () {
   'use strict';
 
+  /* ── Lead Source Attribution ──
+     Classifies where each visitor came from — AI assistants (ChatGPT, Claude,
+     Perplexity…), Google (organic vs Ads), Bing, Facebook, Yelp, Nextdoor,
+     other referrers, or Direct — so the source rides along into the lead and
+     shows up tagged in GHL. First-touch per session: captured on the landing
+     page, persisted across internal navigation via sessionStorage, then
+     attached to the quote form on submit. Paid clicks (gclid/utm) win over the
+     referrer. Also pushes a dataLayer event for AI sources so it auto-works if
+     GA4/GTM is ever added. */
+  function initLeadSource() {
+    var AI_SOURCES = {
+      'chatgpt.com': 'ChatGPT',
+      'chat.openai.com': 'ChatGPT',
+      'perplexity.ai': 'Perplexity',
+      'gemini.google.com': 'Gemini',
+      'claude.ai': 'Claude',
+      'copilot.microsoft.com': 'Copilot',
+      'you.com': 'You.com',
+      'poe.com': 'Poe',
+      'phind.com': 'Phind',
+      'grok.com': 'Grok',
+      'meta.ai': 'Meta AI'
+    };
+    var AI_LABELS = ['ChatGPT','Perplexity','Gemini','Claude','Copilot','You.com','Poe','Phind','Grok','Meta AI'];
+    var KEY = 'jb_lead_source';
+
+    function read() {
+      try { return sessionStorage.getItem(KEY) || ''; } catch (e) { return ''; }
+    }
+    function write(v) {
+      try { sessionStorage.setItem(KEY, v); } catch (e) {}
+    }
+
+    // Expose a helper the lead forms use to attach the source.
+    window.JB_getLeadSource = read;
+
+    // First-touch only: don't overwrite a source already captured this session.
+    if (read()) return;
+
+    var src = classify();
+    if (!src) return; // internal navigation — ignore
+    write(src);
+
+    if (AI_LABELS.indexOf(src) !== -1) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: 'ai_referral',
+        ai_source: src,
+        ai_referrer: document.referrer,
+        ai_landing_page: window.location.pathname
+      });
+    }
+
+    function classify() {
+      // 1) Paid / tagged clicks are the most reliable signal.
+      var qs;
+      try { qs = new URLSearchParams(window.location.search); } catch (e) { qs = null; }
+      if (qs) {
+        if (qs.get('gclid') || qs.get('gbraid') || qs.get('wbraid')) return 'Google Ads';
+        if (qs.get('msclkid')) return 'Bing Ads';
+        var utm = qs.get('utm_source');
+        if (utm) return utm.charAt(0).toUpperCase() + utm.slice(1);
+        // fbclid rides on ALL Facebook/Instagram clicks (organic + paid), so it
+        // only proves "Facebook" — useful when the referrer is stripped (in-app
+        // browser). Paid-vs-organic split comes from a utm_source on the ad.
+        if (qs.get('fbclid')) return 'Facebook';
+      }
+      // 2) Otherwise fall back to the referring host.
+      var ref = document.referrer || '';
+      if (!ref) return 'Direct';
+      var host;
+      try { host = new URL(ref).hostname.toLowerCase(); } catch (e) { host = ref.toLowerCase(); }
+      if (host.indexOf(window.location.hostname) !== -1) return ''; // internal nav
+      for (var h in AI_SOURCES) { if (host.indexOf(h) !== -1) return AI_SOURCES[h]; }
+      if (host.indexOf('google.') !== -1) return 'Google';
+      if (host.indexOf('bing.') !== -1) return 'Bing';
+      if (host.indexOf('duckduckgo.') !== -1) return 'DuckDuckGo';
+      if (host.indexOf('yahoo.') !== -1) return 'Yahoo';
+      if (host.indexOf('facebook.') !== -1 || host.indexOf('fb.') !== -1 || host.indexOf('instagram.') !== -1) return 'Facebook';
+      if (host.indexOf('yelp.') !== -1) return 'Yelp';
+      if (host.indexOf('nextdoor.') !== -1) return 'Nextdoor';
+      return 'Referral';
+    }
+  }
+  initLeadSource();
+
   /* ── Hamburger / Mobile Nav ── */
   function initHamburger() {
     var hamburger = document.getElementById('hamburger');
@@ -252,6 +338,8 @@
         phone:     phoneEl.value.trim(),
         zipCode:   form.querySelector('[name="zipCode"]').value.trim(),
       };
+      var leadSource = window.JB_getLeadSource && window.JB_getLeadSource();
+      if (leadSource) data.leadSource = leadSource;
       var phoneDigits = data.phone.replace(/\D/g, '');
       var valid = true;
       firstNameEl.classList.remove('jb-input-error');

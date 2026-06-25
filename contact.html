@@ -190,6 +190,7 @@
         <div class="dropdown-menu dropdown-menu--locations">
           <div class="dropdown-cities">
             <a href="dawsonville.html">Dawsonville GA</a>
+            <a href="ball-ground.html">Ball Ground GA</a>
             <a href="blue-ridge.html">Blue Ridge GA</a>
             <a href="canton.html">Canton GA</a>
             <a href="cherry-log.html">Cherry Log GA</a>
@@ -234,6 +235,7 @@
     <a href="shed-deck-removal.html">Shed &amp; Deck Removal</a>
     <div class="mobile-section-label">Service Areas</div>
     <a href="dawsonville.html">Dawsonville GA</a>
+    <a href="ball-ground.html">Ball Ground GA</a>
     <a href="blue-ridge.html">Blue Ridge GA</a>
     <a href="canton.html">Canton GA</a>
     <a href="cherry-log.html">Cherry Log GA</a>
@@ -539,6 +541,8 @@
         phone:     phoneEl.value.trim(),
         zipCode:   form.zipCode.value.trim(),
       };
+      const leadSource = window.JB_getLeadSource && window.JB_getLeadSource();
+      if (leadSource) data.leadSource = leadSource;
       const phoneDigits = data.phone.replace(/\D/g, '');
       let valid = true;
       firstNameEl.classList.remove('jb-input-error');
