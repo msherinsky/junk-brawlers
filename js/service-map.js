@@ -223,11 +223,45 @@
     window.addEventListener('resize', function () { clearTimeout(map.__rt); map.__rt = setTimeout(frame, 200); });
   }
 
+  /* ---- on-demand dependency loading (keeps Leaflet/d3 off the critical path) ---- */
+  var LEAFLET_CSS = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+  var LEAFLET_JS = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+  var LEAFLET_SRI = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
+  var D3_JS = 'https://cdn.jsdelivr.net/npm/d3-delaunay@6.0.4/dist/d3-delaunay.min.js';
+
+  function loadCss(href) {
+    return new Promise(function (res) {
+      if (document.querySelector('link[data-jbmap="' + href + '"]')) { res(); return; }
+      var l = document.createElement('link');
+      l.rel = 'stylesheet'; l.href = href; l.crossOrigin = '';
+      l.setAttribute('data-jbmap', href);
+      l.onload = res; l.onerror = res;
+      document.head.appendChild(l);
+    });
+  }
+  function loadScript(src, integrity) {
+    return new Promise(function (res, rej) {
+      if (document.querySelector('script[data-jbmap="' + src + '"]')) { res(); return; }
+      var s = document.createElement('script');
+      s.src = src; s.async = true;
+      if (integrity) { s.integrity = integrity; s.crossOrigin = ''; }
+      s.setAttribute('data-jbmap', src);
+      s.onload = res; s.onerror = rej;
+      document.head.appendChild(s);
+    });
+  }
+  function ensureDeps() {
+    var tasks = [];
+    if (!window.L) { tasks.push(loadCss(LEAFLET_CSS)); tasks.push(loadScript(LEAFLET_JS, LEAFLET_SRI)); }
+    if (!(window.d3 && window.d3.Delaunay)) { tasks.push(loadScript(D3_JS)); }
+    return Promise.all(tasks);
+  }
+
   function init() {
     var el = document.getElementById('service-map');
     if (!el || el.dataset.jbInit) return;
     el.dataset.jbInit = '1';
-    var start = function () { build(el); };
+    var start = function () { ensureDeps().then(function () { build(el); }).catch(function () {}); };
     if ('IntersectionObserver' in window) {
       var io = new IntersectionObserver(function (e, obs) {
         if (e[0].isIntersecting) { obs.disconnect(); start(); }

@@ -30,7 +30,7 @@
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-condensed-800.woff2" crossorigin>
   <link rel="preload" as="image" href="images/hero-bg-mobile.webp" type="image/webp" fetchpriority="high" media="(max-width: 900px)">
   <link rel="preload" as="image" href="images/hero-bg.webp" type="image/webp" fetchpriority="high" media="(min-width: 901px)">
-  <script src="js/site-data.js"></script>
+  <script defer src="js/site-data.js"></script>
   <link rel="stylesheet" href="css/style.css">
 
   <script type="application/ld+json">
@@ -667,10 +667,7 @@
   </script>
   <script defer src="js/main.js"></script>
 
-  <!-- Service-area coverage map: Leaflet basemap + d3-delaunay zones -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/d3-delaunay@6.0.4/dist/d3-delaunay.min.js"></script>
+  <!-- Service-area coverage map (Leaflet + d3-delaunay are loaded on demand by service-map.js when the map scrolls into view) -->
   <script defer src="js/service-map.js"></script>
   <script src="js/content-loader.js"></script>
 </body>
