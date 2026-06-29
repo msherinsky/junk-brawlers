@@ -25,7 +25,7 @@
   <link rel="preload" as="image" href="images/gbp-tony-loading-truck-sm.webp" type="image/webp" fetchpriority="high" media="(max-width: 900px)">
   <link rel="preload" as="image" href="images/gbp-tony-loading-truck.webp" type="image/webp" fetchpriority="high" media="(min-width: 901px)">
   <link rel="preload" href="images/logo.webp" as="image" type="image/webp" fetchpriority="high">
-  <script src="js/site-data.js"></script>
+  <script defer src="js/site-data.js"></script>
   <link rel="stylesheet" href="css/style.css">
 
   <script type="application/ld+json">
@@ -609,6 +609,40 @@
   </section>
 
 
+  <!-- SECTION 5: HOW IT WORKS -->
+  <section class="hiw-section">
+    <div class="hiw-dotgrid"></div>
+    <div class="hiw-inner">
+      <h2 class="h2-bridge h2-bridge--light">Most People Are Surprised How Fast It Goes.</h2>
+
+      <div class="hiw-steps">
+        <div class="hiw-connector" aria-hidden="true"></div>
+
+        <div class="hiw-step">
+          <div class="hiw-num"><span>1</span></div>
+          <h3>Call. Get a Price. Nothing to Sign.</h3>
+          <p>Free quote on the call. No commitment, no paperwork. 7 days a week, 7am&ndash;6pm. <a href="tel:4046329165" style="color:#FF7A00;font-weight:700;">(404) 632-9165</a></p>
+        </div>
+
+        <div class="hiw-step">
+          <div class="hiw-num"><span>2</span></div>
+          <h3>Tony Texts Before He Comes. Dawsonville Is Home Base.</h3>
+          <p>He lives and works right here in Dawson County &mdash; from the GA-400 corridor and the Premium Outlets out to War Hill Park and the Amicalola foothills. No drive time, no crew dispatched from Atlanta. Call in the morning and same-day is almost always available.</p>
+        </div>
+
+        <div class="hiw-step">
+          <div class="hiw-num"><span>3</span></div>
+          <h3>Loaded Out. Space Swept Clean.</h3>
+          <p>He loads everything, confirms before anything gets tossed, and leaves the spot clean. You don&rsquo;t lift a thing.</p>
+        </div>
+      </div>
+
+      <div class="hiw-cta">
+        <a href="tel:4046329165" class="btn-fire" style="font-family:var(--font-heading);font-size:17px;letter-spacing:1.5px;padding:16px 44px;">One Call. It&rsquo;s Gone. &rarr;</a>
+      </div>
+    </div>
+  </section>
+
   <!-- SECTION 6: SOCIAL PROOF -->
   <section class="trust-quotes" aria-label="Customer reviews — junk removal Dawsonville GA">
     <div class="trust-quotes-inner">
@@ -634,11 +668,43 @@
         </div>
 
       </div>
-      <p class="section-bridge section-bridge--dark" style="padding-top:56px;padding-bottom:0;">Dawsonville is home base. Tony also covers 12 surrounding cities across North Georgia. <a href="service-areas.html" style="color:var(--color-fire);font-weight:700;">See all service areas &rarr;</a></p>
+      <p class="section-bridge section-bridge--dark" style="padding-top:56px;padding-bottom:0;">Dawsonville is home base &mdash; but Tony&rsquo;s territory runs wider than most people realize.</p>
       <div style="text-align:center;padding:40px 0 16px;">
         <a href="tel:4046329165" class="btn-fire" style="font-family:var(--font-heading);font-size:17px;letter-spacing:1.5px;padding:16px 44px;">Book Your Pickup &rarr;</a>
         <p style="margin:16px 0 0;font-size:14px;color:rgba(255,255,255,0.5);">7am&ndash;6pm &middot; 7 days &middot; No commitment to call</p>
       </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: COVERAGE AREA -->
+  <section class="locations-hub">
+    <div class="locations-hub-inner">
+      <p class="section-bridge section-bridge--dark" style="text-align:center;padding-top:0;padding-bottom:12px;color:#111111;">Home Base &mdash; Plus 13 Cities Around It.</p>
+      <p class="locations-intro">Dawsonville is where Tony&rsquo;s based. From here he covers 13 more cities across the mountains and foothills. Tap any zone on the map to open it.</p>
+      <div class="locations-layout locations-layout--zones">
+        <div id="map-container">
+          <div id="service-map" role="application" aria-label="Junk Brawlers service area map &mdash; 14 cities across North Georgia. Tap your city's zone to open that page." data-active-city="Dawsonville"></div>
+        </div>
+      </div>
+      <p class="locations-arealist-label">Also serving &mdash; tap a zone above, or pick a city:</p>
+      <div class="locations-arealist">
+        <a href="dawsonville.html" class="area-link" data-lat="34.4190" data-lng="-84.1186" data-name="Dawsonville">Dawsonville</a>
+        <a href="ball-ground.html" class="area-link" data-lat="34.3387" data-lng="-84.3777" data-name="Ball Ground">Ball Ground</a>
+        <a href="canton.html" class="area-link" data-lat="34.2365" data-lng="-84.4910" data-name="Canton">Canton</a>
+        <a href="cherry-log.html" class="area-link" data-lat="34.7718" data-lng="-84.5101" data-name="Cherry Log">Cherry Log</a>
+        <a href="cumming.html" class="area-link" data-lat="34.2073" data-lng="-84.1402" data-name="Cumming">Cumming</a>
+        <a href="gainesville.html" class="area-link" data-lat="34.2979" data-lng="-83.8241" data-name="Gainesville">Gainesville</a>
+        <a href="dahlonega.html" class="area-link" data-lat="34.5326" data-lng="-83.9855" data-name="Dahlonega">Dahlonega</a>
+        <a href="ellijay.html" class="area-link" data-lat="34.6945" data-lng="-84.4830" data-name="Ellijay">Ellijay</a>
+        <a href="blue-ridge.html" class="area-link" data-lat="34.8634" data-lng="-84.3241" data-name="Blue Ridge">Blue Ridge</a>
+        <a href="helen.html" class="area-link" data-lat="34.7026" data-lng="-83.7310" data-name="Helen">Helen</a>
+        <a href="morganton.html" class="area-link" data-lat="34.8840" data-lng="-84.2409" data-name="Morganton">Morganton</a>
+        <a href="woodstock.html" class="area-link" data-lat="34.1015" data-lng="-84.5194" data-name="Woodstock">Woodstock</a>
+        <a href="suwanee.html" class="area-link" data-lat="34.0506" data-lng="-84.0702" data-name="Suwanee">Suwanee</a>
+        <a href="flowery-branch.html" class="area-link" data-lat="34.1840" data-lng="-83.9255" data-name="Flowery Branch">Flowery Branch</a>
+        <a href="service-areas.html" class="area-link area-link--cta">View all service areas &rarr;</a>
+      </div>
+      <p class="section-bridge section-bridge--light" style="padding-top:72px;padding-bottom:56px">Not sure if he comes to your street? Just call. Tony will tell you straight.</p>
     </div>
   </section>
 
@@ -753,129 +819,7 @@
   </div>
   <script defer src="js/main.js"></script>
 
-  <script>
-  (function(){
-    var mapEl=document.getElementById('service-map');
-    if(!mapEl) return;
-    var locs=[
-      {n:'Dawsonville',lat:34.4190,lng:-84.1186,u:'dawsonville.html',home:true},
-      {n:'Ball Ground',lat:34.3387,lng:-84.3777,u:'ball-ground.html'},
-      {n:'Canton',lat:34.2365,lng:-84.4910,u:'canton.html'},
-      {n:'Cumming',lat:34.2073,lng:-84.1402,u:'cumming.html'},
-      {n:'Gainesville',lat:34.2979,lng:-83.8241,u:'gainesville.html'},
-      {n:'Dahlonega',lat:34.5326,lng:-83.9855,u:'dahlonega.html'},
-      {n:'Ellijay',lat:34.6945,lng:-84.4830,u:'ellijay.html'},
-      {n:'Blue Ridge',lat:34.8634,lng:-84.3241,u:'blue-ridge.html'},
-      {n:'Woodstock',lat:34.1015,lng:-84.5194,u:'woodstock.html'},
-      {n:'Suwanee',lat:34.0506,lng:-84.0702,u:'suwanee.html'},
-      {n:'Flowery Branch',lat:34.1840,lng:-83.9255,u:'flowery-branch.html'},
-    ];
-    var TS=256,state={lat:34.38,lng:-84.18,zoom:9},world,popup,flyTimer;
-    function wx(lng,z){return (lng+180)/360*Math.pow(2,z)*TS;}
-    function wy(lat,z){var r=lat*Math.PI/180;return (1-Math.log(Math.tan(r)+1/Math.cos(r))/Math.PI)/2*Math.pow(2,z)*TS;}
-    function turl(tx,ty,z){var n=Math.pow(2,z);tx=((tx%n)+n)%n;return 'https://'+['a','b','c','d'][Math.abs(tx+ty)%4]+'.basemaps.cartocdn.com/rastertiles/voyager/'+z+'/'+tx+'/'+ty+'.png';}
-    function render(){
-      var W=mapEl.offsetWidth||600,H=mapEl.offsetHeight||480,z=state.zoom;
-      var cx=wx(state.lng,z),cy=wy(state.lat,z);
-      world.style.cssText='position:absolute;top:0;left:0;width:'+W+'px;height:'+H+'px;';
-      world.innerHTML=''; popup.style.display='none';
-      var n=Math.pow(2,z);
-      var x0=Math.floor((cx-W/2)/TS)-1,x1=Math.ceil((cx+W/2)/TS)+1;
-      var y0=Math.floor((cy-H/2)/TS)-1,y1=Math.ceil((cy+H/2)/TS)+1;
-      for(var ty=y0;ty<=y1;ty++){
-        if(ty<0||ty>=n) continue;
-        for(var tx=x0;tx<=x1;tx++){
-          var img=document.createElement('img');
-          img.src=turl(tx,ty,z);
-          var ix=Math.round(tx*TS-cx+W/2),iy=Math.round(ty*TS-cy+H/2);
-          img.style.cssText='position:absolute;width:256px;height:256px;left:'+ix+'px;top:'+iy+'px;pointer-events:none;';
-          img.setAttribute('draggable','false');
-          world.appendChild(img);
-        }
-      }
-      locs.forEach(function(loc){
-        var d=document.createElement('div');
-        d.dataset.n=loc.n; d.dataset.u=loc.u;
-        var sz=loc.home?18:12,mx=Math.round(wx(loc.lng,z)-cx+W/2),my=Math.round(wy(loc.lat,z)-cy+H/2);
-        d.style.cssText='position:absolute;cursor:pointer;pointer-events:auto;z-index:2;border-radius:50%;'+
-          'left:'+mx+'px;top:'+my+'px;width:'+sz+'px;height:'+sz+'px;'+
-          'margin-left:'+(-sz/2)+'px;margin-top:'+(-sz/2)+'px;'+
-          'background:'+(loc.home?'#FF7A00':'#7B35D4')+';'+
-          'border:'+(loc.home?'3px':'2px')+' solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.4);';
-        world.appendChild(d);
-      });
-    }
-    function showPopup(loc){
-      var W=mapEl.offsetWidth||600,H=mapEl.offsetHeight||480,z=state.zoom;
-      var px=Math.round(wx(loc.lng,z)-wx(state.lng,z)+W/2);
-      var py=Math.round(wy(loc.lat,z)-wy(state.lat,z)+H/2);
-      popup.innerHTML='<strong style="font-size:14px;display:block;margin-bottom:3px;">'+loc.n+', GA</strong>'+
-        '<a href="'+loc.u+'" style="color:#7B35D4;font-weight:600;font-size:13px;">Junk removal in '+loc.n+' →</a>';
-      popup.style.cssText='display:block;position:absolute;left:'+px+'px;top:'+(py-65)+'px;transform:translateX(-50%);'+
-        'background:#fff;border-radius:6px;padding:10px 14px;box-shadow:0 2px 10px rgba(0,0,0,.22);line-height:1.4;z-index:10;white-space:nowrap;';
-    }
-    function flyTo(lat,lng){
-      if(flyTimer) clearTimeout(flyTimer);
-      var dx=Math.round(wx(state.lng,state.zoom)-wx(lng,state.zoom));
-      var dy=Math.round(wy(state.lat,state.zoom)-wy(lat,state.zoom));
-      world.style.transition='transform 0.55s cubic-bezier(0.4,0,0.2,1)';
-      world.style.transform='translate('+dx+'px,'+dy+'px)';
-      flyTimer=setTimeout(function(){
-        state.lat=lat; state.lng=lng; state.zoom=11;
-        world.style.transition=''; render(); flyTimer=null;
-      },580);
-    }
-    function initMap(){
-      mapEl.style.position='relative'; mapEl.style.overflow='hidden';
-      world=document.createElement('div'); mapEl.appendChild(world);
-      popup=document.createElement('div'); mapEl.appendChild(popup);
-      popup.addEventListener('click',function(e){e.stopPropagation();});
-      var attr=document.createElement('div');
-      attr.innerHTML='© <a href="https://www.openstreetmap.org/copyright" target="_blank" style="color:#555;">OSM</a> © <a href="https://carto.com/attributions" target="_blank" style="color:#555;">CARTO</a>';
-      attr.style.cssText='position:absolute;bottom:3px;right:4px;z-index:5;font-size:10px;background:rgba(255,255,255,.8);padding:2px 5px;border-radius:3px;line-height:1.5;';
-      mapEl.appendChild(attr);
-      var rb=document.createElement('button');
-      rb.textContent='↩ Overview'; rb.id='vtm-reset';
-      rb.style.cssText='display:none;position:absolute;top:8px;right:8px;z-index:5;background:#fff;border:1px solid #ccc;border-radius:4px;padding:5px 10px;font-size:12px;cursor:pointer;';
-      mapEl.appendChild(rb);
-      rb.addEventListener('click',function(){
-        if(flyTimer) clearTimeout(flyTimer);
-        state.lat=34.38; state.lng=-84.18; state.zoom=9; rb.style.display='none';
-        document.querySelectorAll('.location-pill').forEach(function(p){p.classList.remove('active');});
-        render();
-      });
-      requestAnimationFrame(render);
-      world.addEventListener('click',function(e){
-        if(!e.target.dataset.n) return;
-        e.stopPropagation();
-        var loc=locs.find(function(l){return l.n===e.target.dataset.n;});
-        if(loc) showPopup(loc);
-      });
-      mapEl.addEventListener('click',function(){popup.style.display='none';});
-      document.querySelectorAll('.location-pill[data-lat]').forEach(function(pill){
-        pill.addEventListener('click',function(e){
-          e.preventDefault();
-          var lat=parseFloat(this.dataset.lat),lng=parseFloat(this.dataset.lng),pn=this.dataset.name;
-          flyTo(lat,lng);
-          document.querySelectorAll('.location-pill').forEach(function(p){p.classList.remove('active');});
-          this.classList.add('active');
-          document.getElementById('vtm-reset').style.display='block';
-          setTimeout(function(){var loc=locs.find(function(l){return l.n===pn;});if(loc) showPopup(loc);},640);
-        });
-      });
-    }
-    var activated=false;
-    function activateMap(){
-      if(activated) return; activated=true;
-      if(svgEl) svgEl.style.display='none';
-      if(btnEl) btnEl.style.display='none';
-      mapEl.style.display='block';
-      initMap();
-    }
-    if(svgEl) svgEl.addEventListener('click',activateMap);
-    if(btnEl) btnEl.addEventListener('click',activateMap);
-  })();
-  </script>
+  <script defer src="js/service-map.js"></script>
   <script src="js/content-loader.js"></script>
 </body>
 </html>

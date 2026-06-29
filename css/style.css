@@ -190,6 +190,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .svc-card-hover ul li::before{content:"✓  ";color:var(--color-fire);font-weight:700}
 .svc-card-hover-cta{display:block;text-align:center;color:var(--color-fire);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;padding-top:14px;border-top:1px solid rgba(255,255,255,0.12)}
 .svc-cta-row{text-align:center;padding:40px 0 80px;position:relative;z-index:1}
+.bento-section{background:var(--color-light-alt);padding:72px 32px 0}
 .bento-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:280px 280px 280px;gap:12px;grid-template-areas:"a a b" "c d b" "e e f";text-align:left}
 .bento-grid>.svc-card{min-height:0}
 .bento-grid>.svc-card:nth-child(1){grid-area:a}
