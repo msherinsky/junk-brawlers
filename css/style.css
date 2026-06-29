@@ -84,7 +84,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .btn-fire:hover{opacity:0.88}
 .btn-ghost-white{padding:9px 18px;border:2px solid var(--color-white);color:var(--color-white);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:4px;white-space:nowrap;transition:background var(--transition),color var(--transition)}
 .btn-ghost-white:hover{background:var(--color-white);color:var(--color-primary-dark)}
-.btn-phone{padding:9px 18px;background:var(--color-fire);color:var(--color-white);font-size:13px;font-weight:700;border-radius:4px;transition:opacity var(--transition);white-space:nowrap}
+.btn-phone{padding:9px 18px;background:#C05000;color:var(--color-white);font-size:13px;font-weight:700;border-radius:4px;transition:opacity var(--transition);white-space:nowrap}
 .btn-phone:hover{opacity:0.88}
 
 /* ---- SECTION UTILITIES ---- */
@@ -519,7 +519,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .jb-form-group input{padding:12px 14px;background:rgba(255,255,255,0.06);border:1.5px solid rgba(255,255,255,0.12);border-radius:4px;font-family:var(--font);font-size:15px;color:#fff;transition:border-color .2s,box-shadow .2s}
 .jb-form-group input::placeholder{color:rgba(255,255,255,0.25)}
 .jb-form-group input:focus{outline:none;border-color:var(--color-fire);box-shadow:0 0 0 3px rgba(255,122,0,0.18)}
-.jb-form-submit{display:block;width:100%;margin-top:24px;padding:15px 28px;background:var(--color-fire);color:#fff;font-family:var(--font-heading);font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;border:none;border-radius:4px;cursor:pointer;transition:opacity .2s;box-shadow:0 4px 20px rgba(255,122,0,0.35);text-align:center}
+.jb-form-submit{display:block;width:100%;margin-top:24px;padding:15px 28px;background:#C05000;color:#fff;font-family:var(--font-heading);font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;border:none;border-radius:4px;cursor:pointer;transition:opacity .2s;box-shadow:0 4px 20px rgba(255,122,0,0.35);text-align:center}
 .jb-form-submit:hover{opacity:.9}
 .jb-form-submit:disabled{opacity:.55;cursor:not-allowed}
 .jb-form-status{margin-top:12px;font-size:14px;font-weight:600;display:none}
