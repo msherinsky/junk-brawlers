@@ -288,6 +288,19 @@
             '<label for="jb-zipCode">Zip Code</label>' +
             '<input type="text" id="jb-zipCode" name="zipCode" placeholder="30534" maxlength="5" inputmode="numeric" autocomplete="postal-code">' +
           '</div>' +
+          '<div class="jb-form-group">' +
+            '<label for="jb-message">What needs to go? <span class="jb-optional">(optional)</span></label>' +
+            '<input type="text" id="jb-message" name="message" placeholder="e.g., a couch + fridge, or a full garage cleanout" autocomplete="off">' +
+          '</div>' +
+          '<div class="jb-form-group">' +
+            '<label>Best way to reach you?</label>' +
+            '<div class="jb-toggle">' +
+              '<input type="radio" id="jb-pref-text" name="contactPreference" value="Text" checked>' +
+              '<label for="jb-pref-text">Text</label>' +
+              '<input type="radio" id="jb-pref-call" name="contactPreference" value="Call">' +
+              '<label for="jb-pref-call">Call</label>' +
+            '</div>' +
+          '</div>' +
           '<button type="submit" class="jb-form-submit">Send My Request &rarr;</button>' +
           '<p class="jb-form-status" aria-live="polite"></p>' +
         '</form>' +
@@ -346,6 +359,8 @@
         email:     emailEl.value.trim(),
         phone:     phoneEl.value.trim(),
         zipCode:   form.querySelector('[name="zipCode"]').value.trim(),
+        message:   form.querySelector('[name="message"]') ? form.querySelector('[name="message"]').value.trim() : '',
+        contactPreference: (form.querySelector('[name="contactPreference"]:checked') || {}).value || 'Text',
       };
       var leadSource = window.JB_getLeadSource && window.JB_getLeadSource();
       if (leadSource) data.leadSource = leadSource;
