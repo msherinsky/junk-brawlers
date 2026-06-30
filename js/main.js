@@ -276,17 +276,15 @@
               '<input type="text" id="jb-lastName" name="lastName" placeholder="Your last name" autocomplete="family-name">' +
             '</div>' +
           '</div>' +
-          '<div class="jb-form-group">' +
-            '<label for="jb-email">Email</label>' +
-            '<input type="email" id="jb-email" name="email" placeholder="your@email.com" autocomplete="email">' +
-          '</div>' +
-          '<div class="jb-form-group">' +
-            '<label for="jb-phone">Phone *</label>' +
-            '<input type="tel" id="jb-phone" name="phone" placeholder="+1 (000) 000-0000" autocomplete="tel">' +
-          '</div>' +
-          '<div class="jb-form-group">' +
-            '<label for="jb-zipCode">Zip Code</label>' +
-            '<input type="text" id="jb-zipCode" name="zipCode" placeholder="30534" maxlength="5" inputmode="numeric" autocomplete="postal-code">' +
+          '<div class="jb-form-row">' +
+            '<div class="jb-form-group">' +
+              '<label for="jb-phone">Phone *</label>' +
+              '<input type="tel" id="jb-phone" name="phone" placeholder="(000) 000-0000" autocomplete="tel">' +
+            '</div>' +
+            '<div class="jb-form-group">' +
+              '<label for="jb-zipCode">Zip</label>' +
+              '<input type="text" id="jb-zipCode" name="zipCode" placeholder="30534" maxlength="5" inputmode="numeric" autocomplete="postal-code">' +
+            '</div>' +
           '</div>' +
           '<div class="jb-form-group">' +
             '<label for="jb-message">What needs to go? <span class="jb-optional">(optional)</span></label>' +
@@ -356,7 +354,7 @@
       var data = {
         firstName: firstNameEl.value.trim(),
         lastName:  form.querySelector('[name="lastName"]').value.trim(),
-        email:     emailEl.value.trim(),
+        email:     '',
         phone:     phoneEl.value.trim(),
         zipCode:   form.querySelector('[name="zipCode"]').value.trim(),
         message:   form.querySelector('[name="message"]') ? form.querySelector('[name="message"]').value.trim() : '',

@@ -352,17 +352,15 @@
               <input type="text" id="lastName" name="lastName" placeholder="Your last name" autocomplete="family-name">
             </div>
           </div>
-          <div class="jb-form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email">
-          </div>
-          <div class="jb-form-group">
-            <label for="phone">Phone *</label>
-            <input type="tel" id="phone" name="phone" placeholder="+1 (000) 000-0000" autocomplete="tel">
-          </div>
-          <div class="jb-form-group">
-            <label for="zipCode">Zip Code</label>
-            <input type="text" id="zipCode" name="zipCode" placeholder="30534" maxlength="5" inputmode="numeric" autocomplete="postal-code">
+          <div class="jb-form-row">
+            <div class="jb-form-group">
+              <label for="phone">Phone *</label>
+              <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000" autocomplete="tel">
+            </div>
+            <div class="jb-form-group">
+              <label for="zipCode">Zip</label>
+              <input type="text" id="zipCode" name="zipCode" placeholder="30534" maxlength="5" inputmode="numeric" autocomplete="postal-code">
+            </div>
           </div>
           <div class="jb-form-group">
             <label for="message">What needs to go? <span class="jb-optional">(optional)</span></label>
@@ -549,7 +547,7 @@
       const data = {
         firstName: firstNameEl.value.trim(),
         lastName:  form.lastName.value.trim(),
-        email:     form.email.value.trim(),
+        email:     '',
         phone:     phoneEl.value.trim(),
         zipCode:   form.zipCode.value.trim(),
         message:   form.message ? form.message.value.trim() : '',

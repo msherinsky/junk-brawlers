@@ -515,7 +515,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 
 /* ---- JB SHARED FORM + QUOTE MODAL ---- */
 .jb-form-row{display:flex;gap:14px}
-.jb-form-group{display:flex;flex-direction:column;flex:1;margin-bottom:14px}
+.jb-form-group{display:flex;flex-direction:column;flex:1;margin-bottom:11px}
 .jb-form-group label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.45);margin-bottom:6px}
 .jb-form-group input{padding:12px 14px;background:rgba(255,255,255,0.06);border:1.5px solid rgba(255,255,255,0.12);border-radius:4px;font-family:var(--font);font-size:15px;color:#fff;transition:border-color .2s,box-shadow .2s}
 .jb-form-group input::placeholder{color:rgba(255,255,255,0.25)}
@@ -545,8 +545,13 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .jb-modal-sub{font-size:14px;color:rgba(255,255,255,0.45);margin-bottom:24px}
 @media(max-width:540px){
   .jb-modal-overlay{align-items:flex-end;padding:0}
-  .jb-modal-card{border-radius:16px 16px 0 0;padding:32px 20px 28px;max-height:92vh}
-  .jb-form-row{flex-direction:column;gap:0}
+  .jb-modal-card{border-radius:16px 16px 0 0;padding:26px 18px 24px;max-height:92vh}
+  .jb-form-row{gap:10px}
+  .jb-modal-logo{height:38px;margin-bottom:12px}
+  .jb-modal-heading{font-size:24px;margin-bottom:4px}
+  .jb-modal-sub{margin-bottom:14px}
+  .jb-form-group{margin-bottom:9px}
+  .jb-form-submit{margin-top:14px}
 }
 .zip-check-hint{display:block;font-size:12px;font-weight:600;margin-top:5px;min-height:16px}
 .zip-check-hint--ok{color:var(--color-fire)}
