@@ -107,16 +107,16 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .hero-right{position:absolute;left:0;right:0;top:0;bottom:0;overflow:hidden;padding:0}
 .hero-right::before{content:'';position:absolute;inset:0;background:linear-gradient(to right,#0A000F 0%,#0A000F 8%,rgba(10,0,15,0.96) 22%,rgba(10,0,15,0.88) 42%,rgba(10,0,15,0.72) 52%,rgba(10,0,15,0.3) 65%,rgba(10,0,15,0.05) 80%,transparent 92%);pointer-events:none}
 .hero-content{position:relative;z-index:1;max-width:640px;text-align:left}
-.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(6,0,20,0.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:12px 20px;margin-bottom:28px;box-shadow:0 2px 12px rgba(0,0,0,0.3)}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(6,0,20,0.6);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.15);border-radius:8px;padding:12px 20px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,0.3)}
 .hero-stars{color:#FFD700;font-size:18px;letter-spacing:2px}
 .hero-badge-text{color:rgba(255,255,255,0.9);font-size:14px;font-weight:600;white-space:nowrap}
 .hero-badge-text strong{color:#fff}
-.hero-tagline{font-family:var(--font-heading);font-size:clamp(2.25rem,4vw,4.5rem);font-weight:900;color:var(--color-white);line-height:1.05;margin-bottom:24px;text-transform:none;text-shadow:0 2px 8px rgba(0,0,0,0.6)}
+.hero-tagline{font-family:var(--font-heading);font-size:clamp(2.25rem,4vw,4.5rem);font-weight:900;color:var(--color-white);line-height:1.05;margin-bottom:30px;text-transform:none;text-shadow:0 2px 8px rgba(0,0,0,0.6)}
 .hero-tagline .hero-em{color:var(--color-fire);display:block;font-size:clamp(2.875rem,5.2vw,6rem);line-height:1.02;text-shadow:0 0 40px var(--color-fire-glow),0 2px 8px rgba(0,0,0,0.5)}
 .hero-pullquote{border-left:3px solid var(--color-fire);padding:8px 0 8px 14px;margin-bottom:16px}
 .hero-pullquote p{font-size:15px;color:rgba(255,255,255,0.92);font-style:italic;line-height:1.45;margin-bottom:3px}
 .hero-pullquote cite{font-size:11px;color:rgba(255,255,255,0.5);font-style:normal;font-weight:600;text-transform:uppercase;letter-spacing:1px}
-.hero-content p.hero-sub{font-size:15px;color:rgba(255,255,255,0.78);margin-bottom:28px;max-width:480px;line-height:1.55;text-shadow:0 1px 4px rgba(0,0,0,0.85)}
+.hero-content p.hero-sub{font-size:15px;color:rgba(255,255,255,0.78);margin-bottom:40px;max-width:480px;line-height:1.55;text-shadow:0 1px 4px rgba(0,0,0,0.85)}
 .hero-buttons{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-start}
 
 /* ---- TRUST TICKER ---- */
@@ -389,7 +389,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 
 
 /* ---- SERVICE PAGE HERO ---- */
-.sp-breadcrumb{font-size:12px;font-weight:600;color:rgba(255,255,255,0.65);text-transform:uppercase;letter-spacing:1px;margin-bottom:28px;display:flex;align-items:center;gap:8px}
+.sp-breadcrumb{font-size:12px;font-weight:600;color:rgba(255,255,255,0.65);text-transform:uppercase;letter-spacing:1px;margin-bottom:32px;display:flex;align-items:center;gap:8px}
 .sp-breadcrumb a{color:rgba(255,255,255,0.65);transition:color .2s}
 .sp-breadcrumb a:hover{color:rgba(255,255,255,0.85)}
 .sp-breadcrumb span{color:rgba(255,255,255,0.4)}
@@ -539,7 +539,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .hero.hero--info::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 22% 12%,rgba(123,53,212,0.28) 0%,transparent 55%),radial-gradient(ellipse at 88% 108%,rgba(255,122,0,0.13) 0%,transparent 45%),radial-gradient(ellipse at center,rgba(7,0,26,0.45) 0%,transparent 72%),linear-gradient(180deg,rgba(7,0,26,0.90) 0%,rgba(7,0,26,0.80) 48%,rgba(7,0,26,0.95) 100%)}
 .hero--info>div{position:relative;z-index:2}
 .hero--info .hero-centered{text-shadow:0 2px 20px rgba(7,0,26,0.65)}
-.hero--info .hero-sub{color:rgba(255,255,255,0.82)}
+.hero--info .hero-sub{color:rgba(255,255,255,0.82);margin-bottom:40px}
 .hero--info .hero-centered h1{color:rgba(255,255,255,0.78)}
 .jb-form-status.error{color:#ff6b6b;display:block}
 .jb-form-group input.jb-input-error{border-color:#ff6b6b !important;box-shadow:0 0 0 3px rgba(255,107,107,0.18) !important}
