@@ -47,7 +47,9 @@ export default async function handler(req, res) {
         locationId: GHL_LOCATION_ID,
         firstName,
         lastName: lastName || '',
-        email: email || '',
+        // Only send email when present + valid-looking; GHL 422s on an empty string
+        // ("email must be an email"). undefined is omitted by JSON.stringify.
+        email: email && email.includes('@') ? email : undefined,
         phone: phone || '',
         postalCode: zipCode || '',
         tags,
