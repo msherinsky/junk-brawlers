@@ -566,6 +566,7 @@
         if (res.ok) {
           status.textContent = '✓ Got it — Tony will reach out shortly.';
           status.className = 'jb-form-status success';
+          if (window.JB_trackLead) window.JB_trackLead(data.leadSource);
           form.reset();
         } else {
           throw new Error();

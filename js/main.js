@@ -5,6 +5,15 @@
 (function () {
   'use strict';
 
+  /* ── Analytics loader (GA4) ──
+     Pulls in js/analytics.js once, on every page that loads main.js. */
+  if (!document.getElementById('jb-analytics-js')) {
+    var aScript = document.createElement('script');
+    aScript.id = 'jb-analytics-js';
+    aScript.src = 'js/analytics.js';
+    document.head.appendChild(aScript);
+  }
+
   /* ── Lead Source Attribution ──
      Classifies where each visitor came from — AI assistants (ChatGPT, Claude,
      Perplexity…), Google (organic vs Ads), Bing, Facebook, Yelp, Nextdoor,
@@ -364,6 +373,7 @@
         if (!res.ok) throw new Error();
         statusEl.textContent = 'Got it — Tony will reach out shortly.';
         statusEl.className = 'jb-form-status success';
+        if (window.JB_trackLead) window.JB_trackLead(data.leadSource);
         form.reset();
         setTimeout(closeModal, 2500);
       })

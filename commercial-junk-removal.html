@@ -23,7 +23,8 @@
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-400.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-600.woff2" crossorigin>
   <link rel="preload" href="images/logo.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="preload" as="image" href="images/gbp-truck-flatbed-loaded.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="images/hero-bg-mobile.webp" type="image/webp" fetchpriority="high" media="(max-width: 900px)">
+  <link rel="preload" as="image" href="images/hero-bg.webp" type="image/webp" fetchpriority="high" media="(min-width: 901px)">
   <script defer src="js/site-data.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <style>
@@ -314,9 +315,9 @@
     </div>
     <div class="hero-right">
       <picture>
-        <source media="(max-width: 768px)" srcset="images/gbp-truck-flatbed-loaded-sm.webp" type="image/webp">
-        <source srcset="images/gbp-truck-flatbed-loaded.webp" type="image/webp">
-        <img src="images/gbp-truck-flatbed-loaded.webp" alt="Junk Brawlers truck fully loaded for commercial cleanout, North Georgia" width="800" height="600" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:center center;display:block;">
+        <source srcset="images/hero-bg-mobile.webp" media="(max-width: 900px)" type="image/webp">
+        <source srcset="images/hero-bg.webp" type="image/webp">
+        <img src="images/hero-bg.jpg" alt="Junk Brawlers branded truck ready for junk pickup in North Georgia" width="800" height="1067" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:62% center;display:block;">
       </picture>
     </div>
   </section>
