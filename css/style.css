@@ -526,9 +526,9 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .jb-form-status{margin-top:12px;font-size:14px;font-weight:600;display:none}
 .jb-form-status.success{color:#22c55e;display:block}
 .jb-optional{font-weight:400;color:rgba(255,255,255,0.4);font-size:.85em;text-transform:none;letter-spacing:0}
-.jb-toggle{display:inline-flex;border:1px solid rgba(255,255,255,0.18);border-radius:8px;overflow:hidden}
+.jb-toggle{display:flex;width:100%;border:1px solid rgba(255,255,255,0.18);border-radius:8px;overflow:hidden}
 .jb-toggle input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
-.jb-toggle label{margin:0;padding:9px 26px;font-size:14px;font-weight:700;letter-spacing:.3px;text-transform:none;color:rgba(255,255,255,0.6);cursor:pointer;transition:background .15s,color .15s}
+.jb-toggle label{flex:1;margin:0;padding:11px 0;text-align:center;font-size:14px;font-weight:700;letter-spacing:.3px;text-transform:none;color:rgba(255,255,255,0.6);cursor:pointer;transition:background .15s,color .15s}
 .jb-toggle label:first-of-type{border-right:1px solid rgba(255,255,255,0.14)}
 .jb-toggle input:checked+label{background:#C05000;color:#fff}
 .jb-toggle input:focus-visible+label{outline:2px solid var(--color-fire);outline-offset:2px}
