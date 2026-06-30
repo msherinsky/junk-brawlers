@@ -118,6 +118,8 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .hero-pullquote cite{font-size:11px;color:rgba(255,255,255,0.5);font-style:normal;font-weight:600;text-transform:uppercase;letter-spacing:1px}
 .hero-content p.hero-sub{font-size:15px;color:rgba(255,255,255,0.78);margin-bottom:40px;max-width:480px;line-height:1.55;text-shadow:0 1px 4px rgba(0,0,0,0.85)}
 .hero-buttons{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-start}
+/* Homepage hero is the tallest (pullquote + badge/tagline/sub) — pull it up on desktop so the CTA stays above the fold */
+@media(min-width:901px){body.page-home .hero-left{padding-top:24px;padding-bottom:40px}}
 
 /* ---- TRUST TICKER ---- */
 .trust-ticker{background:linear-gradient(180deg,#110018 0%,#080012 100%);box-shadow:0 6px 20px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.07)}
