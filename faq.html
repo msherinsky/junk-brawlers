@@ -198,7 +198,12 @@
   <main>
 
   <!-- SECTION 1: HERO (centered, no truck photo) -->
-  <section class="hero" style="min-height:auto;">
+  <section class="hero hero--info">
+    <picture class="hero-bg-media" aria-hidden="true">
+      <source srcset="images/hero-bg-mobile.webp" type="image/webp" media="(max-width:700px)">
+      <source srcset="images/hero-bg.webp" type="image/webp">
+      <img src="images/hero-bg.jpg" alt="" width="1600" height="900">
+    </picture>
     <div style="width:100%;">
       <div class="hero-centered">
 
