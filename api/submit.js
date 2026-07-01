@@ -52,6 +52,8 @@ export default async function handler(req, res) {
         email: email && email.includes('@') ? email : undefined,
         phone: phone || '',
         postalCode: zipCode || '',
+        // "What needs to go" -> the GHL "What Needs to Go" custom field (contact.what_needs_to_go)
+        customFields: message ? [{ id: 'xQr5AHLAFCokKlXOhyv3', field_value: message }] : [],
         tags,
         source: leadSource ? `Junk Brawlers Website (${leadSource})` : 'Junk Brawlers Website',
       }),
@@ -60,8 +62,10 @@ export default async function handler(req, res) {
     if (!ghlRes.ok) {
       const err = await ghlRes.text();
       console.error('GHL error:', ghlRes.status, err);
-      // 400/422 typically means duplicate contact — treat as success so the user gets confirmation
-      if (ghlRes.status === 400 || ghlRes.status === 422) {
+      // Only a genuine duplicate-contact block means "the lead already exists" — treat that as
+      // success. Every other rejection (validation, bad field, etc.) is a REAL failure and must
+      // surface to the visitor, not be silently swallowed as success (that hid two earlier bugs).
+      if (/duplicat/i.test(err)) {
         return res.status(200).json({ success: true });
       }
       return res.status(502).json({ error: 'Failed to submit to CRM.' });
