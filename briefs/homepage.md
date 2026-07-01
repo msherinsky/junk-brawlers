@@ -103,7 +103,7 @@ Three competitor failure scenarios, each paired with a documented Tony behavior 
 
 **Pain Point 3 — A stranger shows up**
 - Problem (white): "You called a franchise. A crew you've never talked to shows up at your door. You don't know who's coming."
-- Resolution (orange text): Tony shows up to every job. He's named in 60% of his 52 reviews — not because he asks customers to write his name, but because they remember him.
+- Resolution (orange text): Tony leads every job with his crew. He's named in 60% of his 52 reviews — not because he asks customers to write his name, but because they remember him.
 - Evidence source: Brand portrait stat (Tony personally named in 60% of reviews) + myra smallwood "Tony from Junk Brawlers LLC" — the full business name used naturally alongside the owner's first name.
 
 **Format per row:**
