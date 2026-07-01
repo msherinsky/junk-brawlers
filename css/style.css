@@ -120,6 +120,14 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .hero-buttons{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-start}
 /* Homepage hero is the tallest (pullquote + badge/tagline/sub) — pull it up on desktop so the CTA stays above the fold */
 @media(min-width:901px){body.page-home .hero-left{padding-top:24px;padding-bottom:40px}}
+/* Short desktop viewports (e.g. 1080p at 150% Windows scaling = 720px tall): compress the stack so the CTA never clips below the fold */
+@media(min-width:901px) and (max-height:820px){
+  body.page-home .hero-left{padding-top:14px;padding-bottom:24px}
+  body.page-home .hero-badge{margin-bottom:18px}
+  body.page-home .hero-tagline{margin-bottom:18px}
+  body.page-home .hero-content p.hero-sub{margin-bottom:20px}
+  body.page-home .hero-pullquote{margin-bottom:12px}
+}
 
 /* ---- TRUST TICKER ---- */
 .trust-ticker{background:linear-gradient(180deg,#110018 0%,#080012 100%);box-shadow:0 6px 20px rgba(0,0,0,0.5),inset 0 1px 0 rgba(255,255,255,0.07)}
