@@ -311,11 +311,10 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .ba-after img,.ba-before img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
 @keyframes ba-reveal{0%,15%{opacity:1}45%,70%{opacity:0}90%,100%{opacity:1}}
 @keyframes ba-reveal-inv{0%,15%{opacity:0}45%,70%{opacity:1}90%,100%{opacity:0}}
-/* Before layer "wipes" away with a soft feathered diagonal edge — the junk clears
-   across the frame to reveal the clean after-shot underneath, instead of a flat fade. */
-@keyframes ba-wipe{0%,15%{-webkit-mask-position:0% 0;mask-position:0% 0}50%,72%{-webkit-mask-position:100% 0;mask-position:100% 0}90%,100%{-webkit-mask-position:0% 0;mask-position:0% 0}}
-.ba-before{opacity:1;-webkit-mask-image:linear-gradient(105deg,#000 40%,rgba(0,0,0,0) 62%);mask-image:linear-gradient(105deg,#000 40%,rgba(0,0,0,0) 62%);-webkit-mask-size:220% 100%;mask-size:220% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:0% 0;mask-position:0% 0}
-.ba-slider.ba-animate .ba-before{animation:ba-wipe 6s ease-in-out infinite}
+/* Before layer cross-fades to reveal the clean after-shot underneath. GPU-accelerated
+   opacity (was a mask-position wipe that repainted every frame and stuttered on mobile). */
+.ba-before{opacity:1;will-change:opacity;transform:translateZ(0);backface-visibility:hidden}
+.ba-slider.ba-animate .ba-before{animation:ba-reveal 6s ease-in-out infinite}
 .ba-caption{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);z-index:4;background:rgba(123,53,212,0.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:8px 22px 9px;border-radius:40px;text-align:center;pointer-events:none;white-space:nowrap;border:1px solid rgba(255,255,255,0.15)}
 .ba-caption-state{display:block;font-family:var(--font-heading);font-size:20px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#fff;line-height:1.1}
 .ba-caption-brand{display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.6);margin-top:2px}
@@ -406,7 +405,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 
 /* ---- RESPONSIVE ---- */
 @media(max-width:900px){
-  .hero{flex-direction:column;align-items:stretch;position:relative;min-height:calc(100dvh - 70px)}
+  .hero{flex-direction:column;align-items:stretch;position:relative;min-height:calc(100svh - 70px)}
   .hero-left{flex:none;max-width:100%;width:100%;padding:56px 28px 48px;position:relative;z-index:1}
   .hero-right{position:absolute;inset:0;width:100%;height:100%}
   .hero-right img{object-position:center center}
