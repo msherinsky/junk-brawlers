@@ -28,6 +28,8 @@
     }
   ],
   "redirects": [
+    { "source": "/index.html",                     "destination": "/",                    "permanent": true },
+
     { "source": "/dawsonville-junk-removal",       "destination": "/dawsonville.html",    "permanent": true },
     { "source": "/cumming-junk-removal",           "destination": "/cumming.html",        "permanent": true },
     { "source": "/canton-junk-removal",            "destination": "/canton.html",         "permanent": true },
