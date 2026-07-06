@@ -506,7 +506,12 @@
   /* ── Dots ── */
   var dotsWrap = document.createElement('div');
   dotsWrap.className = 'tq-dots';
-  dotsWrap.setAttribute('role', 'tablist');
+  /* role="group" (NOT "tablist"): these are pagination buttons, not a tabs widget
+     — the review cards aren't tabpanels. A "tablist" requires role="tab" children,
+     and without them the accessibility tree is flagged as malformed (fails both the
+     Accessibility "required children" audit and the Agentic Browsing tree check).
+     "group" has no required children and correctly labels the pager. */
+  dotsWrap.setAttribute('role', 'group');
   dotsWrap.setAttribute('aria-label', 'Reviews navigation');
   var dots = cards.map(function(card, i){
     var b = document.createElement('button');
