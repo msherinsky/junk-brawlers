@@ -28,7 +28,7 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-400.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-condensed-800.woff2" crossorigin>
-  <link rel="preload" as="image" href="images/truck.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="images/truck.webp" imagesrcset="images/truck-800.webp 800w, images/truck.webp 1600w" imagesizes="100vw" fetchpriority="high">
   <script defer src="js/site-data.js"></script>
   <link rel="stylesheet" href="css/style.css?v=jb4">
 
@@ -198,7 +198,7 @@
     <div class="hero-slideshow" aria-hidden="true">
       <!-- Slide 1 = LCP. Eager. Mobile crop under 900px. -->
       <div class="hero-slide is-active">
-        <img src="images/truck.webp" alt="" width="1600" height="1200" fetchpriority="high" decoding="async">
+        <img src="images/truck.webp" srcset="images/truck-800.webp 800w, images/truck.webp 1600w" sizes="100vw" alt="" width="1600" height="1200" fetchpriority="high" decoding="async">
       </div>
       <!-- Slides 2..N: no src; JS injects from data-src after load (all devices, incl. mobile). -->
       <div class="hero-slide">
