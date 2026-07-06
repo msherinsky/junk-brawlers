@@ -30,7 +30,7 @@
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-condensed-800.woff2" crossorigin>
   <link rel="preload" as="image" href="images/truck.webp" type="image/webp" fetchpriority="high">
   <script defer src="js/site-data.js"></script>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=jb4">
 
   <script type="application/ld+json">
   {
@@ -191,8 +191,6 @@
 
   <main>
 
-  <!-- HERO + TICKER FOLD (share one viewport so the ticker stays above the fold on desktop) -->
-  <div class="hero-fold">
   <!-- SECTION 1: HERO (cinematic centered) -->
   <section class="hero hero--cinematic">
 
@@ -217,10 +215,6 @@
     <!-- CENTERED CONTENT -->
     <div class="hero-centered">
       <img class="hero-logo" src="images/logo.webp" width="150" height="120" decoding="async" alt="Junk Brawlers LLC">
-      <a href="https://share.google/HG9xlgEp9F7GkTscP" target="_blank" rel="noopener" class="hero-badge" data-jb-badge aria-label="5.0 stars, 61 Google reviews">
-        <span class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-        <span class="hero-badge-text"><strong data-jb-rating>5.0</strong> Stars &middot; <span data-jb-count>61</span> Google Reviews</span>
-      </a>
       <h1 class="hero-eyebrow">North Georgia Junk Removal</h1>
       <div class="hero-tagline hero-tagline--center">
         <span class="hero-value">Where We Fight Your Junk</span><span class="hero-em">For You.</span>
@@ -233,9 +227,9 @@
         </a>
       </div>
       <div class="hero-pullquote hero-pullquote--center">
-        <div class="hero-quote-stars" role="img" aria-label="Rated 5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="hero-quote-stars" role="img" aria-label="5.0 stars, 61 Google reviews">&#9733;&#9733;&#9733;&#9733;&#9733; <span class="hero-quote-count"><span data-jb-count>61</span> reviews</span></div>
         <p>&ldquo;Prompt, courteous, professional &mdash; and a pleasure to work with. Fair and very reasonable pricing.&rdquo;</p>
-        <cite><strong>Autumn G.</strong> &middot; Google Review</cite>
+        <cite><strong>Autumn G.</strong></cite>
       </div>
     </div>
 
@@ -257,10 +251,10 @@
         <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>Price Quoted Is Price Paid</div>
         <span class="t-sep" aria-hidden="true"></span>
         <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span>Junk Brawlers LLC &middot; GA-Registered Business</div>
+        <span class="t-sep" aria-hidden="true"></span>
       </div>
     </div>
   </div>
-  </div><!-- /.hero-fold -->
 
   <!-- SECTION 2: PAIN POINTS -->
   <section class="pain-section" aria-label="Common junk removal frustrations Tony solves">
@@ -493,7 +487,7 @@
   <section class="trust-quotes" aria-label="Customer reviews about Tony's character and trustworthiness">
     <div class="trust-quotes-inner">
       <h2 class="trust-quotes-heading h2-bridge h2-bridge--dark">Every Homeowner. Same Story.</h2>
-      <div class="trust-quotes-grid">
+      <div class="trust-quotes-grid" tabindex="0" role="group" aria-roledescription="carousel" aria-label="Customer reviews — scroll or swipe to see more">
 
         <div class="tq-card">
           <div class="tq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -511,6 +505,42 @@
           <div class="tq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="tq-text">&ldquo;Tony was extremely pleasant to work with and made the process so easy. They were very open on the cost and kept me up to date on their arrival. They saved me so much time and energy.&rdquo;</p>
           <span class="tq-author">Mike &ldquo;PhillyBrock&rdquo; &middot; Google Review</span>
+        </div>
+
+        <div class="tq-card">
+          <div class="tq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="tq-text">&ldquo;I blinked&hellip; and the junk was gone. Tony and his crew are like junk-removal ninjas &mdash; showed up on time, worked incredibly fast, and left everything cleaner than they found it.&rdquo;</p>
+          <span class="tq-author">Mayra Armstrong &middot; Google Review</span>
+        </div>
+
+        <div class="tq-card">
+          <div class="tq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="tq-text">&ldquo;It amazed me how much they could pack into that truck. I seldom ever give five stars for anything, but I guess hell froze over. Give them a go&hellip;&rdquo;</p>
+          <span class="tq-author">Tony Penaloza &middot; Google Review</span>
+        </div>
+
+        <div class="tq-card">
+          <div class="tq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="tq-text">&ldquo;Prompt, efficient, priced very reasonably, and they move with a purpose. I absolutely recommend this small business to get rid of what you don&rsquo;t need.&rdquo;</p>
+          <span class="tq-author">Robert L. &middot; Google Review</span>
+        </div>
+
+        <div class="tq-card">
+          <div class="tq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="tq-text">&ldquo;James and Donnie were fantastic. Very professional and fast &mdash; they had my junk cleared out in no time. Definitely using them again in the future.&rdquo;</p>
+          <span class="tq-author">Dr. Kelly &middot; Google Review</span>
+        </div>
+
+        <div class="tq-card">
+          <div class="tq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="tq-text">&ldquo;Tony gave me a time he would be here, and was on time. His rates were very good and the work was done same day. He and his partner took great care of the house.&rdquo;</p>
+          <span class="tq-author">Gary Cooper &middot; Google Review</span>
+        </div>
+
+        <div class="tq-card">
+          <div class="tq-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="tq-text">&ldquo;Showed up on time and worked hard to complete the job quickly. Donnie and James were very nice and respectful. Thank you!&rdquo;</p>
+          <span class="tq-author">Gregg Bowen &middot; Google Review</span>
         </div>
 
       </div>
@@ -666,7 +696,7 @@
   })();
   </script>
   <script defer src="js/analytics.js"></script>
-  <script defer src="js/main.js?v=jb3"></script>
+  <script defer src="js/main.js?v=jb4"></script>
 
   <!-- Service-area coverage map (Leaflet + d3-delaunay are loaded on demand by service-map.js when the map scrolls into view) -->
   <script defer src="js/service-map.js"></script>

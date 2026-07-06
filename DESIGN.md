@@ -221,7 +221,7 @@ The eco/disposal section uses `#2D7A4F` (forest green) as its accent — intenti
 
 ## Animation
 
-- Trust ticker: `animation: ticker-scroll 160s linear infinite` — slow marquee
+- Trust ticker: seamless marquee — `main.js` clones the strip to overfill the viewport and sets `--ticker-shift` (one loop-unit width) + `--ticker-dur`; CSS runs `animation: ticker-scroll var(--ticker-dur) linear infinite` (~47px/s desktop, ~30px/s mobile). Frozen under `prefers-reduced-motion`.
 - Service card hover: `transform: translateY(100%) → translateY(0)`, cubic-bezier ease `0.38s`
 - FAQ toggle: `transform: rotate(45deg)` on open
 - Nav dropdown arrow: `rotate(180deg)` on open

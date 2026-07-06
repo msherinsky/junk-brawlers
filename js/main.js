@@ -412,22 +412,41 @@
   });
 })();
 
-/* ── Trust Ticker Autoscroll (mobile) ── */
+/* ── Trust Ticker: seamless marquee (all viewports) ──
+   The shipped markup carries a base loop unit (a set of items + an aria-hidden
+   duplicate). We clone that unit until the strip always overfills the visible
+   window, then let the CSS animation scroll by exactly ONE unit width so
+   identical content realigns at the wrap — an invisible seam at any screen
+   width. JS only sizes the strip and sets the loop distance/duration via CSS
+   custom properties; the compositor does the animating. Reduced motion is
+   handled in CSS. */
 (function(){
-  if(!window.matchMedia||!window.matchMedia('(max-width:768px)').matches) return;
   var track=document.querySelector('.trust-ticker-track');
   if(!track) return;
-  var orig=track.innerHTML;
-  track.innerHTML=orig+orig;
-  var x=0,halfW=0;
-  function tick(){
-    if(!halfW) halfW=track.scrollWidth/2;
-    x+=0.4;
-    if(x>=halfW) x-=halfW;
-    track.style.transform='translateX(-'+x+'px)';
-    requestAnimationFrame(tick);
+  var wrap=track.parentElement;                  // .trust-ticker-wrap (clipped window)
+  var base=track.innerHTML;                       // base loop unit, as shipped
+  var SPEED_DESKTOP=47, SPEED_MOBILE=30;          // px/sec — tune here
+  function build(){
+    track.innerHTML=base;                         // reset, then measure one unit
+    var unitW=track.scrollWidth;
+    if(!unitW) return;
+    // Clone until the strip is at least two windows + one unit wide, so the
+    // visible window is always full and no empty stretch can trail a unit.
+    var need=wrap.clientWidth*2+unitW, html=base, w=unitW;
+    while(w<unitW*20 && w<need){ html+=base; w+=unitW; }   // 20-unit safety cap
+    track.innerHTML=html;
+    var mobile=window.matchMedia && window.matchMedia('(max-width:768px)').matches;
+    var speed=mobile?SPEED_MOBILE:SPEED_DESKTOP;
+    // Restart the animation cleanly with the new loop distance + duration.
+    track.style.animation='none';
+    track.style.setProperty('--ticker-shift', unitW+'px');
+    track.style.setProperty('--ticker-dur', (unitW/speed)+'s');
+    void track.offsetWidth;                       // reflow so the restart takes
+    track.style.animation='';
   }
-  requestAnimationFrame(tick);
+  build();
+  if(document.fonts && document.fonts.ready) document.fonts.ready.then(build);
+  var rt; window.addEventListener('resize', function(){ clearTimeout(rt); rt=setTimeout(build,200); });
 })();
 
 /* Cinematic hero: crossfade + pan controller. The photo-to-photo crossfade runs
@@ -447,4 +466,80 @@
   function boot(){ ('requestIdleCallback' in window) ? requestIdleCallback(start,{timeout:1500}) : setTimeout(start,300); }
   if(document.readyState==='complete') boot(); else window.addEventListener('load', boot);
 })();
+
+/* Homepage reviews carousel: pagination dots + gentle auto-advance.
+   Native CSS scroll-snap does the swiping; this only builds the dots, keeps the
+   active dot in sync, and auto-advances (pausing on interaction, freezing under
+   reduced-motion). No-op on every page except the homepage. */
+(function(){
+  var grid = document.querySelector('.trust-quotes-grid');
+  if(!grid || !document.body.classList.contains('page-home')) return;
+  var cards = [].slice.call(grid.querySelectorAll('.tq-card'));
+  if(cards.length < 2) return;
+
+  var GAP = 24;
+
+  /* ── Dots ── */
+  var dotsWrap = document.createElement('div');
+  dotsWrap.className = 'tq-dots';
+  dotsWrap.setAttribute('role', 'tablist');
+  dotsWrap.setAttribute('aria-label', 'Reviews navigation');
+  var dots = cards.map(function(card, i){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'tq-dot';
+    b.setAttribute('aria-label', 'Go to review ' + (i + 1));
+    b.addEventListener('click', function(){
+      bump();
+      card.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    });
+    dotsWrap.appendChild(b);
+    return b;
+  });
+  grid.parentNode.insertBefore(dotsWrap, grid.nextSibling);
+
+  /* ── Active-dot sync (rAF-throttled) ── */
+  var ticking = false;
+  function updateActive(){
+    ticking = false;
+    // Map scroll progress (0…1) across the dots so the first dot lights at the
+    // start and the last at the end — works for both the 3-up desktop view and
+    // the 1-up mobile view.
+    var max = grid.scrollWidth - grid.clientWidth;
+    var idx = max > 0 ? Math.round(grid.scrollLeft / max * (cards.length - 1)) : 0;
+    if(idx < 0) idx = 0;
+    if(idx > cards.length - 1) idx = cards.length - 1;
+    dots.forEach(function(d, i){ d.classList.toggle('is-active', i === idx); });
+  }
+  grid.addEventListener('scroll', function(){
+    if(!ticking){ ticking = true; requestAnimationFrame(updateActive); }
+  }, { passive: true });
+  updateActive();
+
+  /* ── Gentle auto-advance ── */
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var timer = null, resumeT = null, hovering = false;
+  function advance(){
+    if(grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 4){
+      grid.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      grid.scrollBy({ left: cards[0].getBoundingClientRect().width + GAP, behavior: 'smooth' });
+    }
+  }
+  function stop(){ if(timer){ clearInterval(timer); timer = null; } }
+  function play(){ if(reduce || timer || hovering || document.hidden) return; timer = setInterval(advance, 5000); }
+  function bump(){ stop(); clearTimeout(resumeT); resumeT = setTimeout(play, 6000); }
+  grid.addEventListener('mouseenter', function(){ hovering = true; stop(); });
+  grid.addEventListener('mouseleave', function(){ hovering = false; play(); });
+  ['pointerdown','touchstart','wheel','focusin'].forEach(function(ev){
+    grid.addEventListener(ev, bump, { passive: true });
+  });
+  document.addEventListener('visibilitychange', function(){ if(document.hidden) stop(); else play(); });
+  play();
+})();
+
+/* (Removed) Hero fold sizing IIFE — the hero now fills the fold via CSS
+   min-height:calc(100vh - 70px) and the trust ticker sits just below the fold,
+   revealed on scroll. No JS height override needed (it shrank the fold below the
+   hero's height and made the next section overlap). */
 
