@@ -218,7 +218,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 /* ---- TRUST TICKER (floats over the continuous hero dark — no band) ---- */
 .trust-ticker{background:radial-gradient(ellipse 65% 130% at 50% 50%,rgba(26,0,46,0.9) 0%,#0A000F 72%)}
 .trust-ticker-wrap{overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 100%)}
-.trust-ticker-track{display:flex;align-items:center;flex-wrap:nowrap;padding:18px 0;width:max-content;will-change:transform;animation:ticker-scroll 160s linear infinite}
+.trust-ticker-track{display:flex;align-items:center;flex-wrap:nowrap;padding:18px 0;width:max-content;will-change:transform;animation:ticker-scroll 42s linear infinite}
 @keyframes ticker-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .t-item{display:flex;align-items:center;gap:12px;color:rgba(255,255,255,0.9);font-size:18px;font-weight:600;letter-spacing:0.2px;white-space:nowrap;padding:0 42px}
 .t-icon{width:25px;height:25px;flex-shrink:0;color:var(--color-steel-light);display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 0 9px rgba(123,53,212,0.55))}
