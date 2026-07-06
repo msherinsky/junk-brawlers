@@ -423,7 +423,7 @@
   var x=0,halfW=0;
   function tick(){
     if(!halfW) halfW=track.scrollWidth/2;
-    x+=0.5;
+    x+=0.4;
     if(x>=halfW) x-=halfW;
     track.style.transform='translateX(-'+x+'px)';
     requestAnimationFrame(tick);

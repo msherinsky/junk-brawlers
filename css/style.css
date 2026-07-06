@@ -525,7 +525,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
   .pain-close br{display:none}
   .section-bridge{padding:48px 20px 56px}
   .section-bridge--final{padding-top:48px;padding-bottom:56px}
-  .trust-ticker-track{padding:16px 0}
+  .trust-ticker-track{padding:16px 0;animation-duration:55s}
   .t-item{font-size:16px;padding:0 30px;gap:10px}
   .t-icon{width:21px;height:21px}
   .trust-quotes-grid{grid-template-columns:1fr;gap:14px}
