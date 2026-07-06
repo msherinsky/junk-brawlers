@@ -27,17 +27,35 @@
 
   var GA4_ID = 'G-KXD6ZXNJTS';
 
-  /* ── GA4 base (gtag) ── */
+  /* ── GA4 base (gtag) ──
+     The gtag() stub + dataLayer exist immediately so any early call_click /
+     generate_lead events (and the initial config/page_view) queue up and are
+     never lost. But we DEFER loading the ~90KB gtag.js itself until after the
+     page has painted and is interactive — parsing it on the main thread during
+     load was delaying the hero paint (the LCP "element render delay"). GA is not
+     needed in the critical render path; the queued page_view fires as soon as
+     gtag.js boots a beat later. */
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
   window.gtag = window.gtag || gtag;
   gtag('js', new Date());
   gtag('config', GA4_ID);
 
-  var g = document.createElement('script');
-  g.async = true;
-  g.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
-  document.head.appendChild(g);
+  var gaBooted = false;
+  function bootGA() {
+    if (gaBooted) return; gaBooted = true;
+    var g = document.createElement('script');
+    g.async = true;
+    g.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
+    document.head.appendChild(g);
+  }
+  /* First real interaction boots it right away (engaged users get instant event
+     delivery); everyone else gets it shortly after load. Whichever comes first. */
+  ['pointerdown', 'keydown', 'touchstart', 'scroll'].forEach(function (ev) {
+    window.addEventListener(ev, bootGA, { once: true, passive: true });
+  });
+  if (document.readyState === 'complete') { setTimeout(bootGA, 2500); }
+  else { window.addEventListener('load', function () { setTimeout(bootGA, 2500); }); }
 
   /* ── Call-click tracking ──
      One delegated listener catches every tel: link on the page —
