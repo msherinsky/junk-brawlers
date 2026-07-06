@@ -426,13 +426,33 @@
   var wrap=track.parentElement;                  // .trust-ticker-wrap (clipped window)
   var base=track.innerHTML;                       // base loop unit, as shipped
   var SPEED_DESKTOP=47, SPEED_MOBILE=30, SPEED_REDUCED=13;   // px/sec — tune here
+  var lastUnitW=0, lastWrapW=0;
+  // Measure one base loop-unit width on an off-screen probe, so we never wipe and
+  // re-lay the LIVE (animating) track just to take a measurement — doing that mid-
+  // scroll is what makes the strip visibly jump.
+  function measureUnit(){
+    var probe=track.cloneNode(false);
+    probe.style.cssText='position:absolute;left:-9999px;top:0;visibility:hidden;width:max-content;animation:none';
+    probe.innerHTML=base;
+    wrap.appendChild(probe);
+    var w=probe.scrollWidth;
+    wrap.removeChild(probe);
+    return w;
+  }
   function build(){
-    track.innerHTML=base;                         // reset, then measure one unit
-    var unitW=track.scrollWidth;
+    var unitW=measureUnit();
     if(!unitW) return;
+    var wrapW=wrap.clientWidth;
+    // Skip redundant rebuilds — restarting the animation snaps the strip back to
+    // its start (a visible skip). Only rebuild when the unit width (fonts loaded)
+    // or the window WIDTH actually changed. This ignores the constant resize events
+    // a mobile browser fires as its address bar shows/hides on scroll — those change
+    // height only, so width is unchanged and the ticker keeps gliding uninterrupted.
+    if(unitW===lastUnitW && wrapW===lastWrapW) return;
+    lastUnitW=unitW; lastWrapW=wrapW;
     // Clone until the strip is at least two windows + one unit wide, so the
     // visible window is always full and no empty stretch can trail a unit.
-    var need=wrap.clientWidth*2+unitW, html=base, w=unitW;
+    var need=wrapW*2+unitW, html=base, w=unitW;
     while(w<unitW*20 && w<need){ html+=base; w+=unitW; }   // 20-unit safety cap
     track.innerHTML=html;
     var mm=window.matchMedia;
