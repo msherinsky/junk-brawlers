@@ -29,8 +29,7 @@
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-condensed-800.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-400.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-600.woff2" crossorigin>
-  <link rel="preload" as="image" href="images/hero-bg-mobile.webp" type="image/webp" fetchpriority="high" media="(max-width: 900px)">
-  <link rel="preload" as="image" href="images/hero-bg.webp" type="image/webp" fetchpriority="high" media="(min-width: 901px)">
+  <link rel="preload" as="image" href="images/truck.webp" type="image/webp" fetchpriority="high">
   <link rel="preload" href="images/logo.webp" as="image" type="image/webp" fetchpriority="high">
   <script defer src="js/site-data.js"></script>
   <link rel="stylesheet" href="css/style.css">
@@ -134,6 +133,7 @@
             <a href="flowery-branch.html">Flowery Branch GA</a>
             <a href="gainesville.html">Gainesville GA</a>
             <a href="helen.html">Helen GA</a>
+            <a href="milton.html">Milton GA</a>
             <a href="morganton.html">Morganton GA</a>
             <a href="suwanee.html">Suwanee GA</a>
             <a href="woodstock.html">Woodstock GA</a>
@@ -179,6 +179,7 @@
     <a href="flowery-branch.html">Flowery Branch GA</a>
     <a href="gainesville.html">Gainesville GA</a>
     <a href="helen.html">Helen GA</a>
+    <a href="milton.html">Milton GA</a>
     <a href="morganton.html">Morganton GA</a>
     <a href="suwanee.html">Suwanee GA</a>
     <a href="woodstock.html">Woodstock GA</a>
@@ -192,46 +193,42 @@
 
   <main>
 
-  <!-- SECTION 1: HERO -->
-  <section class="hero">
-    <div class="hero-left">
-      <div class="hero-content">
+  <div class="hero-fold">
+    <!-- SECTION 1: HERO (cinematic centered) -->
+  <section class="hero hero--cinematic">
 
-        <nav class="sp-breadcrumb" aria-label="Breadcrumb">
-          <a href="/">Home</a>
-          <span aria-hidden="true">/</span>
-          <a href="service-areas.html">Locations</a>
-          <span aria-hidden="true">/</span>
-          <span aria-current="page">Canton GA</span>
-        </nav>
-
-        <a href="https://share.google/HG9xlgEp9F7GkTscP" target="_blank" rel="noopener" class="hero-badge" data-jb-badge aria-label="5.0 stars, 61 Google reviews">
-          <span class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <span class="hero-badge-text"><strong data-jb-rating>5.0</strong> Stars &middot; <span data-jb-count>61</span> Google Reviews</span>
-        </a>
-
-        <h1 style="font-family:var(--font-heading);font-size:clamp(13px,1.4vw,18px);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.6);margin-bottom:16px;">Junk Removal in Canton, GA</h1>
-        <div class="hero-tagline">The Crew<span class="hero-em">Cherokee County<br>Calls.</span></div>
-
-        <p class="hero-sub">Tony and his crew roll up with the truck, clear it out from Bridgemill to the Etowah, and haul it off &mdash; same day most days, price quoted is price paid. You don&rsquo;t lift a finger.</p>
-
-        <div class="hero-buttons">
-          <a href="tel:4046329165" class="btn-fire">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:inline;vertical-align:-2px;margin-right:6px;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            Call Tony - It&rsquo;s Free
-          </a>
-          <a href="contact.html" class="btn-ghost-white">Get a Free Quote</a>
-        </div>
-
+    <div class="hero-slideshow" aria-hidden="true">
+      <div class="hero-slide is-active">
+        <img src="images/truck.webp" alt="" width="1600" height="1200" fetchpriority="high" decoding="async">
+      </div>
+      <div class="hero-slide">
+        <img alt="" width="1600" height="1200" decoding="async" data-src="images/gbp-truck-flatbed-loaded.webp" data-lazy>
+      </div>
+      <div class="hero-slide">
+        <img alt="" width="1500" height="2000" decoding="async" data-src="images/gbp-crew-loading-carpet.webp" data-lazy style="object-position:center 30%">
       </div>
     </div>
-    <div class="hero-right">
-      <picture>
-        <source srcset="images/hero-bg-mobile.webp" media="(max-width: 900px)" type="image/webp">
-        <source srcset="images/hero-bg.webp" type="image/webp">
-        <img src="images/hero-bg.jpg" alt="Junk Brawlers branded truck ready for junk pickup in North Georgia" width="800" height="1067" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:62% center;display:block;">
-      </picture>
+
+    <div class="hero-scrim" aria-hidden="true"></div>
+
+    <div class="hero-centered">
+      <nav class="sp-breadcrumb" aria-label="Breadcrumb"> <a href="/">Home</a> <span aria-hidden="true">/</span> <a href="service-areas.html">Locations</a> <span aria-hidden="true">/</span> <span aria-current="page">Canton GA</span> </nav>
+      <img class="hero-logo" src="images/logo.webp" width="150" height="120" decoding="async" alt="Junk Brawlers LLC">
+      <a href="https://share.google/HG9xlgEp9F7GkTscP" target="_blank" rel="noopener" class="hero-badge" data-jb-badge aria-label="5.0 stars, 61 Google reviews">
+        <span class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="hero-badge-text"><strong data-jb-rating>5.0</strong> Stars &middot; <span data-jb-count>61</span> Google Reviews</span>
+      </a>
+      <h1 class="hero-eyebrow">Junk Removal in Canton, GA</h1>
+      <div class="hero-tagline hero-tagline--center"><span class="hero-value">Where We Fight Your Junk</span><span class="hero-em">For You.</span></div>
+      <p class="hero-sub">Tony and his crew roll up with the truck, clear it out from Bridgemill to the Etowah, and haul it off, same day most days, price quoted is price paid. You don&rsquo;t lift a finger.</p>
+      <div class="hero-buttons">
+          <a href="tel:4046329165" class="btn-fire">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:inline;vertical-align:-2px;margin-right:6px;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            Call Tony
+          </a>
+        </div>
     </div>
+
   </section>
 
   <!-- TRUST TICKER -->
@@ -265,15 +262,14 @@
       </div>
     </div>
   </div>
+  </div><!-- /.hero-fold -->
 
   <!-- SECTION 2: THE LOCAL PROBLEM -->
   <section class="pain-section" aria-label="Junk removal context for Canton GA">
     <div class="pain-inner">
       <h2 class="h2-bridge h2-bridge--dark" style="margin-bottom:16px;">Whether It&rsquo;s the BridgeMill Reno or an Estate on the Etowah, the Haul Is the Last Thing You Should Stress Over.</h2>
-      <ul class="pain-paragraph">
-        <li>A BridgeMill home twenty years in, or a full estate off River Green, it&rsquo;s more house than you can clear room by room alone.</li>
-        <li>And you&rsquo;re not thrilled about a rotating crew of strangers walking through the place.</li>
-        <li>The last quote you got over the phone climbed the second the truck showed.</li>
+      <ul class="pain-paragraph pain-paragraph--single">
+        <li>A BridgeMill reno or a full estate off the Etowah is more house than you can clear on your own, and you don&rsquo;t want to hand it to a rotating crew of strangers.</li>
       </ul>
       <span class="pain-pivot">That&rsquo;s not how the Junk Brawlers work.</span>
       <ul class="pain-solutions">
@@ -813,7 +809,7 @@
     <a href="contact.html" class="sticky-call-bar__quote">Free Quote</a>
   </div>
   <script defer src="js/analytics.js"></script>
-  <script defer src="js/main.js"></script>
+  <script defer src="js/main.js?v=jb2"></script>
 
 
     <script defer src="js/service-map.js"></script>

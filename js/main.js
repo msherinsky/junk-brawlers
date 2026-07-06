@@ -431,3 +431,19 @@
   requestAnimationFrame(tick);
 })();
 
+/* Cinematic hero: crossfade + pan controller (defers non-first slides; skips only on reduced-motion). Runs on mobile too. No-op on pages without .hero-slideshow. */
+(function(){
+  var box = document.querySelector('.hero-slideshow');
+  if(!box) return;
+  var slides = [].slice.call(box.querySelectorAll('.hero-slide'));
+  if(slides.length < 2) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce) return;
+  var SLIDE_MS = 6000, i = 0, timer = null;
+  function inject(){ slides.forEach(function(s){ var img=s.querySelector('img[data-lazy]'); if(img && !img.getAttribute('src')){ img.src=img.getAttribute('data-src'); img.removeAttribute('data-lazy'); } }); }
+  function advance(){ var next=(i+1)%slides.length; slides[i].classList.remove('is-active'); slides[next].classList.add('is-active'); i=next; }
+  function start(){ inject(); timer=setInterval(advance, SLIDE_MS); document.addEventListener('visibilitychange', function(){ if(document.hidden){ if(timer){clearInterval(timer);timer=null;} } else if(!timer){ timer=setInterval(advance, SLIDE_MS); } }); }
+  function boot(){ ('requestIdleCallback' in window) ? requestIdleCallback(start,{timeout:1500}) : setTimeout(start,300); }
+  if(document.readyState==='complete') boot(); else window.addEventListener('load', boot);
+})();
+

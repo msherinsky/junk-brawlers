@@ -29,8 +29,7 @@
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-condensed-800.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-400.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-600.woff2" crossorigin>
-  <link rel="preload" as="image" href="images/hero-bg-mobile.webp" type="image/webp" fetchpriority="high" media="(max-width: 900px)">
-  <link rel="preload" as="image" href="images/hero-bg.webp" type="image/webp" fetchpriority="high" media="(min-width: 901px)">
+  <link rel="preload" as="image" href="images/truck.webp" type="image/webp" fetchpriority="high">
   <link rel="preload" href="images/logo.webp" as="image" type="image/webp" fetchpriority="high">
   <script defer src="js/site-data.js"></script>
   <link rel="stylesheet" href="css/style.css">
@@ -176,6 +175,7 @@
             <a href="flowery-branch.html">Flowery Branch GA</a>
             <a href="gainesville.html">Gainesville GA</a>
             <a href="helen.html">Helen GA</a>
+            <a href="milton.html">Milton GA</a>
             <a href="morganton.html">Morganton GA</a>
             <a href="suwanee.html">Suwanee GA</a>
             <a href="woodstock.html">Woodstock GA</a>
@@ -221,6 +221,7 @@
     <a href="flowery-branch.html">Flowery Branch GA</a>
     <a href="gainesville.html">Gainesville GA</a>
     <a href="helen.html">Helen GA</a>
+    <a href="milton.html">Milton GA</a>
     <a href="morganton.html">Morganton GA</a>
     <a href="suwanee.html">Suwanee GA</a>
     <a href="woodstock.html">Woodstock GA</a>
@@ -235,45 +236,42 @@
   <main>
 
   <!-- SECTION 1: HERO, Am I in the right place? -->
-  <section class="hero">
-    <div class="hero-left">
-      <div class="hero-content">
+  <div class="hero-fold">
+    <!-- SECTION 1: HERO (cinematic centered) -->
+  <section class="hero hero--cinematic">
 
-        <nav class="sp-breadcrumb" aria-label="Breadcrumb">
-          <a href="/">Home</a>
-          <span aria-hidden="true">/</span>
-          <a href="services.html">Services</a>
-          <span aria-hidden="true">/</span>
-          <span aria-current="page">Hot Tub Removal</span>
-        </nav>
-
-        <a href="https://share.google/HG9xlgEp9F7GkTscP" target="_blank" rel="noopener" class="hero-badge" data-jb-badge aria-label="5.0 stars, 61 Google reviews">
-          <span class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <span class="hero-badge-text"><strong data-jb-rating>5.0</strong> Stars &middot; <span data-jb-count>61</span> Google Reviews</span>
-        </a>
-
-        <h1 style="font-family:var(--font-heading);font-size:clamp(13px,1.4vw,18px);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.6);margin-bottom:16px;">Hot Tub Removal in North Georgia</h1>
-        <div class="hero-tagline">Drained, Split,<span class="hero-em">and<br>Gone.</span></div>
-
-        <p class="hero-sub">Tony&rsquo;s crew drains it, breaks it down on-site, and hauls every piece &mdash; deck and yard protected, no prep on your end. Same day most days, price quoted is price paid.</p>
-
-        <div class="hero-buttons">
-          <a href="tel:4046329165" class="btn-fire">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:inline;vertical-align:-2px;margin-right:6px;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            Call Tony Now
-          </a>
-        </div>
-
-
+    <div class="hero-slideshow" aria-hidden="true">
+      <div class="hero-slide is-active">
+        <img src="images/truck.webp" alt="" width="1600" height="1200" fetchpriority="high" decoding="async">
+      </div>
+      <div class="hero-slide">
+        <img alt="" width="1600" height="1200" decoding="async" data-src="images/gbp-truck-flatbed-loaded.webp" data-lazy>
+      </div>
+      <div class="hero-slide">
+        <img alt="" width="1500" height="2000" decoding="async" data-src="images/gbp-crew-loading-carpet.webp" data-lazy style="object-position:center 30%">
       </div>
     </div>
-    <div class="hero-right">
-      <picture>
-        <source srcset="images/hero-bg-mobile.webp" media="(max-width: 900px)" type="image/webp">
-        <source srcset="images/hero-bg.webp" type="image/webp">
-        <img src="images/hero-bg.jpg" alt="Junk Brawlers branded truck ready for junk pickup in North Georgia" width="800" height="1067" fetchpriority="high" style="width:100%;height:100%;object-fit:cover;object-position:62% center;display:block;">
-      </picture>
+
+    <div class="hero-scrim" aria-hidden="true"></div>
+
+    <div class="hero-centered">
+      <nav class="sp-breadcrumb" aria-label="Breadcrumb"> <a href="/">Home</a> <span aria-hidden="true">/</span> <a href="services.html">Services</a> <span aria-hidden="true">/</span> <span aria-current="page">Hot Tub Removal</span> </nav>
+      <img class="hero-logo" src="images/logo.webp" width="150" height="120" decoding="async" alt="Junk Brawlers LLC">
+      <a href="https://share.google/HG9xlgEp9F7GkTscP" target="_blank" rel="noopener" class="hero-badge" data-jb-badge aria-label="5.0 stars, 61 Google reviews">
+        <span class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="hero-badge-text"><strong data-jb-rating>5.0</strong> Stars &middot; <span data-jb-count>61</span> Google Reviews</span>
+      </a>
+      <h1 class="hero-eyebrow">Hot Tub Removal in North Georgia</h1>
+      <div class="hero-tagline hero-tagline--center"><span class="hero-value">Where We Fight Your Junk</span><span class="hero-em">For You.</span></div>
+      <p class="hero-sub">Tony&rsquo;s crew drains it, breaks it down on-site, and hauls every piece, deck and yard protected, no prep on your end. Same day most days, price quoted is price paid.</p>
+      <div class="hero-buttons">
+          <a href="tel:4046329165" class="btn-fire">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:inline;vertical-align:-2px;margin-right:6px;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            Call Tony
+          </a>
+        </div>
     </div>
+
   </section>
 
   <!-- TRUST TICKER -->
@@ -307,15 +305,14 @@
       </div>
     </div>
   </div>
+  </div><!-- /.hero-fold -->
 
   <!-- SECTION 2: PROBLEM AGITATION, They get it. -->
   <section class="pain-section" aria-label="Understanding the hot tub removal situation">
     <div class="pain-inner">
       <h2 class="h2-bridge h2-bridge--dark" style="margin-bottom:16px;">A Hot Tub Isn&rsquo;t Something You Drag to the Curb. Getting It Out Shouldn&rsquo;t Wreck Your Deck or Your Weekend.</h2>
-      <ul class="pain-paragraph">
-        <li>It&rsquo;s full of water, bolted down, and wired in, and you have no idea how it comes out without tearing up the deck.</li>
-        <li>You&rsquo;re not about to drain it or mess with the electrical yourself.</li>
-        <li>Every quote came with fine print: extra for the access, extra for the wiring, extra for the weight.</li>
+      <ul class="pain-paragraph pain-paragraph--single">
+        <li>It&rsquo;s full of water, bolted to the deck, and wired in, and you&rsquo;re picturing the whole thing torn up just to haul it out.</li>
       </ul>
       <span class="pain-pivot">Most people don&rsquo;t realize what&rsquo;s actually involved.</span>
       <ul class="pain-solutions">
@@ -357,7 +354,7 @@
       </div>
 
       <div class="hiw-cta">
-        <a href="tel:4046329165" class="btn-fire" style="font-family:var(--font-heading);font-size:17px;letter-spacing:1.5px;padding:16px 44px;">Call Tony Now &rarr;</a>
+        <a href="tel:4046329165" class="btn-fire" style="font-family:var(--font-heading);font-size:17px;letter-spacing:1.5px;padding:16px 44px;">Call Tony &rarr;</a>
       </div>
     </div>
   </section>
@@ -767,7 +764,7 @@
       <a href="tel:4046329165" class="cta-final-phone" data-phone-href>(404) 632-9165</a>
       <span class="cta-final-tap">Tap to call &middot; Tony picks up</span>
       <a href="tel:4046329165" class="btn-fire" style="font-family:var(--font-heading);font-size:18px;letter-spacing:2px;padding:20px 52px;">
-        Call Tony Now
+        Call Tony
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline;vertical-align:-2px;margin-left:10px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
       <p class="cta-final-sub">Mon&ndash;Fri, 7am to 6pm. Call before noon and he can usually be there today.</p>
@@ -824,7 +821,7 @@
     <a href="contact.html" class="sticky-call-bar__quote">Free Quote</a>
   </div>
   <script defer src="js/analytics.js"></script>
-  <script defer src="js/main.js"></script>
+  <script defer src="js/main.js?v=jb2"></script>
 
 
     <script defer src="js/service-map.js"></script>
