@@ -425,7 +425,7 @@
   if(!track) return;
   var wrap=track.parentElement;                  // .trust-ticker-wrap (clipped window)
   var base=track.innerHTML;                       // base loop unit, as shipped
-  var SPEED_DESKTOP=47, SPEED_MOBILE=30;          // px/sec — tune here
+  var SPEED_DESKTOP=47, SPEED_MOBILE=30, SPEED_REDUCED=13;   // px/sec — tune here
   function build(){
     track.innerHTML=base;                         // reset, then measure one unit
     var unitW=track.scrollWidth;
@@ -435,8 +435,12 @@
     var need=wrap.clientWidth*2+unitW, html=base, w=unitW;
     while(w<unitW*20 && w<need){ html+=base; w+=unitW; }   // 20-unit safety cap
     track.innerHTML=html;
-    var mobile=window.matchMedia && window.matchMedia('(max-width:768px)').matches;
-    var speed=mobile?SPEED_MOBILE:SPEED_DESKTOP;
+    var mm=window.matchMedia;
+    // Reduce Motion (common on iPhones): keep scrolling but drop to a slow, gentle
+    // crawl instead of freezing — a frozen half-clipped strip just reads as broken.
+    var reduced=mm && mm('(prefers-reduced-motion: reduce)').matches;
+    var mobile=mm && mm('(max-width:768px)').matches;
+    var speed=reduced?SPEED_REDUCED:(mobile?SPEED_MOBILE:SPEED_DESKTOP);
     // Restart the animation cleanly with the new loop distance + duration.
     track.style.animation='none';
     track.style.setProperty('--ticker-shift', unitW+'px');
