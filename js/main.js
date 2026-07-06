@@ -350,11 +350,10 @@
       e.preventDefault();
       var firstNameEl = form.querySelector('[name="firstName"]');
       var phoneEl     = form.querySelector('[name="phone"]');
-      var emailEl     = form.querySelector('[name="email"]');
       var data = {
         firstName: firstNameEl.value.trim(),
         lastName:  form.querySelector('[name="lastName"]').value.trim(),
-        email:     '',
+        email:     '', // no email field in this form; kept for /api/submit payload shape
         phone:     phoneEl.value.trim(),
         zipCode:   form.querySelector('[name="zipCode"]').value.trim(),
         message:   form.querySelector('[name="message"]') ? form.querySelector('[name="message"]').value.trim() : '',
@@ -367,7 +366,7 @@
       firstNameEl.classList.remove('jb-input-error');
       phoneEl.classList.remove('jb-input-error');
       if (!data.firstName) { firstNameEl.classList.add('jb-input-error'); valid = false; }
-      if (!data.email && phoneDigits.length < 10) { phoneEl.classList.add('jb-input-error'); valid = false; }
+      if (phoneDigits.length < 10) { phoneEl.classList.add('jb-input-error'); valid = false; }
       if (!valid) {
         statusEl.textContent = 'Please fill in the highlighted fields.';
         statusEl.className = 'jb-form-status error';
@@ -431,14 +430,16 @@
   requestAnimationFrame(tick);
 })();
 
-/* Cinematic hero: crossfade + pan controller (defers non-first slides; skips only on reduced-motion). Runs on mobile too. No-op on pages without .hero-slideshow. */
+/* Cinematic hero: crossfade + pan controller. The photo-to-photo crossfade runs
+   on every device — desktop, mobile, and even under reduced-motion (a gentle
+   opacity fade). The Ken Burns pan is the only motion-sensitive part, and CSS
+   suppresses just that under prefers-reduced-motion. No-op on pages without
+   .hero-slideshow. */
 (function(){
   var box = document.querySelector('.hero-slideshow');
   if(!box) return;
   var slides = [].slice.call(box.querySelectorAll('.hero-slide'));
   if(slides.length < 2) return;
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduce) return;
   var SLIDE_MS = 6000, i = 0, timer = null;
   function inject(){ slides.forEach(function(s){ var img=s.querySelector('img[data-lazy]'); if(img && !img.getAttribute('src')){ img.src=img.getAttribute('data-src'); img.removeAttribute('data-lazy'); } }); }
   function advance(){ var next=(i+1)%slides.length; slides[i].classList.remove('is-active'); slides[next].classList.add('is-active'); i=next; }

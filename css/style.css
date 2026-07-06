@@ -192,7 +192,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
   .hero-centered .sp-breadcrumb,.hero-centered .hero-badge{margin-bottom:8px}
 }
 
-/* Mobile: single static cover shot, centered stack, no Ken Burns */
+/* Mobile: centered stack + tuned crops (the crossfade slideshow still runs here) */
 @media(max-width:900px){
   .hero.hero--cinematic{min-height:calc(100svh - 70px)}
   .hero-centered{padding:44px 24px}
@@ -208,10 +208,8 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
   .hero-centered .hero-buttons .btn-fire,.hero-centered .hero-buttons .btn-ghost-white{width:100%;justify-content:center;text-align:center}
 }
 
-/* Reduced motion: freeze on slide 1 */
+/* Reduced motion: keep the gentle photo-to-photo crossfade, drop only the Ken Burns pan */
 @media(prefers-reduced-motion:reduce){
-  .hero-slide{transition:none}
-  .hero-slide:not(.is-active){display:none}
   .hero-slide.is-active img{animation:none!important;transform:none!important}
 }
 

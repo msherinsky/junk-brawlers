@@ -15,6 +15,16 @@
 (function () {
   'use strict';
 
+  /* ── Skip local/dev traffic ──
+     When the site is opened locally (localhost / 127.0.0.1) we don't
+     want those hits polluting GA4 — bail out before anything loads so
+     no page_view, call_click, or generate_lead is ever sent. */
+  var host = location.hostname;
+  if (host === 'localhost' || host === '127.0.0.1' || host === '' || host === '::1') {
+    window.JB_trackLead = function () {}; /* no-op so form code doesn't error */
+    return;
+  }
+
   var GA4_ID = 'G-KXD6ZXNJTS';
 
   /* ── GA4 base (gtag) ── */
