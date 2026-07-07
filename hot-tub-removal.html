@@ -29,8 +29,7 @@
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-condensed-800.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-400.woff2" crossorigin>
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-600.woff2" crossorigin>
-  <link rel="preload" as="image" href="images/truck.webp" type="image/webp" fetchpriority="high">
-  <link rel="preload" href="images/logo.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="images/truck.webp" imagesrcset="images/truck-800.webp 800w, images/truck.webp 1600w" imagesizes="100vw" fetchpriority="high">
   <script defer src="js/site-data.js"></script>
   <link rel="stylesheet" href="css/style.css?v=jb4">
   <style>
@@ -241,7 +240,7 @@
 
     <div class="hero-slideshow" aria-hidden="true">
       <div class="hero-slide is-active">
-        <img src="images/truck.webp" alt="" width="1600" height="1200" fetchpriority="high" decoding="async">
+        <img src="images/truck.webp" srcset="images/truck-800.webp 800w, images/truck.webp 1600w" sizes="100vw" alt="" width="1600" height="1200" fetchpriority="high" decoding="sync">
       </div>
       <div class="hero-slide">
         <img alt="" width="1600" height="1200" decoding="async" data-src="images/gbp-truck-flatbed-loaded.webp" data-lazy>
