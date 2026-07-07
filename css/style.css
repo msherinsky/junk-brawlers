@@ -125,11 +125,15 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .hero-content p.hero-sub strong{color:#fff;font-weight:600}
 .hero-buttons{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-start}
 /* ================= HERO — CINEMATIC CENTERED (homepage only, .hero--cinematic) ================= */
-/* Homepage hero fills the fold but stops ~26px short so the top of the trust
-   ticker peeks below the hero photo — a scroll cue that becomes fully visible
-   within the first bit of scroll. (Mobile overrides min-height at the media
-   query below.) --ticker-peek is easy to tune. */
-.hero.hero--cinematic{display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:0;background:#08000F;--ticker-peek:72px;min-height:calc(100vh - 70px - var(--ticker-peek))}
+/* Homepage + city/service heros fill the fold so it ends FLUSH with the bottom of
+   the trust ticker — the next section must NOT peek until the user scrolls.
+   --ticker-peek MUST equal the ticker's rendered height so the hero reserves exactly
+   one ticker's worth of space (hero + ticker = one viewport minus the 70px header).
+   It's on :root so the ticker enforces the SAME height below — the two can't drift
+   apart (that drift is what caused the next section to peek). Mobile overrides
+   min-height at the media query below. */
+:root{--ticker-peek:49px}
+.hero.hero--cinematic{display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:0;background:#08000F;min-height:calc(100vh - 70px - var(--ticker-peek))}
 
 /* Ken Burns crossfade slideshow backdrop */
 .hero-slideshow{position:absolute;inset:0;z-index:0;overflow:hidden}
@@ -226,7 +230,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 }
 
 /* ---- TRUST TICKER (floats over the continuous hero dark — no band) ---- */
-.trust-ticker{background:radial-gradient(ellipse 65% 130% at 50% 50%,rgba(26,0,46,0.9) 0%,#0A000F 72%)}
+.trust-ticker{background:radial-gradient(ellipse 65% 130% at 50% 50%,rgba(26,0,46,0.9) 0%,#0A000F 72%);min-height:var(--ticker-peek);display:flex;flex-direction:column;justify-content:center}
 .trust-ticker-wrap{overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 100%)}
 /* JS (main.js) sizes the strip and sets --ticker-shift (one loop-unit width) +
    --ticker-dur (constant speed). Fallback vars keep it working if JS doesn't run. */
