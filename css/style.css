@@ -682,3 +682,14 @@ body.page-location .faq-section .section-bridge{padding-top:0;padding-bottom:16p
   body.page-location .svc-section .svc-grid{margin-bottom:0}
   body.page-location .svc-grid .svc-card:last-child{grid-column:span 1;min-height:auto}
 }
+
+/* ---- Locations dropdown: counties section ---- */
+.dropdown-counties{display:grid;grid-template-columns:1fr 1fr 1fr}
+.dropdown-counties a{border-bottom:none}
+.dropdown-col-label{padding:8px 16px 2px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(17,17,17,0.4)}
+/* ---- Footer brand county links ---- */
+.footer-brand p a{color:rgba(255,255,255,0.85);text-decoration:underline;text-underline-offset:2px}
+.footer-brand p a:hover{color:var(--color-fire)}
+/* ---- Service-areas county grid heading links ---- */
+.county-card h3 a{color:inherit;text-decoration:none}
+.county-card h3 a:hover{color:var(--color-fire)}
