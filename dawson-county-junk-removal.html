@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#07001A">
-  <title>Junk Removal in Dawsonville, GA | Junk Brawlers | (404) 632-9165</title>
-  <meta name="description" content="Junk removal in Dawsonville, GA, Tony's home base. Same-day service, all of Dawson County, 5.0 stars across 61 reviews. Call (404) 632-9165.">
+  <title>Junk Removal in Dawson County, GA | Junk Brawlers | (404) 632-9165</title>
+  <meta name="description" content="Junk removal across all of Dawson County, GA — Dawsonville, the Hwy 400 corridor, Amicalola, and the Lake Lanier shoreline. Tony's home base, same-day service, 5.0 stars across 61 reviews. Call (404) 632-9165.">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://junkbrawlers.com/dawsonville.html">
-  <meta property="og:title" content="Junk Removal in Dawsonville, GA | Junk Brawlers">
-  <meta property="og:description" content="Tony's home base. Dawson County's own junk fighter, same-day service, 5.0 stars, 61 reviews. (404) 632-9165.">
+  <link rel="canonical" href="https://junkbrawlers.com/dawson-county-junk-removal.html">
+  <meta property="og:title" content="Junk Removal in Dawson County, GA | Junk Brawlers">
+  <meta property="og:description" content="Tony's home county. Junk removal across all of Dawson County — Dawsonville, Amicalola, the 400 corridor, and the Lake Lanier shoreline. Same-day, 5.0 stars, 61 reviews. (404) 632-9165.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://junkbrawlers.com/dawsonville.html">
+  <meta property="og:url" content="https://junkbrawlers.com/dawson-county-junk-removal.html">
   <meta property="og:image" content="https://junkbrawlers.com/images/og-card.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -19,8 +19,8 @@
   <meta property="og:locale" content="en_US">
   <meta property="og:site_name" content="Junk Brawlers">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Junk Removal in Dawsonville, GA | Junk Brawlers">
-  <meta name="twitter:description" content="Tony's home base. Dawson County's own junk fighter, same-day service, 5.0 stars, 61 reviews. (404) 632-9165.">
+  <meta name="twitter:title" content="Junk Removal in Dawson County, GA | Junk Brawlers">
+  <meta name="twitter:description" content="Tony's home county. Junk removal across all of Dawson County — Dawsonville, Amicalola, the 400 corridor, and the Lake Lanier shoreline. (404) 632-9165.">
   <meta name="twitter:image" content="https://junkbrawlers.com/images/og-card.jpg">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -33,13 +33,40 @@
   <script defer src="js/site-data.js"></script>
   <link rel="stylesheet" href="css/style.css?v=jb4">
 
+  <!-- County coverage: prominent city-page links (the purpose) + supporting area chips -->
+  <style>
+    .county-section { padding: 72px 24px 80px; background: #fff; }
+    .county-section-inner { max-width: 960px; margin: 0 auto; }
+    /* City-page links — the primary action of this section, made obvious */
+    .county-cities { display: grid; gap: 14px; max-width: 580px; margin: 40px auto 0; }
+    .county-city-card { display: flex; align-items: center; gap: 16px; text-decoration: none; background: #fff; border: 1px solid rgba(0,0,0,0.08); border-left: 4px solid var(--color-fire); border-radius: 12px; padding: 18px 22px; box-shadow: 0 6px 22px rgba(20,10,40,0.07); transition: transform .18s ease, box-shadow .18s ease; }
+    .county-city-card:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(255,122,0,0.18); }
+    .county-city-icon { width: 48px; height: 48px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; border-radius: 12px; background: linear-gradient(135deg, #FF7A00 0%, #C05000 100%); box-shadow: 0 4px 12px rgba(255,122,0,0.32); }
+    .county-city-icon svg { width: 24px; height: 24px; color: #fff; }
+    .county-city-body { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+    .county-city-name { font-family: var(--font-heading); font-size: 23px; font-weight: 800; color: #111; line-height: 1.1; }
+    .county-city-sub { font-size: 13px; color: rgba(17,17,17,0.55); margin-top: 3px; }
+    .county-city-cta { display: flex; align-items: center; gap: 6px; flex-shrink: 0; font-family: var(--font-heading); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--color-fire); white-space: nowrap; transition: gap .18s ease; }
+    .county-city-cta svg { width: 16px; height: 16px; }
+    .county-city-card:hover .county-city-cta { gap: 11px; }
+    /* Supporting: unincorporated areas — clearly secondary, not clickable */
+    .county-areas { max-width: 660px; margin: 30px auto 0; text-align: center; }
+    .county-areas-label { font-size: 12px; text-transform: uppercase; letter-spacing: 1.2px; color: rgba(17,17,17,0.45); font-weight: 700; margin: 0 0 14px; }
+    .county-chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .county-chips li { font-size: 13px; color: #55555f; background: #f3f3f7; border: 1px solid rgba(0,0,0,0.06); border-radius: 999px; padding: 6px 14px; line-height: 1.2; }
+    @media (max-width: 560px) {
+      .county-city-card { flex-wrap: wrap; }
+      .county-city-cta { width: 100%; padding-left: 64px; }
+    }
+  </style>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": "https://junkbrawlers.com/#localbusiness",
     "name": "Junk Brawlers LLC",
-    "description": "Owner-operated junk removal based in Dawsonville, GA. Serving Dawson County and 20+ North Georgia cities. Residential, commercial, estate cleanouts, appliance removal, hot tub removal, and more. Monday to Friday, 7am–6pm.",
+    "description": "Owner-operated junk removal based in Dawsonville, GA. Serving all of Dawson County and 20+ North Georgia cities. Residential, commercial, estate cleanouts, appliance removal, hot tub removal, and more. Monday to Friday, 7am–6pm.",
     "image": "https://junkbrawlers.com/images/logo.png",
     "telephone": "+14046329165",
     "founder": "Antonio Frias",
@@ -53,7 +80,7 @@
       "addressCountry": "US"
     },
     "geo": {"@type": "GeoCoordinates", "latitude": 34.4218, "longitude": -84.1202},
-    "url": "https://junkbrawlers.com/dawsonville.html",
+    "url": "https://junkbrawlers.com",
     "openingHours": "Mo-Fr 07:00-18:00",
     "priceRange": "$$",
     "aggregateRating": {
@@ -64,33 +91,32 @@
       "worstRating": "1"
     },
     "areaServed": [
-      {"@type": "AdministrativeArea", "name": "Dawson County, GA"},{"@type": "AdministrativeArea", "name": "Cherokee County, GA"},{"@type": "AdministrativeArea", "name": "Forsyth County, GA"},{"@type": "AdministrativeArea", "name": "Hall County, GA"},{"@type": "AdministrativeArea", "name": "Gilmer County, GA"},{"@type": "AdministrativeArea", "name": "Fannin County, GA"},{"@type": "AdministrativeArea", "name": "Lumpkin County, GA"},{"@type": "AdministrativeArea", "name": "White County, GA"},{"@type": "AdministrativeArea", "name": "Pickens County, GA"},{"@type": "AdministrativeArea", "name": "Gwinnett County, GA"},
-      {"@type": "City", "name": "Ball Ground, GA"},{"@type": "City", "name": "Blue Ridge, GA"},{"@type": "City", "name": "Canton, GA"},{"@type": "City", "name": "Cherry Log, GA"},{"@type": "City", "name": "Cumming, GA"},{"@type": "City", "name": "Dahlonega, GA"},{"@type": "City", "name": "Dawsonville, GA"},{"@type": "City", "name": "Ellijay, GA"},{"@type": "City", "name": "Flowery Branch, GA"},{"@type": "City", "name": "Gainesville, GA"},{"@type": "City", "name": "Helen, GA"},{"@type": "City", "name": "Morganton, GA"},{"@type": "City", "name": "Suwanee, GA"},{"@type": "City", "name": "Woodstock, GA"}
+      {"@type": "AdministrativeArea", "name": "Dawson County, GA"},{"@type": "AdministrativeArea", "name": "Cherokee County, GA"},{"@type": "AdministrativeArea", "name": "Forsyth County, GA"},{"@type": "AdministrativeArea", "name": "Hall County, GA"},{"@type": "AdministrativeArea", "name": "Gilmer County, GA"},{"@type": "AdministrativeArea", "name": "Fannin County, GA"},{"@type": "AdministrativeArea", "name": "Lumpkin County, GA"},{"@type": "AdministrativeArea", "name": "White County, GA"},{"@type": "AdministrativeArea", "name": "Pickens County, GA"},{"@type": "AdministrativeArea", "name": "Gwinnett County, GA"}
     ],
     "sameAs": ["https://www.facebook.com/JunkBrawlers"]
   }
   </script>
 
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"How fast can Junk Brawlers get to Dawsonville?","acceptedAnswer":{"@type":"Answer","text":"Dawsonville is Tony's home base, he's based right here in Dawson County. Depending on the schedule, he can often be at your door the same morning you call. Fastest response times in the service area are right here in 30534."}},
-    {"@type":"Question","name":"Is there a travel charge for Dawsonville jobs?","acceptedAnswer":{"@type":"Answer","text":"Pricing is based on the job. Tony gives you a firm quote up front before any work starts, and that's the price you pay. Call and he'll tell you straight. (404) 632-9165"}},
-    {"@type":"Question","name":"What areas near Dawsonville does Tony serve?","acceptedAnswer":{"@type":"Answer","text":"Tony covers all of Dawson County (ZIP 30534) plus the surrounding cities, Canton, Cumming, Gainesville, Dahlonega, Ball Ground, Jasper, Ellijay, Blue Ridge, Helen, Clermont, Cherry Log, and more. If you're not sure, just call and he'll tell you straight."}},
-    {"@type":"Question","name":"Do you work weekends in Dawsonville?","acceptedAnswer":{"@type":"Answer","text":"No. Tony and his crew work Monday through Friday, 7am to 6pm. Call any weekday and he can usually get you on the schedule fast, often same day."}},
-    {"@type":"Question","name":"Do you serve Lake Sidney and the Amicalola Falls area?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tony serves the full Dawsonville area including Lake Sidney, the Amicalola Falls corridor, Burnt Stand, the Crestline Drive gated communities, and everywhere along the Hwy 400 and GA-9 corridors. If you're in 30534, he comes to you."}}
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+    {"@type":"ListItem","position":1,"name":"Home","item":"https://junkbrawlers.com/"},
+    {"@type":"ListItem","position":2,"name":"Locations","item":"https://junkbrawlers.com/service-areas.html"},
+    {"@type":"ListItem","position":3,"name":"Dawson County GA","item":"https://junkbrawlers.com/dawson-county-junk-removal.html"}
   ]}
   </script>
 
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
-    {"@type":"ListItem","position":1,"name":"Home","item":"https://junkbrawlers.com/"},
-    {"@type":"ListItem","position":2,"name":"Locations","item":"https://junkbrawlers.com/service-areas.html"},
-    {"@type":"ListItem","position":3,"name":"Dawson County","item":"https://junkbrawlers.com/dawson-county-junk-removal.html"},
-    {"@type":"ListItem","position":4,"name":"Dawsonville GA","item":"https://junkbrawlers.com/dawsonville.html"}
-  ]}
+  {"@context":"https://schema.org","@type":"CollectionPage","url":"https://junkbrawlers.com/dawson-county-junk-removal.html","name":"Junk Removal in Dawson County, GA | Junk Brawlers","description":"Junk Brawlers covers all of Dawson County, GA — Dawsonville plus the Hwy 400 corridor, Amicalola, and the Lake Lanier shoreline. Owner-operated, same-day available.","about":{"@type":"AdministrativeArea","name":"Dawson County, GA"},"publisher":{"@id":"https://junkbrawlers.com/#localbusiness"}}
   </script>
+
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Service","name":"Junk Removal in Dawsonville GA","serviceType":"Junk Removal","description":"Owner-operated junk removal in Dawsonville, GA. Same-day available. Furniture, appliances, hot tubs, estate cleanouts, garage cleanouts, and more.","url":"https://junkbrawlers.com/dawsonville.html","provider":{"@type":"LocalBusiness","@id":"https://junkbrawlers.com/#localbusiness"},"areaServed":{"@type":"City","name":"Dawsonville"}}
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How fast can you get to me in Dawson County?","acceptedAnswer":{"@type":"Answer","text":"Dawson County is Tony's home base — he lives and works right here in Dawsonville (30534), not dispatched from Atlanta. It's the fastest same-day in his whole service area. Call before noon and same-day is usually available. (404) 632-9165"}},
+    {"@type":"Question","name":"Do you serve all of Dawson County or just Dawsonville?","acceptedAnswer":{"@type":"Answer","text":"All of it. Dawsonville is the only incorporated city in the county, but Tony covers the entire county — every rural road, cabin, farmstead, and lake property in between. If you're in 30534, he comes to you."}},
+    {"@type":"Question","name":"How much does junk removal cost in Dawson County?","acceptedAnswer":{"@type":"Answer","text":"Pricing is based on how much your items fill in the truck. Tony gives you a firm quote up front before any work starts, and that's the price you pay — no hidden fees and no climb once he's on site. Call for a free quote. (404) 632-9165"}},
+    {"@type":"Question","name":"Do you cover the Amicalola, Lake Lanier, and cabin areas of Dawson County?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tony serves the full county including the Hwy 400 and GA-9 corridors, the Amicalola Falls area, the Lake Sidney Lanier shoreline, Burnt Stand, the Crestline Drive gated communities, and War Hill Park. Seasonal cabin cleanouts are a regular job for him up here."}},
+    {"@type":"Question","name":"Is the owner on every job in Dawson County?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tony leads every job himself with his own crew. He takes your call, gives you the price, and shows up. No call centers, no dispatched strangers — he's named by name in over half of his 61 five-star reviews."}}
+  ]}
   </script>
 </head>
 <body class="page-location">
@@ -122,7 +148,7 @@
         <button aria-expanded="false" aria-haspopup="true">Locations <span class="arrow">&#9662;</span></button>
         <div class="dropdown-menu dropdown-menu--locations">
           <div class="dropdown-cities">
-            <a href="dawsonville.html" aria-current="page">Dawsonville GA</a>
+            <a href="dawsonville.html">Dawsonville GA</a>
             <a href="ball-ground.html">Ball Ground GA</a>
             <a href="blue-ridge.html">Blue Ridge GA</a>
             <a href="canton.html">Canton GA</a>
@@ -168,7 +194,7 @@
     <a href="hoarder-cleanouts.html">Hoarder Cleanouts</a>
     <a href="shed-deck-removal.html">Shed &amp; Deck Removal</a>
     <div class="mobile-section-label">Service Areas</div>
-    <a href="dawsonville.html" aria-current="page">Dawsonville GA</a>
+    <a href="dawsonville.html">Dawsonville GA</a>
     <a href="ball-ground.html">Ball Ground GA</a>
     <a href="blue-ridge.html">Blue Ridge GA</a>
     <a href="canton.html">Canton GA</a>
@@ -213,16 +239,16 @@
     <!-- CENTERED CONTENT -->
     <div class="hero-centered">
       <nav class="sp-breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a><span aria-hidden="true">/</span><a href="service-areas.html">Locations</a><span aria-hidden="true">/</span><a href="dawson-county-junk-removal.html">Dawson County</a><span aria-hidden="true">/</span><span aria-current="page">Dawsonville GA</span>
+        <a href="/">Home</a><span aria-hidden="true">/</span><a href="service-areas.html">Locations</a><span aria-hidden="true">/</span><span aria-current="page">Dawson County GA</span>
       </nav>
       <img class="hero-logo" src="images/logo.webp" width="150" height="120" decoding="async" alt="Junk Brawlers LLC">
       <a href="https://share.google/HG9xlgEp9F7GkTscP" target="_blank" rel="noopener" class="hero-badge" data-jb-badge aria-label="5.0 stars, 61 Google reviews">
         <span class="hero-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
         <span class="hero-badge-text"><strong data-jb-rating>5.0</strong> Stars &middot; <span data-jb-count>61</span> Google Reviews</span>
       </a>
-      <h1 class="hero-eyebrow">Junk Removal in Dawsonville, GA</h1>
+      <h1 class="hero-eyebrow">Junk Removal in Dawson County, GA</h1>
       <div class="hero-tagline hero-tagline--center"><span class="hero-value">Where We Fight Your Junk</span><span class="hero-em">For You.</span></div>
-      <p class="hero-sub">Dawsonville is home base. Tony keeps the truck close, so a call off the 400 corridor usually means <strong>same-day pickup</strong>. Loaded out, swept clean, price quoted is price paid.</p>
+      <p class="hero-sub">Dawson County is home. Tony&rsquo;s based right here in Dawsonville, off the 400 &mdash; from the county square to the Amicalola foothills to the Lake Lanier shoreline, this is his backyard. <strong>Same-day is the standard</strong>, and the price he quotes is the price you pay.</p>
       <div class="hero-buttons">
         <a href="tel:4046329165" class="btn-fire">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:inline;vertical-align:-2px;margin-right:6px;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
@@ -231,8 +257,8 @@
       </div>
       <div class="hero-pullquote hero-pullquote--center">
         <div class="hero-quote-stars" role="img" aria-label="Rated 5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p>&ldquo;He showed up within 30 minutes of my call and had everything packed up and hauled away quickly and efficiently.&rdquo;</p>
-        <cite><strong>Myra S.</strong> &middot; Google Review</cite>
+        <p>&ldquo;Tony and Simon are amazing! Efficient, effective, and cost friendly. You won&rsquo;t regret using Junk Brawlers &mdash; the best in North Georgia!&rdquo;</p>
+        <cite><strong>Maris G.</strong> &middot; Google Review</cite>
       </div>
     </div>
 
@@ -258,182 +284,62 @@
     </div>
   </div>
 
-  <!-- SECTION 2: THE LOCAL PROBLEM -->
-  <section class="pain-section" aria-label="Junk removal context for Dawsonville GA">
+  <!-- SECTION 1: COUNTY STORY (unique) -->
+  <section class="pain-section" aria-label="About junk removal in Dawson County GA">
     <div class="pain-inner">
-      <h2 class="h2-bridge h2-bridge--dark" style="margin-bottom:16px;">It&rsquo;s Been Piling Up for Years. The Guy Who Can Finally Clear It Lives Right Here in Dawsonville.</h2>
+      <h2 class="h2-bridge h2-bridge--dark" style="margin-bottom:16px;">This Isn&rsquo;t a Service Area to Tony. It&rsquo;s His County.</h2>
       <ul class="pain-paragraph pain-paragraph--single">
-        <li>You&rsquo;ve got years of it stacked in the barn and the outbuildings off the 400, and every crew you&rsquo;ve called either flaked or wanted a premium to drive out this far.</li>
+        <li>Dawson County is home. Tony knows the Hwy 400 corridor and the Premium Outlets, the downtown square, the farmsteads off the back roads, the cabins up toward Amicalola, and the lake places along Lanier&rsquo;s north edge. This is NASCAR country &mdash; Bill Elliott&rsquo;s hometown &mdash; where century-old homesteads and brand-new builds both pile up junk that somebody has to haul.</li>
       </ul>
-      <span class="pain-pivot">That&rsquo;s not how the Junk Brawlers work.</span>
+      <span class="pain-pivot">Here&rsquo;s what covering your own county actually means:</span>
       <ul class="pain-solutions">
-        <li class="pain-answer">You point, the crew carries. Barn, outbuildings, the whole place cleared in one trip. You don&rsquo;t lift a thing.</li>
-        <li class="pain-answer">Tony&rsquo;s based right here in Dawson County, so this is his fastest same-day. Call in the morning and he picks up himself.</li>
-        <li class="pain-answer">Firm price up front from the owner, and that&rsquo;s the price you pay. No climb in the driveway.</li>
+        <li class="pain-answer">The fastest same-day in the whole service area. He&rsquo;s minutes away in 30534, not a crew dispatched out of Atlanta.</li>
+        <li class="pain-answer">He covers <strong>all</strong> of Dawson County &mdash; Dawsonville and every rural road, cabin, and lake property in between. Incorporated or not.</li>
+        <li class="pain-answer">The owner is on every job. Firm price up front, and that&rsquo;s the price you pay. No climb in the driveway.</li>
       </ul>
     </div>
     <div class="pain-pivot-accent"></div>
-    <p class="section-bridge section-bridge--light section-bridge--xl">Here&rsquo;s what it costs.</p>
-    <div style="text-align:center;padding:32px 0 40px;position:relative;z-index:20;">
-      <a href="tel:4046329165" class="btn-fire">Stop Living Around It. &rarr;</a>
+    <p class="section-bridge section-bridge--light section-bridge--xl">Here&rsquo;s the whole county he covers.</p>
+  </section>
+
+  <!-- SECTION 2: COVERAGE HUB (core hub job) -->
+  <section class="county-section">
+    <div class="county-section-inner">
+      <h2 class="h2-bridge h2-bridge--light" style="text-align:center;">Junk Removal Across All of Dawson County</h2>
+      <p style="text-align:center;color:rgba(17,17,17,0.65);font-size:17px;max-width:660px;margin:16px auto 0;line-height:1.65;">Dawsonville is the only incorporated city in the county &mdash; but Tony covers the whole thing, town or country. If you&rsquo;re in 30534, he comes to you.</p>
+
+      <div class="county-cities">
+        <a href="dawsonville.html" class="county-city-card">
+          <span class="county-city-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <span class="county-city-body">
+            <span class="county-city-name">Dawsonville</span>
+            <span class="county-city-sub">The county seat &amp; Tony&rsquo;s home base &mdash; fastest same-day in the area</span>
+          </span>
+          <span class="county-city-cta">Junk Removal <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
+        </a>
+      </div>
+
+      <div class="county-areas">
+        <p class="county-areas-label">Also covering, all across Dawson County (30534):</p>
+        <ul class="county-chips">
+          <li>Hwy 400 Corridor</li>
+          <li>Amicalola Falls area</li>
+          <li>Lake Sidney Lanier shoreline</li>
+          <li>Burnt Stand</li>
+          <li>Crestline gated communities</li>
+          <li>War Hill Park</li>
+          <li>Downtown square</li>
+        </ul>
+      </div>
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section class="pricing-section">
-    <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
-      <defs>
-        <linearGradient id="truckFillGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#FF9D3A"/>
-          <stop offset="100%" stop-color="#E86A00"/>
-        </linearGradient>
-      </defs>
-    </svg>
-    <div class="pricing-inner">
-      <h2 class="h2-bridge h2-bridge--light">A Couch Is Not a Truckload. Pay for What You&rsquo;ve Got.</h2>
-      <p class="pricing-intro">Tony prices by how much space your items fill in the truck. A few pieces is a small load. A whole-room cleanout fills more. Less to haul, smaller price.</p>
-      <div class="pricing-trucks">
-        <div class="pricing-tier">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Small load, quarter truck" role="img">
-              <ellipse cx="112" cy="122" rx="94" ry="5" fill="rgba(0,0,0,0.07)"/>
-              <rect x="68" y="25" width="6" height="77" fill="#1A1730"/><rect x="208" y="25" width="6" height="77" fill="#1A1730"/>
-              <rect x="68" y="25" width="146" height="6" rx="1" fill="#12102A"/><rect x="68" y="96" width="146" height="6" fill="#0A0818"/>
-              <rect x="74" y="31" width="134" height="65" fill="rgba(0,0,0,0.18)"/>
-              <rect x="74" y="80" width="134" height="16" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <line x1="74" y1="47" x2="208" y2="47" stroke="#0A0818" stroke-width="1" opacity="0.2"/><line x1="74" y1="64" x2="208" y2="64" stroke="#0A0818" stroke-width="1" opacity="0.2"/><line x1="74" y1="80" x2="208" y2="80" stroke="#0A0818" stroke-width="1" opacity="0.2"/>
-              <rect x="6" y="60" width="22" height="42" rx="2" fill="#12102A"/><rect x="20" y="36" width="54" height="66" rx="3" fill="#1E1B38"/><rect x="18" y="24" width="56" height="14" rx="4" fill="#12102A"/>
-              <polygon points="22,36 72,36 72,60 18,60" fill="#151228"/><polygon points="26,38 70,38 70,58 22,58" fill="rgba(140,165,230,0.22)"/>
-              <line x1="48" y1="38" x2="48" y2="58" stroke="#0A0818" stroke-width="2" opacity="0.45"/>
-              <rect x="24" y="64" width="34" height="20" rx="2" fill="rgba(140,165,230,0.14)" stroke="#12102A" stroke-width="1"/>
-              <rect x="52" y="72" width="8" height="2.5" rx="1" fill="#0A0818" opacity="0.5"/>
-              <line x1="54" y1="60" x2="54" y2="102" stroke="#0A0818" stroke-width="1" opacity="0.25"/>
-              <rect x="7" y="62" width="7" height="10" rx="1" fill="#FFE57A" opacity="0.9"/>
-              <rect x="8" y="75" width="13" height="2" rx="1" fill="#0A0818" opacity="0.6"/><rect x="8" y="80" width="13" height="2" rx="1" fill="#0A0818" opacity="0.6"/><rect x="8" y="85" width="13" height="2" rx="1" fill="#0A0818" opacity="0.6"/>
-              <rect x="5" y="94" width="22" height="8" rx="2" fill="#0A0818"/>
-              <rect x="72" y="40" width="5" height="2" rx="1" fill="#12102A"/><rect x="75" y="37" width="7" height="11" rx="1" fill="#1A1730" stroke="#12102A" stroke-width="1"/>
-              <rect x="61" y="10" width="5" height="27" rx="2" fill="#12102A"/><ellipse cx="63.5" cy="10" rx="4" ry="2" fill="#0A0818"/>
-              <rect x="28" y="102" width="154" height="4" rx="2" fill="#0A0818" opacity="0.45"/>
-              <circle cx="32" cy="107" r="15" fill="#191727"/><circle cx="32" cy="107" r="8" fill="#252240"/><circle cx="32" cy="107" r="3.5" fill="#12102A"/><circle cx="32" cy="99" r="1.5" fill="#12102A"/><circle cx="32" cy="115" r="1.5" fill="#12102A"/><circle cx="24" cy="101.5" r="1.5" fill="#12102A"/><circle cx="40" cy="101.5" r="1.5" fill="#12102A"/><circle cx="24" cy="112.5" r="1.5" fill="#12102A"/><circle cx="40" cy="112.5" r="1.5" fill="#12102A"/>
-              <circle cx="177" cy="107" r="15" fill="#191727"/><circle cx="177" cy="107" r="8" fill="#252240"/><circle cx="177" cy="107" r="3.5" fill="#12102A"/>
-              <circle cx="158" cy="107" r="15" fill="#191727"/><circle cx="158" cy="107" r="8" fill="#252240"/><circle cx="158" cy="107" r="3.5" fill="#12102A"/>
-              <circle cx="177" cy="99" r="1.5" fill="#12102A"/><circle cx="177" cy="115" r="1.5" fill="#12102A"/><circle cx="169" cy="101.5" r="1.5" fill="#12102A"/><circle cx="185" cy="101.5" r="1.5" fill="#12102A"/><circle cx="169" cy="112.5" r="1.5" fill="#12102A"/><circle cx="185" cy="112.5" r="1.5" fill="#12102A"/>
-            </svg>
-          </div>
-          <p class="tier-name">Small Load</p>
-          <p class="tier-price">$125</p>
-          <p class="tier-desc">A few items or a single piece</p>
-        </div>
-        <div class="pricing-tier tier-highlight">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Half truck load" role="img">
-              <ellipse cx="112" cy="122" rx="94" ry="5" fill="rgba(0,0,0,0.07)"/>
-              <rect x="68" y="25" width="6" height="77" fill="#1A1730"/><rect x="208" y="25" width="6" height="77" fill="#1A1730"/>
-              <rect x="68" y="25" width="146" height="6" rx="1" fill="#12102A"/><rect x="68" y="96" width="146" height="6" fill="#0A0818"/>
-              <rect x="74" y="31" width="134" height="65" fill="rgba(0,0,0,0.18)"/>
-              <rect x="74" y="64" width="134" height="32" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <line x1="74" y1="47" x2="208" y2="47" stroke="#0A0818" stroke-width="1" opacity="0.2"/><line x1="74" y1="64" x2="208" y2="64" stroke="#0A0818" stroke-width="1" opacity="0.2"/><line x1="74" y1="80" x2="208" y2="80" stroke="#0A0818" stroke-width="1" opacity="0.2"/>
-              <rect x="6" y="60" width="22" height="42" rx="2" fill="#12102A"/><rect x="20" y="36" width="54" height="66" rx="3" fill="#1E1B38"/><rect x="18" y="24" width="56" height="14" rx="4" fill="#12102A"/>
-              <polygon points="22,36 72,36 72,60 18,60" fill="#151228"/><polygon points="26,38 70,38 70,58 22,58" fill="rgba(140,165,230,0.22)"/>
-              <line x1="48" y1="38" x2="48" y2="58" stroke="#0A0818" stroke-width="2" opacity="0.45"/>
-              <rect x="24" y="64" width="34" height="20" rx="2" fill="rgba(140,165,230,0.14)" stroke="#12102A" stroke-width="1"/>
-              <rect x="52" y="72" width="8" height="2.5" rx="1" fill="#0A0818" opacity="0.5"/>
-              <line x1="54" y1="60" x2="54" y2="102" stroke="#0A0818" stroke-width="1" opacity="0.25"/>
-              <rect x="7" y="62" width="7" height="10" rx="1" fill="#FFE57A" opacity="0.9"/>
-              <rect x="8" y="75" width="13" height="2" rx="1" fill="#0A0818" opacity="0.6"/><rect x="8" y="80" width="13" height="2" rx="1" fill="#0A0818" opacity="0.6"/><rect x="8" y="85" width="13" height="2" rx="1" fill="#0A0818" opacity="0.6"/>
-              <rect x="5" y="94" width="22" height="8" rx="2" fill="#0A0818"/>
-              <rect x="72" y="40" width="5" height="2" rx="1" fill="#12102A"/><rect x="75" y="37" width="7" height="11" rx="1" fill="#1A1730" stroke="#12102A" stroke-width="1"/>
-              <rect x="61" y="10" width="5" height="27" rx="2" fill="#12102A"/><ellipse cx="63.5" cy="10" rx="4" ry="2" fill="#0A0818"/>
-              <rect x="28" y="102" width="154" height="4" rx="2" fill="#0A0818" opacity="0.45"/>
-              <circle cx="32" cy="107" r="15" fill="#191727"/><circle cx="32" cy="107" r="8" fill="#252240"/><circle cx="32" cy="107" r="3.5" fill="#12102A"/><circle cx="32" cy="99" r="1.5" fill="#12102A"/><circle cx="32" cy="115" r="1.5" fill="#12102A"/><circle cx="24" cy="101.5" r="1.5" fill="#12102A"/><circle cx="40" cy="101.5" r="1.5" fill="#12102A"/><circle cx="24" cy="112.5" r="1.5" fill="#12102A"/><circle cx="40" cy="112.5" r="1.5" fill="#12102A"/>
-              <circle cx="177" cy="107" r="15" fill="#191727"/><circle cx="177" cy="107" r="8" fill="#252240"/><circle cx="177" cy="107" r="3.5" fill="#12102A"/>
-              <circle cx="158" cy="107" r="15" fill="#191727"/><circle cx="158" cy="107" r="8" fill="#252240"/><circle cx="158" cy="107" r="3.5" fill="#12102A"/>
-              <circle cx="177" cy="99" r="1.5" fill="#12102A"/><circle cx="177" cy="115" r="1.5" fill="#12102A"/><circle cx="169" cy="101.5" r="1.5" fill="#12102A"/><circle cx="185" cy="101.5" r="1.5" fill="#12102A"/><circle cx="169" cy="112.5" r="1.5" fill="#12102A"/><circle cx="185" cy="112.5" r="1.5" fill="#12102A"/>
-            </svg>
-          </div>
-          <p class="tier-name">Half Truck</p>
-          <p class="tier-price">$250</p>
-          <p class="tier-desc">Sofa, fridge, or a few mixed items</p>
-          <span class="tier-badge">Most single-room jobs</span>
-        </div>
-        <div class="pricing-tier tier-highlight">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Large load, three-quarter truck" role="img">
-              <ellipse cx="112" cy="122" rx="94" ry="5" fill="rgba(0,0,0,0.07)"/>
-              <rect x="68" y="25" width="6" height="77" fill="#1A1730"/><rect x="208" y="25" width="6" height="77" fill="#1A1730"/>
-              <rect x="68" y="25" width="146" height="6" rx="1" fill="#12102A"/><rect x="68" y="96" width="146" height="6" fill="#0A0818"/>
-              <rect x="74" y="31" width="134" height="65" fill="rgba(0,0,0,0.18)"/>
-              <rect x="74" y="47" width="134" height="49" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <line x1="74" y1="47" x2="208" y2="47" stroke="#0A0818" stroke-width="1" opacity="0.2"/><line x1="74" y1="64" x2="208" y2="64" stroke="#0A0818" stroke-width="1" opacity="0.2"/><line x1="74" y1="80" x2="208" y2="80" stroke="#0A0818" stroke-width="1" opacity="0.2"/>
-              <rect x="6" y="60" width="22" height="42" rx="2" fill="#12102A"/><rect x="20" y="36" width="54" height="66" rx="3" fill="#1E1B38"/><rect x="18" y="24" width="56" height="14" rx="4" fill="#12102A"/>
-              <polygon points="22,36 72,36 72,60 18,60" fill="#151228"/><polygon points="26,38 70,38 70,58 22,58" fill="rgba(140,165,230,0.22)"/>
-              <line x1="48" y1="38" x2="48" y2="58" stroke="#0A0818" stroke-width="2" opacity="0.45"/>
-              <rect x="24" y="64" width="34" height="20" rx="2" fill="rgba(140,165,230,0.14)" stroke="#12102A" stroke-width="1"/>
-              <rect x="52" y="72" width="8" height="2.5" rx="1" fill="#0A0818" opacity="0.5"/>
-              <line x1="54" y1="60" x2="54" y2="102" stroke="#0A0818" stroke-width="1" opacity="0.25"/>
-              <rect x="7" y="62" width="7" height="10" rx="1" fill="#FFE57A" opacity="0.9"/>
-              <rect x="8" y="75" width="13" height="2" rx="1" fill="#0A0818" opacity="0.6"/><rect x="8" y="80" width="13" height="2" rx="1" fill="#0A0818" opacity="0.6"/><rect x="8" y="85" width="13" height="2" rx="1" fill="#0A0818" opacity="0.6"/>
-              <rect x="5" y="94" width="22" height="8" rx="2" fill="#0A0818"/>
-              <rect x="72" y="40" width="5" height="2" rx="1" fill="#12102A"/><rect x="75" y="37" width="7" height="11" rx="1" fill="#1A1730" stroke="#12102A" stroke-width="1"/>
-              <rect x="61" y="10" width="5" height="27" rx="2" fill="#12102A"/><ellipse cx="63.5" cy="10" rx="4" ry="2" fill="#0A0818"/>
-              <rect x="28" y="102" width="154" height="4" rx="2" fill="#0A0818" opacity="0.45"/>
-              <circle cx="32" cy="107" r="15" fill="#191727"/><circle cx="32" cy="107" r="8" fill="#252240"/><circle cx="32" cy="107" r="3.5" fill="#12102A"/><circle cx="32" cy="99" r="1.5" fill="#12102A"/><circle cx="32" cy="115" r="1.5" fill="#12102A"/><circle cx="24" cy="101.5" r="1.5" fill="#12102A"/><circle cx="40" cy="101.5" r="1.5" fill="#12102A"/><circle cx="24" cy="112.5" r="1.5" fill="#12102A"/><circle cx="40" cy="112.5" r="1.5" fill="#12102A"/>
-              <circle cx="177" cy="107" r="15" fill="#191727"/><circle cx="177" cy="107" r="8" fill="#252240"/><circle cx="177" cy="107" r="3.5" fill="#12102A"/>
-              <circle cx="158" cy="107" r="15" fill="#191727"/><circle cx="158" cy="107" r="8" fill="#252240"/><circle cx="158" cy="107" r="3.5" fill="#12102A"/>
-              <circle cx="177" cy="99" r="1.5" fill="#12102A"/><circle cx="177" cy="115" r="1.5" fill="#12102A"/><circle cx="169" cy="101.5" r="1.5" fill="#12102A"/><circle cx="185" cy="101.5" r="1.5" fill="#12102A"/><circle cx="169" cy="112.5" r="1.5" fill="#12102A"/><circle cx="185" cy="112.5" r="1.5" fill="#12102A"/>
-            </svg>
-          </div>
-          <p class="tier-name">Large Load</p>
-          <p class="tier-price">$375</p>
-          <p class="tier-desc">Multiple items or a room cleanout</p>
-          <span class="tier-badge">Garage &amp; spare room jobs</span>
-        </div>
-        <div class="pricing-tier">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Full truck load" role="img">
-              <ellipse cx="112" cy="122" rx="94" ry="5" fill="rgba(0,0,0,0.07)"/>
-              <rect x="68" y="25" width="6" height="77" fill="#1A1730"/><rect x="208" y="25" width="6" height="77" fill="#1A1730"/>
-              <rect x="68" y="25" width="146" height="6" rx="1" fill="#12102A"/><rect x="68" y="96" width="146" height="6" fill="#0A0818"/>
-              <rect x="74" y="31" width="134" height="65" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <line x1="74" y1="47" x2="208" y2="47" stroke="#0A0818" stroke-width="1" opacity="0.2"/><line x1="74" y1="64" x2="208" y2="64" stroke="#0A0818" stroke-width="1" opacity="0.2"/><line x1="74" y1="80" x2="208" y2="80" stroke="#0A0818" stroke-width="1" opacity="0.2"/>
-              <rect x="6" y="60" width="22" height="42" rx="2" fill="#12102A"/><rect x="20" y="36" width="54" height="66" rx="3" fill="#1E1B38"/><rect x="18" y="24" width="56" height="14" rx="4" fill="#12102A"/>
-              <polygon points="22,36 72,36 72,60 18,60" fill="#151228"/><polygon points="26,38 70,38 70,58 22,58" fill="rgba(140,165,230,0.22)"/>
-              <line x1="48" y1="38" x2="48" y2="58" stroke="#0A0818" stroke-width="2" opacity="0.45"/>
-              <rect x="24" y="64" width="34" height="20" rx="2" fill="rgba(140,165,230,0.14)" stroke="#12102A" stroke-width="1"/>
-              <rect x="52" y="72" width="8" height="2.5" rx="1" fill="#0A0818" opacity="0.5"/>
-              <line x1="54" y1="60" x2="54" y2="102" stroke="#0A0818" stroke-width="1" opacity="0.25"/>
-              <rect x="7" y="62" width="7" height="10" rx="1" fill="#FFE57A" opacity="0.9"/>
-              <rect x="8" y="75" width="13" height="2" rx="1" fill="#0A0818" opacity="0.6"/><rect x="8" y="80" width="13" height="2" rx="1" fill="#0A0818" opacity="0.6"/><rect x="8" y="85" width="13" height="2" rx="1" fill="#0A0818" opacity="0.6"/>
-              <rect x="5" y="94" width="22" height="8" rx="2" fill="#0A0818"/>
-              <rect x="72" y="40" width="5" height="2" rx="1" fill="#12102A"/><rect x="75" y="37" width="7" height="11" rx="1" fill="#1A1730" stroke="#12102A" stroke-width="1"/>
-              <rect x="61" y="10" width="5" height="27" rx="2" fill="#12102A"/><ellipse cx="63.5" cy="10" rx="4" ry="2" fill="#0A0818"/>
-              <rect x="28" y="102" width="154" height="4" rx="2" fill="#0A0818" opacity="0.45"/>
-              <circle cx="32" cy="107" r="15" fill="#191727"/><circle cx="32" cy="107" r="8" fill="#252240"/><circle cx="32" cy="107" r="3.5" fill="#12102A"/><circle cx="32" cy="99" r="1.5" fill="#12102A"/><circle cx="32" cy="115" r="1.5" fill="#12102A"/><circle cx="24" cy="101.5" r="1.5" fill="#12102A"/><circle cx="40" cy="101.5" r="1.5" fill="#12102A"/><circle cx="24" cy="112.5" r="1.5" fill="#12102A"/><circle cx="40" cy="112.5" r="1.5" fill="#12102A"/>
-              <circle cx="177" cy="107" r="15" fill="#191727"/><circle cx="177" cy="107" r="8" fill="#252240"/><circle cx="177" cy="107" r="3.5" fill="#12102A"/>
-              <circle cx="158" cy="107" r="15" fill="#191727"/><circle cx="158" cy="107" r="8" fill="#252240"/><circle cx="158" cy="107" r="3.5" fill="#12102A"/>
-              <circle cx="177" cy="99" r="1.5" fill="#12102A"/><circle cx="177" cy="115" r="1.5" fill="#12102A"/><circle cx="169" cy="101.5" r="1.5" fill="#12102A"/><circle cx="185" cy="101.5" r="1.5" fill="#12102A"/><circle cx="169" cy="112.5" r="1.5" fill="#12102A"/><circle cx="185" cy="112.5" r="1.5" fill="#12102A"/>
-            </svg>
-          </div>
-          <p class="tier-name">Full Truck</p>
-          <p class="tier-price">$500</p>
-          <p class="tier-desc">Full home cleanout or major haul</p>
-        </div>
-      </div>
-      <div class="pricing-note">
-        <strong>Where does a typical job land?</strong>
-        A sofa or a couple of appliances is usually a half load. A garage cleanout or multi-room clear-out fills more. Tony gives you a firm number before he touches a thing, and it doesn&rsquo;t change once he&rsquo;s on site.
-      </div>
-      <a href="contact.html" class="btn-fire" style="font-family:var(--font-heading);font-size:17px;letter-spacing:1.5px;padding:16px 44px;">Get a Free Quote &rarr;</a>
-      <p class="section-bridge section-bridge--light" style="margin-top:40px;">Here&rsquo;s everything he takes.</p>
-    </div>
-  </section>
-
-  <!-- SECTION 3: SERVICES OFFERED HERE -->
-  <section class="svc-section" aria-label="Services available in Dawsonville GA" style="background:#ffffff">
+  <!-- SECTION 3: SERVICES (routes intent to service pages) -->
+  <section class="svc-section" aria-label="Junk removal services in Dawson County GA" style="background:#ffffff">
     <div class="svc-inner">
-      <h2 class="h2-bridge h2-bridge--light" style="padding-top:48px;">He Takes the Stuff Other Guys Won&rsquo;t.</h2>
+      <h2 class="h2-bridge h2-bridge--light" style="padding-top:8px;">What Tony Hauls Across Dawson County.</h2>
       <div class="svc-intro">
-        <p style="color:rgba(17,17,17,0.65)">Full scope, from single-item pickups to full estate cleanouts. Dawsonville is home base, and same-day is the standard. Hover any card to see what&rsquo;s included.</p>
+        <p style="color:rgba(17,17,17,0.65)">Full scope, from single-item pickups to whole estate cleanouts. Home base means same-day is the standard here. Tap any card for the details.</p>
       </div>
 
       <div class="svc-grid">
@@ -443,7 +349,7 @@
           <div class="svc-card-overlay"></div>
           <div class="svc-card-body">
             <h3>Junk Removal</h3>
-            <p>The pile that&rsquo;s been sitting too long. Tony hauls it all in one trip.</p>
+            <p>The pile that&rsquo;s been sitting too long, from the barn or the back of the property. One trip, all of it.</p>
           </div>
           <div class="svc-card-hover">
             <h3>Junk Removal</h3>
@@ -462,7 +368,7 @@
           <div class="svc-card-overlay"></div>
           <div class="svc-card-body">
             <h3>Estate Cleanouts</h3>
-            <p>Longtime Dawsonville families, farmsteads, decades of buildup. Handled with care.</p>
+            <p>Longtime Dawson County families and rural homesteads. Decades of buildup, handled with care.</p>
           </div>
           <div class="svc-card-hover">
             <h3>Estate Cleanouts</h3>
@@ -481,7 +387,7 @@
           <div class="svc-card-overlay"></div>
           <div class="svc-card-body">
             <h3>Hot Tub Removal</h3>
-            <p>Cabin owners near Amicalola Falls call every season. Drained, broken down, gone.</p>
+            <p>Cabin owners up toward Amicalola and the lake call every season. Drained, broken down, gone.</p>
           </div>
           <div class="svc-card-hover">
             <h3>Hot Tub Removal</h3>
@@ -533,14 +439,13 @@
           </div>
         </a>
 
-
       </div>
-      <p style="text-align:center;font-size:15px;color:rgba(17,17,17,0.55);margin-top:32px;padding-bottom:8px;">Not sure if we take it? Call and Tony will tell you straight. <a href="tel:4046329165" style="color:var(--color-fire);font-weight:700;">(404) 632-9165</a></p>
-      <p class="section-bridge section-bridge--light">His crew hauls everything on that list. Here&rsquo;s the owner behind them.</p>
+      <p style="text-align:center;font-size:15px;color:rgba(17,17,17,0.55);margin-top:32px;padding-bottom:8px;">See the full list on the <a href="services.html" style="color:var(--color-fire);font-weight:700;">services page</a>, or call and Tony will tell you straight. <a href="tel:4046329165" style="color:var(--color-fire);font-weight:700;">(404) 632-9165</a></p>
+      <p class="section-bridge section-bridge--light">His crew hauls all of it. Here&rsquo;s the owner behind them.</p>
     </div>
   </section>
 
-  <!-- SECTION 4: WHY TONY HERE -->
+  <!-- SECTION 4: OWNER (home county fit) -->
   <section class="owner-section" style="clip-path:polygon(0 6vw,100% 0%,100% 100%,0% 100%);margin-top:-6vw;padding-top:calc(80px + 6vw);z-index:10;">
     <div class="owner-inner">
 
@@ -554,7 +459,7 @@
       <div class="owner-photo-wrap">
         <picture>
           <source srcset="images/team-headshot.webp" type="image/webp">
-          <img src="images/team-headshot.jpg" alt="Tony Frias, owner of Junk Brawlers, based in Dawsonville GA" width="600" height="450" loading="lazy">
+          <img src="images/team-headshot.jpg" alt="Tony Frias, owner of Junk Brawlers, based in Dawson County GA" width="600" height="450" loading="lazy">
         </picture>
         <div class="owner-badge">
           <span class="owner-badge-score">&#9733; 5.0</span>
@@ -564,7 +469,7 @@
 
       <div class="owner-body">
         <p>Tony Frias isn&rsquo;t a franchise operator dispatched from a call center. He&rsquo;s based in Dawsonville, right here in his home county. He knows the Hwy 400 exit, the Lake Sidney community, the Burnt Stand area, the farmsteads off the back roads. This isn&rsquo;t a service area he covers. It&rsquo;s his neighborhood.</p>
-        <p>When you call <strong style="color:#fff;">Junk Brawlers</strong>, you&rsquo;re talking to <strong style="color:#fff;">Tony</strong>. The owner. He takes your call, gives you the price, and runs the crew that shows up. No call centers. No dispatched strangers. No surprises on the bill. He launched the business in 2024, built it job by job, and got named by name in over half his reviews. Not because he asked. Because people remembered him.</p>
+        <p>When you call <strong style="color:#fff;">Junk Brawlers</strong>, you&rsquo;re talking to <strong style="color:#fff;">Tony</strong>. The owner. He takes your call, gives you the price, and runs the crew that shows up. No call centers. No dispatched strangers. No surprises on the bill. He launched the business in 2024, built it job by job right here in Dawson County, and got named by name in over half his reviews. Not because he asked. Because people remembered him.</p>
 
         <div class="owner-stats">
           <div class="owner-stat">
@@ -596,43 +501,8 @@
     </div>
   </section>
 
-
-  <!-- SECTION 5: HOW IT WORKS -->
-  <section class="hiw-section">
-    <div class="hiw-dotgrid"></div>
-    <div class="hiw-inner">
-      <h2 class="h2-bridge h2-bridge--light">Most People Are Surprised How Fast It Goes.</h2>
-
-      <div class="hiw-steps">
-        <div class="hiw-connector" aria-hidden="true"></div>
-
-        <div class="hiw-step">
-          <div class="hiw-num"><span>1</span></div>
-          <h3>Call. Get a Price. Nothing to Sign.</h3>
-          <p>Free quote on the call. No commitment, no paperwork. Mon&ndash;Fri, 7am&ndash;6pm. <a href="tel:4046329165" style="color:#FF7A00;font-weight:700;">(404) 632-9165</a></p>
-        </div>
-
-        <div class="hiw-step">
-          <div class="hiw-num"><span>2</span></div>
-          <h3>Tony Texts Before He Comes. Dawsonville Is Home Base.</h3>
-          <p>He lives and works right here in Dawson County, from the GA-400 corridor and the Premium Outlets out to War Hill Park and the Amicalola foothills. No drive time, no crew dispatched from Atlanta. Call in the morning and same-day is almost always available.</p>
-        </div>
-
-        <div class="hiw-step">
-          <div class="hiw-num"><span>3</span></div>
-          <h3>Loaded Out. Space Swept Clean.</h3>
-          <p>They load everything, confirm before anything gets tossed, and leave the spot clean. You don&rsquo;t lift a thing.</p>
-        </div>
-      </div>
-
-      <div class="hiw-cta">
-        <a href="tel:4046329165" class="btn-fire" style="font-family:var(--font-heading);font-size:17px;letter-spacing:1.5px;padding:16px 44px;">One Call. It&rsquo;s Gone. &rarr;</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 6: SOCIAL PROOF -->
-  <section class="trust-quotes" aria-label="Customer reviews, junk removal Dawsonville GA">
+  <!-- SECTION 5: SOCIAL PROOF -->
+  <section class="trust-quotes" aria-label="Customer reviews, junk removal Dawson County GA">
     <div class="trust-quotes-inner">
       <h2 class="trust-quotes-heading h2-bridge h2-bridge--dark">Everyone Who Called Said the Same Thing.</h2>
       <div class="trust-quotes-grid">
@@ -656,7 +526,7 @@
         </div>
 
       </div>
-      <p class="section-bridge section-bridge--dark" style="padding-top:56px;padding-bottom:0;">Dawsonville is home base, but Tony&rsquo;s territory runs wider than most people realize.</p>
+      <p class="section-bridge section-bridge--dark" style="padding-top:56px;padding-bottom:0;">Dawson County is home base, but Tony&rsquo;s territory runs wider than most people realize.</p>
       <div style="text-align:center;padding:40px 0 16px;">
         <a href="tel:4046329165" class="btn-fire" style="font-family:var(--font-heading);font-size:17px;letter-spacing:1.5px;padding:16px 44px;">Book Your Pickup &rarr;</a>
         <p style="margin:16px 0 0;font-size:14px;color:rgba(255,255,255,0.5);">7am&ndash;6pm &middot; Mon&ndash;Fri &middot; No commitment to call</p>
@@ -664,11 +534,11 @@
     </div>
   </section>
 
-  <!-- SECTION 6: COVERAGE AREA -->
+  <!-- SECTION 6: WIDER TERRITORY MAP (internal linking) -->
   <section class="locations-hub">
     <div class="locations-hub-inner">
-      <p class="section-bridge section-bridge--dark" style="text-align:center;padding-top:0;padding-bottom:12px;color:#111111;">Home Base. Plus 13 Cities Around It.</p>
-      <p class="locations-intro">Dawsonville is where Tony&rsquo;s based. From here he covers 13 more cities across the mountains and foothills. Tap any zone on the map to open it.</p>
+      <p class="section-bridge section-bridge--dark" style="text-align:center;padding-top:0;padding-bottom:12px;color:#111111;">Home Base Is Dawson County. Here&rsquo;s the Rest of the Territory.</p>
+      <p class="locations-intro">Dawsonville is where Tony&rsquo;s based. From here he covers cities across the mountains and foothills of North Georgia. Tap any zone on the map to open it.</p>
       <div class="locations-layout locations-layout--zones">
         <div id="map-container">
           <div id="service-map" role="application" aria-label="Junk Brawlers service area map, 14 cities across North Georgia. Tap your city's zone to open that page." data-active-city="Dawsonville"></div>
@@ -696,57 +566,57 @@
     </div>
   </section>
 
-  <!-- SECTION 7: FAQ -->
-  <section class="faq-section" aria-label="Junk removal Dawsonville GA, frequently asked questions">
+  <!-- SECTION 7: FAQ (unique, county-localized) -->
+  <section class="faq-section" aria-label="Junk removal Dawson County GA, frequently asked questions">
     <div class="faq-inner">
       <p class="section-bridge section-bridge--light" style="padding-bottom:8px;text-align:center;color:#ffffff;">Still have a question? You&rsquo;re not the first.</p>
-      <p style="text-align:center;color:rgba(255,255,255,0.5);font-size:15px;margin-bottom:8px;">Everything you were about to Google.</p>
+      <p style="text-align:center;color:rgba(255,255,255,0.5);font-size:15px;margin-bottom:8px;">Everything you were about to Google about Dawson County.</p>
 
       <div class="faq-list">
 
         <div class="faq-item">
           <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
             <span class="faq-num">01</span>
-            <span class="faq-text">How fast can you get to Dawsonville?</span>
+            <span class="faq-text">How fast can you get to me in Dawson County?</span>
             <span class="faq-toggle" aria-hidden="true">+</span>
           </div>
-          <div class="faq-answer">Dawsonville is Tony&rsquo;s home base. He&rsquo;s right here in Dawson County, not dispatched from somewhere else. Depending on the schedule, he can often be at your door the same morning you call. Call before noon and same-day is usually available. <a href="tel:4046329165" style="color:var(--color-primary);font-weight:700;">(404) 632-9165</a></div>
+          <div class="faq-answer">Dawson County is Tony&rsquo;s home base. He lives and works right here in Dawsonville (30534), not dispatched from Atlanta, so this is the fastest same-day in his whole service area. Call before noon and same-day is usually available. <a href="tel:4046329165" style="color:var(--color-primary);font-weight:700;">(404) 632-9165</a></div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
             <span class="faq-num">02</span>
-            <span class="faq-text">Is there a travel charge for Dawsonville jobs?</span>
+            <span class="faq-text">Do you serve all of Dawson County or just Dawsonville?</span>
             <span class="faq-toggle" aria-hidden="true">+</span>
           </div>
-          <div class="faq-answer">Pricing is based on the job. Tony gives you a firm quote up front before any work starts, and that&rsquo;s the price you pay. Call and he&rsquo;ll tell you straight. <a href="tel:4046329165" style="color:var(--color-primary);font-weight:700;">(404) 632-9165</a></div>
+          <div class="faq-answer">All of it. Dawsonville is the only incorporated city in the county, but Tony covers the entire county &mdash; every rural road, cabin, farmstead, and lake property in between. If you&rsquo;re in 30534, he comes to you.</div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
             <span class="faq-num">03</span>
-            <span class="faq-text">What areas near Dawsonville do you also serve?</span>
+            <span class="faq-text">How much does junk removal cost in Dawson County?</span>
             <span class="faq-toggle" aria-hidden="true">+</span>
           </div>
-          <div class="faq-answer">Tony covers all of Dawson County and the surrounding cities: Canton, Cumming, Gainesville, Dahlonega, Ball Ground, Jasper, Ellijay, Blue Ridge, Helen, Clermont, Cherry Log, and more. If you&rsquo;re not sure, just call and he&rsquo;ll tell you straight.</div>
+          <div class="faq-answer">Pricing is based on how much your items fill in the truck. Tony gives you a firm quote up front before any work starts, and that&rsquo;s the price you pay &mdash; no hidden fees and no climb once he&rsquo;s on site. Call for a free quote. <a href="tel:4046329165" style="color:var(--color-primary);font-weight:700;">(404) 632-9165</a></div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
             <span class="faq-num">04</span>
-            <span class="faq-text">Do you work weekends in Dawsonville?</span>
+            <span class="faq-text">Do you cover the Amicalola, Lake Lanier, and cabin areas?</span>
             <span class="faq-toggle" aria-hidden="true">+</span>
           </div>
-          <div class="faq-answer">No. Tony and his crew work Monday through Friday, 7am to 6pm. Call any weekday and he can usually get you on the schedule fast, often same day.</div>
+          <div class="faq-answer">Yes. Tony serves the full county including the Hwy 400 and GA-9 corridors, the Amicalola Falls area, the Lake Sidney Lanier shoreline, Burnt Stand, the Crestline Drive gated communities, and War Hill Park. Seasonal cabin cleanouts are a regular job for him up here.</div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
             <span class="faq-num">05</span>
-            <span class="faq-text">Do you serve Lake Sidney, Amicalola Falls, and Burnt Stand?</span>
+            <span class="faq-text">Is the owner on every job?</span>
             <span class="faq-toggle" aria-hidden="true">+</span>
           </div>
-          <div class="faq-answer">Yes. Tony serves the full Dawsonville area: Lake Sidney, the Amicalola Falls corridor, Burnt Stand, the Crestline Drive gated communities, and everywhere on the Hwy 400 and GA-9 corridors. If you&rsquo;re in the Dawsonville area, he comes to you.</div>
+          <div class="faq-answer">Yes. Tony leads every job himself with his own crew. He takes your call, gives you the price, and shows up &mdash; no call centers, no dispatched strangers. He&rsquo;s named by name in over half of his 61 five-star reviews.</div>
         </div>
 
       </div>
@@ -807,7 +677,6 @@
   </div>
   <script defer src="js/analytics.js"></script>
   <script defer src="js/main.js?v=jb4"></script>
-
   <script defer src="js/service-map.js"></script>
 </body>
 </html>

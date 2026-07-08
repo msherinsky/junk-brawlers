@@ -189,4 +189,11 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- County hub pages -->
+  <url>
+    <loc>https://junkbrawlers.com/dawson-county-junk-removal.html</loc>
+    <lastmod>2026-07-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
