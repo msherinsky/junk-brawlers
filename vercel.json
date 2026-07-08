@@ -28,49 +28,410 @@
     }
   ],
   "redirects": [
-    { "source": "/index.html",                     "destination": "/",                    "permanent": true },
-
-    { "source": "/dawsonville-junk-removal",       "destination": "/dawsonville.html",    "permanent": true },
-    { "source": "/cumming-junk-removal",           "destination": "/cumming.html",        "permanent": true },
-    { "source": "/canton-junk-removal",            "destination": "/canton.html",         "permanent": true },
-    { "source": "/woodstock-junk-removal",         "destination": "/woodstock.html",      "permanent": true },
-    { "source": "/gainesville-junk-removal",       "destination": "/gainesville.html",    "permanent": true },
-    { "source": "/flowery-branch-junk-removal",    "destination": "/flowery-branch.html", "permanent": true },
-    { "source": "/ellijay-junk-removal",           "destination": "/ellijay.html",        "permanent": true },
-    { "source": "/east-ellijay-junk-removal-2",    "destination": "/ellijay.html",        "permanent": true },
-    { "source": "/cherry-log-junk-removal",        "destination": "/cherry-log.html",     "permanent": true },
-    { "source": "/blue-ridge-junk-removal",        "destination": "/blue-ridge.html",     "permanent": true },
-    { "source": "/helen-junk-removal",             "destination": "/helen.html",          "permanent": true },
-    { "source": "/ball-ground-junk-removal",       "destination": "/ball-ground.html",    "permanent": true },
-    { "source": "/swanee-junk-removal",            "destination": "/suwanee.html",        "permanent": true },
-    { "source": "/privacy-and-cookies-policy",     "destination": "/privacy-policy.html", "permanent": true },
-
-    { "source": "/holly-springs-junk-removal",     "destination": "/canton.html",         "permanent": true },
-    { "source": "/oakwood-junk-removal",           "destination": "/gainesville.html",    "permanent": true },
-    { "source": "/clermont-junk-removal",          "destination": "/gainesville.html",    "permanent": true },
-    { "source": "/cleveland-junk-removal",         "destination": "/helen.html",          "permanent": true },
-    { "source": "/talking-rock-junk-removal",      "destination": "/ellijay.html",        "permanent": true },
-    { "source": "/jasper-junk-removal",            "destination": "/ball-ground.html",    "permanent": true },
-    { "source": "/lawrenceville-junk-removal",     "destination": "/suwanee.html",        "permanent": true },
-    { "source": "/sugar-hill-junk-removal",        "destination": "/suwanee.html",        "permanent": true },
-    { "source": "/duluth-junk-removal",            "destination": "/suwanee.html",        "permanent": true },
-    { "source": "/norcross-junk-removal",          "destination": "/suwanee.html",        "permanent": true },
-    { "source": "/snellville-junk-removal",        "destination": "/suwanee.html",        "permanent": true },
-    { "source": "/johns-creek-junk-removal",       "destination": "/suwanee.html",        "permanent": true },
-    { "source": "/alpharetta-junk-removal",        "destination": "/cumming.html",        "permanent": true },
-    { "source": "/milton-junk-removal",            "destination": "/cumming.html",        "permanent": true },
-    { "source": "/roswell-junk-removal",           "destination": "/cumming.html",        "permanent": true },
-    { "source": "/sandy-springs-junk-removal",     "destination": "/service-areas.html",  "permanent": true },
-
-    { "source": "/dawson-county-junk-removal",     "destination": "/dawsonville.html",    "permanent": true },
-    { "source": "/forsyth-county-junk-removal",    "destination": "/cumming.html",        "permanent": true },
-    { "source": "/hall-county-junk-removal",       "destination": "/gainesville.html",    "permanent": true },
-    { "source": "/gwinnett-county-junk-removal",   "destination": "/suwanee.html",        "permanent": true },
-    { "source": "/cherokee-county-junk-removal",   "destination": "/canton.html",         "permanent": true },
-    { "source": "/pickens-county-junk-removal",    "destination": "/ball-ground.html",    "permanent": true },
-    { "source": "/gilmer-county-junk-removal",     "destination": "/ellijay.html",        "permanent": true },
-    { "source": "/fannin-county-junk-removal",     "destination": "/blue-ridge.html",     "permanent": true },
-    { "source": "/lumpkin-county-junk-removal",    "destination": "/dahlonega.html",      "permanent": true },
-    { "source": "/white-county-junk-removal",      "destination": "/helen.html",          "permanent": true }
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/dawsonville-junk-removal",
+      "destination": "/dawsonville.html",
+      "permanent": true
+    },
+    {
+      "source": "/dawsonville-junk-removal/",
+      "destination": "/dawsonville.html",
+      "permanent": true
+    },
+    {
+      "source": "/cumming-junk-removal",
+      "destination": "/cumming.html",
+      "permanent": true
+    },
+    {
+      "source": "/cumming-junk-removal/",
+      "destination": "/cumming.html",
+      "permanent": true
+    },
+    {
+      "source": "/canton-junk-removal",
+      "destination": "/canton.html",
+      "permanent": true
+    },
+    {
+      "source": "/canton-junk-removal/",
+      "destination": "/canton.html",
+      "permanent": true
+    },
+    {
+      "source": "/woodstock-junk-removal",
+      "destination": "/woodstock.html",
+      "permanent": true
+    },
+    {
+      "source": "/woodstock-junk-removal/",
+      "destination": "/woodstock.html",
+      "permanent": true
+    },
+    {
+      "source": "/gainesville-junk-removal",
+      "destination": "/gainesville.html",
+      "permanent": true
+    },
+    {
+      "source": "/gainesville-junk-removal/",
+      "destination": "/gainesville.html",
+      "permanent": true
+    },
+    {
+      "source": "/flowery-branch-junk-removal",
+      "destination": "/flowery-branch.html",
+      "permanent": true
+    },
+    {
+      "source": "/flowery-branch-junk-removal/",
+      "destination": "/flowery-branch.html",
+      "permanent": true
+    },
+    {
+      "source": "/ellijay-junk-removal",
+      "destination": "/ellijay.html",
+      "permanent": true
+    },
+    {
+      "source": "/ellijay-junk-removal/",
+      "destination": "/ellijay.html",
+      "permanent": true
+    },
+    {
+      "source": "/east-ellijay-junk-removal-2",
+      "destination": "/ellijay.html",
+      "permanent": true
+    },
+    {
+      "source": "/east-ellijay-junk-removal-2/",
+      "destination": "/ellijay.html",
+      "permanent": true
+    },
+    {
+      "source": "/cherry-log-junk-removal",
+      "destination": "/cherry-log.html",
+      "permanent": true
+    },
+    {
+      "source": "/cherry-log-junk-removal/",
+      "destination": "/cherry-log.html",
+      "permanent": true
+    },
+    {
+      "source": "/blue-ridge-junk-removal",
+      "destination": "/blue-ridge.html",
+      "permanent": true
+    },
+    {
+      "source": "/blue-ridge-junk-removal/",
+      "destination": "/blue-ridge.html",
+      "permanent": true
+    },
+    {
+      "source": "/helen-junk-removal",
+      "destination": "/helen.html",
+      "permanent": true
+    },
+    {
+      "source": "/helen-junk-removal/",
+      "destination": "/helen.html",
+      "permanent": true
+    },
+    {
+      "source": "/ball-ground-junk-removal",
+      "destination": "/ball-ground.html",
+      "permanent": true
+    },
+    {
+      "source": "/ball-ground-junk-removal/",
+      "destination": "/ball-ground.html",
+      "permanent": true
+    },
+    {
+      "source": "/swanee-junk-removal",
+      "destination": "/suwanee.html",
+      "permanent": true
+    },
+    {
+      "source": "/swanee-junk-removal/",
+      "destination": "/suwanee.html",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-and-cookies-policy",
+      "destination": "/privacy-policy.html",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-and-cookies-policy/",
+      "destination": "/privacy-policy.html",
+      "permanent": true
+    },
+    {
+      "source": "/holly-springs-junk-removal",
+      "destination": "/canton.html",
+      "permanent": true
+    },
+    {
+      "source": "/holly-springs-junk-removal/",
+      "destination": "/canton.html",
+      "permanent": true
+    },
+    {
+      "source": "/oakwood-junk-removal",
+      "destination": "/gainesville.html",
+      "permanent": true
+    },
+    {
+      "source": "/oakwood-junk-removal/",
+      "destination": "/gainesville.html",
+      "permanent": true
+    },
+    {
+      "source": "/clermont-junk-removal",
+      "destination": "/gainesville.html",
+      "permanent": true
+    },
+    {
+      "source": "/clermont-junk-removal/",
+      "destination": "/gainesville.html",
+      "permanent": true
+    },
+    {
+      "source": "/cleveland-junk-removal",
+      "destination": "/helen.html",
+      "permanent": true
+    },
+    {
+      "source": "/cleveland-junk-removal/",
+      "destination": "/helen.html",
+      "permanent": true
+    },
+    {
+      "source": "/talking-rock-junk-removal",
+      "destination": "/ellijay.html",
+      "permanent": true
+    },
+    {
+      "source": "/talking-rock-junk-removal/",
+      "destination": "/ellijay.html",
+      "permanent": true
+    },
+    {
+      "source": "/jasper-junk-removal",
+      "destination": "/ball-ground.html",
+      "permanent": true
+    },
+    {
+      "source": "/jasper-junk-removal/",
+      "destination": "/ball-ground.html",
+      "permanent": true
+    },
+    {
+      "source": "/lawrenceville-junk-removal",
+      "destination": "/suwanee.html",
+      "permanent": true
+    },
+    {
+      "source": "/lawrenceville-junk-removal/",
+      "destination": "/suwanee.html",
+      "permanent": true
+    },
+    {
+      "source": "/sugar-hill-junk-removal",
+      "destination": "/suwanee.html",
+      "permanent": true
+    },
+    {
+      "source": "/sugar-hill-junk-removal/",
+      "destination": "/suwanee.html",
+      "permanent": true
+    },
+    {
+      "source": "/duluth-junk-removal",
+      "destination": "/suwanee.html",
+      "permanent": true
+    },
+    {
+      "source": "/duluth-junk-removal/",
+      "destination": "/suwanee.html",
+      "permanent": true
+    },
+    {
+      "source": "/norcross-junk-removal",
+      "destination": "/suwanee.html",
+      "permanent": true
+    },
+    {
+      "source": "/norcross-junk-removal/",
+      "destination": "/suwanee.html",
+      "permanent": true
+    },
+    {
+      "source": "/snellville-junk-removal",
+      "destination": "/suwanee.html",
+      "permanent": true
+    },
+    {
+      "source": "/snellville-junk-removal/",
+      "destination": "/suwanee.html",
+      "permanent": true
+    },
+    {
+      "source": "/johns-creek-junk-removal",
+      "destination": "/suwanee.html",
+      "permanent": true
+    },
+    {
+      "source": "/johns-creek-junk-removal/",
+      "destination": "/suwanee.html",
+      "permanent": true
+    },
+    {
+      "source": "/alpharetta-junk-removal",
+      "destination": "/cumming.html",
+      "permanent": true
+    },
+    {
+      "source": "/alpharetta-junk-removal/",
+      "destination": "/cumming.html",
+      "permanent": true
+    },
+    {
+      "source": "/milton-junk-removal",
+      "destination": "/cumming.html",
+      "permanent": true
+    },
+    {
+      "source": "/milton-junk-removal/",
+      "destination": "/cumming.html",
+      "permanent": true
+    },
+    {
+      "source": "/roswell-junk-removal",
+      "destination": "/cumming.html",
+      "permanent": true
+    },
+    {
+      "source": "/roswell-junk-removal/",
+      "destination": "/cumming.html",
+      "permanent": true
+    },
+    {
+      "source": "/sandy-springs-junk-removal",
+      "destination": "/service-areas.html",
+      "permanent": true
+    },
+    {
+      "source": "/sandy-springs-junk-removal/",
+      "destination": "/service-areas.html",
+      "permanent": true
+    },
+    {
+      "source": "/dawson-county-junk-removal",
+      "destination": "/dawsonville.html",
+      "permanent": true
+    },
+    {
+      "source": "/dawson-county-junk-removal/",
+      "destination": "/dawsonville.html",
+      "permanent": true
+    },
+    {
+      "source": "/forsyth-county-junk-removal",
+      "destination": "/cumming.html",
+      "permanent": true
+    },
+    {
+      "source": "/forsyth-county-junk-removal/",
+      "destination": "/cumming.html",
+      "permanent": true
+    },
+    {
+      "source": "/hall-county-junk-removal",
+      "destination": "/gainesville.html",
+      "permanent": true
+    },
+    {
+      "source": "/hall-county-junk-removal/",
+      "destination": "/gainesville.html",
+      "permanent": true
+    },
+    {
+      "source": "/gwinnett-county-junk-removal",
+      "destination": "/suwanee.html",
+      "permanent": true
+    },
+    {
+      "source": "/gwinnett-county-junk-removal/",
+      "destination": "/suwanee.html",
+      "permanent": true
+    },
+    {
+      "source": "/cherokee-county-junk-removal",
+      "destination": "/canton.html",
+      "permanent": true
+    },
+    {
+      "source": "/cherokee-county-junk-removal/",
+      "destination": "/canton.html",
+      "permanent": true
+    },
+    {
+      "source": "/pickens-county-junk-removal",
+      "destination": "/ball-ground.html",
+      "permanent": true
+    },
+    {
+      "source": "/pickens-county-junk-removal/",
+      "destination": "/ball-ground.html",
+      "permanent": true
+    },
+    {
+      "source": "/gilmer-county-junk-removal",
+      "destination": "/ellijay.html",
+      "permanent": true
+    },
+    {
+      "source": "/gilmer-county-junk-removal/",
+      "destination": "/ellijay.html",
+      "permanent": true
+    },
+    {
+      "source": "/fannin-county-junk-removal",
+      "destination": "/blue-ridge.html",
+      "permanent": true
+    },
+    {
+      "source": "/fannin-county-junk-removal/",
+      "destination": "/blue-ridge.html",
+      "permanent": true
+    },
+    {
+      "source": "/lumpkin-county-junk-removal",
+      "destination": "/dahlonega.html",
+      "permanent": true
+    },
+    {
+      "source": "/lumpkin-county-junk-removal/",
+      "destination": "/dahlonega.html",
+      "permanent": true
+    },
+    {
+      "source": "/white-county-junk-removal",
+      "destination": "/helen.html",
+      "permanent": true
+    },
+    {
+      "source": "/white-county-junk-removal/",
+      "destination": "/helen.html",
+      "permanent": true
+    }
   ]
 }
