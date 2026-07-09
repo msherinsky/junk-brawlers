@@ -160,12 +160,12 @@
     },
     {
       "source": "/johns-creek-junk-removal",
-      "destination": "/suwanee.html",
+      "destination": "/johns-creek.html",
       "permanent": true
     },
     {
       "source": "/alpharetta-junk-removal",
-      "destination": "/cumming.html",
+      "destination": "/alpharetta.html",
       "permanent": true
     },
     {
@@ -175,12 +175,12 @@
     },
     {
       "source": "/roswell-junk-removal",
-      "destination": "/cumming.html",
+      "destination": "/roswell.html",
       "permanent": true
     },
     {
       "source": "/sandy-springs-junk-removal",
-      "destination": "/service-areas.html",
+      "destination": "/sandy-springs.html",
       "permanent": true
     },
     {
