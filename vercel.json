@@ -209,6 +209,11 @@
       "permanent": true
     },
     {
+      "source": "/fulton-county-junk-removal",
+      "destination": "/fulton-county-junk-removal.html",
+      "permanent": true
+    },
+    {
       "source": "/pickens-county-junk-removal",
       "destination": "/pickens-county-junk-removal.html",
       "permanent": true
