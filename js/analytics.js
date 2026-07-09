@@ -1,5 +1,5 @@
 /* ============================================================
-   Junk Brawlers LLC — Analytics (GA4)
+   Junk Brawlers LLC — Analytics (GA4 + Microsoft Clarity)
    ------------------------------------------------------------
    Uses the SAME GA4 property as the old junkbrawlers.com site so
    the rebuild's "after" data flows into one place — letting you
@@ -11,6 +11,11 @@
 
    After data starts flowing, mark call_click + generate_lead as
    "Key events" in GA4 (Admin → Events) so they count as conversions.
+
+   Also loads Microsoft Clarity (behavioral analytics — heatmaps +
+   session recordings) so we can SEE how visitors actually use each
+   page. Both GA4 and Clarity share the localhost skip below, so
+   local/dev visits never pollute either dataset.
    ============================================================ */
 (function () {
   'use strict';
@@ -40,6 +45,15 @@
   window.gtag = window.gtag || gtag;
   gtag('js', new Date());
   gtag('config', GA4_ID);
+
+  /* ── Microsoft Clarity (heatmaps + session recordings) ──
+     Async tag; loads off the critical path on its own. Project ID
+     from clarity.microsoft.com → Junk Brawlers project. */
+  (function (c, l, a, r, i, t, y) {
+    c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+    t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
+    y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+  })(window, document, 'clarity', 'script', 'xjsgp37ie3');
 
   var gaBooted = false;
   function bootGA() {
