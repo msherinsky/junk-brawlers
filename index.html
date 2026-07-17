@@ -30,7 +30,7 @@
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-condensed-800.woff2" crossorigin>
   <link rel="preload" as="image" href="images/truck.webp" imagesrcset="images/truck-800.webp 800w, images/truck.webp 1600w" imagesizes="100vw" fetchpriority="high">
   <script defer src="js/site-data.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=jb8">
+  <link rel="stylesheet" href="css/style.css?v=jb22">
 
   <script type="application/ld+json">
   {
@@ -337,102 +337,144 @@
 
   <!-- SECTION 3: THE STANDARD BEHIND THE CREW (owner + standard, merged) -->
   <section class="owner-section owner-section--light owner-section--standard" aria-label="The Brawler Standard">
-    <div class="owner-inner">
+    <div class="std-dotgrid" aria-hidden="true"></div>
+    <div class="std-head">
+      <span class="standard-eyebrow">The Brawler Standard</span>
+      <h2 class="h2-bridge h2-bridge--light">Tony Built the Standard. The Crew Runs It.</h2>
+      <p class="std-lead">When you call <strong>Junk Brawlers</strong>, a Brawler answers. The same crew pulls up to your door. No call centers, no subcontractors, no surprises on the bill.</p>
+    </div>
 
-      <div class="owner-head">
-        <div class="owner-text-head">
-          <div class="owner-accent-bar"></div>
-          <div class="owner-head-text">
-            <span class="standard-eyebrow">The Brawler Standard</span>
-            <h2 class="h2-bridge h2-bridge--light">Tony Built the Standard. The Crew Runs It.</h2>
-          </div>
-        </div>
-      </div>
-
-      <div class="owner-photo-wrap">
-        <div class="owner-headshot">
+    <!-- ROW 1 of the diagonal: the rig, upper LEFT, with copy and the record beside
+         it. The photos are deliberately NOT a pair any more — pairing them put 100%
+         of the section's image mass in its top half and left the bottom pure text. -->
+    <div class="std-rig-row">
+      <figure class="std-figure std-figure--rig">
+        <div class="duo-media">
           <picture>
-            <source srcset="images/team-headshot.webp" type="image/webp">
-            <img src="images/team-headshot.jpg" alt="Tony Frias, owner of Junk Brawlers LLC, Dawsonville GA" width="600" height="450" loading="lazy">
-          </picture>
-          <div class="owner-badge">
-            <span class="owner-badge-score">&#9733; 5.0</span>
-            <span class="owner-badge-label"><span data-jb-count>66</span> Google Reviews</span>
-          </div>
-        </div>
-
-        <figure class="rig-shot">
-          <picture>
-            <source srcset="images/rig-branded-800.webp 800w, images/rig-branded.webp 1600w" sizes="(max-width:860px) 100vw, 520px" type="image/webp">
+            <source srcset="images/rig-branded-800.webp 800w, images/rig-branded.webp 1600w" sizes="(max-width:860px) 100vw, 620px" type="image/webp">
             <img src="images/rig-branded.jpg" alt="The Junk Brawlers dump truck, name, logo and phone number on the side panel, Dawsonville GA" width="800" height="600" loading="lazy" decoding="async">
           </picture>
-          <figcaption>The rig that pulls up to your door. Our name and number are on the side of it.</figcaption>
-        </figure>
-      </div>
+          <!-- Identification plate, built from .owner-badge's material so both photos
+               in this section read as one system.
+               NO scrim: a .svc-card-overlay gradient would sit at roughly 0.6 alpha
+               across the wrap and phone number, which are the point of this photo. The
+               plate is opaque and needs nothing beneath it, and the bottom-left corner
+               is pavement, clear of the wrap. -->
+          <div class="std-plate" aria-hidden="true">
+            <span class="std-plate-name">The Rig</span>
+            <span class="std-plate-sub">Junk Brawlers</span>
+          </div>
+        </div>
+        <figcaption>
+          <span class="duo-sub">A dedicated dump truck with our name and number on the side of it. Not a trailer behind a pickup.</span>
+        </figcaption>
+      </figure>
 
-      <div class="owner-body">
-        <p>When you call <strong style="color:#111;">Junk Brawlers</strong>, a Brawler answers. The same crew pulls up to your door. No call centers. No subcontractors. No surprises on the bill.</p>
-        <p>Tony wrote the standard this company runs on, and he trained every crew to it. That&rsquo;s why the reviews read the same whether he&rsquo;s on the job or not.</p>
-        <p>You get the truck and the crew of a national outfit. You also get the phone number of the man who owns it.</p>
+      <!-- The copy beside the rig has one job: make the reader believe this is a real
+           operation that will actually turn up. So it is about ownership and
+           accountability, not equipment specs. No size or capacity claim here by
+           policy: see research/equipment.md. The defensible authority is that nothing
+           about the job is farmed out. -->
+      <div class="std-rig-aside">
+        <p class="std-rig-claim">You&rsquo;ll know exactly who came to your house.</p>
+        <p class="std-lead std-lead--aside">A marked truck. An owner you can look up in the state&rsquo;s records. The same crew every time, never subcontractors, never rotating strangers. They work to a standard Tony wrote down and trained them to, which is why the reviews read the same whether he&rsquo;s on the job or not.</p>
 
-        <div class="owner-stats">
+        <!-- data-count-up marks a stat that climbs from 0 on scroll into view. The
+             no-show count is deliberately NOT marked: all three read 0 at rest, two
+             climb, and that one never has to. Counting 0 to 0 is not an animation.
+             Targets are read from the rendered text after initSiteData writes
+             JBSiteData in, so they never go stale. -->
+        <div class="owner-stats std-stats">
           <div class="owner-stat">
-            <span class="stat-val fire" data-jb-count>66</span>
-            <span class="stat-lbl">Five-Star Reviews</span>
+            <span class="stat-val fire" data-jb-rating data-count-up>5.0</span>
+            <span class="stat-lbl">Star Average</span>
           </div>
           <div class="owner-stat">
-            <span class="stat-val fire" data-jb-rating>5.0</span>
-            <span class="stat-lbl">Star Average</span>
+            <span class="stat-val fire" data-jb-count data-count-up>66</span>
+            <span class="stat-lbl">Five-Star Reviews</span>
           </div>
           <div class="owner-stat">
             <span class="stat-val fire">0</span>
             <span class="stat-lbl">No-Shows</span>
           </div>
         </div>
+      </div>
+    </div>
 
-        <p class="proof-connector">A customer who noticed the difference:</p>
-        <div class="rw-mini rw-mini--light" style="margin-top:8px">
-          <span class="rw-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <p class="rw-mini-text">&ldquo;The guys were great And the owner was extremely attentive! Thanks Again Tony&rdquo;</p>
-          <span class="rw-mini-author">L2W Services &middot; Google Review &middot; 5&#9733;</span>
+    <!-- ONE review, not a stack. The homepage already carries the carousel below, the
+         service-block quotes and the hero pull-quote; a wall of testimony here reads as
+         noise, not trust. The trust signals live in the VISUALS of this section (the
+         identification plates, the record band, the checklist) rather than in stacked
+         quotes. This is the section's thesis in a customer's voice, verbatim from
+         research/reviews/google-scrape-2026-07-09.md (Clean pool). Typos are theirs. -->
+    <figure class="std-quote">
+      <span class="rw-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+      <blockquote>&ldquo;Very respectful and very well at what they do Tony and his crew are your people they will treat yall right Recommend them to anyone and everyone&rdquo;</blockquote>
+      <figcaption>James Johnson &middot; Google Review &middot; 5&#9733;</figcaption>
+    </figure>
+
+    <!-- ROW 2 of the diagonal: the document on the LEFT, the man who wrote it on the
+         RIGHT and lower. This is the H2 made literal — "Tony Built the Standard" —
+         and it puts his face beside the remedy that names him.
+         THE STANDARD itself is the middle leg of the brand's claim architecture:
+         state the record, PUBLISH THE STANDARD, promise only the remedy. Without it
+         the record reads as luck and the remedy refers to a standard the reader was
+         never shown. A list, not a grid: this is a document, and a document is what
+         "franchise consistency without the franchise" means. -->
+    <div class="std-doc-row">
+      <div class="std-doc">
+        <p class="standard-lead">A <strong data-jb-rating>5.0</strong> average across every review we&rsquo;ve ever gotten. That isn&rsquo;t luck. <em>It&rsquo;s a checklist.</em></p>
+
+        <ul class="standard-list">
+          <li><strong>A Brawler answers the phone.</strong> Never a call center.</li>
+          <li><strong>You get a price on the call.</strong> The quoted price is the price you pay.</li>
+          <li><strong>We show up when we said we would.</strong> You get a time, not a window.</li>
+          <li><strong>Nothing gets tossed</strong> until you confirm it.</li>
+          <li><strong>We sweep the space clean</strong> before we leave.</li>
+          <li><strong>A dedicated dump truck.</strong> Not a trailer behind a pickup.</li>
+          <li><strong>Resold on Facebook Marketplace, donated, or recycled first.</strong> The landfill is last.</li>
+          <li><strong>Licensed, insured,</strong> and registered in Georgia.</li>
+        </ul>
+
+        <!-- The remedy sits in this column, directly beside Tony's portrait, because
+             it NAMES him: "tell Tony" / "Tony Frias is the owner and registered
+             agent." Accountability and the face it belongs to, on the same line of
+             sight. It also bottoms this column out against the portrait instead of
+             leaving the void that an earlier layout had.
+             "Registered agent" is the legal term for the human who accepts service
+             on behalf of the company, so it is accountability in the literal sense,
+             and it is checkable in a public record. -->
+        <div class="std-close">
+          <p class="standard-remedy">If a crew ever misses the standard, tell Tony. He makes it right.</p>
+          <p class="standard-accountable">Tony Frias is the owner and registered agent of Junk Brawlers LLC, active with the Georgia Secretary of State.</p>
+          <div class="standard-cta">
+            <a href="tel:4046329165" class="btn-fire">Call Junk Brawlers &rarr;</a>
+          </div>
         </div>
       </div>
 
-    </div>
-
-    <div class="pillars">
-      <div class="pillar">
-        <span class="pillar-rule" aria-hidden="true"></span>
-        <h3>A Brawler answers the phone.</h3>
-        <p>Never a call center. Never a subcontractor. The person who quotes the job works for the company that shows up to do it.</p>
-      </div>
-      <div class="pillar">
-        <span class="pillar-rule" aria-hidden="true"></span>
-        <h3>Nothing goes until you say so.</h3>
-        <p>We walk the pile with you first. Nothing gets tossed until you confirm it, and nobody comments on what&rsquo;s in it.</p>
-      </div>
-      <div class="pillar">
-        <span class="pillar-rule" aria-hidden="true"></span>
-        <h3>The landfill is the last stop.</h3>
-        <p>Donated, resold, recycled first. That&rsquo;s part of every job, not an upsell we quote you for.</p>
-      </div>
-    </div>
-
-    <div class="creds">
-      <div class="cred">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-        <span><strong>A dedicated dump truck.</strong> Not a trailer behind a pickup.</span>
-      </div>
-      <div class="cred">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
-        <span><strong>Licensed and insured.</strong> A registered Georgia business you can look up.</span>
-      </div>
-    </div>
-
-    <p class="standard-remedy">If a crew ever misses the standard, tell Tony. He makes it right.</p>
-
-    <div class="standard-cta">
-      <a href="tel:4046329165" class="btn-fire">Call Junk Brawlers &rarr;</a>
+      <figure class="std-figure std-figure--tony">
+        <div class="duo-media">
+          <picture>
+            <source srcset="images/team-headshot.webp" type="image/webp">
+            <img src="images/team-headshot.jpg" alt="Tony Frias, owner of Junk Brawlers LLC, Dawsonville GA" width="340" height="339" loading="lazy">
+          </picture>
+          <!-- Same plate, same corner as the rig's. .owner-badge holds the opposite
+               end of this edge and keeps its -16px bleed: same material, opposite
+               ends, so they read as a pair rather than a collision. -->
+          <div class="std-plate" aria-hidden="true">
+            <span class="std-plate-name">Tony Frias</span>
+            <span class="std-plate-sub">Owner</span>
+          </div>
+          <div class="owner-badge">
+            <span class="owner-badge-score">&#9733; 5.0</span>
+            <span class="owner-badge-label"><span data-jb-count>66</span> Google Reviews</span>
+          </div>
+        </div>
+        <figcaption>
+          <span class="duo-sub">Owner and founder. He answers the phone, and he is who you call if a job ever misses the standard.</span>
+        </figcaption>
+      </figure>
     </div>
 
     <p class="section-bridge section-bridge--light">We take what most haulers won&rsquo;t even quote.</p>
@@ -460,7 +502,7 @@
             <div class="rw-mini">
               <span class="rw-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
               <p class="rw-mini-text">&ldquo;They came, they conquered the clutter, and they left!&rdquo;</p>
-              <span class="rw-mini-author">Abdel Basheer &middot; Google Review &middot; a day ago</span>
+              <span class="rw-mini-author">Abdel Basheer &middot; Google Review &middot; 5&#9733;</span>
             </div>
             <div class="svc-block-links">
               <a href="estate-cleanouts.html">Estate cleanouts in North Georgia</a>
@@ -482,7 +524,7 @@
             <div class="rw-mini">
               <span class="rw-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
               <p class="rw-mini-text">&ldquo;Prompt, took care of everything and they are very professional. Will definitely request them on our next project!&rdquo;</p>
-              <span class="rw-mini-author">Carlos Medina &middot; Google Review &middot; 2 months ago</span>
+              <span class="rw-mini-author">Carlos Medina &middot; Google Review &middot; 5&#9733;</span>
             </div>
             <div class="svc-block-links">
               <a href="commercial-junk-removal.html">Commercial junk removal in North Georgia</a>
@@ -502,7 +544,7 @@
             <div class="rw-mini">
               <span class="rw-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
               <p class="rw-mini-text">&ldquo;Tony and his Crew were efficient, professional , and courteous. It amazed me how much they could pack into that truck. I seldom ever give five stars for anything, but I guess hell froze over. Give them a go&hellip;&rdquo;</p>
-              <span class="rw-mini-author">Tony Penaloza &middot; Google Review &middot; Edited a month ago</span>
+              <span class="rw-mini-author">Tony Penaloza &middot; Google Review &middot; 5&#9733;</span>
             </div>
             <div class="svc-block-links">
               <a href="construction-debris-removal.html">Construction debris removal</a>
@@ -549,8 +591,8 @@
 
         <div class="hiw-step">
           <div class="hiw-num"><span>2</span></div>
-          <h3>They Text. They Show. On Time.</h3>
-          <p>We text before the crew comes and give you a time. Call in the morning and they can usually be there the same day.</p>
+          <h3>They Show. On Time.</h3>
+          <p>You get a time, not a window. Call in the morning and the crew can usually be there the same day.</p>
         </div>
 
         <div class="hiw-step">
@@ -820,7 +862,7 @@
   })();
   </script>
   <script defer src="js/analytics.js"></script>
-  <script defer src="js/main.js?v=jb4"></script>
+  <script defer src="js/main.js?v=jb21"></script>
 
   <!-- Service-area coverage map (Leaflet + d3-delaunay are loaded on demand by service-map.js when the map scrolls into view) -->
   <script defer src="js/service-map.js"></script>

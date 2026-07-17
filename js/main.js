@@ -401,6 +401,71 @@
   }
 
   /* ── Init all ── */
+  /* ── Stat count-up (the Brawler Standard's record band) ──
+     Runs AFTER initSiteData(), never before: that writes JBSiteData.reviewCount into
+     [data-jb-count], so the target has to be read off the rendered element or the two
+     fight and the count-up animates to a stale number.
+
+     The "0 No-Shows" stat is deliberately NOT animated, and that is the point rather
+     than an oversight. All three read 0 at rest; two of them climb; the no-show count
+     never has to. A number counting from 0 to 0 is not an animation, and leaving it
+     out lets it hold the frame while the others move.
+
+     Reduced motion: snap straight to the final value. Unlike the ticker (which slows
+     rather than freezes, because a frozen half-clipped strip reads as broken), a
+     count-up with no motion is simply the number, which is all it was ever conveying.
+     Fires once, on first intersection. */
+  function initStatCountUp() {
+    var els = document.querySelectorAll('[data-count-up]');
+    if (!els.length) return;
+
+    // The target is whatever is RENDERED right now, captured after initSiteData has
+    // written JBSiteData in. Hardcoding it in the markup would go stale the moment
+    // the review count changes, and site-data.js is the documented source of truth.
+    Array.prototype.forEach.call(els, function (el) {
+      el.setAttribute('data-count-to', el.textContent.trim());
+    });
+
+    var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var settle = function (el) { el.textContent = el.getAttribute('data-count-to'); };
+
+    if (reduced || !('IntersectionObserver' in window)) {
+      Array.prototype.forEach.call(els, settle);
+      return;
+    }
+
+    // easeOutQuint — the same curve .pillar-rule uses: quick out, long settle.
+    var ease = function (t) { return 1 - Math.pow(1 - t, 5); };
+    var DURATION = 1100;
+
+    function run(el) {
+      var raw = el.getAttribute('data-count-to');
+      var target = parseFloat(raw);
+      if (isNaN(target)) { settle(el); return; }
+      var decimals = (raw.split('.')[1] || '').length;
+      var t0 = null;
+      function frame(ts) {
+        if (t0 === null) t0 = ts;
+        var p = Math.min((ts - t0) / DURATION, 1);
+        el.textContent = (target * ease(p)).toFixed(decimals);
+        if (p < 1) requestAnimationFrame(frame);
+        else settle(el);   // land on the exact string, never a float artifact
+      }
+      el.textContent = (0).toFixed(decimals);
+      requestAnimationFrame(frame);
+    }
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        io.unobserve(e.target);
+        run(e.target);
+      });
+    }, { threshold: 0.6 });
+
+    Array.prototype.forEach.call(els, function (el) { io.observe(el); });
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     initSiteData();
     initHamburger();
@@ -409,6 +474,7 @@
     initHeaderScroll();
     initQuoteModal();
     initZipCheck(document.getElementById('zipCode'));
+    initStatCountUp();   // must follow initSiteData
   });
 })();
 

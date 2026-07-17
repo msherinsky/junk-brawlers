@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#07001A">
   <title>About Tony Frias | Owner of Junk Brawlers | Dawsonville GA</title>
-  <meta name="description" content="Tony Frias owns and operates Junk Brawlers LLC, North Georgia's 5-star junk removal. He answers the phone himself and leads every job with his crew.">
+  <meta name="description" content="Tony Frias owns and operates Junk Brawlers LLC, North Georgia's 5-star junk removal. He answers the phone himself and wrote the standard his crew runs on.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://junkbrawlers.com/about.html">
   <meta property="og:title" content="About Tony Frias | Owner of Junk Brawlers | Dawsonville GA">
-  <meta property="og:description" content="Tony Frias started Junk Brawlers with one truck and $5,740. He answers every call himself, leads every job with his crew, and hasn't had a single complaint.">
+  <meta property="og:description" content="Tony Frias didn't buy a franchise. He wrote the standard Junk Brawlers runs on and trained his crew to it. 66 five-star reviews, zero complaints.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://junkbrawlers.com/about.html">
   <meta property="og:image" content="https://junkbrawlers.com/images/team-headshot.jpg">
@@ -20,7 +20,7 @@
   <meta property="og:site_name" content="Junk Brawlers">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="About Tony Frias | Owner of Junk Brawlers | Dawsonville GA">
-  <meta name="twitter:description" content="Tony Frias started Junk Brawlers with one truck and $5,740. He answers every call himself, leads every job with his crew, and hasn't had a single complaint.">
+  <meta name="twitter:description" content="Tony Frias didn't buy a franchise. He wrote the standard Junk Brawlers runs on and trained his crew to it. 66 five-star reviews, zero complaints.">
   <meta name="twitter:image" content="https://junkbrawlers.com/images/team-headshot.jpg">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -32,11 +32,22 @@
   <link rel="preload" as="image" href="images/team-headshot.webp" type="image/webp" fetchpriority="high">
   <link rel="preload" href="images/logo.webp" as="image" type="image/webp" fetchpriority="high">
   <script src="js/site-data.js"></script>
-  <link rel="stylesheet" href="css/style.css?v=jb4">
+  <link rel="stylesheet" href="css/style.css?v=jb6">
   <style>
     .hero{background:radial-gradient(ellipse at 65% 50%,rgba(123,53,212,0.22) 0%,transparent 60%),radial-gradient(ellipse at 15% 85%,rgba(80,0,180,0.12) 0%,transparent 45%),#0A000F}
     .owner-section .owner-inner{gap:16px 56px}
     .owner-section .owner-text-head{margin-bottom:0}
+    /* MOBILE HERO. The base .hero-right is a full-bleed background layer (absolute,
+       inset 0, z-index 0) sitting under a ::before scrim. That is correct when it holds
+       a plain photo, which is what index.html puts there. This page puts a 290px CARD in
+       that slot instead, so as a background it ghosted its own logo plate, name plate
+       and review badge straight through the tagline. Put the card back in normal flow
+       under the text and drop the scrim, which has nothing left to dim. */
+    @media(max-width:900px){
+      .hero-right{position:relative;inset:auto;width:auto;height:auto;z-index:1;overflow:visible;display:flex;justify-content:center;padding:0 28px 48px}
+      .hero-right::before{display:none}
+      .hero-left{padding-bottom:32px}
+    }
     @media(min-width:901px){
       .hero{min-height:0}
       .hero-left{padding-top:40px;padding-bottom:36px}
@@ -55,7 +66,7 @@
     "name": "Antonio Frias",
     "alternateName": "Tony Frias",
     "jobTitle": "Owner & Founder",
-    "description": "Antonio 'Tony' Frias is the founder and owner of Junk Brawlers LLC, a North Georgia junk removal company based in Dawsonville, GA. He answers every call personally, operates the truck, and has earned 61 five-star reviews with zero complaints since launching in June 2024.",
+    "description": "Antonio 'Tony' Frias is the founder and owner of Junk Brawlers LLC, a North Georgia junk removal company based in Dawsonville, GA. He answers every call personally, wrote the standard his crew is trained to, and has earned 66 five-star reviews with zero complaints since launching in June 2024.",
     "url": "https://junkbrawlers.com/about.html",
     "image": "https://junkbrawlers.com/images/team-headshot.jpg",
     "worksFor": {
@@ -71,15 +82,15 @@
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
     {"@type":"ListItem","position":1,"name":"Home","item":"https://junkbrawlers.com/"},
-    {"@type":"ListItem","position":2,"name":"About Tony","item":"https://junkbrawlers.com/about.html"}
+    {"@type":"ListItem","position":2,"name":"About Us","item":"https://junkbrawlers.com/about.html"}
   ]}
   </script>
 
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://junkbrawlers.com/#localbusiness","name":"Junk Brawlers LLC","url":"https://junkbrawlers.com","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"61","bestRating":"5","worstRating":"1"}}
+  {"@context":"https://schema.org","@type":"LocalBusiness","@id":"https://junkbrawlers.com/#localbusiness","name":"Junk Brawlers LLC","url":"https://junkbrawlers.com","image":"https://junkbrawlers.com/images/logo.png","telephone":"+14046329165","priceRange":"$$","address":{"@type":"PostalAddress","addressLocality":"Dawsonville","addressRegion":"GA","postalCode":"30534","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":34.4218,"longitude":-84.1202},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"07:00","closes":"18:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Saturday","Sunday"],"opens":"09:00","closes":"18:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"66","bestRating":"5","worstRating":"1"},"sameAs":["https://www.facebook.com/JunkBrawlers/","https://www.instagram.com/junkbrawlers","https://share.google/5doX6CrAHd0P3t3kZ"]}
   </script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"AboutPage","url":"https://junkbrawlers.com/about.html","name":"About Junk Brawlers, Tony Frias, Owner","description":"Owner-operated junk removal in North Georgia. Tony Frias founded Junk Brawlers to provide fast, honest hauling with no surprise fees.","publisher":{"@id":"https://junkbrawlers.com/#localbusiness"}}
+  {"@context":"https://schema.org","@type":"AboutPage","url":"https://junkbrawlers.com/about.html","name":"About Junk Brawlers, Tony Frias, Owner","description":"Licensed and insured junk removal in North Georgia. Tony Frias founded Junk Brawlers to provide fast, honest hauling with no surprise fees.","publisher":{"@id":"https://junkbrawlers.com/#localbusiness"}}
   </script>
 </head>
 <body>
@@ -249,20 +260,20 @@
           <span aria-current="page">About Tony</span>
         </nav>
 
-        <a href="https://share.google/HG9xlgEp9F7GkTscP" target="_blank" rel="noopener" class="hero-badge" data-jb-badge aria-label="5.0 stars, 61 Google reviews">
+        <a href="https://share.google/5doX6CrAHd0P3t3kZ" target="_blank" rel="noopener" class="hero-badge" data-jb-badge aria-label="5.0 stars, 66 Google reviews">
           <span class="hero-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <span class="hero-badge-text"><strong data-jb-rating>5.0</strong> Stars &middot; <span data-jb-count>61</span> Google Reviews</span>
+          <span class="hero-badge-text"><strong data-jb-rating>5.0</strong> Stars &middot; <span data-jb-count>66</span> Google Reviews</span>
         </a>
 
         <h1 style="font-family:var(--font-heading);font-size:clamp(13px,1.4vw,18px);font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.6);margin-bottom:16px;">North Georgia&rsquo;s Family-Owned Junk Fighter</h1>
-        <div class="hero-tagline">The Owner Who Answers the Phone<span class="hero-em">Leads Every<br>Job.</span></div>
+        <div class="hero-tagline">The Owner Who Answers the Phone<span class="hero-em">Wrote the<br>Standard.</span></div>
 
-        <p class="hero-sub">Most junk removal companies send whoever&rsquo;s available. You don&rsquo;t know who&rsquo;s driving until the truck pulls up. Tony Frias is different. He launched Junk Brawlers in 2024 with one truck and $5,740, and he&rsquo;s on every job, leading his crew. <span data-jb-count>61</span> reviews. All five stars.</p>
+        <p class="hero-sub">Most junk removal companies send whoever&rsquo;s available. You don&rsquo;t know who&rsquo;s driving until the truck pulls up. Tony Frias wrote the standard his crew runs on, and put his own name and number on the truck. <span data-jb-count>66</span> reviews. All five stars.</p>
 
         <div class="hero-buttons">
           <a href="tel:4046329165" class="btn-fire">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:inline;vertical-align:-2px;margin-right:6px;"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-            Call Tony
+            Call Junk Brawlers
           </a>
         </div>
 
@@ -299,7 +310,7 @@
           </div>
           <div style="flex-shrink:0;background:linear-gradient(135deg,#9B00FF,#5200A0);border-radius:4px;padding:7px 11px;box-shadow:0 4px 12px rgba(0,0,0,0.5);text-align:center;">
             <span style="display:block;font-family:var(--font-heading);font-weight:800;color:#FFD700;font-size:15px;line-height:1;">&#9733; 5.0</span>
-            <span style="display:block;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.75);margin-top:2px;" data-jb-count>61</span>
+            <span style="display:block;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.75);margin-top:2px;" data-jb-count>66</span>
           </div>
         </div>
 
@@ -311,18 +322,18 @@
   <div class="trust-ticker" role="region" aria-label="Why choose Junk Brawlers">
     <div class="trust-ticker-wrap">
       <div class="trust-ticker-track">
-        <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>Mon&ndash;Fri &middot; 7am&ndash;6pm</div>
+        <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>Open 7 Days a Week</div>
         <span class="t-sep" aria-hidden="true"></span>
         <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>Price Quoted Is Price Paid</div>
         <span class="t-sep" aria-hidden="true"></span>
-        <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span>Junk Brawlers LLC &middot; GA-Registered Business</div>
+        <div class="t-item"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span>Licensed &amp; Insured</div>
         <span class="t-sep" aria-hidden="true"></span>
         <!-- duplicate set for seamless marquee loop -->
-        <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>Mon&ndash;Fri &middot; 7am&ndash;6pm</div>
+        <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>Open 7 Days a Week</div>
         <span class="t-sep" aria-hidden="true"></span>
         <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></span>Price Quoted Is Price Paid</div>
         <span class="t-sep" aria-hidden="true"></span>
-        <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span>Junk Brawlers LLC &middot; GA-Registered Business</div>
+        <div class="t-item" aria-hidden="true"><span class="t-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg></span>Licensed &amp; Insured</div>
       </div>
     </div>
   </div>
@@ -339,7 +350,7 @@
       <div class="owner-head">
         <div class="owner-text-head">
           <div class="owner-accent-bar"></div>
-          <h2 class="h2-bridge h2-bridge--light">One Truck. $5,740. Built From Scratch.</h2>
+          <h2 class="h2-bridge h2-bridge--light">He Didn&rsquo;t Buy a Franchise. He Wrote a Standard.</h2>
         </div>
       </div>
 
@@ -350,15 +361,15 @@
         </picture>
         <div class="owner-badge">
           <span class="owner-badge-score">&#9733; 5.0</span>
-          <span class="owner-badge-label"><span data-jb-count>61</span> Google Reviews</span>
+          <span class="owner-badge-label"><span data-jb-count>66</span> Google Reviews</span>
         </div>
       </div>
 
       <div class="owner-body">
-        <p>Tony Frias didn&rsquo;t buy into a franchise. He didn&rsquo;t lease a fleet. He found a used truck for <strong style="color:#111;">$4,800</strong>, had it wrapped for $780, patched the bed himself, and launched <strong style="color:#111;">Junk Brawlers LLC</strong> in June 2024. Total investment: <strong style="color:#111;">$5,740</strong>.</p>
-        <p>Since then: <span data-jb-count>61</span> five-star reviews. Zero complaints. Tony gets named by name in more than half of them, not because he asks people to, but because they actually remember him.</p>
+        <p>Tony Frias didn&rsquo;t buy into a franchise. He didn&rsquo;t lease a fleet. He found a used truck, had it wrapped, patched the bed himself, and launched <strong style="color:#111;">Junk Brawlers LLC</strong> in June 2024. Then he ran it the way he thought a hauler should run. Answer your own phone. Quote the job honestly. Show up when you said you would. Sweep the space before you leave.</p>
+        <p>Since then: <span data-jb-count>66</span> five-star reviews. Zero complaints. Tony gets named by name in more than half of them, not because he asks people to, but because they actually remember him.</p>
         <p>He&rsquo;s North Georgia born. He markets by showing up in community Facebook groups as himself, not as a brand. He salvages what he can on Marketplace before anything hits the dump. He just works.</p>
-        <p>He doesn&rsquo;t always come alone. His brother Simon runs jobs with him, which is how they handled the humongous fridge that needed special tools and two sets of hands.</p>
+        <p>He doesn&rsquo;t work alone anymore. That list became the standard, and he trained his crew to it. It holds when he isn&rsquo;t on the truck: customers now name the crew in their reviews without mentioning Tony at all. Every Brawler on your property is covered by <strong style="color:#111;">workers&rsquo; compensation</strong>. Most solo haulers carry none, which leaves you exposed if someone gets hurt in your garage.</p>
 
         <div class="owner-stats">
           <div class="owner-stat">
@@ -366,23 +377,23 @@
             <span class="stat-lbl">Year Founded</span>
           </div>
           <div class="owner-stat">
-            <span class="stat-val fire" data-jb-count>61</span>
+            <span class="stat-val fire" data-jb-count>66</span>
             <span class="stat-lbl">Five-Star Reviews</span>
           </div>
           <div class="owner-stat">
-            <span class="stat-val fire">0</span>
-            <span class="stat-lbl">Complaints Ever</span>
+            <span class="stat-val fire" data-jb-rating>5.0</span>
+            <span class="stat-lbl">Star Average</span>
           </div>
         </div>
 
         <div class="rw-mini rw-mini--light" style="margin-top:24px;">
           <span class="rw-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <p class="rw-mini-text">&ldquo;Tony&hellip; an amazing entrepreneurial young man! Professional, courteous, respectful, and hard-working. Will definitely use him again, and recommend him to everyone. You will not go wrong Using Tony&rsquo;s service. He&rsquo;s the best!&rdquo;</p>
-          <span class="rw-mini-author">Sari Chism &middot; Google Review &middot; 5&#9733;</span>
+          <p class="rw-mini-text">&ldquo;They were able to fit me in the next day! They kept me updated of their arrival time and they worked fast. We will use them again! They were great.&rdquo;</p>
+          <span class="rw-mini-author">Suzy16A &middot; Google Review &middot; 5&#9733;</span>
         </div>
 
         <div style="margin-top:24px;">
-          <a href="tel:4046329165" class="btn-fire">Call Tony &rarr;</a>
+          <a href="tel:4046329165" class="btn-fire">Call Junk Brawlers &rarr;</a>
         </div>
       </div>
 
@@ -407,15 +418,15 @@
 
         <div class="hiw-step">
           <div class="hiw-num"><span>2</span></div>
-          <h3>He Shows Up. Every Time.</h3>
-          <p>The owner is on every job. You know who&rsquo;s driving before they get there. No subcontractors. No strangers. Tony has shown up within 30 minutes of a call.</p>
+          <h3>The Crew Shows Up. Every Time.</h3>
+          <p>A marked truck and the crew Tony trained. You know who&rsquo;s coming before they get there. No subcontractors. No strangers. Tony has shown up within 30 minutes of a call.</p>
         </div>
 
         <div class="hiw-step">
           <div class="hiw-num"><span>3</span></div>
           <div style="display:inline-block;background:var(--color-fire);color:#fff;font-family:var(--font-heading);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;border-radius:3px;margin-bottom:10px;">Price Guarantee</div>
           <h3>The Price on the Call Is the Price You Pay.</h3>
-          <p>Quoted by volume before Tony touches anything. That number doesn&rsquo;t change at the door, not once across <span data-jb-count>61</span> jobs. If the price ever changed on arrival, the job would be free. It hasn&rsquo;t.</p>
+          <p>Quoted by volume before Tony touches anything. That number doesn&rsquo;t change at the door, not once across <span data-jb-count>66</span> jobs. If the price ever changed on arrival, the job would be free. It hasn&rsquo;t.</p>
         </div>
 
       </div>
@@ -442,8 +453,8 @@
 
         <div class="rw-mini rw-mini--light">
           <span class="rw-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <p class="rw-mini-text">&ldquo;Outstanding Service! Tony from Junk Brawlers LLC was an excellent young man&mdash;very personable and professional. He showed up within 30 minutes of my call and had everything packed up and hauled away quickly and efficiently. It&rsquo;s rare to find someone so courteous and hardworking. I highly recommend Junk Brawlers LLC and will definitely use them again!&rdquo;</p>
-          <span class="rw-mini-author">myra smallwood &middot; Google Review &middot; 5&#9733;</span>
+          <p class="rw-mini-text">&ldquo;Super easy to work with! Did a great job, and were very communicative, and a pleasure to work with. Would highly recommend for any junk removal needs!&rdquo;</p>
+          <span class="rw-mini-author">Afton McLaughlin &middot; Google Review &middot; 5&#9733;</span>
         </div>
 
         <div class="rw-mini rw-mini--light">
@@ -455,7 +466,7 @@
       </div>
 
       <div style="text-align:center;margin-top:36px;">
-        <a href="https://share.google/HG9xlgEp9F7GkTscP" target="_blank" rel="noopener" class="btn-primary">Read All <span data-jb-count>61</span> Reviews on Google &rarr;</a>
+        <a href="https://share.google/5doX6CrAHd0P3t3kZ" target="_blank" rel="noopener" class="btn-primary">Read All <span data-jb-count>66</span> Reviews on Google &rarr;</a>
       </div>
 
     </div>
@@ -469,10 +480,10 @@
       <a href="tel:4046329165" class="cta-final-phone" data-phone-href>(404) 632-9165</a>
       <span class="cta-final-tap">Tap to call &middot; Tony picks up</span>
       <a href="tel:4046329165" class="btn-fire" style="font-family:var(--font-heading);font-size:18px;letter-spacing:2px;padding:20px 52px;">
-        Call Tony
+        Call Junk Brawlers
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline;vertical-align:-2px;margin-left:10px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <p class="cta-final-sub">Mon&ndash;Fri, 7am to 6pm. Call in the morning and he can usually be there today.</p>
+      <p class="cta-final-sub">Open 7 days a week. Call in the morning and he can usually be there today.</p>
     </div>
   </section>
 
@@ -482,16 +493,16 @@
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="footer-logo"><picture><source srcset="images/logo.webp" type="image/webp"><img src="images/logo.png" alt="Junk Brawlers LLC" width="68" height="54" style="height:54px;width:auto;display:block;"></picture></div>
-        <p>North Georgia&rsquo;s most trusted junk removal service. Owner-operated by Antonio &ldquo;Tony&rdquo; Frias. <span data-jb-rating>5.0</span> stars across <span data-jb-count>61</span> Google reviews.</p>
+        <p>North Georgia&rsquo;s most trusted junk removal service. Founded by Antonio &ldquo;Tony&rdquo; Frias. <span data-jb-rating>5.0</span> stars across <span data-jb-count>66</span> Google reviews.</p>
         <p>Serving <a href="dawson-county-junk-removal.html">Dawson</a>, <a href="cherokee-county-junk-removal.html">Cherokee</a>, <a href="forsyth-county-junk-removal.html">Forsyth</a>, <a href="hall-county-junk-removal.html">Hall</a>, <a href="gilmer-county-junk-removal.html">Gilmer</a>, <a href="lumpkin-county-junk-removal.html">Lumpkin</a>, <a href="pickens-county-junk-removal.html">Pickens</a>, <a href="white-county-junk-removal.html">White</a>, <a href="gwinnett-county-junk-removal.html">Gwinnett</a>, <a href="fannin-county-junk-removal.html">Fannin</a> &amp; <a href="fulton-county-junk-removal.html">Fulton</a> counties.</p>
         <address style="font-style:normal;font-size:14px;color:rgba(255,255,255,0.6);line-height:1.6;margin-bottom:8px;">Dawsonville, GA 30534</address>
         <a href="tel:4046329165" class="footer-phone" data-phone-href>(404) 632-9165</a>
-        <span class="footer-hours" id="wg-hours">Mon&ndash;Fri &middot; 7:00 AM &ndash; 6:00 PM</span>
+        <span class="footer-hours" id="wg-hours">Mon&ndash;Fri 7am&ndash;6pm &middot; Sat&ndash;Sun 9am&ndash;6pm</span>
       </div>
-      <div class="footer-col"><h3>Quick Links</h3><ul><li><a href="/">Home</a></li><li><a href="about.html">About Tony</a></li><li><a href="services.html">Services</a></li><li><a href="service-areas.html">Service Areas</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact / Quote</a></li></ul></div>
+      <div class="footer-col"><h3>Quick Links</h3><ul><li><a href="/">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="service-areas.html">Service Areas</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact / Quote</a></li></ul></div>
       <div class="footer-col"><h3>Services</h3><ul><li><a href="junk-removal.html">Junk Removal</a></li><li><a href="appliance-removal.html">Appliance Removal</a></li><li><a href="hot-tub-removal.html">Hot Tub Removal</a></li><li><a href="pool-removal.html">Pool Removal</a></li><li><a href="estate-cleanouts.html">Estate Cleanouts</a></li><li><a href="garage-cleanouts.html">Garage Cleanouts</a></li><li><a href="hoarder-cleanouts.html">Hoarder Cleanouts</a></li><li><a href="construction-debris-removal.html">Construction Debris</a></li><li><a href="commercial-junk-removal.html">Commercial Removal</a></li><li><a href="shed-deck-removal.html">Shed &amp; Deck Removal</a></li></ul></div>
       <div class="footer-col">
-        <h3>Follow Tony</h3>
+        <h3>Follow Junk Brawlers</h3>
         <div class="social-icons">
           <a href="https://www.facebook.com/profile.php?id=100008604212074" class="social-icon" aria-label="Facebook" target="_blank" rel="noopener" data-social="facebook">f</a>
           <a href="https://www.instagram.com/junkbrawlers" class="social-icon" aria-label="Instagram" target="_blank" rel="noopener" data-social="instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em" aria-hidden="true" style="vertical-align:-0.125em"><path d="M20 4h-3.17L15 2H9L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-8 13c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg></a>
