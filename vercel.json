@@ -29,9 +29,9 @@
   ],
   "redirects": [
     {
-      "source": "/:path*",
+      "source": "/(.*)",
       "has": [{ "type": "host", "value": "junk-brawlers.vercel.app" }],
-      "destination": "https://junkbrawlers.com/:path*",
+      "destination": "https://junkbrawlers.com/$1",
       "permanent": true
     },
     {
