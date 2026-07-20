@@ -792,7 +792,10 @@ body.page-home .tq-dot.is-active{background:var(--color-fire);transform:scale(1.
   .svc-card-body p{display:none}
   .svc-grid .svc-card:last-child{grid-column:span 2;min-height:160px}
   .svc-card-hover{display:none}
-  .pain-section{padding:52px 20px 0}
+  /* flow-root keeps .pain-pivot-accent's 32px bottom margin INSIDE the section.
+     With padding-bottom:0 it collapsed out, leaving an unpainted band below the
+     gradient where the near-black body background showed through as a dark bar. */
+  .pain-section{padding:52px 20px 0;display:flow-root}
   .pain-pivot-accent{margin:28px auto 32px}
   .section-bridge{padding:48px 20px 56px}
   .section-bridge--final{padding-top:48px;padding-bottom:56px}
