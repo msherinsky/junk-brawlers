@@ -20,15 +20,37 @@
 (function () {
   'use strict';
 
+  function optOut() {
+    window.JB_trackLead = function () {}; /* no-op so form code doesn't error */
+  }
+
   /* ── Skip local/dev traffic ──
      When the site is opened locally (localhost / 127.0.0.1) we don't
      want those hits polluting GA4 — bail out before anything loads so
      no page_view, call_click, or generate_lead is ever sent. */
   var host = location.hostname;
   if (host === 'localhost' || host === '127.0.0.1' || host === '' || host === '::1') {
-    window.JB_trackLead = function () {}; /* no-op so form code doesn't error */
+    optOut();
     return;
   }
+
+  /* ── Owner/tester opt-out (Matt + Tony) ──
+     Visiting ?notrack=1 once stores a flag in this browser; from then on the
+     device is invisible to BOTH GA4 and Clarity, because we bail before either
+     one loads. ?notrack=0 clears it. This exists because IP filtering can't
+     cover testing from phones and changing networks, and at ~40 sessions/week
+     a handful of owner visits badly skews the data (the 14 "leads" in July were
+     form tests, not customers). Per browser/device; clearing site data resets
+     it. Real visitors never see or trigger any of this. */
+  try {
+    var q = location.search;
+    if (q.indexOf('notrack=1') !== -1) { localStorage.setItem('jb_notrack', '1'); }
+    if (q.indexOf('notrack=0') !== -1) { localStorage.removeItem('jb_notrack'); }
+    if (localStorage.getItem('jb_notrack') === '1') {
+      optOut();
+      return;
+    }
+  } catch (e) { /* private mode / storage blocked: fall through and track normally */ }
 
   var GA4_ID = 'G-KXD6ZXNJTS';
 
