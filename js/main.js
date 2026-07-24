@@ -263,41 +263,32 @@
       '<div class="jb-modal-card">' +
         '<button class="jb-modal-close" aria-label="Close">&times;</button>' +
         '<img src="images/logo.webp" alt="Junk Brawlers" class="jb-modal-logo">' +
-        '<h2 class="jb-modal-heading">Get a Free Quote.</h2>' +
-        '<p class="jb-modal-sub">North Georgia\'s 5-star rated hauler. Usually responds within minutes.</p>' +
+        '<h2 class="jb-modal-heading">Get a Quote.</h2>' +
+        '<p class="jb-modal-sub">5-star rated North Georgia junk removal.</p>' +
         '<form class="jb-modal-form" novalidate>' +
           '<div class="jb-form-row">' +
             '<div class="jb-form-group">' +
-              '<label for="jb-firstName">First Name *</label>' +
-              '<input type="text" id="jb-firstName" name="firstName" placeholder="Your first name" autocomplete="given-name">' +
+              '<label for="jb-fullName">Full Name *</label>' +
+              '<input type="text" id="jb-fullName" name="fullName" placeholder="Your full name" autocomplete="name">' +
             '</div>' +
-            '<div class="jb-form-group">' +
-              '<label for="jb-lastName">Last Name</label>' +
-              '<input type="text" id="jb-lastName" name="lastName" placeholder="Your last name" autocomplete="family-name">' +
-            '</div>' +
-          '</div>' +
-          '<div class="jb-form-row">' +
             '<div class="jb-form-group">' +
               '<label for="jb-phone">Phone *</label>' +
               '<input type="tel" id="jb-phone" name="phone" placeholder="(000) 000-0000" autocomplete="tel">' +
             '</div>' +
-            '<div class="jb-form-group">' +
-              '<label for="jb-zipCode">Zip</label>' +
-              '<input type="text" id="jb-zipCode" name="zipCode" placeholder="30534" maxlength="5" inputmode="numeric" autocomplete="postal-code">' +
-            '</div>' +
           '</div>' +
           '<div class="jb-form-group">' +
             '<label for="jb-message">What needs to go? <span class="jb-optional">(optional)</span></label>' +
-            '<input type="text" id="jb-message" name="message" placeholder="e.g., a couch + fridge, or a full garage cleanout" autocomplete="off">' +
+            '<input type="text" id="jb-message" name="message" placeholder="e.g., a couch + fridge, or a garage cleanout" autocomplete="off">' +
           '</div>' +
-          '<div class="jb-form-group">' +
-            '<label>Best way to reach you?</label>' +
-            '<div class="jb-toggle">' +
-              '<input type="radio" id="jb-pref-text" name="contactPreference" value="Text" checked>' +
-              '<label for="jb-pref-text">Text</label>' +
-              '<input type="radio" id="jb-pref-call" name="contactPreference" value="Call">' +
-              '<label for="jb-pref-call">Call</label>' +
-            '</div>' +
+          '<div class="jb-consent">' +
+            '<label class="jb-consent-item">' +
+              '<input type="checkbox" name="consentTransactional">' +
+              '<span>I consent to receive non-marketing text messages from <strong>Junk Brawlers LLC</strong> about my quote request and appointment scheduling. Message frequency may vary, message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.</span>' +
+            '</label>' +
+            '<label class="jb-consent-item">' +
+              '<input type="checkbox" name="consentMarketing">' +
+              '<span>I consent to receive marketing text messages, about special offers, discounts, and service updates, from <strong>Junk Brawlers LLC</strong> at the phone number provided. Message frequency may vary. Message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.</span>' +
+            '</label>' +
           '</div>' +
           '<button type="submit" class="jb-form-submit">Send My Request &rarr;</button>' +
           '<p class="jb-form-status" aria-live="polite"></p>' +
@@ -305,7 +296,6 @@
       '</div>';
     document.body.appendChild(overlay);
     initPhoneInput(overlay.querySelector('[name="phone"]'));
-    initZipCheck(overlay.querySelector('[name="zipCode"]'));
 
     var closeBtn = overlay.querySelector('.jb-modal-close');
     var form = overlay.querySelector('.jb-modal-form');
@@ -348,24 +338,29 @@
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      var firstNameEl = form.querySelector('[name="firstName"]');
-      var phoneEl     = form.querySelector('[name="phone"]');
+      var fullNameEl = form.querySelector('[name="fullName"]');
+      var phoneEl    = form.querySelector('[name="phone"]');
+      // Modal is the slim path: one "Full Name" field split into first/last for GHL,
+      // plus phone (+ optional detail). Other fields live on the full contact-page form.
+      var nameParts = fullNameEl.value.trim().split(/\s+/).filter(Boolean);
       var data = {
-        firstName: firstNameEl.value.trim(),
-        lastName:  form.querySelector('[name="lastName"]').value.trim(),
-        email:     '', // no email field in this form; kept for /api/submit payload shape
+        firstName: nameParts.shift() || '',
+        lastName:  nameParts.join(' '),
+        email:     '',
         phone:     phoneEl.value.trim(),
-        zipCode:   form.querySelector('[name="zipCode"]').value.trim(),
+        zipCode:   '',
         message:   form.querySelector('[name="message"]') ? form.querySelector('[name="message"]').value.trim() : '',
-        contactPreference: (form.querySelector('[name="contactPreference"]:checked') || {}).value || 'Text',
+        contactPreference: '',
+        consentTransactional: !!(form.querySelector('[name="consentTransactional"]') || {}).checked,
+        consentMarketing: !!(form.querySelector('[name="consentMarketing"]') || {}).checked,
       };
       var leadSource = window.JB_getLeadSource && window.JB_getLeadSource();
       if (leadSource) data.leadSource = leadSource;
       var phoneDigits = data.phone.replace(/\D/g, '');
       var valid = true;
-      firstNameEl.classList.remove('jb-input-error');
+      fullNameEl.classList.remove('jb-input-error');
       phoneEl.classList.remove('jb-input-error');
-      if (!data.firstName) { firstNameEl.classList.add('jb-input-error'); valid = false; }
+      if (!data.firstName) { fullNameEl.classList.add('jb-input-error'); valid = false; }
       if (phoneDigits.length < 10) { phoneEl.classList.add('jb-input-error'); valid = false; }
       if (!valid) {
         statusEl.textContent = 'Please fill in the highlighted fields.';

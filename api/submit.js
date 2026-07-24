@@ -19,7 +19,7 @@ export default async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const { firstName, lastName, email, phone, zipCode, message, contactPreference, leadSource } = req.body || {};
+  const { firstName, lastName, email, phone, zipCode, message, contactPreference, leadSource, consentTransactional, consentMarketing } = req.body || {};
 
   if (!firstName || !email && !phone) {
     return res.status(400).json({ error: 'First name and either email or phone are required.' });
@@ -34,6 +34,10 @@ export default async function handler(req, res) {
 
   const tags = buildTags(leadSource);
   if (contactPreference) tags.push(`prefers-${String(contactPreference).toLowerCase()}`);
+  // A2P consent: tag by what they opted into so automations can target the right audience.
+  // Marketing/reactivation campaigns must ONLY go to `sms-consent-marketing` contacts.
+  if (consentTransactional) tags.push('sms-consent-transactional');
+  if (consentMarketing) tags.push('sms-consent-marketing');
 
   try {
     const ghlRes = await fetch('https://services.leadconnectorhq.com/contacts/', {
@@ -75,10 +79,12 @@ export default async function handler(req, res) {
     // so Tony sees the detail on the contact. No custom field required.
     const created = await ghlRes.json().catch(() => ({}));
     const contactId = created && created.contact && created.contact.id;
-    if (contactId && (message || contactPreference)) {
+    if (contactId) {
       const noteLines = [];
       if (message) noteLines.push(`What needs to go: ${message}`);
       if (contactPreference) noteLines.push(`Preferred contact: ${contactPreference}`);
+      // TCPA/A2P audit trail: record exactly what was consented to, and when.
+      noteLines.push(`SMS consent — transactional: ${consentTransactional ? 'YES' : 'no'}, marketing: ${consentMarketing ? 'YES' : 'no'} (captured ${new Date().toISOString()})`);
       try {
         await fetch(`https://services.leadconnectorhq.com/contacts/${contactId}/notes`, {
           method: 'POST',
