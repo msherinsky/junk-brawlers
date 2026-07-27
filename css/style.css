@@ -77,12 +77,17 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 /* ---- BUTTONS ---- */
 .btn-primary{display:inline-block;padding:13px 28px;background:var(--color-primary);color:var(--color-white);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:4px;border:none;cursor:pointer;transition:opacity var(--transition),transform var(--transition);font-family:var(--font);position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(123,53,212,0.4)}
 .btn-primary:hover{opacity:0.88;box-shadow:0 4px 14px rgba(0,0,0,0.3)}
-.btn-fire{display:inline-block;padding:13px 28px;background:#C05000;color:var(--color-white);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:4px;border:none;cursor:pointer;transition:opacity var(--transition);font-family:var(--font);box-shadow:0 2px 8px rgba(0,0,0,0.25)}
-.btn-fire:hover{opacity:0.88}
-.btn-ghost-white{padding:9px 18px;border:2px solid var(--color-white);color:var(--color-white);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:4px;white-space:nowrap;transition:background var(--transition),color var(--transition)}
-.btn-ghost-white:hover{background:var(--color-white);color:var(--color-primary-dark)}
-.btn-phone{padding:9px 18px;background:#C05000;color:var(--color-white);font-size:13px;font-weight:700;border-radius:4px;transition:opacity var(--transition);white-space:nowrap}
-.btn-phone:hover{opacity:0.88}
+.btn-fire{display:inline-block;padding:13px 28px;background:linear-gradient(135deg,#FF7A00 0%,#C05000 100%);color:var(--color-white);font-size:14px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:4px;border:none;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,opacity .2s ease;font-family:var(--font);box-shadow:0 4px 16px rgba(255,122,0,0.34),0 2px 6px rgba(0,0,0,0.3)}
+.btn-fire:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(255,122,0,0.5),0 4px 10px rgba(0,0,0,0.4)}
+@media(prefers-reduced-motion:reduce){.btn-fire{transition:box-shadow .2s ease}.btn-fire:hover{transform:none}}
+.btn-ghost-white{padding:9px 18px;background:var(--color-primary);border:none;color:var(--color-white);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:4px;white-space:nowrap;cursor:pointer;box-shadow:0 3px 14px rgba(123,53,212,0.4);transition:transform .2s ease,box-shadow .2s ease}
+.btn-ghost-white:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(123,53,212,0.55)}
+@media(prefers-reduced-motion:reduce){.btn-ghost-white:hover{transform:none}}
+.btn-phone{padding:9px 18px;background:linear-gradient(135deg,#FF7A00 0%,#C05000 100%);color:var(--color-white);font-size:13px;font-weight:700;border-radius:4px;transition:transform .2s ease,box-shadow .2s ease,opacity .2s ease;white-space:nowrap;box-shadow:0 3px 12px rgba(255,122,0,0.3)}
+.btn-phone:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(255,122,0,0.45)}
+@media(prefers-reduced-motion:reduce){.btn-phone:hover{transform:none}}
+.tq-cta{text-align:center;margin-top:38px}
+.tq-all-reviews{font-size:14px;padding:14px 28px}
 
 /* ---- SECTION UTILITIES ---- */
 .section-bridge{font-family:var(--font-heading);font-size:clamp(26px,3.5vw,48px);font-style:italic;font-weight:700;text-align:center;text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:6px;text-decoration-thickness:2px;letter-spacing:-0.01em;margin:0;display:block;padding:72px 32px 80px}
@@ -859,8 +864,10 @@ body.page-home .tq-dot.is-active{background:var(--color-fire);transform:scale(1.
 
 /* ---- STICKY MOBILE CALL BAR ---- */
 .sticky-call-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:950;background:#07001A;border-top:1px solid rgba(255,122,0,0.25);padding:10px 14px;padding-bottom:calc(10px + env(safe-area-inset-bottom));gap:10px;box-shadow:0 -4px 24px rgba(0,0,0,0.45)}
-.sticky-call-bar__phone{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:#C05000;color:#fff;font-family:var(--font);font-size:16px;font-weight:800;letter-spacing:0.5px;text-transform:uppercase;padding:14px 14px;border-radius:5px;text-decoration:none;box-shadow:0 2px 12px rgba(255,122,0,0.4)}
-.sticky-call-bar__quote{flex-shrink:0;padding:13px 12px;border:1px solid rgba(255,255,255,0.14);color:rgba(255,255,255,0.55);font-family:var(--font);font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.4px;border-radius:5px;text-decoration:none;white-space:nowrap;display:flex;align-items:center}
+.sticky-call-bar__phone{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#FF7A00 0%,#C05000 100%);color:#fff;font-family:var(--font);font-size:16px;font-weight:800;letter-spacing:0.5px;text-transform:uppercase;padding:14px 14px;border-radius:5px;text-decoration:none;box-shadow:0 2px 12px rgba(255,122,0,0.4);animation:sticky-call-pulse 2.6s ease-in-out infinite}
+@keyframes sticky-call-pulse{0%,100%{box-shadow:0 2px 12px rgba(255,122,0,0.4)}50%{box-shadow:0 2px 22px rgba(255,122,0,0.85)}}
+@media(prefers-reduced-motion:reduce){.sticky-call-bar__phone{animation:none}}
+.sticky-call-bar__quote{flex-shrink:0;padding:13px 16px;background:var(--color-primary);border:none;color:#fff;font-family:var(--font);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;border-radius:5px;text-decoration:none;white-space:nowrap;display:flex;align-items:center;box-shadow:0 2px 10px rgba(123,53,212,0.4)}
 @media(max-width:768px){
   .sticky-call-bar{display:flex}
   body{padding-bottom:72px}
