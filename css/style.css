@@ -89,6 +89,127 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .tq-cta{text-align:center;margin-top:38px}
 .tq-all-reviews{font-size:14px;padding:14px 28px}
 
+/* ---- TONY'S LETTER (homepage-only owner note + Brawler Standard. Matches the LIVE
+   site's transition: the note rides the site's dark -> saturated-purple -> white
+   curtain (light text, like the live pain block), fades to white into the white
+   Standard, and the dark Services wedge cuts up against white at the bottom (no black
+   fade). Additive under .tony-letter and .tl- classes so the shared pain, owner and
+   std rules on 51 other pages stay untouched. ---- */
+.tony-letter{position:relative;z-index:1;overflow-x:clip;background:#ffffff;padding:0 0 calc(6vw + 44px)}
+
+/* dark "curtain" zone: note + proof ride the site's dark -> saturated-purple, and a
+   content-anchored bottom band fades to white. Because the gradient lives on the
+   content-sized wrapper (not a fixed px band on the section), the purple always covers
+   exactly the note on any screen size, and the fade sits below the text on every layout. */
+.tl-top{position:relative;z-index:1;padding:clamp(56px,5vw,84px) 24px 170px;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,0) 0,#ffffff 90%) bottom / 100% 150px no-repeat,
+    linear-gradient(180deg,#09000F 0,#150028 12%,#2d0065 34%,#3a0078 62%,#3a0078 100%)}
+.tl-top-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,290px);grid-template-areas:"lede aside";column-gap:clamp(36px,5vw,72px);align-items:start}
+.tl-body{position:relative;z-index:1;padding:clamp(36px,4vw,60px) 24px 0}
+.tl-body-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,290px);grid-template-areas:"standard standard" "clip clip";column-gap:clamp(36px,5vw,72px);row-gap:clamp(40px,5vw,72px);align-items:start}
+
+/* the note */
+.tl-lede{grid-area:lede}
+.tl-eyebrow{display:block;font-family:var(--font-heading);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--color-fire);margin-bottom:18px}
+.tl-lede p{font-family:var(--font);font-size:17px;line-height:1.75;color:rgba(255,255,255,0.85);margin:0 0 16px;max-width:56ch}
+.tl-hook{font-family:var(--font-heading);font-size:clamp(20px,1.9vw,25px);font-weight:800;line-height:1.25;letter-spacing:-0.3px;color:#fff;margin:0 0 18px;max-width:26ch}
+.tl-fears{list-style:none;margin:0 0 18px;padding:0;display:flex;flex-direction:column;gap:8px}
+.tl-fears li{position:relative;padding-left:24px;font-size:16px;line-height:1.5;color:rgba(255,255,255,0.66)}
+.tl-fears li::before{content:"\2717";position:absolute;left:0;top:2px;color:rgba(255,255,255,0.4);font-weight:700;font-size:13px}
+.tl-pivot{font-family:var(--font-heading);font-size:clamp(17px,1.5vw,20px);font-weight:800;color:#fff;margin:0 0 16px}
+.tl-answers{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.tl-answers li{position:relative;padding-left:26px;font-size:16px;line-height:1.5;color:rgba(255,255,255,0.92);font-weight:500}
+.tl-answers li::before{content:"\2713";position:absolute;left:0;top:1px;color:var(--color-fire);font-weight:800;font-size:15px}
+.tl-lede .tl-close{font-weight:700;font-size:17px;line-height:1.65;color:#fff;margin-top:40px;max-width:56ch}
+.tl-mark{background:none;color:#fff;font-weight:700}
+
+/* two CTAs (in the note and after the standard) */
+.tl-cta{margin-top:26px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.tl-cta-note{font-size:12.5px;font-weight:600;letter-spacing:0.2px;color:rgba(255,255,255,0.62)}
+
+/* right rail: proof grouped (face + record) */
+.tl-aside{grid-area:aside;display:flex;flex-direction:column;gap:22px;align-self:start}
+.tl-photo{margin:0}
+.tl-photo img{display:block;width:100%;height:280px;object-fit:cover;object-position:center 18%;border-radius:10px;border:1px solid rgba(255,255,255,0.15);box-shadow:0 18px 44px rgba(0,0,0,0.4)}
+.tl-photo-cap{display:block;text-align:center;margin-top:12px;font-family:var(--font-heading);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.6px;color:rgba(255,255,255,0.55)}
+.tl-record{display:flex;border-top:1px solid rgba(255,255,255,0.16);border-bottom:1px solid rgba(255,255,255,0.16);padding:16px 0}
+.tl-stat{text-align:center;flex:1}
+.tl-stat+.tl-stat{border-left:1px solid rgba(255,255,255,0.14)}
+.tl-stat-val{display:block;font-family:var(--font-heading);font-weight:800;font-size:clamp(22px,2vw,28px);color:var(--color-fire);line-height:1}
+.tl-stat-lbl{display:block;font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.55);margin-top:6px}
+
+/* the standard */
+.tl-standard{grid-area:standard;border-top:1px solid rgba(0,0,0,0.1);padding-top:clamp(36px,4vw,56px);
+  display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);
+  grid-template-areas:"title title" "lede lede" "rig promises" ". cta";
+  column-gap:clamp(32px,4vw,64px);row-gap:clamp(24px,3vw,40px);align-items:start}
+.tl-standard-title{grid-area:title;font-family:var(--font-heading);font-size:clamp(27px,3.4vw,44px);font-weight:800;color:#14101c;line-height:1.03;letter-spacing:-0.6px;margin:0;max-width:20ch}
+.tl-standard-lede{grid-area:lede;font-family:var(--font-heading);font-size:clamp(17px,1.6vw,21px);font-weight:800;color:rgba(24,18,32,0.78);margin:0}
+.tl-mark--circle{background:none;color:var(--color-fire)}
+/* Two shots, overlapped and each nudged off-square, so the pair reads like a pair of
+   prints dropped on a desk rather than a stock grid. The crew shot hangs off the
+   truck shot's bottom-right corner; .tl-rig-stack carries the extra height the
+   overhang needs so the caption never collides with it. */
+.tl-rig{grid-area:rig;margin:0;align-self:start}
+.tl-rig-stack{position:relative;padding-bottom:30%}
+.tl-rig-shot img{display:block;width:100%;border-radius:10px;box-shadow:0 18px 44px rgba(60,30,110,0.2)}
+.tl-rig-shot--truck{width:86%;transform:rotate(-1.6deg)}
+.tl-rig-shot--truck img{aspect-ratio:4/3;object-fit:cover;border:1px solid rgba(0,0,0,0.08)}
+.tl-rig-shot--crew{position:absolute;right:0;bottom:0;width:46%;transform:rotate(3deg);
+  padding:6px;background:#fff;border-radius:12px;box-shadow:0 14px 34px rgba(60,30,110,0.26)}
+.tl-rig-shot--crew img{aspect-ratio:3/4;object-fit:cover;object-position:center 38%;border-radius:7px;box-shadow:none}
+.tl-rig-cap{display:block;margin-top:20px;font-family:var(--font-heading);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;color:rgba(24,18,32,0.55)}
+
+/* three promises (folded from the old 8-point checklist) */
+.tl-promises{grid-area:promises;list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:26px}
+.tl-promise{display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:start}
+.tl-promise-n{font-family:var(--font-heading);font-size:22px;font-weight:800;color:var(--color-fire);line-height:1;opacity:0.95;letter-spacing:0.5px}
+.tl-promise-body strong{display:block;font-family:var(--font-heading);font-size:clamp(17px,1.5vw,20px);font-weight:800;color:#14101c;letter-spacing:-0.2px;margin-bottom:6px}
+.tl-promise-body p{margin:0;font-size:14.5px;line-height:1.62;color:rgba(24,18,32,0.62)}
+.tl-cta--standard{grid-area:cta;margin-top:8px}
+
+/* one verbatim review */
+.tl-clip{grid-area:clip;margin:0;border-left:3px solid var(--color-fire);padding:10px 0 10px 32px}
+.tl-stars{color:var(--color-fire);letter-spacing:3px;font-size:14px}
+.tl-clip blockquote{margin:10px 0 0;font-size:clamp(19px,2.4vw,29px);line-height:1.45;color:rgba(20,16,28,0.86);font-style:italic;letter-spacing:-0.3px}
+.tl-clip figcaption{margin-top:14px;font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.6px;color:rgba(24,18,32,0.45)}
+
+.tl-bridge{position:relative;z-index:1;max-width:760px;margin:clamp(40px,5vw,64px) auto 0;padding:0 24px;text-align:center;font-family:var(--font-heading);font-size:clamp(20px,2.4vw,30px);font-style:italic;font-weight:700;color:#14101c;text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:6px;text-decoration-thickness:2px}
+
+/* Slide-in reveal for the Standard: truck + title enter from the left, promises from
+   the right, meeting in the middle. Gated on .tl-anim-ready (added by JS) so no-JS or
+   reduced-motion leaves everything visible. */
+.tl-standard.tl-anim-ready .tl-standard-title,
+.tl-standard.tl-anim-ready .tl-standard-lede,
+.tl-standard.tl-anim-ready .tl-rig{opacity:0;transform:translateX(-42px);transition:opacity .7s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.tl-standard.tl-anim-ready .tl-promises,
+.tl-standard.tl-anim-ready .tl-cta--standard{opacity:0;transform:translateX(42px);transition:opacity .7s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.tl-standard.tl-anim-ready.is-in .tl-standard-title,
+.tl-standard.tl-anim-ready.is-in .tl-standard-lede,
+.tl-standard.tl-anim-ready.is-in .tl-rig,
+.tl-standard.tl-anim-ready.is-in .tl-promises,
+.tl-standard.tl-anim-ready.is-in .tl-cta--standard{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .tl-standard.tl-anim-ready .tl-standard-title,
+  .tl-standard.tl-anim-ready .tl-standard-lede,
+  .tl-standard.tl-anim-ready .tl-rig,
+  .tl-standard.tl-anim-ready .tl-promises,
+  .tl-standard.tl-anim-ready .tl-cta--standard{opacity:1;transform:none;transition:none}
+}
+
+@media(max-width:768px){
+  .tl-top-inner{grid-template-columns:1fr;grid-template-areas:"aside" "lede";row-gap:30px}
+  .tl-body-inner{grid-template-columns:1fr;grid-template-areas:"standard" "clip";row-gap:38px}
+  .tl-standard{grid-template-columns:1fr;grid-template-areas:"title" "lede" "rig" "promises" "cta";row-gap:24px}
+  .tl-standard-title{max-width:none}
+  .tl-rig-stack{padding-bottom:25%}
+  .tl-rig-shot--truck{width:80%}
+  .tl-rig-shot--truck img{aspect-ratio:16/10}
+  .tl-rig-shot--crew{width:38%}
+  .tl-clip{padding-left:20px}
+}
+
 /* ---- SECTION UTILITIES ---- */
 .section-bridge{font-family:var(--font-heading);font-size:clamp(26px,3.5vw,48px);font-style:italic;font-weight:700;text-align:center;text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:6px;text-decoration-thickness:2px;letter-spacing:-0.01em;margin:0;display:block;padding:72px 32px 80px}
 .section-bridge--light{color:rgba(0,0,0,0.65)}
@@ -516,8 +637,20 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .svc-blocks{position:relative;z-index:1;display:flex;flex-direction:column;gap:72px}
 .svc-block{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
 .svc-block--reverse .svc-block-media{order:2}
-.svc-block-media{border-radius:var(--radius-card);overflow:hidden;box-shadow:0 24px 64px rgba(0,0,0,0.5)}
-.svc-block-media img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center}
+/* Photo frame: a mat with a hairline edge and a fire rule along the bottom, so each
+   photo carries the same underline the h3 opposite it carries. On the dark section the
+   mat is a purple wash; .svc-section--light gets a paper-white mat instead. */
+.svc-block-media{position:relative;border-radius:var(--radius-card);padding:12px 12px 20px;
+  background:linear-gradient(155deg,rgba(123,53,212,0.30),rgba(255,255,255,0.045) 58%,rgba(123,53,212,0.16));
+  border:1px solid rgba(255,255,255,0.14);
+  box-shadow:0 24px 64px rgba(0,0,0,0.55),inset 0 1px 0 rgba(255,255,255,0.07)}
+.svc-block-media::after{content:"";position:absolute;left:12px;right:12px;bottom:8px;height:3px;
+  background:var(--color-fire);box-shadow:0 0 12px var(--color-fire-glow)}
+.svc-block-media img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:center;
+  border-radius:3px;box-shadow:0 2px 14px rgba(0,0,0,0.45)}
+.svc-section--light .svc-block-media{background:#fff;border-color:rgba(17,17,17,0.12);
+  box-shadow:0 18px 44px rgba(60,30,110,0.18),inset 0 1px 0 rgba(255,255,255,0.9)}
+.svc-section--light .svc-block-media img{box-shadow:0 2px 10px rgba(0,0,0,0.18)}
 .svc-block-body h3{font-family:var(--font-heading);font-weight:800;text-transform:uppercase;color:#fff;font-size:clamp(22px,2.4vw,32px);line-height:1.1;margin-bottom:16px;text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:6px;text-decoration-thickness:2px}
 .svc-block-body p{color:rgba(255,255,255,0.7);font-size:15px;line-height:1.75;margin-bottom:14px}
 .svc-block-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
@@ -659,7 +792,7 @@ body.page-home .tq-dot.is-active{background:var(--color-fire);transform:scale(1.
 /* ---- RESULTS / BEFORE-AFTER ---- */
 .results-section{background:var(--color-dark-section);padding:80px 32px 72px;position:relative;text-align:center}
 .results-inner{max-width:1100px;margin:0 auto}
-.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:40px}
+.ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px}
 .ba-slider{position:relative;overflow:hidden;aspect-ratio:4/3;width:100%;border-radius:12px;border:1px solid rgba(255,255,255,0.10);box-shadow:0 0 0 1px rgba(123,53,212,0.30),0 2px 6px rgba(0,0,0,0.40),0 26px 70px rgba(0,0,0,0.70),inset 0 1px 0 rgba(255,255,255,0.12)}
 .ba-after,.ba-before{position:absolute;inset:0;overflow:hidden}
 .ba-after img,.ba-before img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;transform:scale(1.02);will-change:transform}
@@ -826,8 +959,14 @@ body.page-home .tq-dot.is-active{background:var(--color-fire);transform:scale(1.
   .pricing-section{padding:52px 20px 60px}
   .truck-svg-wrap{max-width:140px}
 }
+/* Tablet: drop to 2-up and centre the odd card so it stays the same size as its neighbours. */
+@media(max-width:900px){
+  .ba-grid{grid-template-columns:1fr 1fr}
+  .ba-grid>.ba-slider:last-child{grid-column:1/-1;width:calc(50% - 10px);justify-self:center}
+}
 @media(max-width:640px){
   .ba-grid{grid-template-columns:1fr}
+  .ba-grid>.ba-slider:last-child{grid-column:auto;width:100%}
 }
 @media(max-width:600px){
   .hiw-steps{grid-template-columns:1fr}
@@ -939,12 +1078,6 @@ body.page-home .tq-dot.is-active{background:var(--color-fire);transform:scale(1.
 .jb-form-status{margin-top:12px;font-size:14px;font-weight:600;display:none}
 .jb-form-status.success{color:#22c55e;display:block}
 .jb-optional{font-weight:400;color:rgba(255,255,255,0.4);font-size:.85em;text-transform:none;letter-spacing:0}
-.jb-toggle{display:flex;width:100%;border:1px solid rgba(255,255,255,0.18);border-radius:8px;overflow:hidden}
-.jb-toggle input{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
-.jb-toggle label{flex:1;margin:0;padding:11px 0;text-align:center;font-size:14px;font-weight:700;letter-spacing:.3px;text-transform:none;color:rgba(255,255,255,0.6);cursor:pointer;transition:background .15s,color .15s}
-.jb-toggle label:first-of-type{border-right:1px solid rgba(255,255,255,0.14)}
-.jb-toggle input:checked+label{background:#C05000;color:#fff}
-.jb-toggle input:focus-visible+label{outline:2px solid var(--color-fire);outline-offset:2px}
 .jb-consent{margin:8px 0 2px;display:flex;flex-direction:column;gap:11px}
 .jb-consent-item{display:flex;gap:10px;align-items:flex-start;cursor:pointer;margin:0}
 .jb-consent-item input[type=checkbox]{flex:none;width:18px;height:18px;margin:1px 0 0;accent-color:var(--color-fire);cursor:pointer}
