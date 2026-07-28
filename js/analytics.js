@@ -20,6 +20,14 @@
 (function () {
   'use strict';
 
+  /* ── Re-entry guard ──
+     This file is pulled in two ways: a tag on every page, and the loader in
+     js/main.js. If both paths ever run (or a page picks up a stray second
+     copy), the call_click listener below binds twice and every phone tap
+     reports two events. Bail on any run after the first. */
+  if (window.JB_ANALYTICS_LOADED) { return; }
+  window.JB_ANALYTICS_LOADED = true;
+
   function optOut() {
     window.JB_trackLead = function () {}; /* no-op so form code doesn't error */
   }
