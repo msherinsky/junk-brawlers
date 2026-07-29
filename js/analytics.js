@@ -7,7 +7,13 @@
 
    Tracks the two things the old site never could:
      • call_click   — someone taps a phone (tel:) button
-     • generate_lead — someone successfully submits the quote form
+     • generate_lead — fired by JB_trackLead()
+
+   NOTE: nothing calls JB_trackLead() any more. The site's forms were
+   removed for A2P 10DLC verification, so the only lead path is the
+   LeadConnector chat widget, which reports inside GHL rather than here.
+   call_click is the live on-site conversion; generate_lead stays wired
+   up so the GA4 Key event survives if a lead surface returns.
 
    After data starts flowing, mark call_click + generate_lead as
    "Key events" in GA4 (Admin → Events) so they count as conversions.
@@ -29,13 +35,13 @@
   window.JB_ANALYTICS_LOADED = true;
 
   function optOut() {
-    window.JB_trackLead = function () {}; /* no-op so form code doesn't error */
+    window.JB_trackLead = function () {}; /* no-op so any caller doesn't error */
   }
 
   /* ── Skip local/dev traffic ──
      When the site is opened locally (localhost / 127.0.0.1) we don't
      want those hits polluting GA4 — bail out before anything loads so
-     no page_view, call_click, or generate_lead is ever sent. */
+     no page_view or call_click is ever sent. */
   var host = location.hostname;
   if (host === 'localhost' || host === '127.0.0.1' || host === '' || host === '::1') {
     optOut();
@@ -117,8 +123,10 @@
   });
 
   /* ── Lead tracking ──
-     Called by the quote forms (modal + contact page) on a
-     successful /api/submit response. */
+     Formerly called by the quote modal + contact form on a successful
+     /api/submit response. Both are gone (no forms sitewide, A2P 10DLC),
+     so this currently has no callers. Left in place so the GA4 Key event
+     keeps its definition and any future lead surface can call it. */
   window.JB_trackLead = function (leadSource) {
     gtag('event', 'generate_lead', {
       page_path: location.pathname,
