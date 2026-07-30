@@ -184,32 +184,220 @@
     });
   }
 
-  /* ── Quote CTA → chat widget ──
-     A2P 10DLC: this site collects no contact details of its own. The quote modal,
-     its phone formatter and the service-area zip check all lived here and are gone
-     on purpose. Every control that used to open that modal now opens the
-     LeadConnector chat widget, which carries the SMS consent language and is the
-     single opt-in of record. Do not reintroduce a form here. */
-  function initQuoteCTA() {
-    function openChat() {
-      try {
-        var w = window.leadConnector && window.leadConnector.chatWidget;
-        if (w && typeof w.openWidget === 'function') {
-          w.openWidget();
-          return true;
+  /* ── Phone Input Formatter ── */
+  function initPhoneInput(el) {
+    if (!el) return;
+    el.setAttribute('maxlength', '14');
+    el.addEventListener('input', function () {
+      var digits = this.value.replace(/\D/g, '').slice(0, 10);
+      if (!digits) { this.value = ''; return; }
+      if (digits.length <= 3) {
+        this.value = '(' + digits;
+      } else if (digits.length <= 6) {
+        this.value = '(' + digits.slice(0,3) + ') ' + digits.slice(3);
+      } else {
+        this.value = '(' + digits.slice(0,3) + ') ' + digits.slice(3,6) + '-' + digits.slice(6);
+      }
+      this.classList.remove('jb-input-error');
+    });
+    el.addEventListener('blur', function () {
+      var digits = this.value.replace(/\D/g, '');
+      if (this.value && digits.length < 10) {
+        this.classList.add('jb-input-error');
+      }
+    });
+    el.addEventListener('focus', function () {
+      this.classList.remove('jb-input-error');
+    });
+  }
+
+  /* ── Service Area Zip Check ── */
+  var JB_SERVICE_ZIPS = ['30004','30005','30009','30022','30024','30028','30039','30040','30041','30043','30044','30045','30046','30071','30075','30076','30078','30092','30093','30096','30097','30107','30114','30115','30142','30143','30151','30175','30183','30188','30189','30327','30328','30342','30350','30501','30504','30506','30507','30513','30518','30519','30522','30527','30528','30533','30534','30539','30540','30542','30545','30555','30560','30566'];
+
+  function initZipCheck(zipInput) {
+    if (!zipInput) return;
+    var hint = document.createElement('span');
+    hint.className = 'zip-check-hint';
+    zipInput.parentNode.appendChild(hint);
+    zipInput.addEventListener('input', function () {
+      var val = this.value.replace(/\D/g, '').slice(0, 5);
+      this.value = val;
+      if (val.length === 5) {
+        if (JB_SERVICE_ZIPS.indexOf(val) !== -1) {
+          hint.textContent = '✓ We serve your area.';
+          hint.className = 'zip-check-hint zip-check-hint--ok';
+        } else {
+          hint.textContent = 'We may not serve this zip — Tony will confirm on the call.';
+          hint.className = 'zip-check-hint zip-check-hint--warn';
         }
-      } catch (err) {}
-      return false;
+      } else {
+        hint.textContent = '';
+        hint.className = 'zip-check-hint';
+      }
+    });
+  }
+
+  /* ── Quote Modal ──
+     A2P 10DLC: this form is the site's registered SMS opt-in of record. The two
+     consent checkboxes are independent, both start unchecked, and neither gates
+     submission. The consent copy here must stay in sync with privacy-policy.html
+     §3 and terms-of-service.html §5, because carrier reviewers cross-check them
+     against the live page. */
+  function initQuoteModal() {
+    var isContactPage = window.location.pathname.toLowerCase().indexOf('contact') !== -1;
+
+    if (isContactPage) {
+      document.addEventListener('click', function (e) {
+        var btn = e.target.closest('a[href*="contact"]');
+        if (!btn) return;
+        var section = document.getElementById('contact-form');
+        if (!section) return;
+        e.preventDefault();
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      return;
+    }
+
+    var overlay = document.createElement('div');
+    overlay.id = 'jb-quote-modal';
+    overlay.className = 'jb-modal-overlay';
+    overlay.setAttribute('role', 'dialog');
+    overlay.setAttribute('aria-modal', 'true');
+    overlay.setAttribute('aria-label', 'Get a Free Quote');
+    overlay.innerHTML =
+      '<div class="jb-modal-card">' +
+        '<button class="jb-modal-close" aria-label="Close">&times;</button>' +
+        '<img src="images/logo.webp" alt="Junk Brawlers" class="jb-modal-logo">' +
+        '<h2 class="jb-modal-heading">Get a Quote.</h2>' +
+        '<p class="jb-modal-sub">5-star rated North Georgia junk removal.</p>' +
+        '<form class="jb-modal-form" novalidate>' +
+          '<div class="jb-form-row">' +
+            '<div class="jb-form-group">' +
+              '<label for="jb-fullName">Full Name *</label>' +
+              '<input type="text" id="jb-fullName" name="fullName" placeholder="Your full name" autocomplete="name">' +
+            '</div>' +
+            '<div class="jb-form-group">' +
+              '<label for="jb-phone">Phone *</label>' +
+              '<input type="tel" id="jb-phone" name="phone" placeholder="(000) 000-0000" autocomplete="tel">' +
+            '</div>' +
+          '</div>' +
+          '<div class="jb-form-group">' +
+            '<label for="jb-message">What needs to go? <span class="jb-optional">(optional)</span></label>' +
+            '<input type="text" id="jb-message" name="message" placeholder="e.g., a couch + fridge, or a garage cleanout" autocomplete="off">' +
+          '</div>' +
+          '<div class="jb-consent">' +
+            '<label class="jb-consent-item">' +
+              '<input type="checkbox" name="consentTransactional">' +
+              '<span>By checking this box, I consent to receive non-marketing text messages from <strong>Junk Brawlers LLC</strong> about my quote request, appointment scheduling, and post-service follow-up including feedback requests. Message frequency varies, message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.</span>' +
+            '</label>' +
+            '<label class="jb-consent-item">' +
+              '<input type="checkbox" name="consentMarketing">' +
+              '<span>By checking this box, I consent to receive marketing and promotional messages including special offers, discounts, and service updates, from <strong>Junk Brawlers LLC</strong> at the phone number provided. Frequency may vary. Message &amp; data rates may apply. Text HELP for assistance, reply STOP to opt out.</span>' +
+            '</label>' +
+            '<p class="jb-consent-note">Consent is not a condition of purchase. See our <a href="privacy-policy.html" target="_blank" rel="noopener">Privacy Policy</a> and <a href="terms-of-service.html" target="_blank" rel="noopener">Terms of Service</a>.</p>' +
+          '</div>' +
+          '<button type="submit" class="jb-form-submit">Send My Request &rarr;</button>' +
+          '<p class="jb-form-status" aria-live="polite"></p>' +
+        '</form>' +
+      '</div>';
+    document.body.appendChild(overlay);
+    initPhoneInput(overlay.querySelector('[name="phone"]'));
+
+    var closeBtn = overlay.querySelector('.jb-modal-close');
+    var form = overlay.querySelector('.jb-modal-form');
+    var statusEl = overlay.querySelector('.jb-form-status');
+    var submitBtn = overlay.querySelector('.jb-form-submit');
+
+    function openModal() {
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      setTimeout(function () {
+        var first = form.querySelector('input');
+        if (first) first.focus();
+      }, 280);
+    }
+
+    function closeModal() {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+      form.reset();
+      statusEl.textContent = '';
+      statusEl.className = 'jb-form-status';
     }
 
     document.addEventListener('click', function (e) {
       var btn = e.target.closest('a[href*="contact"][class*="btn"], a.sticky-call-bar__quote, [data-quote-modal]');
       if (!btn) return;
-      /* The widget loader is third-party and async. If it has not booted yet, let the
-         link do what it always did (navigate to the contact page) rather than
-         dead-ending the click. */
-      if (!openChat()) return;
       e.preventDefault();
+      openModal();
+    });
+
+    overlay.addEventListener('click', function (e) {
+      if (e.target === overlay) closeModal();
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var fullNameEl = form.querySelector('[name="fullName"]');
+      var phoneEl    = form.querySelector('[name="phone"]');
+      // Modal is the slim path: one "Full Name" field split into first/last for GHL,
+      // plus phone (+ optional detail). Other fields live on the full contact-page form.
+      var nameParts = fullNameEl.value.trim().split(/\s+/).filter(Boolean);
+      var data = {
+        firstName: nameParts.shift() || '',
+        lastName:  nameParts.join(' '),
+        email:     '',
+        phone:     phoneEl.value.trim(),
+        zipCode:   '',
+        message:   form.querySelector('[name="message"]') ? form.querySelector('[name="message"]').value.trim() : '',
+        contactPreference: '',
+        consentTransactional: !!(form.querySelector('[name="consentTransactional"]') || {}).checked,
+        consentMarketing: !!(form.querySelector('[name="consentMarketing"]') || {}).checked,
+      };
+      var leadSource = window.JB_getLeadSource && window.JB_getLeadSource();
+      if (leadSource) data.leadSource = leadSource;
+      var phoneDigits = data.phone.replace(/\D/g, '');
+      var valid = true;
+      fullNameEl.classList.remove('jb-input-error');
+      phoneEl.classList.remove('jb-input-error');
+      if (!data.firstName) { fullNameEl.classList.add('jb-input-error'); valid = false; }
+      if (phoneDigits.length < 10) { phoneEl.classList.add('jb-input-error'); valid = false; }
+      if (!valid) {
+        statusEl.textContent = 'Please fill in the highlighted fields.';
+        statusEl.className = 'jb-form-status error';
+        return;
+      }
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+      statusEl.className = 'jb-form-status';
+      statusEl.textContent = '';
+      fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      })
+      .then(function (res) {
+        if (!res.ok) throw new Error();
+        statusEl.textContent = 'Got it — Tony will reach out shortly.';
+        statusEl.className = 'jb-form-status success';
+        if (window.JB_trackLead) window.JB_trackLead(data.leadSource);
+        form.reset();
+        setTimeout(closeModal, 2500);
+      })
+      .catch(function () {
+        statusEl.textContent = 'Something went wrong. Please call (404) 632–9165.';
+        statusEl.className = 'jb-form-status error';
+      })
+      .finally(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send My Request →';
+      });
     });
   }
 
@@ -285,7 +473,8 @@
     initDropdowns();
     initFAQ();
     initHeaderScroll();
-    initQuoteCTA();
+    initQuoteModal();
+    initZipCheck(document.getElementById('zipCode'));
     initStatCountUp();   // must follow initSiteData
   });
 })();

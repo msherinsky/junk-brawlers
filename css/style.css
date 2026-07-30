@@ -385,9 +385,13 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .owner-section::before{content:'';position:absolute;bottom:20px;left:50%;transform:translateX(-50%);width:520px;height:520px;background:url('../images/logo.webp') no-repeat center/contain;opacity:0.08;mix-blend-mode:screen;pointer-events:none;user-select:none}
 .owner-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:max-content 1fr;grid-template-areas:"head photo" "body photo";gap:20px 56px;align-items:start;position:relative;z-index:1}
 .owner-head{grid-area:head}
-.owner-photo-wrap{grid-area:photo;position:relative}
+/* Tony's headshot is a 340x339 square. Forcing it into a landscape or portrait
+   frame with object-fit:cover cropped his hair and chin off and upscaled a small
+   source across the full column. Match the frame to the asset (1/1) and cap the
+   width so it renders near native size. Revisit if a larger photo ever lands. */
+.owner-photo-wrap{grid-area:photo;position:relative;max-width:420px;margin-inline:auto}
 .owner-body{grid-area:body}
-.owner-photo-wrap img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2px;box-shadow:0 24px 60px rgba(0,0,0,0.18)}
+.owner-photo-wrap img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:2px;box-shadow:0 24px 60px rgba(0,0,0,0.18)}
 .owner-badge{position:absolute;bottom:-16px;right:-16px;background:linear-gradient(135deg,#9B00FF,#5200A0);border-radius:2px;padding:12px 16px;box-shadow:0 4px 16px rgba(0,0,0,0.35)}
 .owner-badge-score{display:block;font-family:var(--font-heading);font-weight:800;color:#FFD700;font-size:20px;line-height:1}
 .owner-badge-label{display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.8);margin-top:4px}
@@ -438,7 +442,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .duo-media{position:relative;border-radius:3px;box-shadow:0 22px 56px rgba(0,0,0,0.16)}
 .duo-media img{display:block;width:100%;object-fit:cover;border-radius:3px}
 .std-figure--rig .duo-media img{aspect-ratio:4/3}
-.std-figure--tony .duo-media img{aspect-ratio:4/5;object-position:center 22%}
+.std-figure--tony .duo-media img{aspect-ratio:1/1}
 /* The badge breaks its container at the corner — the page's own vocabulary
    (see .owner-badge). .duo-media must NOT clip, or the bleed dies. */
 /* IDENTIFICATION PLATES. Built from .owner-badge's recipe — the brand's own badge,
@@ -450,7 +454,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
    two edges reads as fixed to the photograph rather than laid on top of it. Radius
    is 0 3px 0 3px — square where it meets the frame's edges, matching the photo's own
    3px only at the shared corner. Fire top edge is the house signature (see .tq-card,
-   .pricing-tier.tier-highlight, .contact-form-card).
+   .pricing-tier.tier-highlight, .jb-modal-card, .contact-form-card).
    Plate bottom-LEFT, badge bottom-RIGHT: opposite ends of one edge, same material,
    so they read as a pair rather than a collision. */
 .std-plate{position:absolute;left:0;bottom:0;z-index:4;transform:none;
@@ -667,6 +671,10 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .svc-section--light .svc-block-body h3{color:#111}
 .svc-section--light .svc-block-body p{color:rgba(17,17,17,0.75)}
 .svc-section--light .svc-more h3{color:#111}
+/* A light section needs a dark heading. This used to be scoped to
+   body.page-location, which left the same markup white-on-white anywhere
+   without that class (services.html). Scope it to the variant instead. */
+.svc-section--light h2.h2-bridge--light{color:rgba(0,0,0,0.65)}
 .svc-section--light .svc-more-grid a{color:rgba(17,17,17,0.8);border-color:rgba(17,17,17,0.14)}
 .svc-section--light .svc-more-grid a:hover{border-color:var(--color-fire);color:#111}
 .svc-section--light .rw-mini--light{border-left-color:var(--color-fire)}
@@ -1063,19 +1071,30 @@ body.page-home .tq-dot.is-active{background:var(--color-fire);transform:scale(1.
 .results-section + .trust-quotes::before{content:'';display:block;position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent 0%,var(--color-fire) 30%,var(--color-fire) 70%,transparent 100%);opacity:0.6}
 
 
-/* ---- JB CONTACT CTA ----
-   The shared form + quote-modal styles that lived here are gone: the site runs no
-   forms of its own (A2P 10DLC), so the only opt-in is the LeadConnector chat
-   widget. .jb-form-submit survives as the primary call button. ---- */
+/* ---- JB SHARED FORM + QUOTE MODAL ---- */
+.jb-form-row{display:flex;gap:14px}
+.jb-form-group{display:flex;flex-direction:column;flex:1;min-width:0;margin-bottom:11px}
+.jb-form-group label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.45);margin-bottom:6px}
+.jb-form-group input{width:100%;box-sizing:border-box;padding:12px 14px;background:rgba(255,255,255,0.06);border:1.5px solid rgba(255,255,255,0.12);border-radius:4px;font-family:var(--font);font-size:15px;color:#fff;transition:border-color .2s,box-shadow .2s}
+.jb-form-group input::placeholder{color:rgba(255,255,255,0.25)}
+.jb-form-group input:focus{outline:none;border-color:var(--color-fire);box-shadow:0 0 0 3px rgba(255,122,0,0.18)}
 .jb-form-submit{display:block;width:100%;margin-top:18px;padding:13px 24px;background:#C05000;color:#fff;font-family:var(--font-heading);font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;border:none;border-radius:5px;cursor:pointer;transition:opacity .2s,transform .12s;box-shadow:0 4px 16px rgba(255,122,0,0.28);text-align:center}
-.jb-form-submit{text-decoration:none}
-.jb-form-alt{display:block;width:100%;margin-top:10px;padding:12px 24px;background:transparent;color:#fff;font-family:var(--font-heading);font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;border:1.5px solid rgba(255,255,255,0.22);border-radius:5px;cursor:pointer;transition:border-color .2s,background .2s;text-align:center;text-decoration:none}
-.jb-form-alt:hover{border-color:var(--color-fire);background:rgba(255,122,0,0.08)}
-.jb-form-alt:active{transform:translateY(1px)}
-.contact-noform-lead{font-size:14px;line-height:1.6;color:rgba(255,255,255,0.6);margin:0 0 22px}
 .jb-form-submit:hover{opacity:0.94}
 .jb-form-submit:active{transform:translateY(1px)}
 .jb-form-submit:hover{opacity:.9}
+.jb-form-submit:disabled{opacity:.55;cursor:not-allowed}
+.jb-form-status{margin-top:12px;font-size:14px;font-weight:600;display:none}
+.jb-form-status.success{color:#22c55e;display:block}
+.jb-optional{font-weight:400;color:rgba(255,255,255,0.4);font-size:.85em;text-transform:none;letter-spacing:0}
+.jb-consent{margin:8px 0 2px;display:flex;flex-direction:column;gap:11px}
+.jb-consent-item{display:flex;gap:10px;align-items:flex-start;cursor:pointer;margin:0}
+.jb-consent-item input[type=checkbox]{flex:none;width:18px;height:18px;margin:1px 0 0;accent-color:var(--color-fire);cursor:pointer}
+.jb-consent-item span{font-size:13px;line-height:1.5;font-weight:400;letter-spacing:normal;text-transform:none;color:rgba(255,255,255,0.66);margin:0}
+.jb-consent-item strong{color:rgba(255,255,255,0.72);font-weight:700}
+/* A2P: "not a condition of purchase" + the two policy links carriers look for. */
+.jb-consent-note{font-size:12px;line-height:1.5;color:rgba(255,255,255,0.45);margin:2px 0 0}
+.jb-consent-note a{color:rgba(255,255,255,0.62);text-decoration:underline;text-underline-offset:2px}
+.jb-consent-note a:hover{color:var(--color-fire)}
 /* Centered info-page hero with branded-truck backdrop + gradient overlay (faq, service-areas) */
 .hero.hero--info{position:relative;overflow:hidden;min-height:auto;background:#07001A}
 .hero--info .hero-bg-media{position:absolute;inset:0;z-index:0;margin:0;display:block}
@@ -1085,7 +1104,30 @@ body.page-home .tq-dot.is-active{background:var(--color-fire);transform:scale(1.
 .hero--info .hero-centered{text-shadow:0 2px 20px rgba(7,0,26,0.65)}
 .hero--info .hero-sub{color:rgba(255,255,255,0.82);margin-bottom:40px}
 .hero--info .hero-centered h1{color:rgba(255,255,255,0.78)}
-@media(max-width:540px){.jb-form-submit{margin-top:14px}}
+.jb-form-status.error{color:#ff6b6b;display:block}
+.jb-form-group input.jb-input-error{border-color:#ff6b6b !important;box-shadow:0 0 0 3px rgba(255,107,107,0.18) !important}
+.jb-modal-overlay{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.75);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .25s ease}
+.jb-modal-overlay.open{opacity:1;pointer-events:all}
+.jb-modal-card{background:#080014;border-radius:8px;padding:30px 34px 30px;max-width:460px;width:100%;position:relative;transform:translateY(20px);transition:transform .25s ease;border-top:3px solid var(--color-fire);max-height:92vh;overflow-y:auto}
+.jb-modal-overlay.open .jb-modal-card{transform:translateY(0)}
+.jb-modal-close{position:absolute;top:14px;right:16px;background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.35);font-size:28px;line-height:1;padding:4px 8px;font-family:var(--font);transition:color .2s}
+.jb-modal-close:hover{color:#fff}
+.jb-modal-logo{height:40px;width:auto;margin-bottom:14px;display:block}
+.jb-modal-heading{font-family:var(--font-heading);font-size:28px;font-weight:800;font-style:italic;color:#fff;line-height:1.1;margin-bottom:6px;text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:5px;text-decoration-thickness:2px}
+.jb-modal-sub{font-size:14px;color:rgba(255,255,255,0.45);margin-bottom:16px}
+@media(max-width:540px){
+  .jb-modal-overlay{align-items:flex-end;padding:0}
+  .jb-modal-card{border-radius:16px 16px 0 0;padding:26px 18px 24px;max-height:92vh}
+  .jb-form-row{gap:10px}
+  .jb-modal-logo{height:38px;margin-bottom:12px}
+  .jb-modal-heading{font-size:24px;margin-bottom:4px}
+  .jb-modal-sub{margin-bottom:14px}
+  .jb-form-group{margin-bottom:9px}
+  .jb-form-submit{margin-top:14px}
+}
+.zip-check-hint{display:block;font-size:12px;font-weight:600;margin-top:5px;min-height:16px}
+.zip-check-hint--ok{color:var(--color-fire)}
+.zip-check-hint--warn{color:#FFA040}
 
 /* ---- LOCATION PAGE TEMPLATE ---- */
 body.page-location .hero{position:relative;z-index:10}
