@@ -551,7 +551,7 @@
   var slides = [].slice.call(box.querySelectorAll('.hero-slide'));
   if(slides.length < 2) return;
   var SLIDE_MS = 6000, i = 0, timer = null;
-  function inject(){ slides.forEach(function(s){ var img=s.querySelector('img[data-lazy]'); if(img && !img.getAttribute('src')){ img.src=img.getAttribute('data-src'); img.removeAttribute('data-lazy'); } }); }
+  function inject(){ slides.forEach(function(s){ var img=s.querySelector('img[data-lazy]'); if(img && !img.getAttribute('src')){ var ss=img.getAttribute('data-srcset'); if(ss){ if(!img.getAttribute('sizes')) img.setAttribute('sizes','100vw'); img.setAttribute('srcset',ss); img.removeAttribute('data-srcset'); } img.src=img.getAttribute('data-src'); img.removeAttribute('data-lazy'); } }); }
   function advance(){ var next=(i+1)%slides.length; slides[i].classList.remove('is-active'); slides[next].classList.add('is-active'); i=next; }
   function start(){ inject(); timer=setInterval(advance, SLIDE_MS); document.addEventListener('visibilitychange', function(){ if(document.hidden){ if(timer){clearInterval(timer);timer=null;} } else if(!timer){ timer=setInterval(advance, SLIDE_MS); } }); }
   function boot(){ ('requestIdleCallback' in window) ? requestIdleCallback(start,{timeout:1500}) : setTimeout(start,300); }
