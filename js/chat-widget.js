@@ -127,6 +127,14 @@
     'font-size:19px;color:#fff;line-height:1.1;text-transform:uppercase;letter-spacing:.4px}',
     '.jb-chat-head-sub{font-size:12px;color:rgba(255,255,255,.72);line-height:1.3;margin-top:1px}',
     '.jb-chat-head-sub b{color:#4ADE80;font-weight:700}',
+    /* Deliberately quiet. It sits next to the close button and must never compete
+       with it, but it is the escape hatch when the bot has misunderstood someone. */
+    '.jb-chat-reset{flex:0 0 auto;padding:8px 10px;margin-right:2px;background:none;border:none;',
+    'cursor:pointer;font-family:inherit;font-size:12px;font-weight:600;color:rgba(255,255,255,.6);',
+    'border-radius:6px;white-space:nowrap;-webkit-tap-highlight-color:transparent}',
+    '.jb-chat-reset:hover{color:#fff;background:rgba(255,255,255,.1)}',
+    '.jb-chat-reset:focus-visible{outline:2px solid #FF7A00;outline-offset:1px}',
+
     /* 44px is the Apple HIG minimum tap target. The old 34px was a thumb-miss
        waiting to happen, and a close button you miss is the worst one to miss. */
     '.jb-chat-x{flex:0 0 auto;width:44px;height:44px;display:flex;align-items:center;justify-content:center;',
@@ -268,6 +276,7 @@
         '<div class="jb-chat-head-name">Ask a Brawler</div>' +
         '<div class="jb-chat-head-sub"><b>Online</b> 7 days a week</div>' +
       '</div>' +
+      '<button class="jb-chat-reset" type="button" aria-label="Start a new conversation">Start over</button>' +
       '<button class="jb-chat-x" type="button" aria-label="Close chat">' + ICON.x + '</button>' +
     '</div>' +
     '<div class="jb-chat-log" role="log" aria-live="polite" aria-atomic="false"></div>' +
@@ -294,6 +303,7 @@
   var input = panel.querySelector('.jb-chat-input');
   var send = panel.querySelector('.jb-send');
   var closeBtn = panel.querySelector('.jb-chat-x');
+  var resetBtn = panel.querySelector('.jb-chat-reset');
 
   /* ── rendering ────────────────────────────────────────────────────────── */
 
@@ -424,6 +434,13 @@
 
     busy = true;
     send.disabled = true;
+
+    // Starter chips are scaffolding for someone who does not know what to ask.
+    // Once they have asked anything they are just clutter taking up the sheet,
+    // so drop them whether the question came from a chip or from typing.
+    var chips = log.querySelector('.jb-chips');
+    if (chips) { chips.remove(); }
+
     addMsg('me', msg);
     saveLog('me', msg);
     input.value = '';
@@ -495,9 +512,32 @@
     if (!isMobile()) { launch.focus(); }
   }
 
+  /* Start over. Clears the stored transcript AND the session id, which matters:
+     the n8n memory buffer is keyed on that id, so dropping it is what actually
+     makes the agent forget. Clearing the visible log alone would leave the bot
+     still remembering the couch and the fridge. */
+  function reset() {
+    try {
+      window.sessionStorage.removeItem('jb_chat_sid');
+      window.sessionStorage.removeItem('jb_chat_log');
+    } catch (e) {}
+
+    hideDots();
+    busy = false;
+    send.disabled = false;
+    log.innerHTML = '';
+    input.value = '';
+    input.style.height = 'auto';
+
+    restore();                 // empty log now, so this lays out greeting + chips
+    track('chat_reset', {});
+    if (!isMobile()) { input.focus(); }
+  }
+
   launch.setAttribute('aria-expanded', 'false');
   launch.addEventListener('click', open);
   closeBtn.addEventListener('click', close);
+  resetBtn.addEventListener('click', reset);
   backdrop.addEventListener('click', close);
 
   document.addEventListener('keydown', function (e) {
@@ -525,9 +565,9 @@
 
   function dragStart(e) {
     if (!isMobile()) { return; }
-    // The close button lives inside the header. Do not start a drag on it, or a
-    // clean tap gets interpreted as a one-pixel drag.
-    if (e.target.closest && e.target.closest('.jb-chat-x')) { return; }
+    // The close and reset buttons live inside the header. Do not start a drag on
+    // either, or a clean tap gets interpreted as a one-pixel drag.
+    if (e.target.closest && e.target.closest('.jb-chat-x, .jb-chat-reset')) { return; }
     dragY = e.touches[0].clientY;
     dragAt = Date.now();
     dragging = true;
