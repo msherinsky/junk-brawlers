@@ -352,6 +352,17 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
   .hero-slide img{animation:none!important;transform:scale(1.05)!important}
 }
 
+/* Phones: same treatment, for performance rather than preference. The Ken Burns
+   pan is an infinite animation on a full-bleed image, so it runs compositing work
+   straight through the window where the browser is trying to paint the LCP. The
+   will-change hints hold three full-viewport layers permanently, which is a poor
+   trade on a throttled device for a fade that runs 1.5s once every 6s. The
+   crossfade itself is untouched, so the slideshow still reads the same. */
+@media(max-width:768px){
+  .hero-slide{will-change:auto}
+  .hero-slide img{animation:none;transform:scale(1.05);will-change:auto}
+}
+
 /* ---- TRUST TICKER (floats over the continuous hero dark — no band) ---- */
 .trust-ticker{background:radial-gradient(ellipse 65% 130% at 50% 50%,rgba(26,0,46,0.9) 0%,#0A000F 72%);min-height:var(--ticker-peek);display:flex;flex-direction:column;justify-content:center}
 .trust-ticker-wrap{overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 100%)}
