@@ -101,11 +101,42 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
    content-anchored bottom band fades to white. Because the gradient lives on the
    content-sized wrapper (not a fixed px band on the section), the purple always covers
    exactly the note on any screen size, and the fade sits below the text on every layout. */
-.tl-top{position:relative;z-index:1;padding:clamp(56px,5vw,84px) 24px 170px;
+/* Fade band and bottom padding are a coupled pair: the padding has to clear the band or
+   the closing line sits inside the fade. Tightened together, 150/170 -> 110/125. */
+/* The white fade and the bottom padding are a coupled pair: the band has to finish inside
+   the padding or it starts washing out the bottom of the translucent .tl-top-inner panel.
+   Two things caused the visible hard edge here:
+     1. a straight two-stop alpha ramp, which leaves a knee where it meets the solid purple
+        and a second one where it lands on white,
+     2. it reached #ffffff at 90%, so the last 10% was flat white against a still-fading
+        band above it, drawing a line across the section.
+   Now eased across ten stops and landing on pure white at exactly 100%, with the band and
+   the padding lengthened to give the ramp room to breathe. */
+.tl-top{position:relative;z-index:1;padding:clamp(56px,5vw,84px) 24px 152px;
   background:
-    linear-gradient(180deg,rgba(255,255,255,0) 0,#ffffff 90%) bottom / 100% 150px no-repeat,
+    linear-gradient(180deg,
+      rgba(255,255,255,0) 0%,
+      rgba(255,255,255,0.03) 15%,
+      rgba(255,255,255,0.10) 28%,
+      rgba(255,255,255,0.21) 40%,
+      rgba(255,255,255,0.36) 51%,
+      rgba(255,255,255,0.54) 62%,
+      rgba(255,255,255,0.71) 72%,
+      rgba(255,255,255,0.85) 81%,
+      rgba(255,255,255,0.95) 91%,
+      #ffffff 100%) bottom / 100% 140px no-repeat,
     linear-gradient(180deg,#09000F 0,#150028 12%,#2d0065 34%,#3a0078 62%,#3a0078 100%)}
-.tl-top-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,290px);grid-template-areas:"lede aside";column-gap:clamp(36px,5vw,72px);align-items:start}
+/* The note is a contained artifact, not prose floating on the purple field. Making the
+   WRAPPER the panel (rather than .tl-lede) means the message, Tony's face and his record
+   read as one object, and it sidesteps .tl-lede being display:contents on mobile, which
+   leaves it with no box to style. Surface is darker than the section behind it so it sits
+   ON the purple rather than dissolving into it. */
+.tl-top-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,290px);grid-template-areas:"lede aside";column-gap:clamp(36px,5vw,72px);align-items:start;
+  padding:clamp(18px,3vw,44px);border-radius:16px;
+  background:linear-gradient(152deg,rgba(14,0,32,0.62) 0%,rgba(38,6,74,0.38) 100%);
+  border:1px solid rgba(255,255,255,0.14);
+  -webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);
+  box-shadow:0 26px 64px rgba(0,0,0,0.42),inset 0 1px 0 rgba(255,255,255,0.07)}
 .tl-body{position:relative;z-index:1;padding:clamp(36px,4vw,60px) 24px 0}
 .tl-body-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,290px);grid-template-areas:"standard standard" "clip clip";column-gap:clamp(36px,5vw,72px);row-gap:clamp(40px,5vw,72px);align-items:start}
 
@@ -113,16 +144,26 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .tl-lede{grid-area:lede}
 .tl-eyebrow{display:block;font-family:var(--font-heading);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:var(--color-fire);margin-bottom:18px}
 .tl-lede p{font-family:var(--font);font-size:17px;line-height:1.75;color:rgba(255,255,255,0.85);margin:0 0 16px;max-width:56ch}
-.tl-hook{font-family:var(--font-heading);font-size:clamp(20px,1.9vw,25px);font-weight:800;line-height:1.25;letter-spacing:-0.3px;color:#fff;margin:0 0 18px;max-width:26ch}
-.tl-fears{list-style:none;margin:0 0 18px;padding:0;display:flex;flex-direction:column;gap:8px}
-.tl-fears li{position:relative;padding-left:24px;font-size:16px;line-height:1.5;color:rgba(255,255,255,0.66)}
-.tl-fears li::before{content:"\2717";position:absolute;left:0;top:2px;color:rgba(255,255,255,0.4);font-weight:700;font-size:13px}
-.tl-pivot{font-family:var(--font-heading);font-size:clamp(17px,1.5vw,20px);font-weight:800;color:#fff;margin:0 0 16px}
-.tl-answers{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
-.tl-answers li{position:relative;padding-left:26px;font-size:16px;line-height:1.5;color:rgba(255,255,255,0.92);font-weight:500}
-.tl-answers li::before{content:"\2713";position:absolute;left:0;top:1px;color:var(--color-fire);font-weight:800;font-size:15px}
-.tl-lede .tl-close{font-weight:700;font-size:17px;line-height:1.65;color:#fff;margin-top:40px;max-width:56ch}
-.tl-mark{background:none;color:#fff;font-weight:700}
+/* The note read as body copy because nothing set it apart typographically. The opening line
+   now carries real display weight so it lands as someone talking, the fears sit tighter and
+   brighter under it, and the signature below closes it off. */
+/* MUST stay .tl-lede .tl-hook. As a bare .tl-hook (0,1,0) it loses to .tl-lede p (0,1,1)
+   above, which pins font-size:17px, so the opening line silently rendered at body size and
+   the note had no display voice at all. .tl-close was already written this way. */
+.tl-lede .tl-hook{font-family:var(--font-heading);font-size:clamp(23px,2.35vw,31px);font-weight:800;line-height:1.16;letter-spacing:-0.5px;color:#fff;margin:0 0 20px;max-width:24ch}
+/* .tl-fears (the cross-marked worry list) was removed from the homepage on 2026-08-13
+   when the note was rewritten as prose. Rules deleted rather than left dead: the class
+   appears on no page now. */
+/* inline-flex so the rule is only as wide as the name, like a signature line */
+.tl-signoff{display:inline-flex;flex-direction:column;gap:4px;margin-top:28px;padding-top:18px;border-top:2px solid rgba(255,157,58,0.45)}
+.tl-signoff-name{font-family:var(--font-heading);font-size:clamp(21px,1.8vw,25px);font-weight:800;line-height:1;letter-spacing:-0.2px;color:#fff}
+.tl-signoff-role{font-family:var(--font-heading);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2.2px;color:var(--color-fire)}
+/* .tl-pivot and .tl-answers removed 2026-08-13: the pivot line was merged into
+   .tl-close and the tick-list of answers was cut, because it restated the three
+   .tl-promises further down the same section. .tl-mark went with them; only the
+   .tl-mark--circle modifier is ever applied, so the base rule never matched
+   anything (that one predates today). */
+.tl-lede .tl-close{font-weight:700;font-size:17px;line-height:1.65;color:#fff;margin-top:22px;max-width:56ch}
 
 /* two CTAs (in the note and after the standard) */
 .tl-cta{margin-top:26px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
@@ -132,6 +173,12 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .tl-aside{grid-area:aside;display:flex;flex-direction:column;gap:22px;align-self:start}
 .tl-photo{margin:0}
 .tl-photo img{display:block;width:100%;height:280px;object-fit:cover;object-position:center 18%;border-radius:10px;border:1px solid rgba(255,255,255,0.15);box-shadow:0 18px 44px rgba(0,0,0,0.4)}
+/* team-headshot is 340x339, i.e. square. A fixed 200px height against the ~300px mobile
+   width forces it into a 1.5:1 landscape box and object-fit:cover then crops 33% off the
+   frame, taking the top of his head and his chin with it. Matching the source ratio instead
+   of pinning a height crops essentially nothing. Costs ~100px of page height, which the
+   owner's face in "A note from Tony" is worth. */
+@media(max-width:768px){.tl-photo img{height:auto;aspect-ratio:1/1}}
 .tl-photo-cap{display:block;text-align:center;margin-top:12px;font-family:var(--font-heading);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:1.6px;color:rgba(255,255,255,0.55)}
 .tl-record{display:flex;border-top:1px solid rgba(255,255,255,0.16);border-bottom:1px solid rgba(255,255,255,0.16);padding:16px 0}
 .tl-stat{text-align:center;flex:1}
@@ -199,7 +246,27 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 }
 
 @media(max-width:768px){
-  .tl-top-inner{grid-template-columns:1fr;grid-template-areas:"aside" "lede";row-gap:30px}
+  /* Same mobile order as the shared empathy section: Tony's note first, his face
+     under it, the ask last. This used to be grid-areas "aside" "lede", which put the
+     photo and the stats above the note entirely. .tl-cta lives inside .tl-lede, so
+     .tl-lede goes display:contents to let the CTA be ordered past the photo; it only
+     carries grid-area, and .tl-lede p / .tl-eyebrow keep matching as descendants.
+     .tl-eyebrow is already display:block, so nothing is blockified into a new look. */
+  .tl-top-inner{display:flex;flex-direction:column;gap:0;grid-template-columns:1fr;grid-template-areas:none}
+  .tl-lede{display:contents}
+  .tl-lede>*{order:1}
+  /* align-self:start on .tl-aside is written for the desktop GRID, where it means "top of
+     the row". This container flips to flex-direction:column here, so the cross axis becomes
+     horizontal and that same declaration silently starts meaning "pin to the left", shrinking
+     the aside to its intrinsic width and leaving a wide dead gap beside it. Stretch it back,
+     then centre the photo on its own so the stats row still gets the full width (at the
+     shrunk width the "Five-Star Reviews" label was wrapping to two lines). */
+  .tl-aside{order:2;margin-top:30px;align-self:stretch}
+  .tl-photo{width:100%;max-width:300px;margin:0 auto}
+  /* The signature and the photo caption both name him. Stacked on a phone they land about
+     40px apart and read as a mistake; on desktop they sit in separate columns, where the
+     caption still usefully labels the portrait, so it is hidden here only. */
+  .tl-photo-cap{display:none}
   .tl-body-inner{grid-template-columns:1fr;grid-template-areas:"standard" "clip";row-gap:38px}
   .tl-standard{grid-template-columns:1fr;grid-template-areas:"title" "lede" "rig" "promises" "cta";row-gap:24px}
   .tl-standard-title{max-width:none}
@@ -291,12 +358,32 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .hero-centered .btn-fire{display:inline-flex;align-items:center;justify-content:center;padding:15px 34px;font-size:15px;border-radius:6px;background:linear-gradient(135deg,#FF7A00 0%,#C05000 100%);box-shadow:0 4px 18px rgba(255,122,0,0.38),0 2px 6px rgba(0,0,0,0.35);transition:transform .2s ease,box-shadow .2s ease}
 .hero-centered .btn-fire:hover{transform:translateY(-2px);opacity:1;box-shadow:0 8px 26px rgba(255,122,0,0.5),0 4px 10px rgba(0,0,0,0.4)}
 @media(prefers-reduced-motion:reduce){.hero-centered .btn-fire{transition:box-shadow .2s ease}.hero-centered .btn-fire:hover{transform:none}}
+/* Hero secondary CTA (homepage): outlined glass button that jumps to #pricing.
+   Clarity showed Georgia visitors averaging ~31% scroll depth on the homepage, so
+   the price section (6th of 11) was never being reached. This gives the 55% who
+   click nothing a second, lower-commitment action. Deliberately NOT .btn-ghost-white:
+   that class is solid purple and lives in the header on all 59 pages. */
+.hero-centered .btn-hero-secondary{display:inline-flex;align-items:center;justify-content:center;padding:15px 30px;font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;border-radius:6px;color:#fff;background:rgba(255,255,255,0.10);border:1.5px solid rgba(255,255,255,0.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);text-decoration:none;font-family:var(--font);text-shadow:0 1px 4px rgba(0,0,0,0.5);box-shadow:0 2px 10px rgba(0,0,0,0.28);transition:transform .2s ease,background-color .2s ease,border-color .2s ease}
+.hero-centered .btn-hero-secondary:hover{transform:translateY(-2px);background:rgba(255,255,255,0.20);border-color:#fff}
+.hero-centered .btn-hero-secondary:focus-visible{outline:3px solid #FF9D3A;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.hero-centered .btn-hero-secondary{transition:background-color .2s ease,border-color .2s ease}.hero-centered .btn-hero-secondary:hover{transform:none}}
+/* Sticky header is 70px, so anchor jumps need clearance or the heading hides behind it. */
+#pricing{scroll-margin-top:82px}
 /* Testimonial (refined-clean): prominent gold stars above the quote, generous separation from the CTA */
 .hero-quote-stars{color:#FFD700;font-size:15px;letter-spacing:4px;text-indent:4px;line-height:1;margin:0 0 10px;text-shadow:0 0 10px rgba(255,215,0,0.45),0 1px 4px rgba(0,0,0,0.6)}
-.hero-pullquote--center{border-left:none;padding:0;margin:40px auto 0;max-width:540px;text-align:center}
-.hero-pullquote--center p{font-size:14px;color:rgba(255,255,255,0.92);font-style:italic;line-height:1.5;margin:0 0 8px;text-shadow:0 1px 6px rgba(0,0,0,0.8)}
-.hero-pullquote--center cite{font-size:12px;color:rgba(255,255,255,0.55);font-style:normal;font-weight:400;text-transform:none;letter-spacing:0.2px}
-.hero-pullquote--center cite strong{color:rgba(255,255,255,0.9);font-weight:700}
+/* Sat as bare text on the hero photo and got lost in the asphalt behind it. Now it borrows
+   the two treatments already proven on this page: the dark blurred glass of .hero-badge,
+   which is legible over the same photo, and the 3px orange top rule of .tq-card, which is
+   the site's existing "this is a customer review" signal. Text-shadow is dialled back
+   because the panel, not the shadow, is doing the contrast work now. */
+.hero-pullquote--center{border:1px solid rgba(255,255,255,0.14);border-top:3px solid var(--color-fire);border-radius:8px;background:rgba(6,0,20,0.58);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 6px 22px rgba(0,0,0,0.4);padding:11px 18px 9px;margin:8px auto 0;max-width:540px;text-align:center}
+.hero-pullquote--center p{font-size:14.5px;color:rgba(255,255,255,0.95);font-style:italic;line-height:1.42;margin:0 0 5px;text-shadow:0 1px 3px rgba(0,0,0,0.45)}
+/* The hero stack is vertically centred, so roughly a quarter of any height saved here is
+   given straight back as the block re-centres. Tightened until the card clears the 63px
+   sticky call bar on a 390x844 phone. */
+.hero-pullquote--center .hero-quote-stars{margin-bottom:6px}
+.hero-pullquote--center cite{font-size:12px;color:rgba(255,255,255,0.62);font-style:normal;font-weight:400;text-transform:none;letter-spacing:0.2px}
+.hero-pullquote--center cite strong{color:#fff;font-weight:700}
 /* Location/service pages reuse the centered hero with a breadcrumb + review badge */
 .hero-centered .sp-breadcrumb{justify-content:center;flex-wrap:wrap;margin:0 0 14px;font-size:12px;text-shadow:0 1px 8px rgba(0,0,0,0.9)}
 .hero-centered .sp-breadcrumb a{color:rgba(255,255,255,0.85)}
@@ -312,7 +399,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
   .hero-tagline--center .hero-value{font-size:clamp(2.2rem,3.7vw,3.1rem)}
   .hero-tagline--center .hero-em{font-size:clamp(1.7rem,2.9vw,2.5rem)}
   .hero-centered .hero-sub{margin-bottom:14px}
-  .hero-centered .btn-fire{padding:13px 30px;font-size:14px}
+  .hero-centered .btn-fire,.hero-centered .btn-hero-secondary{padding:13px 30px;font-size:14px}
   .hero-quote-stars{font-size:13px;letter-spacing:3px;text-indent:3px;margin-bottom:7px}
   .hero-pullquote--center{margin-top:16px}
   .hero-pullquote--center p{margin-bottom:6px}
@@ -326,7 +413,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
   .hero-eyebrow{margin-bottom:6px}
   .hero-tagline--center{margin-bottom:8px}
   .hero-centered .hero-sub{margin-bottom:10px}
-  .hero-centered .btn-fire{padding:11px 26px}
+  .hero-centered .btn-fire,.hero-centered .btn-hero-secondary{padding:11px 26px}
   .hero-pullquote--center{margin-top:12px}
   .hero-pullquote--center p{margin-bottom:4px}
 }
@@ -334,7 +421,11 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 /* Mobile: centered stack + tuned crops (the crossfade slideshow still runs here) */
 @media(max-width:900px){
   .hero.hero--cinematic{min-height:calc(100svh - 70px)}
-  .hero-centered{padding:44px 24px}
+  /* Extra bottom padding, not less content. .hero--cinematic is min-height:100svh-70px with
+     the stack vertically centred, so trimming elements only re-centres them and the last
+     item drifts straight back down behind the 63px sticky call bar. Padding the bottom is
+     what actually offsets the centre of gravity upward and clears the bar. */
+  .hero-centered{padding:44px 24px 104px}
   .hero-logo{width:128px;height:102px;margin-bottom:14px}
   .hero-slide img{object-position:38% 42%}
   .hero-quote-stars{font-size:16px;letter-spacing:4px}
@@ -344,7 +435,7 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 }
 @media(max-width:480px){
   .hero-centered .hero-buttons{flex-direction:column;width:100%}
-  .hero-centered .hero-buttons .btn-fire,.hero-centered .hero-buttons .btn-ghost-white{width:100%;justify-content:center;text-align:center}
+  .hero-centered .hero-buttons .btn-fire,.hero-centered .hero-buttons .btn-ghost-white,.hero-centered .hero-buttons .btn-hero-secondary{width:100%;justify-content:center;text-align:center}
 }
 
 /* Reduced motion: keep the gentle photo-to-photo crossfade, drop only the Ken Burns pan */
@@ -364,19 +455,62 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 }
 
 /* ---- TRUST TICKER (floats over the continuous hero dark — no band) ---- */
-.trust-ticker{background:radial-gradient(ellipse 65% 130% at 50% 50%,rgba(26,0,46,0.9) 0%,#0A000F 72%);min-height:var(--ticker-peek);display:flex;flex-direction:column;justify-content:center}
+/* The band has to be SEEN — it is the proof strip, not trim. Presence comes from a
+   lit centre, a fire-accent top edge that reads as a deliberate seam against the hero
+   above, and brand-colour icons. What it does not come from is perpetual motion or
+   the old neon icon glow, both of which read cheap. */
+.trust-ticker{position:relative;background:radial-gradient(ellipse 70% 140% at 50% 50%,rgba(46,4,78,0.95) 0%,#0A000F 78%);min-height:var(--ticker-peek);display:flex;flex-direction:column;justify-content:center;border-top:1px solid rgba(255,255,255,0.07);border-bottom:1px solid rgba(255,255,255,0.07)}
+/* Hairline fire seam along the top, brightest at centre where the eye lands. */
+.trust-ticker::before{content:"";position:absolute;top:-1px;left:0;right:0;height:1px;background:linear-gradient(to right,transparent 0,rgba(255,122,0,0) 12%,rgba(255,122,0,0.55) 50%,rgba(255,122,0,0) 88%,transparent 100%);pointer-events:none}
 .trust-ticker-wrap{overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 9%,#000 91%,transparent 100%)}
 /* JS (main.js) sizes the strip and sets --ticker-shift (one loop-unit width) +
    --ticker-dur (constant speed). Fallback vars keep it working if JS doesn't run. */
-.trust-ticker-track{display:flex;align-items:center;flex-wrap:nowrap;padding:12px 0;width:max-content;will-change:transform;animation:ticker-scroll var(--ticker-dur,24s) linear infinite}
+.trust-ticker-track{display:flex;align-items:center;flex-wrap:nowrap;padding:14px 0;width:max-content;will-change:transform;animation:ticker-scroll var(--ticker-dur,24s) linear infinite}
 @keyframes ticker-scroll{to{transform:translateX(calc(-1 * var(--ticker-shift,50%)))}}
+/* Static mode: main.js adds .is-static to BOTH track and wrap when one loop unit
+   already fits the window, so nothing scrolls. Motion is for overflow only — a strip
+   that scrolls when its content fits reads as filler, and the cloning needed to keep
+   it full is what puts the same claim on screen twice at once. With nothing moving
+   there is no edge to hide, so the wrap's fade mask comes off too, and the trailing
+   separator (there for the marquee wrap seam) would dangle at the right end. */
+.trust-ticker-track.is-static{animation:none;width:100%;justify-content:center;will-change:auto}
+.trust-ticker-track.is-static .t-sep:last-child{display:none}
+.trust-ticker-wrap.is-static{-webkit-mask-image:none;mask-image:none}
 /* Reduced motion: don't freeze the ticker — a frozen, half-clipped strip reads as
    broken, not considerate. main.js keeps it scrolling at a much slower, gentler
    pace instead (SPEED_REDUCED), which respects the preference without looking bugged. */
-.t-item{display:flex;align-items:center;gap:12px;color:rgba(255,255,255,0.9);font-size:18px;font-weight:600;line-height:1;letter-spacing:0.2px;white-space:nowrap;padding:0 42px}
-.t-icon{width:25px;height:25px;flex-shrink:0;color:var(--color-steel-light);display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 0 9px rgba(123,53,212,0.55))}
-.t-icon svg{width:100%;height:100%}
-.t-sep{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,0.28);flex-shrink:0;margin:0 6px;box-shadow:0 0 8px rgba(123,53,212,0.5)}
+/* Noticeable by weight and colour, not by neon. Near-white bold uppercase carries at
+   a glance; fire-orange icons pull the eye down the row and tie the band to the brand
+   accent. The old purple drop-shadow glow is still gone: it blurred the glyphs and
+   read gamer rather than credible.
+
+   Height is load-bearing: 14px padding + 18px icon = 46px, plus the 2px of hairline
+   border, sits under the 49px --ticker-peek the hero reserves in its min-height calc.
+   Note min-height on .trust-ticker is a FLOOR, not a cap — at 16px padding the track's
+   own 49px pushed the bordered box to 50.6px and quietly broke the contract.
+
+   Item padding sets where the strip stops fitting and starts scrolling, so it is the
+   lever to pull if the static breakpoint needs to move — not the font size. */
+.t-item{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.95);font-size:15px;font-weight:700;line-height:1;letter-spacing:0.7px;text-transform:uppercase;white-space:nowrap;padding:0 18px}
+.t-icon{width:18px;height:18px;flex-shrink:0;color:var(--color-fire);display:flex;align-items:center;justify-content:center}
+.t-icon svg{width:100%;height:100%;stroke-width:2}
+/* Gradient hairline: fades at both ends so it reads as a seam, not a table border. */
+.t-sep{width:1px;height:16px;background:linear-gradient(to bottom,transparent,rgba(255,255,255,0.28) 50%,transparent);flex-shrink:0}
+/* One-shot staggered reveal, static mode only. This is how the strip gets noticed
+   without scrolling forever: it arrives, then holds still. Scrolling mode is excluded
+   because main.js replaces the track's HTML with clones, which would re-fire the
+   animation on every clone at odd offsets. */
+@media(prefers-reduced-motion:no-preference){
+  .trust-ticker-track.is-static .t-item,
+  .trust-ticker-track.is-static .t-sep{animation:t-rise .55s cubic-bezier(.22,.61,.36,1) backwards}
+  .trust-ticker-track.is-static .t-item:nth-child(1){animation-delay:.05s}
+  .trust-ticker-track.is-static .t-item:nth-child(3){animation-delay:.13s}
+  .trust-ticker-track.is-static .t-item:nth-child(5){animation-delay:.21s}
+  .trust-ticker-track.is-static .t-item:nth-child(7){animation-delay:.29s}
+  .trust-ticker-track.is-static .t-item:nth-child(9){animation-delay:.37s}
+  .trust-ticker-track.is-static .t-sep{animation-delay:.33s;animation-duration:.7s}
+}
+@keyframes t-rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 
 /* ---- PAIN SECTION ---- */
 .pain-section{background:linear-gradient(to bottom,#09000F 0%,#150028 18%,#2d0065 42%,#3a0078 54%,#2d0065 66%,#7b35d4 76%,#ffffff 92%);padding:40px 32px 56px;border-top:none;border-bottom:none}
@@ -633,6 +767,47 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .svc-section h2{font-family:var(--font-heading);font-size:clamp(28px,3.5vw,44px);font-weight:800;color:#fff;text-align:center;margin-bottom:14px}
 .svc-intro{max-width:660px;margin:0 auto 48px;text-align:center}
 .svc-intro p{color:rgba(255,255,255,0.65);font-size:15px;line-height:1.7;margin-bottom:16px;text-align:center}
+
+/* ---- SERVICE LIST (homepage, added 2026-08-13) ----
+   Deliberately NOT called .svc-grid: that class is taken, on 40 pages, by the 340px-tall
+   image-card grid defined immediately below, and its repeat(3,1fr) would crush this list
+   into three columns on a phone. Replaces the three .svc-block spreads on the homepage
+   only; .svc-block* is still live on 33 pages and is untouched. */
+.svc-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:10px;list-style:none;margin:0;padding:0;position:relative;z-index:1}
+/* Ten services: auto-fit lands on 6 columns at full width, which leaves a ragged orphan
+   row of 4. Pinning 5 columns above the breakpoint gives a clean 5 x 2. */
+@media(min-width:880px){.svc-list{grid-template-columns:repeat(5,1fr)}}
+.svc-cell{display:flex}
+/* flex-start, not center: descriptions run to one or two lines, and centring each card's
+   content independently left the service names sitting at different heights across a row. */
+/* Light cards on the dark section. The first pass sat them at 4.5% white on a near-black
+   ground with 55%-opacity descriptions, so they barely separated from the section and read
+   as flat text rather than ten things you can tap. The section itself has to stay dark (it
+   wedges up into the white bottom of .tony-letter, and .svc-section is shared by 33 pages),
+   so the contrast has to come from the cards. Ink on white also lets the description carry
+   real weight instead of hiding at half opacity. */
+/* Purple-tinted glass, matching the .tq-card language already used for the review cards on
+   the dark sections, rather than either extreme tried first: 4.5% white read as flat text,
+   and stark white read as a generic template block that ignored the palette.
+   The actual legibility fix was never the card colour, it was the description sitting at 55%
+   opacity; at 0.74 it carries real weight. Hover warms the tint from purple to fire so the
+   whole tile responds, no accent rail needed.
+   No arrow glyph either: it needed 34px of right padding, which pushed 4 of the 10 names to
+   a second line and added 88px to the section. */
+.svc-chip{display:flex;flex-direction:column;justify-content:flex-start;gap:4px;width:100%;padding:15px 16px;border-radius:8px;text-decoration:none;
+  background:linear-gradient(158deg,rgba(146,66,240,0.20) 0%,rgba(84,20,158,0.10) 100%);
+  border:1px solid rgba(170,112,246,0.32);
+  box-shadow:0 2px 12px rgba(0,0,0,0.30),inset 0 1px 0 rgba(255,255,255,0.07);
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease,background-color .2s ease}
+.svc-chip:hover{transform:translateY(-3px);border-color:var(--color-fire);
+  background:linear-gradient(158deg,rgba(255,122,0,0.24) 0%,rgba(146,66,240,0.12) 100%);
+  box-shadow:0 10px 26px rgba(0,0,0,0.42),0 0 0 1px rgba(255,122,0,0.25)}
+.svc-chip:focus-visible{outline:3px solid var(--color-fire);outline-offset:3px}
+.svc-chip__name{font-family:var(--font-heading);font-weight:800;font-size:15.5px;line-height:1.18;color:#fff;letter-spacing:0.01em}
+.svc-chip__items{font-size:12.5px;line-height:1.35;color:rgba(255,255,255,0.74)}
+@media(prefers-reduced-motion:reduce){.svc-chip:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){.svc-chip{transition:background-color .2s ease,border-color .2s ease}.svc-chip:hover{transform:none}}
+
 .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;position:relative;z-index:1}
 .svc-card{position:relative;overflow:hidden;border-radius:4px;min-height:340px;display:block;text-decoration:none;box-shadow:0 24px 64px rgba(0,0,0,0.5)}
 .svc-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;pointer-events:none;display:block}
@@ -739,6 +914,55 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 .pricing-note{background:rgba(123,53,212,0.05);border:1px solid rgba(123,53,212,0.15);border-radius:6px;padding:18px 24px;max-width:580px;margin:0 auto 36px;font-size:15px;color:rgba(17,17,17,0.72);line-height:1.65;text-align:left}
 .pricing-note strong{color:#111;display:block;margin-bottom:4px}
 .truck-fill{transform-box:fill-box;transform-origin:50% 100%}
+
+/* ---- ONE-TRUCK PRICING GAUGE (homepage only, added 2026-08-13) ----
+   Everything above this block still belongs to the four-card layout used by the other 39
+   pages. Nothing here overrides it; these are new class names.
+
+   The band offsets are percentages of the #tkBack viewBox (220 x 130), and .tk-gauge__stage
+   carries that same aspect-ratio, so a percentage inside the stage maps 1:1 onto viewBox
+   units. Bed interior is x 74..208, y 30..96, with the existing quarter lines at y 46/63/80:
+       left  74/220 = 33.636%      right inset (220-208)/220 = 5.455%
+       full      y 30..46  -> top 23.077%  height 12.308%
+       three-qtr y 46..63  -> top 35.385%  height 13.077%
+       half      y 63..80  -> top 48.462%  height 13.077%
+       quarter   y 80..96  -> top 61.538%  height 12.308%
+   Do not change these numbers without changing #tkBack in index.html to match. */
+.tk-gauge{width:100%;max-width:880px;margin:0 auto 36px}
+.tk-gauge__stage{position:relative;width:100%;aspect-ratio:220/130}
+.tk-gauge__art{position:absolute;inset:0;width:100%;height:100%;display:block}
+.tk-gauge__art--front{z-index:2;pointer-events:none}
+.tk-gauge__bands{position:absolute;inset:0;z-index:1;margin:0;padding:0;list-style:none}
+.tk-band{position:absolute;left:33.636%;right:5.455%;box-sizing:border-box;display:flex;align-items:center;justify-content:space-between;gap:clamp(6px,1.6vw,18px);padding:0 clamp(7px,1.7vw,18px)}
+/* The border-TOP of each band is the line a load of that size actually fills to, so the
+   rules get brighter and heavier toward the bottom of the bed and the whole thing reads
+   like a graduated measure. The wash stays very low-alpha on purpose: orange over the
+   near-black bed goes muddy brown fast, and anything above ~0.2 both dirties the artwork
+   and eats the contrast the white labels need. */
+.tk-band--full{top:23.077%;height:12.308%;border-top:1px solid rgba(255,157,58,0.24);background:linear-gradient(90deg,rgba(255,122,0,0.05),rgba(255,122,0,0.015))}
+.tk-band--three{top:35.385%;height:13.077%;border-top:1.5px solid rgba(255,157,58,0.38);background:linear-gradient(90deg,rgba(255,122,0,0.09),rgba(255,122,0,0.03))}
+.tk-band--half{top:48.462%;height:13.077%;border-top:2px solid rgba(255,157,58,0.56);background:linear-gradient(90deg,rgba(255,122,0,0.15),rgba(255,122,0,0.05))}
+.tk-band--quarter{top:61.538%;height:12.308%;border-top:2.5px solid rgba(255,157,58,0.82);background:linear-gradient(90deg,rgba(255,122,0,0.23),rgba(255,122,0,0.08))}
+.tk-band__label{display:flex;flex-direction:column;justify-content:center;min-width:0}
+.tk-band__name{font-family:var(--font-heading);font-weight:800;text-transform:uppercase;letter-spacing:0.05em;color:#fff;font-size:clamp(13px,3.6vw,19px);line-height:1.08;white-space:nowrap;text-shadow:0 1px 4px rgba(0,0,0,0.55)}
+.tk-band__desc{font-size:clamp(10px,1.28vw,13px);color:rgba(255,255,255,0.60);line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.tk-band__price{font-family:var(--font-heading);font-weight:800;color:#FF9D3A;font-size:clamp(18px,5.2vw,31px);line-height:1;letter-spacing:-0.01em;font-variant-numeric:tabular-nums;text-shadow:0 1px 6px rgba(0,0,0,0.55);flex:none}
+/* Phones. Three things have to give at once, because the cab fixes the label area at
+   ~55% of the gauge width no matter how wide the gauge gets:
+     1. the description is dropped rather than crushed into a ~30px band,
+     2. the word "Truck" is dropped from every tier (the graphic IS the truck, and
+        "THREE-QUARTER TRUCK" was the string forcing the type down to 12px),
+     3. the type steps up now that the longest string is "THREE-QUARTER", not
+        "THREE-QUARTER TRUCK".
+   Together these take the tier name from 11.9px to ~14px and the price to ~20px, with the
+   band content still only ~133px inside a ~204px band, so there is slack on narrow phones.
+   Deliberately NOT full-bleed: the truck sits at x 16..216 of a 0..220 viewBox, so it fills
+   98% of its own artboard. Bleeding past the section padding puts the rear bumper within a
+   few px of the screen edge and reads as clipped. */
+@media(max-width:760px){
+  .tk-band__desc,.tk-band__unit{display:none}
+  .tk-band__label{flex-direction:row;align-items:center}
+}
 
 
 /* ---- TRUST QUOTES ---- */
@@ -947,7 +1171,25 @@ body.page-home .tq-dot.is-active::before{background:var(--color-fire);transform:
   .hero-content{text-align:center}
   .hero-left .hero-pullquote{text-align:left}
   .hero-buttons{justify-content:center}
-  .owner-inner{grid-template-columns:1fr;grid-template-rows:none;grid-template-areas:"head" "photo" "body";gap:32px}
+  /* Empathy section, mobile order: heading -> the note -> Tony's face -> the ask.
+     Source order is head, photo, body(text + stats + CTA), which used to render the
+     photo before anyone had read a word, and buried the CTA under it. Flex + order
+     lifts the photo down to sit directly above the CTA.
+
+     .owner-body goes display:contents so its children can be ordered as siblings of
+     the photo. Safe here: it carries no box styling at all (no padding, margin,
+     background, border or max-width), only font-size/colour, and display:contents
+     keeps the element in the inheritance chain so those still reach the children.
+
+     gap goes to 0 because with display:contents a flex gap would apply between every
+     paragraph, not just between the three blocks. Spacing is margins instead. */
+  .owner-inner{display:flex;flex-direction:column;gap:0;grid-template-columns:1fr;grid-template-rows:none;grid-template-areas:none}
+  .owner-head{order:1;margin-bottom:28px}
+  .owner-body{display:contents}
+  .owner-body>*{order:2}
+  .owner-body>.owner-stats{order:3}
+  .owner-photo-wrap{order:4;margin-bottom:26px}
+  .owner-body>div:last-child{order:5}   /* the CTA wrapper, always last in the note */
   .owner-section--light{margin-top:0;padding-top:52px}
   .owner-badge{bottom:-12px;right:4px}
 }
@@ -970,9 +1212,12 @@ body.page-home .tq-dot.is-active::before{background:var(--color-fire);transform:
   .pain-pivot-accent{margin:28px auto 32px}
   .section-bridge{padding:48px 20px 56px}
   .section-bridge--final{padding-top:48px;padding-bottom:56px}
-  .trust-ticker-track{padding:11px 0}
-  .t-item{font-size:16px;padding:0 30px;gap:10px}
-  .t-icon{width:21px;height:21px}
+  /* Phones always scroll — five claims cannot fit 375px — so keep the fade mask and
+     tighten the rhythm. Track padding deliberately stays at the desktop 14px: that
+     keeps the track (14+17+14=45) under the 49px min-height floor so the strip lands
+     on exactly 49px. Raising it to 16px overshoots to 49.6 and breaks --ticker-peek. */
+  .t-item{font-size:14px;padding:0 16px;gap:9px;letter-spacing:0.5px}
+  .t-icon{width:17px;height:17px}
   .trust-quotes-grid{grid-template-columns:1fr;gap:14px}
   .trust-quotes{padding:52px 20px}
   .hiw-section + .trust-quotes{padding-top:calc(40px + 6vw)}
@@ -1167,3 +1412,28 @@ body.page-location .faq-section .section-bridge{padding-top:0;padding-bottom:16p
 /* ---- Service-areas county grid heading links ---- */
 .county-card h3 a{color:inherit;text-decoration:none}
 .county-card h3 a:hover{color:var(--color-fire)}
+
+
+/* ── County cluster: geographic internal linking ────────────────────
+   Sits below .locations-hub. Deliberately carries NO data-lat/data-lng,
+   so service-map.js (selector: .locations-hub a[data-lat][data-lng])
+   never picks these up. Purpose is hierarchy: city -> its county hub and
+   its true siblings, county -> only its own cities. */
+.county-cluster{background:var(--color-light-alt);padding:0 32px 52px}
+.county-cluster-inner{max-width:1100px;margin:0 auto;text-align:center;
+  border-top:1px solid var(--color-border);padding-top:34px}
+.county-cluster-label{margin:0 0 10px;font-size:11px;font-weight:700;text-transform:uppercase;
+  letter-spacing:2px;color:var(--color-primary)}
+.county-cluster-lede{margin:0 auto 18px;max-width:62ch;font-size:15px;line-height:1.6;
+  color:var(--color-body)}
+.county-cluster-links{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 6px}
+.county-cluster-links a{font-size:14px;font-weight:600;color:var(--color-body);text-decoration:none;
+  padding:5px 13px;border-radius:4px;border:1px solid var(--color-border);
+  transition:color .15s ease,background .15s ease,border-color .15s ease}
+.county-cluster-links a:hover,.county-cluster-links a:focus-visible{
+  color:#fff;background:var(--color-primary);border-color:var(--color-primary)}
+.county-cluster-links a.county-cluster-hub{color:var(--color-primary);
+  border-color:var(--color-primary);font-weight:700}
+.county-cluster-links a.county-cluster-hub:hover,
+.county-cluster-links a.county-cluster-hub:focus-visible{color:#fff;background:var(--color-primary)}
+@media (max-width:640px){.county-cluster{padding:0 18px 40px}.county-cluster-lede{font-size:14px}}

@@ -57,18 +57,25 @@
   /* ── styles ───────────────────────────────────────────────────────────── */
 
   var CSS = [
-    '.jb-chat-launch{position:fixed;right:20px;bottom:20px;z-index:940;display:flex;align-items:center;gap:10px;',
-    'padding:13px 20px 13px 16px;border:none;cursor:pointer;border-radius:40px;',
-    'font-family:var(--font,"Barlow",sans-serif);font-size:15px;font-weight:700;color:#fff;letter-spacing:.2px;',
+    /* bottom clears the 49px trust ticker (--ticker-peek) plus a 20px gap. The hero is
+       sized so the ticker sits flush at the fold, which puts it in exactly this corner
+       at scroll-top — at bottom:20px the launcher covered the last claim outright, and
+       now that the strip is static on wide screens nothing scrolls out from under it. */
+    /* Circular icon-only bubble. Was a labelled pill roughly 165px wide, which parked on
+       whatever sat in the bottom-right: the Half Truck price card, the "See All Services"
+       button, the hero review attribution. A 56px circle still reads as chat by convention
+       and covers about a fifth of the area. */
+    '.jb-chat-launch{position:fixed;right:20px;bottom:69px;z-index:940;display:flex;align-items:center;justify-content:center;',
+    'width:56px;height:56px;padding:0;border:none;cursor:pointer;border-radius:50%;color:#fff;',
     'background:linear-gradient(135deg,#7B35D4 0%,#5E22AA 100%);',
     'box-shadow:0 4px 20px rgba(123,53,212,.45),0 2px 6px rgba(0,0,0,.3);',
     'transition:transform .2s ease,box-shadow .2s ease,opacity .2s ease}',
     '.jb-chat-launch:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(123,53,212,.55),0 4px 10px rgba(0,0,0,.35)}',
     '.jb-chat-launch:focus-visible{outline:3px solid #FF7A00;outline-offset:3px}',
-    '.jb-chat-launch svg{width:21px;height:21px;flex:0 0 auto}',
+    '.jb-chat-launch svg{width:24px;height:24px;flex:0 0 auto}',
     '.jb-chat-launch.is-hidden{opacity:0;pointer-events:none;transform:scale(.85)}',
     /* the launcher has to clear the mobile sticky call bar (z-index 950, ~62px tall) */
-    '@media(max-width:768px){.jb-chat-launch{right:14px;bottom:76px;padding:12px 17px 12px 14px;font-size:14px}}',
+    '@media(max-width:768px){.jb-chat-launch{right:14px;bottom:76px;width:52px;height:52px}}',
 
     /* Above .site-header (1000) and .mobile-nav (999), because on mobile the panel
        goes full screen and the sticky site header would otherwise cover its own
@@ -261,7 +268,10 @@
   launch.className = 'jb-chat-launch';
   launch.type = 'button';
   launch.setAttribute('aria-label', 'Open chat. Ask us about junk removal.');
-  launch.innerHTML = ICON.chat + '<span>Ask a Brawler</span>';
+  // Icon only. The pill was wide enough to sit on top of the pricing cards, the "See All
+  // Services" button and the hero review attribution. The accessible name lives on the
+  // aria-label above, and the "Ask a Brawler" wording still greets people in the panel header.
+  launch.innerHTML = ICON.chat;
 
   var panel = document.createElement('div');
   panel.className = 'jb-chat-panel';
