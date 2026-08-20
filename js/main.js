@@ -517,6 +517,21 @@
     // height only, so width is unchanged and the ticker keeps gliding uninterrupted.
     if(unitW===lastUnitW && wrapW===lastWrapW) return;
     lastUnitW=unitW; lastWrapW=wrapW;
+    // If one unit already fits the window, don't move at all. Motion is for overflow
+    // only: scrolling content that fits reads as filler, and the cloning below is
+    // what would put the same claim on screen two or three times at once. Wide
+    // desktops land here; phones never do (five claims need ~2.5x a 375px window).
+    if(unitW<=wrapW){
+      track.innerHTML=base;                       // single set, no clones
+      track.classList.add('is-static');
+      wrap.classList.add('is-static');
+      track.style.animation='none';
+      track.style.removeProperty('--ticker-shift');
+      track.style.removeProperty('--ticker-dur');
+      return;
+    }
+    track.classList.remove('is-static');
+    wrap.classList.remove('is-static');
     // Clone until the strip is at least two windows + one unit wide, so the
     // visible window is always full and no empty stretch can trail a unit.
     var need=wrapW*2+unitW, html=base, w=unitW;
