@@ -33,7 +33,7 @@
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-600.woff2" crossorigin>
   <link rel="preload" as="image" href="images/truck.webp" imagesrcset="images/truck-800.webp 800w, images/truck.webp 1600w" imagesizes="100vw" fetchpriority="high">
   <script defer src="js/site-data.js?v=jb37"></script>
-  <link rel="stylesheet" href="css/style.css?v=jb67">
+  <link rel="stylesheet" href="css/style.css?v=jb84">
   <style>
     .hiw-section { padding-top: 80px; }
     .owner-section { padding-bottom: 40px; }
@@ -495,58 +495,6 @@
     </div>
 
   <!-- SECTION 2: PROBLEM AGITATION -->
-  <section class="pain-section" aria-label="Why garage cleanouts get put off">
-    <div class="pain-inner">
-      <h2 class="h2-bridge h2-bridge--dark" style="margin-bottom:16px;">The Garage Filled Up One Box at a Time. Now You Can&rsquo;t Park in It and Don&rsquo;t Know Where to Start.</h2>
-      <ul class="pain-paragraph pain-paragraph--single">
-        <li>The garage is piled so high you don&rsquo;t know where to start, and you figure you&rsquo;d have to sort and bag it all before anyone would even haul it away.</li>
-      </ul>
-      <span class="pain-pivot">You don&rsquo;t need a free weekend. You need one phone call.</span>
-      <ul class="pain-solutions">
-        <li class="pain-answer">No sorting, no staging. You point, Tony and the crew carry it all out. Same-day when you call in the morning.</li>
-        <li class="pain-answer">You don&rsquo;t bag or move a thing first. They handle it exactly as it sits.</li>
-        <li class="pain-answer">Paint, propane, batteries, chemicals, he takes the stuff most haulers won&rsquo;t.</li>
-      </ul>
-    </div>
-    <div class="pain-pivot-accent"></div>
-    <p class="section-bridge section-bridge--light section-bridge--xl" style="padding-bottom:24px;">Here&rsquo;s how the job goes.</p>
-  </section>
-
-  <!-- SECTION 3: HOW IT WORKS -->
-  <section class="hiw-section">
-    <div class="hiw-dotgrid"></div>
-    <div class="hiw-inner">
-      <h2 class="h2-bridge h2-bridge--light">Walk In. Load Out. Done.</h2>
-
-      <div class="hiw-steps">
-        <div class="hiw-connector" aria-hidden="true"></div>
-
-        <div class="hiw-step">
-          <div class="hiw-num"><span>1</span></div>
-          <h3>Walk the Space</h3>
-          <p>Tony does a quick walk through the garage with you. You point out anything you want to keep, he sets it aside. Everything else is fair game. No decisions to make after that. Call <a href="tel:4046329165" style="color:var(--color-fire);font-weight:700;">(404) 632-9165</a> and he can often be there the same day.</p>
-        </div>
-
-        <div class="hiw-step">
-          <div class="hiw-num"><span>2</span></div>
-          <h3>Everything Loaded</h3>
-          <p>We work through the garage systematically, shelves, floor piles, corners, overhead storage. Tools, boxes, old appliances, broken equipment, furniture. It all goes in the truck. You don&rsquo;t lift a thing or make another decision.</p>
-        </div>
-
-        <div class="hiw-step">
-          <div class="hiw-num"><span>3</span></div>
-          <h3>Garage Clear</h3>
-          <p>When Tony&rsquo;s done, the garage is empty. He does a final walkthrough before leaving to make sure nothing was missed. The space is yours again, park in it, use it, sell the house. Whatever you cleared it for.</p>
-        </div>
-      </div>
-
-      <div class="hiw-cta">
-        <a href="tel:4046329165" class="btn-fire" style="font-family:var(--font-heading);font-size:17px;letter-spacing:1.5px;padding:16px 44px;">Call Junk Brawlers &rarr;</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION: PRICING -->
   <section class="pricing-section">
     <!-- Truck drawn from the real rig: white Isuzu cab-over, black dump body with the
          plywood side extensions, single rear axle. Split into tkBack / tkFront so each
@@ -635,63 +583,55 @@
       <h2 class="h2-bridge h2-bridge--light">Half a Load? You Pay for Half.</h2>
       <p class="pricing-intro">The price is based on how much space your items fill in the truck. You get that number on the call, and it doesn&rsquo;t move. Bigger job, bigger load.</p>
 
-      <div class="pricing-trucks">
-
-        <div class="pricing-tier">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Quarter truck load" role="img">
-              <use href="#tkBack"/>
-              <rect x="74" y="80" width="134" height="16" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <use href="#tkFront"/>
-            </svg>
-          </div>
-          <p class="tier-name">Quarter Truck</p>
-          <p class="tier-price">$150</p>
-          <p class="tier-desc">A few items or a single piece</p>
+            <!-- ONE-TRUCK PRICING GAUGE. Rolled out from index.html 2026-08-24, replacing the
+           four .pricing-tier cards. Same reason it replaced them on the homepage: at card
+           size the four fill levels were indistinguishable, so a visitor had to visually
+           diff four objects to read what is really one continuous scale. This renders the
+           SAME truck once at full size and labels the quarter divisions the bed artwork
+           already carried at y=46/63/80.
+           Layering: #tkBack (bed interior) behind, HTML bands over it, #tkFront (posts,
+           cab, wheels) in front. Both use the SVG defs already on this page.
+           This page's own tier copy is carried across: .tier-desc became .tk-band__desc
+           and .tier-badge became .tk-band__badge, which was added for this rollout so the
+           page-specific badge line was not dropped. -->
+      <div class="tk-gauge">
+        <div class="tk-gauge__stage">
+          <svg class="tk-gauge__art" viewBox="0 0 220 130" aria-hidden="true" focusable="false"><use href="#tkBack"/></svg>
+          <ul class="tk-gauge__bands">
+          <li class="tk-band tk-band--full">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Full<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">Full cleanout or major removal</span>
+              <span class="tk-band__badge">Packed 2-car garage</span>
+            </span>
+            <span class="tk-band__price">$600</span>
+          </li>
+          <li class="tk-band tk-band--three">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Three-Quarter<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">Bigger haul or multiple large items</span>
+              <span class="tk-band__badge">Most garage cleanouts</span>
+            </span>
+            <span class="tk-band__price">$450</span>
+          </li>
+          <li class="tk-band tk-band--half">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Half<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">One large item or mixed haul</span>
+              <span class="tk-band__badge">Partial garage</span>
+            </span>
+            <span class="tk-band__price">$300</span>
+          </li>
+          <li class="tk-band tk-band--quarter">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Quarter<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">A few items or a single piece</span>
+            </span>
+            <span class="tk-band__price">$150</span>
+          </li>
+          </ul>
+          <svg class="tk-gauge__art tk-gauge__art--front" viewBox="0 0 220 130" aria-hidden="true" focusable="false"><use href="#tkFront"/></svg>
         </div>
-
-        <div class="pricing-tier tier-highlight">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Half truck load" role="img">
-              <use href="#tkBack"/>
-              <rect x="74" y="64" width="134" height="32" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <use href="#tkFront"/>
-            </svg>
-          </div>
-          <p class="tier-name">Half Truck</p>
-          <p class="tier-price">$300</p>
-          <p class="tier-desc">One large item or mixed haul</p>
-          <span class="tier-badge">Partial garage</span>
-        </div>
-
-        <div class="pricing-tier tier-highlight">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Three-quarter truck load" role="img">
-              <use href="#tkBack"/>
-              <rect x="74" y="47" width="134" height="49" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <use href="#tkFront"/>
-            </svg>
-          </div>
-          <p class="tier-name">Three-Quarter Truck</p>
-          <p class="tier-price">$450</p>
-          <p class="tier-desc">Bigger haul or multiple large items</p>
-          <span class="tier-badge">Most garage cleanouts</span>
-        </div>
-
-        <div class="pricing-tier tier-highlight">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Full truck load" role="img">
-              <use href="#tkBack"/>
-              <rect x="74" y="31" width="134" height="65" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <use href="#tkFront"/>
-            </svg>
-          </div>
-          <p class="tier-name">Full Truck</p>
-          <p class="tier-price">$600</p>
-          <p class="tier-desc">Full cleanout or major removal</p>
-          <span class="tier-badge">Packed 2-car garage</span>
-        </div>
-
       </div>
 
       <div class="pricing-note">
@@ -700,104 +640,44 @@
       </div>
 
       <a href="contact.html" class="btn-fire" style="font-family:var(--font-heading);font-size:17px;letter-spacing:1.5px;padding:16px 44px;">Get a Price &rarr;</a>
-      <p class="section-bridge section-bridge--light" style="margin-top:40px;">Here&rsquo;s the man behind every job.</p>
+    </div>
+        <p class="section-bridge section-bridge--light" style="margin-top:40px;">Here&rsquo;s how the job goes.</p>
+    </section>
+
+<section class="hiw-section">
+    <div class="hiw-dotgrid"></div>
+    <div class="hiw-inner">
+      <h2 class="h2-bridge h2-bridge--light">Walk In. Load Out. Done.</h2>
+
+      <div class="hiw-steps">
+        <div class="hiw-connector" aria-hidden="true"></div>
+
+        <div class="hiw-step">
+          <div class="hiw-num"><span>1</span></div>
+          <h3>Walk the Space</h3>
+          <p>Tony does a quick walk through the garage with you. You point out anything you want to keep, he sets it aside. Everything else is fair game. No decisions to make after that. Call <a href="tel:4046329165" style="color:var(--color-fire);font-weight:700;">(404) 632-9165</a> and he can often be there the same day.</p>
+        </div>
+
+        <div class="hiw-step">
+          <div class="hiw-num"><span>2</span></div>
+          <h3>Everything Loaded</h3>
+          <p>We work through the garage systematically, shelves, floor piles, corners, overhead storage. Tools, boxes, old appliances, broken equipment, furniture. It all goes in the truck. You don&rsquo;t lift a thing or make another decision.</p>
+        </div>
+
+        <div class="hiw-step">
+          <div class="hiw-num"><span>3</span></div>
+          <h3>Garage Clear</h3>
+          <p>When Tony&rsquo;s done, the garage is empty. He does a final walkthrough before leaving to make sure nothing was missed. The space is yours again, park in it, use it, sell the house. Whatever you cleared it for.</p>
+        </div>
+      </div>
+
+      <div class="hiw-cta">
+        <a href="tel:4046329165" class="btn-fire" style="font-family:var(--font-heading);font-size:17px;letter-spacing:1.5px;padding:16px 44px;">Call Junk Brawlers &rarr;</a>
+      </div>
     </div>
   </section>
 
-  <!-- SECTION 4: THE BRAWLER STANDARD (was "WHY TONY")
-       Dark variant of index.html's Standard section. The copy this replaced promised
-       the owner personally on every job, which is the claim we are retiring: it only
-       holds while Tony is a one-man operation, and a single job run by the crew alone
-       falsifies it. The standard is the claim that scales past him.
-       Kept: the garage keyword in the H2 and the 60% named-by-name proof.
-       Review is L2W Services, verbatim, and is not used elsewhere on this page. -->
-  <section class="owner-section owner-section--standard" style="clip-path:polygon(0 6vw,100% 0%,100% 100%,0% 100%);margin-top:-6vw;padding-top:calc(80px + 6vw);z-index:10;" aria-label="The Brawler Standard for garage cleanouts">
-    <div class="std-dotgrid" aria-hidden="true"></div>
-    <div class="std-head">
-      <span class="standard-eyebrow">The Brawler Standard</span>
-      <h2 class="h2-bridge h2-bridge--dark">Tony Built the Standard. The Crew Brings It to Your Garage.</h2>
-      <p class="std-lead">Most haulers send whoever&rsquo;s available. You don&rsquo;t know who&rsquo;s showing up until they&rsquo;re standing in your garage. Call <strong>Junk Brawlers</strong> and a Brawler answers. The crew that pulls up is the crew Tony trained, working to the standard he wrote down.</p>
-    </div>
-
-    <div class="std-rig-row">
-      <figure class="std-figure std-figure--rig">
-        <div class="duo-media">
-          <picture>
-            <source srcset="images/rig-branded-800.webp 800w, images/rig-branded.webp 1600w" sizes="(max-width:860px) 100vw, 620px" type="image/webp">
-            <img src="images/rig-branded.jpg" alt="The Junk Brawlers dump truck used for garage cleanouts, name, logo and phone number on the side panel" width="1600" height="1200" loading="lazy" decoding="async">
-          </picture>
-          <div class="std-plate" aria-hidden="true">
-            <span class="std-plate-name">The Rig</span>
-            <span class="std-plate-sub">Junk Brawlers</span>
-          </div>
-        </div>
-        <figcaption>
-          <span class="duo-sub">A dedicated dump truck with our name and number on the side of it. Not a trailer behind a pickup.</span>
-        </figcaption>
-      </figure>
-      <div class="std-rig-aside">
-        <p class="std-rig-claim">You&rsquo;ll know exactly who&rsquo;s walking into your garage.</p>
-        <p class="std-lead std-lead--aside">A marked truck. An owner you can look up in the state&rsquo;s records. The same crew every time, never subcontractors, never rotating strangers. They work to a standard Tony wrote down and trained them to, which is why the reviews read the same whether he&rsquo;s on the job or not. He&rsquo;s named by name in 60% of them. Not because he asks. Because people remember him.</p>
-        <div class="owner-stats std-stats">
-          <div class="owner-stat">
-            <span class="stat-val fire" data-jb-rating data-count-up>5.0</span>
-            <span class="stat-lbl">Star Average</span>
-          </div>
-          <div class="owner-stat">
-            <span class="stat-val fire" data-jb-count data-count-up>60+</span>
-            <span class="stat-lbl">Five-Star Reviews</span>
-          </div>
-          <div class="owner-stat">
-            <span class="stat-val fire">0</span>
-            <span class="stat-lbl">No-Shows</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <figure class="std-quote">
-      <span class="rw-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-      <blockquote>&ldquo;The guys were great And the owner was extremely attentive! Thanks Again Tony&rdquo;</blockquote>
-      <figcaption>L2W Services &middot; Google Review &middot; 5&#9733;</figcaption>
-    </figure>
-
-    <div class="std-doc-row">
-      <div class="std-doc">
-        <p class="standard-lead">A <strong data-jb-rating>5.0</strong> average across every review we&rsquo;ve ever gotten. That isn&rsquo;t luck. <em>It&rsquo;s a checklist.</em></p>
-        <ul class="standard-list">
-          <li><strong>A Brawler answers the phone.</strong> Never a call center.</li>
-          <li><strong>You get a price on the call.</strong> The quoted price is the price you pay.</li>
-          <li><strong>We text before we come,</strong> and we show up when we said we would.</li>
-          <li><strong>Nothing gets tossed</strong> until you confirm it.</li>
-          <li><strong>We sweep the space clean</strong> before we leave.</li>
-          <li><strong>A dedicated dump truck.</strong> Not a trailer behind a pickup.</li>
-          <li><strong>Resold on Facebook Marketplace, donated, or recycled first.</strong> The landfill is last.</li>
-          <li><strong>Licensed, insured,</strong> and workers&rsquo; comp covered.</li>
-        </ul>
-        <div class="std-close">
-          <p class="standard-remedy">If a crew ever misses the standard, tell Tony. He makes it right.</p>
-          <p class="standard-accountable">Junk Brawlers LLC is registered with the Georgia Secretary of State, and Tony Frias is named on the filing.</p>
-          <div class="standard-cta">
-            <a href="tel:4046329165" class="btn-fire">Call Junk Brawlers &rarr;</a>
-          </div>
-        </div>
-      </div>
-      <figure class="std-figure std-figure--tony">
-        <div class="duo-media">
-          <picture>
-            <source srcset="images/team-headshot.webp" type="image/webp">
-            <img src="images/team-headshot.jpg" alt="Tony Frias, owner of Junk Brawlers LLC, garage cleanouts North Georgia" width="340" height="339" loading="lazy">
-          </picture>
-        </div>
-        <figcaption>
-          <span class="duo-sub">Tony Frias &middot; Owner &amp; Founder</span>
-        </figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- REVIEWS -->
-  <section class="trust-quotes" aria-label="Customer reviews about garage cleanouts">
+<section class="trust-quotes" aria-label="Customer reviews about garage cleanouts">
     <div class="trust-quotes-inner">
       <h2 class="trust-quotes-heading h2-bridge h2-bridge--dark">You Point. We Load. Garage Clear.</h2>
       <div class="trust-quotes-grid">
@@ -825,7 +705,129 @@
         <a href="https://share.google/5doX6CrAHd0P3t3kZ" target="_blank" rel="noopener" class="btn-ghost-white tq-all-reviews" aria-label="Read all Google reviews for Junk Brawlers">Read all <span data-jb-count>60+</span> Reviews on Google &rarr;</a>
       </div>
     </div>
+        <p class="section-bridge section-bridge--dark" style="margin-top:40px;">Here&rsquo;s the man behind every job.</p>
+    </section>
+
+  <!-- SECTION: A NOTE FROM TONY + THE BRAWLER STANDARD.
+       Built 2026-08-24. Replaces the .pain-section that used to open this page and the
+       .owner-section that used to sit mid-page.
+
+       Why it moved: the "pain" content here was never really pain, it was this page's best
+       objection handling, and it was dressed as a fear headline and placed before anything
+       else. A visitor who searched for this service already knows they have the problem.
+       Same three answers, now spoken in first person, positioned where trust-building
+       belongs. Precedent and rationale are on index.html, where the three worries were
+       deliberately rewritten out of a bulleted list and into sentences.
+
+       .tl-top brings its own dark-to-purple ground and a 140px white fade at its foot, so it
+       meets the dark .trust-quotes above with no seam and lands on the white Standard below
+       under its own steam. No wedge needed. -->
+  <section class="std-section std-section--with-note" aria-label="A note from Tony, owner of Junk Brawlers, and the Brawler Standard for garage cleanouts">
+    <div class="tl-top">
+     <div class="tl-top-inner">
+
+      <div class="tl-lede">
+        <span class="tl-eyebrow">A note from Tony</span>
+        <p class="tl-hook">The garage did not fill up in a weekend.</p>
+        <p>It went one box at a time, and now it is piled high enough that you do not know where to start. Most people assume they have to sort and bag the whole thing before anyone would haul it.</p>
+        <p>You do not. No sorting, no staging. You point and the crew carries it out exactly as it sits, same day when you call in the morning. And we take the things most haulers turn down: paint, propane, batteries, chemicals.</p>
+        <p class="tl-close">You do not need a free weekend. You need one phone call.</p>
+        <div class="tl-signoff">
+          <span class="tl-signoff-name">Tony Frias</span>
+          <span class="tl-signoff-role">Owner, Junk Brawlers LLC</span>
+        </div>
+      </div>
+
+      <aside class="tl-aside">
+        <figure class="tl-photo">
+          <picture>
+            <source srcset="images/team-headshot.webp" type="image/webp">
+            <img src="images/team-headshot.jpg" alt="Tony Frias, owner of Junk Brawlers LLC, garage cleanouts North Georgia" width="340" height="339" loading="lazy" decoding="async">
+          </picture>
+          <figcaption class="tl-photo-cap">Tony Frias &middot; Owner</figcaption>
+        </figure>
+        <div class="tl-record" aria-label="Our record">
+          <div class="tl-stat"><span class="tl-stat-val" data-jb-rating data-count-up>5.0</span><span class="tl-stat-lbl">Star Average</span></div>
+          <div class="tl-stat"><span class="tl-stat-val" data-jb-count data-count-up>60+</span><span class="tl-stat-lbl">Five-Star Reviews</span></div>
+          <div class="tl-stat"><span class="tl-stat-val">0</span><span class="tl-stat-lbl">No-Shows</span></div>
+        </div>
+      </aside>
+
+     </div>
+    </div>
+
+    <div class="tl-body">
+     <div class="tl-body-inner">
+
+      <div class="tl-standard">
+        <h2 class="tl-standard-title">Tony Built the Standard. The Crew Brings It to Your Garage.</h2>
+        <p class="tl-standard-lede"><mark class="tl-mark--circle">That isn&rsquo;t luck. It&rsquo;s a checklist.</mark></p>
+        <figure class="tl-rig">
+          <div class="tl-rig-stack">
+            <div class="tl-rig-shot tl-rig-shot--truck">
+              <picture>
+                <source srcset="images/rig-branded-800.webp 800w, images/rig-branded.webp 1600w" sizes="(max-width:768px) 90vw, 300px" type="image/webp">
+                <img src="images/rig-branded.jpg" alt="The Junk Brawlers dump truck with the company name and phone number on the side, used for garage cleanouts" width="1600" height="1200" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="tl-rig-shot tl-rig-shot--crew">
+              <img src="images/gbp-crew-loading-carpet-sm.webp" alt="A Junk Brawlers crew loading carpet and scrap into the dump truck on a North Georgia job" width="560" height="747" loading="lazy" decoding="async">
+            </div>
+          </div>
+          <figcaption class="tl-rig-cap">Our own marked truck. Our own crew on it.</figcaption>
+        </figure>
+        <ol class="tl-promises">
+          <li class="tl-promise">
+            <span class="tl-promise-n">01</span>
+            <div class="tl-promise-body">
+              <strong>One honest price, start to finish.</strong>
+              <p>A real Brawler answers, never a call center. You get the price on the call, and that quote is the number you pay.</p>
+            </div>
+          </li>
+          <li class="tl-promise">
+            <span class="tl-promise-n">02</span>
+            <div class="tl-promise-body">
+              <strong>You point. We carry.</strong>
+              <p>No sorting, no staging, no bagging. We take it exactly as it sits, including the paint, propane and batteries most haulers turn down.</p>
+            </div>
+          </li>
+          <li class="tl-promise">
+            <span class="tl-promise-n">03</span>
+            <div class="tl-promise-body">
+              <strong>Hauled right, and fully covered.</strong>
+              <p>Donated, resold, or recycled first, with the landfill last. Licensed, insured, and workers&rsquo; comp covered.</p>
+            </div>
+          </li>
+        </ol>
+        <div class="tl-cta tl-cta--standard">
+          <a href="contact.html" class="btn-ghost-white">Get Your Price &rarr;</a>
+          <span class="tl-cta-note">Free, no obligation. Usually same day.</span>
+        </div>
+      </div>
+
+      <figure class="tl-clip">
+        <span class="tl-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <blockquote>&ldquo;Great group of guys! Got everything out of garage quick!! Would definitely recommend!!!&rdquo;</blockquote>
+        <figcaption>Kevin Lindberg &middot; Google Review &middot; 5&#9733;</figcaption>
+      </figure>
+
+     </div>
+    </div>
   </section>
+
+  <!-- Slide-in reveal for the Brawler Standard. Same gate as the homepage: no-JS and
+       reduced-motion keep it visible. -->
+  <script>
+  (function(){
+    var s=document.querySelector('.tl-standard');
+    if(!s||!('IntersectionObserver' in window))return;
+    if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+    s.classList.add('tl-anim-ready');
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){s.classList.add('is-in');io.disconnect();}});},{threshold:0.25});
+    io.observe(s);
+  })();
+  </script>
+
 
   <!-- SECTION 5: FAQ -->
   <section class="faq-section" aria-label="Garage cleanout frequently asked questions">

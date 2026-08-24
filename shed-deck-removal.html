@@ -33,7 +33,7 @@
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-600.woff2" crossorigin>
   <link rel="preload" as="image" href="images/truck.webp" imagesrcset="images/truck-800.webp 800w, images/truck.webp 1600w" imagesizes="100vw" fetchpriority="high">
   <script defer src="js/site-data.js?v=jb37"></script>
-  <link rel="stylesheet" href="css/style.css?v=jb67">
+  <link rel="stylesheet" href="css/style.css?v=jb84">
   <style>
     .hiw-section { padding-top: 80px; }
   </style>
@@ -488,58 +488,6 @@
     </div>
 
   <!-- SECTION 2: PROBLEM AGITATION -->
-  <section class="pain-section" aria-label="Why shed and deck removal gets put off">
-    <div class="pain-inner">
-      <h2 class="h2-bridge h2-bridge--dark" style="margin-bottom:16px;">That Leaning Shed Isn&rsquo;t Going to Take Itself Apart. And You Shouldn&rsquo;t Have To Either.</h2>
-      <ul class="pain-paragraph pain-paragraph--single">
-        <li>The shed&rsquo;s rotting or leaning, and you assume you&rsquo;d have to tear it down yourself before anyone would haul the pile, then deal with a yard full of nails.</li>
-      </ul>
-      <span class="pain-pivot">Junk Brawlers tears it down. You don&rsquo;t lift a board.</span>
-      <ul class="pain-solutions">
-        <li class="pain-answer">Full teardown is included. We take the whole structure apart, you don&rsquo;t lift a board.</li>
-        <li class="pain-answer">Wood, metal, or plastic, shed or deck, he handles the demo and the haul in one job.</li>
-        <li class="pain-answer">He cleans the site when he&rsquo;s done. No debris, no nails left behind.</li>
-      </ul>
-    </div>
-    <div class="pain-pivot-accent"></div>
-    <p class="section-bridge section-bridge--light section-bridge--xl" style="padding-bottom:24px;">Here&rsquo;s how the job goes.</p>
-  </section>
-
-  <!-- SECTION 3: HOW IT WORKS -->
-  <section class="hiw-section">
-    <div class="hiw-dotgrid"></div>
-    <div class="hiw-inner">
-      <h2 class="h2-bridge h2-bridge--light">Break It Down. Load It Out. Yard Clear.</h2>
-
-      <div class="hiw-steps">
-        <div class="hiw-connector" aria-hidden="true"></div>
-
-        <div class="hiw-step">
-          <div class="hiw-num"><span>1</span></div>
-          <h3>Break It Down</h3>
-          <p>Tony shows up with the tools to demolish it, you don&rsquo;t pre-remove anything. He disassembles the shed or deck on-site, pulling boards, stripping roofing, and breaking down the framing. The structure comes apart piece by piece. Call <a href="tel:4046329165" style="color:var(--color-fire);font-weight:700;">(404) 632-9165</a> and he&rsquo;ll tell you what to expect for your specific structure.</p>
-        </div>
-
-        <div class="hiw-step">
-          <div class="hiw-num"><span>2</span></div>
-          <h3>Load It Out</h3>
-          <p>Every piece goes in the truck, wood, roofing material, metal framing, hardware, nails. Nothing gets left in a pile for you to deal with later. Tony&rsquo;s crew loads it all out in the same visit as the demolition. One trip, not two.</p>
-        </div>
-
-        <div class="hiw-step">
-          <div class="hiw-num"><span>3</span></div>
-          <h3>Yard Clear</h3>
-          <p>After loading, Tony sweeps the area. Loose debris, scattered nails, leftover hardware, he does a final pass before he leaves. What was there is gone. The yard is ready for whatever you&rsquo;re putting there next, or ready for a buyer to walk through.</p>
-        </div>
-      </div>
-
-      <div class="hiw-cta">
-        <a href="tel:4046329165" class="btn-fire" style="font-family:var(--font-heading);font-size:17px;letter-spacing:1.5px;padding:16px 44px;">Call Junk Brawlers &rarr;</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION: PRICING -->
   <section class="pricing-section">
     <!-- Truck drawn from the real rig: white Isuzu cab-over, black dump body with the
          plywood side extensions, single rear axle. Split into tkBack / tkFront so each
@@ -628,63 +576,55 @@
       <h2 class="h2-bridge h2-bridge--light">Small Shed or Full Deck, You Pay for What Goes.</h2>
       <p class="pricing-intro">Pricing is by how much space the demolished material fills in the truck. A small shed fills less. A large deck or both shed and deck fills more. You get the number upfront.</p>
 
-      <div class="pricing-trucks">
-
-        <div class="pricing-tier">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Quarter truck load" role="img">
-              <use href="#tkBack"/>
-              <rect x="74" y="80" width="134" height="16" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <use href="#tkFront"/>
-            </svg>
-          </div>
-          <p class="tier-name">Quarter Truck</p>
-          <p class="tier-price">$150</p>
-          <p class="tier-desc">A few items or a single piece</p>
+            <!-- ONE-TRUCK PRICING GAUGE. Rolled out from index.html 2026-08-24, replacing the
+           four .pricing-tier cards. Same reason it replaced them on the homepage: at card
+           size the four fill levels were indistinguishable, so a visitor had to visually
+           diff four objects to read what is really one continuous scale. This renders the
+           SAME truck once at full size and labels the quarter divisions the bed artwork
+           already carried at y=46/63/80.
+           Layering: #tkBack (bed interior) behind, HTML bands over it, #tkFront (posts,
+           cab, wheels) in front. Both use the SVG defs already on this page.
+           This page's own tier copy is carried across: .tier-desc became .tk-band__desc
+           and .tier-badge became .tk-band__badge, which was added for this rollout so the
+           page-specific badge line was not dropped. -->
+      <div class="tk-gauge">
+        <div class="tk-gauge__stage">
+          <svg class="tk-gauge__art" viewBox="0 0 220 130" aria-hidden="true" focusable="false"><use href="#tkBack"/></svg>
+          <ul class="tk-gauge__bands">
+          <li class="tk-band tk-band--full">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Full<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">Full cleanout or major removal</span>
+              <span class="tk-band__badge">Large structure or shed + deck</span>
+            </span>
+            <span class="tk-band__price">$600</span>
+          </li>
+          <li class="tk-band tk-band--three">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Three-Quarter<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">Bigger haul or multiple large items</span>
+              <span class="tk-band__badge">Full-size shed or full deck</span>
+            </span>
+            <span class="tk-band__price">$450</span>
+          </li>
+          <li class="tk-band tk-band--half">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Half<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">One large item or mixed haul</span>
+              <span class="tk-band__badge">Small shed or deck section</span>
+            </span>
+            <span class="tk-band__price">$300</span>
+          </li>
+          <li class="tk-band tk-band--quarter">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Quarter<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">A few items or a single piece</span>
+            </span>
+            <span class="tk-band__price">$150</span>
+          </li>
+          </ul>
+          <svg class="tk-gauge__art tk-gauge__art--front" viewBox="0 0 220 130" aria-hidden="true" focusable="false"><use href="#tkFront"/></svg>
         </div>
-
-        <div class="pricing-tier tier-highlight">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Half truck load" role="img">
-              <use href="#tkBack"/>
-              <rect x="74" y="64" width="134" height="32" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <use href="#tkFront"/>
-            </svg>
-          </div>
-          <p class="tier-name">Half Truck</p>
-          <p class="tier-price">$300</p>
-          <p class="tier-desc">One large item or mixed haul</p>
-          <span class="tier-badge">Small shed or deck section</span>
-        </div>
-
-        <div class="pricing-tier tier-highlight">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Three-quarter truck load" role="img">
-              <use href="#tkBack"/>
-              <rect x="74" y="47" width="134" height="49" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <use href="#tkFront"/>
-            </svg>
-          </div>
-          <p class="tier-name">Three-Quarter Truck</p>
-          <p class="tier-price">$450</p>
-          <p class="tier-desc">Bigger haul or multiple large items</p>
-          <span class="tier-badge">Full-size shed or full deck</span>
-        </div>
-
-        <div class="pricing-tier tier-highlight">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Full truck load" role="img">
-              <use href="#tkBack"/>
-              <rect x="74" y="31" width="134" height="65" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <use href="#tkFront"/>
-            </svg>
-          </div>
-          <p class="tier-name">Full Truck</p>
-          <p class="tier-price">$600</p>
-          <p class="tier-desc">Full cleanout or major removal</p>
-          <span class="tier-badge">Large structure or shed + deck</span>
-        </div>
-
       </div>
 
       <div class="pricing-note">
@@ -693,45 +633,44 @@
       </div>
 
       <a href="contact.html" class="btn-fire" style="font-family:var(--font-heading);font-size:17px;letter-spacing:1.5px;padding:16px 44px;">Get a Price &rarr;</a>
-      <p class="section-bridge section-bridge--light" style="margin-top:40px;">Here&rsquo;s the man behind every job.</p>
+    </div>
+        <p class="section-bridge section-bridge--light" style="margin-top:40px;">Here&rsquo;s how the job goes.</p>
+    </section>
+
+<section class="hiw-section">
+    <div class="hiw-dotgrid"></div>
+    <div class="hiw-inner">
+      <h2 class="h2-bridge h2-bridge--light">Break It Down. Load It Out. Yard Clear.</h2>
+
+      <div class="hiw-steps">
+        <div class="hiw-connector" aria-hidden="true"></div>
+
+        <div class="hiw-step">
+          <div class="hiw-num"><span>1</span></div>
+          <h3>Break It Down</h3>
+          <p>Tony shows up with the tools to demolish it, you don&rsquo;t pre-remove anything. He disassembles the shed or deck on-site, pulling boards, stripping roofing, and breaking down the framing. The structure comes apart piece by piece. Call <a href="tel:4046329165" style="color:var(--color-fire);font-weight:700;">(404) 632-9165</a> and he&rsquo;ll tell you what to expect for your specific structure.</p>
+        </div>
+
+        <div class="hiw-step">
+          <div class="hiw-num"><span>2</span></div>
+          <h3>Load It Out</h3>
+          <p>Every piece goes in the truck, wood, roofing material, metal framing, hardware, nails. Nothing gets left in a pile for you to deal with later. Tony&rsquo;s crew loads it all out in the same visit as the demolition. One trip, not two.</p>
+        </div>
+
+        <div class="hiw-step">
+          <div class="hiw-num"><span>3</span></div>
+          <h3>Yard Clear</h3>
+          <p>After loading, Tony sweeps the area. Loose debris, scattered nails, leftover hardware, he does a final pass before he leaves. What was there is gone. The yard is ready for whatever you&rsquo;re putting there next, or ready for a buyer to walk through.</p>
+        </div>
+      </div>
+
+      <div class="hiw-cta">
+        <a href="tel:4046329165" class="btn-fire" style="font-family:var(--font-heading);font-size:17px;letter-spacing:1.5px;padding:16px 44px;">Call Junk Brawlers &rarr;</a>
+      </div>
     </div>
   </section>
 
-  <!-- OWNER SECTION -->
-  <section class="owner-section" style="clip-path:polygon(0 6vw,100% 0%,100% 100%,0% 100%);margin-top:-6vw;padding-top:calc(80px + 6vw);z-index:10;">
-    <div class="owner-inner">
-      <div class="owner-head">
-        <div class="owner-text-head">
-          <div class="owner-accent-bar"></div>
-          <h2 class="h2-bridge h2-bridge--dark">Owner on Every Job. You Know Who&rsquo;s Showing Up.</h2>
-        </div>
-      </div>
-      <div class="owner-photo-wrap">
-        <picture>
-          <source srcset="images/team-headshot.webp" type="image/webp">
-          <img src="images/team-headshot.jpg" alt="Tony Frias, owner of Junk Brawlers, shed and deck removal North Georgia" width="340" height="339" loading="lazy">
-        </picture>
-        <div class="owner-badge">
-          <span class="owner-badge-score">&#9733; 5.0</span>
-          <span class="owner-badge-label"><span data-jb-count>60+</span> Google Reviews</span>
-        </div>
-      </div>
-      <div class="owner-body">
-        <p>Most haulers send whoever&rsquo;s available. You don&rsquo;t know who&rsquo;s showing up until they&rsquo;re in your yard. Tony leads the crew. He&rsquo;s the one who answered the phone, gave you the price, and he&rsquo;s on the job when the truck pulls up. <strong>Same owner, start to finish.</strong></p>
-        <p>When you call <strong style="color:#fff;">Junk Brawlers</strong>, you&rsquo;re talking to <strong style="color:#fff;">Tony Frias</strong>, the owner. The same owner who picks up the phone is on the job at your door, with his crew. <strong>No call centers, no strangers on your property, no surprises when the job is done.</strong></p>
-        <p>He&rsquo;s <strong>named by name in 60% of his reviews.</strong> Not because he asks for it. Because people remember him.</p>
-        <div class="owner-stats">
-          <div class="owner-stat"><span class="stat-val fire" data-jb-count>60+</span><span class="stat-lbl">Five-Star Reviews</span></div>
-          <div class="owner-stat"><span class="stat-val fire" data-jb-rating>5.0</span><span class="stat-lbl">Star Average</span></div>
-          <div class="owner-stat"><span class="stat-val fire">0</span><span class="stat-lbl">No-Shows</span></div>
-        </div>
-        <div style="margin-top:24px;"><a href="tel:4046329165" class="btn-fire">Call Junk Brawlers &rarr;</a></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REVIEWS -->
-  <section class="trust-quotes" aria-label="Customer reviews about shed and deck removal">
+<section class="trust-quotes" aria-label="Customer reviews about shed and deck removal">
     <div class="trust-quotes-inner">
       <h2 class="trust-quotes-heading h2-bridge h2-bridge--dark">Torn Down. Hauled Away. Yard Clear.</h2>
       <div class="trust-quotes-grid">
@@ -759,7 +698,129 @@
         <a href="https://share.google/5doX6CrAHd0P3t3kZ" target="_blank" rel="noopener" class="btn-ghost-white tq-all-reviews" aria-label="Read all Google reviews for Junk Brawlers">Read all <span data-jb-count>60+</span> Reviews on Google &rarr;</a>
       </div>
     </div>
+        <p class="section-bridge section-bridge--dark" style="margin-top:40px;">Here&rsquo;s the man behind every job.</p>
+    </section>
+
+  <!-- SECTION: A NOTE FROM TONY + THE BRAWLER STANDARD.
+       Built 2026-08-24. Replaces the .pain-section that used to open this page and the
+       .owner-section that used to sit mid-page.
+
+       Why it moved: the "pain" content here was never really pain, it was this page's best
+       objection handling, and it was dressed as a fear headline and placed before anything
+       else. A visitor who searched for this service already knows they have the problem.
+       Same three answers, now spoken in first person, positioned where trust-building
+       belongs. Precedent and rationale are on index.html, where the three worries were
+       deliberately rewritten out of a bulleted list and into sentences.
+
+       .tl-top brings its own dark-to-purple ground and a 140px white fade at its foot, so it
+       meets the dark .trust-quotes above with no seam and lands on the white Standard below
+       under its own steam. No wedge needed. -->
+  <section class="std-section std-section--with-note" aria-label="A note from Tony, owner of Junk Brawlers, and the Brawler Standard for shed and deck removal">
+    <div class="tl-top">
+     <div class="tl-top-inner">
+
+      <div class="tl-lede">
+        <span class="tl-eyebrow">A note from Tony</span>
+        <p class="tl-hook">Nobody wants to spend a Saturday pulling nails.</p>
+        <p>The shed is rotting or leaning, and you assume you would have to tear it down yourself before anyone would haul the pile, then deal with a yard full of nails after.</p>
+        <p>The teardown is included. The crew takes the whole structure apart and you do not lift a board. Wood, metal or plastic, shed or deck, the demo and the haul are one job. And we clean the site when we are done, so there is no debris and nothing left in the grass.</p>
+        <p class="tl-close">Tell me what is standing out there and you will have a price up front.</p>
+        <div class="tl-signoff">
+          <span class="tl-signoff-name">Tony Frias</span>
+          <span class="tl-signoff-role">Owner, Junk Brawlers LLC</span>
+        </div>
+      </div>
+
+      <aside class="tl-aside">
+        <figure class="tl-photo">
+          <picture>
+            <source srcset="images/team-headshot.webp" type="image/webp">
+            <img src="images/team-headshot.jpg" alt="Tony Frias, owner of Junk Brawlers LLC, shed and deck removal North Georgia" width="340" height="339" loading="lazy" decoding="async">
+          </picture>
+          <figcaption class="tl-photo-cap">Tony Frias &middot; Owner</figcaption>
+        </figure>
+        <div class="tl-record" aria-label="Our record">
+          <div class="tl-stat"><span class="tl-stat-val" data-jb-rating data-count-up>5.0</span><span class="tl-stat-lbl">Star Average</span></div>
+          <div class="tl-stat"><span class="tl-stat-val" data-jb-count data-count-up>60+</span><span class="tl-stat-lbl">Five-Star Reviews</span></div>
+          <div class="tl-stat"><span class="tl-stat-val">0</span><span class="tl-stat-lbl">No-Shows</span></div>
+        </div>
+      </aside>
+
+     </div>
+    </div>
+
+    <div class="tl-body">
+     <div class="tl-body-inner">
+
+      <div class="tl-standard">
+        <h2 class="tl-standard-title">Tony Built the Standard. The Crew Brings It to Your Yard.</h2>
+        <p class="tl-standard-lede"><mark class="tl-mark--circle">That isn&rsquo;t luck. It&rsquo;s a checklist.</mark></p>
+        <figure class="tl-rig">
+          <div class="tl-rig-stack">
+            <div class="tl-rig-shot tl-rig-shot--truck">
+              <picture>
+                <source srcset="images/rig-branded-800.webp 800w, images/rig-branded.webp 1600w" sizes="(max-width:768px) 90vw, 300px" type="image/webp">
+                <img src="images/rig-branded.jpg" alt="The Junk Brawlers dump truck with the company name and phone number on the side, used for shed and deck removal" width="1600" height="1200" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="tl-rig-shot tl-rig-shot--crew">
+              <img src="images/gbp-crew-loading-carpet-sm.webp" alt="A Junk Brawlers crew loading carpet and scrap into the dump truck on a North Georgia job" width="560" height="747" loading="lazy" decoding="async">
+            </div>
+          </div>
+          <figcaption class="tl-rig-cap">Our own marked truck. Our own crew on it.</figcaption>
+        </figure>
+        <ol class="tl-promises">
+          <li class="tl-promise">
+            <span class="tl-promise-n">01</span>
+            <div class="tl-promise-body">
+              <strong>One honest price, start to finish.</strong>
+              <p>A real Brawler answers, never a call center. You get the price on the call, and that quote is the number you pay.</p>
+            </div>
+          </li>
+          <li class="tl-promise">
+            <span class="tl-promise-n">02</span>
+            <div class="tl-promise-body">
+              <strong>The teardown is included.</strong>
+              <p>The whole structure comes apart and you do not lift a board. Wood, metal or plastic, shed or deck, demo and haul are one job.</p>
+            </div>
+          </li>
+          <li class="tl-promise">
+            <span class="tl-promise-n">03</span>
+            <div class="tl-promise-body">
+              <strong>Site left clean, and fully covered.</strong>
+              <p>No debris and no nails left in the grass. Licensed, insured, and workers&rsquo; comp covered.</p>
+            </div>
+          </li>
+        </ol>
+        <div class="tl-cta tl-cta--standard">
+          <a href="contact.html" class="btn-ghost-white">Get Your Price &rarr;</a>
+          <span class="tl-cta-note">Free, no obligation. Usually same day.</span>
+        </div>
+      </div>
+
+      <figure class="tl-clip">
+        <span class="tl-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <blockquote>&ldquo;Antonio is fantastic. He is extremely energetic and he delivers positive results. He&rsquo;ll be my go to for outside projects. Highly recommended!!!&rdquo;</blockquote>
+        <figcaption>Matthew Diersen &middot; Google Review &middot; 5&#9733;</figcaption>
+      </figure>
+
+     </div>
+    </div>
   </section>
+
+  <!-- Slide-in reveal for the Brawler Standard. Same gate as the homepage: no-JS and
+       reduced-motion keep it visible. -->
+  <script>
+  (function(){
+    var s=document.querySelector('.tl-standard');
+    if(!s||!('IntersectionObserver' in window))return;
+    if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+    s.classList.add('tl-anim-ready');
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){s.classList.add('is-in');io.disconnect();}});},{threshold:0.25});
+    io.observe(s);
+  })();
+  </script>
+
 
   <!-- FAQ -->
   <section class="faq-section" aria-label="Shed and deck removal frequently asked questions">

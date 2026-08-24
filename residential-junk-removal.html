@@ -33,10 +33,9 @@
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-600.woff2" crossorigin>
   <link rel="preload" as="image" href="images/truck.webp" imagesrcset="images/truck-800.webp 800w, images/truck.webp 1600w" imagesizes="100vw" fetchpriority="high">
   <script defer src="js/site-data.js?v=jb37"></script>
-  <link rel="stylesheet" href="css/style.css?v=jb67">
+  <link rel="stylesheet" href="css/style.css?v=jb84">
   <style>
     .hiw-section { padding-top: 80px; }
-    .owner-section { padding-bottom: 40px; }
     .owner-inner { gap: 24px 56px; }
     .owner-text-head { margin-bottom: 0; }
     .faq-section .section-bridge { padding-top: 0; padding-bottom: 16px; }
@@ -255,10 +254,11 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type":"Question","name":"Do I have to sort or move anything before you arrive?","acceptedAnswer":{"@type":"Answer","text":"No. The crew loads from wherever things sit. Walk through with Tony, point out what stays, and they carry out the rest. No sorting, no bagging, no dragging it to the driveway."}},
-    {"@type":"Question","name":"Can you take just one item?","acceptedAnswer":{"@type":"Answer","text":"Yes. One couch, one fridge, one hot tub. There is no minimum. You pay for the space it takes in the truck, not a flat call-out fee."}},
-    {"@type":"Question","name":"Will the price change once you see it?","acceptedAnswer":{"@type":"Answer","text":"No. The price quoted is the price paid. Tony prices the job before anything is loaded, and that number does not move in the driveway."}},
+    {"@type":"Question","name":"What if I have several different things to get rid of at once?","acceptedAnswer":{"@type":"Answer","text":"That is one job, not several. An appliance, a mattress and a shed go on the same truck on the same trip, and you get one price for the lot rather than a separate quote per item."}},
+    {"@type":"Question","name":"Can you take just one item, or is there a minimum?","acceptedAnswer":{"@type":"Answer","text":"Yes, and no. One couch, one fridge, one hot tub. There is no minimum. You pay for the space it takes in the truck, not a flat call-out fee."}},
+    {"@type":"Question","name":"Is a garage cleanout different from a full house cleanout?","acceptedAnswer":{"@type":"Answer","text":"Different scope, same crew. A garage is usually one trip and one afternoon. Clearing a whole property after a death or a hoarding situation runs longer and gets handled more slowly, and that work lives on the cleanout services page."}},
     {"@type":"Question","name":"Do you go inside the house, or only the curb?","acceptedAnswer":{"@type":"Answer","text":"Inside. Upstairs, basements, attics, back bedrooms. The carry is included in the quote rather than added to the invoice afterward."}},
+    {"@type":"Question","name":"Will the price change once you see it?","acceptedAnswer":{"@type":"Answer","text":"No. The price quoted is the price paid. Tony prices the job before anything is loaded, and that number does not move in the driveway."}},
     {"@type":"Question","name":"How fast can you get here?","acceptedAnswer":{"@type":"Answer","text":"Same day most days. Call before noon and Tony can usually be there that afternoon. Open seven days a week."}}
   ]
 }
@@ -418,68 +418,93 @@
       </div>
     </div>
 
-  <!-- SECTION 2: PROBLEM AGITATION -->
-  <section class="pain-section" aria-label="Why homeowners put off junk removal">
-    <div class="pain-inner">
-      <h2 class="h2-bridge h2-bridge--dark" style="margin-bottom:16px;">You Keep Putting It Off Because You Think the Hard Part Is Yours.</h2>
-      <ul class="pain-paragraph pain-paragraph--single">
-        <li>You assume you have to sort it, bag it, and drag it out to the driveway first, then wait on a price that changes the moment somebody actually looks at it.</li>
-      </ul>
-      <span class="pain-pivot">You point. We carry. The number is set before anything moves.</span>
-      <ul class="pain-solutions">
-        <li class="pain-answer">No sorting, no bagging, no staging by the door. The crew loads from exactly where it sits.</li>
-        <li class="pain-answer">Upstairs, basements, attics, back bedrooms. The carry is in the quote, not added to the invoice.</li>
-        <li class="pain-answer">One item or a whole house, same crew and the same standard either way.</li>
-      </ul>
-    </div>
-    <div class="pain-pivot-accent"></div>
-    <p class="section-bridge section-bridge--light section-bridge--xl" style="padding-bottom:24px;">Start with what you need gone.</p>
-  </section>
-
+    <!-- Pain section removed 2026-08-24. On a hub it had to speak to 2-6 different
+       children at once, so it was generic by construction, and it cost a full mobile
+       screen (810px) before the router. Clarity put average scroll depth at 22% on
+       mobile while the last router card sat at 26.9%, i.e. the average visitor never
+       reached the bottom of the section this page exists for. The black-purple-white
+       transition it carried moved into the top of .svc-section--hub-light so the fade
+       out of the dark trust ticker survives. Leaf pages keep their pain sections,
+       where the fear can name one specific job. -->
   <!-- RESIDENTIAL SERVICE GRID. This page is a hub: its job is routing a homeowner to the
        right child service and giving Google a parent for these six pages. Chip markup is
        deliberately identical to the homepage .svc-list so it inherits existing styles. -->
-  <section class="svc-section">
-    <div class="svc-inner">
-      <h2 class="h2-bridge h2-bridge--dark">What We Take Out of a Home</h2>
-      <div class="svc-intro">
-        <p>Name the item. It&rsquo;s gone.</p>
+  <!-- SECTION 3: THE ROUTER. See briefs/hub-page-template.md.
+       Replaced the .svc-list--hub chip grid. A chip is a label: it assumes the visitor
+       already knows which child page they want, which is what a hub visitor does not.
+
+       Proof line is a published capability rather than a review on this hub, unlike the
+       cleanout hub where three children had genuinely matched reviews (one names a garage,
+       one a business). These six are item-services, and for them the operational fact is
+       the stronger proof: EPA-safe refrigerant handling and "it will not fold" differentiate,
+       where a generic five-star line does not. Every proof here is copy already approved on
+       the child page it links to, so the two never drift apart. Verbatim reviews still carry
+       the trust-quotes section further down. -->
+  <section class="svc-section svc-section--hub-light">
+    <div class="svc-cap">
+      <div class="svc-cap-inner">
+        <h2 class="h2-bridge h2-bridge--dark">What Are You Trying to Get Rid Of?</h2>
+        <div class="svc-intro">
+          <p>Name the item. It&rsquo;s gone.</p>
+        </div>
+
       </div>
-      <ul class="svc-list svc-list--hub">
-          <li class="svc-cell"><a class="svc-chip" href="appliance-removal.html">
-            <span class="svc-chip__name">Appliance Removal</span>
-            <span class="svc-chip__items">Fridges, washers, freezers</span>
-          </a></li>
-          <li class="svc-cell"><a class="svc-chip" href="mattress-removal.html">
-            <span class="svc-chip__name">Mattress Removal</span>
-            <span class="svc-chip__items">Mattress, box spring, frame</span>
-          </a></li>
-          <li class="svc-cell"><a class="svc-chip" href="garage-cleanouts.html">
-            <span class="svc-chip__name">Garage Cleanouts</span>
-            <span class="svc-chip__items">Wall to wall, swept after</span>
-          </a></li>
-          <li class="svc-cell"><a class="svc-chip" href="hot-tub-removal.html">
-            <span class="svc-chip__name">Hot Tub Removal</span>
-            <span class="svc-chip__items">Drained and broken down on site</span>
-          </a></li>
-          <li class="svc-cell"><a class="svc-chip" href="pool-removal.html">
-            <span class="svc-chip__name">Pool Removal</span>
-            <span class="svc-chip__items">Above-ground, torn out and hauled</span>
-          </a></li>
-          <li class="svc-cell"><a class="svc-chip" href="shed-deck-removal.html">
-            <span class="svc-chip__name">Shed &amp; Deck Removal</span>
-            <span class="svc-chip__items">Torn down, then hauled</span>
-          </a></li>
+    </div>
+
+    <div class="svc-inner">
+      <ul class="hub-router">
+        <li class="hub-router__cell"><a class="hub-router__card" href="appliance-removal.html">
+          <span class="hub-router__name">Appliance Removal</span>
+          <p class="hub-router__match"><b>This is you if:</b> the new one is already in, and the old fridge or washer is still sitting there not moving without two people.</p>
+          <span class="hub-router__proof">Fridges, washers, water heaters, that dead chest freezer in the garage. EPA-safe on the refrigerants.</span>
+          <span class="hub-router__go">See appliance removal &rarr;</span>
+        </a></li>
+
+        <li class="hub-router__cell"><a class="hub-router__card" href="mattress-removal.html">
+          <span class="hub-router__name">Mattress Removal</span>
+          <p class="hub-router__match"><b>This is you if:</b> you have a mattress to get rid of and no truck to put it in.</p>
+          <span class="hub-router__proof">It does not fit in a car and it will not fold. The crew carries it down the stairs, box spring and frame with it.</span>
+          <span class="hub-router__go">See mattress removal &rarr;</span>
+        </a></li>
+
+        <li class="hub-router__cell"><a class="hub-router__card" href="garage-cleanouts.html">
+          <span class="hub-router__name">Garage Cleanouts</span>
+          <p class="hub-router__match"><b>This is you if:</b> the garage filled up one box at a time, and you want the bay back.</p>
+          <span class="hub-router__proof">&ldquo;Great group of guys! Got everything out of garage quick!! Would definitely recommend!!!&rdquo;<cite>Kevin Lindberg &middot; Google Review</cite></span>
+          <span class="hub-router__go">See garage cleanouts &rarr;</span>
+        </a></li>
+
+        <li class="hub-router__cell"><a class="hub-router__card" href="hot-tub-removal.html">
+          <span class="hub-router__name">Hot Tub Removal</span>
+          <p class="hub-router__match"><b>This is you if:</b> it has not been filled in years, and you need it gone without tearing up the deck to do it.</p>
+          <span class="hub-router__proof">Drained and broken down on site. Deck and yard protected, and no prep on your end.</span>
+          <span class="hub-router__go">See hot tub removal &rarr;</span>
+        </a></li>
+
+        <li class="hub-router__cell"><a class="hub-router__card" href="pool-removal.html">
+          <span class="hub-router__name">Pool Removal</span>
+          <p class="hub-router__match"><b>This is you if:</b> nobody swims in the above-ground pool any more and you want the yard back.</p>
+          <span class="hub-router__proof">Torn down, hauled out, yard returned to you. Heavy work, one fair price, usually done in a day.</span>
+          <span class="hub-router__go">See pool removal &rarr;</span>
+        </a></li>
+
+        <li class="hub-router__cell"><a class="hub-router__card" href="shed-deck-removal.html">
+          <span class="hub-router__name">Shed &amp; Deck Removal</span>
+          <p class="hub-router__match"><b>This is you if:</b> the shed is rotting or the deck is sagging, and it has to come down before anything can be hauled.</p>
+          <span class="hub-router__proof">The crew brings the tools and the truck, tears it down, and hauls every board away.</span>
+          <span class="hub-router__go">See shed &amp; deck removal &rarr;</span>
+        </a></li>
       </ul>
+
       <p class="svc-footnote">Clearing a full property after a death or a hoarding situation? <a href="cleanout-services.html">See specialty cleanouts</a>.</p>
     </div>
   </section>
 
   <!-- SECTION 3: HOW IT WORKS -->
-  <section class="hiw-section">
+  <section class="hiw-section hiw-section--dark">
     <div class="hiw-dotgrid"></div>
     <div class="hiw-inner">
-      <h2 class="h2-bridge h2-bridge--light">Walk Through. Load Out. Done.</h2>
+      <h2 class="h2-bridge h2-bridge--dark">Walk Through. Load Out. Done.</h2>
 
       <div class="hiw-steps">
         <div class="hiw-connector" aria-hidden="true"></div>
@@ -598,63 +623,55 @@
       <h2 class="h2-bridge h2-bridge--light">Half a Load? You Pay for Half.</h2>
       <p class="pricing-intro">The price is based on how much space your items fill in the truck. You get that number on the call, and it doesn&rsquo;t move. Bigger job, bigger load.</p>
 
-      <div class="pricing-trucks">
-
-        <div class="pricing-tier">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Quarter truck load" role="img">
-              <use href="#tkBack"/>
-              <rect x="74" y="80" width="134" height="16" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <use href="#tkFront"/>
-            </svg>
-          </div>
-          <p class="tier-name">Quarter Truck</p>
-          <p class="tier-price">$150</p>
-          <p class="tier-desc">One appliance or a single piece</p>
+            <!-- ONE-TRUCK PRICING GAUGE. Rolled out from index.html 2026-08-24, replacing the
+           four .pricing-tier cards. Same reason it replaced them on the homepage: at card
+           size the four fill levels were indistinguishable, so a visitor had to visually
+           diff four objects to read what is really one continuous scale. This renders the
+           SAME truck once at full size and labels the quarter divisions the bed artwork
+           already carried at y=46/63/80.
+           Layering: #tkBack (bed interior) behind, HTML bands over it, #tkFront (posts,
+           cab, wheels) in front. Both use the SVG defs already on this page.
+           This page's own tier copy is carried across: .tier-desc became .tk-band__desc
+           and .tier-badge became .tk-band__badge, which was added for this rollout so the
+           page-specific badge line was not dropped. -->
+      <div class="tk-gauge">
+        <div class="tk-gauge__stage">
+          <svg class="tk-gauge__art" viewBox="0 0 220 130" aria-hidden="true" focusable="false"><use href="#tkBack"/></svg>
+          <ul class="tk-gauge__bands">
+          <li class="tk-band tk-band--full">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Full<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">Full cleanout or major removal</span>
+              <span class="tk-band__badge">A packed garage</span>
+            </span>
+            <span class="tk-band__price">$600</span>
+          </li>
+          <li class="tk-band tk-band--three">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Three-Quarter<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">Bigger haul or multiple large items</span>
+              <span class="tk-band__badge">Most single-room jobs</span>
+            </span>
+            <span class="tk-band__price">$450</span>
+          </li>
+          <li class="tk-band tk-band--half">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Half<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">One large item or mixed haul</span>
+              <span class="tk-band__badge">A bedroom or two</span>
+            </span>
+            <span class="tk-band__price">$300</span>
+          </li>
+          <li class="tk-band tk-band--quarter">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Quarter<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">One appliance or a single piece</span>
+            </span>
+            <span class="tk-band__price">$150</span>
+          </li>
+          </ul>
+          <svg class="tk-gauge__art tk-gauge__art--front" viewBox="0 0 220 130" aria-hidden="true" focusable="false"><use href="#tkFront"/></svg>
         </div>
-
-        <div class="pricing-tier tier-highlight">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Half truck load" role="img">
-              <use href="#tkBack"/>
-              <rect x="74" y="64" width="134" height="32" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <use href="#tkFront"/>
-            </svg>
-          </div>
-          <p class="tier-name">Half Truck</p>
-          <p class="tier-price">$300</p>
-          <p class="tier-desc">One large item or mixed haul</p>
-          <span class="tier-badge">A bedroom or two</span>
-        </div>
-
-        <div class="pricing-tier tier-highlight">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Three-quarter truck load" role="img">
-              <use href="#tkBack"/>
-              <rect x="74" y="47" width="134" height="49" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <use href="#tkFront"/>
-            </svg>
-          </div>
-          <p class="tier-name">Three-Quarter Truck</p>
-          <p class="tier-price">$450</p>
-          <p class="tier-desc">Bigger haul or multiple large items</p>
-          <span class="tier-badge">Most single-room jobs</span>
-        </div>
-
-        <div class="pricing-tier tier-highlight">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Full truck load" role="img">
-              <use href="#tkBack"/>
-              <rect x="74" y="31" width="134" height="65" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <use href="#tkFront"/>
-            </svg>
-          </div>
-          <p class="tier-name">Full Truck</p>
-          <p class="tier-price">$600</p>
-          <p class="tier-desc">Full cleanout or major removal</p>
-          <span class="tier-badge">A packed garage</span>
-        </div>
-
       </div>
 
       <div class="pricing-note">
@@ -674,90 +691,85 @@
        falsifies it. The standard is the claim that scales past him.
        Kept: the 60% named-by-name proof. H2 generalised for the residential hub.
        Review is L2W Services, verbatim, and is not used elsewhere on this page. -->
-  <section class="owner-section owner-section--standard" style="clip-path:polygon(0 6vw,100% 0%,100% 100%,0% 100%);margin-top:-6vw;padding-top:calc(80px + 6vw);z-index:10;" aria-label="The Brawler Standard for residential junk removal">
-    <div class="std-dotgrid" aria-hidden="true"></div>
-    <div class="std-head">
-      <span class="standard-eyebrow">The Brawler Standard</span>
-      <h2 class="h2-bridge h2-bridge--dark">Tony Built the Standard. The Crew Brings It to Your Door.</h2>
-      <p class="std-lead">Most haulers send whoever&rsquo;s available. You don&rsquo;t know who&rsquo;s showing up until they&rsquo;re standing in your driveway. Call <strong>Junk Brawlers</strong> and a Brawler answers. The crew that pulls up is the crew Tony trained, working to the standard he wrote down.</p>
-    </div>
+    <!-- SECTION: THE BRAWLER STANDARD. Rebuilt 2026-08-24 to the homepage treatment.
+       Was .owner-section--standard, whose eight-item .standard-list read as a spec sheet.
+       This is the homepage's .tl-standard block: the two overlapped rig shots and three
+       numbered promises, which say the same thing in a form someone actually reads.
+       Wrapper is .std-section, not .tony-letter, on purpose. See the CSS note: two rules
+       key off .tony-letter that only work on the homepage layout. -->
+  <section class="std-section" aria-label="The Brawler Standard for residential junk removal">
+    <div class="tl-body">
+     <div class="tl-body-inner">
 
-    <div class="std-rig-row">
-      <figure class="std-figure std-figure--rig">
-        <div class="duo-media">
-          <picture>
-            <source srcset="images/rig-branded-800.webp 800w, images/rig-branded.webp 1600w" sizes="(max-width:860px) 100vw, 620px" type="image/webp">
-            <img src="images/rig-branded.jpg" alt="The Junk Brawlers dump truck used for residential junk removal, name, logo and phone number on the side panel" width="1600" height="1200" loading="lazy" decoding="async">
-          </picture>
-          <div class="std-plate" aria-hidden="true">
-            <span class="std-plate-name">The Rig</span>
-            <span class="std-plate-sub">Junk Brawlers</span>
+      <div class="tl-standard">
+        <h2 class="tl-standard-title">Tony Built the Standard. The Crew Brings It to Your Door.</h2>
+        <p class="tl-standard-lede"><mark class="tl-mark--circle">That isn&rsquo;t luck. It&rsquo;s a checklist.</mark></p>
+        <figure class="tl-rig">
+          <div class="tl-rig-stack">
+            <div class="tl-rig-shot tl-rig-shot--truck">
+              <picture>
+                <source srcset="images/rig-branded-800.webp 800w, images/rig-branded.webp 1600w" sizes="(max-width:768px) 90vw, 300px" type="image/webp">
+                <img src="images/rig-branded.jpg" alt="The Junk Brawlers dump truck with the company name and phone number on the side, used for residential junk removal" width="1600" height="1200" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="tl-rig-shot tl-rig-shot--crew">
+              <img src="images/gbp-crew-loading-carpet-sm.webp" alt="A Junk Brawlers crew loading carpet and scrap into the dump truck on a North Georgia job" width="560" height="747" loading="lazy" decoding="async">
+            </div>
           </div>
-        </div>
-        <figcaption>
-          <span class="duo-sub">A dedicated dump truck with our name and number on the side of it. Not a trailer behind a pickup.</span>
-        </figcaption>
-      </figure>
-      <div class="std-rig-aside">
-        <p class="std-rig-claim">You&rsquo;ll know exactly who&rsquo;s walking into your home.</p>
-        <p class="std-lead std-lead--aside">A marked truck. An owner you can look up in the state&rsquo;s records. The same crew every time, never subcontractors, never rotating strangers. They work to a standard Tony wrote down and trained them to, which is why the reviews read the same whether he&rsquo;s on the job or not. He&rsquo;s named by name in 60% of them. Not because he asks. Because people remember him.</p>
-        <div class="owner-stats std-stats">
-          <div class="owner-stat">
-            <span class="stat-val fire" data-jb-rating data-count-up>5.0</span>
-            <span class="stat-lbl">Star Average</span>
-          </div>
-          <div class="owner-stat">
-            <span class="stat-val fire" data-jb-count data-count-up>60+</span>
-            <span class="stat-lbl">Five-Star Reviews</span>
-          </div>
-          <div class="owner-stat">
-            <span class="stat-val fire">0</span>
-            <span class="stat-lbl">No-Shows</span>
-          </div>
+          <figcaption class="tl-rig-cap">Our own marked truck. Our own crew on it.</figcaption>
+        </figure>
+        <ol class="tl-promises">
+          <li class="tl-promise">
+            <span class="tl-promise-n">01</span>
+            <div class="tl-promise-body">
+              <strong>One honest price, start to finish.</strong>
+              <p>A real Brawler answers, never a call center. You get the price on the call, and that quote is the number you pay.</p>
+            </div>
+          </li>
+          <li class="tl-promise">
+            <span class="tl-promise-n">02</span>
+            <div class="tl-promise-body">
+              <strong>We show up, and we finish clean.</strong>
+              <p>A set time, not a window. Call in the morning and the crew can usually be there the same day. The carry out of the basement or the back bedroom is in the quote, not added after.</p>
+            </div>
+          </li>
+          <li class="tl-promise">
+            <span class="tl-promise-n">03</span>
+            <div class="tl-promise-body">
+              <strong>Hauled right, and fully covered.</strong>
+              <p>Donated, resold, or recycled first, with the landfill last. Licensed, insured, and workers&rsquo; comp covered.</p>
+            </div>
+          </li>
+        </ol>
+        <div class="tl-cta tl-cta--standard">
+          <a href="contact.html" class="btn-ghost-white">Get Your Price &rarr;</a>
+          <span class="tl-cta-note">Free, no obligation. Usually same day.</span>
         </div>
       </div>
-    </div>
 
-    <figure class="std-quote">
-      <span class="rw-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-      <blockquote>&ldquo;The guys were great And the owner was extremely attentive! Thanks Again Tony&rdquo;</blockquote>
-      <figcaption>L2W Services &middot; Google Review &middot; 5&#9733;</figcaption>
-    </figure>
-
-    <div class="std-doc-row">
-      <div class="std-doc">
-        <p class="standard-lead">A <strong data-jb-rating>5.0</strong> average across every review we&rsquo;ve ever gotten. That isn&rsquo;t luck. <em>It&rsquo;s a checklist.</em></p>
-        <ul class="standard-list">
-          <li><strong>A Brawler answers the phone.</strong> Never a call center.</li>
-          <li><strong>You get a price on the call.</strong> The quoted price is the price you pay.</li>
-          <li><strong>We text before we come,</strong> and we show up when we said we would.</li>
-          <li><strong>Nothing gets tossed</strong> until you confirm it.</li>
-          <li><strong>We sweep the space clean</strong> before we leave.</li>
-          <li><strong>A dedicated dump truck.</strong> Not a trailer behind a pickup.</li>
-          <li><strong>Resold on Facebook Marketplace, donated, or recycled first.</strong> The landfill is last.</li>
-          <li><strong>Licensed, insured,</strong> and workers&rsquo; comp covered.</li>
-        </ul>
-        <div class="std-close">
-          <p class="standard-remedy">If a crew ever misses the standard, tell Tony. He makes it right.</p>
-          <p class="standard-accountable">Junk Brawlers LLC is registered with the Georgia Secretary of State, and Tony Frias is named on the filing.</p>
-          <div class="standard-cta">
-            <a href="tel:4046329165" class="btn-fire">Call Junk Brawlers &rarr;</a>
-          </div>
-        </div>
-      </div>
-      <figure class="std-figure std-figure--tony">
-        <div class="duo-media">
-          <picture>
-            <source srcset="images/team-headshot.webp" type="image/webp">
-            <img src="images/team-headshot.jpg" alt="Tony Frias, owner of Junk Brawlers LLC, residential junk removal North Georgia" width="340" height="339" loading="lazy">
-          </picture>
-        </div>
-        <figcaption>
-          <span class="duo-sub">Tony Frias &middot; Owner &amp; Founder</span>
-        </figcaption>
+      <figure class="tl-clip">
+        <span class="tl-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <blockquote>&ldquo;Antonio and his crew did a terrific job for us. Very pleasant and service with a smile. We will definitely use Junk Brawlers service again!&rdquo;</blockquote>
+        <figcaption>Gordon &amp; Helen Benson &middot; Google Review &middot; 5&#9733;</figcaption>
       </figure>
+
+     </div>
     </div>
   </section>
+
+  <!-- Slide-in reveal for the Brawler Standard (truck+title from left, promises from
+       right). Same gate as the homepage: no-JS and reduced-motion keep it visible. -->
+  <script>
+  (function(){
+    var s=document.querySelector('.tl-standard');
+    if(!s||!('IntersectionObserver' in window))return;
+    if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+    s.classList.add('tl-anim-ready');
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){s.classList.add('is-in');io.disconnect();}});},{threshold:0.25});
+    io.observe(s);
+  })();
+  </script>
+
 
   <!-- REVIEWS -->
   <section class="trust-quotes" aria-label="Customer reviews about residential junk removal">
@@ -801,28 +813,28 @@
         <div class="faq-item">
           <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
             <span class="faq-num">01</span>
-            <span class="faq-text">Do I have to sort or move anything before you arrive?</span>
+            <span class="faq-text">What if I have several different things to get rid of at once?</span>
             <span class="faq-toggle" aria-hidden="true">+</span>
           </div>
-          <div class="faq-answer">No. The crew loads from wherever things sit. Walk through with Tony, point out what stays, and they carry out the rest. No sorting, no bagging, no dragging it to the driveway.</div>
+          <div class="faq-answer">That is one job, not several. An appliance, a mattress and a shed go on the same truck on the same trip, and you get one price for the lot rather than a separate quote per item.</div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
             <span class="faq-num">02</span>
-            <span class="faq-text">Can you take just one item?</span>
+            <span class="faq-text">Can you take just one item, or is there a minimum?</span>
             <span class="faq-toggle" aria-hidden="true">+</span>
           </div>
-          <div class="faq-answer">Yes. One couch, one fridge, one hot tub. There is no minimum. You pay for the space it takes in the truck, not a flat call-out fee.</div>
+          <div class="faq-answer">Yes, and no. One couch, one fridge, one hot tub. There is no minimum. You pay for the space it takes in the truck, not a flat call-out fee.</div>
         </div>
 
         <div class="faq-item">
           <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
             <span class="faq-num">03</span>
-            <span class="faq-text">Will the price change once you see it?</span>
+            <span class="faq-text">Is a garage cleanout different from a full house cleanout?</span>
             <span class="faq-toggle" aria-hidden="true">+</span>
           </div>
-          <div class="faq-answer">No. The price quoted is the price paid. Tony prices the job before anything is loaded, and that number does not move in the driveway.</div>
+          <div class="faq-answer">Different scope, same crew. A garage is usually one trip and one afternoon. Clearing a whole property after a death or a hoarding situation runs longer and gets handled more slowly, and that work lives on the cleanout services page.</div>
         </div>
 
         <div class="faq-item">
@@ -837,11 +849,21 @@
         <div class="faq-item">
           <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
             <span class="faq-num">05</span>
+            <span class="faq-text">Will the price change once you see it?</span>
+            <span class="faq-toggle" aria-hidden="true">+</span>
+          </div>
+          <div class="faq-answer">No. The price quoted is the price paid. Tony prices the job before anything is loaded, and that number does not move in the driveway.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
+            <span class="faq-num">06</span>
             <span class="faq-text">How fast can you get here?</span>
             <span class="faq-toggle" aria-hidden="true">+</span>
           </div>
           <div class="faq-answer">Same day most days. Call before noon and Tony can usually be there that afternoon. Open seven days a week.</div>
         </div>
+      
 
       </div>
     </div>

@@ -33,7 +33,7 @@
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-600.woff2" crossorigin>
   <link rel="preload" as="image" href="images/truck.webp" imagesrcset="images/truck-800.webp 800w, images/truck.webp 1600w" imagesizes="100vw" fetchpriority="high">
   <script defer src="js/site-data.js?v=jb37"></script>
-  <link rel="stylesheet" href="css/style.css?v=jb67">
+  <link rel="stylesheet" href="css/style.css?v=jb84">
 
   <script type="application/ld+json">
   {
@@ -231,7 +231,9 @@
     </div>
 
   <!-- SECTION 2: THE LOCAL PROBLEM -->
-  <section class="pain-section" aria-label="Junk removal context for Johns Creek GA">
+    <!-- LOCAL LEDE. Was .pain-section, a misnomer: this is city positioning, not fear,
+       and it measures 83% unique against the other city pages. Kept verbatim. -->
+<section class="local-lede" aria-label="Junk removal context for Johns Creek GA">
     <div class="pain-inner">
       <h2 class="h2-bridge h2-bridge--dark" style="margin-bottom:16px;">Nothing Wastes a Morning Like a Hauler Turned Away at the Guard Booth.</h2>
       <ul class="pain-paragraph pain-paragraph--single">
@@ -339,56 +341,53 @@
     <div class="pricing-inner">
       <h2 class="h2-bridge h2-bridge--light">A Couch Is Not a Truckload. Pay for What You&rsquo;ve Got.</h2>
       <p class="pricing-intro">We price by how much space your load fills in the truck. A few pieces is a small load. A whole-room cleanout fills more. You get that number on the call, and it doesn&rsquo;t move.</p>
-      <div class="pricing-trucks">
-        <div class="pricing-tier">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Quarter truck load" role="img">
-              <use href="#tkBack"/>
-              <rect x="74" y="80" width="134" height="16" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <use href="#tkFront"/>
-            </svg>
-          </div>
-          <p class="tier-name">Quarter Truck</p>
-          <p class="tier-price">$150</p>
-          <p class="tier-desc">A few items or a single piece</p>
-        </div>
-        <div class="pricing-tier tier-highlight">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Half truck load" role="img">
-              <use href="#tkBack"/>
-              <rect x="74" y="64" width="134" height="32" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <use href="#tkFront"/>
-            </svg>
-          </div>
-          <p class="tier-name">Half Truck</p>
-          <p class="tier-price">$300</p>
-          <p class="tier-desc">Sofa, fridge, or a few mixed items</p>
-          <span class="tier-badge">Most single-room jobs</span>
-        </div>
-        <div class="pricing-tier tier-highlight">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Three-quarter truck load" role="img">
-              <use href="#tkBack"/>
-              <rect x="74" y="47" width="134" height="49" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <use href="#tkFront"/>
-            </svg>
-          </div>
-          <p class="tier-name">Three-Quarter Truck</p>
-          <p class="tier-price">$450</p>
-          <p class="tier-desc">Multiple items or a room cleanout</p>
-          <span class="tier-badge">Garage &amp; spare room jobs</span>
-        </div>
-        <div class="pricing-tier">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Full truck load" role="img">
-              <use href="#tkBack"/>
-              <rect x="74" y="31" width="134" height="65" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <use href="#tkFront"/>
-            </svg>
-          </div>
-          <p class="tier-name">Full Truck</p>
-          <p class="tier-price">$600</p>
-          <p class="tier-desc">Full home cleanout or major haul</p>
+            <!-- ONE-TRUCK PRICING GAUGE. Rolled out from index.html 2026-08-24, replacing the
+           four .pricing-tier cards. Same reason it replaced them on the homepage: at card
+           size the four fill levels were indistinguishable, so a visitor had to visually
+           diff four objects to read what is really one continuous scale. This renders the
+           SAME truck once at full size and labels the quarter divisions the bed artwork
+           already carried at y=46/63/80.
+           Layering: #tkBack (bed interior) behind, HTML bands over it, #tkFront (posts,
+           cab, wheels) in front. Both use the SVG defs already on this page.
+           This page's own tier copy is carried across: .tier-desc became .tk-band__desc
+           and .tier-badge became .tk-band__badge, which was added for this rollout so the
+           page-specific badge line was not dropped. -->
+      <div class="tk-gauge">
+        <div class="tk-gauge__stage">
+          <svg class="tk-gauge__art" viewBox="0 0 220 130" aria-hidden="true" focusable="false"><use href="#tkBack"/></svg>
+          <ul class="tk-gauge__bands">
+          <li class="tk-band tk-band--full">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Full<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">Full home cleanout or major haul</span>
+            </span>
+            <span class="tk-band__price">$600</span>
+          </li>
+          <li class="tk-band tk-band--three">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Three-Quarter<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">Multiple items or a room cleanout</span>
+              <span class="tk-band__badge">Garage &amp; spare room jobs</span>
+            </span>
+            <span class="tk-band__price">$450</span>
+          </li>
+          <li class="tk-band tk-band--half">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Half<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">Sofa, fridge, or a few mixed items</span>
+              <span class="tk-band__badge">Most single-room jobs</span>
+            </span>
+            <span class="tk-band__price">$300</span>
+          </li>
+          <li class="tk-band tk-band--quarter">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Quarter<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">A few items or a single piece</span>
+            </span>
+            <span class="tk-band__price">$150</span>
+          </li>
+          </ul>
+          <svg class="tk-gauge__art tk-gauge__art--front" viewBox="0 0 220 130" aria-hidden="true" focusable="false"><use href="#tkFront"/></svg>
         </div>
       </div>
       <div class="pricing-note">
@@ -573,60 +572,82 @@
   </section>
 
   <!-- SECTION 4: WHY TONY HERE -->
-  <section class="owner-section" style="clip-path:polygon(0 6vw,100% 0%,100% 100%,0% 100%);margin-top:-6vw;padding-top:calc(80px + 6vw);z-index:10;">
-    <div class="owner-inner">
+    <!-- SECTION: THE BRAWLER STANDARD. Rebuilt 2026-08-24, matching the hubs, the service
+       pages and the counties. Was .owner-section.
+       No owner note here: the note is a personal, job-specific device and a city page is a
+       geography. The local voice on this page is the .local-lede up top. -->
+  <section class="std-section" aria-label="The Brawler Standard for junk removal in Johns Creek">
+    <div class="tl-body">
+     <div class="tl-body-inner">
 
-      <div class="owner-head">
-        <div class="owner-text-head">
-          <div class="owner-accent-bar"></div>
-          <h2 class="h2-bridge h2-bridge--dark">The Truck the Gatehouse Waves Through.</h2>
+      <div class="tl-standard">
+        <h2 class="tl-standard-title">Tony Built the Standard. The Crew Runs It in Johns Creek.</h2>
+        <p class="tl-standard-lede"><mark class="tl-mark--circle">That isn&rsquo;t luck. It&rsquo;s a checklist.</mark></p>
+        <figure class="tl-rig">
+          <div class="tl-rig-stack">
+            <div class="tl-rig-shot tl-rig-shot--truck">
+              <picture>
+                <source srcset="images/rig-branded-800.webp 800w, images/rig-branded.webp 1600w" sizes="(max-width:768px) 90vw, 300px" type="image/webp">
+                <img src="images/rig-branded.jpg" alt="The Junk Brawlers dump truck with the company name and phone number on the side, serving Johns Creek" width="1600" height="1200" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="tl-rig-shot tl-rig-shot--crew">
+              <img src="images/gbp-crew-loading-carpet-sm.webp" alt="A Junk Brawlers crew loading carpet and scrap into the dump truck on a North Georgia job" width="560" height="747" loading="lazy" decoding="async">
+            </div>
+          </div>
+          <figcaption class="tl-rig-cap">Our own marked truck. Our own crew on it.</figcaption>
+        </figure>
+        <ol class="tl-promises">
+          <li class="tl-promise">
+            <span class="tl-promise-n">01</span>
+            <div class="tl-promise-body">
+              <strong>One honest price, start to finish.</strong>
+              <p>A real Brawler answers, never a call center. You get the price on the call, and that quote is the number you pay.</p>
+            </div>
+          </li>
+          <li class="tl-promise">
+            <span class="tl-promise-n">02</span>
+            <div class="tl-promise-body">
+              <strong>We show up when we said we would.</strong>
+              <p>A set time, not a window. Call before noon and same day is usually on the table in Johns Creek.</p>
+            </div>
+          </li>
+          <li class="tl-promise">
+            <span class="tl-promise-n">03</span>
+            <div class="tl-promise-body">
+              <strong>Hauled right, and fully covered.</strong>
+              <p>Donated, resold, or recycled first, with the landfill last. Licensed, insured, and workers&rsquo; comp covered.</p>
+            </div>
+          </li>
+        </ol>
+        <div class="tl-cta tl-cta--standard">
+          <a href="contact.html" class="btn-ghost-white">Get Your Price &rarr;</a>
+          <span class="tl-cta-note">Free, no obligation. Usually same day.</span>
         </div>
       </div>
 
-      <div class="owner-photo-wrap">
-        <picture>
-          <source srcset="images/team-headshot.webp" type="image/webp">
-          <img src="images/team-headshot.jpg" alt="Tony Frias, owner of Junk Brawlers, serving Johns Creek and North Fulton GA" width="340" height="339" loading="lazy">
-        </picture>
-        <div class="owner-badge">
-          <span class="owner-badge-score">&#9733; 5.0</span>
-          <span class="owner-badge-label"><span data-jb-count>60+</span> Google Reviews</span>
-        </div>
-      </div>
+      <figure class="tl-clip">
+        <span class="tl-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <blockquote>&ldquo;Super professional and convenient! Would absolutely recommend!&rdquo;</blockquote>
+        <figcaption>Ashley Siller &middot; Google Review &middot; 5&#9733;</figcaption>
+      </figure>
 
-      <div class="owner-body">
-        <p>Tony Frias comes down from Dawson County, about 50 minutes out. He has been through most of the Johns Creek gates by now, and he knows which ones want the resident to call ahead and which just want a company name and a plate on the list.</p>
-        <p>Call <strong style="color:#fff;">Junk Brawlers</strong> and <strong style="color:#fff;">Tony</strong> answers, the owner, not a call center. He quotes the job, leads the crew, and stands behind the number he gave you. No middlemen, no strangers at your door, no surprise line items at the end. He started the company in 2024 and grew it one honest job at a time, and customers put his name in more than half the reviews without being asked.</p>
-
-        <div class="owner-stats">
-          <div class="owner-stat">
-            <span class="stat-val fire" data-jb-count>60+</span>
-            <span class="stat-lbl">Five-Star Reviews</span>
-          </div>
-          <div class="owner-stat">
-            <span class="stat-val fire" data-jb-rating>5.0</span>
-            <span class="stat-lbl">Star Average</span>
-          </div>
-          <div class="owner-stat">
-            <span class="stat-val fire">0</span>
-            <span class="stat-lbl">No-Shows</span>
-          </div>
-        </div>
-
-        <p class="proof-connector" style="margin-top:36px;margin-bottom:12px;">One customer put it this way:</p>
-        <div class="rw-mini rw-mini--light">
-          <span class="rw-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <p class="rw-mini-text">&ldquo;Antonio and his crew did a terrific job for us. Very pleasant and service with a smile. We will definitely use Junk Brawlers service again!&rdquo;</p>
-          <span class="rw-mini-author">Gordon &amp; Helen Benson &middot; Google Review &middot; 5&#9733;</span>
-        </div>
-
-        <div style="margin-top:24px;">
-          <a href="tel:4046329165" class="btn-fire">Call Junk Brawlers &rarr;</a>
-        </div>
-      </div>
-
+     </div>
     </div>
   </section>
+
+  <!-- Slide-in reveal for the Brawler Standard. Same gate as the homepage. -->
+  <script>
+  (function(){
+    var s=document.querySelector('.tl-standard');
+    if(!s||!('IntersectionObserver' in window))return;
+    if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+    s.classList.add('tl-anim-ready');
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){s.classList.add('is-in');io.disconnect();}});},{threshold:0.25});
+    io.observe(s);
+  })();
+  </script>
+
 
   <!-- SECTION 5: HOW IT WORKS -->
   <section class="hiw-section">

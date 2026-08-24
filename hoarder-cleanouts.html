@@ -33,7 +33,7 @@
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-600.woff2" crossorigin>
   <link rel="preload" as="image" href="images/truck.webp" imagesrcset="images/truck-800.webp 800w, images/truck.webp 1600w" imagesizes="100vw" fetchpriority="high">
   <script defer src="js/site-data.js?v=jb37"></script>
-  <link rel="stylesheet" href="css/style.css?v=jb67">
+  <link rel="stylesheet" href="css/style.css?v=jb84">
   <style>
     .hiw-section { padding-top: 80px; }
   </style>
@@ -491,58 +491,6 @@
     </div>
 
   <!-- SECTION 2: PROBLEM AGITATION -->
-  <section class="pain-section" aria-label="Understanding hoarding situations">
-    <div class="pain-inner">
-      <h2 class="h2-bridge h2-bridge--dark" style="margin-bottom:16px;">This Didn&rsquo;t Happen Overnight. It Won&rsquo;t Be Cleared by Someone Who Makes You Feel Small.</h2>
-      <ul class="pain-paragraph pain-paragraph--single">
-        <li>You&rsquo;re embarrassed to even let someone through the door, and you need it handled quietly, without judgment and without the neighbors knowing.</li>
-      </ul>
-      <span class="pain-pivot">Junk Brawlers works at your pace. Not his.</span>
-      <ul class="pain-solutions">
-        <li class="pain-answer">No judgment, ever. Tony has seen it before and treats you with respect, start to finish.</li>
-        <li class="pain-answer">Discreet and confidential. What&rsquo;s inside stays between you and Tony.</li>
-        <li class="pain-answer">Room by room, at the pace you&rsquo;re comfortable with. He can work with family or a social worker if that helps.</li>
-      </ul>
-    </div>
-    <div class="pain-pivot-accent"></div>
-    <p class="section-bridge section-bridge--light section-bridge--xl" style="padding-bottom:24px;">Here&rsquo;s how the process works.</p>
-  </section>
-
-  <!-- SECTION 3: HOW IT WORKS -->
-  <section class="hiw-section">
-    <div class="hiw-dotgrid"></div>
-    <div class="hiw-inner">
-      <h2 class="h2-bridge h2-bridge--light">Walkthrough. Room by Room. Done with Care.</h2>
-
-      <div class="hiw-steps">
-        <div class="hiw-connector" aria-hidden="true"></div>
-
-        <div class="hiw-step">
-          <div class="hiw-num"><span>1</span></div>
-          <h3>No Judgment Walkthrough</h3>
-          <p>Before anything moves, Tony does a walkthrough of the home. He listens first, understanding what&rsquo;s staying, what&rsquo;s going, and what needs a conversation. There&rsquo;s no pressure and no assumptions. He&rsquo;s not there to judge how it got this way. He&rsquo;s there to help move it forward. Call <a href="tel:4046329165" style="color:var(--color-fire);font-weight:700;">(404) 632-9165</a>, Tony answers himself and can talk through your situation privately.</p>
-        </div>
-
-        <div class="hiw-step">
-          <div class="hiw-num"><span>2</span></div>
-          <h3>Room by Room</h3>
-          <p>We work through the home at whatever pace is right for the resident or family. That might mean doing one room, stopping, and coming back. It might mean working alongside a family member who wants to be present for certain areas. The job moves on your timeline, not a schedule Tony is trying to hit. Larger situations often span multiple visits, that&rsquo;s normal and expected.</p>
-        </div>
-
-        <div class="hiw-step">
-          <div class="hiw-num"><span>3</span></div>
-          <h3>Donate First, Then Clear</h3>
-          <p>Usable items go to donation before the landfill. Recyclables go to recycling. Tony doesn&rsquo;t treat everything as trash just because it&rsquo;s been accumulated, things that can still serve someone, will. What can&rsquo;t be donated or recycled is hauled and disposed of responsibly. The home is left clear. Nothing left to deal with.</p>
-        </div>
-      </div>
-
-      <div class="hiw-cta">
-        <a href="tel:4046329165" class="btn-fire" style="font-family:var(--font-heading);font-size:17px;letter-spacing:1.5px;padding:16px 44px;">Call Junk Brawlers &rarr;</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION: PRICING -->
   <section class="pricing-section">
     <!-- Truck drawn from the real rig: white Isuzu cab-over, black dump body with the
          plywood side extensions, single rear axle. Split into tkBack / tkFront so each
@@ -631,64 +579,56 @@
       <h2 class="h2-bridge h2-bridge--light">Priced by What Goes. Quoted Before Anything Moves.</h2>
       <p class="pricing-intro">We price by how much material fills the truck per trip, the same volume-based system we use for every job. Larger situations often take multiple trips. You get an honest estimate after we walk through the home so you know the full scope before any work begins.</p>
 
-      <div class="pricing-trucks">
-
-        <div class="pricing-tier">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Quarter truck load" role="img">
-              <use href="#tkBack"/>
-              <rect x="74" y="80" width="134" height="16" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <use href="#tkFront"/>
-            </svg>
-          </div>
-          <p class="tier-name">Quarter Truck</p>
-          <p class="tier-price">$150</p>
-          <p class="tier-desc">A few items or a single piece</p>
-          <span class="tier-badge">Single room or area</span>
+            <!-- ONE-TRUCK PRICING GAUGE. Rolled out from index.html 2026-08-24, replacing the
+           four .pricing-tier cards. Same reason it replaced them on the homepage: at card
+           size the four fill levels were indistinguishable, so a visitor had to visually
+           diff four objects to read what is really one continuous scale. This renders the
+           SAME truck once at full size and labels the quarter divisions the bed artwork
+           already carried at y=46/63/80.
+           Layering: #tkBack (bed interior) behind, HTML bands over it, #tkFront (posts,
+           cab, wheels) in front. Both use the SVG defs already on this page.
+           This page's own tier copy is carried across: .tier-desc became .tk-band__desc
+           and .tier-badge became .tk-band__badge, which was added for this rollout so the
+           page-specific badge line was not dropped. -->
+      <div class="tk-gauge">
+        <div class="tk-gauge__stage">
+          <svg class="tk-gauge__art" viewBox="0 0 220 130" aria-hidden="true" focusable="false"><use href="#tkBack"/></svg>
+          <ul class="tk-gauge__bands">
+          <li class="tk-band tk-band--full">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Full<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">Full cleanout or major removal</span>
+              <span class="tk-band__badge">Full home or severe situation</span>
+            </span>
+            <span class="tk-band__price">$600</span>
+          </li>
+          <li class="tk-band tk-band--three">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Three-Quarter<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">Bigger haul or multiple large items</span>
+              <span class="tk-band__badge">Most of a home</span>
+            </span>
+            <span class="tk-band__price">$450</span>
+          </li>
+          <li class="tk-band tk-band--half">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Half<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">One large item or mixed haul</span>
+              <span class="tk-band__badge">Several rooms of material</span>
+            </span>
+            <span class="tk-band__price">$300</span>
+          </li>
+          <li class="tk-band tk-band--quarter">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Quarter<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">A few items or a single piece</span>
+              <span class="tk-band__badge">Single room or area</span>
+            </span>
+            <span class="tk-band__price">$150</span>
+          </li>
+          </ul>
+          <svg class="tk-gauge__art tk-gauge__art--front" viewBox="0 0 220 130" aria-hidden="true" focusable="false"><use href="#tkFront"/></svg>
         </div>
-
-        <div class="pricing-tier tier-highlight">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Half truck load" role="img">
-              <use href="#tkBack"/>
-              <rect x="74" y="64" width="134" height="32" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <use href="#tkFront"/>
-            </svg>
-          </div>
-          <p class="tier-name">Half Truck</p>
-          <p class="tier-price">$300</p>
-          <p class="tier-desc">One large item or mixed haul</p>
-          <span class="tier-badge">Several rooms of material</span>
-        </div>
-
-        <div class="pricing-tier tier-highlight">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Three-quarter truck load" role="img">
-              <use href="#tkBack"/>
-              <rect x="74" y="47" width="134" height="49" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <use href="#tkFront"/>
-            </svg>
-          </div>
-          <p class="tier-name">Three-Quarter Truck</p>
-          <p class="tier-price">$450</p>
-          <p class="tier-desc">Bigger haul or multiple large items</p>
-          <span class="tier-badge">Most of a home</span>
-        </div>
-
-        <div class="pricing-tier tier-highlight">
-          <div class="truck-svg-wrap">
-            <svg viewBox="0 0 220 130" width="100%" aria-label="Full truck load" role="img">
-              <use href="#tkBack"/>
-              <rect x="74" y="31" width="134" height="65" fill="url(#truckFillGrad)" class="truck-fill"/>
-              <use href="#tkFront"/>
-            </svg>
-          </div>
-          <p class="tier-name">Full Truck</p>
-          <p class="tier-price">$600</p>
-          <p class="tier-desc">Full cleanout or major removal</p>
-          <span class="tier-badge">Full home or severe situation</span>
-        </div>
-
       </div>
 
       <div class="pricing-note">
@@ -697,45 +637,44 @@
       </div>
 
       <a href="contact.html" class="btn-fire" style="font-family:var(--font-heading);font-size:17px;letter-spacing:1.5px;padding:16px 44px;">Get a Price &rarr;</a>
-      <p class="section-bridge section-bridge--light" style="margin-top:40px;">Here&rsquo;s the man behind every job.</p>
+    </div>
+        <p class="section-bridge section-bridge--light" style="margin-top:40px;">Here&rsquo;s how the job goes.</p>
+    </section>
+
+<section class="hiw-section">
+    <div class="hiw-dotgrid"></div>
+    <div class="hiw-inner">
+      <h2 class="h2-bridge h2-bridge--light">Walkthrough. Room by Room. Done with Care.</h2>
+
+      <div class="hiw-steps">
+        <div class="hiw-connector" aria-hidden="true"></div>
+
+        <div class="hiw-step">
+          <div class="hiw-num"><span>1</span></div>
+          <h3>No Judgment Walkthrough</h3>
+          <p>Before anything moves, Tony does a walkthrough of the home. He listens first, understanding what&rsquo;s staying, what&rsquo;s going, and what needs a conversation. There&rsquo;s no pressure and no assumptions. He&rsquo;s not there to judge how it got this way. He&rsquo;s there to help move it forward. Call <a href="tel:4046329165" style="color:var(--color-fire);font-weight:700;">(404) 632-9165</a>, Tony answers himself and can talk through your situation privately.</p>
+        </div>
+
+        <div class="hiw-step">
+          <div class="hiw-num"><span>2</span></div>
+          <h3>Room by Room</h3>
+          <p>We work through the home at whatever pace is right for the resident or family. That might mean doing one room, stopping, and coming back. It might mean working alongside a family member who wants to be present for certain areas. The job moves on your timeline, not a schedule Tony is trying to hit. Larger situations often span multiple visits, that&rsquo;s normal and expected.</p>
+        </div>
+
+        <div class="hiw-step">
+          <div class="hiw-num"><span>3</span></div>
+          <h3>Donate First, Then Clear</h3>
+          <p>Usable items go to donation before the landfill. Recyclables go to recycling. Tony doesn&rsquo;t treat everything as trash just because it&rsquo;s been accumulated, things that can still serve someone, will. What can&rsquo;t be donated or recycled is hauled and disposed of responsibly. The home is left clear. Nothing left to deal with.</p>
+        </div>
+      </div>
+
+      <div class="hiw-cta">
+        <a href="tel:4046329165" class="btn-fire" style="font-family:var(--font-heading);font-size:17px;letter-spacing:1.5px;padding:16px 44px;">Call Junk Brawlers &rarr;</a>
+      </div>
     </div>
   </section>
 
-  <!-- OWNER SECTION -->
-  <section class="owner-section" style="clip-path:polygon(0 6vw,100% 0%,100% 100%,0% 100%);margin-top:-6vw;padding-top:calc(80px + 6vw);z-index:10;">
-    <div class="owner-inner">
-      <div class="owner-head">
-        <div class="owner-text-head">
-          <div class="owner-accent-bar"></div>
-          <h2 class="h2-bridge h2-bridge--dark">Owner on Every Job. You Know Who&rsquo;s Showing Up.</h2>
-        </div>
-      </div>
-      <div class="owner-photo-wrap">
-        <picture>
-          <source srcset="images/team-headshot.webp" type="image/webp">
-          <img src="images/team-headshot.jpg" alt="Tony Frias, owner of Junk Brawlers, hoarder cleanouts North Georgia" width="340" height="339" loading="lazy">
-        </picture>
-        <div class="owner-badge">
-          <span class="owner-badge-score">&#9733; 5.0</span>
-          <span class="owner-badge-label"><span data-jb-count>60+</span> Google Reviews</span>
-        </div>
-      </div>
-      <div class="owner-body">
-        <p>For a job like this, who shows up matters. Tony leads the crew. He&rsquo;s the one who answered the phone, took the time to understand the situation, and he&rsquo;s there in person for every visit. <strong>Same owner, start to finish, no strangers rotating through the home.</strong></p>
-        <p>When you call <strong style="color:#fff;">Junk Brawlers</strong>, you&rsquo;re talking to <strong style="color:#fff;">Tony Frias</strong>, the owner. The same owner who picks up the phone is on the job at your door, with his crew. <strong>No call centers, no strangers on your property, no surprises when the job is done.</strong></p>
-        <p>He&rsquo;s <strong>named by name in 60% of his reviews.</strong> Not because he asks for it. Because people remember him.</p>
-        <div class="owner-stats">
-          <div class="owner-stat"><span class="stat-val fire" data-jb-count>60+</span><span class="stat-lbl">Five-Star Reviews</span></div>
-          <div class="owner-stat"><span class="stat-val fire" data-jb-rating>5.0</span><span class="stat-lbl">Star Average</span></div>
-          <div class="owner-stat"><span class="stat-val fire">0</span><span class="stat-lbl">No-Shows</span></div>
-        </div>
-        <div style="margin-top:24px;"><a href="tel:4046329165" class="btn-fire">Call Junk Brawlers &rarr;</a></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REVIEWS -->
-  <section class="trust-quotes" aria-label="Customer reviews about hoarder cleanouts">
+<section class="trust-quotes" aria-label="Customer reviews about hoarder cleanouts">
     <div class="trust-quotes-inner">
       <h2 class="trust-quotes-heading h2-bridge h2-bridge--dark">No Judgment. No Rush. Just Results.</h2>
       <div class="trust-quotes-grid">
@@ -763,7 +702,129 @@
         <a href="https://share.google/5doX6CrAHd0P3t3kZ" target="_blank" rel="noopener" class="btn-ghost-white tq-all-reviews" aria-label="Read all Google reviews for Junk Brawlers">Read all <span data-jb-count>60+</span> Reviews on Google &rarr;</a>
       </div>
     </div>
+        <p class="section-bridge section-bridge--dark" style="margin-top:40px;">Here&rsquo;s the man behind every job.</p>
+    </section>
+
+  <!-- SECTION: A NOTE FROM TONY + THE BRAWLER STANDARD.
+       Built 2026-08-24. Replaces the .pain-section that used to open this page and the
+       .owner-section that used to sit mid-page.
+
+       Why it moved: the "pain" content here was never really pain, it was this page's best
+       objection handling, and it was dressed as a fear headline and placed before anything
+       else. A visitor who searched for this service already knows they have the problem.
+       Same three answers, now spoken in first person, positioned where trust-building
+       belongs. Precedent and rationale are on index.html, where the three worries were
+       deliberately rewritten out of a bulleted list and into sentences.
+
+       .tl-top brings its own dark-to-purple ground and a 140px white fade at its foot, so it
+       meets the dark .trust-quotes above with no seam and lands on the white Standard below
+       under its own steam. No wedge needed. -->
+  <section class="std-section std-section--with-note" aria-label="A note from Tony, owner of Junk Brawlers, and the Brawler Standard for hoarder cleanouts">
+    <div class="tl-top">
+     <div class="tl-top-inner">
+
+      <div class="tl-lede">
+        <span class="tl-eyebrow">A note from Tony</span>
+        <p class="tl-hook">You are not the first person to make this call.</p>
+        <p>The hard part is usually letting someone through the door at all. You need it handled quietly, without a lecture and without the neighbors working out what is going on.</p>
+        <p>No judgment, ever. The crew has seen it before and treats you with respect from the first walkthrough to the last load. What is inside stays between you and me. We work room by room at whatever pace you are comfortable with, and I can work alongside family or a social worker if that makes it easier.</p>
+        <p class="tl-close">There is no version of this I have not seen. Call when you want to start.</p>
+        <div class="tl-signoff">
+          <span class="tl-signoff-name">Tony Frias</span>
+          <span class="tl-signoff-role">Owner, Junk Brawlers LLC</span>
+        </div>
+      </div>
+
+      <aside class="tl-aside">
+        <figure class="tl-photo">
+          <picture>
+            <source srcset="images/team-headshot.webp" type="image/webp">
+            <img src="images/team-headshot.jpg" alt="Tony Frias, owner of Junk Brawlers LLC, hoarder cleanouts North Georgia" width="340" height="339" loading="lazy" decoding="async">
+          </picture>
+          <figcaption class="tl-photo-cap">Tony Frias &middot; Owner</figcaption>
+        </figure>
+        <div class="tl-record" aria-label="Our record">
+          <div class="tl-stat"><span class="tl-stat-val" data-jb-rating data-count-up>5.0</span><span class="tl-stat-lbl">Star Average</span></div>
+          <div class="tl-stat"><span class="tl-stat-val" data-jb-count data-count-up>60+</span><span class="tl-stat-lbl">Five-Star Reviews</span></div>
+          <div class="tl-stat"><span class="tl-stat-val">0</span><span class="tl-stat-lbl">No-Shows</span></div>
+        </div>
+      </aside>
+
+     </div>
+    </div>
+
+    <div class="tl-body">
+     <div class="tl-body-inner">
+
+      <div class="tl-standard">
+        <h2 class="tl-standard-title">Tony Built the Standard. The Crew Brings It to Your Door.</h2>
+        <p class="tl-standard-lede"><mark class="tl-mark--circle">That isn&rsquo;t luck. It&rsquo;s a checklist.</mark></p>
+        <figure class="tl-rig">
+          <div class="tl-rig-stack">
+            <div class="tl-rig-shot tl-rig-shot--truck">
+              <picture>
+                <source srcset="images/rig-branded-800.webp 800w, images/rig-branded.webp 1600w" sizes="(max-width:768px) 90vw, 300px" type="image/webp">
+                <img src="images/rig-branded.jpg" alt="The Junk Brawlers dump truck with the company name and phone number on the side, used for hoarder cleanouts" width="1600" height="1200" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="tl-rig-shot tl-rig-shot--crew">
+              <img src="images/gbp-crew-loading-carpet-sm.webp" alt="A Junk Brawlers crew loading carpet and scrap into the dump truck on a North Georgia job" width="560" height="747" loading="lazy" decoding="async">
+            </div>
+          </div>
+          <figcaption class="tl-rig-cap">Our own marked truck. Our own crew on it.</figcaption>
+        </figure>
+        <ol class="tl-promises">
+          <li class="tl-promise">
+            <span class="tl-promise-n">01</span>
+            <div class="tl-promise-body">
+              <strong>One honest price, start to finish.</strong>
+              <p>A real Brawler answers, never a call center. You get the price on the call, and that quote is the number you pay.</p>
+            </div>
+          </li>
+          <li class="tl-promise">
+            <span class="tl-promise-n">02</span>
+            <div class="tl-promise-body">
+              <strong>Room by room, at your pace.</strong>
+              <p>No judgment and no lectures. What is inside stays between you and Tony, and we can work alongside family or a social worker.</p>
+            </div>
+          </li>
+          <li class="tl-promise">
+            <span class="tl-promise-n">03</span>
+            <div class="tl-promise-body">
+              <strong>Hauled right, and fully covered.</strong>
+              <p>Donated, resold, or recycled first, with the landfill last. Licensed, insured, and workers&rsquo; comp covered.</p>
+            </div>
+          </li>
+        </ol>
+        <div class="tl-cta tl-cta--standard">
+          <a href="contact.html" class="btn-ghost-white">Get Your Price &rarr;</a>
+          <span class="tl-cta-note">Free, no obligation. Usually same day.</span>
+        </div>
+      </div>
+
+      <figure class="tl-clip">
+        <span class="tl-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <blockquote>&ldquo;They came, they conquered the clutter, and they left!&rdquo;</blockquote>
+        <figcaption>Abdel Basheer &middot; Google Review &middot; 5&#9733;</figcaption>
+      </figure>
+
+     </div>
+    </div>
   </section>
+
+  <!-- Slide-in reveal for the Brawler Standard. Same gate as the homepage: no-JS and
+       reduced-motion keep it visible. -->
+  <script>
+  (function(){
+    var s=document.querySelector('.tl-standard');
+    if(!s||!('IntersectionObserver' in window))return;
+    if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+    s.classList.add('tl-anim-ready');
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){s.classList.add('is-in');io.disconnect();}});},{threshold:0.25});
+    io.observe(s);
+  })();
+  </script>
+
 
   <!-- FAQ -->
   <section class="faq-section" aria-label="Hoarder cleanout frequently asked questions">

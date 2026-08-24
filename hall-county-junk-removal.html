@@ -33,7 +33,7 @@
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-600.woff2" crossorigin>
   <link rel="preload" as="image" href="images/truck.webp" imagesrcset="images/truck-800.webp 800w, images/truck.webp 1600w" imagesizes="100vw" fetchpriority="high">
   <script defer src="js/site-data.js?v=jb37"></script>
-  <link rel="stylesheet" href="css/style.css?v=jb67">
+  <link rel="stylesheet" href="css/style.css?v=jb84">
 
   <!-- County coverage: prominent city-page links (the purpose) plus supporting area chips -->
   <style>
@@ -118,7 +118,7 @@
     {"@type":"Question","name":"Do you serve all of Hall County or just Gainesville?","acceptedAnswer":{"@type":"Answer","text":"All of it. Gainesville is the hub, but we cover the whole county: Flowery Branch, Oakwood, Clermont, the Cresswind community, and the Lake Lanier shoreline."}},
     {"@type":"Question","name":"How much does junk removal cost in Hall County?","acceptedAnswer":{"@type":"Answer","text":"Pricing is based on how much your items fill in the truck. You get a firm quote up front before any work starts, and that's the price you pay. No hidden fees and no climb once we're on site. Call for a price. (404) 632-9165"}},
     {"@type":"Question","name":"Do you handle downsizing cleanouts at Cresswind and hot tub removal on Lake Lanier?","acceptedAnswer":{"@type":"Answer","text":"Yes. Downsizing cleanouts at Cresswind and the other 55+ communities are some of the most common jobs in Hall County, and Lake Lanier waterfront homes call constantly to have old hot tubs drained and hauled. Tony also clears construction debris from the Flowery Branch builds."}},
-    {"@type":"Question","name":"Is the owner on every job in Hall County?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tony built the standard and trained the crew to it. A Brawler takes your call, gives you the price, and shows up. No call centers, no dispatched strangers. He's named by name in over half of his 60+ five-star reviews."}}
+    {"@type":"Question","name":"Who actually shows up, and who trained them?","acceptedAnswer":{"@type":"Answer","text":"Tony built the standard and trained the crew to it. A Brawler takes your call, gives you the price, and shows up. No call centers, no dispatched strangers. He's named by name in over half of his 60+ five-star reviews."}}
   ]}
   </script>
 </head>
@@ -265,7 +265,10 @@
     </div>
 
   <!-- SECTION 1: COUNTY STORY (unique) -->
-  <section class="pain-section" aria-label="About junk removal in Hall County GA">
+    <!-- LOCAL LEDE. Was .pain-section, which was a misnomer: this is county
+       positioning, not fear. The headline, the intro and the first two bullets are
+       the most locally specific prose on the page and are kept verbatim. -->
+<section class="local-lede" aria-label="About junk removal in Hall County GA">
     <div class="pain-inner">
       <h2 class="h2-bridge h2-bridge--dark" style="margin-bottom:16px;">Forty Years in a House, and Four Weeks to Decide What Goes.</h2>
       <ul class="pain-paragraph pain-paragraph--single">
@@ -275,11 +278,160 @@
       <ul class="pain-solutions">
         <li class="pain-answer">Tony runs Hall County regularly, from Gainesville to the Lanier shore. Call before noon and same-day is usually on the table.</li>
         <li class="pain-answer">Nothing leaves until you say so. We will hold a room and come back rather than <strong>rush</strong> a decision.</li>
-        <li class="pain-answer">The owner is on every job. Firm price up front, and that&rsquo;s the price you pay. No climb in the driveway.</li>
+        <li class="pain-answer">A firm price up front, and that&rsquo;s the price you pay. No climb in the driveway.</li>
       </ul>
     </div>
     <div class="pain-pivot-accent"></div>
     <p class="section-bridge section-bridge--light section-bridge--xl">Here&rsquo;s the whole county he covers.</p>
+  </section>
+
+  <!-- PRICING. Added 2026-08-24; county pages shipped with no pricing section at
+       all, while every city page already had the gauge. Placed straight after the
+       lede so the number clears the mobile scroll ceiling, and so the lede's white
+       fade lands on a light section instead of slamming into the dark services grid. -->
+<section class="pricing-section">
+    <!-- Truck drawn from the real rig: white Isuzu cab-over, black dump body with the
+         plywood side extensions, single rear axle. Split into tkBack / tkFront so each
+         tier can slot its own load level between the two and reuse the same artwork. -->
+    <svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
+      <defs>
+        <linearGradient id="truckFillGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FF9D3A"/>
+          <stop offset="100%" stop-color="#E86A00"/>
+        </linearGradient>
+        <linearGradient id="tkCab" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FFFFFF"/><stop offset="52%" stop-color="#E7EAF0"/><stop offset="100%" stop-color="#BCC2CF"/>
+        </linearGradient>
+        <linearGradient id="tkGlass" x1="0.1" y1="0" x2="0.6" y2="1">
+          <stop offset="0%" stop-color="#A6BADA"/><stop offset="100%" stop-color="#44567A"/>
+        </linearGradient>
+        <linearGradient id="tkBox" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#272235"/><stop offset="100%" stop-color="#0B0912"/>
+        </linearGradient>
+        <linearGradient id="tkBoxIn" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#090711"/><stop offset="100%" stop-color="#1E1A2B"/>
+        </linearGradient>
+        <linearGradient id="tkWood" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#B98F55"/><stop offset="100%" stop-color="#7C5C33"/>
+        </linearGradient>
+        <linearGradient id="tkRim" x1="0.2" y1="0.1" x2="0.8" y2="0.95">
+          <stop offset="0%" stop-color="#E3E7ED"/><stop offset="50%" stop-color="#A9AEB9"/><stop offset="100%" stop-color="#71767F"/>
+        </linearGradient>
+        <radialGradient id="tkTire" cx="0.36" cy="0.3" r="0.9">
+          <stop offset="0%" stop-color="#35353F"/><stop offset="70%" stop-color="#1B1B22"/><stop offset="100%" stop-color="#101015"/>
+        </radialGradient>
+
+        <g id="tkWheel">
+          <circle r="15" fill="url(#tkTire)"/>
+          <circle r="15" fill="none" stroke="#0B0B10" stroke-width="1"/>
+          <circle r="11.6" fill="none" stroke="#2A2A33" stroke-width="1.6"/>
+          <circle r="8" fill="url(#tkRim)"/>
+          <circle r="8" fill="none" stroke="#6B7079" stroke-width="0.7"/>
+          <circle r="3" fill="#878C97"/><circle r="1.5" fill="#5C6069"/>
+          <circle cx="0" cy="-5.3" r="1.15" fill="#636772"/><circle cx="5.04" cy="-1.64" r="1.15" fill="#636772"/>
+          <circle cx="3.12" cy="4.29" r="1.15" fill="#636772"/><circle cx="-3.12" cy="4.29" r="1.15" fill="#636772"/>
+          <circle cx="-5.04" cy="-1.64" r="1.15" fill="#636772"/>
+        </g>
+
+        <!-- behind the load: ground contact, plywood top rail, the bed we see into -->
+        <g id="tkBack">
+          <ellipse cx="112" cy="122" rx="96" ry="5.5" fill="#1A0F33" opacity="0.09"/>
+          <ellipse cx="32" cy="121" rx="17" ry="3" fill="#1A0F33" opacity="0.16"/>
+          <ellipse cx="168" cy="121" rx="17" ry="3" fill="#1A0F33" opacity="0.16"/>
+          <rect x="66" y="24" width="150" height="6" rx="1" fill="url(#tkWood)"/>
+          <rect x="66" y="29" width="150" height="1.4" fill="#08060E" opacity="0.55"/>
+          <rect x="74" y="30" width="134" height="66" fill="url(#tkBoxIn)"/>
+          <line x1="74" y1="46" x2="208" y2="46" stroke="#000" stroke-width="1" opacity="0.26"/>
+          <line x1="74" y1="63" x2="208" y2="63" stroke="#000" stroke-width="1" opacity="0.26"/>
+          <line x1="74" y1="80" x2="208" y2="80" stroke="#000" stroke-width="1" opacity="0.26"/>
+        </g>
+
+        <!-- in front of the load: corner posts, sill, frame rail, cab, wheels -->
+        <g id="tkFront">
+          <rect x="68" y="24" width="6" height="78" fill="url(#tkBox)"/>
+          <rect x="208" y="24" width="6" height="78" fill="url(#tkBox)"/>
+          <rect x="30" y="97" width="150" height="4.5" rx="1.5" fill="#16161D"/>
+          <rect x="66" y="96" width="150" height="7" rx="1" fill="url(#tkBox)"/>
+          <rect x="66" y="99.4" width="150" height="1.6" fill="#7B35D4" opacity="0.9"/>
+          <rect x="14" y="20" width="60" height="74" rx="5" fill="url(#tkCab)" stroke="#8E94A2" stroke-width="0.7"/>
+          <rect x="17" y="21" width="54" height="3.5" rx="1.8" fill="#FFFFFF" opacity="0.75"/>
+          <rect x="19" y="27" width="50" height="25" rx="3" fill="url(#tkGlass)"/>
+          <polygon points="22,50 36,28.5 45,28.5 24,51.5" fill="#FFFFFF" opacity="0.18"/>
+          <rect x="19" y="27" width="50" height="25" rx="3" fill="none" stroke="#767C8A" stroke-width="0.8"/>
+          <line x1="58" y1="53" x2="58" y2="93" stroke="#9BA1AE" stroke-width="0.9"/>
+          <rect x="49" y="63" width="7" height="2.2" rx="1.1" fill="#868C99"/>
+          <rect x="8" y="54" width="8" height="32" rx="2" fill="url(#tkCab)" stroke="#8E94A2" stroke-width="0.6"/>
+          <rect x="9" y="58" width="6" height="2" rx="1" fill="#676D7B"/><rect x="9" y="62.5" width="6" height="2" rx="1" fill="#676D7B"/><rect x="9" y="67" width="6" height="2" rx="1" fill="#676D7B"/>
+          <rect x="8.5" y="72.5" width="7" height="7" rx="1.5" fill="#FFEBB0" stroke="#C6A95C" stroke-width="0.6"/>
+          <rect x="6" y="86" width="26" height="9" rx="2" fill="#2B2B34"/>
+          <rect x="6" y="86" width="26" height="2" rx="1" fill="#4A4A55"/>
+          <rect x="10" y="27" width="2" height="15" rx="1" fill="#3B3B45"/>
+          <rect x="6" y="25" width="5.5" height="9" rx="1.5" fill="#3B3B45"/>
+          <rect x="34" y="93" width="18" height="4" rx="1.2" fill="#24242C"/>
+          <use href="#tkWheel" x="32" y="107"/>
+          <use href="#tkWheel" x="168" y="107"/>
+        </g>
+      </defs>
+    </svg>
+    <div class="pricing-inner">
+      <h2 class="h2-bridge h2-bridge--light">A Couch Is Not a Truckload. Pay for What You&rsquo;ve Got.</h2>
+      <p class="pricing-intro">We price by how much space your load fills in the truck. A few pieces is a small load. A whole-room cleanout fills more. You get that number on the call, and it doesn&rsquo;t move.</p>
+            <!-- ONE-TRUCK PRICING GAUGE. Rolled out from index.html 2026-08-24, replacing the
+           four .pricing-tier cards. Same reason it replaced them on the homepage: at card
+           size the four fill levels were indistinguishable, so a visitor had to visually
+           diff four objects to read what is really one continuous scale. This renders the
+           SAME truck once at full size and labels the quarter divisions the bed artwork
+           already carried at y=46/63/80.
+           Layering: #tkBack (bed interior) behind, HTML bands over it, #tkFront (posts,
+           cab, wheels) in front. Both use the SVG defs already on this page.
+           This page's own tier copy is carried across: .tier-desc became .tk-band__desc
+           and .tier-badge became .tk-band__badge, which was added for this rollout so the
+           page-specific badge line was not dropped. -->
+      <div class="tk-gauge">
+        <div class="tk-gauge__stage">
+          <svg class="tk-gauge__art" viewBox="0 0 220 130" aria-hidden="true" focusable="false"><use href="#tkBack"/></svg>
+          <ul class="tk-gauge__bands">
+          <li class="tk-band tk-band--full">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Full<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">Full home cleanout or major haul</span>
+            </span>
+            <span class="tk-band__price">$600</span>
+          </li>
+          <li class="tk-band tk-band--three">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Three-Quarter<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">Multiple items or a room cleanout</span>
+              <span class="tk-band__badge">Garage &amp; spare room jobs</span>
+            </span>
+            <span class="tk-band__price">$450</span>
+          </li>
+          <li class="tk-band tk-band--half">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Half<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">Sofa, fridge, or a few mixed items</span>
+              <span class="tk-band__badge">Most single-room jobs</span>
+            </span>
+            <span class="tk-band__price">$300</span>
+          </li>
+          <li class="tk-band tk-band--quarter">
+            <span class="tk-band__label">
+              <span class="tk-band__name">Quarter<span class="tk-band__unit"> Truck</span></span>
+              <span class="tk-band__desc">A few items or a single piece</span>
+            </span>
+            <span class="tk-band__price">$150</span>
+          </li>
+          </ul>
+          <svg class="tk-gauge__art tk-gauge__art--front" viewBox="0 0 220 130" aria-hidden="true" focusable="false"><use href="#tkFront"/></svg>
+        </div>
+      </div>
+      <div class="pricing-note">
+        <strong>Where does a typical job land?</strong>
+        A sofa or a couple of appliances is usually a half load. A garage cleanout or multi-room clear-out fills more. You get a firm number before we touch a thing, and it doesn&rsquo;t change once we&rsquo;re on site.
+      </div>
+      <a href="contact.html" class="btn-fire" style="font-family:var(--font-heading);font-size:17px;letter-spacing:1.5px;padding:16px 44px;">Get a Price &rarr;</a>
+      <p class="section-bridge section-bridge--light" style="margin-top:40px;">Here&rsquo;s everything he takes.</p>
+    </div>
   </section>
 
   <!-- SECTION 2: COVERAGE HUB (core hub job) -->
@@ -499,60 +651,82 @@
   </section>
 
   <!-- SECTION 4: OWNER (fit) -->
-  <section class="owner-section" style="clip-path:polygon(0 6vw,100% 0%,100% 100%,0% 100%);margin-top:-6vw;padding-top:calc(80px + 6vw);z-index:10;">
-    <div class="owner-inner">
+    <!-- SECTION: THE BRAWLER STANDARD. Rebuilt 2026-08-24 to the homepage treatment, matching
+       the hubs and the service pages. Was .owner-section.
+       No owner note on county pages: the note is a personal, job-specific device and a county
+       is a geography, not a job. The local voice on these pages is the .local-lede up top. -->
+  <section class="std-section" aria-label="The Brawler Standard for junk removal in Hall County">
+    <div class="tl-body">
+     <div class="tl-body-inner">
 
-      <div class="owner-head">
-        <div class="owner-text-head">
-          <div class="owner-accent-bar"></div>
-          <h2 class="h2-bridge h2-bridge--dark">No Franchise. No Call Center. Just Tony.</h2>
+      <div class="tl-standard">
+        <h2 class="tl-standard-title">Tony Built the Standard. The Crew Runs It Across Hall County.</h2>
+        <p class="tl-standard-lede"><mark class="tl-mark--circle">That isn&rsquo;t luck. It&rsquo;s a checklist.</mark></p>
+        <figure class="tl-rig">
+          <div class="tl-rig-stack">
+            <div class="tl-rig-shot tl-rig-shot--truck">
+              <picture>
+                <source srcset="images/rig-branded-800.webp 800w, images/rig-branded.webp 1600w" sizes="(max-width:768px) 90vw, 300px" type="image/webp">
+                <img src="images/rig-branded.jpg" alt="The Junk Brawlers dump truck with the company name and phone number on the side, serving Hall County" width="1600" height="1200" loading="lazy" decoding="async">
+              </picture>
+            </div>
+            <div class="tl-rig-shot tl-rig-shot--crew">
+              <img src="images/gbp-crew-loading-carpet-sm.webp" alt="A Junk Brawlers crew loading carpet and scrap into the dump truck on a North Georgia job" width="560" height="747" loading="lazy" decoding="async">
+            </div>
+          </div>
+          <figcaption class="tl-rig-cap">Our own marked truck. Our own crew on it.</figcaption>
+        </figure>
+        <ol class="tl-promises">
+          <li class="tl-promise">
+            <span class="tl-promise-n">01</span>
+            <div class="tl-promise-body">
+              <strong>One honest price, start to finish.</strong>
+              <p>A real Brawler answers, never a call center. You get the price on the call, and that quote is the number you pay.</p>
+            </div>
+          </li>
+          <li class="tl-promise">
+            <span class="tl-promise-n">02</span>
+            <div class="tl-promise-body">
+              <strong>We show up when we said we would.</strong>
+              <p>A set time, not a window. Call before noon and same day is usually on the table across Hall County.</p>
+            </div>
+          </li>
+          <li class="tl-promise">
+            <span class="tl-promise-n">03</span>
+            <div class="tl-promise-body">
+              <strong>Hauled right, and fully covered.</strong>
+              <p>Donated, resold, or recycled first, with the landfill last. Licensed, insured, and workers&rsquo; comp covered.</p>
+            </div>
+          </li>
+        </ol>
+        <div class="tl-cta tl-cta--standard">
+          <a href="contact.html" class="btn-ghost-white">Get Your Price &rarr;</a>
+          <span class="tl-cta-note">Free, no obligation. Usually same day.</span>
         </div>
       </div>
 
-      <div class="owner-photo-wrap">
-        <picture>
-          <source srcset="images/team-headshot.webp" type="image/webp">
-          <img src="images/team-headshot.jpg" alt="Tony Frias, owner of Junk Brawlers, serving Hall County GA" width="340" height="339" loading="lazy">
-        </picture>
-        <div class="owner-badge">
-          <span class="owner-badge-score">&#9733; 5.0</span>
-          <span class="owner-badge-label"><span data-jb-count>60+</span> Google Reviews</span>
-        </div>
-      </div>
+      <figure class="tl-clip">
+        <span class="tl-stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <blockquote>&ldquo;Called for a quick junk removal and hour later came through and got it all done, definitely recommend and will be using the services in the future.&rdquo;</blockquote>
+        <figcaption>Sam Morden &middot; Google Review &middot; 5&#9733;</figcaption>
+      </figure>
 
-      <div class="owner-body">
-        <p>Tony Frias isn&rsquo;t a franchise operator dispatched from a call center. He runs Hall County regularly, from downtown Gainesville to the Cresswind community, the Lanier waterfront, and the new builds going up around Flowery Branch. He knows the retirees who just need it gone with no fuss, and the builders who need the site clear by Monday.</p>
-        <p>Dial <strong style="color:#fff;">Junk Brawlers</strong> and <strong style="color:#fff;">Tony</strong> picks up, the owner himself. He gives you the price, works the job alongside his crew, and never moves the number once he is on site. No call centers, no dispatched strangers, no surprises on the invoice. He launched in 2024 and built it job by job, and it shows in the reviews, over half of them name him personally.</p>
-
-        <div class="owner-stats">
-          <div class="owner-stat">
-            <span class="stat-val fire" data-jb-count>60+</span>
-            <span class="stat-lbl">Five-Star Reviews</span>
-          </div>
-          <div class="owner-stat">
-            <span class="stat-val fire" data-jb-rating>5.0</span>
-            <span class="stat-lbl">Star Average</span>
-          </div>
-          <div class="owner-stat">
-            <span class="stat-val fire">0</span>
-            <span class="stat-lbl">No-Shows</span>
-          </div>
-        </div>
-
-        <p class="proof-connector" style="margin-top:36px;margin-bottom:12px;">One customer put it this way:</p>
-        <div class="rw-mini rw-mini--light">
-          <span class="rw-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
-          <p class="rw-mini-text">&ldquo;Great group of guys! Got everything out of garage quick!! Would definitely recommend!!!&rdquo;</p>
-          <span class="rw-mini-author">Kevin Lindberg &middot; Google Review &middot; 5&#9733;</span>
-        </div>
-
-        <div style="margin-top:24px;">
-          <a href="tel:4046329165" class="btn-fire">Call Junk Brawlers &rarr;</a>
-        </div>
-      </div>
-
+     </div>
     </div>
   </section>
+
+  <!-- Slide-in reveal for the Brawler Standard. Same gate as the homepage. -->
+  <script>
+  (function(){
+    var s=document.querySelector('.tl-standard');
+    if(!s||!('IntersectionObserver' in window))return;
+    if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+    s.classList.add('tl-anim-ready');
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){s.classList.add('is-in');io.disconnect();}});},{threshold:0.25});
+    io.observe(s);
+  })();
+  </script>
+
 
   <!-- SECTION 5: SOCIAL PROOF -->
   <section class="trust-quotes" aria-label="Customer reviews, junk removal Hall County GA">
@@ -687,10 +861,10 @@
         <div class="faq-item">
           <div class="faq-question" role="button" tabindex="0" aria-expanded="false">
             <span class="faq-num">05</span>
-            <span class="faq-text">Is the owner on every job?</span>
+            <span class="faq-text">Who actually shows up, and who trained them?</span>
             <span class="faq-toggle" aria-hidden="true">+</span>
           </div>
-          <div class="faq-answer">Yes. Tony built the standard and trained the crew to it. A Brawler takes your call, gives you the price, and shows up. No call centers, no dispatched strangers. He&rsquo;s named by name in over half of his 60+ five-star reviews.</div>
+          <div class="faq-answer">Tony built the standard and trained the crew to it. A Brawler takes your call, gives you the price, and shows up. No call centers, no dispatched strangers. He&rsquo;s named by name in over half of his 60+ five-star reviews.</div>
         </div>
 
       </div>
