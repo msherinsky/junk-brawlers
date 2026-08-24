@@ -33,9 +33,15 @@
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-600.woff2" crossorigin>
   <link rel="preload" as="image" href="images/truck.webp" imagesrcset="images/truck-800.webp 800w, images/truck.webp 1600w" imagesizes="100vw" fetchpriority="high">
   <script defer src="js/site-data.js?v=jb37"></script>
-  <link rel="stylesheet" href="css/style.css?v=jb63">
+  <link rel="stylesheet" href="css/style.css?v=jb67">
   <style>
     .hiw-section { padding-top: 80px; }
+    /* .svc-list--hub is a 3-column grid sized for up to 6 children. This hub has 2, so the
+       empty third column makes the chips read as left-shifted rather than centered.
+       DELETE this override once property-management-cleanouts is built and it is a 3. */
+    @media (min-width: 880px) {
+      .svc-list--hub { grid-template-columns: repeat(2, 1fr); max-width: 560px; }
+    }
   </style>
 
   <script type="application/ld+json">
@@ -334,7 +340,15 @@
     "highPrice": "600",
     "description": "Volume-based pricing per trip. Get a price before any work begins."
   },
-  "url": "https://junkbrawlers.com/commercial-junk-removal.html"
+  "url": "https://junkbrawlers.com/commercial-junk-removal.html",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Commercial Junk Removal Services",
+    "itemListElement": [
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Office Cleanouts","url":"https://junkbrawlers.com/office-cleanouts.html"}},
+      {"@type":"Offer","itemOffered":{"@type":"Service","name":"Construction Debris Removal","url":"https://junkbrawlers.com/construction-debris-removal.html"}}
+    ]
+  }
 }
   </script>
 
@@ -342,10 +356,10 @@
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
     {"@type":"Question","name":"Can you work outside normal business hours?","acceptedAnswer":{"@type":"Answer","text":"Yes. Tony regularly schedules early morning, after-hours, and weekend jobs for businesses that can't have a junk crew walking through during operating hours. Call (404) 632-9165 to discuss your schedule and Tony will tell you what he can do."}},
     {"@type":"Question","name":"Do you work with property managers for between-tenant cleanouts?","acceptedAnswer":{"@type":"Answer","text":"Yes. Between-tenant cleanouts are one of Tony's most common commercial jobs. He understands the timeline pressure, the next tenant's lease has a start date and the unit needs to be clear. Call (404) 632-9165 and Tony can often schedule same-day or next-day for property management situations."}},
-    {"@type":"Question","name":"Can you remove office furniture, cubicles, and equipment?","acceptedAnswer":{"@type":"Answer","text":"Yes. Office desks, chairs, cubicle panels, filing cabinets, shelving, We haul it all. For large office cleanouts with a lot of heavy furniture, we gives you a per-load estimate after walking the space so you know exactly what the full job will cost. Call (404) 632-9165 for a price."}},
+    {"@type":"Question","name":"Can you remove office furniture, cubicles, and equipment?","acceptedAnswer":{"@type":"Answer","text":"Yes. Office desks, chairs, cubicle panels, filing cabinets, shelving. We haul it all. For large office cleanouts with a lot of heavy furniture, we give you a per-load estimate after walking the space so you know exactly what the full job will cost. Call (404) 632-9165 for a price."}},
     {"@type":"Question","name":"How is working with Tony different from a national junk removal franchise?","acceptedAnswer":{"@type":"Answer","text":"With a national franchise, you don't know who's showing up, it's whoever is on the truck that day. With Tony, the owner who answered your call is the one who walked the space, and he's on-site with his crew for every load. For commercial and property management clients, that consistency matters. You know who has access to your property."}},
     {"@type":"Question","name":"Do you do recurring commercial cleanouts or is it one-time only?","acceptedAnswer":{"@type":"Answer","text":"Both. Tony does one-time cleanouts and also works with property managers and businesses that have regular hauling needs. If you have ongoing volume, call (404) 632-9165 and Tony can talk through what a recurring arrangement would look like for your situation."}},
-    {"@type":"Question","name":"Can you handle confidential document disposal?","acceptedAnswer":{"@type":"Answer","text":"We haul paper and document boxes but does not provide certified shredding or chain-of-custody destruction. If your documents require certified destruction for compliance, you'll need a dedicated document shredding service for that portion. For everything else, furniture, equipment, general office material, call (404) 632-9165."}}
+    {"@type":"Question","name":"Can you handle confidential document disposal?","acceptedAnswer":{"@type":"Answer","text":"We haul paper and document boxes but do not provide certified shredding or chain-of-custody destruction. If your documents require certified destruction for compliance, you'll need a dedicated document shredding service for that portion. For everything else, furniture, equipment, general office material, call (404) 632-9165."}}
   ]}
   </script>
 
@@ -370,21 +384,15 @@
         <button aria-expanded="false" aria-haspopup="true">Services <span class="arrow">&#9662;</span></button>
         <div class="dropdown-menu">
           <a href="services.html">All Services</a>
-          <a href="junk-removal.html">Junk Removal</a>
-          <a href="appliance-removal.html">Appliance Removal</a>
-          <a href="hot-tub-removal.html">Hot Tub Removal</a>
-          <a href="pool-removal.html">Pool Removal</a>
-          <a href="estate-cleanouts.html">Estate Cleanouts</a>
-          <a href="garage-cleanouts.html">Garage Cleanouts</a>
-          <a href="construction-debris-removal.html">Construction Debris</a>
-          <a href="commercial-junk-removal.html" aria-current="page">Commercial Removal</a>
-          <a href="hoarder-cleanouts.html">Hoarder Cleanouts</a>
-          <a href="shed-deck-removal.html">Shed &amp; Deck Removal</a>
+          <a href="residential-junk-removal.html">Residential Junk Removal</a>
+          <a href="commercial-junk-removal.html" aria-current="page">Commercial Junk Removal</a>
+          <a href="cleanout-services.html">Cleanout Services</a>
         </div>
       </div>
       <div class="nav-dropdown">
         <button aria-expanded="false" aria-haspopup="true">Locations <span class="arrow">&#9662;</span></button>
         <div class="dropdown-menu dropdown-menu--locations">
+          <a href="service-areas.html">All Service Areas</a>
           <div class="dropdown-col-label">Counties</div>
           <div class="dropdown-counties">
             <a href="dawson-county-junk-removal.html">Dawson County</a>
@@ -398,38 +406,6 @@
             <a href="white-county-junk-removal.html">White County</a>
             <a href="pickens-county-junk-removal.html">Pickens County</a>
             <a href="gwinnett-county-junk-removal.html">Gwinnett County</a>
-          </div>
-          <div class="dropdown-col-label">Cities</div>
-          <div class="dropdown-cities">
-            <a href="dawsonville.html">Dawsonville GA</a>
-            <a href="alpharetta.html">Alpharetta GA</a>
-            <a href="ball-ground.html">Ball Ground GA</a>
-            <a href="blue-ridge.html">Blue Ridge GA</a>
-            <a href="buford.html">Buford GA</a>
-            <a href="canton.html">Canton GA</a>
-            <a href="cherry-log.html">Cherry Log GA</a>
-            <a href="cleveland.html">Cleveland GA</a>
-            <a href="cumming.html">Cumming GA</a>
-            <a href="dahlonega.html">Dahlonega GA</a>
-            <a href="duluth.html">Duluth GA</a>
-            <a href="ellijay.html">Ellijay GA</a>
-            <a href="flowery-branch.html">Flowery Branch GA</a>
-            <a href="gainesville.html">Gainesville GA</a>
-            <a href="helen.html">Helen GA</a>
-            <a href="holly-springs.html">Holly Springs GA</a>
-            <a href="jasper.html">Jasper GA</a>
-            <a href="johns-creek.html">Johns Creek GA</a>
-            <a href="lawrenceville.html">Lawrenceville GA</a>
-            <a href="milton.html">Milton GA</a>
-            <a href="morganton.html">Morganton GA</a>
-            <a href="norcross.html">Norcross GA</a>
-            <a href="oakwood.html">Oakwood GA</a>
-            <a href="roswell.html">Roswell GA</a>
-            <a href="sandy-springs.html">Sandy Springs GA</a>
-            <a href="snellville.html">Snellville GA</a>
-            <a href="sugar-hill.html">Sugar Hill GA</a>
-            <a href="suwanee.html">Suwanee GA</a>
-            <a href="woodstock.html">Woodstock GA</a>
           </div>
         </div>
       </div>
@@ -450,17 +426,11 @@
     <a href="about.html">About Us</a>
     <div class="mobile-section-label">Services</div>
     <a href="services.html">All Services</a>
-    <a href="junk-removal.html">Junk Removal</a>
-    <a href="appliance-removal.html">Appliance Removal</a>
-    <a href="hot-tub-removal.html">Hot Tub Removal</a>
-    <a href="pool-removal.html">Pool Removal</a>
-    <a href="estate-cleanouts.html">Estate Cleanouts</a>
-    <a href="garage-cleanouts.html">Garage Cleanouts</a>
-    <a href="construction-debris-removal.html">Construction Debris</a>
-    <a href="commercial-junk-removal.html" aria-current="page">Commercial Removal</a>
-    <a href="hoarder-cleanouts.html">Hoarder Cleanouts</a>
-    <a href="shed-deck-removal.html">Shed &amp; Deck Removal</a>
-    <div class="mobile-section-label">Counties</div>
+    <a href="residential-junk-removal.html">Residential Junk Removal</a>
+    <a href="commercial-junk-removal.html" aria-current="page">Commercial Junk Removal</a>
+    <a href="cleanout-services.html">Cleanout Services</a>
+    <div class="mobile-section-label">Locations</div>
+    <a href="service-areas.html">All Service Areas</a>
     <a href="dawson-county-junk-removal.html">Dawson County</a>
     <a href="cherokee-county-junk-removal.html">Cherokee County</a>
     <a href="forsyth-county-junk-removal.html">Forsyth County</a>
@@ -472,38 +442,6 @@
     <a href="white-county-junk-removal.html">White County</a>
     <a href="pickens-county-junk-removal.html">Pickens County</a>
     <a href="gwinnett-county-junk-removal.html">Gwinnett County</a>
-    <div class="mobile-section-label">Service Areas</div>
-    <a href="dawsonville.html">Dawsonville GA</a>
-    <a href="alpharetta.html">Alpharetta GA</a>
-            <a href="ball-ground.html">Ball Ground GA</a>
-    <a href="blue-ridge.html">Blue Ridge GA</a>
-            <a href="buford.html">Buford GA</a>
-    <a href="canton.html">Canton GA</a>
-    <a href="cherry-log.html">Cherry Log GA</a>
-            <a href="cleveland.html">Cleveland GA</a>
-    <a href="cumming.html">Cumming GA</a>
-    <a href="dahlonega.html">Dahlonega GA</a>
-            <a href="duluth.html">Duluth GA</a>
-    <a href="ellijay.html">Ellijay GA</a>
-    <a href="flowery-branch.html">Flowery Branch GA</a>
-    <a href="gainesville.html">Gainesville GA</a>
-    <a href="helen.html">Helen GA</a>
-            <a href="holly-springs.html">Holly Springs GA</a>
-            <a href="jasper.html">Jasper GA</a>
-            <a href="johns-creek.html">Johns Creek GA</a>
-            <a href="lawrenceville.html">Lawrenceville GA</a>
-    <a href="milton.html">Milton GA</a>
-    <a href="morganton.html">Morganton GA</a>
-            <a href="norcross.html">Norcross GA</a>
-            <a href="oakwood.html">Oakwood GA</a>
-            <a href="roswell.html">Roswell GA</a>
-            <a href="sandy-springs.html">Sandy Springs GA</a>
-            <a href="snellville.html">Snellville GA</a>
-            <a href="sugar-hill.html">Sugar Hill GA</a>
-    <a href="suwanee.html">Suwanee GA</a>
-    <a href="woodstock.html">Woodstock GA</a>
-    <a href="faq.html">FAQ</a>
-    <a href="contact.html">Contact</a>
     <div class="mobile-ctas">
       <a href="contact.html" class="btn-ghost-white">GET A PRICE</a>
       <a href="tel:4046329165" class="btn-phone" data-phone-href>(404) 632-9165</a>
@@ -583,7 +521,32 @@
       </ul>
     </div>
     <div class="pain-pivot-accent"></div>
-    <p class="section-bridge section-bridge--light section-bridge--xl" style="padding-bottom:24px;">Here&rsquo;s how a commercial job works.</p>
+    <p class="section-bridge section-bridge--light section-bridge--xl" style="padding-bottom:24px;">Start with the kind of property you have.</p>
+  </section>
+
+  <!-- COMMERCIAL SERVICE GRID. This page is a hub: it routes a business job to the right
+       child page and gives Google a parent for them. Chip markup is deliberately identical
+       to the residential and specialty hubs so it inherits existing styles.
+       Two children today. property-management-cleanouts drops in here when it is built,
+       which is what .svc-list--hub's 3-column grid is sized for. -->
+  <section class="svc-section">
+    <div class="svc-inner">
+      <h2 class="h2-bridge h2-bridge--dark">What Businesses Call Us For</h2>
+      <div class="svc-intro">
+        <p>Scheduled around your hours, not ours.</p>
+      </div>
+      <ul class="svc-list svc-list--hub">
+          <li class="svc-cell"><a class="svc-chip" href="office-cleanouts.html">
+            <span class="svc-chip__name">Office Cleanouts</span>
+            <span class="svc-chip__items">Desks, cubicles, dead IT gear</span>
+          </a></li>
+          <li class="svc-cell"><a class="svc-chip" href="construction-debris-removal.html">
+            <span class="svc-chip__name">Construction Debris</span>
+            <span class="svc-chip__items">Drywall, lumber, tile, tear-off</span>
+          </a></li>
+      </ul>
+      <p class="svc-footnote">Clearing a home instead of a business? <a href="residential-junk-removal.html">See residential junk removal</a>.</p>
+    </div>
   </section>
 
   <!-- SECTION 3: HOW IT WORKS -->
@@ -603,8 +566,8 @@
 
         <div class="hiw-step">
           <div class="hiw-num"><span>2</span></div>
-          <h3>Tony&rsquo;s on Every Job</h3>
-          <p>Not strangers you&rsquo;ve never met, you deal with Tony, the owner. He walks the space first to confirm what&rsquo;s going and gives you a per-trip price before anything moves. Then he and his crew work discreetly and efficiently, in and out without disrupting operations or leaving a mess for your staff to clean up.</p>
+          <h3>Walked and Quoted First</h3>
+          <p>The space gets walked before anything is booked, so you have a per-trip price before a single item moves. The crew that arrives is the crew Tony trained, working to the standard he wrote down. In and out without disrupting operations or leaving a mess for your staff.</p>
         </div>
 
         <div class="hiw-step">
@@ -785,7 +748,7 @@
       <div class="owner-head">
         <div class="owner-text-head">
           <div class="owner-accent-bar"></div>
-          <h2 class="h2-bridge h2-bridge--dark">Owner on Every Job. You Know Who&rsquo;s Showing Up.</h2>
+          <h2 class="h2-bridge h2-bridge--dark">You Know Exactly Who Has Access to Your Property.</h2>
         </div>
       </div>
       <div class="owner-photo-wrap">
@@ -799,8 +762,8 @@
         </div>
       </div>
       <div class="owner-body">
-        <p>For commercial work, who has access to your property matters. Tony leads the crew. He&rsquo;s the one who answered the phone, gave you the quote, and he&rsquo;s on-site for every single load. <strong>No rotating strangers. No one you&rsquo;ve never met walking through your property.</strong></p>
-        <p>When you call <strong style="color:#fff;">Junk Brawlers</strong>, you&rsquo;re talking to <strong style="color:#fff;">Tony Frias</strong>, the owner. The same owner who picks up the phone is on the job at your door, with his crew. <strong>No call centers, no strangers on your property, no surprises when the job is done.</strong></p>
+        <p>For commercial work, who walks your property matters more than almost anything else. <strong>The same crew every time, never subcontractors, never a rotating cast off a day-labour list.</strong> They work to a standard Tony wrote down and trained them to.</p>
+        <p>When you call <strong style="color:#fff;">Junk Brawlers</strong>, a Brawler answers, not a call centre booking on behalf of a franchise. <strong style="color:#fff;">Tony Frias</strong> owns the business and you can look him up in the state&rsquo;s records. <strong>Licensed, insured, and covered by workers&rsquo; comp, with the paperwork available before the date if your building needs it.</strong></p>
         <p>He&rsquo;s <strong>named by name in 60% of his reviews.</strong> Not because he asks for it. Because people remember him.</p>
         <div class="owner-stats">
           <div class="owner-stat"><span class="stat-val fire" data-jb-count>60+</span><span class="stat-lbl">Five-Star Reviews</span></div>
@@ -875,7 +838,7 @@
             <span class="faq-text">Can you remove office furniture, cubicles, and equipment?</span>
             <span class="faq-toggle" aria-hidden="true">+</span>
           </div>
-          <div class="faq-answer">Yes. Office desks, chairs, cubicle panels, filing cabinets, shelving, We haul it all. For large office cleanouts with a lot of heavy furniture, we gives you a per-load estimate after walking the space so you know exactly what the full job will cost. Call <a href="tel:4046329165" style="color:var(--color-primary);font-weight:700;">(404) 632-9165</a> for a price.</div>
+          <div class="faq-answer">Yes. Office desks, chairs, cubicle panels, filing cabinets, shelving. We haul it all. For large office cleanouts with a lot of heavy furniture, we give you a per-load estimate after walking the space so you know exactly what the full job will cost. Call <a href="tel:4046329165" style="color:var(--color-primary);font-weight:700;">(404) 632-9165</a> for a price.</div>
         </div>
 
         <div class="faq-item">
@@ -902,7 +865,7 @@
             <span class="faq-text">Can you handle confidential document disposal?</span>
             <span class="faq-toggle" aria-hidden="true">+</span>
           </div>
-          <div class="faq-answer">We haul paper and document boxes but does not provide certified shredding or chain-of-custody destruction. If your documents require certified destruction for compliance purposes, you&rsquo;ll need a dedicated document shredding service for that portion. For everything else, furniture, equipment, general office material, call <a href="tel:4046329165" style="color:var(--color-primary);font-weight:700;">(404) 632-9165</a>.</div>
+          <div class="faq-answer">We haul paper and document boxes but do not provide certified shredding or chain-of-custody destruction. If your documents require certified destruction for compliance purposes, you&rsquo;ll need a dedicated document shredding service for that portion. For everything else, furniture, equipment, general office material, call <a href="tel:4046329165" style="color:var(--color-primary);font-weight:700;">(404) 632-9165</a>.</div>
         </div>
 
       </div>
@@ -913,15 +876,15 @@
   <section class="locations-hub">
     <div class="locations-hub-inner">
       <p class="section-bridge section-bridge--dark" style="text-align:center;padding-top:0;padding-bottom:12px;color:#111111;">Check Your City. He Probably Comes to You.</p>
-      <p class="locations-intro">14 cities across North Georgia, from Blue Ridge to Buford, Ellijay to Gainesville. Click any city to find it on the map.</p>
+      <p class="locations-intro">29 cities across North Georgia, from Blue Ridge to Buford, Ellijay to Gainesville. Click any city to find it on the map.</p>
       <div class="locations-layout locations-layout--zones">
         <div id="map-container">
-          <div id="service-map" role="application" aria-label="Junk Brawlers service area map, 14 cities across North Georgia. Tap your city's zone to open that page."></div>
+          <div id="service-map" role="application" aria-label="Junk Brawlers service area map, 29 cities across North Georgia. Tap your city's zone to open that page."></div>
         </div>
       </div>
       <p class="locations-arealist-label">Also serving, tap a zone above, or pick a city:</p>
       <div class="locations-arealist">
-        <a href="dawsonville.html" class="area-link" data-lat="34.4190" data-lng="-84.1186" data-name="Dawsonville">Dawsonville</a>
+        <a href="/" class="area-link" data-lat="34.4190" data-lng="-84.1186" data-name="Dawsonville">Dawsonville</a>
         <a href="ball-ground.html" class="area-link" data-lat="34.3387" data-lng="-84.3777" data-name="Ball Ground">Ball Ground</a>
         <a href="canton.html" class="area-link" data-lat="34.2365" data-lng="-84.4910" data-name="Canton">Canton</a>
         <a href="cherry-log.html" class="area-link" data-lat="34.7718" data-lng="-84.5101" data-name="Cherry Log">Cherry Log</a>
@@ -974,7 +937,7 @@
         <span class="footer-hours">Mon&ndash;Fri 7am&ndash;6pm &middot; Sat&ndash;Sun 9am&ndash;6pm</span>
       </div>
       <div class="footer-col"><h3>Quick Links</h3><ul><li><a href="/">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="services.html">Services</a></li><li><a href="service-areas.html">Service Areas</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact.html">Contact / Quote</a></li></ul></div>
-      <div class="footer-col"><h3>Services</h3><ul><li><a href="junk-removal.html">Junk Removal</a></li><li><a href="appliance-removal.html">Appliance Removal</a></li><li><a href="hot-tub-removal.html">Hot Tub Removal</a></li><li><a href="pool-removal.html">Pool Removal</a></li><li><a href="estate-cleanouts.html">Estate Cleanouts</a></li><li><a href="garage-cleanouts.html">Garage Cleanouts</a></li><li><a href="hoarder-cleanouts.html">Hoarder Cleanouts</a></li><li><a href="construction-debris-removal.html">Construction Debris</a></li><li><a href="commercial-junk-removal.html">Commercial Removal</a></li><li><a href="shed-deck-removal.html">Shed &amp; Deck Removal</a></li></ul></div>
+      <div class="footer-col"><h3>Services</h3><ul><li><a href="services.html">All Services</a></li><li><a href="residential-junk-removal.html">Residential Junk Removal</a></li><li><a href="commercial-junk-removal.html">Commercial Junk Removal</a></li><li><a href="cleanout-services.html">Cleanout Services</a></li></ul></div>
       <div class="footer-col">
         <h3>Follow Junk Brawlers</h3>
         <div class="social-icons">

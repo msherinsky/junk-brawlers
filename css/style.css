@@ -777,6 +777,27 @@ h1,h2,h3,h4{font-family:var(--font-heading);font-weight:800}
 /* Ten services: auto-fit lands on 6 columns at full width, which leaves a ragged orphan
    row of 4. Pinning 5 columns above the breakpoint gives a clean 5 x 2. */
 @media(min-width:880px){.svc-list{grid-template-columns:repeat(5,1fr)}}
+/* Hub variant. The category hubs carry 6 or fewer services, where the homepage's pinned
+   5 columns leaves a single orphan on row two. Three columns gives 6 a clean 3 x 2 and
+   keeps 2 or 3 items centred rather than stretched across the full width. */
+@media(min-width:880px){.svc-list--hub{grid-template-columns:repeat(3,1fr);max-width:840px;margin-inline:auto}}
+/* Grouped variant, for the homepage and services.html. The nav and footer now link only
+   the three category hubs, so these two grids are where the job pages stay reachable in one
+   scan. Grouping under a hub heading shows the hierarchy without going back to a flat list
+   of ten, and without losing the thing the homepage grid is for: a visitor scanning for
+   their own item rather than picking a category. Own list class, not .svc-list, so it does
+   not have to fight the pinned 5-column rule above. */
+.svc-groups{display:grid;grid-template-columns:1fr;gap:32px;max-width:1100px;margin:0 auto;position:relative;z-index:1}
+@media(min-width:900px){.svc-groups{grid-template-columns:repeat(3,1fr);gap:26px;align-items:start}}
+.svc-group-head{display:block;font-family:var(--font-heading);font-weight:800;font-size:15px;letter-spacing:1.4px;text-transform:uppercase;color:var(--color-fire);text-decoration:none;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,0.14)}
+.svc-group-head:hover{color:#fff;border-bottom-color:var(--color-fire)}
+.svc-group-list{display:grid;grid-template-columns:1fr;gap:8px;list-style:none;margin:0;padding:0}
+.svc-section--light .svc-group-head{border-bottom-color:rgba(17,17,17,0.14)}
+.svc-section--light .svc-group-head:hover{color:#111}
+/* Routing line under a hub grid. Inherits nothing useful from .svc-inner, so contrast is
+   set explicitly here rather than left to the cascade. */
+.svc-footnote{text-align:center;margin-top:28px;color:rgba(255,255,255,0.65);font-size:15px;line-height:1.7}
+.svc-footnote a{color:var(--color-fire);font-weight:700;text-decoration:underline;text-underline-offset:3px}
 .svc-cell{display:flex}
 /* flex-start, not center: descriptions run to one or two lines, and centring each card's
    content independently left the service names sitting at different heights across a row. */
@@ -1065,6 +1086,23 @@ body.page-home .tq-dot.is-active::before{background:var(--color-fire);transform:
    opacity (was a mask-position wipe that repainted every frame and stuttered on mobile). */
 .ba-before{opacity:1;will-change:opacity;transform:translateZ(0);backface-visibility:hidden}
 .ba-slider.ba-animate .ba-before{animation:ba-reveal 7s ease-in-out infinite}
+/* Static pair. .ba-slider stacks two shots in one frame and crossfades them, which only
+   reads correctly when both were taken from the same spot. Where the camera moved between
+   before and after, a dissolve looks like two different places rather than one place
+   cleared, so those pairs go here instead and are simply shown side by side.
+   Deliberately reuses .ba-caption and the slider's frame treatment so the two components
+   look like one family. */
+.ba-static{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:940px;margin:0 auto}
+.ba-static figure{position:relative;margin:0;overflow:hidden;border-radius:12px;aspect-ratio:4/3;border:1px solid rgba(255,255,255,0.10);box-shadow:0 0 0 1px rgba(123,53,212,0.30),0 2px 6px rgba(0,0,0,0.40),0 26px 70px rgba(0,0,0,0.70),inset 0 1px 0 rgba(255,255,255,0.12)}
+.ba-static img{width:100%;height:100%;object-fit:cover;display:block}
+/* Same bottom scrim as the slider, so the caption sits on the image rather than over it. */
+.ba-static figure::after{content:'';position:absolute;left:0;right:0;bottom:0;height:48%;z-index:2;pointer-events:none;background:linear-gradient(to top,rgba(6,0,18,0.78) 0%,rgba(6,0,18,0.30) 46%,transparent 100%)}
+/* The captions here are static: no ba-reveal animation, both visible at once. */
+.ba-static .ba-caption{animation:none;opacity:1}
+/* Stack on phones. Side by side at 390px put each shot at ~160px wide, too small to read
+   what was hauled, which is the only reason the pair is on the page. One column keeps them
+   legible; before still sits above after, so the sequence still reads top to bottom. */
+@media(max-width:640px){.ba-static{grid-template-columns:1fr;gap:12px;max-width:420px}}
 .ba-caption{position:absolute;bottom:18px;left:50%;transform:translateX(-50%);z-index:4;background:rgba(14,6,32,0.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:9px 24px 10px;border-radius:40px;text-align:center;pointer-events:none;white-space:nowrap;border:1px solid rgba(255,255,255,0.16);box-shadow:0 8px 24px rgba(0,0,0,0.45)}
 .ba-caption-state{display:block;font-family:var(--font-heading);font-size:19px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#fff;line-height:1.1}
 .ba-caption-brand{display:block;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:rgba(255,255,255,0.62);margin-top:3px}
@@ -1319,6 +1357,18 @@ body.page-home .tq-dot.is-active::before{background:var(--color-fire);transform:
 .locations-hub + .cta-final{clip-path:polygon(0 6vw,100% 0,100% 100%,0 100%);margin-top:-6vw;padding-top:calc(80px + 6vw);z-index:14;position:relative}
 .locations-hub:has(+ .faq-section),
 .locations-hub:has(+ .cta-final){padding-bottom:calc(52px + 6vw)}
+
+/* T6: Tony's letter → FAQ, homepage only. Created by the 2026-08-24 reorder that lifted
+   .svc-section above the reviews: the letter used to hand off to the services block, which
+   carried its own wedge, so this seam inherited one. Without it the white letter meets the
+   dark FAQ on a flat horizontal line, the only square edge on a page of diagonals.
+   Same geometry as T2, and z-index 12 for the same reason: whatever follows a light block
+   has to paint over it or the overlap swallows the wedge.
+   General sibling (~), not adjacent (+), because a script tag for the letter's slide-in
+   reveal sits between the two sections and breaks adjacency. .tony-letter exists only on
+   the homepage and there is exactly one .faq-section, so ~ cannot over-match. */
+.tony-letter ~ .faq-section{clip-path:polygon(0 6vw,100% 0,100% 100%,0 100%);margin-top:-6vw;padding-top:calc(80px + 6vw);z-index:12;position:relative}
+.tony-letter:has(~ .faq-section){padding-bottom:calc(72px + 6vw)}
 
 /* T5: heat line, not a diagonal. For dark→dark seams, where a wedge would reveal
    nothing. City pages: FAQ → CTA. Homepage: results → reviews (#080014 → #060010,

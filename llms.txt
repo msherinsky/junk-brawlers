@@ -4,20 +4,32 @@
 
 ## Services
 
-- [Junk Removal](https://junkbrawlers.com/junk-removal.html): Furniture, appliances, and general clutter hauled away, often same-day.
-- [Estate Cleanouts](https://junkbrawlers.com/estate-cleanouts.html): Full-property cleanouts for estates, downsizing, and transitions.
+Services are grouped under three categories. Each category page links to the job pages beneath it.
+
+### Residential Junk Removal
+[Residential Junk Removal](https://junkbrawlers.com/residential-junk-removal.html): Anything from a single item to a whole house, homeowner work.
+
+- [Appliance Removal](https://junkbrawlers.com/appliance-removal.html): Refrigerators, washers, dryers, water heaters, and more.
+- [Mattress Removal](https://junkbrawlers.com/mattress-removal.html): Mattress, box spring and frame carried out, stairs included.
 - [Garage Cleanouts](https://junkbrawlers.com/garage-cleanouts.html): Clear out a packed garage in a single visit.
 - [Hot Tub Removal](https://junkbrawlers.com/hot-tub-removal.html): Disassembly and haul-away of hot tubs and spas.
-- [Appliance Removal](https://junkbrawlers.com/appliance-removal.html): Refrigerators, washers, dryers, water heaters, and more.
-- [Construction Debris Removal](https://junkbrawlers.com/construction-debris-removal.html): Post-renovation and jobsite debris.
-- [Commercial Junk Removal](https://junkbrawlers.com/commercial-junk-removal.html): Offices, retail, rentals, and commercial properties.
-- [Hoarder Cleanouts](https://junkbrawlers.com/hoarder-cleanouts.html): Compassionate, discreet full-property cleanouts.
-- [Shed & Deck Removal](https://junkbrawlers.com/shed-deck-removal.html): Demolition and removal of old sheds and decks.
 - [Pool Removal](https://junkbrawlers.com/pool-removal.html): Above-ground pool teardown and haul-away.
+- [Shed & Deck Removal](https://junkbrawlers.com/shed-deck-removal.html): Demolition and removal of old sheds and decks.
+
+### Commercial Junk Removal
+[Commercial Junk Removal](https://junkbrawlers.com/commercial-junk-removal.html): Offices, retail, rentals, and commercial properties, scheduled around business hours.
+
+- [Office Cleanouts](https://junkbrawlers.com/office-cleanouts.html): Desks, cubicles, filing cabinets and old IT equipment, cleared after close.
+- [Construction Debris Removal](https://junkbrawlers.com/construction-debris-removal.html): Post-renovation and jobsite debris.
+
+### Cleanout Services
+[Cleanout Services](https://junkbrawlers.com/cleanout-services.html): Whole-property cleanouts worked room by room, with nothing removed until it is confirmed.
+
+- [Estate Cleanouts](https://junkbrawlers.com/estate-cleanouts.html): Full-property cleanouts for estates, downsizing, and transitions.
+- [Hoarder Cleanouts](https://junkbrawlers.com/hoarder-cleanouts.html): Compassionate, discreet full-property cleanouts.
 
 ## Service Areas
 
-- [Dawsonville](https://junkbrawlers.com/dawsonville.html): Home base, Dawson County.
 - [Alpharetta](https://junkbrawlers.com/alpharetta.html)
 - [Ball Ground](https://junkbrawlers.com/ball-ground.html)
 - [Blue Ridge](https://junkbrawlers.com/blue-ridge.html)

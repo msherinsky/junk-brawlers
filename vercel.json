@@ -30,7 +30,12 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [{ "type": "host", "value": "junk-brawlers.vercel.app" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "junk-brawlers.vercel.app"
+        }
+      ],
       "destination": "https://junkbrawlers.com/$1",
       "permanent": true
     },
@@ -41,7 +46,7 @@
     },
     {
       "source": "/dawsonville-junk-removal",
-      "destination": "/dawsonville.html",
+      "destination": "/",
       "permanent": true
     },
     {
@@ -242,6 +247,16 @@
     {
       "source": "/white-county-junk-removal",
       "destination": "/white-county-junk-removal.html",
+      "permanent": true
+    },
+    {
+      "source": "/dawsonville.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/junk-removal.html",
+      "destination": "/residential-junk-removal.html",
       "permanent": true
     }
   ]
