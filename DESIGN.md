@@ -4,7 +4,36 @@
 
 **Archetype:** The Brawler — raw competence, direct, no-nonsense.  
 **Tone:** Earned trust. Every claim is anchored to a real review or a specific number.  
-**Emotional arc:** Frustration (pain points) → Relief (Tony solves it) → Confidence (proof).
+---
+
+## The homepage arc
+
+*Written 2026-08-27. This replaced a one-line arc ("Frustration → Relief → Confidence") that described a seven-section page which no longer exists — there is no pain section on the homepage any more, and proof sits in the middle rather than at the end. `briefs/homepage.md` argues that dead structure at length and should be read as history, not instruction.*
+
+The live order is defended in `index.html` by a scroll-depth measurement. That explains **where** sections sit. This explains **why the page feels like one thing.**
+
+| Beat | Sections | Tone | Pacing |
+|---|---|---|---|
+| **Doubt** — is this a real business? | hero, trust ticker | dark | tight |
+| **Relief** — here is the number, and it does not move | pricing | **light** | medium |
+| **Recognition** — yes, they take my thing | services | dark | tight |
+| **Corroboration** — other people, then evidence | reviews, before/after | dark | medium |
+| **Trust** — a person, and a system behind him | Tony's note + the Standard | dark → **white** | **breathable** |
+| **Resolution** — last doubts, my town, the ask | FAQ, locations, final CTA | dark → light → dark | medium, then **breathable** |
+
+### The three rules this gives you
+
+**1. Light means relief.** The page goes light exactly twice before the end, at the two moments that resolve anxiety: what it costs, and whether we come to you. Dark is the world of the work. Do not add a light section for variety; a light section is a promise that something has just been settled.
+
+**2. Two slow-downs, and only two.** The person, and the ask. Everything else moves. This is the Tight / Medium / Breathable vocabulary from `briefs/homepage.md` — the one part of that brief still worth obeying. Before 2026-08-27 the page ignored it entirely and paid every section 80–96px, which is why it read as uniform.
+
+**3. The letter is the only transition, not a cut.** Every other tonal change on the page happens on a clip-path wedge — an edge. The gallery-to-letter join is the single place the page *ramps* from dark to light, because that is the emotional turn: evidence becomes a person. The before/after gallery and the note are deliberately one continuous field with no divider between them, and the note separates by having its card lift off that field. See the merge block in `css/style.css`.
+
+### What this replaced
+
+The `.section-bridge` device — short one-line sentences that narrated each hand-off ("That's the price. Here's what we take.") — was removed from the homepage on 2026-08-27. The story is now carried by tone, pacing and transitions instead of by connective sentences. **It still exists on the templated pages**, so the homepage and the rest of the site are inconsistent until a rollout decides which is right.
+
+⚠ Two of those bridges were not narration: they were the only headings `.faq-section` and `.locations-hub` had. They were promoted to real `<h2>` elements rather than deleted. If you ever strip the device from another page, query for headings first.
 
 ---
 

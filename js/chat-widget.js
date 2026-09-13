@@ -281,7 +281,7 @@
   panel.innerHTML =
     '<div class="jb-grab" aria-hidden="true"><i></i></div>' +
     '<div class="jb-chat-head">' +
-      '<img src="images/logo.png" alt="" width="34" height="34">' +
+      '<img src="images/logo-104.webp" alt="" width="34" height="34">' +
       '<div class="jb-chat-head-txt">' +
         '<div class="jb-chat-head-name">Ask a Brawler</div>' +
         '<div class="jb-chat-head-sub"><b>Online</b> 7 days a week</div>' +
