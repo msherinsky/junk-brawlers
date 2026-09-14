@@ -4771,3 +4771,186 @@ body .svc-grid--stacked .svc-card-body p{
    leaves the section exactly as tall as it was and moves nothing below it. */
 body.page-location .svc-section .svc-eyebrow{margin:38px 0 14px}
 body.page-location .svc-section .svc-eyebrow+.h2-bridge--dark{padding-top:10px!important}
+
+/* ── BLOCK 42: CITY PAGES STOP DISSOLVING EVERY SEAM (2026-09-13) ─────────────
+   BLOCK 39 dissolved the seams because the section order at the time produced
+   hard tonal bands that read as stacked slabs. It was applied to the city
+   template and never to the homepage, and the two pages drifted apart:
+
+     homepage   0 dissolves, 2 light sections, 4 tonal switches
+     city page  6 dissolves, 6 light sections, 6 tonal switches
+
+   The homepage is the one that reads well, and DESIGN.md says why. Its tonal
+   changes land as hard cuts, and light is reserved for the two moments that
+   resolve anxiety: what it costs, and whether we come to you. The city pages
+   had the same ingredients with none of the discipline, so every edge was
+   softened into the next and the page read as one continuous fade.
+
+   Removing the dissolves rather than retuning them, because a dissolve is only
+   ever correct for one specific neighbour. Re-ordering a page silently
+   invalidates it, and that had already happened here: .trust-quotes was still
+   fading down from white after hiw-section was restored above it, painting a
+   white bar across the top of a dark section with nothing white in sight.
+   A hard cut cannot go stale.
+
+   The 5%-white top sheen on .svc-section is NOT a dissolve and is left alone.
+   The homepage carries the same sheen; it is an inner highlight, not a seam. */
+body.page-location .pricing-section,
+body.page-location .std-section,
+body.page-location .hiw-section,
+body.page-location .trust-quotes,
+body.page-location .locations-hub,
+body.page-location .cta-final{background-image:none}
+
+/* One dissolve needs its own selector to reach. BLOCK 39 wrote it as
+   `.page-location .svc-section:not(.svc-section--light) + .std-section`, which
+   scores (0,4,0) and outranks the (0,2,1) list above. It was dormant while the
+   section above the Standard carried .svc-section--light; flipping that block
+   to dark is exactly what woke it up. Matched selector, prefixed with body, so
+   it wins on both specificity and source order. */
+body.page-location .svc-section:not(.svc-section--light) + .std-section{
+  background-image:none}
+
+/* ── BLOCK 43: THE LOCATIONS MENU CARRIES THE CITIES (2026-09-13) ─────────────
+   jb_flatten_locations_nav.py collapsed this to a plain link when the county
+   tier was deleted, correctly: the dropdown was left holding one item, which
+   reads as a broken menu. It is a dropdown again, but of the 28 city pages
+   rather than the 11 counties, which is the thing a visitor was ever going to
+   look for in a menu called Locations.
+
+   The SEO argument is narrower than it looks and worth stating honestly. City
+   pages already carry 43 to 49 inbound links each from the .locations-hub
+   block that sits on every page, so another sitewide link is close to
+   worthless on its own, and Google discounts boilerplate nav links anyway.
+   What this actually fixes is that the header's ONLY route to any city page
+   ran through service-areas.html, and Google has never indexed that page
+   ("Discovered - currently not indexed", never crawled). Every crawl path from
+   the header to a city page currently dead-ends. This gives them a direct one.
+
+   .dropdown-menu--locations and .dropdown-counties were both still in the
+   stylesheet, orphaned by the flattening. The first is reused and widened; the
+   second is replaced by .dropdown-cities, which is four columns rather than
+   three because 28 cities in three columns runs ten rows deep.
+
+   Centred under its button rather than left-aligned: at 680px a left-anchored
+   menu hanging off a mid-nav item runs off the right of a 1280px viewport. */
+.dropdown-menu--locations{min-width:680px;left:50%;transform:translateX(-50%);padding:6px 0}
+.dropdown-menu--locations .dropdown-all{
+  display:block;margin:0 6px 6px;padding:9px 12px;
+  font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:0.06em;
+  color:var(--color-primary);border-bottom:1px solid var(--color-border)}
+.dropdown-cities{display:grid;grid-template-columns:repeat(4,1fr)}
+.dropdown-cities a{padding:8px 14px;font-size:13.5px}
+.dropdown-cities a[aria-current="page"]{color:var(--color-primary);font-weight:700}
+.mobile-cities a[aria-current="page"]{color:var(--color-primary-mid);font-weight:700}
+
+/* Mobile: two columns, because 28 stacked links push FAQ and Contact off the
+   bottom of a phone menu that already carries the services list. */
+.mobile-cities{display:grid;grid-template-columns:1fr 1fr;gap:0 8px}
+.mobile-cities a{font-size:14.5px}
+
+@media(max-width:1100px){
+  .dropdown-menu--locations{min-width:540px;grid-template-columns:repeat(3,1fr)}
+  .dropdown-cities{grid-template-columns:repeat(3,1fr)}
+}
+
+/* Mobile Locations is a disclosure, not a flat list. 28 cities inline took the
+   menu to 1267px in an 844px viewport and pushed the CTAs below all of them.
+   <details> keeps the closed height identical to the old single link and needs
+   no JS, so it survives with scripts off and is keyboard operable for free. */
+.mobile-locations{border:none}
+.mobile-locations>summary{
+  list-style:none;cursor:pointer;
+  font-family:var(--font-heading);font-size:13px;font-weight:700;
+  text-transform:uppercase;letter-spacing:1.4px;
+  color:rgba(255,255,255,0.5);padding:18px 0 8px}
+.mobile-locations>summary::-webkit-details-marker{display:none}
+.mobile-locations>summary::after{content:" \25BE";font-size:11px}
+.mobile-locations[open]>summary::after{content:" \25B4"}
+
+/* ── BLOCK 44: MOBILE TAP TARGETS (2026-09-13) ────────────────────────────────
+   Measured at 390x844 across the homepage, a city page and a service page.
+   No horizontal scroll anywhere, which is the thing that usually goes wrong, but
+   the controls were undersized against the 44x44 minimum. Worst first:
+
+     .hamburger              34x24   the primary mobile nav control
+     .area-link              86x27   x29, the whole city list
+     .footer-bottom a        32x14   x2
+     .footer-email           311x22
+     .social-icon            36x36   x2
+     .jb-modal-close         28x36   on the quote form
+
+   Inline links inside running prose are deliberately left alone. WCAG 2.5.8
+   exempts them, and padding them out would wreck the line spacing of the body
+   copy they sit in.
+
+   Sizing is done with padding and min-height rather than fixed height, so a
+   label that wraps grows instead of clipping. */
+
+/* Sizing only. Do NOT set display here: .hamburger is display:none at line 85
+   and flipped to flex by the mobile media query at line 1877, so declaring
+   display:flex globally showed the burger next to the full desktop nav.
+   The alignment properties are inert while it is hidden. */
+.hamburger{width:44px;height:44px;flex-direction:column;
+  align-items:center;justify-content:center;gap:5px;padding:0}
+
+.social-icon{min-width:44px;min-height:44px;display:inline-flex;
+  align-items:center;justify-content:center}
+.jb-modal-close{min-width:44px;min-height:44px;display:inline-flex;
+  align-items:center;justify-content:center}
+
+@media(max-width:768px){
+  /* 29 city links at 27px tall, sitting side by side, is the easiest place on
+     the page to hit the wrong town. */
+  .locations-arealist .area-link{
+    min-height:44px;display:inline-flex;align-items:center;padding:6px 10px}
+
+  .footer-bottom a{display:inline-block;padding:14px 8px}
+  .footer-brand .footer-phone,
+  .footer-brand .footer-email{display:inline-block;padding:9px 0}
+  .sp-breadcrumb a{display:inline-block;padding:12px 2px}
+
+  /* These three were at 38-39px, close enough that a single rule clears them. */
+  .svc-block-links a,
+  .county-cluster-links a,
+  .tl-cta .btn-ghost-white{min-height:44px;display:inline-flex;
+    align-items:center;justify-content:center}
+
+  .jb-chat-reset{min-height:44px}
+
+  /* 9.35px is below the floor for anything a person has to read. */
+  .jb-optional{font-size:11px}
+}
+
+/* Second pass, from re-measuring after BLOCK 44. Three groups were still short.
+   The carousel dots are the interesting one: the dot has to stay a small dot,
+   so the hit area is grown with transparent padding and the visible circle is
+   painted into the content box only. */
+@media(max-width:768px){
+  .svc-group-head{min-height:44px;display:flex;align-items:center}
+  .svc-geo-links a{min-height:44px;display:inline-flex;align-items:center}
+  /* Matches body.page-home .tq-dot (0,2,1), which outranked a plain
+     .tq-dots .tq-dot (0,2,0). The visible dot is a 9px ::before, so growing the
+     button grows only the hit area. */
+  body.page-home .tq-dot{width:44px;height:44px}
+
+  /* The two A2P consent checkboxes shipped at 18x18. They are the site's
+     registered SMS opt-in of record, so they are the last control that should
+     be hard to hit. CSS only: the markup is cross-checked by carrier reviewers
+     against privacy-policy.html and terms-of-service.html and must not change. */
+  .jb-consent-item{min-height:44px}
+  .jb-consent-item input[type="checkbox"]{
+    width:24px;height:24px;flex:0 0 24px;margin-top:2px}
+
+  .contact-phone-hero{min-height:44px;display:flex;align-items:center;
+    justify-content:center}
+}
+
+/* Canton's "what we run most" row, the last group under 44px on mobile.
+   The consent checkboxes are deliberately NOT here: they render at 24px but sit
+   inside a wrapping <label> that measures 286x156, so the whole consent
+   paragraph is the tap target. */
+@media(max-width:768px){
+  .svc-runmost-list a,
+  .svc-runmost-ask a{min-height:44px;display:inline-flex;align-items:center}
+}

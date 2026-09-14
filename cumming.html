@@ -33,7 +33,7 @@
   <link rel="preload" as="font" type="font/woff2" href="fonts/barlow-600.woff2" crossorigin>
   <link rel="preload" as="image" href="images/truck.webp" imagesrcset="images/truck-800.webp 800w, images/truck.webp 1600w" imagesizes="100vw" fetchpriority="high">
   <script defer src="js/site-data.js?v=jb37"></script>
-  <link rel="stylesheet" href="css/style.css?v=jb203">
+  <link rel="stylesheet" href="css/style.css?v=jb211">
 
   <script type="application/ld+json">
   {
@@ -118,7 +118,42 @@
           <a href="cleanout-services.html">Cleanout Services</a>
         </div>
       </div>
-      <a href="service-areas.html">Locations</a>
+      <div class="nav-dropdown">
+        <button aria-expanded="false" aria-haspopup="true">Locations <span class="arrow">&#9662;</span></button>
+        <div class="dropdown-menu dropdown-menu--locations">
+          <a href="service-areas.html" class="dropdown-all">All Service Areas</a>
+          <div class="dropdown-cities">
+            <a href="alpharetta.html">Alpharetta</a>
+            <a href="ball-ground.html">Ball Ground</a>
+            <a href="blue-ridge.html">Blue Ridge</a>
+            <a href="buford.html">Buford</a>
+            <a href="canton.html">Canton</a>
+            <a href="cherry-log.html">Cherry Log</a>
+            <a href="cleveland.html">Cleveland</a>
+            <a href="cumming.html" aria-current="page">Cumming</a>
+            <a href="dahlonega.html">Dahlonega</a>
+            <a href="duluth.html">Duluth</a>
+            <a href="ellijay.html">Ellijay</a>
+            <a href="flowery-branch.html">Flowery Branch</a>
+            <a href="gainesville.html">Gainesville</a>
+            <a href="helen.html">Helen</a>
+            <a href="holly-springs.html">Holly Springs</a>
+            <a href="jasper.html">Jasper</a>
+            <a href="johns-creek.html">Johns Creek</a>
+            <a href="lawrenceville.html">Lawrenceville</a>
+            <a href="milton.html">Milton</a>
+            <a href="morganton.html">Morganton</a>
+            <a href="norcross.html">Norcross</a>
+            <a href="oakwood.html">Oakwood</a>
+            <a href="roswell.html">Roswell</a>
+            <a href="sandy-springs.html">Sandy Springs</a>
+            <a href="snellville.html">Snellville</a>
+            <a href="sugar-hill.html">Sugar Hill</a>
+            <a href="suwanee.html">Suwanee</a>
+            <a href="woodstock.html">Woodstock</a>
+          </div>
+        </div>
+      </div>
       <a href="faq.html">FAQ</a>
       <a href="contact.html">Contact</a>
     </nav>
@@ -139,7 +174,40 @@
     <a href="residential-junk-removal.html">Residential Junk Removal</a>
     <a href="commercial-junk-removal.html">Commercial Junk Removal</a>
     <a href="cleanout-services.html">Cleanout Services</a>
-    <a href="service-areas.html">Locations</a>
+    <details class="mobile-locations">
+      <summary>Locations</summary>
+      <a href="service-areas.html">All Service Areas</a>
+      <div class="mobile-cities">
+      <a href="alpharetta.html">Alpharetta</a>
+      <a href="ball-ground.html">Ball Ground</a>
+      <a href="blue-ridge.html">Blue Ridge</a>
+      <a href="buford.html">Buford</a>
+      <a href="canton.html">Canton</a>
+      <a href="cherry-log.html">Cherry Log</a>
+      <a href="cleveland.html">Cleveland</a>
+      <a href="cumming.html" aria-current="page">Cumming</a>
+      <a href="dahlonega.html">Dahlonega</a>
+      <a href="duluth.html">Duluth</a>
+      <a href="ellijay.html">Ellijay</a>
+      <a href="flowery-branch.html">Flowery Branch</a>
+      <a href="gainesville.html">Gainesville</a>
+      <a href="helen.html">Helen</a>
+      <a href="holly-springs.html">Holly Springs</a>
+      <a href="jasper.html">Jasper</a>
+      <a href="johns-creek.html">Johns Creek</a>
+      <a href="lawrenceville.html">Lawrenceville</a>
+      <a href="milton.html">Milton</a>
+      <a href="morganton.html">Morganton</a>
+      <a href="norcross.html">Norcross</a>
+      <a href="oakwood.html">Oakwood</a>
+      <a href="roswell.html">Roswell</a>
+      <a href="sandy-springs.html">Sandy Springs</a>
+      <a href="snellville.html">Snellville</a>
+      <a href="sugar-hill.html">Sugar Hill</a>
+      <a href="suwanee.html">Suwanee</a>
+      <a href="woodstock.html">Woodstock</a>
+    </div>
+    </details>
     <div class="mobile-ctas">
       <a href="contact.html" class="btn-ghost-white">GET A PRICE</a>
       <a href="tel:4046329165" class="btn-phone" data-phone-href>(404) 632-9165</a>
@@ -257,7 +325,7 @@
            ticker rather than newly written, which is the rule the homepage followed: it is copy
            that has already been approved. Violet, not orange: this ground is #F6F4FA, where fire
            measures 2.39:1. -->
-      <p class="pricing-eyebrow">Price Quoted Is Price Paid</p>
+      <p class="pricing-eyebrow">What a Forsyth Load Actually Runs</p>
       <h2 class="h2-bridge h2-bridge--light">A Couch Is Not a Truckload. <span class="pw-em">Pay for What You&rsquo;ve Got.</span></h2>
       <p class="pricing-intro">We price by how much space your load fills in the truck. A few pieces is a small load. A whole-room cleanout fills more. You get that number on the call, and it doesn&rsquo;t move.</p>
       <!-- PRICING WEDGE. Ported from the homepage 2026-09-05, replacing the one-truck SVG
@@ -357,7 +425,7 @@
     <div class="svc-inner">
       <!-- Dark ground here, so the emphasis is the real brand orange rather than the violet
            substitute the light sections take. Eyebrow copy again lifted from the trust ticker. -->
-      <p class="svc-eyebrow">Same Day / Next Day</p>
+      <p class="svc-eyebrow">Vickery to the Lanier Shore</p>
       <h2 class="h2-bridge h2-bridge--dark" style="padding-top:48px;">If It Needs to Go, <span class="svc-em">It Goes.</span></h2>
       <div class="svc-intro">
         <p>Single item to a full garage, on both sides of 400. Same day or next day, whether it is a lake house off Sinclair Shores, a downsizing move out of The Orchards, or a covenant street that wants the pile gone before the weekend.</p>
@@ -420,14 +488,20 @@
        Situations, not name lists: the HOA bulk-haul day and the renovation/lake-turnover cycle
        are the two things specific to Forsyth. Neighborhoods appear only where a sentence needed
        one, per the city-registry rule that dropping names into a sentence is keyword stuffing. -->
-  <section class="svc-section svc-section--light" aria-label="Bulk haul days and renovation debris in Cumming GA">
+  <section class="svc-section" aria-label="Bulk haul days and renovation debris in Cumming GA">
     <div class="svc-inner">
-      <!-- Emphasis on the second sentence. VIOLET via .blk-em, not .svc-em: this section is a
-           .svc-section, so the orange .svc-em rule would match and fail at 2.42:1 on this
-           light ground. See BLOCK 37. -->
-      <h2 class="h2-bridge h2-bridge--light" style="padding-top:48px;">The Bulk Haul Day Came and Went. <span class="blk-em">The Pile Didn&rsquo;t.</span></h2>
+      <!-- Emphasis on the second sentence. FIRE via .svc-em. Was .blk-em, which was written
+           for a light ground and silently did nothing here: the only blk-em rule is
+           `.page-location .svc-section--light .blk-em` (BLOCK 37 step 2), and this block is a
+           DARK .svc-section, not --light. The selector never matched, so the span inherited
+           the h2-bridge--dark white and the emphasis was invisible as emphasis, reading as
+           one flat white line. The comment that used to sit here still described this block
+           as light, which is how it survived.
+           .svc-em is scoped `.page-location .svc-section .svc-em`, so it DOES match, and
+           fire measures ~7:1 on #170E2D. blue-ridge.html already does this correctly. -->
+      <h2 class="h2-bridge h2-bridge--dark" style="padding-top:48px;">The Bulk Haul Day Came and Went. <span class="svc-em">The Pile Didn&rsquo;t.</span></h2>
       <div class="svc-intro">
-        <p style="color:rgba(17,17,17,0.65)">Forsyth has been building for twenty years straight. Two things pile up behind that, and neither one waits for a scheduled pickup.</p>
+        <p>Forsyth has been building for twenty years straight. Two things pile up behind that, and neither one waits for a scheduled pickup.</p>
       </div>
 
       <div class="svc-blocks">
@@ -441,7 +515,7 @@
             <p>Most of the big communities out here run a bulk pickup once or twice a year. Word goes out, everybody drags something down to the curb the night before, and the truck comes through in the morning.</p>
             <p>It takes the easy half. Cardboard, a bookshelf, bagged yard waste. What it usually will not take is a mattress, a fridge with the compressor still in it, a hot tub cover, or the stack a contractor left in the side yard. Those are the piles still sitting out on Monday afternoon, and by then the whole street has watched them sit.</p>
             <p>We do not work from a list of what qualifies. If it is on the driveway it goes on the truck, and if it is still in the basement we go down and get it. You never have to drag anything out first, which is the part that actually costs you a Saturday. And we come the day you call instead of the day the calendar says.</p>
-            <div class="rw-mini rw-mini--light">
+            <div class="rw-mini">
               <span class="rw-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
               <p class="rw-mini-text">&ldquo;Tony and his equally strong brother came and even brought the right tools to get the humongous fridge out the door. Then they brought in the garage fridge and we are sipping Gatorade! They are the BEST! Sorry I didn&rsquo;t take a photo of the big fridge or their biceps... they are great!&rdquo;</p>
               <span class="rw-mini-author">Laurie &ldquo;Lorraine&rdquo; Tipton &middot; Google Review &middot; a year ago</span>
@@ -471,7 +545,7 @@
             <p>The subdivisions around Three Chimneys Farm and Polo Golf are old enough now that the first owners are on their second kitchen. What comes out of those houses is not household junk. It is renovation: cabinets, tile, subfloor, and the deck boards that finally gave.</p>
             <p>That pile is heavy and it is sharp, and no bulk day is going to touch it. We load it out of the garage or off the side yard, sweep behind it, and take it in one trip. Nothing sits parked in your driveway for a week telling the street what you are up to.</p>
             <p>North of town it changes again. A place on the Lanier shore ends up holding twenty years of furniture nobody wanted at the main house, plus the patio set, the dock hardware, and a pontoon cover up in the rafters. When one of those turns over we clear the house, the garage and the boathouse on the same visit, and anything worth reselling or donating goes that way before the landfill.</p>
-            <div class="rw-mini rw-mini--light">
+            <div class="rw-mini">
               <span class="rw-mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
               <p class="rw-mini-text">&ldquo;Prompt, took care of everything and they are very professional. Will definitely request them on our next project!&rdquo;</p>
               <span class="rw-mini-author">Carlos Medina &middot; Google Review &middot; 2 months ago</span>
@@ -615,39 +689,6 @@
            the same quote twice in one section. -->
 
      </div>
-    </div>
-  </section>
-
-  <section class="hiw-section hiw-section--dark">
-    <div class="hiw-dotgrid"></div>
-    <div class="hiw-inner">
-      <h2 class="h2-bridge h2-bridge--dark">Three Steps, Then It&rsquo;s Gone.</h2>
-
-      <div class="hiw-steps">
-        <div class="hiw-connector" aria-hidden="true"></div>
-
-        <div class="hiw-step">
-          <div class="hiw-num"><span>1</span></div>
-          <h3>Call. Get a Price. Nothing to Sign.</h3>
-          <p>Price on the call. No commitment, no paperwork. Open 7 days a week. <a href="tel:4046329165" style="color:#FF7A00;font-weight:700;">(404) 632-9165</a></p>
-        </div>
-
-        <div class="hiw-step">
-          <div class="hiw-num"><span>2</span></div>
-          <h3>We Text Before We Come. The Crew Knows Cumming.</h3>
-          <p>Home base is Dawson County, close enough to be at your door the same afternoon most mornings. No waiting for a stranger from Atlanta.</p>
-        </div>
-
-        <div class="hiw-step">
-          <div class="hiw-num"><span>3</span></div>
-          <h3>Loaded Out. Space Swept Clean.</h3>
-          <p>They load everything, confirm before anything gets tossed, and leave the spot clean. You don&rsquo;t lift a thing.</p>
-        </div>
-      </div>
-
-      <div class="hiw-cta">
-        <a href="tel:4046329165" class="btn-fire" style="font-family:var(--font-heading);font-size:17px;letter-spacing:1.5px;padding:16px 44px;">One Call. It&rsquo;s Gone. &rarr;</a>
-      </div>
     </div>
   </section>
 
