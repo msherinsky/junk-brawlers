@@ -2691,7 +2691,6 @@ body .svc-grid--stacked .svc-card--wide .svc-card-img{aspect-ratio:6/1}
   text-decoration:none;
   letter-spacing:-0.02em;
 }
-.page-home .jb-chat-head{border-bottom-color:rgba(255,255,255,0.16)}
 
 /* FAQ numerals were orange at every item, so the accent marked nothing. Weight
    and size carry the numbering instead. */
@@ -4807,8 +4806,6 @@ body.page-location .svc-section:not(.svc-section--light) + .std-section{
   .county-cluster-links a,
   .tl-cta .btn-ghost-white{min-height:44px;display:inline-flex;
     align-items:center;justify-content:center}
-
-  .jb-chat-reset{min-height:44px}
 
   /* 9.35px is below the floor for anything a person has to read. */
   .jb-optional{font-size:11px}
