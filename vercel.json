@@ -518,6 +518,11 @@
       "source": "/gwinnett-county-junk-removal.html",
       "destination": "/service-areas.html",
       "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }

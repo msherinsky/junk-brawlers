@@ -1999,7 +1999,6 @@ body.page-home .tq-dot.is-active::before{background:var(--color-fire);transform:
 .sticky-call-bar__phone{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#FF7A00 0%,#C05000 100%);color:#fff;font-family:var(--font);font-size:16px;font-weight:800;letter-spacing:0.5px;text-transform:uppercase;padding:14px 14px;border-radius:5px;text-decoration:none;box-shadow:0 2px 12px rgba(255,122,0,0.4);animation:sticky-call-pulse 2.6s ease-in-out infinite}
 @keyframes sticky-call-pulse{0%,100%{box-shadow:0 2px 12px rgba(255,122,0,0.4)}50%{box-shadow:0 2px 22px rgba(255,122,0,0.85)}}
 @media(prefers-reduced-motion:reduce){.sticky-call-bar__phone{animation:none}}
-.sticky-call-bar__quote{flex-shrink:0;padding:13px 16px;background:var(--color-primary);border:none;color:#fff;font-family:var(--font);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.4px;border-radius:5px;text-decoration:none;white-space:nowrap;display:flex;align-items:center;box-shadow:0 2px 10px rgba(123,53,212,0.4)}
 @media(max-width:768px){
   .sticky-call-bar{display:flex}
   body{padding-bottom:72px}
@@ -2099,29 +2098,10 @@ body.page-home .tq-dot.is-active::before{background:var(--color-fire);transform:
 .results-inner{position:relative;z-index:1}
 
 /* ---- JB SHARED FORM + QUOTE MODAL ---- */
-.jb-form-row{display:flex;gap:14px}
-.jb-form-group{display:flex;flex-direction:column;flex:1;min-width:0;margin-bottom:11px}
-.jb-form-group label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.45);margin-bottom:6px}
-.jb-form-group input{width:100%;box-sizing:border-box;padding:12px 14px;background:rgba(255,255,255,0.06);border:1.5px solid rgba(255,255,255,0.12);border-radius:4px;font-family:var(--font);font-size:15px;color:#fff;transition:border-color .2s,box-shadow .2s}
-.jb-form-group input::placeholder{color:rgba(255,255,255,0.25)}
-.jb-form-group input:focus{outline:none;border-color:var(--color-fire);box-shadow:0 0 0 3px rgba(255,122,0,0.18)}
-.jb-form-submit{display:block;width:100%;margin-top:18px;padding:13px 24px;background:#C05000;color:#fff;font-family:var(--font-heading);font-size:15px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;border:none;border-radius:5px;cursor:pointer;transition:opacity .2s,transform .12s;box-shadow:0 4px 16px rgba(255,122,0,0.28);text-align:center}
-.jb-form-submit:hover{opacity:0.94}
-.jb-form-submit:active{transform:translateY(1px)}
-.jb-form-submit:hover{opacity:.9}
-.jb-form-submit:disabled{opacity:.55;cursor:not-allowed}
-.jb-form-status{margin-top:12px;font-size:14px;font-weight:600;display:none}
-.jb-form-status.success{color:#22c55e;display:block}
+
 .jb-optional{font-weight:400;color:rgba(255,255,255,0.4);font-size:.85em;text-transform:none;letter-spacing:0}
-.jb-consent{margin:8px 0 2px;display:flex;flex-direction:column;gap:11px}
-.jb-consent-item{display:flex;gap:10px;align-items:flex-start;cursor:pointer;margin:0}
-.jb-consent-item input[type=checkbox]{flex:none;width:18px;height:18px;margin:1px 0 0;accent-color:var(--color-fire);cursor:pointer}
-.jb-consent-item span{font-size:13px;line-height:1.5;font-weight:400;letter-spacing:normal;text-transform:none;color:rgba(255,255,255,0.66);margin:0}
-.jb-consent-item strong{color:rgba(255,255,255,0.72);font-weight:700}
 /* A2P: "not a condition of purchase" + the two policy links carriers look for. */
-.jb-consent-note{font-size:12px;line-height:1.5;color:rgba(255,255,255,0.45);margin:2px 0 0}
-.jb-consent-note a{color:rgba(255,255,255,0.62);text-decoration:underline;text-underline-offset:2px}
-.jb-consent-note a:hover{color:var(--color-fire)}
+
 /* Centered info-page hero with branded-truck backdrop + gradient overlay (faq, service-areas) */
 .hero.hero--info{position:relative;overflow:hidden;min-height:auto;background:#07001A}
 .hero--info .hero-bg-media{position:absolute;inset:0;z-index:0;margin:0;display:block}
@@ -2131,30 +2111,8 @@ body.page-home .tq-dot.is-active::before{background:var(--color-fire);transform:
 .hero--info .hero-centered{text-shadow:0 2px 20px rgba(7,0,26,0.65)}
 .hero--info .hero-sub{color:rgba(255,255,255,0.82);margin-bottom:40px}
 .hero--info .hero-centered h1{color:rgba(255,255,255,0.78)}
-.jb-form-status.error{color:#ff6b6b;display:block}
-.jb-form-group input.jb-input-error{border-color:#ff6b6b !important;box-shadow:0 0 0 3px rgba(255,107,107,0.18) !important}
-.jb-modal-overlay{position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.75);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .25s ease}
-.jb-modal-overlay.open{opacity:1;pointer-events:all}
-.jb-modal-card{background:#080014;border-radius:8px;padding:30px 34px 30px;max-width:460px;width:100%;position:relative;transform:translateY(20px);transition:transform .25s ease;border-top:3px solid var(--color-fire);max-height:92vh;overflow-y:auto}
-.jb-modal-overlay.open .jb-modal-card{transform:translateY(0)}
-.jb-modal-close{position:absolute;top:14px;right:16px;background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.35);font-size:28px;line-height:1;padding:4px 8px;font-family:var(--font);transition:color .2s}
-.jb-modal-close:hover{color:#fff}
-.jb-modal-logo{height:40px;width:auto;margin-bottom:14px;display:block}
-.jb-modal-heading{font-family:var(--font-heading);font-size:28px;font-weight:800;font-style:italic;color:#fff;line-height:1.1;margin-bottom:6px;text-decoration:underline;text-decoration-color:var(--color-fire);text-underline-offset:5px;text-decoration-thickness:2px}
-.jb-modal-sub{font-size:14px;color:rgba(255,255,255,0.45);margin-bottom:16px}
 @media(max-width:540px){
-  .jb-modal-overlay{align-items:flex-end;padding:0}
-  .jb-modal-card{border-radius:16px 16px 0 0;padding:26px 18px 24px;max-height:92vh}
-  .jb-form-row{gap:10px}
-  .jb-modal-logo{height:38px;margin-bottom:12px}
-  .jb-modal-heading{font-size:24px;margin-bottom:4px}
-  .jb-modal-sub{margin-bottom:14px}
-  .jb-form-group{margin-bottom:9px}
-  .jb-form-submit{margin-top:14px}
 }
-.zip-check-hint{display:block;font-size:12px;font-weight:600;margin-top:5px;min-height:16px}
-.zip-check-hint--ok{color:var(--color-fire)}
-.zip-check-hint--warn{color:#FFA040}
 
 /* ---- LOCATION PAGE TEMPLATE ---- */
 body.page-location .hero{position:relative;z-index:10}
@@ -2509,16 +2467,6 @@ body .svc-grid--stacked .svc-card--wide .svc-card-img{aspect-ratio:6/1}
    ghost. On the sticky bar the ghost sits on a dark bar rather than on the
    photo, so it needs a slightly stronger border than the header's to hold its
    edge at thumb size. */
-.page-home .sticky-call-bar__quote{
-  background:transparent;
-  border:1px solid rgba(255,255,255,0.48);
-  box-shadow:none;
-}
-.page-home .sticky-call-bar__quote:hover,
-.page-home .sticky-call-bar__quote:focus-visible{
-  background:rgba(255,255,255,0.12);
-  border-color:rgba(255,255,255,0.78);
-}
 
 /* --- 12. SECTION RHYTHM ----------------------------------------------------
    Seven of eight section headings were centred, five of them inside the same
@@ -2685,12 +2633,6 @@ body .svc-grid--stacked .svc-card--wide .svc-card-img{aspect-ratio:6/1}
 /* The quote modal still carried the italic + orange underline heading that
    block 1 removed from every page heading, plus an orange card edge. Same
    treatment so the modal matches the page it opens over. */
-.page-home .jb-modal-card{border-top-color:rgba(255,255,255,0.18)}
-.page-home .jb-modal-heading{
-  font-style:normal;
-  text-decoration:none;
-  letter-spacing:-0.02em;
-}
 
 /* FAQ numerals were orange at every item, so the accent marked nothing. Weight
    and size carry the numbering instead. */
@@ -3834,9 +3776,7 @@ body.page-location .svc-section h2.h2-bridge--light{color:rgba(0,0,0,0.86)}
    CLAUDE.md requires the consent wording to stay byte-identical across four
    surfaces (the modal, contact.html, privacy-policy.html §3, terms-of-service.html
    §5) because carrier reviewers cross-check them. Alpha values are not wording. */
-.jb-form-group label,
-.jb-modal-sub,
-.jb-consent-note{color:rgba(255,255,255,0.56)}      /* 5.42:1 */
+      /* 5.42:1 */
 .jb-optional{color:rgba(255,255,255,0.56)}          /* was 0.40 at 9px */
 
 /* ===========================================================================
@@ -4787,8 +4727,6 @@ body.page-location .svc-section:not(.svc-section--light) + .std-section{
 
 .social-icon{min-width:44px;min-height:44px;display:inline-flex;
   align-items:center;justify-content:center}
-.jb-modal-close{min-width:44px;min-height:44px;display:inline-flex;
-  align-items:center;justify-content:center}
 
 @media(max-width:768px){
   /* 29 city links at 27px tall, sitting side by side, is the easiest place on
@@ -4827,9 +4765,6 @@ body.page-location .svc-section:not(.svc-section--light) + .std-section{
      registered SMS opt-in of record, so they are the last control that should
      be hard to hit. CSS only: the markup is cross-checked by carrier reviewers
      against privacy-policy.html and terms-of-service.html and must not change. */
-  .jb-consent-item{min-height:44px}
-  .jb-consent-item input[type="checkbox"]{
-    width:24px;height:24px;flex:0 0 24px;margin-top:2px}
 
   .contact-phone-hero{min-height:44px;display:flex;align-items:center;
     justify-content:center}
